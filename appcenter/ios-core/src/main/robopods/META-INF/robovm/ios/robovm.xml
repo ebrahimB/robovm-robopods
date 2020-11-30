@@ -1,5 +1,9 @@
 <config>
     <frameworks>
         <framework>AppCenter</framework>
+
+        <framework>SystemConfiguration</framework>
+        <framework>CoreTelephony</framework>
+        <framework>Security</framework>
     </frameworks>
 </config>

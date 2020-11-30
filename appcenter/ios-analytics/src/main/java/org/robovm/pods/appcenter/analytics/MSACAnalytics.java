@@ -52,6 +52,10 @@ import org.robovm.pods.appcenter.core.*;
     public static native @MachineSizedUInt long getTransmissionInterval();
     @Property(selector = "setTransmissionInterval:")
     public static native void setTransmissionInterval(@MachineSizedUInt long v);
+    @Property(selector = "isEnabled")
+    public static native boolean isEnabled();
+    @Property(selector = "setEnabled:")
+    public static native void setEnabled(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

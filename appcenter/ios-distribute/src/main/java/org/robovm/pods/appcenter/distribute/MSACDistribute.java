@@ -64,6 +64,10 @@ import org.robovm.pods.appcenter.core.*;
     public static native String getInstallUrl();
     @Property(selector = "setInstallUrl:")
     public static native void setInstallUrl(String v);
+    @Property(selector = "isEnabled")
+    public static native boolean isEnabled();
+    @Property(selector = "setEnabled:")
+    public static native void setEnabled(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

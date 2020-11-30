@@ -62,6 +62,10 @@ import org.robovm.pods.appcenter.core.*;
     public static native @Block Block1<NSArray<MSACErrorReport>, Boolean> getUserConfirmationHandler();
     @Property(selector = "setUserConfirmationHandler:")
     public static native void setUserConfirmationHandler(@Block Block1<NSArray<MSACErrorReport>, Boolean> v);
+    @Property(selector = "isEnabled")
+    public static native boolean isEnabled();
+    @Property(selector = "setEnabled:")
+    public static native void setEnabled(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
