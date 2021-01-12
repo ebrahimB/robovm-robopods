@@ -1,6 +1,6 @@
 package: org.robovm.pods.fyber.core
 framework: IASDKCore
-include: [foundation, uikit, corelocation, dispatch, coregraphics]
+include: [foundation, uikit, corelocation, coreanimation, dispatch, coregraphics]
 clang_args: ['-x', 'objective-c']
 headers: 
     - IASDKCore.h

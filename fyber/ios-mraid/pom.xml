@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-fyber-mraid-ios</artifactId>
-    <name>RoboPods Fyber HTML/MRAID content iOS (v7.7.2)</name>
+    <name>RoboPods Fyber HTML/MRAID content iOS (v7.7.3)</name>
     <packaging>jar</packaging>
 
     <dependencies>
