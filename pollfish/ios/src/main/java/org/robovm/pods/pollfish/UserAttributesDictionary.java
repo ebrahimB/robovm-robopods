@@ -83,75 +83,7 @@ import org.robovm.apple.corelocation.*;
     private native UserAttributesDictionary setRace0(NSString race);
     @Method(selector = "setIncome:")
     private native UserAttributesDictionary setIncome0(NSString income);
-    @Method(selector = "setEmail:")
-    public native UserAttributesDictionary setEmail(String email);
-    @Method(selector = "setGoogleId:")
-    public native UserAttributesDictionary setGoogleId(String google_id);
-    @Method(selector = "setLinkedInId:")
-    public native UserAttributesDictionary setLinkedInId(String linkedin_id);
-    @Method(selector = "setTwitterId:")
-    public native UserAttributesDictionary setTwitterId(String twitter_id);
-    @Method(selector = "setFacebookId:")
-    public native UserAttributesDictionary setFacebookId(String facebook_id);
     @Method(selector = "setCustomAttributeWithKey:andValue:")
     public native UserAttributesDictionary setCustomAttribute(String attr_key, String attr_value);
-    @Method(selector = "setPhone:")
-    public native UserAttributesDictionary setPhone(String phone);
-    @Method(selector = "setName:")
-    public native UserAttributesDictionary setName(String name);
-    @Method(selector = "setSurname:")
-    public native UserAttributesDictionary setSurname(String surname);
     /*</methods>*/
-
-    //
-    // sets of wrapper bellow (simplifies usage)
-    //
-    public UserAttributesDictionary setGender(Gender gender) {
-        return setGender0(gender.asString());
-    }
-
-    public UserAttributesDictionary setYearOfBirth(YearOfBirth year_of_birth) {
-        return setYearOfBirth0(year_of_birth.asString());
-    }
-
-    public UserAttributesDictionary setMaritalStatus(MaritalStatus marital_status) {
-        return setMaritalStatus0(marital_status.asString());
-    }
-
-    public UserAttributesDictionary setParentalStatus(ParentalStatus parental_status) {
-        return setParentalStatus0(parental_status.asString());
-    }
-
-    public UserAttributesDictionary setEducation(EducationLevel education_level) {
-        return setEducation0(education_level.asString());
-    }
-
-    public UserAttributesDictionary setEmployment(EmploymentStatus employment_status) {
-        return setEmployment0(employment_status.asString());
-    }
-
-    public UserAttributesDictionary setCareer(Career career_status) {
-        return setCareer0(career_status.asString());
-    }
-
-    public UserAttributesDictionary setRace(Race race) {
-        return setRace0(race.asString());
-    }
-
-    public UserAttributesDictionary setIncome(Income income) {
-        return setIncome0(income.asString());
-    }
-
-    public UserAttributesDictionary setSpokenLanguage(SpokenLanguage spoken_language) {
-        return setSpokenLanguage0(spoken_language.asString());
-    }
-
-    public  UserAttributesDictionary setOrganizationRole(OrganizationRole organization_role) {
-        return setOrganizationRole0(organization_role.asString());
-    }
-
-    public UserAttributesDictionary setNumberOfEmployees(NumberOfEmployees number_of_employees) {
-        return setNumberOfEmployees0(number_of_employees.asString());
-    }
-
 }

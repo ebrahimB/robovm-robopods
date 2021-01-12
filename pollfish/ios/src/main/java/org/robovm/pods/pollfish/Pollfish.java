@@ -64,11 +64,5 @@ import org.robovm.apple.corelocation.*;
     public static native boolean isPollfishPanelOpen();
     @Method(selector = "destroy")
     public static native void destroy();
-    @Method(selector = "updateLocationWithLatitude:andLongitude:andHorizontalAccuracy:")
-    public static native void updateLocation(double lat, double lon, double acc);
-    @Method(selector = "updateLocationWith:")
-    public static native void updateLocation(CLLocation location);
-    @Method(selector = "sendBeaconInfo:")
-    public static native void sendBeaconInfo(CLBeacon beacon);
     /*</methods>*/
 }
