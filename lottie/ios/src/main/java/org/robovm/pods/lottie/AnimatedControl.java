@@ -50,6 +50,11 @@ import org.robovm.apple.coreanimation.*;
     protected AnimatedControl(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithCoder:")
     public AnimatedControl(NSCoder aDecoder) { super((SkipInit) null); initObject(init(aDecoder)); }
+    /**
+     * @since Available in iOS 14.0 and later.
+     */
+    @Method(selector = "initWithFrame:primaryAction:")
+    public AnimatedControl(@ByVal CGRect frame, UIAction primaryAction) { super(frame, primaryAction); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "isEnabled")
@@ -66,6 +71,9 @@ import org.robovm.apple.coreanimation.*;
     public native void setHighlighted(boolean v);
     @Property(selector = "intrinsicContentSize")
     public native @ByVal CGSize getIntrinsicContentSize();
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -79,5 +87,15 @@ import org.robovm.apple.coreanimation.*;
     public native void endTracking(UITouch touch, UIEvent event);
     @Method(selector = "cancelTrackingWithEvent:")
     public native void cancelTracking(UIEvent event);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }

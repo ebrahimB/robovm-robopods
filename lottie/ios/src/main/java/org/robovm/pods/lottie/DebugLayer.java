@@ -52,11 +52,23 @@ import org.robovm.apple.coreanimation.*;
     public DebugLayer(NSCoder aDecoder) { super((SkipInit) null); initObject(init(aDecoder)); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder aDecoder);
+    @Method(selector = "defaultValueForKey:")
+    public static native NSObject getDefaultValue(String key);
+    @Method(selector = "needsDisplayForKey:")
+    public static native boolean needsDisplay(String key);
+    /**
+     * @since Available in iOS 13.0 and later.
+     */
+    @Method(selector = "cornerCurveExpansionFactor:")
+    public static native @MachineSizedFloat double cornerCurveExpansionFactor(CALayerCornerCurve curve);
+    @Method(selector = "defaultActionForKey:")
+    public static native CAAction getDefaultAction(String event);
     /*</methods>*/
 }

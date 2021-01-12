@@ -58,6 +58,8 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double getCurrentFrame();
     @Property(selector = "setCurrentFrame:")
     public native void setCurrentFrame(@MachineSizedFloat double v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -71,5 +73,14 @@ import org.robovm.apple.coreanimation.*;
     public native void display();
     @Method(selector = "needsDisplayForKey:")
     public static native boolean needsDisplay(String key);
+    @Method(selector = "defaultValueForKey:")
+    public static native NSObject getDefaultValue(String key);
+    /**
+     * @since Available in iOS 13.0 and later.
+     */
+    @Method(selector = "cornerCurveExpansionFactor:")
+    public static native @MachineSizedFloat double cornerCurveExpansionFactor(CALayerCornerCurve curve);
+    @Method(selector = "defaultActionForKey:")
+    public static native CAAction getDefaultAction(String event);
     /*</methods>*/
 }

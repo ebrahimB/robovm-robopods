@@ -60,6 +60,9 @@ import org.robovm.apple.coreanimation.*;
     public native void setAnimationName(String v);
     @Property(selector = "intrinsicContentSize")
     public native @ByVal CGSize getIntrinsicContentSize();
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -71,5 +74,15 @@ import org.robovm.apple.coreanimation.*;
     public native void animationWillMoveToBackground();
     @Method(selector = "animationWillEnterForeground")
     public native void animationWillEnterForeground();
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }
