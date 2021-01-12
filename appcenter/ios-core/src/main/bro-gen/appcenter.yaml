@@ -18,7 +18,7 @@ enums:
     MSACHTTPCodesNo: {prefix: MSACHTTPCodes}
     MSACACErrorCode: {nserror: true, prefix: MSACAC, suffix: ErrorCode, first: MSACACLogInvalidContainerErrorCode}
     MSACACErrorCode2: {prefix: MSACAC, suffix: ErrorCode, first: MSACACConnectionPausedErrorCode, merge_with: MSACACErrorCode}
-
+    MSACFlags: {}
 classes:
     MSACAbstractLog: {}
     MSACAppCenter:

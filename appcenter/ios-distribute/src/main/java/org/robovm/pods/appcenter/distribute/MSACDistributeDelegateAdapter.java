@@ -51,5 +51,9 @@ import org.robovm.pods.appcenter.core.*;
     /*<methods>*/
     @NotImplemented("distribute:releaseAvailableWithDetails:")
     public boolean releaseAvailable(MSACDistribute distribute, MSACReleaseDetails details) { return false; }
+    @NotImplemented("distributeNoReleaseAvailable:")
+    public void distributeNoReleaseAvailable(MSACDistribute distribute) {}
+    @NotImplemented("distributeWillExitApp:")
+    public void distributeWillExitApp(MSACDistribute distribute) {}
     /*</methods>*/
 }

@@ -49,6 +49,10 @@ import org.robovm.pods.appcenter.core.*;
     /*<methods>*/
     @Method(selector = "distribute:releaseAvailableWithDetails:")
     boolean releaseAvailable(MSACDistribute distribute, MSACReleaseDetails details);
+    @Method(selector = "distributeNoReleaseAvailable:")
+    void distributeNoReleaseAvailable(MSACDistribute distribute);
+    @Method(selector = "distributeWillExitApp:")
+    void distributeWillExitApp(MSACDistribute distribute);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/
