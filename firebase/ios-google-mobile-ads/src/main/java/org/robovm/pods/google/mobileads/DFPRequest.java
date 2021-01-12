@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -68,6 +69,13 @@ import org.robovm.apple.uikit.*;
     @GlobalValue(symbol="kDFPSimulatorID", optional=true)
     public static native NSString DFPSimulatorID();
     
-    
+    @Method(selector = "request")
+    public static native DFPRequest request();
+    /**
+     * @deprecated Use GADMobileAds.sharedInstance.sdkVersion
+     */
+    @Deprecated
+    @Method(selector = "sdkVersion")
+    public static native String sdkVersion();
     /*</methods>*/
 }

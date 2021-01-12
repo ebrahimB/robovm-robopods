@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -86,6 +87,8 @@ import org.robovm.apple.uikit.*;
     public native void disableSDKCrashReporting();
     @Method(selector = "disableMediationInitialization")
     public native void disableMediationInitialization();
+    @Method(selector = "presentAdInspectorFromViewController:completionHandler:")
+    public native void presentAdInspector(UIViewController viewController, @Block VoidBlock1<NSError> completionHandler);
     @Method(selector = "sharedInstance")
     public static native GADMobileAds sharedInstance();
     /**

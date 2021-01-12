@@ -55,6 +55,12 @@ import org.robovm.apple.foundation.*;
     public native boolean shouldHandleDynamicLinkFromCustomSchemeURL(NSURL url);
     @Method(selector = "dynamicLinkFromCustomSchemeURL:")
     public native FIRDynamicLink dynamicLinkFromCustomSchemeURL(NSURL url);
+    @Method(selector = "dynamicLinkFromUniversalLinkURL:completion:")
+    public native void dynamicLinkFromUniversalLinkURL(NSURL url, @Block VoidBlock2<FIRDynamicLink, NSError> completion);
+    /**
+     * @deprecated Use dynamicLinkFromUniversalLinkURL:completion: instead.
+     */
+    @Deprecated
     @Method(selector = "dynamicLinkFromUniversalLinkURL:")
     public native FIRDynamicLink dynamicLinkFromUniversalLinkURL(NSURL url);
     @Method(selector = "handleUniversalLink:completion:")

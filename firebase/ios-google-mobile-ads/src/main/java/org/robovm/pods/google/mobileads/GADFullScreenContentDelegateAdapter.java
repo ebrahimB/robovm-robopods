@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -51,6 +52,8 @@ import org.robovm.apple.uikit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @NotImplemented("adDidRecordImpression:")
+    public void adDidRecordImpression(GADFullScreenPresentingAd ad) {}
     @NotImplemented("ad:didFailToPresentFullScreenContentWithError:")
     public void didFailToPresentFullScreenContent(GADFullScreenPresentingAd ad, NSError error) {}
     @NotImplemented("adDidPresentFullScreenContent:")

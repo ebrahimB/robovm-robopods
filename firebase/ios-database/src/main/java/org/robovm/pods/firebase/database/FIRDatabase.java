@@ -79,6 +79,8 @@ import org.robovm.apple.dispatch.*;
     public native void goOffline();
     @Method(selector = "goOnline")
     public native void goOnline();
+    @Method(selector = "useEmulatorWithHost:port:")
+    public native void useEmulator(String host, @MachineSizedSInt long port);
     @Method(selector = "database")
     public static native FIRDatabase database();
     @Method(selector = "databaseWithURL:")

@@ -25,6 +25,8 @@ classes:
             '+databaseForApp:URL:':
                 name: create
                 constructor: true
+            '-useEmulatorWithHost:port:':
+                name: useEmulator
     FIRDatabaseQuery:
         methods:
             '-observeEventType:withBlock:':

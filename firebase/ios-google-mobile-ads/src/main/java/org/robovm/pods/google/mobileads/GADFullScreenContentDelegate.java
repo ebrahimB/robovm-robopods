@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -49,6 +50,8 @@ import org.robovm.apple.uikit.*;
     
     /*</properties>*/
     /*<methods>*/
+    @Method(selector = "adDidRecordImpression:")
+    void adDidRecordImpression(GADFullScreenPresentingAd ad);
     @Method(selector = "ad:didFailToPresentFullScreenContentWithError:")
     void didFailToPresentFullScreenContent(GADFullScreenPresentingAd ad, NSError error);
     @Method(selector = "adDidPresentFullScreenContent:")

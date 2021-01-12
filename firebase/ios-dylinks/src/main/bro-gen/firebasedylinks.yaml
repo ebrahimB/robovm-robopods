@@ -57,7 +57,8 @@ classes:
                 name: resolveShortLink
             '+performDiagnosticsWithCompletion:':
                 name: performDiagnostics
-
+            '-dynamicLinkFromUniversalLinkURL:completion:':
+                name: dynamicLinkFromUniversalLinkURL
 protocols:
 
 functions:

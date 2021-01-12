@@ -83,6 +83,8 @@ classes:
                 name: waitForPendingWrites
             '-terminateWithCompletion:':
                 name: terminate
+            '-useEmulatorWithHost:port:':
+                name: useEmulator
     FIRFirestoreSettings: {}
     FIRGeoPoint:
         methods:

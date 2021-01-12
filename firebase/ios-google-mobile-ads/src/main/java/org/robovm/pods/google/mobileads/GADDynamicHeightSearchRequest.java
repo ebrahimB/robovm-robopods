@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -206,10 +207,22 @@ import org.robovm.apple.uikit.*;
     public native boolean isLongerHeadlinesExtensionEnabled();
     @Property(selector = "setLongerHeadlinesExtensionEnabled:")
     public native void setLongerHeadlinesExtensionEnabled(boolean v);
+    @Property(selector = "styleID")
+    public native String getStyleID();
+    @Property(selector = "setStyleID:")
+    public native void setStyleID(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "setAdvancedOptionValue:forKey:")
     public native void setAdvancedOption(NSObject value, String key);
+    @Method(selector = "request")
+    public static native GADDynamicHeightSearchRequest request();
+    /**
+     * @deprecated Use GADMobileAds.sharedInstance.sdkVersion
+     */
+    @Deprecated
+    @Method(selector = "sdkVersion")
+    public static native String sdkVersion();
     /*</methods>*/
 }

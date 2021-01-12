@@ -64,12 +64,6 @@ import org.robovm.apple.dispatch.*;
     public native boolean isPersistenceEnabled();
     @Property(selector = "setPersistenceEnabled:")
     public native void setPersistenceEnabled(boolean v);
-    @Deprecated
-    @Property(selector = "areTimestampsInSnapshotsEnabled")
-    public native boolean isTimestampsInSnapshotsEnabled();
-    @Deprecated
-    @Property(selector = "setTimestampsInSnapshotsEnabled:")
-    public native void setTimestampsInSnapshotsEnabled(boolean v);
     @Property(selector = "cacheSizeBytes")
     public native long getCacheSizeBytes();
     @Property(selector = "setCacheSizeBytes:")

@@ -67,6 +67,8 @@ import org.robovm.apple.dispatch.*;
     public native void runTransaction(@Block Block2<FIRTransaction, NSError.NSErrorPtr, NSObject> updateBlock, @Block VoidBlock2<NSObject, NSError> completion);
     @Method(selector = "batch")
     public native FIRWriteBatch batch();
+    @Method(selector = "useEmulatorWithHost:port:")
+    public native void useEmulator(String host, @MachineSizedSInt long port);
     @Method(selector = "enableNetworkWithCompletion:")
     public native void enableNetwork(@Block VoidBlock1<NSError> completion);
     @Method(selector = "disableNetworkWithCompletion:")
