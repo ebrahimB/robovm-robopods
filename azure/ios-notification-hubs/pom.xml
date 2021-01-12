@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-azure-notification-hubs-ios</artifactId>
-    <name>RoboPods Microsoft Azure Notification Hubs SDK iOS (v3.1.1)</name>
+    <name>RoboPods Microsoft Azure Notification Hubs SDK iOS (v3.1.2)</name>
     <packaging>jar</packaging>
 
     <licenses>
