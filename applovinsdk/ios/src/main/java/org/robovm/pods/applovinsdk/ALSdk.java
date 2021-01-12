@@ -30,6 +30,7 @@ import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -63,6 +64,12 @@ import org.robovm.apple.coregraphics.*;
     public native String getMediationProvider();
     @Property(selector = "setMediationProvider:")
     public native void setMediationProvider(String v);
+    @Property(selector = "userIdentifier")
+    public native String getUserIdentifier();
+    @Property(selector = "setUserIdentifier:")
+    public native void setUserIdentifier(String v);
+    @Property(selector = "userSegment")
+    public native ALUserSegment getUserSegment();
     @Property(selector = "adService")
     public native ALAdService getAdService();
     @Property(selector = "postbackService")
@@ -73,10 +80,6 @@ import org.robovm.apple.coregraphics.*;
     public native ALUserService getUserService();
     @Property(selector = "variableService")
     public native ALVariableService getVariableService();
-    @Property(selector = "userIdentifier")
-    public native String getUserIdentifier();
-    @Property(selector = "setUserIdentifier:")
-    public native void setUserIdentifier(String v);
     /**
      * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
      */

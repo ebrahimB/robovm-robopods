@@ -30,6 +30,7 @@ import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -69,6 +70,10 @@ import org.robovm.apple.coregraphics.*;
     public native NSArray<NSString> getInitializationAdUnitIdentifiers();
     @Property(selector = "setInitializationAdUnitIdentifiers:")
     public native void setInitializationAdUnitIdentifiers(NSArray<NSString> v);
+    @Property(selector = "isExceptionHandlerEnabled")
+    public native boolean isExceptionHandlerEnabled();
+    @Property(selector = "setExceptionHandlerEnabled:")
+    public native void setExceptionHandlerEnabled(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

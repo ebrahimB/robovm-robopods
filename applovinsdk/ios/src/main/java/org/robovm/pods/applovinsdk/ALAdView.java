@@ -30,6 +30,7 @@ import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -85,6 +86,9 @@ import org.robovm.apple.coregraphics.*;
     public native boolean isAutoload();
     @Property(selector = "setAutoloadEnabled:")
     public native void setAutoload(boolean v);
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /**
      * @deprecated This property is deprecated and will be removed in a future SDK version.
      */
@@ -120,6 +124,16 @@ import org.robovm.apple.coregraphics.*;
     protected native @Pointer long init(ALSdk sdk, ALAdSize size, String zoneIdentifier);
     @Method(selector = "initWithFrame:size:sdk:")
     protected native @Pointer long init(@ByVal CGRect frame, ALAdSize size, ALSdk sdk);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /**
      * @deprecated Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.
      */

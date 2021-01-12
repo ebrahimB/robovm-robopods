@@ -30,6 +30,7 @@ import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -65,6 +66,8 @@ import org.robovm.apple.coregraphics.*;
     public static native MAAdFormat getNative();
     @Property(selector = "size")
     public native @ByVal CGSize getSize();
+    @Property(selector = "adaptiveSize")
+    public native @ByVal CGSize getAdaptiveSize();
     @Property(selector = "isFullscreenAd")
     public native boolean isFullscreenAd();
     @Property(selector = "isAdViewAd")
@@ -72,6 +75,7 @@ import org.robovm.apple.coregraphics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "adaptiveSizeForWidth:")
+    public native @ByVal CGSize adaptiveSizeForWidth(@MachineSizedFloat double width);
     /*</methods>*/
 }

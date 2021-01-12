@@ -1,5 +1,5 @@
 package: org.robovm.pods.applovinsdk
-include: [foundation, uikit, coregraphics]
+include: [foundation, uikit, coregraphics, coreanimation]
 clang_args: ['-x', 'objective-c']
 framework: AppLovinSDK
 #exclude_deprecated: true
@@ -232,6 +232,7 @@ classes:
                 name: init
             '-setExtraParameterForKey:value:':
                 name: setExtraParameter
+    ALUserSegment: {}
 protocols:
     ALAdDisplayDelegate:
         methods:

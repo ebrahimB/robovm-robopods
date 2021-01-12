@@ -37,39 +37,26 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/MARewardedAd/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALUserSegment/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class MARewardedAdPtr extends Ptr<MARewardedAd, MARewardedAdPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(MARewardedAd.class); }/*</bind>*/
+    /*<ptr>*/public static class ALUserSegmentPtr extends Ptr<ALUserSegment, ALUserSegmentPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ALUserSegment.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected MARewardedAd() {}
-    protected MARewardedAd(Handle h, long handle) { super(h, handle); }
-    protected MARewardedAd(SkipInit skipInit) { super(skipInit); }
+    protected ALUserSegment() {}
+    protected ALUserSegment(Handle h, long handle) { super(h, handle); }
+    protected ALUserSegment(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "delegate")
-    public native MARewardedAdDelegate getDelegate();
-    @Property(selector = "setDelegate:", strongRef = true)
-    public native void setDelegate(MARewardedAdDelegate v);
-    @Property(selector = "isReady")
-    public native boolean isReady();
+    @Property(selector = "name")
+    public native String getName();
+    @Property(selector = "setName:")
+    public native void setName(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "setExtraParameterForKey:value:")
-    public native void setExtraParameter(String key, String value);
-    @Method(selector = "loadAd")
-    public native void loadAd();
-    @Method(selector = "showAd")
-    public native void showAd();
-    @Method(selector = "showAdForPlacement:")
-    public native void showAdForPlacement(String placement);
-    @Method(selector = "sharedWithAdUnitIdentifier:")
-    public static native MARewardedAd getShared(String adUnitIdentifier);
-    @Method(selector = "sharedWithAdUnitIdentifier:sdk:")
-    public static native MARewardedAd getShared(String adUnitIdentifier, ALSdk sdk);
+    
     /*</methods>*/
 }
