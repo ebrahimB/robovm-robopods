@@ -54,16 +54,8 @@ import org.robovm.apple.uniformtypeid.*;
     public static native NSArray<NSString> productCategoryAllCategories();
     @Bridge(symbol="BNCCurrencyAllCurrencies", optional=true)
     public static native NSArray<NSString> currencyAllCurrencies();
-    @Bridge(symbol="BNCDebuggerIsAttached", optional=true)
-    public static native boolean debuggerIsAttached();
-    @Bridge(symbol="BNCDebugStringFromObject", optional=true)
-    public static native String debugStringFromObject(NSObject object);
-    @Bridge(symbol="BNCDebugArrayOfReqisteredClasses", optional=true)
-    public static native NSArray<NSString> debugArrayOfReqisteredClasses();
     @Bridge(symbol="BNCForceNSErrorCategoryToLoad", optional=true)
     public static native void forceNSErrorCategoryToLoad();
-    @Bridge(symbol="BNCLogInitialize", optional=true)
-    public static native void logInitialize();
     @Bridge(symbol="BNCLogDisplayLevel", optional=true)
     public static native BNCLogLevel logDisplayLevel();
     @Bridge(symbol="BNCLogSetDisplayLevel", optional=true)
@@ -72,36 +64,8 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String logStringFromLogLevel(BNCLogLevel level);
     @Bridge(symbol="BNCLogLevelFromString", optional=true)
     public static native BNCLogLevel logLevelFromString(String string);
-    @Bridge(symbol="BNCLogBreakPointsAreEnabled", optional=true)
-    public static native boolean logBreakPointsAreEnabled();
-    @Bridge(symbol="BNCLogSetBreakPointsEnabled", optional=true)
-    public static native void logSetBreakPointsEnabled(boolean enabled);
-    @Bridge(symbol="BNCLogSetClientInitializeFunction", optional=true)
-    public static native FunctionPtr logSetClientInitializeFunction(FunctionPtr clientInitializationFunction);
-    @Bridge(symbol="BNCLogFunctionOutputToStdOut", optional=true)
-    public static native void logFunctionOutputToStdOut(NSDate timestamp, BNCLogLevel level, String message);
-    @Bridge(symbol="BNCLogFunctionOutputToStdErr", optional=true)
-    public static native void logFunctionOutputToStdErr(NSDate timestamp, BNCLogLevel level, String message);
-    @Bridge(symbol="BNCLogSetOutputFunction", optional=true)
-    public static native void logSetOutputFunction(FunctionPtr functionPtr);
-    @Bridge(symbol="BNCLogOutputFunction", optional=true)
-    public static native FunctionPtr logOutputFunction();
-    @Bridge(symbol="BNCLogCloseLogFile", optional=true)
-    public static native void logCloseLogFile();
-    @Bridge(symbol="BNCLogSetOutputToURL", optional=true)
-    public static native void logSetOutputToURL(NSURL URL);
-    @Bridge(symbol="BNCLogSetOutputToURLRecordWrap", optional=true)
-    public static native void logSetOutputToURLRecordWrap(NSURL URL, @MachineSizedSInt long maxRecords);
-    @Bridge(symbol="BNCLogSetOutputToURLByteWrap", optional=true)
-    public static native void logSetOutputToURLByteWrap(NSURL URL, @MachineSizedSInt long maxBytes);
-    @Bridge(symbol="BNCLogSetFlushFunction", optional=true)
-    public static native void logSetFlushFunction(FunctionPtr flushFunction);
-    @Bridge(symbol="BNCLogFlushFunction", optional=true)
-    public static native FunctionPtr logFlushFunction();
     @Bridge(symbol="BNCLogWriteMessage", optional=true)
-    public static native void logWriteMessage(BNCLogLevel logLevel, String sourceFileName, int sourceLineNumber, String message);
-    @Bridge(symbol="BNCLogFlushMessages", optional=true)
-    public static native void logFlushMessages();
+    public static native void logWriteMessage(BNCLogLevel logLevel, BytePtr sourceFileName, int sourceLineNumber, String message);
     @Bridge(symbol="BNCForceUIViewControllerCategoryToLoad", optional=true)
     public static native void forceUIViewControllerCategoryToLoad();
     /*</methods>*/

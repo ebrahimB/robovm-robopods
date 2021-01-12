@@ -149,6 +149,8 @@ import org.robovm.apple.uniformtypeid.*;
     public native void useLongerWaitForAppleSearchAds();
     @Method(selector = "ignoreAppleSearchAdsTestData")
     public native void ignoreAppleSearchAdsTestData();
+    @Method(selector = "setAppClipAppGroup:")
+    public native void setAppClipAppGroup(String appGroup);
     @Method(selector = "setSKAdNetworkCalloutMaxTimeSinceInstall:")
     public native void setSKAdNetworkCalloutMaxTimeSinceInstall(double maxTimeInterval);
     @Method(selector = "setRetryInterval:")

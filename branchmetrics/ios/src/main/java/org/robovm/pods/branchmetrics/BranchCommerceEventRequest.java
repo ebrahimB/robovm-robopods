@@ -52,7 +52,8 @@ import org.robovm.apple.uniformtypeid.*;
     public BranchCommerceEventRequest(BNCCommerceEvent commerceEvent, NSDictionary<?, ?> dictionary, @Block VoidBlock2<NSDictionary<?, ?>, NSError> callBack) { super((SkipInit) null); initObject(init(commerceEvent, dictionary, callBack)); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

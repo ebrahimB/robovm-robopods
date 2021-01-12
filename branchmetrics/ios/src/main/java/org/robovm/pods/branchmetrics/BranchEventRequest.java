@@ -64,6 +64,8 @@ import org.robovm.apple.uniformtypeid.*;
     public native @Block VoidBlock2<NSDictionary<?, ?>, NSError> getCompletion();
     @Property(selector = "setCompletion:")
     public native void setCompletion(@Block VoidBlock2<NSDictionary<?, ?>, NSError> v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

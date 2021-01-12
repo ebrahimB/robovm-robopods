@@ -158,6 +158,14 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getRequestKeyAppleReceipt();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_APPLE_TESTFLIGHT", optional=true)
     public static native String getRequestKeyAppleTestflight();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_APP_CLIP_BUNDLE_ID", optional=true)
+    public static native String getRequestKeyAppClipBundleId();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_LATEST_APP_CLIP_INSTALL_TIME", optional=true)
+    public static native String getRequestKeyLatestAppClipInstallTime();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_APP_CLIP_RANDOMIZED_DEVICE_TOKEN", optional=true)
+    public static native String getRequestKeyAppClipRandomizedDeviceToken();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_APP_CLIP_RANDOMIZED_BUNDLE_TOKEN", optional=true)
+    public static native String getRequestKeyAppClipRandomizedBundleToken();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_SET_IDENTITY", optional=true)
     public static native String getRequestEndpointSetIdentity();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_APP_LINK_SETTINGS", optional=true)

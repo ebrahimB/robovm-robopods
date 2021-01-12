@@ -58,6 +58,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native NSObject getData();
     @Property(selector = "setData:")
     public native void setData(NSObject v);
+    @Property(selector = "requestId")
+    public native String getRequestId();
+    @Property(selector = "setRequestId:")
+    public native void setRequestId(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

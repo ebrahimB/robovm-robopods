@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-branchmetrics-ios</artifactId>
-    <name>RoboPods The Branch Metrics iOS bindings (v0.35.1)</name>
+    <name>RoboPods The Branch Metrics iOS bindings (v0.36.0)</name>
     <packaging>jar</packaging>
 
     <licenses>

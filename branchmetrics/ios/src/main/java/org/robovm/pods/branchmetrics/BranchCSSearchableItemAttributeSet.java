@@ -73,6 +73,8 @@ import org.robovm.apple.uniformtypeid.*;
     public native boolean isPubliclyIndexable();
     @Property(selector = "setPubliclyIndexable:")
     public native void setPubliclyIndexable(boolean v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

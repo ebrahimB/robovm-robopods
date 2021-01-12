@@ -190,6 +190,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native boolean isBlacklistURLOpen();
     @Property(selector = "setBlacklistURLOpen:")
     public native void setBlacklistURLOpen(boolean v);
+    @Property(selector = "sendCloseRequests")
+    public native boolean isSendCloseRequests();
+    @Property(selector = "setSendCloseRequests:")
+    public native void setSendCloseRequests(boolean v);
     @Property(selector = "trackingDisabled")
     public native boolean isTrackingDisabled();
     @Property(selector = "setTrackingDisabled:")
