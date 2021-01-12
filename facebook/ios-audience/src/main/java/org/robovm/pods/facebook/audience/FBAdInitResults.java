@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coremedia.*;
+import org.robovm.apple.coreanimation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.avfoundation.*;

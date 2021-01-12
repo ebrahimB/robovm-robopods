@@ -1,6 +1,6 @@
 package: org.robovm.pods.facebook.login
 framework: FBSDKLoginKit
-include: [foundation, dispatch, coregraphics, uikit, ../../../../ios-core/src/main/bro-gen/facebook-core.yaml]
+include: [foundation, dispatch, coregraphics, uikit, ../../../../ios-core/src/main/bro-gen/facebook-core.yaml, coreanimation]
 clang_args: ['-x', 'objective-c', "-DBUCK"]
 headers: 
     - FBSDKLoginKit.h

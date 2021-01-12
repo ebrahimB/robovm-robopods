@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coremedia.*;
+import org.robovm.apple.coreanimation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.avfoundation.*;
@@ -48,7 +49,7 @@ import org.robovm.pods.facebook.core.*;
     /*<ptr>*/public static class FBAudienceNetworkAdsPtr extends Ptr<FBAudienceNetworkAds, FBAudienceNetworkAdsPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBAudienceNetworkAds.class); }/*</bind>*/
     /*<constants>*/
-    public static final String getVersion = "6.0.0";
+    public static final String getVersion = "6.2.1";
     /*</constants>*/
     /*<constructors>*/
     public FBAudienceNetworkAds() {}

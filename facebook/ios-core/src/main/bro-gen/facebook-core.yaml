@@ -1,6 +1,6 @@
 package: org.robovm.pods.facebook.core
 framework: FBSDKCoreKit
-include: [foundation, dispatch, coregraphics, uikit, webkit]
+include: [foundation, dispatch, coregraphics, uikit, webkit, coreanimation]
 clang_args: ['-x', 'objective-c']
 headers: 
     - FBSDKCoreKit.h

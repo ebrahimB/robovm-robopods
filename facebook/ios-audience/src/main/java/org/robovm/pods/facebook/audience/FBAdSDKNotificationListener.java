@@ -39,24 +39,24 @@ import org.robovm.pods.facebook.core.*;
 /*</imports>*/
 
 /*<javadoc>*/
+
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBAdLoggingDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBAdLoggingDelegate/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBAdSDKNotificationListener/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("logAtLevel:withFileName:withLineNumber:withThreadId:withBody:")
-    public void log(FBAdLogLevel level, String fileName, int lineNumber, @MachineSizedSInt long threadId, String body) {}
+    @Method(selector = "onFBAdEvent:eventData:")
+    void onFBAdEvent(String event, NSDictionary<NSString, NSString> eventData);
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

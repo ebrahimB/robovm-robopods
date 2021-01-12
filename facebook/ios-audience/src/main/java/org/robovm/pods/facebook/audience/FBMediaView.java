@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coremedia.*;
+import org.robovm.apple.coreanimation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.avfoundation.*;
@@ -74,6 +75,9 @@ import org.robovm.pods.facebook.core.*;
     public native @MachineSizedFloat double getAspectRatio();
     @Property(selector = "nativeAdViewTag")
     public native FBNativeAdViewTag getNativeAdViewTag();
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -84,5 +88,15 @@ import org.robovm.pods.facebook.core.*;
     public native void applyNaturalWidth();
     @Method(selector = "applyNaturalHeight")
     public native void applyNaturalHeight();
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }

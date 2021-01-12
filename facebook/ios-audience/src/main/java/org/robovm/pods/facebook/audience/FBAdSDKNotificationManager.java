@@ -39,24 +39,29 @@ import org.robovm.pods.facebook.core.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBAdLoggingDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBAdLoggingDelegate/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+/*</javadoc>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBAdSDKNotificationManager/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
+
+    /*<ptr>*/public static class FBAdSDKNotificationManagerPtr extends Ptr<FBAdSDKNotificationManager, FBAdSDKNotificationManagerPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FBAdSDKNotificationManager.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
+    /*<constructors>*/
+    public FBAdSDKNotificationManager() {}
+    protected FBAdSDKNotificationManager(Handle h, long handle) { super(h, handle); }
+    protected FBAdSDKNotificationManager(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("logAtLevel:withFileName:withLineNumber:withThreadId:withBody:")
-    public void log(FBAdLogLevel level, String fileName, int lineNumber, @MachineSizedSInt long threadId, String body) {}
+    @Method(selector = "addFBAdSDKNotificationListener:")
+    public static native void addFBAdSDKNotificationListener(FBAdSDKNotificationListener listener);
+    @Method(selector = "removeFBAdSDKNotificationListener:")
+    public static native void removeFBAdSDKNotificationListener(FBAdSDKNotificationListener listener);
     /*</methods>*/
 }

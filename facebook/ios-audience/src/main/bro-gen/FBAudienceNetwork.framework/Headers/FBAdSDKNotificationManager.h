@@ -1,4 +1,4 @@
-// Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+// Copyright 2004-present Facebook. All Rights Reserved.
 //
 // You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
 // copy, modify, and distribute this software in source code or binary form for use
@@ -16,37 +16,45 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- Represent a referral code used in the referral process
-*/
-NS_SWIFT_NAME(ReferralCode)
-@interface FBSDKReferralCode : NSObject
-
-- (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
+@protocol FBAdSDKNotificationListener <NSObject>
 
 /**
- The string value of the referral code
+Method to be called when some specific SDK event will happens
+
+@param event event type. Currently suuported following events:
+  "impression" happens every time when AD got an inpression recorded on the SDK
+@param eventData is a payload associated with the event.
+
+Method would be called on the main queue when the SDK event happens.
 */
-@property NSString *value;
+- (void)onFBAdEvent:(NSString *)event eventData:(NSDictionary<NSString *, NSString *> *)eventData;
+
+@end
+
+@interface FBAdSDKNotificationManager : NSObject
 
 /**
- Initializes a new instance if the referral code is valid. Otherwise returns nil.
- A code is valid if it is non-empty and contains only alphanumeric characters.
- @param string the raw string referral code
+ Adds a listener to SDK events
+
+@param listener The listener to receive notification when the event happens
+
+Note that SDK will hold a weak reference to listener object
 */
-+ (nullable instancetype)initWithString:(NSString *)string;
++ (void)addFBAdSDKNotificationListener:(id<FBAdSDKNotificationListener>)listener;
+
+/**
+ Adds a listener to SDK events
+
+@param listener The listener to be removed from notification list.
+
+You can call this method when you no longer want to receive SDK notifications.
+*/
++ (void)removeFBAdSDKNotificationListener:(id<FBAdSDKNotificationListener>)listener;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif

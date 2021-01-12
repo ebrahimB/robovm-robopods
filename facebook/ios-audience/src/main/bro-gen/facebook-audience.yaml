@@ -1,6 +1,15 @@
 package: org.robovm.pods.facebook.audience
 framework: FBAudienceNetwork
-include: [foundation, coregraphics, dispatch, coremedia, uikit, storekit, avfoundation, ../../../../ios-core/src/main/bro-gen/facebook-core.yaml]
+include:
+    - foundation
+    - coregraphics
+    - dispatch
+    - coremedia
+    - coreanimation
+    - uikit
+    - storekit
+    - avfoundation
+    - ../../../../ios-core/src/main/bro-gen/facebook-core.yaml
 clang_args: ['-x', 'objective-c']
 headers: 
     - FBAudienceNetwork.h
@@ -241,6 +250,7 @@ classes:
     FBInterstitialAdBridgeContainer: {exclude: true}
     FBRewardedVideoAdBridgeContainer: {exclude: true}
 
+    FBAdSDKNotificationManager: {}
 protocols:
     FBAdLoggingDelegate:
         methods:
@@ -278,6 +288,10 @@ protocols:
         methods:
             '-rewardedVideoAd:didFailWithError:':
                 name: didFail
+    FBAdSDKNotificationListener:
+        methods:
+            '-onFBAdEvent:eventData:':
+                name: onFBAdEvent
 functions:
     # exclude Audience Network Unity SDK bridge
     FB(.*)Bridge.*:

@@ -32,6 +32,7 @@ import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -46,7 +47,7 @@ import org.robovm.apple.webkit.*;
     /*<bind>*/
     /*</bind>*/
     /*<constants>*/
-    public static final String Version = "8.1.0";
+    public static final String Version = "8.2.0";
     public static final String PlatformVersion = "v8.0";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
