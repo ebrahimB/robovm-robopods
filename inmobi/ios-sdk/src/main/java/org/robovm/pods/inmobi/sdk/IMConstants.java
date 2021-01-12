@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corelocation.*;
 import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -46,6 +47,7 @@ import org.robovm.apple.coregraphics.*;
     /*<constants>*/
     public static final String IM_GDPR_CONSENT_AVAILABLE = "gdpr_consent_available";
     public static final String IM_GDPR_CONSENT_IAB = "gdpr_consent";
+    public static final String IM_SUBJECT_TO_GDPR = "gdpr";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

@@ -10,8 +10,9 @@
 
 #import <UIKit/UIKit.h>
 
-static const NSString * IM_GDPR_CONSENT_AVAILABLE = @"gdpr_consent_available";
-static const NSString * IM_GDPR_CONSENT_IAB = @"gdpr_consent";
+static NSString * const IM_GDPR_CONSENT_AVAILABLE = @"gdpr_consent_available";
+static NSString * const IM_GDPR_CONSENT_IAB = @"gdpr_consent";
+static NSString * const IM_SUBJECT_TO_GDPR = @"gdpr";
 
 typedef NS_ENUM(NSInteger, IMSDKLogLevel) {
     kIMSDKLogLevelNone,

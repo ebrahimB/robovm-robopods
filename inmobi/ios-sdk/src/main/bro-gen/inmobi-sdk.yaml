@@ -1,6 +1,6 @@
 package: org.robovm.pods.inmobi.sdk
 framework: InMobiSDK
-include: [foundation, uikit, corelocation, coregraphics]
+include: [foundation, uikit, corelocation, coregraphics, coreanimation]
 clang_args: ['-x', 'objective-c']
 headers: 
     - InMobiSDK.h
@@ -234,6 +234,8 @@ constants:
     IM_GDPR_CONSENT_AVAILABLE:
         class: IMConstants
     IM_GDPR_CONSENT_IAB:
+        class: IMConstants
+    IM_SUBJECT_TO_GDPR:
         class: IMConstants
 
     # Make sure we don't miss any constants if new ones are introduced in a later version

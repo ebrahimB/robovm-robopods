@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corelocation.*;
 import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -51,11 +52,22 @@ import org.robovm.apple.coregraphics.*;
     public IMRequestStatus(String domain, IMStatusCode code, NSErrorUserInfo dict) { super((SkipInit) null); initObject(init(domain, code, dict)); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithDomain:code:userInfo:")
     protected native @Pointer long init(String domain, IMStatusCode code, NSErrorUserInfo dict);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "setUserInfoValueProviderForDomain:provider:")
+    public static native void setUserInfoValueProvider(String errorDomain, @Block Block2<NSError, String, NSObject> provider);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInfoValueProviderForDomain:")
+    public static native @Block Block2<NSError, String, NSObject> getUserInfoValueProvider(NSError err, String userInfoKey, String errorDomain);
     /*</methods>*/
 }
