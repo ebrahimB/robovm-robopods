@@ -2,7 +2,10 @@
 
 ### Frameworks required for this pod: 
 * Firebase.zip/Google-Mobile-Ads-SDK/GoogleMobileAds.framework
-
+* FirebaseAnalytics/GoogleAppMeasurement.xcframework/${arch}/GoogleAppMeasurement.framework
+* GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+* PromisesObjC.framework (from Firebase.zip/FirebaseAnalytics/PromisesObjC.xcframework)
+* nanopb.framework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 ### to use this pod configure your `robovm.xml`
 
 ```
@@ -30,7 +33,6 @@ UIApplicationDelegateAdapter:
 ```java
 @Override
 public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
-    FIRApp.configure();
     GADMobileAds.sharedInstance().start(status -> {
         GADMobileAds.sharedInstance().getRequestConfiguration().setTestDeviceIdentifiers(new NSArray<>(GADRequest.GADSimulatorID()));
     });
