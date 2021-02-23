@@ -55,6 +55,8 @@ import org.robovm.apple.foundation.*;
     public native void log(String msg);
     @Method(selector = "setCustomValue:forKey:")
     public native void setCustomValue(NSObject value, String key);
+    @Method(selector = "setCustomKeysAndValues:")
+    public native void setCustomKeysAndValues(NSDictionary<?, ?> keysAndValues);
     @Method(selector = "setUserID:")
     public native void setUserID(String userID);
     @Method(selector = "recordError:")

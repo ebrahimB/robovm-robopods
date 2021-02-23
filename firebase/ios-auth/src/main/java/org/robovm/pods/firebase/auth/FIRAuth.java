@@ -62,6 +62,10 @@ import org.robovm.apple.uikit.*;
     public native void setSettings(FIRAuthSettings v);
     @Property(selector = "userAccessGroup")
     public native String getUserAccessGroup();
+    @Property(selector = "shareAuthStateAcrossDevices")
+    public native boolean isShareAuthStateAcrossDevices();
+    @Property(selector = "setShareAuthStateAcrossDevices:")
+    public native void setShareAuthStateAcrossDevices(boolean v);
     @Property(selector = "tenantID")
     public native String getTenantID();
     @Property(selector = "setTenantID:")
