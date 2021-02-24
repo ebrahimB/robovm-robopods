@@ -51,6 +51,8 @@ import org.robovm.apple.foundation.*;
     public native NSURL getUrl();
     @Property(selector = "matchType")
     public native FIRDLMatchType getMatchType();
+    @Property(selector = "utmParametersDictionary")
+    public native NSDictionary<NSString, ?> getUtmParametersDictionary();
     @Property(selector = "minimumAppVersion")
     public native String getMinimumAppVersion();
     /*</properties>*/

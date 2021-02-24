@@ -53,6 +53,12 @@ classes:
                 name: queryEndingAtValue
             '-queryEqualToValue:childKey:':
                 name: queryEqualToValue
+            '-getDataWithCompletionBlock:':
+                name: getData
+            '-queryStartingAfterValue:childKey:':
+                name: queryStartingAfterValue
+            '-queryEndingBeforeValue:childKey:':
+                name: queryEndingBeforeValue
     FIRDatabaseReference:
         methods:
             '-setValue:withCompletionBlock:':

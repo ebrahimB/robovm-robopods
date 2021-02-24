@@ -101,6 +101,8 @@ import org.robovm.apple.dispatch.*;
     public native void observeSingleEvent(FIRDataEventType eventType, @Block VoidBlock1<FIRDataSnapshot> block, @Block VoidBlock1<NSError> cancelBlock);
     @Method(selector = "observeSingleEventOfType:andPreviousSiblingKeyWithBlock:withCancelBlock:")
     public native void observeSingleEvent(FIRDataEventType eventType, @Block VoidBlock2<FIRDataSnapshot, NSString> block, @Block VoidBlock1<NSError> cancelBlock);
+    @Method(selector = "getDataWithCompletionBlock:")
+    public native void getData(@Block VoidBlock2<NSError, FIRDataSnapshot> block);
     @Method(selector = "removeObserverWithHandle:")
     public native void removeObserver(@MachineSizedUInt long handle);
     @Method(selector = "keepSynced:")
@@ -121,6 +123,10 @@ import org.robovm.apple.dispatch.*;
     public native FIRDatabaseQuery queryStartingAtValue(NSObject startValue);
     @Method(selector = "queryStartingAtValue:childKey:")
     public native FIRDatabaseQuery queryStartingAtValue(NSObject startValue, String childKey);
+    @Method(selector = "queryStartingAfterValue:")
+    public native FIRDatabaseQuery queryStartingAfterValue(NSObject startAfterValue);
+    @Method(selector = "queryStartingAfterValue:childKey:")
+    public native FIRDatabaseQuery queryStartingAfterValue(NSObject startAfterValue, String childKey);
     @Method(selector = "queryEndingAtValue:")
     public native FIRDatabaseQuery queryEndingAtValue(NSObject endValue);
     @Method(selector = "queryEndingAtValue:childKey:")
