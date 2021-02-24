@@ -72,14 +72,22 @@ import org.robovm.apple.coreanimation.*;
     public static native @ByVal GADAdSize Leaderboard();
     @GlobalValue(symbol="kGADAdSizeSkyscraper", optional=true)
     public static native @ByVal GADAdSize Skyscraper();
-    @GlobalValue(symbol="kGADAdSizeSmartBannerPortrait", optional=true)
-    public static native @ByVal GADAdSize SmartBannerPortrait();
-    @GlobalValue(symbol="kGADAdSizeSmartBannerLandscape", optional=true)
-    public static native @ByVal GADAdSize SmartBannerLandscape();
     @GlobalValue(symbol="kGADAdSizeFluid", optional=true)
     public static native @ByVal GADAdSize Fluid();
     @GlobalValue(symbol="kGADAdSizeInvalid", optional=true)
     public static native @ByVal GADAdSize Invalid();
+    /**
+     * @deprecated Use GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth.
+     */
+    @Deprecated
+    @GlobalValue(symbol="kGADAdSizeSmartBannerPortrait", optional=true)
+    public static native @ByVal GADAdSize SmartBannerPortrait();
+    /**
+     * @deprecated Use GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth
+     */
+    @Deprecated
+    @GlobalValue(symbol="kGADAdSizeSmartBannerLandscape", optional=true)
+    public static native @ByVal GADAdSize SmartBannerLandscape();
     
     @Bridge(symbol="GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth", optional=true)
     public static native @ByVal GADAdSize getPortraitAnchoredAdaptiveBannerAdSize(@MachineSizedFloat double width);

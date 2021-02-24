@@ -53,7 +53,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("adLoader:didFailToReceiveAdWithError:")
-    public void didFailToReceiveAd(GADAdLoader adLoader, GADRequestError error) {}
+    public void didFailToReceiveAd(GADAdLoader adLoader, NSError error) {}
     @NotImplemented("adLoaderDidFinishLoading:")
     public void didFinishLoading(GADAdLoader adLoader) {}
     /*</methods>*/

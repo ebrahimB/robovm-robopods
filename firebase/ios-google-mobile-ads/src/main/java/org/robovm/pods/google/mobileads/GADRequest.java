@@ -77,30 +77,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getRequestAgent();
     @Property(selector = "setRequestAgent:")
     public native void setRequestAgent(String v);
-    /**
-     * @deprecated Use GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers.
-     */
-    @Deprecated
-    @Property(selector = "testDevices")
-    public native NSArray<NSString> getTestDevices();
-    /**
-     * @deprecated Use GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers.
-     */
-    @Deprecated
-    @Property(selector = "setTestDevices:")
-    public native void setTestDevices(NSArray<NSString> v);
-    @Deprecated
-    @Property(selector = "gender")
-    public native GADGender getGender();
-    @Deprecated
-    @Property(selector = "setGender:")
-    public native void setGender(GADGender v);
-    @Deprecated
-    @Property(selector = "birthday")
-    public native NSDate getBirthday();
-    @Deprecated
-    @Property(selector = "setBirthday:")
-    public native void setBirthday(NSDate v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -115,28 +91,7 @@ import org.robovm.apple.coreanimation.*;
     public native void removeAdNetworkExtrasFor(Class<?> aClass);
     @Method(selector = "setLocationWithLatitude:longitude:accuracy:")
     public native void setLocation(@MachineSizedFloat double latitude, @MachineSizedFloat double longitude, @MachineSizedFloat double accuracyInMeters);
-    @Deprecated
-    @Method(selector = "setBirthdayWithMonth:day:year:")
-    public native void setBirthday(@MachineSizedSInt long month, @MachineSizedSInt long day, @MachineSizedSInt long year);
-    /**
-     * @deprecated use setLocationWithLatitude:longitude:accuracy:.
-     */
-    @Deprecated
-    @Method(selector = "setLocationWithDescription:")
-    public native void setLocation(String locationDescription);
-    /**
-     * @deprecated use [GADMobileAds.sharedInstance.requestConfiguration tagForChildDirectedTreatment]
-     */
-    @Deprecated
-    @Method(selector = "tagForChildDirectedTreatment:")
-    public native void tagForChildDirectedTreatment(boolean childDirectedTreatment);
     @Method(selector = "request")
     public static native GADRequest request();
-    /**
-     * @deprecated Use GADMobileAds.sharedInstance.sdkVersion
-     */
-    @Deprecated
-    @Method(selector = "sdkVersion")
-    public static native String sdkVersion();
     /*</methods>*/
 }

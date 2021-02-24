@@ -46,22 +46,12 @@ public enum /*<name>*/GADErrorCode/*</name>*/ implements NSErrorCode {
     ServerError(3L),
     OSVersionTooLow(4L),
     Timeout(5L),
-    /**
-     * @deprecated Use kGADErrorAdAlreadyUsed.
-     */
-    @Deprecated
-    InterstitialAlreadyUsed(6L),
     MediationDataError(7L),
     MediationAdapterError(8L),
     MediationInvalidAdSize(10L),
     InternalError(11L),
     InvalidArgument(12L),
     ReceivedInvalidResponse(13L),
-    /**
-     * @deprecated Use kGADErrorAdAlreadyUsed.
-     */
-    @Deprecated
-    RewardedAdAlreadyUsed(14L),
     MediationNoFill(9L),
     AdAlreadyUsed(19L),
     ApplicationIdentifierMissing(20L);
@@ -71,7 +61,7 @@ public enum /*<name>*/GADErrorCode/*</name>*/ implements NSErrorCode {
     /*<constants>*//*</constants>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="kGADErrorDomain", optional=true)
+    @GlobalValue(symbol="GADErrorDomain", optional=true)
     public static native String getClassDomain();
     /*</methods>*/
 

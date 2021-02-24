@@ -70,17 +70,5 @@ import org.robovm.apple.coreanimation.*;
     public native boolean customControlsEnabled();
     @Method(selector = "clickToExpandEnabled")
     public native boolean clickToExpandEnabled();
-    /**
-     * @deprecated Use the hasVideoContent property from GADUnifiedNativeAd's mediaContent instead.
-     */
-    @Deprecated
-    @Method(selector = "hasVideoContent")
-    public native boolean hasVideoContent();
-    /**
-     * @deprecated Use the aspectRatio property from GADUnifiedNativeAd's mediaContent instead.
-     */
-    @Deprecated
-    @Method(selector = "aspectRatio")
-    public native double aspectRatio();
     /*</methods>*/
 }

@@ -91,12 +91,12 @@ import org.robovm.apple.coreanimation.*;
     /*</marshalers>*/
 
     /*<constants>*/
-    public static final GADAdLoaderAdType NativeCustomTemplate = new GADAdLoaderAdType("NativeCustomTemplate");
-    public static final GADAdLoaderAdType DFPBanner = new GADAdLoaderAdType("DFPBanner");
-    public static final GADAdLoaderAdType UnifiedNative = new GADAdLoaderAdType("UnifiedNative");
+    public static final GADAdLoaderAdType CustomNative = new GADAdLoaderAdType("CustomNative");
+    public static final GADAdLoaderAdType GAMBanner = new GADAdLoaderAdType("GAMBanner");
+    public static final GADAdLoaderAdType Native = new GADAdLoaderAdType("Native");
     /*</constants>*/
     
-    private static /*<name>*/GADAdLoaderAdType/*</name>*/[] values = new /*<name>*/GADAdLoaderAdType/*</name>*/[] {/*<value_list>*/NativeCustomTemplate, DFPBanner, UnifiedNative/*</value_list>*/};
+    private static /*<name>*/GADAdLoaderAdType/*</name>*/[] values = new /*<name>*/GADAdLoaderAdType/*</name>*/[] {/*<value_list>*/CustomNative, GAMBanner, Native/*</value_list>*/};
     
     /*<name>*/GADAdLoaderAdType/*</name>*/ (String getterName) {
         super(Values.class, getterName);
@@ -119,12 +119,12 @@ import org.robovm.apple.coreanimation.*;
     	static { Bro.bind(Values.class); }
 
         /*<values>*/
-        @GlobalValue(symbol="kGADAdLoaderAdTypeNativeCustomTemplate", optional=true)
-        public static native NSString NativeCustomTemplate();
-        @GlobalValue(symbol="kGADAdLoaderAdTypeDFPBanner", optional=true)
-        public static native NSString DFPBanner();
-        @GlobalValue(symbol="kGADAdLoaderAdTypeUnifiedNative", optional=true)
-        public static native NSString UnifiedNative();
+        @GlobalValue(symbol="kGADAdLoaderAdTypeCustomNative", optional=true)
+        public static native NSString CustomNative();
+        @GlobalValue(symbol="kGADAdLoaderAdTypeGAMBanner", optional=true)
+        public static native NSString GAMBanner();
+        @GlobalValue(symbol="kGADAdLoaderAdTypeNative", optional=true)
+        public static native NSString Native();
         /*</values>*/
     }
 }

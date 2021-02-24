@@ -59,18 +59,6 @@ import org.robovm.apple.coreanimation.*;
     public native boolean shouldRequestMultipleImages();
     @Property(selector = "setShouldRequestMultipleImages:")
     public native void setShouldRequestMultipleImages(boolean v);
-    /**
-     * @deprecated Use the mediaAspectRatio property from GADNativeAdMediaAdLoaderOptions instead.
-     */
-    @Deprecated
-    @Property(selector = "preferredImageOrientation")
-    public native GADNativeAdImageAdLoaderOptionsOrientation getPreferredImageOrientation();
-    /**
-     * @deprecated Use the mediaAspectRatio property from GADNativeAdMediaAdLoaderOptions instead.
-     */
-    @Deprecated
-    @Property(selector = "setPreferredImageOrientation:")
-    public native void setPreferredImageOrientation(GADNativeAdImageAdLoaderOptionsOrientation v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -67,12 +67,6 @@ import org.robovm.apple.coreanimation.*;
     public native NSDictionary<?, ?> getAdditionalParameters();
     @Property(selector = "isTesting")
     public native boolean isTesting();
-    @Deprecated
-    @Property(selector = "userGender")
-    public native GADGender getUserGender();
-    @Deprecated
-    @Property(selector = "userBirthday")
-    public native NSDate getUserBirthday();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

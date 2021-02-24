@@ -51,6 +51,26 @@ import org.robovm.apple.coreanimation.*;
     protected GADNativeAd(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "headline")
+    public native String getHeadline();
+    @Property(selector = "callToAction")
+    public native String getCallToAction();
+    @Property(selector = "icon")
+    public native GADNativeAdImage getIcon();
+    @Property(selector = "body")
+    public native String getBody();
+    @Property(selector = "images")
+    public native NSArray<GADNativeAdImage> getImages();
+    @Property(selector = "starRating")
+    public native NSDecimalNumber getStarRating();
+    @Property(selector = "store")
+    public native String getStore();
+    @Property(selector = "price")
+    public native String getPrice();
+    @Property(selector = "advertiser")
+    public native String getAdvertiser();
+    @Property(selector = "mediaContent")
+    public native GADMediaContent getMediaContent();
     @Property(selector = "delegate")
     public native GADNativeAdDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
@@ -60,18 +80,39 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setRootViewController:", strongRef = true)
     public native void setRootViewController(UIViewController v);
     @Property(selector = "extraAssets")
-    public native NSDictionary<?, ?> getExtraAssets();
+    public native NSDictionary<NSString, ?> getExtraAssets();
     @Property(selector = "responseInfo")
     public native GADResponseInfo getResponseInfo();
-    /**
-     * @deprecated Use responseInfo.adNetworkClassName.
-     */
-    @Deprecated
-    @Property(selector = "adNetworkClassName")
-    public native String getAdNetworkClassName();
+    @Property(selector = "paidEventHandler")
+    public native @Block VoidBlock1<GADAdValue> getPaidEventHandler();
+    @Property(selector = "setPaidEventHandler:")
+    public native void setPaidEventHandler(@Block VoidBlock1<GADAdValue> v);
+    @Property(selector = "isCustomMuteThisAdAvailable")
+    public native boolean isCustomMuteThisAdAvailable();
+    @Property(selector = "muteThisAdReasons")
+    public native NSArray<GADMuteThisAdReason> getMuteThisAdReasons();
+    @Property(selector = "unconfirmedClickDelegate")
+    public native GADNativeAdUnconfirmedClickDelegate getUnconfirmedClickDelegate();
+    @Property(selector = "setUnconfirmedClickDelegate:", strongRef = true)
+    public native void setUnconfirmedClickDelegate(GADNativeAdUnconfirmedClickDelegate v);
+    @Property(selector = "isCustomClickGestureEnabled")
+    public native boolean isCustomClickGestureEnabled();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "registerAdView:clickableAssetViews:nonclickableAssetViews:")
+    public native void registerAdView(UIView adView, NSDictionary<NSString, UIView> clickableAssetViews, NSDictionary<NSString, UIView> nonclickableAssetViews);
+    @Method(selector = "unregisterAdView")
+    public native void unregisterAdView();
+    @Method(selector = "muteThisAdWithReason:")
+    public native void muteThisAd(GADMuteThisAdReason reason);
+    @Method(selector = "registerClickConfirmingView:")
+    public native void registerClickConfirmingView(UIView view);
+    @Method(selector = "cancelUnconfirmedClick")
+    public native void cancelUnconfirmedClick();
+    @Method(selector = "enableCustomClickGestures")
+    public native void enableCustomClickGestures();
+    @Method(selector = "recordCustomClickGesture")
+    public native void recordCustomClickGesture();
     /*</methods>*/
 }

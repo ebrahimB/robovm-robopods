@@ -88,7 +88,7 @@ import org.robovm.apple.coreanimation.*;
     @NotImplemented("didRecordImpression")
     public void didRecordImpression() {}
     @NotImplemented("didRecordClickOnAssetWithName:view:viewController:")
-    public void didRecordClickOnAsset(GADUnifiedNativeAssetIdentifier assetName, UIView view, UIViewController viewController) {}
+    public void didRecordClickOnAsset(GADNativeAssetIdentifier assetName, UIView view, UIViewController viewController) {}
     @NotImplemented("didUntrackView:")
     public void didUntrackView(UIView view) {}
     /*</methods>*/

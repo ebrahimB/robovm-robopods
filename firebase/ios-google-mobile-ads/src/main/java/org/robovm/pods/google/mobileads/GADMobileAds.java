@@ -91,23 +91,5 @@ import org.robovm.apple.coreanimation.*;
     public native void presentAdInspector(UIViewController viewController, @Block VoidBlock1<NSError> completionHandler);
     @Method(selector = "sharedInstance")
     public static native GADMobileAds sharedInstance();
-    /**
-     * @deprecated Use [GADMobileAds.sharedInstance startWithCompletionHandler:]
-     */
-    @Deprecated
-    @Method(selector = "configureWithApplicationID:")
-    public static native void configure(String applicationID);
-    /**
-     * @deprecated Use [GADMobileAds.sharedInstance disableAutomatedInAppPurchaseReporting]
-     */
-    @Deprecated
-    @Method(selector = "disableAutomatedInAppPurchaseReporting")
-    public static native void DisableAutomatedInAppPurchaseReporting();
-    /**
-     * @deprecated Use [GADMobileAds.sharedInstance disableSDKCrashReporting]
-     */
-    @Deprecated
-    @Method(selector = "disableSDKCrashReporting")
-    public static native void DisableSDKCrashReporting();
     /*</methods>*/
 }

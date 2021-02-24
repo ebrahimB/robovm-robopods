@@ -89,27 +89,6 @@ import org.robovm.apple.coreanimation.*;
     public native @Block VoidBlock1<GADAdValue> getPaidEventHandler();
     @Property(selector = "setPaidEventHandler:")
     public native void setPaidEventHandler(@Block VoidBlock1<GADAdValue> v);
-    @Deprecated
-    @Property(selector = "hasAutoRefreshed")
-    public native boolean hasAutoRefreshed();
-    @Deprecated
-    @Property(selector = "inAppPurchaseDelegate")
-    public native GADInAppPurchaseDelegate getInAppPurchaseDelegate();
-    @Deprecated
-    @Property(selector = "setInAppPurchaseDelegate:", strongRef = true)
-    public native void setInAppPurchaseDelegate(GADInAppPurchaseDelegate v);
-    /**
-     * @deprecated Use responseInfo.adNetworkClassName.
-     */
-    @Deprecated
-    @Property(selector = "mediatedAdView")
-    public native UIView getMediatedAdView();
-    /**
-     * @deprecated Use responseInfo.adNetworkClassName.
-     */
-    @Deprecated
-    @Property(selector = "adNetworkClassName")
-    public native String getAdNetworkClassName();
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();

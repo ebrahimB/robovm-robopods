@@ -60,8 +60,8 @@ import org.robovm.apple.coreanimation.*;
     void willDismissScreen(GADNativeAd nativeAd);
     @Method(selector = "nativeAdDidDismissScreen:")
     void didDismissScreen(GADNativeAd nativeAd);
-    @Method(selector = "nativeAdWillLeaveApplication:")
-    void willLeaveApplication(GADNativeAd nativeAd);
+    @Method(selector = "nativeAdIsMuted:")
+    void nativeAdIsMuted(GADNativeAd nativeAd);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

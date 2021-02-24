@@ -218,11 +218,5 @@ import org.robovm.apple.coreanimation.*;
     public native void setAdvancedOption(NSObject value, String key);
     @Method(selector = "request")
     public static native GADDynamicHeightSearchRequest request();
-    /**
-     * @deprecated Use GADMobileAds.sharedInstance.sdkVersion
-     */
-    @Deprecated
-    @Method(selector = "sdkVersion")
-    public static native String sdkVersion();
     /*</methods>*/
 }

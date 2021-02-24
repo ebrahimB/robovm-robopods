@@ -40,7 +40,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/GADRewardedAd/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements GADAdMetadataProvider, GADFullScreenPresentingAd/*</implements>*/ {
 
     /*<ptr>*/public static class GADRewardedAdPtr extends Ptr<GADRewardedAd, GADRewardedAdPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(GADRewardedAd.class); }/*</bind>*/
@@ -49,48 +49,40 @@ import org.robovm.apple.coreanimation.*;
     public GADRewardedAd() {}
     protected GADRewardedAd(Handle h, long handle) { super(h, handle); }
     protected GADRewardedAd(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithAdUnitID:")
-    public GADRewardedAd(String adUnitID) { super((SkipInit) null); initObject(init(adUnitID)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "adUnitID")
     public native String getAdUnitID();
-    @Property(selector = "isReady")
-    public native boolean isReady();
     @Property(selector = "responseInfo")
     public native GADResponseInfo getResponseInfo();
-    @Property(selector = "reward")
-    public native GADAdReward getReward();
+    @Property(selector = "adReward")
+    public native GADAdReward getAdReward();
     @Property(selector = "serverSideVerificationOptions")
     public native GADServerSideVerificationOptions getServerSideVerificationOptions();
     @Property(selector = "setServerSideVerificationOptions:")
     public native void setServerSideVerificationOptions(GADServerSideVerificationOptions v);
-    @Property(selector = "adMetadata")
-    public native NSDictionary<NSString, ?> getAdMetadata();
-    @Property(selector = "adMetadataDelegate")
-    public native GADRewardedAdMetadataDelegate getAdMetadataDelegate();
-    @Property(selector = "setAdMetadataDelegate:", strongRef = true)
-    public native void setAdMetadataDelegate(GADRewardedAdMetadataDelegate v);
+    @Property(selector = "fullScreenContentDelegate")
+    public native GADFullScreenContentDelegate getFullScreenContentDelegate();
+    @Property(selector = "setFullScreenContentDelegate:", strongRef = true)
+    public native void setFullScreenContentDelegate(GADFullScreenContentDelegate v);
     @Property(selector = "paidEventHandler")
     public native @Block VoidBlock1<GADAdValue> getPaidEventHandler();
     @Property(selector = "setPaidEventHandler:")
     public native void setPaidEventHandler(@Block VoidBlock1<GADAdValue> v);
-    /**
-     * @deprecated Use responseInfo.adNetworkClassName.
-     */
-    @Deprecated
-    @Property(selector = "adNetworkClassName")
-    public native String getAdNetworkClassName();
+    @Property(selector = "adMetadata")
+    public native NSDictionary<NSString, ?> getAdMetadata();
+    @Property(selector = "adMetadataDelegate")
+    public native GADAdMetadataDelegate getAdMetadataDelegate();
+    @Property(selector = "setAdMetadataDelegate:", strongRef = true)
+    public native void setAdMetadataDelegate(GADAdMetadataDelegate v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithAdUnitID:")
-    protected native @Pointer long init(String adUnitID);
-    @Method(selector = "loadRequest:completionHandler:")
-    public native void loadRequest(GADRequest request, @Block VoidBlock1<GADRequestError> completionHandler);
     @Method(selector = "canPresentFromRootViewController:error:")
     public native boolean canPresent(UIViewController rootViewController, NSError.NSErrorPtr error);
-    @Method(selector = "presentFromRootViewController:delegate:")
-    public native void present(UIViewController viewController, GADRewardedAdDelegate delegate);
+    @Method(selector = "presentFromRootViewController:userDidEarnRewardHandler:")
+    public native void present(UIViewController rootViewController, @Block Runnable userDidEarnRewardHandler);
+    @Method(selector = "loadWithAdUnitID:request:completionHandler:")
+    public static native void load(String adUnitID, GADRequest request, @Block VoidBlock2<GADRewardedAd, NSError> completionHandler);
     /*</methods>*/
 }

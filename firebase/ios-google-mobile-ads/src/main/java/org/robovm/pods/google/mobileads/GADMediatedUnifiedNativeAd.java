@@ -86,7 +86,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "didRecordImpression")
     void didRecordImpression();
     @Method(selector = "didRecordClickOnAssetWithName:view:viewController:")
-    void didRecordClickOnAsset(GADUnifiedNativeAssetIdentifier assetName, UIView view, UIViewController viewController);
+    void didRecordClickOnAsset(GADNativeAssetIdentifier assetName, UIView view, UIViewController viewController);
     @Method(selector = "didUntrackView:")
     void didUntrackView(UIView view);
     /*</methods>*/

@@ -50,20 +50,18 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "adViewDidReceiveAd:")
+    @Method(selector = "bannerViewDidReceiveAd:")
     void didReceiveAd(GADBannerView bannerView);
-    @Method(selector = "adView:didFailToReceiveAdWithError:")
-    void didFailToReceiveAd(GADBannerView bannerView, GADRequestError error);
-    @Method(selector = "adViewDidRecordImpression:")
+    @Method(selector = "bannerView:didFailToReceiveAdWithError:")
+    void didFailToReceiveAd(GADBannerView bannerView, NSError error);
+    @Method(selector = "bannerViewDidRecordImpression:")
     void didRecordImpression(GADBannerView bannerView);
-    @Method(selector = "adViewWillPresentScreen:")
+    @Method(selector = "bannerViewWillPresentScreen:")
     void willPresentScreen(GADBannerView bannerView);
-    @Method(selector = "adViewWillDismissScreen:")
+    @Method(selector = "bannerViewWillDismissScreen:")
     void willDismissScreen(GADBannerView bannerView);
-    @Method(selector = "adViewDidDismissScreen:")
+    @Method(selector = "bannerViewDidDismissScreen:")
     void didDismissScreen(GADBannerView bannerView);
-    @Method(selector = "adViewWillLeaveApplication:")
-    void willLeaveApplication(GADBannerView bannerView);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

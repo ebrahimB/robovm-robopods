@@ -54,7 +54,7 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @NotImplemented("adView:didReceiveAppEvent:withInfo:")
     public void didReceiveAppEvent(GADBannerView banner, String name, String info) {}
-    @NotImplemented("interstitial:didReceiveAppEvent:withInfo:")
-    public void didReceiveAppEvent(GADInterstitial interstitial, String name, String info) {}
+    @NotImplemented("interstitialAd:didReceiveAppEvent:withInfo:")
+    public void didReceiveAppEvent(GADInterstitialAd interstitialAd, String name, String info) {}
     /*</methods>*/
 }

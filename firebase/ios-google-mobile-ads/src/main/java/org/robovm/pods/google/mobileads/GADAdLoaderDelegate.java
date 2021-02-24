@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "adLoader:didFailToReceiveAdWithError:")
-    void didFailToReceiveAd(GADAdLoader adLoader, GADRequestError error);
+    void didFailToReceiveAd(GADAdLoader adLoader, NSError error);
     @Method(selector = "adLoaderDidFinishLoading:")
     void didFinishLoading(GADAdLoader adLoader);
     /*</methods>*/

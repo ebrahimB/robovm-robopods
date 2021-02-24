@@ -52,19 +52,17 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("adViewDidReceiveAd:")
+    @NotImplemented("bannerViewDidReceiveAd:")
     public void didReceiveAd(GADBannerView bannerView) {}
-    @NotImplemented("adView:didFailToReceiveAdWithError:")
-    public void didFailToReceiveAd(GADBannerView bannerView, GADRequestError error) {}
-    @NotImplemented("adViewDidRecordImpression:")
+    @NotImplemented("bannerView:didFailToReceiveAdWithError:")
+    public void didFailToReceiveAd(GADBannerView bannerView, NSError error) {}
+    @NotImplemented("bannerViewDidRecordImpression:")
     public void didRecordImpression(GADBannerView bannerView) {}
-    @NotImplemented("adViewWillPresentScreen:")
+    @NotImplemented("bannerViewWillPresentScreen:")
     public void willPresentScreen(GADBannerView bannerView) {}
-    @NotImplemented("adViewWillDismissScreen:")
+    @NotImplemented("bannerViewWillDismissScreen:")
     public void willDismissScreen(GADBannerView bannerView) {}
-    @NotImplemented("adViewDidDismissScreen:")
+    @NotImplemented("bannerViewDidDismissScreen:")
     public void didDismissScreen(GADBannerView bannerView) {}
-    @NotImplemented("adViewWillLeaveApplication:")
-    public void willLeaveApplication(GADBannerView bannerView) {}
     /*</methods>*/
 }
