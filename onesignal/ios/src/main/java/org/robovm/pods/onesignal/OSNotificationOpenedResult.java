@@ -58,5 +58,7 @@ import org.robovm.apple.uikit.*;
     /*<methods>*/
     @Method(selector = "stringify")
     public native String stringify();
+    @Method(selector = "jsonRepresentation")
+    public native NSDictionary<?, ?> jsonRepresentation();
     /*</methods>*/
 }

@@ -49,22 +49,50 @@ import org.robovm.apple.uikit.*;
     protected OSNotification(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "payload")
-    public native OSNotificationPayload getPayload();
-    @Property(selector = "displayType")
-    public native OSNotificationDisplayType getDisplayType();
-    @Property(selector = "wasShown")
-    public native boolean isShown();
-    @Property(selector = "wasAppInFocus")
-    public native boolean isAppInFocus();
-    @Property(selector = "isSilentNotification")
-    public native boolean isSilentNotification();
+    @Property(selector = "notificationId")
+    public native String getNotificationId();
+    @Property(selector = "templateId")
+    public native String getTemplateId();
+    @Property(selector = "templateName")
+    public native String getTemplateName();
+    @Property(selector = "contentAvailable")
+    public native boolean isContentAvailable();
     @Property(selector = "hasMutableContent")
     public native boolean isMutableContent();
+    @Property(selector = "category")
+    public native String getCategory();
+    @Property(selector = "badge")
+    public native @MachineSizedSInt long getBadge();
+    @Property(selector = "badgeIncrement")
+    public native @MachineSizedSInt long getBadgeIncrement();
+    @Property(selector = "sound")
+    public native String getSound();
+    @Property(selector = "title")
+    public native String getTitle();
+    @Property(selector = "subtitle")
+    public native String getSubtitle();
+    @Property(selector = "body")
+    public native String getBody();
+    @Property(selector = "launchURL")
+    public native String getLaunchURL();
+    @Property(selector = "additionalData")
+    public native NSDictionary<?, ?> getAdditionalData();
+    @Property(selector = "attachments")
+    public native NSDictionary<?, ?> getAttachments();
+    @Property(selector = "actionButtons")
+    public native NSArray<?> getActionButtons();
+    @Property(selector = "rawPayload")
+    public native NSDictionary<?, ?> getRawPayload();
+    @Property(selector = "threadId")
+    public native String getThreadId();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "jsonRepresentation")
+    public native NSDictionary<?, ?> jsonRepresentation();
     @Method(selector = "stringify")
     public native String stringify();
+    @Method(selector = "parseWithApns:")
+    public static native OSNotification parse(NSDictionary<?, ?> message);
     /*</methods>*/
 }

@@ -35,27 +35,31 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSNotificationAction/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/OSInfluenceType/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    DIRECT(0L),
+    INDIRECT(1L),
+    UNATTRIBUTED(2L),
+    DISABLED(3L);
+    /*</values>*/
 
-    /*<ptr>*/public static class OSNotificationActionPtr extends Ptr<OSNotificationAction, OSNotificationActionPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(OSNotificationAction.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    public OSNotificationAction() {}
-    protected OSNotificationAction(Handle h, long handle) { super(h, handle); }
-    protected OSNotificationAction(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
-    /*<properties>*/
-    @Property(selector = "type")
-    public native OSNotificationActionType getType();
-    @Property(selector = "actionId")
-    public native String getActionId();
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/OSInfluenceType/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/OSInfluenceType/*</name>*/ valueOf(long n) {
+        for (/*<name>*/OSInfluenceType/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/OSInfluenceType/*</name>*/.class.getName());
+    }
 }

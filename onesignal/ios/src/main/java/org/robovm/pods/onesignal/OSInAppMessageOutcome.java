@@ -36,26 +36,35 @@ import org.robovm.apple.uikit.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSNotificationAction/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSInAppMessageOutcome/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class OSNotificationActionPtr extends Ptr<OSNotificationAction, OSNotificationActionPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(OSNotificationAction.class); }/*</bind>*/
+    /*<ptr>*/public static class OSInAppMessageOutcomePtr extends Ptr<OSInAppMessageOutcome, OSInAppMessageOutcomePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(OSInAppMessageOutcome.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public OSNotificationAction() {}
-    protected OSNotificationAction(Handle h, long handle) { super(h, handle); }
-    protected OSNotificationAction(SkipInit skipInit) { super(skipInit); }
+    public OSInAppMessageOutcome() {}
+    protected OSInAppMessageOutcome(Handle h, long handle) { super(h, handle); }
+    protected OSInAppMessageOutcome(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "type")
-    public native OSNotificationActionType getType();
-    @Property(selector = "actionId")
-    public native String getActionId();
+    @Property(selector = "name")
+    public native String getName();
+    @Property(selector = "setName:")
+    public native void setName(String v);
+    @Property(selector = "weight")
+    public native NSNumber getWeight();
+    @Property(selector = "setWeight:")
+    public native void setWeight(NSNumber v);
+    @Property(selector = "unique")
+    public native boolean isUnique();
+    @Property(selector = "setUnique:")
+    public native void setUnique(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "jsonRepresentation")
+    public native NSDictionary<?, ?> jsonRepresentation();
     /*</methods>*/
 }

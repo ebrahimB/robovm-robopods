@@ -16,8 +16,12 @@ enums:
     ONE_S_LOG_LEVEL: {name: OSLogLevel, prefix: ONE_S_LL_}
     Session: {name: OSSession}
     OSInfluenceChannel: {}
+    OSInfluenceType: {}
 classes:
-    OSNotification: {}
+    OSNotification:
+        methods:
+            '+parseWithApns:':
+                name: parse
     OSNotificationAction: {}
     OSNotificationOpenedResult: {}
     OSNotificationPayload:
@@ -97,6 +101,14 @@ classes:
                 name: sendOutcome
             '+setExternalUserId:withCompletion:':
                 name: setExternalUserId
+            '+onesignalLog:message:':
+                name: onesignalLog
+            '+setExternalUserId:withSuccess:withFailure:':
+                name: setExternalUserId
+            '+setExternalUserId:withExternalIdAuthHashToken:withSuccess:withFailure:':
+                name: setExternalUserId
+            '+removeExternalUserId:withFailure:':
+                name: removeExternalUserId
     OSEmailSubscriptionState: {}
     OSEmailSubscriptionStateChanges: {}
     OSInAppMessageAction: {}
@@ -104,6 +116,7 @@ classes:
     OSDevice: {}
     OSInAppMessageOutcome: {}
     OSInAppMessageTag: {}
+    OSDeviceState: {}
 protocols:
     OSPermissionObserver: {}
     OSSubscriptionObserver: {}

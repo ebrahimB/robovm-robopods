@@ -36,11 +36,10 @@ import org.robovm.apple.uikit.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/OSNotificationDisplayType/*</name>*/ implements ValuedEnum {
+public enum /*<name>*/OSInfluenceChannel/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    None(0L),
-    InAppAlert(1L),
-    Notification(2L);
+    IN_APP_MESSAGE(0L),
+    NOTIFICATION(1L);
     /*</values>*/
 
     /*<bind>*/
@@ -50,15 +49,15 @@ public enum /*<name>*/OSNotificationDisplayType/*</name>*/ implements ValuedEnum
 
     private final long n;
 
-    private /*<name>*/OSNotificationDisplayType/*</name>*/(long n) { this.n = n; }
+    private /*<name>*/OSInfluenceChannel/*</name>*/(long n) { this.n = n; }
     public long value() { return n; }
-    public static /*<name>*/OSNotificationDisplayType/*</name>*/ valueOf(long n) {
-        for (/*<name>*/OSNotificationDisplayType/*</name>*/ v : values()) {
+    public static /*<name>*/OSInfluenceChannel/*</name>*/ valueOf(long n) {
+        for (/*<name>*/OSInfluenceChannel/*</name>*/ v : values()) {
             if (v.n == n) {
                 return v;
             }
         }
         throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/OSNotificationDisplayType/*</name>*/.class.getName());
+            + /*<name>*/OSInfluenceChannel/*</name>*/.class.getName());
     }
 }

@@ -53,7 +53,7 @@ import org.robovm.apple.uikit.*;
     public native String getEmailUserId();
     @Property(selector = "emailAddress")
     public native String getEmailAddress();
-    @Property(selector = "subscribed")
+    @Property(selector = "isSubscribed")
     public native boolean isSubscribed();
     /*</properties>*/
     /*<members>*//*</members>*/

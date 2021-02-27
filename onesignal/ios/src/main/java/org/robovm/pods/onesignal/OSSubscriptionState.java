@@ -49,10 +49,10 @@ import org.robovm.apple.uikit.*;
     protected OSSubscriptionState(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "subscribed")
+    @Property(selector = "isSubscribed")
     public native boolean isSubscribed();
-    @Property(selector = "userSubscriptionSetting")
-    public native boolean isUserSubscriptionSetting();
+    @Property(selector = "isPushDisabled")
+    public native boolean isPushDisabled();
     @Property(selector = "userId")
     public native String getUserId();
     @Property(selector = "pushToken")

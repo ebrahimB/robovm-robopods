@@ -57,6 +57,10 @@ import org.robovm.apple.uikit.*;
     public native NSURL getClickUrl();
     @Property(selector = "setClickUrl:")
     public native void setClickUrl(NSURL v);
+    @Property(selector = "pageId")
+    public native String getPageId();
+    @Property(selector = "setPageId:")
+    public native void setPageId(String v);
     @Property(selector = "firstClick")
     public native boolean isFirstClick();
     @Property(selector = "setFirstClick:")
@@ -65,9 +69,18 @@ import org.robovm.apple.uikit.*;
     public native boolean isClosesMessage();
     @Property(selector = "setClosesMessage:")
     public native void setClosesMessage(boolean v);
+    @Property(selector = "outcomes")
+    public native NSArray<OSInAppMessageOutcome> getOutcomes();
+    @Property(selector = "setOutcomes:")
+    public native void setOutcomes(NSArray<OSInAppMessageOutcome> v);
+    @Property(selector = "tags")
+    public native OSInAppMessageTag getTags();
+    @Property(selector = "setTags:")
+    public native void setTags(OSInAppMessageTag v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "jsonRepresentation")
+    public native NSDictionary<?, ?> jsonRepresentation();
     /*</methods>*/
 }

@@ -49,54 +49,71 @@ import org.robovm.apple.uikit.*;
     protected OneSignal(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "inFocusDisplayType")
-    public static native OSNotificationDisplayType getInFocusDisplayType();
-    @Property(selector = "setInFocusDisplayType:")
-    public static native void setInFocusDisplayType(OSNotificationDisplayType v);
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @GlobalValue(symbol="ONESIGNAL_VERSION", optional=true)
     public static native String getVersion();
     
-    @Method(selector = "initWithLaunchOptions:appId:")
-    public static native ObjCClass Init(UIApplicationLaunchOptions launchOptions, String appId);
-    @Method(selector = "initWithLaunchOptions:appId:handleNotificationAction:")
-    public static native ObjCClass Init(UIApplicationLaunchOptions launchOptions, String appId, @Block VoidBlock1<OSNotificationOpenedResult> actionCallback);
-    @Method(selector = "initWithLaunchOptions:appId:handleNotificationAction:settings:")
-    public static native ObjCClass Init(UIApplicationLaunchOptions launchOptions, String appId, @Block VoidBlock1<OSNotificationOpenedResult> actionCallback, OSSettings settings);
-    @Method(selector = "initWithLaunchOptions:appId:handleNotificationReceived:handleNotificationAction:settings:")
-    public static native ObjCClass Init(UIApplicationLaunchOptions launchOptions, String appId, @Block VoidBlock1<OSNotification> receivedCallback, @Block VoidBlock1<OSNotificationOpenedResult> actionCallback, OSSettings settings);
+    @Method(selector = "appId")
+    public static native String appId();
+    @Method(selector = "sdkVersionRaw")
+    public static native String sdkVersionRaw();
+    @Method(selector = "sdkSemanticVersion")
+    public static native String sdkSemanticVersion();
+    @Method(selector = "disablePush:")
+    public static native void disablePush(boolean disable);
+    @Method(selector = "setMSDKType:")
+    public static native void setMSDKType(String type);
+    @Method(selector = "setAppId:")
+    public static native void setAppId(String newAppId);
+    @Method(selector = "initWithLaunchOptions:")
+    public static native ObjCClass Init(UIApplicationLaunchOptions launchOptions);
+    @Method(selector = "setLaunchURLsInApp:")
+    public static native void setLaunchURLsInApp(boolean launchInApp);
+    @Method(selector = "setProvidesNotificationSettingsView:")
+    public static native void setProvidesNotificationSettingsView(boolean providesView);
+    @Method(selector = "setLogLevel:visualLevel:")
+    public static native void setLogLevel(OSLogLevel logLevel, OSLogLevel visualLogLevel);
+    @Method(selector = "onesignalLog:message:")
+    public static native void onesignalLog(OSLogLevel logLevel, String message);
+    @Method(selector = "promptForPushNotificationsWithUserResponse:")
+    public static native void promptForPushNotifications(@Block VoidBooleanBlock block);
+    @Method(selector = "promptForPushNotificationsWithUserResponse:fallbackToSettings:")
+    public static native void promptForPushNotifications(@Block VoidBooleanBlock block, boolean fallback);
+    @Method(selector = "registerForProvisionalAuthorization:")
+    public static native void registerForProvisionalAuthorization(@Block VoidBooleanBlock block);
+    @Method(selector = "getDeviceState")
+    public static native OSDeviceState getDeviceState();
     @Method(selector = "consentGranted:")
     public static native void consentGranted(boolean granted);
     @Method(selector = "requiresUserPrivacyConsent")
     public static native boolean requiresUserPrivacyConsent();
     @Method(selector = "setRequiresUserPrivacyConsent:")
     public static native void setRequiresUserPrivacyConsent(boolean required);
-    @Method(selector = "app_id")
-    public static native String getAppId();
-    @Method(selector = "sdk_version_raw")
-    public static native String getSdkVersionRaw();
-    @Method(selector = "sdk_semantic_version")
-    public static native String getSdkSemanticVersion();
-    /**
-     * @deprecated Please use promptForPushNotificationsWithUserResponse instead.
-     */
-    @Deprecated
-    @Method(selector = "registerForPushNotifications")
-    public static native void registerForPushNotifications();
-    @Method(selector = "promptForPushNotificationsWithUserResponse:")
-    public static native void promptForPushNotifications(@Block VoidBooleanBlock completionHandler);
-    @Method(selector = "promptForPushNotificationsWithUserResponse:fallbackToSettings:")
-    public static native void promptForPushNotifications(@Block VoidBooleanBlock completionHandler, boolean fallback);
-    @Method(selector = "presentAppSettings")
-    public static native void presentAppSettings();
-    @Method(selector = "registerForProvisionalAuthorization:")
-    public static native void registerForProvisionalAuthorization(@Block VoidBooleanBlock completionHandler);
-    @Method(selector = "setLogLevel:visualLevel:")
-    public static native void setLogLevel(OSLogLevel logLevel, OSLogLevel visualLogLevel);
-    @Method(selector = "onesignal_Log:message:")
-    public static native void onesignalLog(OSLogLevel logLevel, String message);
+    @Method(selector = "setNotificationWillShowInForegroundHandler:")
+    public static native void setNotificationWillShowInForegroundHandler(@Block("(,@Block)") VoidBlock2<OSNotification, VoidBlock1<OSNotification>> block);
+    @Method(selector = "setNotificationOpenedHandler:")
+    public static native void setNotificationOpenedHandler(@Block VoidBlock1<OSNotificationOpenedResult> block);
+    @Method(selector = "setInAppMessageClickHandler:")
+    public static native void setInAppMessageClickHandler(@Block VoidBlock1<OSInAppMessageAction> block);
+    @Method(selector = "postNotification:")
+    public static native void postNotification(NSDictionary<?, ?> jsonData);
+    @Method(selector = "postNotification:onSuccess:onFailure:")
+    public static native void postNotification(NSDictionary<?, ?> jsonData, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "postNotificationWithJsonString:onSuccess:onFailure:")
+    public static native void postNotification(String jsonData, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "promptLocation")
+    public static native void promptLocation();
+    @Method(selector = "setLocationShared:")
+    public static native void setLocationShared(boolean enable);
+    @Method(selector = "isLocationShared")
+    public static native boolean isLocationShared();
+    @Method(selector = "didReceiveNotificationExtensionRequest:withMutableNotificationContent:")
+    public static native UNMutableNotificationContent didReceiveNotification(UNNotificationRequest request, UNMutableNotificationContent replacementContent);
+    @Method(selector = "serviceExtensionTimeWillExpireRequest:withMutableNotificationContent:")
+    public static native UNMutableNotificationContent serviceExtensionTimeWillExpire(UNNotificationRequest request, UNMutableNotificationContent replacementContent);
     @Method(selector = "sendTag:value:onSuccess:onFailure:")
     public static native void sendTag(String key, String value, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
     @Method(selector = "sendTag:value:")
@@ -118,23 +135,9 @@ import org.robovm.apple.uikit.*;
     @Method(selector = "deleteTags:onSuccess:onFailure:")
     public static native void deleteTags(NSArray<?> keys, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
     @Method(selector = "deleteTags:")
-    public static native void deleteTags(NSArray<?> keys);
+    public static native void deleteTags(NSArray<NSString> keys);
     @Method(selector = "deleteTagsWithJsonString:")
     public static native void deleteTags(String jsonString);
-    /**
-     * @deprecated Please refer to our new Email methods/functionality such as setEmail(). This method will be removed in a future version of the OneSignal SDK
-     */
-    @Deprecated
-    @Method(selector = "syncHashedEmail:")
-    public static native void syncHashedEmail(String email);
-    /**
-     * @deprecated Please use getPermissionSubscriptionState or addSubscriptionObserver and addPermissionObserver instead.
-     */
-    @Deprecated
-    @Method(selector = "IdsAvailable:")
-    public static native void IdsAvailable(@Block VoidBlock2<NSString, NSString> idsAvailableBlock);
-    @Method(selector = "getPermissionSubscriptionState")
-    public static native OSPermissionSubscriptionState getPermissionSubscriptionState();
     @Method(selector = "addPermissionObserver:")
     public static native void addPermissionObserver(OSPermissionObserver observer);
     @Method(selector = "removePermissionObserver:")
@@ -147,46 +150,32 @@ import org.robovm.apple.uikit.*;
     public static native void addEmailSubscriptionObserver(OSEmailSubscriptionObserver observer);
     @Method(selector = "removeEmailSubscriptionObserver:")
     public static native void removeEmailSubscriptionObserver(OSEmailSubscriptionObserver observer);
-    @Method(selector = "setSubscription:")
-    public static native void setSubscription(boolean enable);
+    @Method(selector = "setEmail:withEmailAuthHashToken:")
+    public static native void setEmail(String email, String hashToken);
+    @Method(selector = "setEmail:withEmailAuthHashToken:withSuccess:withFailure:")
+    public static native void setEmail(String email, String hashToken, @Block Runnable successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "setEmail:")
+    public static native void setEmail(String email);
+    @Method(selector = "setEmail:withSuccess:withFailure:")
+    public static native void setEmail(String email, @Block Runnable successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "logoutEmail")
+    public static native void logoutEmail();
+    @Method(selector = "logoutEmailWithSuccess:withFailure:")
+    public static native void logoutEmail(@Block Runnable successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "setExternalUserId:")
+    public static native void setExternalUserId(String externalId);
+    @Method(selector = "setExternalUserId:withSuccess:withFailure:")
+    public static native void setExternalUserId(String externalId, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "setExternalUserId:withExternalIdAuthHashToken:withSuccess:withFailure:")
+    public static native void setExternalUserId(String externalId, String hashToken, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "removeExternalUserId")
+    public static native void removeExternalUserId();
+    @Method(selector = "removeExternalUserId:withFailure:")
+    public static native void removeExternalUserId(@Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
     @Method(selector = "isInAppMessagingPaused")
     public static native boolean isInAppMessagingPaused();
     @Method(selector = "pauseInAppMessages:")
     public static native void pauseInAppMessages(boolean pause);
-    @Method(selector = "postNotification:")
-    public static native void postNotification(NSDictionary<?, ?> jsonData);
-    @Method(selector = "postNotification:onSuccess:onFailure:")
-    public static native void postNotification(NSDictionary<?, ?> jsonData, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "postNotificationWithJsonString:onSuccess:onFailure:")
-    public static native void postNotification(String jsonData, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "parseNSErrorAsJsonString:")
-    public static native String parseNSErrorAsJsonString(NSError error);
-    @Method(selector = "promptLocation")
-    public static native void promptLocation();
-    @Method(selector = "setLocationShared:")
-    public static native void setLocationShared(boolean enable);
-    @Method(selector = "isLocationShared")
-    public static native boolean isLocationShared();
-    @Method(selector = "setMSDKType:")
-    public static native void setMSDKType(String type);
-    @Method(selector = "setInAppMessageClickHandler:")
-    public static native void setInAppMessageClickHandler(@Block VoidBlock1<OSInAppMessageAction> delegate);
-    @Method(selector = "didReceiveNotificationExtensionRequest:withMutableNotificationContent:")
-    public static native UNMutableNotificationContent didReceiveNotification(UNNotificationRequest request, UNMutableNotificationContent replacementContent);
-    @Method(selector = "serviceExtensionTimeWillExpireRequest:withMutableNotificationContent:")
-    public static native UNMutableNotificationContent serviceExtensionTimeWillExpire(UNNotificationRequest request, UNMutableNotificationContent replacementContent);
-    @Method(selector = "setEmail:withEmailAuthHashToken:withSuccess:withFailure:")
-    public static native void setEmail(String email, String hashToken, @Block Runnable successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "setEmail:withSuccess:withFailure:")
-    public static native void setEmail(String email, @Block Runnable successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "logoutEmailWithSuccess:withFailure:")
-    public static native void logoutEmail(@Block Runnable successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "logoutEmail")
-    public static native void logoutEmail();
-    @Method(selector = "setEmail:")
-    public static native void setEmail(String email);
-    @Method(selector = "setEmail:withEmailAuthHashToken:")
-    public static native void setEmail(String email, String hashToken);
     @Method(selector = "addTrigger:withValue:")
     public static native void addTrigger(String key, NSObject value);
     @Method(selector = "addTriggers:")
@@ -199,9 +188,17 @@ import org.robovm.apple.uikit.*;
     public static native NSDictionary<NSString, ?> getTriggers();
     @Method(selector = "getTriggerValueForKey:")
     public static native NSObject getTriggerValueForKey(String key);
-    @Method(selector = "setExternalUserId:")
-    public static native void setExternalUserId(String externalId);
-    @Method(selector = "removeExternalUserId")
-    public static native void removeExternalUserId();
+    @Method(selector = "sendOutcome:")
+    public static native void sendOutcome(String name);
+    @Method(selector = "sendOutcome:onSuccess:")
+    public static native void sendOutcome(String name, @Block VoidBlock1<OSOutcomeEvent> success);
+    @Method(selector = "sendUniqueOutcome:")
+    public static native void sendUniqueOutcome(String name);
+    @Method(selector = "sendUniqueOutcome:onSuccess:")
+    public static native void sendUniqueOutcome(String name, @Block VoidBlock1<OSOutcomeEvent> success);
+    @Method(selector = "sendOutcomeWithValue:value:")
+    public static native void sendOutcome(String name, NSNumber value);
+    @Method(selector = "sendOutcomeWithValue:value:onSuccess:")
+    public static native void sendOutcome(String name, NSNumber value, @Block VoidBlock1<OSOutcomeEvent> success);
     /*</methods>*/
 }

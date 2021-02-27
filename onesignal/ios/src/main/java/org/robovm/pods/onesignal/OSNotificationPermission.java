@@ -41,7 +41,8 @@ public enum /*<name>*/OSNotificationPermission/*</name>*/ implements ValuedEnum 
     NotDetermined(0L),
     Denied(1L),
     Authorized(2L),
-    Provisional(3L);
+    Provisional(3L),
+    Ephemeral(4L);
     /*</values>*/
 
     /*<bind>*/

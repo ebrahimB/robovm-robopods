@@ -47,7 +47,7 @@ v1.15.0 - in development
 | [HelpShift](helpshift/)            | 7.10.0*|
 | [InMobi](inmobi/)                  | 9.1.1  |
 | [Lottie](lottie/)                  | 3.1.9  |
-| [OneSignal](onesignal/)            | 3.1.0  |
+| [OneSignal](onesignal/)            | 3.2.1* |
 | [Pollfish](pollfish/)              | 5.5.2  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
 

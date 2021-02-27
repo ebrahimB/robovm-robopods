@@ -36,29 +36,43 @@ import org.robovm.apple.uikit.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSPermissionSubscriptionState/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSOutcomeEvent/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class OSPermissionSubscriptionStatePtr extends Ptr<OSPermissionSubscriptionState, OSPermissionSubscriptionStatePtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(OSPermissionSubscriptionState.class); }/*</bind>*/
+    /*<ptr>*/public static class OSOutcomeEventPtr extends Ptr<OSOutcomeEvent, OSOutcomeEventPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(OSOutcomeEvent.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public OSPermissionSubscriptionState() {}
-    protected OSPermissionSubscriptionState(Handle h, long handle) { super(h, handle); }
-    protected OSPermissionSubscriptionState(SkipInit skipInit) { super(skipInit); }
+    public OSOutcomeEvent() {}
+    protected OSOutcomeEvent(Handle h, long handle) { super(h, handle); }
+    protected OSOutcomeEvent(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "permissionStatus")
-    public native OSPermissionState getPermissionStatus();
-    @Property(selector = "subscriptionStatus")
-    public native OSSubscriptionState getSubscriptionStatus();
-    @Property(selector = "emailSubscriptionStatus")
-    public native OSEmailSubscriptionState getEmailSubscriptionStatus();
+    @Property(selector = "session")
+    public native OSInfluenceType getSession();
+    @Property(selector = "setSession:")
+    public native void setSession(OSInfluenceType v);
+    @Property(selector = "notificationIds")
+    public native NSArray<?> getNotificationIds();
+    @Property(selector = "setNotificationIds:")
+    public native void setNotificationIds(NSArray<?> v);
+    @Property(selector = "name")
+    public native String getName();
+    @Property(selector = "setName:")
+    public native void setName(String v);
+    @Property(selector = "timestamp")
+    public native NSNumber getTimestamp();
+    @Property(selector = "setTimestamp:")
+    public native void setTimestamp(NSNumber v);
+    @Property(selector = "weight")
+    public native NSDecimalNumber getWeight();
+    @Property(selector = "setWeight:")
+    public native void setWeight(NSDecimalNumber v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "toDictionary")
-    public native NSDictionary<?, ?> toDictionary();
+    @Method(selector = "jsonRepresentation")
+    public native NSDictionary<?, ?> jsonRepresentation();
     /*</methods>*/
 }
