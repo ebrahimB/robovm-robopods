@@ -36,33 +36,32 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAAd/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/ALAppTrackingTransparencyStatus/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Unavailable(-1L),
+    NotDetermined(0L),
+    Restricted(1L),
+    Denied(2L),
+    Authorized(3L);
+    /*</values>*/
 
-    /*<ptr>*/public static class MAAdPtr extends Ptr<MAAd, MAAdPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(MAAd.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    public MAAd() {}
-    protected MAAd(Handle h, long handle) { super(h, handle); }
-    protected MAAd(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
-    /*<properties>*/
-    @Property(selector = "format")
-    public native MAAdFormat getFormat();
-    @Property(selector = "adUnitIdentifier")
-    public native String getAdUnitIdentifier();
-    @Property(selector = "networkName")
-    public native String getNetworkName();
-    @Property(selector = "creativeIdentifier")
-    public native String getCreativeIdentifier();
-    @Property(selector = "placement")
-    public native String getPlacement();
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/ALAppTrackingTransparencyStatus/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/ALAppTrackingTransparencyStatus/*</name>*/ valueOf(long n) {
+        for (/*<name>*/ALAppTrackingTransparencyStatus/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/ALAppTrackingTransparencyStatus/*</name>*/.class.getName());
+    }
 }

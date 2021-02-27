@@ -13,7 +13,7 @@ typedefs: {}
 enums:
     ALConsentDialogState: {}
     ALAdViewDisplayErrorCode: {}
-
+    ALAppTrackingTransparencyStatus: {}
 classes:
     ALAd: {}
     ALAdService:

@@ -62,8 +62,8 @@ import org.robovm.apple.coreanimation.*;
     public static native NSString Fyber();
     @GlobalValue(symbol="ALMediationProviderHeyzap", optional=true)
     public static native NSString Heyzap();
-    @GlobalValue(symbol="ALMediationProviderHyperMX", optional=true)
-    public static native NSString HyperMX();
+    @GlobalValue(symbol="ALMediationProviderHyprMX", optional=true)
+    public static native NSString HyprMX();
     @GlobalValue(symbol="ALMediationProviderIronsource", optional=true)
     public static native NSString Ironsource();
     @GlobalValue(symbol="ALMediationProviderMAX", optional=true)

@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL muted;
 
 /**
- * Determines whether the ad info button will be displayed on fullscreen ads (debug and TestFlight builds only).
+ * Determines whether the ad info button can be displayed on fullscreen ads after flipping the device screen down twice. Defaults to YES.
  */
 @property (nonatomic, assign) BOOL adInfoButtonEnabled;
 

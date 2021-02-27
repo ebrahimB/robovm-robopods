@@ -35,7 +35,7 @@ v1.15.0
 
 | Name                               | 1.15.0 |
 |------------------------------------|--------|
-| [AppLovinSDK](applovinsdk/)        | 6.14.11|
+| [AppLovinSDK](applovinsdk/)        | 6.15.2*|
 | [AppCenter](appcenter/)            | 4.1.0  |
 | [Azure](Azure/)                    | 3.1.2  |
 | [BranchMetrics](branchmetrics/)    | 0.36.0 |

@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "consentDialogState")
     public native ALConsentDialogState getConsentDialogState();
+    @Property(selector = "appTrackingTransparencyStatus")
+    public native ALAppTrackingTransparencyStatus getAppTrackingTransparencyStatus();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -47,46 +47,114 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(ALNativeAd.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public ALNativeAd() {}
+    protected ALNativeAd() {}
     protected ALNativeAd(Handle h, long handle) { super(h, handle); }
     protected ALNativeAd(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "adIdNumber")
     public native NSNumber getAdIdNumber();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "zoneIdentifier")
     public native String getZoneIdentifier();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "title")
     public native String getTitle();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "descriptionText")
     public native String getDescriptionText();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "captionText")
     public native String getCaptionText();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "ctaText")
     public native String getCtaText();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "iconURL")
     public native NSURL getIconURL();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "imageURL")
     public native NSURL getImageURL();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "starRating")
     public native NSNumber getStarRating();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "videoURL")
     public native NSURL getVideoURL();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "videoStartTrackingURL")
     public native NSURL getVideoStartTrackingURL();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "isImagePrecached")
     public native boolean isImagePrecached();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "isVideoPrecached")
     public native boolean isVideoPrecached();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Method(selector = "trackImpression")
     public native void trackImpression();
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Method(selector = "trackImpressionAndNotify:")
     public native void trackImpressionAndNotify(ALPostbackDelegate postbackDelegate);
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Method(selector = "videoEndTrackingURL:firstPlay:")
     public native NSURL videoEndTrackingURL(@MachineSizedUInt long percentViewed, boolean firstPlay);
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Method(selector = "launchClickTarget")
     public native void launchClickTarget();
     /*</methods>*/

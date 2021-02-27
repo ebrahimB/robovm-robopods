@@ -56,15 +56,23 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "loadNextAdAndNotify:")
-    public native void loadNextAdAndNotify(ALNativeAdLoadDelegate delegate);
-    @Method(selector = "precacheResourcesForNativeAd:andNotify:")
-    public native void precacheResourcesForNativeAd(ALNativeAd ad, ALNativeAdPrecacheDelegate delegate);
     /**
-     * @deprecated Loading multiple native ads has been deprecated and will be removed in a future SDK version. Please use loadNextAdAndNotify: instead.
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
      */
     @Deprecated
     @Method(selector = "loadNativeAdGroupOfCount:andNotify:")
     public native void loadNativeAdGroupOfCount(@MachineSizedUInt long numberOfAdsToLoad, ALNativeAdLoadDelegate delegate);
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
+    @Method(selector = "loadNextAdAndNotify:")
+    public native void loadNextAdAndNotify(ALNativeAdLoadDelegate delegate);
+    /**
+     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
+     */
+    @Deprecated
+    @Method(selector = "precacheResourcesForNativeAd:andNotify:")
+    public native void precacheResourcesForNativeAd(ALNativeAd ad, ALNativeAdPrecacheDelegate delegate);
     /*</methods>*/
 }
