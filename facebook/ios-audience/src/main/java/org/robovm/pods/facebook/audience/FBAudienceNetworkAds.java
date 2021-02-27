@@ -49,7 +49,7 @@ import org.robovm.pods.facebook.core.*;
     /*<ptr>*/public static class FBAudienceNetworkAdsPtr extends Ptr<FBAudienceNetworkAds, FBAudienceNetworkAdsPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBAudienceNetworkAds.class); }/*</bind>*/
     /*<constants>*/
-    public static final String getVersion = "6.2.1";
+    public static final String getVersion = "6.3.0";
     /*</constants>*/
     /*<constructors>*/
     public FBAudienceNetworkAds() {}
@@ -66,5 +66,7 @@ import org.robovm.pods.facebook.core.*;
     
     @Method(selector = "initializeWithSettings:completionHandler:")
     public static native void initialize(FBAdInitSettings settings, @Block VoidBlock1<FBAdInitResults> completionHandler);
+    @Method(selector = "handleDeeplink:")
+    public static native void handleDeeplink(NSURL deeplink);
     /*</methods>*/
 }

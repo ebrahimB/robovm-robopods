@@ -31,7 +31,7 @@ This is the list of currently available AltPods. Click them to get more informat
 
 ## Version of AltPods to framework version mapping
 
-v1.15.0
+v1.15.0 - in development
 
 | Name                               | 1.15.0 |
 |------------------------------------|--------|
@@ -39,8 +39,8 @@ v1.15.0
 | [AppCenter](appcenter/)            | 4.1.0  |
 | [Azure](Azure/)                    | 3.1.2  |
 | [BranchMetrics](branchmetrics/)    | 1.38.0*|
-| [Charts](charts/)                  | 3.6.0  |
-| [Facebook](facebook/)              | 8.2.0  |
+| [Charts](charts/)                  | 4.0.1* |
+| [Facebook](facebook/)              | 9.0.1* |
 | [Firebase](firebase/)              | 7.7.0* |
 | [Flurry](flurry/)                  | 11.1.0 |
 | [Fyber](fyber/)                    | 7.7.3  |
@@ -50,45 +50,5 @@ v1.15.0
 | [OneSignal](onesignal/)            | 3.1.0  |
 | [Pollfish](pollfish/)              | 5.5.2  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
-
-v1.14.0
-
-| Name                               | 1.14.0 |
-|------------------------------------|--------|
-| [AppLovinSDK](applovinsdk/)        | 6.14.11*|
-| [AppCenter](appcenter/)            | 4.1.0* |
-| [Azure](Azure/)                    | 3.1.2* |
-| [BranchMetrics](branchmetrics/)    | 0.36.0*|
-| [Charts](charts/)                  | 3.6.0  |
-| [Facebook](facebook/)              | 8.2.0* |
-| [Firebase](firebase/)              | 7.3.0* |
-| [Flurry](flurry/)                  | 11.1.0 |
-| [Fyber](fyber/)                    | 7.7.3* |
-| [HelpShift](helpshift/)            | 7.9.1  |
-| [InMobi](inmobi/)                  | 9.1.1* |
-| [Lottie](lottie/)                  | 3.1.9* |
-| [OneSignal](onesignal/)            | 3.1.0* |
-| [Pollfish](pollfish/)              | 5.5.2* |
-| [SAMKeychain](samkeychain/)        | 1.5.3  |
-
-v1.13.0
-
-| Name                               | 1.13.0 |
-|------------------------------------|--------|
-| [AppLovinSDK](applovinsdk/)        | 6.14.6*|
-| [AppCenter](appcenter/)            | 3.3.4* |
-| [BranchMetrics](branchmetrics/)    | 0.35.1 |
-| [Charts](charts/)                  | 3.6.0  |
-| [Facebook](facebook/)              | 8.1.0* |
-| [Firebase](firebase/)              | 7.0.0* |
-| [Flurry](flurry/)                  | 11.1.0 |
-| [Fyber](fyber/)                    | 7.7.2* |
-| [HelpShift](helpshift/)            | 7.9.1* |
-| [InMobi](inmobi/)                  | 9.1.0  |
-| [Lottie](lottie/)                  | 3.1.8  |
-| [OneSignal](onesignal/)            | 2.15.4*|
-| [Pollfish](pollfish/)              | 5.3.1  |
-| [SAMKeychain](samkeychain/)        | 1.5.3  |
-
 
 [Older versions](CHANGELOG.md)
