@@ -44,7 +44,7 @@ v1.15.0 - in development
 | [Firebase](firebase/)              | 7.7.0* |
 | [Flurry](flurry/)                  | 11.1.0 |
 | [Fyber](fyber/)                    | 7.7.3  |
-| [HelpShift](helpshift/)            | 7.9.1  |
+| [HelpShift](helpshift/)            | 7.10.0*|
 | [InMobi](inmobi/)                  | 9.1.1  |
 | [Lottie](lottie/)                  | 3.1.9  |
 | [OneSignal](onesignal/)            | 3.1.0  |
