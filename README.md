@@ -38,7 +38,7 @@ v1.15.0
 | [AppLovinSDK](applovinsdk/)        | 6.15.2*|
 | [AppCenter](appcenter/)            | 4.1.0  |
 | [Azure](Azure/)                    | 3.1.2  |
-| [BranchMetrics](branchmetrics/)    | 0.36.0 |
+| [BranchMetrics](branchmetrics/)    | 1.38.0*|
 | [Charts](charts/)                  | 3.6.0  |
 | [Facebook](facebook/)              | 8.2.0  |
 | [Firebase](firebase/)              | 7.7.0* |

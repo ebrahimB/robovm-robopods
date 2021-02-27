@@ -56,10 +56,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native BranchDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(BranchDelegate v);
-    @Property(selector = "blackListURLRegex")
-    public native NSArray<NSString> getBlackListURLRegex();
-    @Property(selector = "setBlackListURLRegex:")
-    public native void setBlackListURLRegex(NSArray<NSString> v);
+    @Property(selector = "urlPatternsToIgnore")
+    public native NSArray<NSString> getUrlPatternsToIgnore();
+    @Property(selector = "setUrlPatternsToIgnore:")
+    public native void setUrlPatternsToIgnore(NSArray<NSString> v);
     @Deprecated
     @Property(selector = "sessionInitWithParamsCallback")
     public native @Block VoidBlock2<NSDictionary<?, ?>, NSError> getSessionInitWithParamsCallback();
@@ -137,10 +137,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native void validateSDKIntegration();
     @Method(selector = "setDeepLinkDebugMode:")
     public native void setDeepLinkDebugMode(NSDictionary<?, ?> debugParams);
-    @Method(selector = "addWhiteListedScheme:")
-    public native void addWhiteListedScheme(String scheme);
-    @Method(selector = "setWhiteListedSchemes:")
-    public native void setWhiteListedSchemes(NSArray<?> schemes);
+    @Method(selector = "addAllowedScheme:")
+    public native void addAllowedScheme(String scheme);
+    @Method(selector = "setAllowedSchemes:")
+    public native void setAllowedSchemes(NSArray<?> schemes);
     @Method(selector = "registerFacebookDeepLinkingClass:")
     public native void registerFacebookDeepLinkingClass(NSObject FBSDKAppLinkUtility);
     @Method(selector = "delayInitToCheckForSearchAds")
@@ -153,6 +153,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native void setAppClipAppGroup(String appGroup);
     @Method(selector = "setSKAdNetworkCalloutMaxTimeSinceInstall:")
     public native void setSKAdNetworkCalloutMaxTimeSinceInstall(double maxTimeInterval);
+    @Method(selector = "addFacebookPartnerParameterWithName:value:")
+    public native void addFacebookPartnerParameter(String name, String value);
+    @Method(selector = "clearPartnerParameters")
+    public native void clearPartnerParameters();
     @Method(selector = "setRetryInterval:")
     public native void setRetryInterval(double retryInterval);
     @Method(selector = "setMaxRetries:")
@@ -280,7 +284,7 @@ import org.robovm.apple.uniformtypeid.*;
     @Method(selector = "crossPlatformIdDataWithCompletion:")
     public native void getCrossPlatformIdData(@Block VoidBlock1<BranchCrossPlatformID> completion);
     @Method(selector = "lastAttributedTouchDataWithAttributionWindow:completion:")
-    public native void getLastAttributedTouchData(@MachineSizedSInt long window, @Block VoidBlock1<BranchLastAttributedTouchData> completion);
+    public native void getLastAttributedTouchData(@MachineSizedSInt long window, @Block VoidBlock2<BranchLastAttributedTouchData, NSError> completion);
     @Method(selector = "getShortURL")
     public native String getShortURL();
     @Method(selector = "getShortURLWithParams:")

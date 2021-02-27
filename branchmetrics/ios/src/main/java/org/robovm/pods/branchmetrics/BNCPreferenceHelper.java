@@ -158,10 +158,6 @@ import org.robovm.apple.uniformtypeid.*;
     public native String getBranchAPIURL();
     @Property(selector = "setBranchAPIURL:")
     public native void setBranchAPIURL(String v);
-    @Property(selector = "branchBlacklistURL")
-    public native String getBranchBlacklistURL();
-    @Property(selector = "setBranchBlacklistURL:")
-    public native void setBranchBlacklistURL(String v);
     @Property(selector = "limitFacebookTracking")
     public native boolean isLimitFacebookTracking();
     @Property(selector = "setLimitFacebookTracking:")
@@ -178,18 +174,22 @@ import org.robovm.apple.uniformtypeid.*;
     public native NSURL getFaceBookAppLink();
     @Property(selector = "setFaceBookAppLink:")
     public native void setFaceBookAppLink(NSURL v);
-    @Property(selector = "URLBlackList")
-    public native NSArray<NSString> getURLBlackList();
-    @Property(selector = "setURLBlackList:")
-    public native void setURLBlackList(NSArray<NSString> v);
-    @Property(selector = "URLBlackListVersion")
-    public native @MachineSizedSInt long getURLBlackListVersion();
-    @Property(selector = "setURLBlackListVersion:")
-    public native void setURLBlackListVersion(@MachineSizedSInt long v);
-    @Property(selector = "blacklistURLOpen")
-    public native boolean isBlacklistURLOpen();
-    @Property(selector = "setBlacklistURLOpen:")
-    public native void setBlacklistURLOpen(boolean v);
+    @Property(selector = "patternListURL")
+    public native String getPatternListURL();
+    @Property(selector = "setPatternListURL:")
+    public native void setPatternListURL(String v);
+    @Property(selector = "savedURLPatternList")
+    public native NSArray<NSString> getSavedURLPatternList();
+    @Property(selector = "setSavedURLPatternList:")
+    public native void setSavedURLPatternList(NSArray<NSString> v);
+    @Property(selector = "savedURLPatternListVersion")
+    public native @MachineSizedSInt long getSavedURLPatternListVersion();
+    @Property(selector = "setSavedURLPatternListVersion:")
+    public native void setSavedURLPatternListVersion(@MachineSizedSInt long v);
+    @Property(selector = "dropURLOpen")
+    public native boolean isDropURLOpen();
+    @Property(selector = "setDropURLOpen:")
+    public native void setDropURLOpen(boolean v);
     @Property(selector = "sendCloseRequests")
     public native boolean isSendCloseRequests();
     @Property(selector = "setSendCloseRequests:")
@@ -235,6 +235,8 @@ import org.robovm.apple.uniformtypeid.*;
     public native void addInstrumentationDictionary(String key, String value);
     @Method(selector = "instrumentationDictionary")
     public native NSMutableDictionary<?, ?> instrumentationDictionary();
+    @Method(selector = "instrumentationParameters")
+    public native NSDictionary<?, ?> instrumentationParameters();
     @Method(selector = "clearInstrumentationDictionary")
     public native void clearInstrumentationDictionary();
     @Method(selector = "saveBranchAnalyticsData:")

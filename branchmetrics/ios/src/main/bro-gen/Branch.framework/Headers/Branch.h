@@ -619,18 +619,18 @@ typedef NS_ENUM(NSUInteger, BranchCreditHistoryOrder) {
 -(void)setDeepLinkDebugMode:(nullable NSDictionary *)debugParams;
 
 /**
- Add a scheme to a whitelist of URI schemes that will be tracked by Branch. Default to all schemes.
+ Allow a URI scheme to be tracked by Branch. Default to all schemes.
 
- @param scheme to add to the whitelist, i.e. @"http", @"https" or @"myapp"
+ @param scheme URI scheme allowed to track, i.e. @"http", @"https" or @"myapp"
  */
--(void)addWhiteListedScheme:(nullable NSString *)scheme;
+-(void)addAllowedScheme:(nullable NSString *)scheme;
 
 /**
- Add an array of schemes to a whitelist of URI schemes that will be tracked by Branch. Default to all schemes.
+ Allow an array of URI schemes to be tracked by Branch. Default to all schemes.
 
- @param schemes array to add to the whitelist, i.e. @[@"http", @"https", @"myapp"]
+ @param schemes An array of URI schemes allowed to track, i.e. @[@"http", @"https", @"myapp"]
  */
--(void)setWhiteListedSchemes:(nullable NSArray *)schemes;
+-(void)setAllowedSchemes:(nullable NSArray *)schemes;
 
 /**
  @brief     Sets an array of regex patterns that match URLs for Branch to ignore.
@@ -645,7 +645,7 @@ typedef NS_ENUM(NSUInteger, BranchCreditHistoryOrder) {
 
             These are ICU standard regular expressions.
 */
-@property (copy, nullable) NSArray<NSString*>/*_Nullable*/* blackListURLRegex;
+@property (copy, nullable) NSArray<NSString*>/*_Nullable*/* urlPatternsToIgnore;
 
 /**
  Register your Facebook SDK's FBSDKAppLinkUtility class to be used by Branch for deferred deep linking from their platform
@@ -689,6 +689,19 @@ typedef NS_ENUM(NSUInteger, BranchCreditHistoryOrder) {
  Note: Branch does not automatically call SKAdNetwork unless configured on the dashboard.
  */
 - (void)setSKAdNetworkCalloutMaxTimeSinceInstall:(NSTimeInterval)maxTimeInterval;
+
+/*
+ Add a Partner Parameter for Facebook.
+ Once set, this parameter is attached to install, opens and events until cleared or the app restarts.
+ 
+ See Facebook's documentation for details on valid parameters
+ */
+- (void)addFacebookPartnerParameterWithName:(NSString *)name value:(NSString *)value;
+
+/**
+ Clears all Partner Parameters
+ */
+- (void)clearPartnerParameters;
 
 /**
  Specify the time to wait in seconds between retries in the case of a Branch server error
@@ -1107,7 +1120,7 @@ typedef NS_ENUM(NSUInteger, BranchCreditHistoryOrder) {
  @param window attribution window in days.  If the window is 0, the server will use the server side default.  If the window is outside the server supported range, it will default to 30 days.
  @param completion callback with attribution data
  */
-- (void)lastAttributedTouchDataWithAttributionWindow:(NSInteger)window completion:(void(^) (BranchLastAttributedTouchData * _Nullable latd))completion;
+- (void)lastAttributedTouchDataWithAttributionWindow:(NSInteger)window completion:(void(^) (BranchLastAttributedTouchData * _Nullable latd, NSError * _Nullable error))completion;
 
 #pragma mark - Short Url Sync methods
 

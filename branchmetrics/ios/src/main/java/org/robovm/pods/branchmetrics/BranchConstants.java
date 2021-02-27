@@ -166,6 +166,8 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getRequestKeyAppClipRandomizedDeviceToken();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_APP_CLIP_RANDOMIZED_BUNDLE_TOKEN", optional=true)
     public static native String getRequestKeyAppClipRandomizedBundleToken();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_PARTNER_PARAMETERS", optional=true)
+    public static native String getRequestKeyPartnerParameters();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_SET_IDENTITY", optional=true)
     public static native String getRequestEndpointSetIdentity();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_APP_LINK_SETTINGS", optional=true)

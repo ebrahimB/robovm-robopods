@@ -61,6 +61,6 @@ import org.robovm.apple.uniformtypeid.*;
     @Method(selector = "buildFromJSON:")
     protected static native @Pointer long buildFromJSON(NSDictionary<?, ?> json);
     @Method(selector = "requestLastTouchAttributedData:key:attributionWindow:completion:")
-    public static native void requestLastTouchAttributedData(BNCServerInterface serverInterface, String key, @MachineSizedSInt long window, @Block VoidBlock1<BranchLastAttributedTouchData> completion);
+    public static native void requestLastTouchAttributedData(BNCServerInterface serverInterface, String key, @MachineSizedSInt long window, @Block VoidBlock2<BranchLastAttributedTouchData, NSError> completion);
     /*</methods>*/
 }

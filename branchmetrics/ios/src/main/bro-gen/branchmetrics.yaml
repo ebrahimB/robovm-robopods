@@ -286,6 +286,8 @@ classes:
                 name: continueUserActivity
             '-sceneIdentifier:openURL:sourceApplication:annotation:':
                 name: openURL
+            '-addFacebookPartnerParameterWithName:value:':
+                name: addFacebookPartnerParameter
     BranchActivityItemProvider:
         methods:
             '-initWithParams:andTags:andFeature:andStage:andAlias:':
