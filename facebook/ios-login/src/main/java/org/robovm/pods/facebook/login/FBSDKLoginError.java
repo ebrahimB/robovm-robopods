@@ -50,6 +50,8 @@ public enum /*<name>*/FBSDKLoginError/*</name>*/ implements NSErrorCode {
     SystemAccountAppDisabled(306L),
     SystemAccountUnavailable(307L),
     BadChallengeString(308L),
+    InvalidIDToken(309L),
+    MissingAccessToken(310L),
     ExcessivePolling(1349172L),
     AuthorizationDeclined(1349173L),
     AuthorizationPending(1349174L),

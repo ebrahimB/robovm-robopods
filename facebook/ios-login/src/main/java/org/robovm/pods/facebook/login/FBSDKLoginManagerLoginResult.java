@@ -50,14 +50,18 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKLoginManagerLoginResult() {}
     protected FBSDKLoginManagerLoginResult(Handle h, long handle) { super(h, handle); }
     protected FBSDKLoginManagerLoginResult(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithToken:isCancelled:grantedPermissions:declinedPermissions:")
-    public FBSDKLoginManagerLoginResult(FBSDKAccessToken token, boolean isCancelled, NSSet<NSString> grantedPermissions, NSSet<NSString> declinedPermissions) { super((SkipInit) null); initObject(init(token, isCancelled, grantedPermissions, declinedPermissions)); }
+    @Method(selector = "initWithToken:authenticationToken:isCancelled:grantedPermissions:declinedPermissions:")
+    public FBSDKLoginManagerLoginResult(FBSDKAccessToken token, FBSDKAuthenticationToken authenticationToken, boolean isCancelled, NSSet<NSString> grantedPermissions, NSSet<NSString> declinedPermissions) { super((SkipInit) null); initObject(init(token, authenticationToken, isCancelled, grantedPermissions, declinedPermissions)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "token")
     public native FBSDKAccessToken getToken();
     @Property(selector = "setToken:")
     public native void setToken(FBSDKAccessToken v);
+    @Property(selector = "authenticationToken")
+    public native FBSDKAuthenticationToken getAuthenticationToken();
+    @Property(selector = "setAuthenticationToken:")
+    public native void setAuthenticationToken(FBSDKAuthenticationToken v);
     @Property(selector = "isCancelled")
     public native boolean isCancelled();
     @Property(selector = "grantedPermissions")
@@ -71,7 +75,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithToken:isCancelled:grantedPermissions:declinedPermissions:")
-    protected native @Pointer long init(FBSDKAccessToken token, boolean isCancelled, NSSet<NSString> grantedPermissions, NSSet<NSString> declinedPermissions);
+    @Method(selector = "initWithToken:authenticationToken:isCancelled:grantedPermissions:declinedPermissions:")
+    protected native @Pointer long init(FBSDKAccessToken token, FBSDKAuthenticationToken authenticationToken, boolean isCancelled, NSSet<NSString> grantedPermissions, NSSet<NSString> declinedPermissions);
     /*</methods>*/
 }

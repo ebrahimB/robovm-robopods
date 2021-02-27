@@ -65,6 +65,8 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "logInWithPermissions:fromViewController:handler:")
     public native void logIn(NSArray<NSString> permissions, UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
+    @Method(selector = "logInFromViewController:configuration:completion:")
+    public native void logIn(UIViewController viewController, FBSDKLoginConfiguration configuration, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> completion);
     @Method(selector = "logInWithURL:handler:")
     public native void logIn(NSURL url, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
     @Method(selector = "reauthorizeDataAccess:handler:")

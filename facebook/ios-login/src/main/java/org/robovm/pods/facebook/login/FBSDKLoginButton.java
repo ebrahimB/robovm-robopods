@@ -81,6 +81,14 @@ import org.robovm.apple.coreanimation.*;
     public native FBSDKTooltipColorStyle getTooltipColorStyle();
     @Property(selector = "setTooltipColorStyle:")
     public native void setTooltipColorStyle(FBSDKTooltipColorStyle v);
+    @Property(selector = "loginTracking")
+    public native FBSDKLoginTracking getLoginTracking();
+    @Property(selector = "setLoginTracking:")
+    public native void setLoginTracking(FBSDKLoginTracking v);
+    @Property(selector = "nonce")
+    public native String getNonce();
+    @Property(selector = "setNonce:")
+    public native void setNonce(String v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();

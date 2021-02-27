@@ -13,13 +13,14 @@ enums:
     FBSDKTooltipViewArrowDirection: {}
     FBSDKTooltipColorStyle: {}
     FBSDKLoginButtonTooltipBehavior: {}
-
+    FBSDKLoginTracking: {}
 typed_enums:
     FBSDKLoginAuthType:
         enum: FBSDKLoginAuthType
         type: NSString
         prefix: FBSDKLoginAuthType
-
+private_typedefs:
+    FBSDKPermission: NSObject
 classes:
     FBSDKDeviceLoginCodeInfo: {}
     FBSDKDeviceLoginManager:
@@ -34,11 +35,15 @@ classes:
                 name: logIn
             '-logInWithURL:handler:':
                 name: logIn
+            '-logInFromViewController:configuration:completion:':
+                name: logIn
             '-reauthorizeDataAccess:handler:':
                 name: reauthorizeDataAccess
     FBSDKLoginManagerLoginResult:
         methods:
             '-initWithToken:isCancelled:grantedPermissions:declinedPermissions:':
+                name: init
+            '-initWithToken:authenticationToken:isCancelled:grantedPermissions:declinedPermissions:':
                 name: init
     FBSDKLoginTooltipView: {}
     FBSDKTooltipView:
@@ -62,6 +67,14 @@ classes:
             '-initWithReferralCodes:isCancelled:':
                 #trim_after_first_colon: true
                 name: initWithReferralCodes$isCancelled$
+    FBSDKLoginConfiguration:
+        methods:
+            '-initWithPermissions:tracking:nonce:':
+                name: init
+            '-initWithPermissions:tracking:':
+                name: init
+            '-initWithTracking:':
+                name: init
 protocols:
     FBSDKDeviceLoginManagerDelegate:
         methods:
