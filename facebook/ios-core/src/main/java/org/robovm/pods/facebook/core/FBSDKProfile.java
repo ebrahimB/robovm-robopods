@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKProfile(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:")
     public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate)); }
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:")
+    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email)); }
     @Method(selector = "initWithCoder:")
     public FBSDKProfile(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
@@ -74,6 +76,10 @@ import org.robovm.apple.coreanimation.*;
     public native NSURL getLinkURL();
     @Property(selector = "refreshDate")
     public native NSDate getRefreshDate();
+    @Property(selector = "imageURL")
+    public native NSURL getImageURL();
+    @Property(selector = "email")
+    public native String getEmail();
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
     /*</properties>*/
@@ -93,6 +99,8 @@ import org.robovm.apple.coreanimation.*;
     
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:")
     protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate);
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:")
+    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email);
     @Method(selector = "imageURLForPictureMode:size:")
     public native NSURL getImageURL(FBSDKProfilePictureMode mode, @ByVal CGSize size);
     @Method(selector = "isEqualToProfile:")

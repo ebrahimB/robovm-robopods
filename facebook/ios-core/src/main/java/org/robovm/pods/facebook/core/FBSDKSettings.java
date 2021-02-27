@@ -60,18 +60,6 @@ import org.robovm.apple.coreanimation.*;
     public static native @MachineSizedFloat double getJPEGCompressionQuality();
     @Property(selector = "setJPEGCompressionQuality:")
     public static native void setJPEGCompressionQuality(@MachineSizedFloat double v);
-    /**
-     * @deprecated Auto-initialization will be removed in the next major version release.
-     */
-    @Deprecated
-    @Property(selector = "isAutoInitEnabled")
-    public static native boolean isAutoInitEnabled();
-    /**
-     * @deprecated Auto-initialization will be removed in the next major version release.
-     */
-    @Deprecated
-    @Property(selector = "setAutoInitEnabled:")
-    public static native void setAutoInitEnabled(boolean v);
     @Property(selector = "isAutoLogAppEventsEnabled")
     public static native boolean isAutoLogAppEventsEnabled();
     @Property(selector = "setAutoLogAppEventsEnabled:")
@@ -84,6 +72,10 @@ import org.robovm.apple.coreanimation.*;
     public static native boolean isAdvertiserIDCollectionEnabled();
     @Property(selector = "setAdvertiserIDCollectionEnabled:")
     public static native void setAdvertiserIDCollectionEnabled(boolean v);
+    @Property(selector = "isSKAdNetworkReportEnabled")
+    public static native boolean isSKAdNetworkReportEnabled();
+    @Property(selector = "setSKAdNetworkReportEnabled:")
+    public static native void setSKAdNetworkReportEnabled(boolean v);
     @Property(selector = "shouldLimitEventAndDataUsage")
     public static native boolean isLimitEventAndDataUsage();
     @Property(selector = "setLimitEventAndDataUsage:")

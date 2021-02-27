@@ -47,8 +47,8 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/
     /*</bind>*/
     /*<constants>*/
-    public static final String Version = "8.2.0";
-    public static final String PlatformVersion = "v8.0";
+    public static final String Version = "9.0.1";
+    public static final String PlatformVersion = "v9.0";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

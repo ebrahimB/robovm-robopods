@@ -52,6 +52,10 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKAccessToken(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:")
     public FBSDKAccessToken(String tokenString, NSArray<NSString> permissions, NSArray<NSString> declinedPermissions, NSArray<NSString> expiredPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate, NSDate dataAccessExpirationDate) { super((SkipInit) null); initObject(init(tokenString, permissions, declinedPermissions, expiredPermissions, appID, userID, expirationDate, refreshDate, dataAccessExpirationDate)); }
+    /**
+     * @deprecated The graphDomain property will be removed from AccessToken in the next major release. Use initializers that do not take in graphDomain domain instead.
+     */
+    @Deprecated
     @Method(selector = "initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:graphDomain:")
     public FBSDKAccessToken(String tokenString, NSArray<NSString> permissions, NSArray<NSString> declinedPermissions, NSArray<NSString> expiredPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate, NSDate dataAccessExpirationDate, String graphDomain) { super((SkipInit) null); initObject(init(tokenString, permissions, declinedPermissions, expiredPermissions, appID, userID, expirationDate, refreshDate, dataAccessExpirationDate, graphDomain)); }
     @Method(selector = "initWithCoder:")
@@ -82,6 +86,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getTokenString();
     @Property(selector = "userID")
     public native String getUserID();
+    /**
+     * @deprecated The graphDomain property will be removed from AccessToken in the next major release. Use the graphDomain property on AuthenticationToken instead.
+     */
+    @Deprecated
     @Property(selector = "graphDomain")
     public native String getGraphDomain();
     @Property(selector = "isExpired")
@@ -117,6 +125,10 @@ import org.robovm.apple.coreanimation.*;
     
     @Method(selector = "initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:")
     protected native @Pointer long init(String tokenString, NSArray<NSString> permissions, NSArray<NSString> declinedPermissions, NSArray<NSString> expiredPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate, NSDate dataAccessExpirationDate);
+    /**
+     * @deprecated The graphDomain property will be removed from AccessToken in the next major release. Use initializers that do not take in graphDomain domain instead.
+     */
+    @Deprecated
     @Method(selector = "initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:graphDomain:")
     protected native @Pointer long init(String tokenString, NSArray<NSString> permissions, NSArray<NSString> declinedPermissions, NSArray<NSString> expiredPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate, NSDate dataAccessExpirationDate, String graphDomain);
     @Method(selector = "hasGranted:")
