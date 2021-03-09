@@ -28,6 +28,7 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
+import org.robovm.apple.usernotifications.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -53,8 +54,12 @@ import org.robovm.apple.foundation.*;
     /*<methods>*/
     @Method(selector = "startWithConnectionString:hubName:")
     public static native void start(String connectionString, String notificationHubName);
+    @Method(selector = "startWithConnectionString:hubName:options:")
+    public static native void start(String connectionString, String notificationHubName, MSNotificationHubOptions options);
     @Method(selector = "startWithInstallationManagement:")
     public static native void start(MSInstallationManagementDelegate managementDelegate);
+    @Method(selector = "startWithInstallationManagement:options:")
+    public static native void start(MSInstallationManagementDelegate managementDelegate, MSNotificationHubOptions options);
     @Method(selector = "didRegisterForRemoteNotificationsWithDeviceToken:")
     public static native void didRegisterForRemoteNotifications(NSData deviceToken);
     @Method(selector = "didFailToRegisterForRemoteNotificationsWithError:")

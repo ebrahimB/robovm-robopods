@@ -28,6 +28,7 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
+import org.robovm.apple.usernotifications.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -48,6 +49,8 @@ import org.robovm.apple.foundation.*;
     /*<methods>*/
     @Method(selector = "notificationHub:didReceivePushNotification:")
     void didReceivePushNotification(MSNotificationHub notificationHub, MSNotificationHubMessage message);
+    @Method(selector = "notificationHub:didRequestAuthorization:error:")
+    void didRequestAuthorization(MSNotificationHub notificationHub, boolean granted, NSError error);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

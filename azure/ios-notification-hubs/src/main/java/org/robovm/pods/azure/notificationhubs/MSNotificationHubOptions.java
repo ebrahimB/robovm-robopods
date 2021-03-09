@@ -35,33 +35,41 @@ import org.robovm.apple.usernotifications.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/SBTokenProvider/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/MSNotificationHubOptions/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class SBTokenProviderPtr extends Ptr<SBTokenProvider, SBTokenProviderPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(SBTokenProvider.class); }/*</bind>*/
+    /*<ptr>*/public static class MSNotificationHubOptionsPtr extends Ptr<MSNotificationHubOptions, MSNotificationHubOptionsPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(MSNotificationHubOptions.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public SBTokenProvider() {}
-    protected SBTokenProvider(Handle h, long handle) { super(h, handle); }
-    protected SBTokenProvider(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithConnectionDictinary:")
-    public SBTokenProvider(NSDictionary<?, ?> connectionDictionary) { super((SkipInit) null); initObject(init(connectionDictionary)); }
+    public MSNotificationHubOptions() {}
+    protected MSNotificationHubOptions(Handle h, long handle) { super(h, handle); }
+    protected MSNotificationHubOptions(SkipInit skipInit) { super(skipInit); }
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "initWithAuthorizationOptions:")
+    public MSNotificationHubOptions(UNAuthorizationOptions authorizationOptions) { super((SkipInit) null); initObject(init(authorizationOptions)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "timeToExpireinMins")
-    public native @MachineSizedSInt long getTimeToExpireinMins();
-    @Property(selector = "setTimeToExpireinMins:")
-    public native void setTimeToExpireinMins(@MachineSizedSInt long v);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Property(selector = "authorizationOptions")
+    public native UNAuthorizationOptions getAuthorizationOptions();
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Property(selector = "setAuthorizationOptions:")
+    public native void setAuthorizationOptions(UNAuthorizationOptions v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithConnectionDictinary:")
-    protected native @Pointer long init(NSDictionary<?, ?> connectionDictionary);
-    @Method(selector = "setTokenWithRequest:completion:")
-    public native void setToken(NSMutableURLRequest request, @Block VoidBlock1<NSError> completion);
-    @Method(selector = "setTokenWithRequest:error:")
-    public native boolean setToken(NSMutableURLRequest request, NSError.NSErrorPtr error);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "initWithAuthorizationOptions:")
+    protected native @Pointer long init(UNAuthorizationOptions authorizationOptions);
     /*</methods>*/
 }

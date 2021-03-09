@@ -1,6 +1,6 @@
 package: org.robovm.pods.azure.notificationhubs
 framework: WindowsAzureMessaging
-include: [foundation]
+include: [foundation, usernotifications]
 clang_args: ['-x', 'objective-c']
 headers:
     - WindowsAzureMessaging.h
@@ -28,6 +28,10 @@ classes:
                 name: didFailToRegisterForRemoteNotifications
             '+setTemplate:forKey:':
                 name: setTemplate
+            '+startWithConnectionString:hubName:options:':
+                name: start
+            '+startWithInstallationManagement:options:':
+                name: start
     MSNotificationHubMessage: {}
     SBConnectionString:
         methods:
@@ -99,6 +103,10 @@ classes:
         methods:
             '+payloadWithDeviceToken:tags:':
                 name: getPayload
+    MSNotificationHubOptions:
+        methods:
+            '-initWithAuthorizationOptions:':
+                name: init
 protocols:
     MSChangeTracking: {}
     MSInstallationEnrichmentDelegate:
@@ -119,6 +127,8 @@ protocols:
         methods:
             '-notificationHub:didReceivePushNotification:':
                 name: didReceivePushNotification
+            '-notificationHub:didRequestAuthorization:error:':
+                name: didRequestAuthorization
     MSTaggable: {}
 
 functions:
