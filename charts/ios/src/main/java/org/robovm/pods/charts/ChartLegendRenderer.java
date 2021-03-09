@@ -38,8 +38,8 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartLegendRenderer/*</name>*/ 
-    extends /*<extends>*/ChartRenderer/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements ChartRenderer/*</implements>*/ {
 
     /*<ptr>*/public static class ChartLegendRendererPtr extends Ptr<ChartLegendRenderer, ChartLegendRendererPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ChartLegendRenderer.class); }/*</bind>*/
@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     public ChartLegendRenderer(ChartViewPortHandler viewPortHandler, ChartLegend legend) { super((SkipInit) null); initObject(init(viewPortHandler, legend)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "viewPortHandler")
+    public native ChartViewPortHandler getViewPortHandler();
     @Property(selector = "legend")
     public native ChartLegend getLegend();
     @Property(selector = "setLegend:")

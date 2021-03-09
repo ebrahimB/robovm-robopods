@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithDataSets:")
     public CandleChartData(NSArray<?> dataSets) { super((SkipInit) null); initObject(init(dataSets)); }
     @Method(selector = "initWithDataSet:")
-    public CandleChartData(IChartDataSet dataSet) { super(dataSet); }
+    public CandleChartData(ChartDataSetProtocol dataSet) { super(dataSet); }
     /*</constructors>*/
     /*<properties>*/
     

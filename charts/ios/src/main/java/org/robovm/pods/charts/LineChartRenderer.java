@@ -64,13 +64,13 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "drawDataWithContext:")
     public native void drawData(CGContext context);
     @Method(selector = "drawDataSetWithContext:dataSet:")
-    public native void drawDataSet(CGContext context, ILineChartDataSet dataSet);
+    public native void drawDataSet(CGContext context, LineChartDataSetProtocol dataSet);
     @Method(selector = "drawCubicBezierWithContext:dataSet:")
-    public native void drawCubicBezier(CGContext context, ILineChartDataSet dataSet);
+    public native void drawCubicBezier(CGContext context, LineChartDataSetProtocol dataSet);
     @Method(selector = "drawHorizontalBezierWithContext:dataSet:")
-    public native void drawHorizontalBezier(CGContext context, ILineChartDataSet dataSet);
+    public native void drawHorizontalBezier(CGContext context, LineChartDataSetProtocol dataSet);
     @Method(selector = "drawLinearWithContext:dataSet:")
-    public native void drawLinear(CGContext context, ILineChartDataSet dataSet);
+    public native void drawLinear(CGContext context, LineChartDataSetProtocol dataSet);
     @Method(selector = "drawValuesWithContext:")
     public native void drawValues(CGContext context);
     @Method(selector = "drawExtrasWithContext:")

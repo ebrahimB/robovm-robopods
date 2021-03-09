@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts15PieChartDataSet")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/PieChartDataSet/*</name>*/ 
     extends /*<extends>*/ChartDataSet/*</extends>*/ 
-    /*<implements>*/implements IPieChartDataSet/*</implements>*/ {
+    /*<implements>*/implements PieChartDataSetProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class PieChartDataSetPtr extends Ptr<PieChartDataSet, PieChartDataSetPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(PieChartDataSet.class); }/*</bind>*/

@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts21TriangleShapeRenderer")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/TriangleShapeRenderer/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements IShapeRenderer/*</implements>*/ {
+    /*<implements>*/implements ShapeRenderer/*</implements>*/ {
 
     /*<ptr>*/public static class TriangleShapeRendererPtr extends Ptr<TriangleShapeRenderer, TriangleShapeRendererPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(TriangleShapeRenderer.class); }/*</bind>*/
@@ -55,6 +55,6 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "renderShapeWithContext:dataSet:viewPortHandler:point:color:")
-    public native void renderShape(CGContext context, IScatterChartDataSet dataSet, ChartViewPortHandler viewPortHandler, @ByVal CGPoint point, UIColor color);
+    public native void renderShape(CGContext context, ScatterChartDataSetProtocol dataSet, ChartViewPortHandler viewPortHandler, @ByVal CGPoint point, UIColor color);
     /*</methods>*/
 }

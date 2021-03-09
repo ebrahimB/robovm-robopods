@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts16ChartHighlighter")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartHighlighter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements IChartHighlighter/*</implements>*/ {
+    /*<implements>*/implements ChartHighlighterProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class ChartHighlighterPtr extends Ptr<ChartHighlighter, ChartHighlighterPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ChartHighlighter.class); }/*</bind>*/

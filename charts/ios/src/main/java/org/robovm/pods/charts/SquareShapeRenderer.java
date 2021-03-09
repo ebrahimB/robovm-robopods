@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts19SquareShapeRenderer")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/SquareShapeRenderer/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements IShapeRenderer/*</implements>*/ {
+    /*<implements>*/implements ShapeRenderer/*</implements>*/ {
 
     /*<ptr>*/public static class SquareShapeRendererPtr extends Ptr<SquareShapeRenderer, SquareShapeRendererPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(SquareShapeRenderer.class); }/*</bind>*/
@@ -55,6 +55,6 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "renderShapeWithContext:dataSet:viewPortHandler:point:color:")
-    public native void renderShape(CGContext context, IScatterChartDataSet dataSet, ChartViewPortHandler viewPortHandler, @ByVal CGPoint point, UIColor color);
+    public native void renderShape(CGContext context, ScatterChartDataSetProtocol dataSet, ChartViewPortHandler viewPortHandler, @ByVal CGPoint point, UIColor color);
     /*</methods>*/
 }

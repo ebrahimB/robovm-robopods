@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts16LineChartDataSet")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/LineChartDataSet/*</name>*/ 
     extends /*<extends>*/LineRadarChartDataSet/*</extends>*/ 
-    /*<implements>*/implements ILineChartDataSet/*</implements>*/ {
+    /*<implements>*/implements LineChartDataSetProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class LineChartDataSetPtr extends Ptr<LineChartDataSet, LineChartDataSetPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(LineChartDataSet.class); }/*</bind>*/
@@ -64,6 +64,14 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double getCubicIntensity();
     @Property(selector = "setCubicIntensity:")
     public native void setCubicIntensity(@MachineSizedFloat double v);
+    @Property(selector = "isDrawLineWithGradientEnabled")
+    public native boolean isDrawLineWithGradientEnabled();
+    @Property(selector = "setIsDrawLineWithGradientEnabled:")
+    public native void setIsDrawLineWithGradientEnabled(boolean v);
+    @Property(selector = "gradientPositions")
+    public native NSArray<NSNumber> getGradientPositions();
+    @Property(selector = "setGradientPositions:")
+    public native void setGradientPositions(NSArray<NSNumber> v);
     @Property(selector = "circleRadius")
     public native @MachineSizedFloat double getCircleRadius();
     @Property(selector = "setCircleRadius:")
@@ -105,9 +113,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setLineCapType:")
     public native void setLineCapType(CGLineCap v);
     @Property(selector = "fillFormatter")
-    public native IChartFillFormatter getFillFormatter();
+    public native ChartFillFormatter getFillFormatter();
     @Property(selector = "setFillFormatter:")
-    public native void setFillFormatter(IChartFillFormatter v);
+    public native void setFillFormatter(ChartFillFormatter v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

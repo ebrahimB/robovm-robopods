@@ -48,14 +48,18 @@ import org.robovm.apple.coreanimation.*;
     public ChartLegendEntry() {}
     protected ChartLegendEntry(Handle h, long handle) { super(h, handle); }
     protected ChartLegendEntry(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithLabel:form:formSize:formLineWidth:formLineDashPhase:formLineDashLengths:formColor:")
-    public ChartLegendEntry(String label, ChartLegendForm form, @MachineSizedFloat double formSize, @MachineSizedFloat double formLineWidth, @MachineSizedFloat double formLineDashPhase, NSArray<NSNumber> formLineDashLengths, UIColor formColor) { super((SkipInit) null); initObject(init(label, form, formSize, formLineWidth, formLineDashPhase, formLineDashLengths, formColor)); }
+    @Method(selector = "initWithLabel:")
+    public ChartLegendEntry(String label) { super((SkipInit) null); initObject(init(label)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "label")
     public native String getLabel();
     @Property(selector = "setLabel:")
     public native void setLabel(String v);
+    @Property(selector = "labelColor")
+    public native UIColor getLabelColor();
+    @Property(selector = "setLabelColor:")
+    public native void setLabelColor(UIColor v);
     @Property(selector = "form")
     public native ChartLegendForm getForm();
     @Property(selector = "setForm:")
@@ -83,7 +87,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithLabel:form:formSize:formLineWidth:formLineDashPhase:formLineDashLengths:formColor:")
-    protected native @Pointer long init(String label, ChartLegendForm form, @MachineSizedFloat double formSize, @MachineSizedFloat double formLineWidth, @MachineSizedFloat double formLineDashPhase, NSArray<NSNumber> formLineDashLengths, UIColor formColor);
+    @Method(selector = "initWithLabel:")
+    protected native @Pointer long init(String label);
     /*</methods>*/
 }

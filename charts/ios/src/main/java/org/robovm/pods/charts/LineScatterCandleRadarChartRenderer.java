@@ -48,17 +48,13 @@ import org.robovm.apple.coreanimation.*;
     protected LineScatterCandleRadarChartRenderer() {}
     protected LineScatterCandleRadarChartRenderer(Handle h, long handle) { super(h, handle); }
     protected LineScatterCandleRadarChartRenderer(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithAnimator:viewPortHandler:")
-    public LineScatterCandleRadarChartRenderer(ChartAnimator animator, ChartViewPortHandler viewPortHandler) { super((SkipInit) null); initObject(init(animator, viewPortHandler)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithAnimator:viewPortHandler:")
-    protected native @Pointer long init(ChartAnimator animator, ChartViewPortHandler viewPortHandler);
     @Method(selector = "drawHighlightLinesWithContext:point:set:")
-    public native void drawHighlightLines(CGContext context, @ByVal CGPoint point, ILineScatterCandleRadarChartDataSet set);
+    public native void drawHighlightLines(CGContext context, @ByVal CGPoint point, LineScatterCandleRadarChartDataSetProtocol set);
     /*</methods>*/
 }

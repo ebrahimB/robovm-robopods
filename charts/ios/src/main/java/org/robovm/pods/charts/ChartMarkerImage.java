@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartMarkerImage/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements IChartMarker/*</implements>*/ {
+    /*<implements>*/implements ChartMarker/*</implements>*/ {
 
     /*<ptr>*/public static class ChartMarkerImagePtr extends Ptr<ChartMarkerImage, ChartMarkerImagePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ChartMarkerImage.class); }/*</bind>*/
@@ -70,7 +70,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "offsetForDrawingAtPoint:")
-    public native @ByVal CGPoint offsetForDrawingAtPoint(@ByVal CGPoint point);
+    public native @ByVal CGPoint getOffsetForDrawing(@ByVal CGPoint point);
     @Method(selector = "refreshContentWithEntry:highlight:")
     public native void refreshContent(ChartDataEntry entry, ChartHighlight highlight);
     @Method(selector = "drawWithContext:point:")

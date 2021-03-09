@@ -51,17 +51,17 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithDataSets:")
     public PieChartData(NSArray<?> dataSets) { super((SkipInit) null); initObject(init(dataSets)); }
     @Method(selector = "initWithDataSet:")
-    public PieChartData(IChartDataSet dataSet) { super(dataSet); }
+    public PieChartData(ChartDataSetProtocol dataSet) { super(dataSet); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "dataSet")
+    public native PieChartDataSetProtocol getDataSet();
+    @Property(selector = "setDataSet:")
+    public native void setDataSet(PieChartDataSetProtocol v);
     @Property(selector = "dataSets")
     public native NSArray<?> getDataSets();
     @Property(selector = "setDataSets:")
     public native void setDataSets(NSArray<?> v);
-    @Property(selector = "dataSet")
-    public native IPieChartDataSet getDataSet();
-    @Property(selector = "setDataSet:")
-    public native void setDataSet(IPieChartDataSet v);
     @Property(selector = "yValueSum")
     public native double getYValueSum();
     /*</properties>*/
@@ -69,15 +69,11 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initWithDataSets:")
     protected native @Pointer long init(NSArray<?> dataSets);
-    @Method(selector = "getDataSetByIndex:")
-    public native IChartDataSet getDataSetByIndex(@MachineSizedSInt long index);
-    @Method(selector = "getDataSetByLabel:ignorecase:")
-    public native IChartDataSet getDataSet(String label, boolean ignorecase);
-    @Method(selector = "entryForHighlight:")
-    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
-    @Method(selector = "addDataSet:")
-    public native void addDataSet(IChartDataSet d);
-    @Method(selector = "removeDataSetByIndex:")
-    public native boolean removeDataSetByIndex(@MachineSizedSInt long index);
+    @Method(selector = "dataSetAtIndex:")
+    public native ChartDataSetProtocol dataSetAtIndex(@MachineSizedSInt long index);
+    @Method(selector = "dataSetForLabel:ignorecase:")
+    public native ChartDataSetProtocol dataSetForLabel(String label, boolean ignorecase);
+    @Method(selector = "entryFor:")
+    public native ChartDataEntry entryFor(ChartHighlight highlight);
     /*</methods>*/
 }

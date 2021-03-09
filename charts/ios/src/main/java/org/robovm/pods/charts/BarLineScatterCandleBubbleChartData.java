@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithDataSets:")
     public BarLineScatterCandleBubbleChartData(NSArray<?> dataSets) { super((SkipInit) null); initObject(init(dataSets)); }
     @Method(selector = "initWithDataSet:")
-    public BarLineScatterCandleBubbleChartData(IChartDataSet dataSet) { super(dataSet); }
+    public BarLineScatterCandleBubbleChartData(ChartDataSetProtocol dataSet) { super(dataSet); }
     /*</constructors>*/
     /*<properties>*/
     

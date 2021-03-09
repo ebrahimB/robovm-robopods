@@ -59,9 +59,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setData:")
     public native void setData(ChartData v);
     @Property(selector = "fillFormatter")
-    public native IChartFillFormatter getFillFormatter();
+    public native ChartFillFormatter getFillFormatter();
     @Property(selector = "setFillFormatter:")
-    public native void setFillFormatter(IChartFillFormatter v);
+    public native void setFillFormatter(ChartFillFormatter v);
     @Property(selector = "combinedData")
     public native CombinedChartData getCombinedData();
     @Property(selector = "lineData")
@@ -96,6 +96,9 @@ import org.robovm.apple.coreanimation.*;
     public native void setHighlightFullBarEnabled(boolean v);
     @Property(selector = "isHighlightFullBarEnabled")
     public native boolean isHighlightFullBarEnabled();
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -105,6 +108,16 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder decoder);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     @Method(selector = "getAxis:")
     public native ChartYAxis getAxis(AxisDependency axis);
     /*</methods>*/

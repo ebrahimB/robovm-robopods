@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartDefaultFillFormatter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements IChartFillFormatter/*</implements>*/ {
+    /*<implements>*/implements ChartFillFormatter/*</implements>*/ {
 
     /*<ptr>*/public static class ChartDefaultFillFormatterPtr extends Ptr<ChartDefaultFillFormatter, ChartDefaultFillFormatterPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ChartDefaultFillFormatter.class); }/*</bind>*/
@@ -49,21 +49,21 @@ import org.robovm.apple.coreanimation.*;
     protected ChartDefaultFillFormatter(Handle h, long handle) { super(h, handle); }
     protected ChartDefaultFillFormatter(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithBlock:")
-    public ChartDefaultFillFormatter(@Block Block2<ILineChartDataSet, LineChartDataProvider, Double> block) { super((SkipInit) null); initObject(init(block)); }
+    public ChartDefaultFillFormatter(@Block Block2<LineChartDataSetProtocol, LineChartDataProvider, Double> block) { super((SkipInit) null); initObject(init(block)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "block")
-    public native @Block Block2<ILineChartDataSet, LineChartDataProvider, Double> getBlock();
+    public native @Block Block2<LineChartDataSetProtocol, LineChartDataProvider, Double> getBlock();
     @Property(selector = "setBlock:")
-    public native void setBlock(@Block Block2<ILineChartDataSet, LineChartDataProvider, Double> v);
+    public native void setBlock(@Block Block2<LineChartDataSetProtocol, LineChartDataProvider, Double> v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithBlock:")
-    protected native @Pointer long init(@Block Block2<ILineChartDataSet, LineChartDataProvider, Double> block);
+    protected native @Pointer long init(@Block Block2<LineChartDataSetProtocol, LineChartDataProvider, Double> block);
     @Method(selector = "getFillLinePositionWithDataSet:dataProvider:")
-    public native @MachineSizedFloat double getFillLinePosition(ILineChartDataSet dataSet, LineChartDataProvider dataProvider);
+    public native @MachineSizedFloat double getFillLinePosition(LineChartDataSetProtocol dataSet, LineChartDataProvider dataProvider);
     @Method(selector = "withBlock:")
-    public static native ChartDefaultFillFormatter withBlock(@Block Block2<ILineChartDataSet, LineChartDataProvider, Double> block);
+    public static native ChartDefaultFillFormatter withBlock(@Block Block2<LineChartDataSetProtocol, LineChartDataProvider, Double> block);
     /*</methods>*/
 }

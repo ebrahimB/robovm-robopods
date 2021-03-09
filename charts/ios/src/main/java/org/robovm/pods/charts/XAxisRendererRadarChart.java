@@ -48,8 +48,8 @@ import org.robovm.apple.coreanimation.*;
     protected XAxisRendererRadarChart() {}
     protected XAxisRendererRadarChart(Handle h, long handle) { super(h, handle); }
     protected XAxisRendererRadarChart(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithViewPortHandler:xAxis:chart:")
-    public XAxisRendererRadarChart(ChartViewPortHandler viewPortHandler, ChartXAxis xAxis, RadarChartView chart) { super((SkipInit) null); initObject(init(viewPortHandler, xAxis, chart)); }
+    @Method(selector = "initWithViewPortHandler:axis:chart:")
+    public XAxisRendererRadarChart(ChartViewPortHandler viewPortHandler, ChartXAxis axis, RadarChartView chart) { super((SkipInit) null); initObject(init(viewPortHandler, axis, chart)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "chart")
@@ -59,13 +59,9 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithViewPortHandler:xAxis:chart:")
-    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartXAxis xAxis, RadarChartView chart);
-    @Method(selector = "renderAxisLabelsWithContext:")
-    public native void renderAxisLabels(CGContext context);
+    @Method(selector = "initWithViewPortHandler:axis:chart:")
+    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartXAxis axis, RadarChartView chart);
     @Method(selector = "drawLabelWithContext:formattedLabel:x:y:attributes:anchor:angleRadians:")
     public native void drawLabel(CGContext context, String formattedLabel, @MachineSizedFloat double x, @MachineSizedFloat double y, NSDictionary<NSString, ?> attributes, @ByVal CGPoint anchor, @MachineSizedFloat double angleRadians);
-    @Method(selector = "renderLimitLinesWithContext:")
-    public native void renderLimitLines(CGContext context);
     /*</methods>*/
 }

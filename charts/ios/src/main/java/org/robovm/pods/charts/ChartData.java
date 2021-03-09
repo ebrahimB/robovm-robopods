@@ -51,33 +51,25 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithDataSets:")
     public ChartData(NSArray<?> dataSets) { super((SkipInit) null); initObject(init(dataSets)); }
     @Method(selector = "initWithDataSet:")
-    public ChartData(IChartDataSet dataSet) { super((SkipInit) null); initObject(init(dataSet)); }
+    public ChartData(ChartDataSetProtocol dataSet) { super((SkipInit) null); initObject(init(dataSet)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "dataSetCount")
-    public native @MachineSizedSInt long getDataSetCount();
-    @Property(selector = "yMin")
-    public native double getYMin();
-    @Property(selector = "yMax")
-    public native double getYMax();
-    @Property(selector = "xMin")
-    public native double getXMin();
     @Property(selector = "xMax")
     public native double getXMax();
-    @Property(selector = "dataSets")
-    public native NSArray<?> getDataSets();
-    @Property(selector = "setDataSets:")
-    public native void setDataSets(NSArray<?> v);
-    @Property(selector = "highlightEnabled")
-    public native boolean highlightEnabled();
-    @Property(selector = "setHighlightEnabled:")
-    public native void setHighlightEnabled(boolean v);
-    @Property(selector = "isHighlightEnabled")
-    public native boolean isHighlightEnabled();
-    @Property(selector = "entryCount")
-    public native @MachineSizedSInt long getEntryCount();
-    @Property(selector = "maxEntryCountSet")
-    public native IChartDataSet getMaxEntryCountSet();
+    @Property(selector = "setXMax:")
+    public native void setXMax(double v);
+    @Property(selector = "xMin")
+    public native double getXMin();
+    @Property(selector = "setXMin:")
+    public native void setXMin(double v);
+    @Property(selector = "yMax")
+    public native double getYMax();
+    @Property(selector = "setYMax:")
+    public native void setYMax(double v);
+    @Property(selector = "yMin")
+    public native double getYMin();
+    @Property(selector = "setYMin:")
+    public native void setYMin(double v);
     @Property(selector = "accessibilityEntryLabelPrefix")
     public native String getAccessibilityEntryLabelPrefix();
     @Property(selector = "setAccessibilityEntryLabelPrefix:")
@@ -90,13 +82,29 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isAccessibilityEntryLabelSuffixIsCount();
     @Property(selector = "setAccessibilityEntryLabelSuffixIsCount:")
     public native void setAccessibilityEntryLabelSuffixIsCount(boolean v);
+    @Property(selector = "dataSetCount")
+    public native @MachineSizedSInt long getDataSetCount();
+    @Property(selector = "dataSets")
+    public native NSArray<?> getDataSets();
+    @Property(selector = "setDataSets:")
+    public native void setDataSets(NSArray<?> v);
+    @Property(selector = "colors")
+    public native NSArray<UIColor> getColors();
+    @Property(selector = "isHighlightEnabled")
+    public native boolean isHighlightEnabled();
+    @Property(selector = "setIsHighlightEnabled:")
+    public native void setIsHighlightEnabled(boolean v);
+    @Property(selector = "entryCount")
+    public native @MachineSizedSInt long getEntryCount();
+    @Property(selector = "maxEntryCountSet")
+    public native ChartDataSetProtocol getMaxEntryCountSet();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithDataSets:")
     protected native @Pointer long init(NSArray<?> dataSets);
     @Method(selector = "initWithDataSet:")
-    protected native @Pointer long init(IChartDataSet dataSet);
+    protected native @Pointer long init(ChartDataSetProtocol dataSet);
     @Method(selector = "notifyDataChanged")
     public native void notifyDataChanged();
     @Method(selector = "calcMinMaxYFromX:toX:")
@@ -106,23 +114,19 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "calcMinMaxWithEntry:axis:")
     public native void calcMinMax(ChartDataEntry e, AxisDependency axis);
     @Method(selector = "calcMinMaxWithDataSet:")
-    public native void calcMinMax(IChartDataSet d);
+    public native void calcMinMax(ChartDataSetProtocol d);
     @Method(selector = "getYMinWithAxis:")
     public native double getYMin(AxisDependency axis);
     @Method(selector = "getYMaxWithAxis:")
     public native double getYMax(AxisDependency axis);
-    @Method(selector = "entryForHighlight:")
-    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
-    @Method(selector = "getDataSetByLabel:ignorecase:")
-    public native IChartDataSet getDataSet(String label, boolean ignorecase);
-    @Method(selector = "getDataSetByIndex:")
-    public native IChartDataSet getDataSetByIndex(@MachineSizedSInt long index);
-    @Method(selector = "addDataSet:")
-    public native void addDataSet(IChartDataSet dataSet);
+    @Method(selector = "entryFor:")
+    public native ChartDataEntry entryFor(ChartHighlight highlight);
+    @Method(selector = "dataSetForLabel:ignorecase:")
+    public native ChartDataSetProtocol dataSetForLabel(String label, boolean ignorecase);
+    @Method(selector = "dataSetAtIndex:")
+    public native ChartDataSetProtocol dataSetAtIndex(@MachineSizedSInt long index);
     @Method(selector = "removeDataSet:")
-    public native boolean removeDataSet(IChartDataSet dataSet);
-    @Method(selector = "removeDataSetByIndex:")
-    public native boolean removeDataSetByIndex(@MachineSizedSInt long index);
+    public native ChartDataSetProtocol removeDataSet(ChartDataSetProtocol dataSet);
     @Method(selector = "addEntry:dataSetIndex:")
     public native void addEntry(ChartDataEntry e, @MachineSizedSInt long dataSetIndex);
     @Method(selector = "removeEntry:dataSetIndex:")
@@ -130,17 +134,15 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "removeEntryWithXValue:dataSetIndex:")
     public native boolean removeEntry(double xValue, @MachineSizedSInt long dataSetIndex);
     @Method(selector = "getDataSetForEntry:")
-    public native IChartDataSet getDataSetForEntry(ChartDataEntry e);
-    @Method(selector = "indexOfDataSet:")
-    public native @MachineSizedSInt long indexOfDataSet(IChartDataSet dataSet);
+    public native ChartDataSetProtocol getDataSetForEntry(ChartDataEntry e);
+    @Method(selector = "indexOf:")
+    public native @MachineSizedSInt long indexOf(ChartDataSetProtocol dataSet);
     @Method(selector = "getFirstLeftWithDataSets:")
-    public native IChartDataSet getFirstLeft(NSArray<?> dataSets);
+    public native ChartDataSetProtocol getFirstLeft(NSArray<?> dataSets);
     @Method(selector = "getFirstRightWithDataSets:")
-    public native IChartDataSet getFirstRight(NSArray<?> dataSets);
-    @Method(selector = "getColors")
-    public native NSArray<UIColor> getColors();
+    public native ChartDataSetProtocol getFirstRight(NSArray<?> dataSets);
     @Method(selector = "setValueFormatter:")
-    public native void setValueFormatter(IChartValueFormatter formatter);
+    public native void setValueFormatter(ChartValueFormatter formatter);
     @Method(selector = "setValueTextColor:")
     public native void setValueTextColor(UIColor color);
     @Method(selector = "setValueFont:")
@@ -150,6 +152,10 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "clearValues")
     public native void clearValues();
     @Method(selector = "containsWithDataSet:")
-    public native boolean contains(IChartDataSet dataSet);
+    public native boolean contains(ChartDataSetProtocol dataSet);
+    @Method(selector = "addDataSet:")
+    public native void addDataSet(ChartDataSetProtocol newElement);
+    @Method(selector = "removeDataSetByIndex:")
+    public native ChartDataSetProtocol removeDataSetByIndex(@MachineSizedSInt long position);
     /*</methods>*/
 }

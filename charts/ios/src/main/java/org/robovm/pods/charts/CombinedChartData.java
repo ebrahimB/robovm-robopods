@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithDataSets:")
     public CombinedChartData(NSArray<?> dataSets) { super((SkipInit) null); initObject(init(dataSets)); }
     @Method(selector = "initWithDataSet:")
-    public CombinedChartData(IChartDataSet dataSet) { super(dataSet); }
+    public CombinedChartData(ChartDataSetProtocol dataSet) { super(dataSet); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "lineData")
@@ -86,18 +86,20 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "dataByIndex:")
     public native ChartData dataByIndex(@MachineSizedSInt long index);
     @Method(selector = "removeDataSet:")
-    public native boolean removeDataSet(IChartDataSet dataSet);
-    @Method(selector = "removeDataSetByIndex:")
-    public native boolean removeDataSetByIndex(@MachineSizedSInt long index);
+    public native ChartDataSetProtocol removeDataSet(ChartDataSetProtocol dataSet);
     @Method(selector = "removeEntry:dataSetIndex:")
     public native boolean removeEntry(ChartDataEntry entry, @MachineSizedSInt long dataSetIndex);
     @Method(selector = "removeEntryWithXValue:dataSetIndex:")
     public native boolean removeEntry(double xValue, @MachineSizedSInt long dataSetIndex);
     @Method(selector = "notifyDataChanged")
     public native void notifyDataChanged();
-    @Method(selector = "entryForHighlight:")
-    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
+    @Method(selector = "entryFor:")
+    public native ChartDataEntry entryFor(ChartHighlight highlight);
     @Method(selector = "getDataSetByHighlight:")
-    public native IChartDataSet getDataSetByHighlight(ChartHighlight highlight);
+    public native ChartDataSetProtocol getDataSetByHighlight(ChartHighlight highlight);
+    @Method(selector = "addDataSet:")
+    public native void addDataSet(ChartDataSetProtocol newElement);
+    @Method(selector = "removeDataSetByIndex:")
+    public native ChartDataSetProtocol removeDataSetByIndex(@MachineSizedSInt long i);
     /*</methods>*/
 }

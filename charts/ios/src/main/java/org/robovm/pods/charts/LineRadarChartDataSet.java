@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts21LineRadarChartDataSet")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/LineRadarChartDataSet/*</name>*/ 
     extends /*<extends>*/LineScatterCandleRadarChartDataSet/*</extends>*/ 
-    /*<implements>*/implements ILineRadarChartDataSet/*</implements>*/ {
+    /*<implements>*/implements LineRadarChartDataSetProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class LineRadarChartDataSetPtr extends Ptr<LineRadarChartDataSet, LineRadarChartDataSetPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(LineRadarChartDataSet.class); }/*</bind>*/

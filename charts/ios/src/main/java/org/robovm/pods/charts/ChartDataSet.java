@@ -98,11 +98,11 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "entryForIndex:")
     public native ChartDataEntry entryForIndex(@MachineSizedSInt long i);
     @Method(selector = "entryForXValue:closestToY:rounding:")
-    public native ChartDataEntry getEntryForX(double xValue, double yValue, ChartDataSetRounding rounding);
+    public native ChartDataEntry getEntry(double xValue, double yValue, ChartDataSetRounding rounding);
     @Method(selector = "entryForXValue:closestToY:")
-    public native ChartDataEntry getEntryForX(double xValue, double yValue);
+    public native ChartDataEntry getEntry(double xValue, double yValue);
     @Method(selector = "entriesForXValue:")
-    public native NSArray<ChartDataEntry> entriesForXValue(double xValue);
+    public native NSArray<ChartDataEntry> getEntries(double xValue);
     @Method(selector = "entryIndexWithX:closestToY:rounding:")
     public native @MachineSizedSInt long getEntryIndex(double xValue, double yValue, ChartDataSetRounding rounding);
     /**
@@ -112,7 +112,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "entryIndexWithEntry:")
     public native @MachineSizedSInt long getEntryIndex(ChartDataEntry e);
     /**
-     * @deprecated Use `append(_:)` instead
+     * @deprecated Use `append(_:)` instead. Use append(_:)
      */
     @Deprecated
     @Method(selector = "addEntry:")

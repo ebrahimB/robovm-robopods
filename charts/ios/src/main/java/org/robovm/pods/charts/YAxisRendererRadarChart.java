@@ -48,21 +48,17 @@ import org.robovm.apple.coreanimation.*;
     protected YAxisRendererRadarChart() {}
     protected YAxisRendererRadarChart(Handle h, long handle) { super(h, handle); }
     protected YAxisRendererRadarChart(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithViewPortHandler:yAxis:chart:")
-    public YAxisRendererRadarChart(ChartViewPortHandler viewPortHandler, ChartYAxis yAxis, RadarChartView chart) { super((SkipInit) null); initObject(init(viewPortHandler, yAxis, chart)); }
+    @Method(selector = "initWithViewPortHandler:axis:chart:")
+    public YAxisRendererRadarChart(ChartViewPortHandler viewPortHandler, ChartYAxis axis, RadarChartView chart) { super((SkipInit) null); initObject(init(viewPortHandler, axis, chart)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithViewPortHandler:yAxis:chart:")
-    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartYAxis yAxis, RadarChartView chart);
+    @Method(selector = "initWithViewPortHandler:axis:chart:")
+    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartYAxis axis, RadarChartView chart);
     @Method(selector = "computeAxisValuesWithMin:max:")
     public native void computeAxisValues(double yMin, double yMax);
-    @Method(selector = "renderAxisLabelsWithContext:")
-    public native void renderAxisLabels(CGContext context);
-    @Method(selector = "renderLimitLinesWithContext:")
-    public native void renderLimitLines(CGContext context);
     /*</methods>*/
 }

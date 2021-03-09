@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartIndexAxisValueFormatter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements IChartAxisValueFormatter/*</implements>*/ {
+    /*<implements>*/implements ChartAxisValueFormatter/*</implements>*/ {
 
     /*<ptr>*/public static class ChartIndexAxisValueFormatterPtr extends Ptr<ChartIndexAxisValueFormatter, ChartIndexAxisValueFormatterPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ChartIndexAxisValueFormatter.class); }/*</bind>*/

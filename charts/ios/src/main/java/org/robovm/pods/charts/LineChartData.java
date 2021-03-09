@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithDataSets:")
     public LineChartData(NSArray<?> dataSets) { super((SkipInit) null); initObject(init(dataSets)); }
     @Method(selector = "initWithDataSet:")
-    public LineChartData(IChartDataSet dataSet) { super(dataSet); }
+    public LineChartData(ChartDataSetProtocol dataSet) { super(dataSet); }
     /*</constructors>*/
     /*<properties>*/
     

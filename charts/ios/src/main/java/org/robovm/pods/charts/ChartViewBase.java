@@ -54,16 +54,26 @@ import org.robovm.apple.coreanimation.*;
     public ChartViewBase(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "xAxis")
-    public native ChartXAxis getXAxis();
+    @Property(selector = "data")
+    public native ChartData getData();
+    @Property(selector = "setData:")
+    public native void setData(ChartData v);
     @Property(selector = "dragDecelerationEnabled")
     public native boolean dragDecelerationEnabled();
     @Property(selector = "setDragDecelerationEnabled:")
     public native void setDragDecelerationEnabled(boolean v);
+    @Property(selector = "xAxis")
+    public native ChartXAxis getXAxis();
+    @Property(selector = "setXAxis:")
+    public native void setXAxis(ChartXAxis v);
     @Property(selector = "chartDescription")
     public native ChartDescription getChartDescription();
     @Property(selector = "setChartDescription:")
     public native void setChartDescription(ChartDescription v);
+    @Property(selector = "legend")
+    public native ChartLegend getLegend();
+    @Property(selector = "setLegend:")
+    public native void setLegend(ChartLegend v);
     @Property(selector = "delegate")
     public native ChartViewDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
@@ -84,14 +94,30 @@ import org.robovm.apple.coreanimation.*;
     public native NSTextAlignment getNoDataTextAlignment();
     @Property(selector = "setNoDataTextAlignment:")
     public native void setNoDataTextAlignment(NSTextAlignment v);
+    @Property(selector = "legendRenderer")
+    public native ChartLegendRenderer getLegendRenderer();
+    @Property(selector = "setLegendRenderer:")
+    public native void setLegendRenderer(ChartLegendRenderer v);
     @Property(selector = "renderer")
-    public native ChartDataRendererBase getRenderer();
+    public native ChartDataRenderer getRenderer();
     @Property(selector = "setRenderer:")
-    public native void setRenderer(ChartDataRendererBase v);
+    public native void setRenderer(ChartDataRenderer v);
     @Property(selector = "highlighter")
-    public native IChartHighlighter getHighlighter();
+    public native ChartHighlighter getHighlighter();
     @Property(selector = "setHighlighter:")
-    public native void setHighlighter(IChartHighlighter v);
+    public native void setHighlighter(ChartHighlighter v);
+    @Property(selector = "viewPortHandler")
+    public native ChartViewPortHandler getViewPortHandler();
+    @Property(selector = "setViewPortHandler:")
+    public native void setViewPortHandler(ChartViewPortHandler v);
+    @Property(selector = "chartAnimator")
+    public native ChartAnimator getChartAnimator();
+    @Property(selector = "setChartAnimator:")
+    public native void setChartAnimator(ChartAnimator v);
+    @Property(selector = "highlighted")
+    public native NSArray<ChartHighlight> getHighlighted();
+    @Property(selector = "setHighlighted:")
+    public native void setHighlighted(NSArray<ChartHighlight> v);
     @Property(selector = "drawMarkers")
     public native boolean isDrawMarkers();
     @Property(selector = "setDrawMarkers:")
@@ -99,9 +125,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "isDrawMarkersEnabled")
     public native boolean isDrawMarkersEnabled();
     @Property(selector = "marker")
-    public native IChartMarker getMarker();
+    public native ChartMarker getMarker();
     @Property(selector = "setMarker:")
-    public native void setMarker(IChartMarker v);
+    public native void setMarker(ChartMarker v);
     @Property(selector = "extraTopOffset")
     public native @MachineSizedFloat double getExtraTopOffset();
     @Property(selector = "setExtraTopOffset:")
@@ -118,12 +144,6 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double getExtraLeftOffset();
     @Property(selector = "setExtraLeftOffset:")
     public native void setExtraLeftOffset(@MachineSizedFloat double v);
-    @Property(selector = "data")
-    public native ChartData getData();
-    @Property(selector = "setData:")
-    public native void setData(ChartData v);
-    @Property(selector = "highlighted")
-    public native NSArray<ChartHighlight> getHighlighted();
     @Property(selector = "highlightPerTapEnabled")
     public native boolean isHighlightPerTapEnabled();
     @Property(selector = "setHighlightPerTapEnabled:")
@@ -134,8 +154,6 @@ import org.robovm.apple.coreanimation.*;
     public native ChartHighlight getLastHighlighted();
     @Property(selector = "setLastHighlighted:")
     public native void setLastHighlighted(ChartHighlight v);
-    @Property(selector = "chartAnimator")
-    public native ChartAnimator getChartAnimator();
     @Property(selector = "chartYMax")
     public native double getChartYMax();
     @Property(selector = "chartYMin")
@@ -150,14 +168,8 @@ import org.robovm.apple.coreanimation.*;
     public native @ByVal CGPoint getMidPoint();
     @Property(selector = "centerOffsets")
     public native @ByVal CGPoint getCenterOffsets();
-    @Property(selector = "legend")
-    public native ChartLegend getLegend();
-    @Property(selector = "legendRenderer")
-    public native ChartLegendRenderer getLegendRenderer();
     @Property(selector = "contentRect")
     public native @ByVal CGRect getContentRect();
-    @Property(selector = "viewPortHandler")
-    public native ChartViewPortHandler getViewPortHandler();
     @Property(selector = "isDragDecelerationEnabled")
     public native boolean isDragDecelerationEnabled();
     @Property(selector = "dragDecelerationFrictionCoef")
@@ -170,6 +182,9 @@ import org.robovm.apple.coreanimation.*;
     public native void setMaxHighlightDistance(@MachineSizedFloat double v);
     @Property(selector = "maxVisibleCount")
     public native @MachineSizedSInt long getMaxVisibleCount();
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -194,7 +209,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "valuesToHighlight")
     public native boolean valuesToHighlight();
     @Method(selector = "highlightValues:")
-    public native void setHighlightValues(NSArray<ChartHighlight> highs);
+    public native void highlightValues(NSArray<ChartHighlight> highs);
     @Method(selector = "highlightValueWithX:dataSetIndex:dataIndex:")
     public native void highlightValue(double x, @MachineSizedSInt long dataSetIndex, @MachineSizedSInt long dataIndex);
     @Method(selector = "highlightValueWithX:y:dataSetIndex:dataIndex:")
@@ -255,5 +270,15 @@ import org.robovm.apple.coreanimation.*;
     public native void nsuiTouchesEnded(NSSet<UITouch> touches, UIEvent event);
     @Method(selector = "nsuiTouchesCancelled:withEvent:")
     public native void nsuiTouchesCancelled(NSSet<UITouch> touches, UIEvent event);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }

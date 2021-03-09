@@ -56,6 +56,8 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "xAxis")
     public native ChartXAxis getXAxis();
+    @Property(selector = "setXAxis:")
+    public native void setXAxis(ChartXAxis v);
     @Property(selector = "drawAngles")
     public native NSArray<NSNumber> getDrawAngles();
     @Property(selector = "absoluteAngles")
@@ -140,6 +142,13 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double getMaxAngle();
     @Property(selector = "setMaxAngle:")
     public native void setMaxAngle(@MachineSizedFloat double v);
+    @Property(selector = "sliceTextDrawingThreshold")
+    public native @MachineSizedFloat double getSliceTextDrawingThreshold();
+    @Property(selector = "setSliceTextDrawingThreshold:")
+    public native void setSliceTextDrawingThreshold(@MachineSizedFloat double v);
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -161,5 +170,15 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedSInt long indexForAngle(@MachineSizedFloat double angle);
     @Method(selector = "dataSetIndexForIndex:")
     public native @MachineSizedSInt long dataSetIndexForIndex(double xValue);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }

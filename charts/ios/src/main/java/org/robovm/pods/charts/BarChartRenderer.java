@@ -66,11 +66,11 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "drawDataWithContext:")
     public native void drawData(CGContext context);
     @Method(selector = "drawDataSetWithContext:dataSet:index:")
-    public native void drawDataSet(CGContext context, IBarChartDataSet dataSet, @MachineSizedSInt long index);
+    public native void drawDataSet(CGContext context, BarChartDataSetProtocol dataSet, @MachineSizedSInt long index);
     @Method(selector = "drawValuesWithContext:")
     public native void drawValues(CGContext context);
-    @Method(selector = "drawValueWithContext:value:xPos:yPos:font:align:color:")
-    public native void drawValue(CGContext context, String value, @MachineSizedFloat double xPos, @MachineSizedFloat double yPos, UIFont font, NSTextAlignment align, UIColor color);
+    @Method(selector = "drawValueWithContext:value:xPos:yPos:font:align:color:anchor:angleRadians:")
+    public native void drawValue(CGContext context, String value, @MachineSizedFloat double xPos, @MachineSizedFloat double yPos, UIFont font, NSTextAlignment align, UIColor color, @ByVal CGPoint anchor, @MachineSizedFloat double angleRadians);
     @Method(selector = "drawExtrasWithContext:")
     public native void drawExtras(CGContext context);
     @Method(selector = "drawHighlightedWithContext:indices:")

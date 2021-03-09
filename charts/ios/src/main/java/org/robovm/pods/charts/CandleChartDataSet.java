@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts18CandleChartDataSet")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/CandleChartDataSet/*</name>*/ 
     extends /*<extends>*/LineScatterCandleRadarChartDataSet/*</extends>*/ 
-    /*<implements>*/implements ICandleChartDataSet/*</implements>*/ {
+    /*<implements>*/implements CandleChartDataSetProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class CandleChartDataSetPtr extends Ptr<CandleChartDataSet, CandleChartDataSetPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(CandleChartDataSet.class); }/*</bind>*/

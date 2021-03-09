@@ -38,7 +38,7 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartYAxisRenderer/*</name>*/ 
-    extends /*<extends>*/ChartAxisRendererBase/*</extends>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class ChartYAxisRendererPtr extends Ptr<ChartYAxisRenderer, ChartYAxisRendererPtr> {}/*</ptr>*/
@@ -48,30 +48,28 @@ import org.robovm.apple.coreanimation.*;
     protected ChartYAxisRenderer() {}
     protected ChartYAxisRenderer(Handle h, long handle) { super(h, handle); }
     protected ChartYAxisRenderer(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithViewPortHandler:yAxis:transformer:")
-    public ChartYAxisRenderer(ChartViewPortHandler viewPortHandler, ChartYAxis yAxis, ChartTransformer transformer) { super((SkipInit) null); initObject(init(viewPortHandler, yAxis, transformer)); }
+    @Method(selector = "initWithViewPortHandler:axis:transformer:")
+    public ChartYAxisRenderer(ChartViewPortHandler viewPortHandler, ChartYAxis axis, ChartTransformer transformer) { super((SkipInit) null); initObject(init(viewPortHandler, axis, transformer)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "viewPortHandler")
+    public native ChartViewPortHandler getViewPortHandler();
     @Property(selector = "gridClippingRect")
     public native @ByVal CGRect getGridClippingRect();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithViewPortHandler:yAxis:transformer:")
-    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartYAxis yAxis, ChartTransformer transformer);
-    @Method(selector = "renderAxisLabelsWithContext:")
-    public native void renderAxisLabels(CGContext context);
-    @Method(selector = "renderAxisLineWithContext:")
-    public native void renderAxisLine(CGContext context);
-    @Method(selector = "renderGridLinesWithContext:")
-    public native void renderGridLines(CGContext context);
+    @Method(selector = "initWithViewPortHandler:axis:transformer:")
+    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartYAxis axis, ChartTransformer transformer);
     @Method(selector = "drawGridLineWithContext:position:")
     public native void drawGridLine(CGContext context, @ByVal CGPoint position);
     @Method(selector = "transformedPositions")
     public native NSArray<NSValue> transformedPositions();
     @Method(selector = "drawZeroLineWithContext:")
     public native void drawZeroLine(CGContext context);
-    @Method(selector = "renderLimitLinesWithContext:")
-    public native void renderLimitLines(CGContext context);
+    @Method(selector = "computeAxisWithMin:max:inverted:")
+    public native void computeAxis(double min, double max, boolean inverted);
+    @Method(selector = "computeAxisValuesWithMin:max:")
+    public native void computeAxisValues(double min, double max);
     /*</methods>*/
 }

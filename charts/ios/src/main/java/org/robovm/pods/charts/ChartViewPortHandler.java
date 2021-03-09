@@ -52,6 +52,30 @@ import org.robovm.apple.coreanimation.*;
     public ChartViewPortHandler(@MachineSizedFloat double width, @MachineSizedFloat double height) { super((SkipInit) null); initObject(init(width, height)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "touchMatrix")
+    public native @ByVal CGAffineTransform getTouchMatrix();
+    @Property(selector = "contentRect")
+    public native @ByVal CGRect getContentRect();
+    @Property(selector = "chartWidth")
+    public native @MachineSizedFloat double getChartWidth();
+    @Property(selector = "chartHeight")
+    public native @MachineSizedFloat double getChartHeight();
+    @Property(selector = "minScaleY")
+    public native @MachineSizedFloat double getMinScaleY();
+    @Property(selector = "maxScaleY")
+    public native @MachineSizedFloat double getMaxScaleY();
+    @Property(selector = "minScaleX")
+    public native @MachineSizedFloat double getMinScaleX();
+    @Property(selector = "maxScaleX")
+    public native @MachineSizedFloat double getMaxScaleX();
+    @Property(selector = "scaleX")
+    public native @MachineSizedFloat double getScaleX();
+    @Property(selector = "scaleY")
+    public native @MachineSizedFloat double getScaleY();
+    @Property(selector = "transX")
+    public native @MachineSizedFloat double getTransX();
+    @Property(selector = "transY")
+    public native @MachineSizedFloat double getTransY();
     @Property(selector = "hasChartDimens")
     public native boolean hasChartDimens();
     @Property(selector = "offsetLeft")
@@ -74,32 +98,8 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double getContentWidth();
     @Property(selector = "contentHeight")
     public native @MachineSizedFloat double getContentHeight();
-    @Property(selector = "contentRect")
-    public native @ByVal CGRect getContentRect();
     @Property(selector = "contentCenter")
     public native @ByVal CGPoint getContentCenter();
-    @Property(selector = "chartHeight")
-    public native @MachineSizedFloat double getChartHeight();
-    @Property(selector = "chartWidth")
-    public native @MachineSizedFloat double getChartWidth();
-    @Property(selector = "touchMatrix")
-    public native @ByVal CGAffineTransform getTouchMatrix();
-    @Property(selector = "scaleX")
-    public native @MachineSizedFloat double getScaleX();
-    @Property(selector = "scaleY")
-    public native @MachineSizedFloat double getScaleY();
-    @Property(selector = "minScaleX")
-    public native @MachineSizedFloat double getMinScaleX();
-    @Property(selector = "minScaleY")
-    public native @MachineSizedFloat double getMinScaleY();
-    @Property(selector = "maxScaleX")
-    public native @MachineSizedFloat double getMaxScaleX();
-    @Property(selector = "maxScaleY")
-    public native @MachineSizedFloat double getMaxScaleY();
-    @Property(selector = "transX")
-    public native @MachineSizedFloat double getTransX();
-    @Property(selector = "transY")
-    public native @MachineSizedFloat double getTransY();
     @Property(selector = "isFullyZoomedOut")
     public native boolean isFullyZoomedOut();
     @Property(selector = "isFullyZoomedOutY")

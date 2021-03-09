@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts19ScatterChartDataSet")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ScatterChartDataSet/*</name>*/ 
     extends /*<extends>*/LineScatterCandleRadarChartDataSet/*</extends>*/ 
-    /*<implements>*/implements IScatterChartDataSet/*</implements>*/ {
+    /*<implements>*/implements ScatterChartDataSetProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class ScatterChartDataSetPtr extends Ptr<ScatterChartDataSet, ScatterChartDataSetPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ScatterChartDataSet.class); }/*</bind>*/
@@ -69,9 +69,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setScatterShapeHoleColor:")
     public native void setScatterShapeHoleColor(UIColor v);
     @Property(selector = "shapeRenderer")
-    public native IShapeRenderer getShapeRenderer();
+    public native ShapeRenderer getShapeRenderer();
     @Property(selector = "setShapeRenderer:")
-    public native void setShapeRenderer(IShapeRenderer v);
+    public native void setShapeRenderer(ShapeRenderer v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -82,6 +82,6 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithEntries:label:")
     protected native @Pointer long init(NSArray<ChartDataEntry> entries, String label);
     @Method(selector = "rendererForShape:")
-    public static native IShapeRenderer rendererForShape(ScatterShape shape);
+    public static native ShapeRenderer rendererForShape(ScatterShape shape);
     /*</methods>*/
 }

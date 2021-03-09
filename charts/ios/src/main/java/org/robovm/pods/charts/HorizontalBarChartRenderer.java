@@ -61,7 +61,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initBuffers")
     public native void initBuffers();
     @Method(selector = "drawDataSetWithContext:dataSet:index:")
-    public native void drawDataSet(CGContext context, IBarChartDataSet dataSet, @MachineSizedSInt long index);
+    public native void drawDataSet(CGContext context, BarChartDataSetProtocol dataSet, @MachineSizedSInt long index);
     @Method(selector = "drawValuesWithContext:")
     public native void drawValues(CGContext context);
     @Method(selector = "isDrawingValuesAllowedWithDataProvider:")

@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts16ChartBaseDataSet")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartBaseDataSet/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements IChartDataSet/*</implements>*/ {
+    /*<implements>*/implements ChartDataSetProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class ChartBaseDataSetPtr extends Ptr<ChartBaseDataSet, ChartBaseDataSetPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ChartBaseDataSet.class); }/*</bind>*/
@@ -85,11 +85,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "isHighlightEnabled")
     public native boolean isHighlightEnabled();
     @Property(selector = "valueFormatter")
-    public native IChartValueFormatter getValueFormatter();
+    public native ChartValueFormatter getValueFormatter();
     @Property(selector = "setValueFormatter:")
-    public native void setValueFormatter(IChartValueFormatter v);
-    @Property(selector = "needsFormatter")
-    public native boolean needsFormatter();
+    public native void setValueFormatter(ChartValueFormatter v);
     @Property(selector = "valueTextColor")
     public native UIColor getValueTextColor();
     @Property(selector = "setValueTextColor:")
@@ -98,6 +96,10 @@ import org.robovm.apple.coreanimation.*;
     public native UIFont getValueFont();
     @Property(selector = "setValueFont:")
     public native void setValueFont(UIFont v);
+    @Property(selector = "valueLabelAngle")
+    public native @MachineSizedFloat double getValueLabelAngle();
+    @Property(selector = "setValueLabelAngle:")
+    public native void setValueLabelAngle(@MachineSizedFloat double v);
     @Property(selector = "form")
     public native ChartLegendForm getForm();
     @Property(selector = "setForm:")
@@ -158,11 +160,11 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "entryForIndex:")
     public native ChartDataEntry entryForIndex(@MachineSizedSInt long i);
     @Method(selector = "entryForXValue:closestToY:rounding:")
-    public native ChartDataEntry getEntryForX(double x, double y, ChartDataSetRounding rounding);
+    public native ChartDataEntry getEntry(double x, double y, ChartDataSetRounding rounding);
     @Method(selector = "entryForXValue:closestToY:")
-    public native ChartDataEntry getEntryForX(double x, double y);
+    public native ChartDataEntry getEntry(double x, double y);
     @Method(selector = "entriesForXValue:")
-    public native NSArray<ChartDataEntry> entriesForXValue(double x);
+    public native NSArray<ChartDataEntry> getEntries(double x);
     @Method(selector = "entryIndexWithX:closestToY:rounding:")
     public native @MachineSizedSInt long getEntryIndex(double xValue, double y, ChartDataSetRounding rounding);
     @Method(selector = "entryIndexWithEntry:")
@@ -176,7 +178,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "removeEntryWithIndex:")
     public native boolean removeEntry(@MachineSizedSInt long index);
     @Method(selector = "removeEntryWithX:")
-    public native boolean removeEntryWithX(double x);
+    public native boolean removeEntry(double x);
     @Method(selector = "removeFirst")
     public native boolean removeFirst();
     @Method(selector = "removeLast")

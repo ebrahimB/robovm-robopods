@@ -48,8 +48,8 @@ import org.robovm.apple.coreanimation.*;
     protected XAxisRendererHorizontalBarChart() {}
     protected XAxisRendererHorizontalBarChart(Handle h, long handle) { super(h, handle); }
     protected XAxisRendererHorizontalBarChart(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithViewPortHandler:xAxis:transformer:chart:")
-    public XAxisRendererHorizontalBarChart(ChartViewPortHandler viewPortHandler, ChartXAxis xAxis, ChartTransformer transformer, BarChartView chart) { super((SkipInit) null); initObject(init(viewPortHandler, xAxis, transformer, chart)); }
+    @Method(selector = "initWithViewPortHandler:axis:transformer:chart:")
+    public XAxisRendererHorizontalBarChart(ChartViewPortHandler viewPortHandler, ChartXAxis axis, ChartTransformer transformer, BarChartView chart) { super((SkipInit) null); initObject(init(viewPortHandler, axis, transformer, chart)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "gridClippingRect")
@@ -57,23 +57,15 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithViewPortHandler:xAxis:transformer:chart:")
-    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartXAxis xAxis, ChartTransformer transformer, BarChartView chart);
-    @Method(selector = "computeAxisWithMin:max:inverted:")
-    public native void computeAxis(double min, double max, boolean inverted);
+    @Method(selector = "initWithViewPortHandler:axis:transformer:chart:")
+    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartXAxis axis, ChartTransformer transformer, BarChartView chart);
     @Method(selector = "computeSize")
     public native void computeSize();
-    @Method(selector = "renderAxisLabelsWithContext:")
-    public native void renderAxisLabels(CGContext context);
     @Method(selector = "drawLabelsWithContext:pos:anchor:")
     public native void drawLabels(CGContext context, @MachineSizedFloat double pos, @ByVal CGPoint anchor);
     @Method(selector = "drawLabelWithContext:formattedLabel:x:y:attributes:anchor:angleRadians:")
     public native void drawLabel(CGContext context, String formattedLabel, @MachineSizedFloat double x, @MachineSizedFloat double y, NSDictionary<NSString, ?> attributes, @ByVal CGPoint anchor, @MachineSizedFloat double angleRadians);
     @Method(selector = "drawGridLineWithContext:x:y:")
     public native void drawGridLine(CGContext context, @MachineSizedFloat double x, @MachineSizedFloat double y);
-    @Method(selector = "renderAxisLineWithContext:")
-    public native void renderAxisLine(CGContext context);
-    @Method(selector = "renderLimitLinesWithContext:")
-    public native void renderLimitLines(CGContext context);
     /*</methods>*/
 }

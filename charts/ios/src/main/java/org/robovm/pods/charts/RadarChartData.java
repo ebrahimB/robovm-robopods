@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithDataSets:")
     public RadarChartData(NSArray<?> dataSets) { super((SkipInit) null); initObject(init(dataSets)); }
     @Method(selector = "initWithDataSet:")
-    public RadarChartData(IChartDataSet dataSet) { super(dataSet); }
+    public RadarChartData(ChartDataSetProtocol dataSet) { super(dataSet); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "highlightColor")
@@ -79,7 +79,7 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initWithDataSets:")
     protected native @Pointer long init(NSArray<?> dataSets);
-    @Method(selector = "entryForHighlight:")
-    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
+    @Method(selector = "entryFor:")
+    public native ChartDataEntry entryFor(ChartHighlight highlight);
     /*</methods>*/
 }

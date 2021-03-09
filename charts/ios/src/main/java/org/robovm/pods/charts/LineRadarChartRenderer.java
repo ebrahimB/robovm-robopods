@@ -48,16 +48,12 @@ import org.robovm.apple.coreanimation.*;
     protected LineRadarChartRenderer() {}
     protected LineRadarChartRenderer(Handle h, long handle) { super(h, handle); }
     protected LineRadarChartRenderer(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithAnimator:viewPortHandler:")
-    public LineRadarChartRenderer(ChartAnimator animator, ChartViewPortHandler viewPortHandler) { super((SkipInit) null); initObject(init(animator, viewPortHandler)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithAnimator:viewPortHandler:")
-    protected native @Pointer long init(ChartAnimator animator, ChartViewPortHandler viewPortHandler);
     @Method(selector = "drawFilledPathWithContext:path:fill:fillAlpha:")
     public native void drawFilledPath(CGContext context, CGPath path, ChartFill fill, @MachineSizedFloat double fillAlpha);
     @Method(selector = "drawFilledPathWithContext:path:fillColor:fillAlpha:")

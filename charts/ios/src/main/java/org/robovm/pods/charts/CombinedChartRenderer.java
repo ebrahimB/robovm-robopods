@@ -38,8 +38,8 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts21CombinedChartRenderer")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/CombinedChartRenderer/*</name>*/ 
-    extends /*<extends>*/ChartDataRendererBase/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements ChartDataRenderer/*</implements>*/ {
 
     /*<ptr>*/public static class CombinedChartRendererPtr extends Ptr<CombinedChartRenderer, CombinedChartRendererPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(CombinedChartRenderer.class); }/*</bind>*/
@@ -52,6 +52,14 @@ import org.robovm.apple.coreanimation.*;
     public CombinedChartRenderer(CombinedChartView chart, ChartAnimator animator, ChartViewPortHandler viewPortHandler) { super((SkipInit) null); initObject(init(chart, animator, viewPortHandler)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "viewPortHandler")
+    public native ChartViewPortHandler getViewPortHandler();
+    @Property(selector = "accessibleChartElements")
+    public native NSArray<NSUIAccessibilityElement> getAccessibleChartElements();
+    @Property(selector = "setAccessibleChartElements:")
+    public native void setAccessibleChartElements(NSArray<NSUIAccessibilityElement> v);
+    @Property(selector = "animator")
+    public native ChartAnimator getAnimator();
     @Property(selector = "chart")
     public native CombinedChartView getChart();
     @Property(selector = "setChart:", strongRef = true)
@@ -65,9 +73,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setDrawBarShadowEnabled:")
     public native void setDrawBarShadowEnabled(boolean v);
     @Property(selector = "subRenderers")
-    public native NSArray<ChartDataRendererBase> getSubRenderers();
+    public native NSArray<?> getSubRenderers();
     @Property(selector = "setSubRenderers:")
-    public native void setSubRenderers(NSArray<ChartDataRendererBase> v);
+    public native void setSubRenderers(NSArray<?> v);
     @Property(selector = "isDrawValueAboveBarEnabled")
     public native boolean isDrawValueAboveBarEnabled();
     @Property(selector = "isDrawBarShadowEnabled")
@@ -87,7 +95,9 @@ import org.robovm.apple.coreanimation.*;
     public native void drawExtras(CGContext context);
     @Method(selector = "drawHighlightedWithContext:indices:")
     public native void drawHighlighted(CGContext context, NSArray<ChartHighlight> indices);
-    @Method(selector = "getSubRendererWithIndex:")
-    public native ChartDataRendererBase getSubRenderer(@MachineSizedSInt long index);
+    @Method(selector = "isDrawingValuesAllowedWithDataProvider:")
+    public native boolean isDrawingValuesAllowed(ChartDataProvider dataProvider);
+    @Method(selector = "createAccessibleHeaderUsingChart:andData:withDefaultDescription:")
+    public native NSUIAccessibilityElement createAccessibleHeader(ChartViewBase chart, ChartData data, String defaultDescription);
     /*</methods>*/
 }

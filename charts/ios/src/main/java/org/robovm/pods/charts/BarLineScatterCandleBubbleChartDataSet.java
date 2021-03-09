@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts38BarLineScatterCandleBubbleChartDataSet")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/BarLineScatterCandleBubbleChartDataSet/*</name>*/ 
     extends /*<extends>*/ChartDataSet/*</extends>*/ 
-    /*<implements>*/implements IBarLineScatterCandleBubbleChartDataSet/*</implements>*/ {
+    /*<implements>*/implements BarLineScatterCandleBubbleChartDataSetProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class BarLineScatterCandleBubbleChartDataSetPtr extends Ptr<BarLineScatterCandleBubbleChartDataSet, BarLineScatterCandleBubbleChartDataSetPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(BarLineScatterCandleBubbleChartDataSet.class); }/*</bind>*/

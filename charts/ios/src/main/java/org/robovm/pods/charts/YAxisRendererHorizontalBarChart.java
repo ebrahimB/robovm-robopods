@@ -48,8 +48,8 @@ import org.robovm.apple.coreanimation.*;
     protected YAxisRendererHorizontalBarChart() {}
     protected YAxisRendererHorizontalBarChart(Handle h, long handle) { super(h, handle); }
     protected YAxisRendererHorizontalBarChart(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithViewPortHandler:yAxis:transformer:")
-    public YAxisRendererHorizontalBarChart(ChartViewPortHandler viewPortHandler, ChartYAxis yAxis, ChartTransformer transformer) { super((SkipInit) null); initObject(init(viewPortHandler, yAxis, transformer)); }
+    @Method(selector = "initWithViewPortHandler:axis:transformer:")
+    public YAxisRendererHorizontalBarChart(ChartViewPortHandler viewPortHandler, ChartYAxis axis, ChartTransformer transformer) { super((SkipInit) null); initObject(init(viewPortHandler, axis, transformer)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "gridClippingRect")
@@ -57,14 +57,10 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithViewPortHandler:yAxis:transformer:")
-    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartYAxis yAxis, ChartTransformer transformer);
+    @Method(selector = "initWithViewPortHandler:axis:transformer:")
+    protected native @Pointer long init(ChartViewPortHandler viewPortHandler, ChartYAxis axis, ChartTransformer transformer);
     @Method(selector = "computeAxisWithMin:max:inverted:")
     public native void computeAxis(double min, double max, boolean inverted);
-    @Method(selector = "renderAxisLabelsWithContext:")
-    public native void renderAxisLabels(CGContext context);
-    @Method(selector = "renderAxisLineWithContext:")
-    public native void renderAxisLine(CGContext context);
     @Method(selector = "drawYLabelsWithContext:fixedPosition:positions:offset:")
     public native void drawYLabels(CGContext context, @MachineSizedFloat double fixedPosition, NSArray<NSValue> positions, @MachineSizedFloat double offset);
     @Method(selector = "drawGridLineWithContext:position:")
@@ -73,7 +69,5 @@ import org.robovm.apple.coreanimation.*;
     public native NSArray<NSValue> transformedPositions();
     @Method(selector = "drawZeroLineWithContext:")
     public native void drawZeroLine(CGContext context);
-    @Method(selector = "renderLimitLinesWithContext:")
-    public native void renderLimitLines(CGContext context);
     /*</methods>*/
 }

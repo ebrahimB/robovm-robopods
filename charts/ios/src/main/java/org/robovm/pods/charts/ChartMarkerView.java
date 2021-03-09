@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartMarkerView/*</name>*/ 
     extends /*<extends>*/NSUIView/*</extends>*/ 
-    /*<implements>*/implements IChartMarker/*</implements>*/ {
+    /*<implements>*/implements ChartMarker/*</implements>*/ {
 
     /*<ptr>*/public static class ChartMarkerViewPtr extends Ptr<ChartMarkerView, ChartMarkerViewPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ChartMarkerView.class); }/*</bind>*/
@@ -62,11 +62,14 @@ import org.robovm.apple.coreanimation.*;
     public native ChartViewBase getChartView();
     @Property(selector = "setChartView:", strongRef = true)
     public native void setChartView(ChartViewBase v);
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "offsetForDrawingAtPoint:")
-    public native @ByVal CGPoint offsetForDrawingAtPoint(@ByVal CGPoint point);
+    public native @ByVal CGPoint getOffsetForDrawing(@ByVal CGPoint point);
     @Method(selector = "refreshContentWithEntry:highlight:")
     public native void refreshContent(ChartDataEntry entry, ChartHighlight highlight);
     @Method(selector = "drawWithContext:point:")
@@ -77,5 +80,15 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(NSCoder coder);
     @Method(selector = "viewFromXibIn:")
     public static native ChartMarkerView viewFromXibIn(NSBundle bundle);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }

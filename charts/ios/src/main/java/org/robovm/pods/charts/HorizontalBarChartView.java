@@ -58,6 +58,9 @@ import org.robovm.apple.coreanimation.*;
     public native double getLowestVisibleX();
     @Property(selector = "highestVisibleX")
     public native double getHighestVisibleX();
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -76,14 +79,24 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "setVisibleXRangeWithMinXRange:maxXRange:")
     public native void setVisibleXRange(double minXRange, double maxXRange);
     @Method(selector = "setVisibleYRangeMaximum:axis:")
-    public native void setVisibleYRangeMaximum$axis$(double maxYRange, AxisDependency axis);
+    public native void setVisibleYRangeMaximum(double maxYRange, AxisDependency axis);
     @Method(selector = "setVisibleYRangeMinimum:axis:")
-    public native void setVisibleYRange(double minYRange, AxisDependency axis);
+    public native void setVisibleYRangeMinimum(double minYRange, AxisDependency axis);
     @Method(selector = "setVisibleYRangeWithMinYRange:maxYRange:axis:")
     public native void setVisibleYRange(double minYRange, double maxYRange, AxisDependency axis);
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder decoder);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }

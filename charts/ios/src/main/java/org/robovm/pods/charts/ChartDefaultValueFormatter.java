@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartDefaultValueFormatter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements IChartValueFormatter/*</implements>*/ {
+    /*<implements>*/implements ChartValueFormatter/*</implements>*/ {
 
     /*<ptr>*/public static class ChartDefaultValueFormatterPtr extends Ptr<ChartDefaultValueFormatter, ChartDefaultValueFormatterPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ChartDefaultValueFormatter.class); }/*</bind>*/
@@ -79,6 +79,10 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(@Block("(,,@MachineSizedSInt,)") Block4<Double, ChartDataEntry, Long, ChartViewPortHandler, String> block);
     @Method(selector = "stringForValue:entry:dataSetIndex:viewPortHandler:")
     public native String getStringForValue(double value, ChartDataEntry entry, @MachineSizedSInt long dataSetIndex, ChartViewPortHandler viewPortHandler);
+    /**
+     * @deprecated Use `init(block:)` instead.
+     */
+    @Deprecated
     @Method(selector = "withBlock:")
     public static native ChartDefaultValueFormatter withBlock(@Block("(,,@MachineSizedSInt,)") Block4<Double, ChartDataEntry, Long, ChartViewPortHandler, String> block);
     /*</methods>*/

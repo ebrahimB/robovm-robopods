@@ -56,6 +56,9 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "nsuiLayer")
     public native CALayer getNsuiLayer();
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     @Property(selector = "isAccessibilityElement")
     public native boolean isAccessibilityElement();
     @Property(selector = "setIsAccessibilityElement:")
@@ -67,6 +70,16 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     @Method(selector = "accessibilityChildren")
     public native NSArray<?> accessibilityChildren();
     @Method(selector = "accessibilityElementCount")

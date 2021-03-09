@@ -39,10 +39,10 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/ChartLimitLabelPosition/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    TopLeft(0L),
-    TopRight(1L),
-    BottomLeft(2L),
-    BottomRight(3L);
+    LeftTop(0L),
+    LeftBottom(1L),
+    RightTop(2L),
+    RightBottom(3L);
     /*</values>*/
 
     /*<bind>*/

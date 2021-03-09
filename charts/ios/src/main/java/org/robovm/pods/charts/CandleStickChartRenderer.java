@@ -64,7 +64,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "drawDataWithContext:")
     public native void drawData(CGContext context);
     @Method(selector = "drawDataSetWithContext:dataSet:")
-    public native void drawDataSet(CGContext context, ICandleChartDataSet dataSet);
+    public native void drawDataSet(CGContext context, CandleChartDataSetProtocol dataSet);
     @Method(selector = "drawValuesWithContext:")
     public native void drawValues(CGContext context);
     @Method(selector = "drawExtrasWithContext:")

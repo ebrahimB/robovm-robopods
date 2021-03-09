@@ -36,28 +36,22 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ChartRenderer/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ChartRenderer/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
-    /*<ptr>*/public static class ChartRendererPtr extends Ptr<ChartRenderer, ChartRendererPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(ChartRenderer.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected ChartRenderer() {}
-    protected ChartRenderer(Handle h, long handle) { super(h, handle); }
-    protected ChartRenderer(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithViewPortHandler:")
-    public ChartRenderer(ChartViewPortHandler viewPortHandler) { super((SkipInit) null); initObject(init(viewPortHandler)); }
-    /*</constructors>*/
     /*<properties>*/
     @Property(selector = "viewPortHandler")
-    public native ChartViewPortHandler getViewPortHandler();
+    ChartViewPortHandler getViewPortHandler();
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithViewPortHandler:")
-    protected native @Pointer long init(ChartViewPortHandler viewPortHandler);
+    
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

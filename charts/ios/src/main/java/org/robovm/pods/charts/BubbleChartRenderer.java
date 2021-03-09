@@ -64,7 +64,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "drawDataWithContext:")
     public native void drawData(CGContext context);
     @Method(selector = "drawDataSetWithContext:dataSet:dataSetIndex:")
-    public native void drawDataSet(CGContext context, IBubbleChartDataSet dataSet, @MachineSizedSInt long dataSetIndex);
+    public native void drawDataSet(CGContext context, BubbleChartDataSetProtocol dataSet, @MachineSizedSInt long dataSetIndex);
     @Method(selector = "drawValuesWithContext:")
     public native void drawValues(CGContext context);
     @Method(selector = "drawExtrasWithContext:")

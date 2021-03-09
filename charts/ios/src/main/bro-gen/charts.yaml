@@ -1,34 +1,30 @@
-
 package: org.robovm.pods.charts
-include: [foundation, uikit, coregraphics, coreanimation]
+include: [ foundation, uikit, coregraphics, coreanimation ]
 framework: Charts
-clang_args: ['-x', 'objective-c', "-DSWIFT_EXTENSION(M)=M"]
+clang_args: [ '-x', 'objective-c', "-DSWIFT_EXTENSION(M)=M" ]
 headers:
     - Charts.h
 
 private_typedefs:
-    NSKeyValueChangeKey: NSString
 
-typedefs: {}
+typedefs:
 
 enums:
-    ChartDataSetRounding: {}
-    ChartEasingOption: {}
-    ChartLimitLabelPosition: {}
-    CombinedChartDrawOrder: {}
-    ChartFillType: {}
-    ChartLegendPosition: {}
-    ChartLegendForm: {}
-    ChartLegendHorizontalAlignment: {}
-    ChartLegendVerticalAlignment: {}
-    ChartLegendOrientation: {}
-    ChartLegendDirection: {}
-    LineChartMode: {}
-    PieChartValuePosition: {}
-    ScatterShape: {}
-    XAxisLabelPosition: {}
-    YAxisLabelPosition: {}
-    AxisDependency: {}
+    ChartDataSetRounding: { }
+    ChartEasingOption: { }
+    ChartLimitLabelPosition: { }
+    CombinedChartDrawOrder: { }
+    ChartLegendForm: { }
+    ChartLegendHorizontalAlignment: { }
+    ChartLegendVerticalAlignment: { }
+    ChartLegendOrientation: { }
+    ChartLegendDirection: { }
+    LineChartMode: { }
+    PieChartValuePosition: { }
+    ScatterShape: { }
+    XAxisLabelPosition: { }
+    YAxisLabelPosition: { }
+    AxisDependency: { }
 
 categories:
     UIPanGestureRecognizer:
@@ -39,16 +35,13 @@ categories:
         methods:
             '-nsuiLocationOfTouch:inView:':
                 name: getNsuiLocationOfTouch
-    UIRotationGestureRecognizer: {}
-    UIScreen: {}
-    UIScrollView: {}
-    UITapGestureRecognizer: {}
-    UIView: {}
+    UIRotationGestureRecognizer: { }
+    UIScreen: { }
+    UIScrollView: { }
+    UITapGestureRecognizer: { }
+    UIView: { }
 classes:
-    AnimatedMoveViewJob:
-        methods:
-            '-initWithViewPortHandler:xValue:yValue:transformer:view:xOrigin:yOrigin:duration:easing:':
-                name: init
+    AnimatedMoveViewJob: { }
     AnimatedViewPortJob:
         methods:
             '-initWithViewPortHandler:xValue:yValue:transformer:view:xOrigin:yOrigin:duration:easing:':
@@ -75,16 +68,9 @@ classes:
                 name: init
             '-initWithX:yValues:icon:':
                 name: init
-    BarChartDataSet:
-        methods:
-            '-initWithValues:label:':
-                name: init
+    BarChartDataSet: { }
     BarChartHighlighter:
         methods:
-            '-getHighlightWithX:y:':
-                name: getHighlight
-            '-getDistanceWithX1:y1:x2:y2:':
-                name: getDistance
             '-getStackedHighlightWithHigh:set:xValue:yValue:':
                 name: getStackedHighlight
             '-getClosestStackIndexWithRanges:value:':
@@ -95,12 +81,8 @@ classes:
                 name: init
             '-drawDataSetWithContext:dataSet:index:':
                 name: drawDataSet
-            '-drawValueWithContext:value:xPos:yPos:font:align:color:':
+            '-drawValueWithContext:value:xPos:yPos:font:align:color:anchor:angleRadians:':
                 name: drawValue
-            '-drawHighlightedWithContext:indices:':
-                name: drawHighlighted
-            '-setHighlightDrawPosWithHighlight:barRect:':
-                name: setHighlightDrawPos
     BarChartView:
         properties:
             'drawValueAboveBarEnabled':
@@ -137,12 +119,8 @@ classes:
             'autoScaleMinMaxEnabled': # fix for duplicate
                 getter: autoScaleMinMaxEnabled
         methods:
-            '-observeValueForKeyPath:ofObject:change:context:':
-                name: observeValue
             '-gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:':
                 name: shouldRecognizeSimultaneously
-            '-gestureRecognizerShouldBegin:':
-                name: shouldBegin
             '-zoomWithScaleX:scaleY:x:y:':
                 name: zoom
             '-zoomWithScaleX:scaleY:xValue:yValue:axis:':
@@ -150,13 +128,13 @@ classes:
             '-zoomToCenterWithScaleX:scaleY:':
                 name: zoomToCenter
             '-zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:easing:':
-                name: zoomAndCenterView
+                name: zoomAndCenterViewAnimated
             '-zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:easingOption:':
-                name: zoomAndCenterView
+                name: zoomAndCenterViewAnimated
             '-zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:':
-                name: zoomAndCenterView
+                name: zoomAndCenterViewAnimated
             '-setScaleMinima:scaleY:':
-                name: setScale
+                name: setScaleMinima
             '-setVisibleXRangeWithMinXRange:maxXRange:':
                 name: setVisibleXRange
             '-setVisibleYRangeMaximum:axis:':
@@ -203,20 +181,23 @@ classes:
                 name: getDataSetByTouchPoint
             '-isInvertedWithAxis:':
                 name: isInverted
-            '-gestureRecognizer:shouldReceiveEvent:':
-                name: shouldReceiveEvent
-    BarLineScatterCandleBubbleChartData: {}
-    BarLineScatterCandleBubbleChartDataSet:
-        methods:
-            '-initWithValues:label:':
-                name: init
+    BarLineScatterCandleBubbleChartData: { }
+    BarLineScatterCandleBubbleChartDataSet: { }
     BarLineScatterCandleBubbleChartRenderer:
         methods:
-            '-initWithAnimator:viewPortHandler:':
-                name: init
-            '-isInBoundsXWithEntry:dataSet:':
-                name: isInBoundsX
-    BubbleChartData: {}
+            '-drawDataWithContext:':
+                name: drawData
+            '-drawValuesWithContext:':
+                name: drawValues
+            '-drawExtrasWithContext:':
+                name: drawExtras
+            '-drawHighlightedWithContext:indices:':
+                name: drawHighlighted
+            '-isDrawingValuesAllowedWithDataProvider:':
+                name: isDrawingValuesAllowed
+            '-createAccessibleHeaderUsingChart:andData:withDefaultDescription:':
+                name: createAccessibleHeader
+    BubbleChartData: { }
     BubbleChartDataEntry:
         methods:
             '-initWithX:y:size:':
@@ -231,21 +212,14 @@ classes:
         properties:
             'normalizeSizeEnabled':
                 getter: normalizeSizeEnabled
-        methods:
-            '-initWithValues:label:':
-                name: init
     BubbleChartRenderer:
         methods:
             '-initWithDataProvider:animator:viewPortHandler:':
                 name: init
-            '-drawDataSetWithContext:dataSet:':
-                name: drawDataSet
-            '-drawHighlightedWithContext:indices:':
-                name: drawHighlighted
             '-drawDataSetWithContext:dataSet:dataSetIndex:':
                 name: drawDataSet
-    BubbleChartView: {}
-    CandleChartData: {}
+    BubbleChartView: { }
+    CandleChartData: { }
     CandleChartDataEntry:
         methods:
             '-initWithX:shadowH:shadowL:open:close:':
@@ -264,18 +238,13 @@ classes:
                 getter: increasingFilled
             'decreasingFilled':
                 getter: decreasingFilled
-        methods:
-            '-initWithValues:label:':
-                name: init
     CandleStickChartRenderer:
         methods:
             '-initWithDataProvider:animator:viewPortHandler:':
                 name: init
             '-drawDataSetWithContext:dataSet:':
                 name: drawDataSet
-            '-drawHighlightedWithContext:indices:':
-                name: drawHighlighted
-    CandleStickChartView: {}
+    CandleStickChartView: { }
     ChartAnimator:
         methods:
             '-animateWithXAxisDuration:yAxisDuration:easingX:easingY:':
@@ -285,8 +254,6 @@ classes:
             '-animateWithXAxisDuration:yAxisDuration:easing:':
                 name: animate
             '-animateWithXAxisDuration:yAxisDuration:easingOption:':
-                name: animate
-            '-animateWithXAxisDuration:yAxisDuration:':
                 name: animate
             '-animateWithXAxisDuration:easing:':
                 name: animateX
@@ -308,33 +275,17 @@ classes:
                 getter: drawLabelsEnabled
             'drawLimitLinesBehindDataEnabled':
                 getter: drawLimitLinesBehindDataEnabled
+            'drawGridLinesBehindDataEnabled':
+                getter: drawGridLinesBehindDataEnabled
             'forceLabelsEnabled':
                 getter: forceLabelsEnabled
             'centerAxisLabelsEnabled':
                 getter: centerAxisLabelsEnabled
-            'isDrawGridLinesBehindDataEnabled':
-                getter: _isDrawGridLinesBehindDataEnabled # duplicate ?
         methods:
             '-setLabelCount:force:':
                 name: setLabelCount
             '-calculateWithMin:max:':
                 name: calculate
-    ChartAxisRendererBase:
-        methods:
-            '-initWithViewPortHandler:transformer:axis:':
-                name: init
-            '-computeAxisWithMin:max:inverted:':
-                name: computeAxis
-            '-computeAxisValuesWithMin:max:':
-                name: computeAxis
-            '-renderAxisLabelsWithContext:':
-                name: renderAxisLabels
-            '-renderGridLinesWithContext:':
-                name: renderGridLines
-            '-renderAxisLineWithContext:':
-                name: renderAxisLine
-            '-renderLimitLinesWithContext:':
-                name: renderLimitLines
     ChartBaseDataSet:
         properties:
             'highlightEnabled':
@@ -346,56 +297,49 @@ classes:
             'visible':
                 getter: visible
         methods:
-            '-calcMinMaxYFromX:toX:':
-                name: calcMinMaxY
-            '-entryForXValue:closestToY:rounding:':
-                name: getEntryForX
-            '-entryForXValue:closestToY:':
-                name: getEntryForX
-            '-entryIndexWithX:closestToY:rounding:':
-                name: getEntryIndex
+            '-initWithLabel:':
+                name: init
             '-setColor:alpha:':
                 name: setColor
             '-setColors:alpha:':
                 name: setColors
-            '-initWithLabel:':
-                name: init
             '-copyWithZone:':
                 name: copy
-    ChartColorTemplates: {}
+    ChartColorFill:
+        methods:
+            '-initWithCgColor:':
+                name: init
+            '-initWithColor:':
+                name: init
+    ChartColorTemplates: { }
     ChartComponentBase:
         properties:
             'enabled':
                 getter: enabled
     ChartData:
-        properties:
-            'highlightEnabled':
-                getter: highlightEnabled
         methods:
-            '-calcMinMaxYFromX:toX:':
-                name: calcMinMaxY
-            '-calcMinMaxWithEntry:axis:':
-                name: calcMinMax
-            '-getDataSetIndexByLabel:ignorecase:':
-                name: getDataSetIndex
-            '-getDataSetByLabel:ignorecase:':
-                name: getDataSet
-            '-addEntry:dataSetIndex:':
-                name: addEntry
-            '-removeEntry:dataSetIndex:':
-                name: removeEntry
-            '-removeEntryWithXValue:dataSetIndex:':
-                name: removeEntry
             '-initWithDataSets:':
                 name: init
             '-initWithDataSet:':
                 name: init
+            '-calcMinMaxYFromX:toX:':
+                name: calcMinMaxY
+            '-calcMinMaxWithEntry:axis:':
+                name: calcMinMax
             '-calcMinMaxWithDataSet:':
                 name: calcMinMax
             '-getYMinWithAxis:':
                 name: getYMin
             '-getYMaxWithAxis:':
                 name: getYMax
+            '-dataSetForLabel:ignorecase:':
+                name: dataSetForLabel
+            '-addEntry:dataSetIndex:':
+                name: addEntry
+            '-removeEntry:dataSetIndex:':
+                name: removeEntry
+            '-removeEntryWithXValue:dataSetIndex:':
+                name: removeEntry
             '-getFirstLeftWithDataSets:':
                 name: getFirstLeft
             '-getFirstRightWithDataSets:':
@@ -405,9 +349,9 @@ classes:
     ChartDataApproximator:
         methods:
             '+reduceWithDouglasPeuker:tolerance:':
-                name: reduceWithDouglasPeuker
+                name: reduce
             '+reduceWithDouglasPeukerN:resultCount:':
-                name: reduceWithDouglasPeuker
+                name: reduce
     ChartDataEntry:
         methods:
             '-initWithX:y:':
@@ -433,39 +377,11 @@ classes:
             '-initWithY:icon:data:':
                 name: init
                 arguments_tuple: ArgsYIconData
-    ChartDataRendererBase:
-        methods:
-            '-initWithAnimator:viewPortHandler:':
-                name: init
-            '-drawHighlightedWithContext:indices:':
-                name: drawHighlighted
-            '-drawDataWithContext:':
-                name: drawData
-            '-drawValuesWithContext:':
-                name: drawValues
-            '-drawExtrasWithContext:':
-                name: drawExtras
-            '-isDrawingValuesAllowedWithDataProvider:':
-                name: isDrawingValuesAllowed
-            '-createAccessibleHeaderUsingChart:andData:withDefaultDescription:':
-                name: createAccessibleHeaderUsingChart
     ChartDataSet:
         methods:
             '-initWithEntries:label:':
                 name: init
             '-initWithEntries:':
-                name: init
-            '-initWithValues:label:':
-                name: init
-            '-calcMinMaxYFromX:toX:':
-                name: calcMinMaxY
-            '-entryForXValue:closestToY:rounding:':
-                name: getEntryForX
-            '-entryForXValue:closestToY:':
-                name: getEntryForX
-            '-entryIndexWithX:closestToY:rounding:':
-                name: getEntryIndex
-            '-initWithValues:':
                 name: init
             '-calcMinMaxXWithEntry:':
                 name: calcMinMaxX
@@ -487,65 +403,25 @@ classes:
                 name: getStringForValue
     ChartDefaultFillFormatter:
         methods:
-            '-getFillLinePositionWithDataSet:dataProvider:':
-                name: getFillLinePosition
             '-initWithBlock:':
                 name: init
+            '-getFillLinePositionWithDataSet:dataProvider:':
+                name: getFillLinePosition
     ChartDefaultValueFormatter:
         methods:
-            '-stringForValue:entry:dataSetIndex:viewPortHandler:':
-                name: getStringForValue
             '-initWithFormatter:':
                 name: init
             '-initWithDecimals:':
                 name: init
             '-initWithBlock:':
                 name: init
-    ChartDescription: {}
-    ChartFill:
+            '-stringForValue:entry:dataSetIndex:viewPortHandler:':
+                name: getStringForValue
+    ChartDescription: { }
+    ChartEmptyFill:
         methods:
-            '-initWithCGColor:':
-                name: init
-            '-initWithColor:':
-                name: init
-            '-initWithLinearGradient:angle:':
-                name: init
-            '-initWithRadialGradient:startOffsetPercent:startRadiusPercent:endOffsetPercent:endRadiusPercent:':
-                name: init
-            '-initWithRadialGradient:':
-                name: init
-            '-initWithCGImage:tiled:':
-                name: init
-            '-initWithImage:tiled:':
-                name: init
-            '-initWithCGImage:':
-                name: init
-            '-initWithImage:':
-                name: init
-            '-initWithCGLayer:':
-                name: init
             '-fillPathWithContext:rect:':
                 name: fillPath
-            '+fillWithLinearGradient:angle:':
-                exclude: true
-            '+fillWithRadialGradient:startOffsetPercent:startRadiusPercent:endOffsetPercent:endRadiusPercent:':
-                exclude: true
-            '+fillWithCGImage:tiled:':
-                exclude: true
-            '+fillWithImage:tiled:':
-                exclude: true
-            '+fillWithCGColor:':
-                exclude: true
-            '+fillWithColor:':
-                exclude: true
-            '+fillWithRadialGradient:':
-                exclude: true
-            '+fillWithCGImage:':
-                exclude: true
-            '+fillWithImage:':
-                exclude: true
-            '+fillWithCGLayer:':
-                exclude: true
     ChartHighlight:
         methods:
             '-initWithX:y:xPx:yPx:dataIndex:dataSetIndex:stackIndex:axis:':
@@ -574,60 +450,67 @@ classes:
                 name: getHighlight
             '-getHighlightsWithXValue:x:y:':
                 name: getHighlights
-            '-buildHighlightsWithDataSet:dataSetIndex:xValue:rounding:':
-                name: buildHighlights
-            '-getMinimumDistanceWithClosestValues:y:axis:':
-                name: getMinimumDistance
-            '-getDistanceWithX1:y1:x2:y2:':
-                name: getDistance
-
+    ChartImageFill:
+        methods:
+            '-initWithCgImage:isTiled:':
+                name: init
+            '-initWithImage:isTiled:':
+                name: init
+            '-fillPathWithContext:rect:':
+                name: fillPath
     ChartIndexAxisValueFormatter:
         methods:
             '-initWithValues:':
                 name: init
             '-stringForValue:axis:':
                 name: getStringForValue
+    ChartLayerFill:
+        methods:
+            '-initWithLayer:':
+                name: init
+            '-fillPathWithContext:rect:':
+                name: fillPath
     ChartLegend:
         properties:
             'wordWrapEnabled':
                 getter: wordWrapEnabled
         methods:
-            '-calculateDimensionsWithLabelFont:viewPortHandler:':
-                name: calculateDimensions
-            '-initWithColors:labels:':
-                name: init
-            '-setExtraWithColors:labels:':
-                name: setExtra
-            '-setCustomWithColors:labels:':
-                name: setCustom
             '-initWithEntries:':
                 name: init
             '-getMaximumEntrySizeWithFont:':
                 name: getMaximumEntrySize
+            '-calculateDimensionsWithLabelFont:viewPortHandler:':
+                name: calculateDimensions
             '-setCustomWithEntries:':
                 name: setCustom
     ChartLegendEntry:
         methods:
-            '-initWithLabel:form:formSize:formLineWidth:formLineDashPhase:formLineDashLengths:formColor:':
+            '-initWithLabel:':
                 name: init
     ChartLegendRenderer:
         methods:
             '-initWithViewPortHandler:legend:':
                 name: init
-            '-drawFormWithContext:x:y:entry:legend:':
-                name: drawForm
-            '-drawLabelWithContext:x:y:label:font:textColor:':
-                name: drawLabel
             '-computeLegendWithData:':
                 name: computeLegend
             '-renderLegendWithContext:':
                 name: renderLegend
+            '-drawFormWithContext:x:y:entry:legend:':
+                name: drawForm
+            '-drawLabelWithContext:x:y:label:font:textColor:':
+                name: drawLabel
     ChartLimitLine:
         methods:
-            '-initWithLimit:label:':
-                name: init
             '-initWithLimit:':
                 name: init
+            '-initWithLimit:label:':
+                name: init
+    ChartLinearGradientFill:
+        methods:
+            '-initWithGradient:angle:':
+                name: init
+            '-fillPathWithContext:rect:':
+                name: fillPath
     ChartMarkerImage:
         methods:
             '-refreshContentWithEntry:highlight:':
@@ -640,46 +523,50 @@ classes:
                 name: refreshContent
             '-drawWithContext:point:':
                 name: draw
+    ChartRadialGradientFill:
+        methods:
+            '-initWithGradient:startOffsetPercent:endOffsetPercent:startRadiusPercent:endRadiusPercent:':
+                name: init
+            '-initWithGradient:':
+                name: init
+            '-fillPathWithContext:rect:':
+                name: fillPath
     ChartRange:
         methods:
             '-initFrom:to:':
                 name: init
-    ChartRenderer:
+    ChartTransformer:
         methods:
             '-initWithViewPortHandler:':
                 name: init
-    ChartTransformer:
-        methods:
             '-prepareMatrixValuePxWithChartXMin:deltaX:deltaY:chartYMin:':
                 name: prepareMatrixValuePx
+            '-prepareMatrixOffsetWithInverted:':
+                name: prepareMatrixOffset
             '-pixelForValuesWithX:y:':
                 name: getPixelForValues
             '-valueForTouchPointWithX:y:':
                 name: getValueForTouchPoint
-            '-initWithViewPortHandler:':
-                name: init
-            '-prepareMatrixOffsetWithInverted:':
-                name: prepareMatrixOffset
-    ChartTransformerHorizontalBarChart: {}
+    ChartTransformerHorizontalBarChart: { }
     ChartViewBase:
         properties:
-            'dragDecelerationEnabled': # fix for duplicate
+            'dragDecelerationEnabled':
                 getter: dragDecelerationEnabled
         methods:
             '-setExtraOffsetsWithLeft:top:right:bottom:':
                 name: setExtraOffsets
-            '-setupDefaultFormatterWithMin:max:':
-                name: setupDefaultFormatter
-            '-highlightValueWithX:dataSetIndex:':
+            '-highlightValueWithX:dataSetIndex:dataIndex:':
                 name: highlightValue
-            '-highlightValueWithX:y:dataSetIndex:':
+            '-highlightValueWithX:y:dataSetIndex:dataIndex:':
                 name: highlightValue
-            '-highlightValueWithX:dataSetIndex:callDelegate:':
+            '-highlightValueWithX:dataSetIndex:dataIndex:callDelegate:':
                 name: highlightValue
-            '-highlightValueWithX:y:dataSetIndex:callDelegate:':
+            '-highlightValueWithX:y:dataSetIndex:dataIndex:callDelegate:':
                 name: highlightValue
             '-highlightValue:callDelegate:':
                 name: highlightValue
+            '-getMarkerPositionWithHighlight:':
+                name: getMarkerPosition
             '-animateWithXAxisDuration:yAxisDuration:easingX:easingY:':
                 name: animate
             '-animateWithXAxisDuration:yAxisDuration:easingOptionX:easingOptionY:':
@@ -694,10 +581,16 @@ classes:
                 name: animateXAxis
             '-animateWithXAxisDuration:easingOption:':
                 name: animateXAxis
+            '-animateWithXAxisDuration:':
+                name: animateXAxis
             '-animateWithYAxisDuration:easing:':
                 name: animateYAxis
             '-animateWithYAxisDuration:easingOption:':
                 name: animateYAxis
+            '-animateWithYAxisDuration:':
+                name: animateYAxis
+            '-getChartImageWithTransparent:':
+                name: getChartImage
             '-observeValueForKeyPath:ofObject:change:context:':
                 name: observeValue
             '-nsuiTouchesBegan:withEvent:':
@@ -708,24 +601,6 @@ classes:
                 name: nsuiTouchesEnded
             '-nsuiTouchesCancelled:withEvent:':
                 name: nsuiTouchesCancelled
-            '-highlightValues:':
-                name: setHighlightValues
-            '-highlightValueWithX:dataSetIndex:dataIndex:':
-                name: highlightValue
-            '-highlightValueWithX:y:dataSetIndex:dataIndex:':
-                name: highlightValue
-            '-highlightValueWithX:dataSetIndex:dataIndex:callDelegate:':
-                name: highlightValue
-            '-highlightValueWithX:y:dataSetIndex:dataIndex:callDelegate:':
-                name: highlightValue
-            '-getMarkerPositionWithHighlight:':
-                name: getMarkerPosition
-            '-animateWithXAxisDuration:':
-                name: animateXAxis
-            '-animateWithYAxisDuration:':
-                name: animateYAxis
-            '-getChartImageWithTransparent:':
-                name: getChartImage
     ChartViewPortHandler:
         methods:
             '-initWithWidth:height:':
@@ -762,7 +637,6 @@ classes:
                 name: isInBounds
             '-isIntersectingLineFrom:to:':
                 name: isIntersectingLine
-
     ChartViewPortJob:
         methods:
             '-initWithViewPortHandler:xValue:yValue:transformer:view:':
@@ -775,15 +649,11 @@ classes:
                 getter: wordWrapEnabled
     ChartXAxisRenderer:
         methods:
-            '-initWithViewPortHandler:xAxis:transformer:':
+            '-initWithViewPortHandler:axis:transformer:':
                 name: init
-            '-computeAxisWithMin:max:inverted:':
-                name: computeAxis
-            '-computeAxisValuesWithMin:max:':
-                name: computeAxisValues
             '-drawLabelsWithContext:pos:anchor:':
                 name: drawLabels
-            '-drawLabelWithContext:formattedLabel:x:y:attributes:constrainedToSize:anchor:angleRadians:':
+            '-drawLabelWithContext:formattedLabel:x:y:attributes:constrainedTo:anchor:angleRadians:':
                 name: drawLabel
             '-drawGridLineWithContext:x:y:':
                 name: drawGridLine
@@ -802,18 +672,18 @@ classes:
         methods:
             '-initWithPosition:':
                 name: init
-            '-calculateWithMin:max:':
-                name: calculate
     ChartYAxisRenderer:
         methods:
-            '-drawZeroLineWithContext:':
-                name: drawZeroLine
-            '-initWithViewPortHandler:yAxis:transformer:':
+            '-initWithViewPortHandler:axis:transformer:':
                 name: init
-            '-drawYLabelsWithContext:fixedPosition:positions:offset:textAlign:':
-                name: drawYLabels
             '-drawGridLineWithContext:position:':
                 name: drawGridLine
+            '-drawZeroLineWithContext:':
+                name: drawZeroLine
+            '-computeAxisWithMin:max:inverted:':
+                name: computeAxis
+            '-computeAxisValuesWithMin:max:':
+                name: computeAxisValues
     ChevronDownShapeRenderer:
         methods:
             '-renderShapeWithContext:dataSet:viewPortHandler:point:color:':
@@ -826,21 +696,11 @@ classes:
         methods:
             '-renderShapeWithContext:dataSet:viewPortHandler:point:color:':
                 name: renderShape
-    CombinedChartData:
-        properties:
-            'highlightEnabled':
-                getter: highlightEnabled
-        methods:
-            '-removeEntry:dataSetIndex:':
-                name: removeEntry
-            '-removeEntryWithXValue:dataSetIndex:':
-                name: removeEntry
+    CombinedChartData: { }
     CombinedChartHighlighter:
         methods:
             '-initWithChart:barDataProvider:':
                 name: init
-            '-getHighlightsWithXValue:x:y:':
-                name: getHighlights
     CombinedChartRenderer:
         properties:
             'drawValueAboveBarEnabled':
@@ -850,10 +710,18 @@ classes:
         methods:
             '-initWithChart:animator:viewPortHandler:':
                 name: init
+            '-drawDataWithContext:':
+                name: drawData
+            '-drawValuesWithContext:':
+                name: drawValues
+            '-drawExtrasWithContext:':
+                name: drawExtras
             '-drawHighlightedWithContext:indices:':
                 name: drawHighlighted
-            '-getSubRendererWithIndex:':
-                name: getSubRenderer
+            '-isDrawingValuesAllowedWithDataProvider:':
+                name: isDrawingValuesAllowed
+            '-createAccessibleHeaderUsingChart:andData:withDefaultDescription:':
+                name: createAccessibleHeader
     CombinedChartView:
         properties:
             'drawValueAboveBarEnabled':
@@ -866,48 +734,16 @@ classes:
         methods:
             '-renderShapeWithContext:dataSet:viewPortHandler:point:color:':
                 name: renderShape
-    HorizontalBarChartHighlighter:
-        methods:
-            '-getHighlightWithX:y:':
-                name: getHighlight
-            '-buildHighlightsWithDataSet:dataSetIndex:xValue:rounding:':
-                name: buildHighlights
-            '-getDistanceWithX1:y1:x2:y2:':
-                name: getDistance
-    HorizontalBarChartRenderer:
-        methods:
-            '-initWithDataProvider:animator:viewPortHandler:':
-                name: init
-            '-drawDataSetWithContext:dataSet:index:':
-                name: drawDataSet
-            '-setHighlightDrawPosWithHighlight:barRect:':
-                name: setHighlightDrawPos
-    HorizontalBarChartView:
-        methods:
-            '-getPositionWithEntry:axis:':
-                name: getPosition
-            '-setVisibleXRangeWithMinXRange:maxXRange:':
-                name: setVisibleXRange
-            '-setVisibleYRangeMaximum:axis:':
-                name: setVisibleYRangeMaximum$axis$
-            '-setVisibleYRangeMinimum:axis:':
-                name: setVisibleYRange
-            '-setVisibleYRangeWithMinYRange:maxYRange:axis:':
-                name: setVisibleYRange
-    LineChartData: {}
+    HorizontalBarChartHighlighter: { }
+    HorizontalBarChartRenderer: { }
+    HorizontalBarChartView: { }
+    LineChartData: { }
     LineChartDataSet:
         properties:
-            'drawCubicEnabled':
-                getter: drawCubicEnabled
-            'drawSteppedEnabled':
-                getter: drawSteppedEnabled
             'drawCirclesEnabled':
                 getter: drawCirclesEnabled
             'drawCircleHoleEnabled':
                 getter: drawCircleHoleEnabled
-        methods:
-            '-initWithValues:label:':
-                name: init
     LineChartRenderer:
         methods:
             '-initWithDataProvider:animator:viewPortHandler:':
@@ -920,48 +756,26 @@ classes:
                 name: drawHorizontalBezier
             '-drawLinearWithContext:dataSet:':
                 name: drawLinear
-            '-drawHighlightedWithContext:indices:':
-                name: drawHighlighted
-    LineChartView: {}
+    LineChartView: { }
     LineRadarChartDataSet:
         properties:
             'drawFilledEnabled':
                 getter: drawFilledEnabled
-        methods:
-            '-initWithValues:label:':
-                name: init
     LineRadarChartRenderer:
         methods:
-            '-initWithAnimator:viewPortHandler:':
-                name: init
             '-drawFilledPathWithContext:path:fill:fillAlpha:':
                 name: drawFilledPath
             '-drawFilledPathWithContext:path:fillColor:fillAlpha:':
                 name: drawFilledPath
-    LineScatterCandleRadarChartDataSet:
-        methods:
-            '-initWithValues:label:':
-                name: init
+    LineScatterCandleRadarChartDataSet: { }
     LineScatterCandleRadarChartRenderer:
         methods:
-            '-initWithAnimator:viewPortHandler:':
-                name: init
             '-drawHighlightLinesWithContext:point:set:':
                 name: drawHighlightLines
-    MoveChartViewJob:
-        methods:
-            '-initWithViewPortHandler:xValue:yValue:transformer:view:':
-                name: init
+    MoveChartViewJob: { }
+    NSUIAccessibilityElement: { }
     NSUIView:
         methods:
-            '-touchesBegan:withEvent:':
-                name: touchesBegan
-            '-touchesMoved:withEvent:':
-                name: touchesMoved
-            '-touchesEnded:withEvent:':
-                name: touchesEnded
-            '-touchesCancelled:withEvent:':
-                name: touchesCancelled
             '-nsuiTouchesBegan:withEvent:':
                 name: nsuiTouchesBegan
             '-nsuiTouchesMoved:withEvent:':
@@ -970,12 +784,11 @@ classes:
                 name: nsuiTouchesEnded
             '-nsuiTouchesCancelled:withEvent:':
                 name: nsuiTouchesCancelled
-    PieChartData:
-        methods:
-            '-getDataSetByLabel:ignorecase:':
-                name: getDataSet
+    PieChartData: { }
     PieChartDataEntry:
         methods:
+            '-initWithValue:':
+                name: init
             '-initWithValue:label:':
                 name: init
             '-initWithValue:label:data:':
@@ -984,34 +797,36 @@ classes:
                 name: init
             '-initWithValue:label:icon:data:':
                 name: init
-            '-initWithValue:':
-                name: init
             '-initWithValue:data:':
                 name: init
             '-initWithValue:icon:':
                 name: init
             '-initWithValue:icon:data:':
                 name: init
-    PieChartDataSet:
-        methods:
-            '-initWithValues:label:':
-                name: init
-    PieChartHighlighter:
-        methods:
-            '-closestHighlightWithIndex:x:y:':
-                name: getClosestHighlight
+    PieChartDataSet: { }
+    PieChartHighlighter: { }
     PieChartRenderer:
         methods:
             '-initWithChart:animator:viewPortHandler:':
                 name: init
+            '-drawDataWithContext:':
+                name: drawData
             '-calculateMinimumRadiusForSpacedSliceWithCenter:radius:angle:arcStartPointX:arcStartPointY:startAngle:sweepAngle:':
-                name: calculateMinimumRadiusForSpacedSliceWithCenter
-            '-drawDataSetWithContext:dataSet:':
-                name: drawDataSet
-            '-drawHighlightedWithContext:indices:':
-                name: drawHighlighted
+                name: calculateMinimumRadiusForSpacedSlice
             '-getSliceSpaceWithDataSet:':
                 name: getSliceSpace
+            '-drawDataSetWithContext:dataSet:':
+                name: drawDataSet
+            '-drawValuesWithContext:':
+                name: drawValues
+            '-drawExtrasWithContext:':
+                name: drawExtras
+            '-isDrawingValuesAllowedWithDataProvider:':
+                name: isDrawingValuesAllowed
+            '-drawHighlightedWithContext:indices:':
+                name: drawHighlighted
+            '-createAccessibleHeaderUsingChart:andData:withDefaultDescription:':
+                name: createAccessibleHeader
     PieChartView:
         properties:
             'drawSlicesUnderHoleEnabled':
@@ -1031,8 +846,6 @@ classes:
                 name: needsHighlight
     PieRadarChartHighlighter:
         methods:
-            '-getHighlightWithX:y:':
-                name: getHighlight
             '-closestHighlightWithIndex:x:y:':
                 name: getClosestHighlight
     PieRadarChartViewBase:
@@ -1054,15 +867,7 @@ classes:
                 name: spin
             '-spinWithDuration:fromAngle:toAngle:':
                 name: spin
-            '-nsuiTouchesBegan:withEvent:':
-                name: nsuiTouchesBegan
-            '-nsuiTouchesMoved:withEvent:':
-                name: nsuiTouchesMoved
-            '-nsuiTouchesEnded:withEvent:':
-                name: nsuiTouchesEnded
-            '-nsuiTouchesCancelled:withEvent:':
-                name: nsuiTouchesCancelled
-    RadarChartData: {}
+    RadarChartData: { }
     RadarChartDataEntry:
         methods:
             '-initWithValue:':
@@ -1073,40 +878,23 @@ classes:
         properties:
             'drawHighlightCircleEnabled':
                 getter: drawHighlightCircleEnabled
-        methods:
-            '-initWithValues:label:':
-                name: init
-    RadarChartHighlighter:
-        methods:
-            '-closestHighlightWithIndex:x:y:':
-                name: getClosestHighlight
+    RadarChartHighlighter: { }
     RadarChartRenderer:
         methods:
             '-initWithChart:animator:viewPortHandler:':
                 name: init
-            '-drawDataSetWithContext:dataSet:mostEntries:':
-                name: drawDataSet
-            '-drawHighlightedWithContext:indices:':
-                name: drawHighlighted
-            '-drawHighlightCircleWithContext:atPoint:innerRadius:outerRadius:fillColor:strokeColor:strokeWidth:':
-                name: drawHighlightCircle
             '-drawWebWithContext:':
                 name: drawWeb
-    RadarChartView: {}
-    ScatterChartData: {}
-    ScatterChartDataSet:
-        methods:
-            '-initWithValues:label:':
-                name: init
+    RadarChartView: { }
+    ScatterChartData: { }
+    ScatterChartDataSet: { }
     ScatterChartRenderer:
         methods:
             '-initWithDataProvider:animator:viewPortHandler:':
                 name: init
             '-drawDataSetWithContext:dataSet:':
-                name: drawData
-            '-drawHighlightedWithContext:indices:':
-                name: drawHighlighted
-    ScatterChartView: {}
+                name: drawDataSet
+    ScatterChartView: { }
     SquareShapeRenderer:
         methods:
             '-renderShapeWithContext:dataSet:viewPortHandler:point:color:':
@@ -1117,19 +905,13 @@ classes:
                 name: renderShape
     XAxisRendererHorizontalBarChart:
         methods:
-            '-initWithViewPortHandler:xAxis:transformer:chart:':
+            '-initWithViewPortHandler:axis:transformer:chart:':
                 name: init
-            '-computeAxisWithMin:max:inverted:':
-                name: computeAxis
-            '-drawLabelsWithContext:pos:anchor:':
-                name: drawLabels
             '-drawLabelWithContext:formattedLabel:x:y:attributes:anchor:angleRadians:':
                 name: drawLabel
-            '-drawGridLineWithContext:x:y:':
-                name: drawGridLine
     XAxisRendererRadarChart:
         methods:
-            '-initWithViewPortHandler:xAxis:chart:':
+            '-initWithViewPortHandler:axis:chart:':
                 name: init
             '-drawLabelWithContext:formattedLabel:x:y:attributes:anchor:angleRadians:':
                 name: drawLabel
@@ -1139,36 +921,110 @@ classes:
                 name: renderShape
     YAxisRendererHorizontalBarChart:
         methods:
-            '-initWithViewPortHandler:yAxis:transformer:':
-                name: init
-            '-computeAxisWithMin:max:inverted:':
-                name: computeAxis
             '-drawYLabelsWithContext:fixedPosition:positions:offset:':
                 name: drawYLabels
-            '-drawGridLineWithContext:position:':
-                name: drawGridLine
     YAxisRendererRadarChart:
         methods:
-            '-initWithViewPortHandler:yAxis:chart:':
+            '-initWithViewPortHandler:axis:chart:':
                 name: init
-            '-computeAxisValuesWithMin:max:':
-                name: computeAxisValues
     ZoomChartViewJob:
         methods:
             '-initWithViewPortHandler:scaleX:scaleY:xValue:yValue:transformer:axis:view:':
                 name: init
-    NSUIAccessibilityElement: {}
-
 protocols:
-    BarChartDataProvider: {}
+    BarChartDataProvider: { }
+    BarChartDataSetProtocol: { }
     BarLineScatterCandleBubbleChartDataProvider:
         methods:
             '-isInvertedWithAxis:':
                 name: isInverted
-    BubbleChartDataProvider: {}
-    CandleChartDataProvider: {}
-    ChartAnimatorDelegate: {}
-    ChartDataProvider: {}
+    BarLineScatterCandleBubbleChartDataSetProtocol: { }
+    BubbleChartDataProvider: { }
+    BubbleChartDataSetProtocol: { }
+    CandleChartDataProvider: { }
+    CandleChartDataSetProtocol:
+        properties:
+            'shadowColorSameAsCandle':
+                getter: shadowColorSameAsCandle
+            'isShadowColorSameAsCandle':
+                getter: isShadowColorSameAsCandle
+            'increasingFilled':
+                getter: increasingFilled
+            'decreasingFilled':
+                getter: decreasingFilled
+    ChartAnimatorDelegate: { }
+    ChartAxisValueFormatter:
+        methods:
+            '-stringForValue:axis:':
+                name: getStringForValue
+    ChartDataProvider: { }
+    ChartDataRenderer:
+        methods:
+            '-drawDataWithContext:':
+                name: drawData
+            '-drawValuesWithContext:':
+                name: drawValues
+            '-drawExtrasWithContext:':
+                name: drawExtras
+            '-drawHighlightedWithContext:indices:':
+                name: drawHighlighted
+            '-isDrawingValuesAllowedWithDataProvider:':
+                name: isDrawingValuesAllowed
+            '-createAccessibleHeaderUsingChart:andData:withDefaultDescription:':
+                name: createAccessibleHeader
+    ChartDataSetProtocol:
+        properties:
+            'highlightEnabled':
+                getter: highlightEnabled
+            'drawIconsEnabled':
+                getter: drawIconsEnabled
+            'drawValuesEnabled':
+                getter: drawValuesEnabled
+            'visible':
+                getter: visible
+        methods:
+            '-calcMinMaxYFromX:toX:':
+                name: calcMinMaxY
+            '-entryForXValue:closestToY:rounding:':
+                name: getEntry
+            '-entryForXValue:closestToY:':
+                name: getEntry
+            '-entryIndexWithX:closestToY:rounding:':
+                name: getEntryIndex
+            '-entriesForXValue:':
+                name: getEntries
+            '-entryIndexWithEntry:':
+                name: getEntryIndex
+            '-removeEntryWithIndex:':
+                name: removeEntry
+            '-removeEntryWithX:':
+                name: removeEntry
+    ChartFill:
+        methods:
+            '-fillPathWithContext:rect:':
+                name: fillPath
+    ChartFillFormatter:
+        methods:
+            '-getFillLinePositionWithDataSet:dataProvider:':
+                name: getFillLinePosition
+    ChartHighlighter:
+        name: ChartHighlighterProtocol
+        methods:
+            '-getHighlightWithX:y:':
+                name: getHighlight
+    ChartMarker:
+        methods:
+            '-offsetForDrawingAtPoint:':
+                name: getOffsetForDrawing
+            '-refreshContentWithEntry:highlight:':
+                name: refreshContent
+            '-drawWithContext:point:':
+                name: draw
+    ChartRenderer: { }
+    ChartValueFormatter:
+        methods:
+            '-stringForValue:entry:dataSetIndex:viewPortHandler:':
+                name: getStringForValue
     ChartViewDelegate:
         methods:
             '-chartValueSelected:entry:highlight:':
@@ -1179,93 +1035,30 @@ protocols:
                 name: chartTranslated
             '-chartView:animatorDidStop:':
                 name: animatorDidStop
-    CombinedChartDataProvider: {}
-    IBarChartDataSet: {}
-    IBarLineScatterCandleBubbleChartDataSet: {}
-    IBubbleChartDataSet: {}
-    ICandleChartDataSet:
+    CombinedChartDataProvider: { }
+    LineChartDataProvider: { }
+    LineChartDataSetProtocol:
         properties:
-            'shadowColorSameAsCandle':
-                getter: shadowColorSameAsCandle
-            'increasingFilled':
-                getter: increasingFilled
-            'decreasingFilled':
-                getter: decreasingFilled
-    IChartAxisValueFormatter:
-        methods:
-            '-stringForValue:axis:':
-                name: getStringForValue
-    IChartDataSet:
-        properties:
-            'highlightEnabled':
-                getter: highlightEnabled
-            'drawValuesEnabled':
-                getter: drawValuesEnabled
-            'drawIconsEnabled':
-                getter: drawIconsEnabled
-            'visible':
-                getter: visible
-        methods:
-            '-calcMinMaxYFromX:toX:':
-                name: calcMinMaxY
-            '-entryForXValue:closestToY:rounding:':
-                name: getEntryForX
-            '-entryForXValue:closestToY:':
-                name: getEntryForX
-            '-entryIndexWithX:closestToY:rounding:':
-                name: getEntryIndex
-            '-entryIndexWithEntry:':
-                name: getEntryIndex
-            '-removeEntryWithIndex:':
-                name: removeEntry
-            '-removeEntryWithX:':
-                name: removeEntryWithX
-
-    IChartFillFormatter:
-        methods:
-            '-getFillLinePositionWithDataSet:dataProvider:':
-                name: getFillLinePosition
-    IChartHighlighter:
-        methods:
-            '-getHighlightWithX:y:':
-                name: getHighlight
-    IChartMarker:
-        methods:
-            '-refreshContentWithEntry:highlight:':
-                name: refreshContent
-            '-drawWithContext:point:':
-                name: draw
-    IChartValueFormatter:
-        methods:
-            '-stringForValue:entry:dataSetIndex:viewPortHandler:':
-                name: getStringForValue
-    ILineChartDataSet:
-        properties:
-            'drawCubicEnabled':
-                getter: drawCubicEnabled
-            'drawSteppedEnabled':
-                getter: drawSteppedEnabled
             'drawCirclesEnabled':
                 getter: drawCirclesEnabled
             'drawCircleHoleEnabled':
                 getter: drawCircleHoleEnabled
-    ILineRadarChartDataSet:
+    LineRadarChartDataSetProtocol:
         properties:
             'drawFilledEnabled':
                 getter: drawFilledEnabled
-    ILineScatterCandleRadarChartDataSet: {}
-    IPieChartDataSet: {}
-    IRadarChartDataSet:
+    LineScatterCandleRadarChartDataSetProtocol: { }
+    PieChartDataSetProtocol: { }
+    RadarChartDataSetProtocol:
         properties:
             'drawHighlightCircleEnabled':
                 getter: drawHighlightCircleEnabled
-    IScatterChartDataSet: {}
-    IShapeRenderer:
+    ScatterChartDataProvider: { }
+    ScatterChartDataSetProtocol: { }
+    ShapeRenderer:
         methods:
             '-renderShapeWithContext:dataSet:viewPortHandler:point:color:':
                 name: renderShape
-    LineChartDataProvider: {}
-    ScatterChartDataProvider: {}
 
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version

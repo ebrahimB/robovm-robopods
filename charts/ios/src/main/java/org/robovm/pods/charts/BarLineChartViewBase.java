@@ -188,6 +188,9 @@ import org.robovm.apple.coreanimation.*;
     public native double getLowestVisibleX();
     @Property(selector = "highestVisibleX")
     public native double getHighestVisibleX();
+    @WeaklyLinked
+    @Property(selector = "layerClass")
+    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -220,15 +223,15 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "zoomToCenterWithScaleX:scaleY:")
     public native void zoomToCenter(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY);
     @Method(selector = "zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:easing:")
-    public native void zoomAndCenterView(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY, double xValue, double yValue, AxisDependency axis, double duration, @Block Block2<Double, Double, Double> easing);
+    public native void zoomAndCenterViewAnimated(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY, double xValue, double yValue, AxisDependency axis, double duration, @Block Block2<Double, Double, Double> easing);
     @Method(selector = "zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:easingOption:")
-    public native void zoomAndCenterView(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY, double xValue, double yValue, AxisDependency axis, double duration, ChartEasingOption easingOption);
+    public native void zoomAndCenterViewAnimated(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY, double xValue, double yValue, AxisDependency axis, double duration, ChartEasingOption easingOption);
     @Method(selector = "zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:")
-    public native void zoomAndCenterView(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY, double xValue, double yValue, AxisDependency axis, double duration);
+    public native void zoomAndCenterViewAnimated(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY, double xValue, double yValue, AxisDependency axis, double duration);
     @Method(selector = "fitScreen")
     public native void fitScreen();
     @Method(selector = "setScaleMinima:scaleY:")
-    public native void setScale(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY);
+    public native void setScaleMinima(@MachineSizedFloat double scaleX, @MachineSizedFloat double scaleY);
     @Method(selector = "setVisibleXRangeMaximum:")
     public native void setVisibleXRangeMaximum(double maxXRange);
     @Method(selector = "setVisibleXRangeMinimum:")
@@ -278,7 +281,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "getEntryByTouchPointWithPoint:")
     public native ChartDataEntry getEntryByTouchPoint(@ByVal CGPoint pt);
     @Method(selector = "getDataSetByTouchPointWithPoint:")
-    public native IBarLineScatterCandleBubbleChartDataSet getDataSetByTouchPoint(@ByVal CGPoint pt);
+    public native BarLineScatterCandleBubbleChartDataSetProtocol getDataSetByTouchPoint(@ByVal CGPoint pt);
     @Method(selector = "getAxis:")
     public native ChartYAxis getAxis(AxisDependency axis);
     @Method(selector = "setDragOffsetX:")
@@ -299,6 +302,16 @@ import org.robovm.apple.coreanimation.*;
     public native ChartTransformer getTransformerForAxis(AxisDependency axis);
     @Method(selector = "isInvertedWithAxis:")
     public native boolean isInverted(AxisDependency axis);
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
+    /**
+     * @since Available in iOS 10.0 and later.
+     */
+    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     @Method(selector = "gestureRecognizer:shouldRequireFailureOfGestureRecognizer:")
     public native boolean shouldRequireFailure(UIGestureRecognizer gestureRecognizer, UIGestureRecognizer otherGestureRecognizer);
     @Method(selector = "gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:")

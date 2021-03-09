@@ -59,7 +59,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "getHighlightWithX:y:")
     public native ChartHighlight getHighlight(@MachineSizedFloat double x, @MachineSizedFloat double y);
     @Method(selector = "getStackedHighlightWithHigh:set:xValue:yValue:")
-    public native ChartHighlight getStackedHighlight(ChartHighlight high, IBarChartDataSet set, double xValue, double yValue);
+    public native ChartHighlight getStackedHighlight(ChartHighlight high, BarChartDataSetProtocol set, double xValue, double yValue);
     @Method(selector = "getClosestStackIndexWithRanges:value:")
     public native @MachineSizedSInt long getClosestStackIndex(NSArray<ChartRange> ranges, double value);
     @Method(selector = "initWithChart:")
