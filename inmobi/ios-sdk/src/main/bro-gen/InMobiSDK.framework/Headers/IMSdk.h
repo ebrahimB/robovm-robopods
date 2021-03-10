@@ -27,13 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
  * @param completionBlock A block which is invoked once the SDK has been successfully initialised and is ready
  */
 +(void)initWithAccountID:(NSString *)accountID andCompletionHandler:(void (^ _Nullable)( NSError * _Nullable )) completionBlock;
-
 /**
  * Initialize the sdk. This must be called before any other API for the SDK is used.
  * @param accountID account id obtained from the InMobi portal.
  */
 +(void)initWithAccountID:(NSString *)accountID __attribute((deprecated("Please use new API initWithAccountID:andCompletionHandler: as this API can be removed in future")));
-
 /**
  * Initialize the sdk. This must be called before any other API for the SDK is used.
  * @param accountID account id obtained from the InMobi portal.
@@ -46,7 +44,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @param completionBlock A block which is invoked once the SDK has been successfully initialised and is ready
  */
 +(void)initWithAccountID:(NSString *)accountID consentDictionary:(nullable NSDictionary*) consentDictionary andCompletionHandler:(void (^ _Nullable)( NSError * _Nullable )) completionBlock;
-
 /**
  * Initialize the sdk. This must be called before any other API for the SDK is used.
  * @param accountID account id obtained from the InMobi portal.
@@ -58,7 +55,6 @@ NS_ASSUME_NONNULL_BEGIN
  * IM_GDPR_CONSENT_IAB(string): Key to send the IAB consent string.
  */
 +(void)initWithAccountID:(NSString *)accountID consentDictionary:(nullable NSDictionary*) consentDictionary __attribute((deprecated("Please use new API initWithAccountID:consentDictionary:andCompletionHandler: as this API can be removed in future")));
-
 /**
  * updates the user consent for a session of the app
  *
@@ -70,25 +66,37 @@ NS_ASSUME_NONNULL_BEGIN
  * IM_GDPR_CONSENT_IAB(string): Key to send the IAB consent string.
  */
 +(void)updateGDPRConsent:(nullable NSDictionary *)consentDictionary;
-
 /**
  * Use this to get the version of the SDK.
  * @return The version of the SDK.
  */
 +(NSString *)getVersion;
-
 /**
  * Set the log level for SDK's logs
  * @param desiredLogLevel The desired level of logs.
  */
 +(void)setLogLevel:(IMSDKLogLevel)desiredLogLevel;
-
 /**
  * Use this to set the global state of the SDK to mute.
  * @param shouldMute Boolean depicting the mute state of the SDK
  */
 +(void)setMute:(BOOL)shouldMute;
 
+#pragma mark Audience Bidding
+/**
+ * Use this API to get token for Audience Bidding.
+ * @return The token string.
+ */
++(NSString *)getToken;
+/**
+ * Use this API to get token for Audience Bidding.
+ * @param extras  Any additional information to be passed to InMobi.
+ * @param keywords  A free form set of keywords, separated by ',' to be sent with the ad request.
+ * @return The token string.
+ */
++(NSString *)getTokenWithExtras:(nullable NSDictionary*)extras andKeywords:(nullable NSString*)keywords;
+
+#pragma mark Demog APIs
 /**
  * Provide the user's age to the SDK for targetting purposes.
  * @param age The user's age.
@@ -136,7 +144,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @param country The user's country.
  */
 +(void)setLocationWithCity:(NSString*)city state:(NSString*)state country:(NSString*)country;
-
 /**
  * Provide the user's location to the SDK for targetting purposes.
  * @param location The location of the user
@@ -147,6 +154,15 @@ NS_ASSUME_NONNULL_BEGIN
  * @param postalcode The user's postalcode.
  */
 +(void)setPostalCode:(NSString*)postalcode;
+
+/**
+ * Indicates whether the application wants to manage audio session. If set as NO, the InMobi SDK will stop managing AVAudioSession during the HTML video playback lifecycle. If set as YES,
+ * the InMobi SDK will manage AVAudioSession. That might set AVAudioSession's category to AVAudioSessionCategoryAmbient and categoryOption to AVAudioSessionCategoryOptionMixWithOthers,
+ * when HTML video is rendering. This setting will not stop the app audio from playing in an app. It will mix with ad audio and if any sound playing in another app, it will stop that sound and play the ads'
+ * sound and once the ad is dismissed it notifies another app.
+ * @param value Boolean depicting enable or disable the AVAudioSession management by SDK
+ */
++(void)shouldAutoManageAVAudioSession:(BOOL)value;
 
 NS_ASSUME_NONNULL_END
 

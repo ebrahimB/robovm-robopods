@@ -55,7 +55,8 @@ classes:
                 name: init
             '+setLocationWithCity:state:country:':
                 name: setLocation
-
+            '+getTokenWithExtras:andKeywords:':
+                name: getToken
 protocols:
     IMBannerDelegate:
         methods:

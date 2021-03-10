@@ -79,6 +79,10 @@ import org.robovm.apple.coreanimation.*;
     public static native void setLogLevel(IMSDKLogLevel desiredLogLevel);
     @Method(selector = "setMute:")
     public static native void setMute(boolean shouldMute);
+    @Method(selector = "getToken")
+    public static native String getToken();
+    @Method(selector = "getTokenWithExtras:andKeywords:")
+    public static native String getToken(NSDictionary<?, ?> extras, String keywords);
     @Method(selector = "setAge:")
     public static native void setAge(short age);
     @Method(selector = "setAreaCode:")
@@ -101,5 +105,7 @@ import org.robovm.apple.coreanimation.*;
     public static native void setLocation(CLLocation location);
     @Method(selector = "setPostalCode:")
     public static native void setPostalCode(String postalcode);
+    @Method(selector = "shouldAutoManageAVAudioSession:")
+    public static native void shouldAutoManageAVAudioSession(boolean value);
     /*</methods>*/
 }
