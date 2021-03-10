@@ -56,8 +56,8 @@ import org.robovm.apple.coregraphics.*;
     IAContentController getActiveContentController();
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "clean")
-    void clean();
+    @Method(selector = "clear")
+    void clear();
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

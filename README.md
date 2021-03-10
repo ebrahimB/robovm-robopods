@@ -43,7 +43,7 @@ v1.15.0 - in development
 | [Facebook](facebook/)              | 9.0.1* |
 | [Firebase](firebase/)              | 7.8.0* |
 | [Flurry](flurry/)                  | 11.1.0 |
-| [Fyber](fyber/)                    | 7.7.3  |
+| [Fyber](fyber/)                    | 7.8.1*  |
 | [HelpShift](helpshift/)            | 7.10.0*|
 | [InMobi](inmobi/)                  | 9.1.1  |
 | [Lottie](lottie/)                  | 3.2.1* |

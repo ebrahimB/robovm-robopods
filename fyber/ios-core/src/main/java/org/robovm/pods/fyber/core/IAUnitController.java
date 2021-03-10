@@ -63,8 +63,8 @@ import org.robovm.apple.coregraphics.*;
     /*<methods>*/
     @Method(selector = "isReady")
     public native boolean isReady();
-    @Method(selector = "clean")
-    public native void clean();
+    @Method(selector = "clear")
+    public native void clear();
     @Method(selector = "addSupportedContentController:")
     public native void addSupportedContentController(IAContentController supportedContentController);
     /*</methods>*/

@@ -58,7 +58,7 @@ import org.robovm.apple.coregraphics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("clean")
-    public void clean() {}
+    @NotImplemented("clear")
+    public void clear() {}
     /*</methods>*/
 }
