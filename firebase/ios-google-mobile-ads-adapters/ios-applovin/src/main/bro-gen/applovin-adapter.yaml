@@ -11,11 +11,13 @@ headers:
 private_typedefs:
 
 enums:
+    GADMAdapterAppLovinErrorCode: {prefix: GADMAdapterAppLovinError}
 
 typed_enums:
 
 classes:
     GADMAdapterAppLovinExtras: {}
+    GADMediationAdapterAppLovin: {}
 protocols:
 
 functions:
