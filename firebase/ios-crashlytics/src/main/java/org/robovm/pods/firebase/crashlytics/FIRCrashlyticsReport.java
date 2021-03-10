@@ -34,20 +34,25 @@ import org.robovm.apple.foundation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRCrashlytics/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRCrashlyticsReport/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FIRCrashlyticsPtr extends Ptr<FIRCrashlytics, FIRCrashlyticsPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FIRCrashlytics.class); }/*</bind>*/
+    /*<ptr>*/public static class FIRCrashlyticsReportPtr extends Ptr<FIRCrashlyticsReport, FIRCrashlyticsReportPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FIRCrashlyticsReport.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected FIRCrashlytics() {}
-    protected FIRCrashlytics(Handle h, long handle) { super(h, handle); }
-    protected FIRCrashlytics(SkipInit skipInit) { super(skipInit); }
+    protected FIRCrashlyticsReport() {}
+    protected FIRCrashlyticsReport(Handle h, long handle) { super(h, handle); }
+    protected FIRCrashlyticsReport(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "reportID")
+    public native String getReportID();
+    @Property(selector = "dateCreated")
+    public native NSDate getDateCreated();
+    @Property(selector = "hasCrash")
+    public native boolean hasCrash();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -59,25 +64,5 @@ import org.robovm.apple.foundation.*;
     public native void setCustomKeysAndValues(NSDictionary<?, ?> keysAndValues);
     @Method(selector = "setUserID:")
     public native void setUserID(String userID);
-    @Method(selector = "recordError:")
-    public native void recordError(NSError error);
-    @Method(selector = "recordExceptionModel:")
-    public native void recordExceptionModel(FIRExceptionModel exceptionModel);
-    @Method(selector = "didCrashDuringPreviousExecution")
-    public native boolean didCrashDuringPreviousExecution();
-    @Method(selector = "setCrashlyticsCollectionEnabled:")
-    public native void setCrashlyticsCollectionEnabled(boolean enabled);
-    @Method(selector = "isCrashlyticsCollectionEnabled")
-    public native boolean isCrashlyticsCollectionEnabled();
-    @Method(selector = "checkForUnsentReportsWithCompletion:")
-    public native void checkForUnsentReports(@Block VoidBooleanBlock completion);
-    @Method(selector = "checkAndUpdateUnsentReportsWithCompletion:")
-    public native void checkAndUpdateUnsentReports(@Block VoidBlock1<FIRCrashlyticsReport> completion);
-    @Method(selector = "sendUnsentReports")
-    public native void sendUnsentReports();
-    @Method(selector = "deleteUnsentReports")
-    public native void deleteUnsentReports();
-    @Method(selector = "crashlytics")
-    public static native FIRCrashlytics crashlytics();
     /*</methods>*/
 }

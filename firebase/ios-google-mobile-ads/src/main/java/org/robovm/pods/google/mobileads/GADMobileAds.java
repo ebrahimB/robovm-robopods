@@ -79,16 +79,18 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isSDKVersionAtLeast(@MachineSizedSInt long major, @MachineSizedSInt long minor, @MachineSizedSInt long patch);
     @Method(selector = "startWithCompletionHandler:")
     public native void start(@Block VoidBlock1<GADInitializationStatus> completionHandler);
-    @Method(selector = "disableAutomatedInAppPurchaseReporting")
-    public native void disableAutomatedInAppPurchaseReporting();
-    @Method(selector = "enableAutomatedInAppPurchaseReporting")
-    public native void enableAutomatedInAppPurchaseReporting();
     @Method(selector = "disableSDKCrashReporting")
     public native void disableSDKCrashReporting();
     @Method(selector = "disableMediationInitialization")
     public native void disableMediationInitialization();
     @Method(selector = "presentAdInspectorFromViewController:completionHandler:")
     public native void presentAdInspector(UIViewController viewController, @Block VoidBlock1<NSError> completionHandler);
+    @Deprecated
+    @Method(selector = "disableAutomatedInAppPurchaseReporting")
+    public native void disableAutomatedInAppPurchaseReporting();
+    @Deprecated
+    @Method(selector = "enableAutomatedInAppPurchaseReporting")
+    public native void enableAutomatedInAppPurchaseReporting();
     @Method(selector = "sharedInstance")
     public static native GADMobileAds sharedInstance();
     /*</methods>*/

@@ -20,6 +20,8 @@ classes:
                 name: setCustomValue
             '-checkForUnsentReportsWithCompletion:':
                 name: checkForUnsentReports
+            '-checkAndUpdateUnsentReportsWithCompletion:':
+              name: checkAndUpdateUnsentReports
     FIRExceptionModel:
         methods:
             '-initWithName:reason:':
@@ -35,6 +37,14 @@ classes:
             '+stackFrameWithAddress:':
                 constructor: true
                 name: create
+    FIRCrashlyticsReport:
+      methods:
+        '-logWithFormat:':
+          name: log
+        '-logWithFormat:arguments:':
+          name: log
+        '-setCustomValue:forKey:':
+          name: setCustomValue
 protocols: {}
 
 functions:

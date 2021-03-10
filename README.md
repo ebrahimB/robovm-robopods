@@ -37,11 +37,11 @@ v1.15.0 - in development
 |------------------------------------|--------|
 | [AppLovinSDK](applovinsdk/)        | 6.15.2*|
 | [AppCenter](appcenter/)            | 4.1.0  |
-| [Azure](Azure/)                    | 3.1.2  |
+| [Azure](Azure/)                    | 3.1.3* |
 | [BranchMetrics](branchmetrics/)    | 1.38.0*|
 | [Charts](charts/)                  | 4.0.1* |
 | [Facebook](facebook/)              | 9.0.1* |
-| [Firebase](firebase/)              | 7.7.0* |
+| [Firebase](firebase/)              | 7.8.0* |
 | [Flurry](flurry/)                  | 11.1.0 |
 | [Fyber](fyber/)                    | 7.7.3  |
 | [HelpShift](helpshift/)            | 7.10.0*|
