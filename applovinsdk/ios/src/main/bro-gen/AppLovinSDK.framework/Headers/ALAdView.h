@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Whether or not this ad view should automatically load an ad when inflated from StoryBoard or a nib file (when -[UIView awakeFromNib] is called).
- * The default value is YES. If you set it to NO, you are responsible for loading the ad by invoking `-[ALAdView loadNextAd]`.
+ * The default value is NO so you are responsible for loading the ad by invoking `-[ALAdView loadNextAd]`.
  */
 @property (nonatomic, assign, getter=isAutoloadEnabled, setter=setAutoloadEnabled:) BOOL autoload;
 
@@ -136,15 +136,9 @@ NS_ASSUME_NONNULL_BEGIN
  * @return A new instance of ALAdView.
  */
 - (instancetype)initWithFrame:(CGRect)frame size:(ALAdSize *)size sdk:(ALSdk *)sdk;
-- (instancetype)init __attribute__((unavailable("Use one of the other provided initializers")));
+- (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-@end
-
-@interface ALAdView(ALDeprecated)
-@property (strong, atomic, nullable) UIViewController *parentController __deprecated_msg("This property is deprecated and will be removed in a future SDK version.");
-- (void)render:(ALAd *)ad overPlacement:(nullable NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
-@property (readonly, atomic, getter=isReadyForDisplay) BOOL readyForDisplay __deprecated_msg("Checking whether an ad is ready for display has been deprecated and will be removed in a future SDK version. Please use `loadNextAd` or `renderAd:` to display an ad.");
 @end
 
 NS_ASSUME_NONNULL_END

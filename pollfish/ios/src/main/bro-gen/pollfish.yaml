@@ -1,7 +1,7 @@
 package: org.robovm.pods.pollfish
 include: [foundation, uikit, corelocation]
 clang_args: ['-x', 'objective-c']
-framework: pollfish
+framework: Pollfish
 headers:
     - pollfish.h
 
@@ -10,156 +10,186 @@ private_typedefs: {}
 typedefs: {}
 
 enums:
-    GENDER_VALUE: {name: Gender}
-    YEAR_OF_BIRTH_VALUE: {name: YearOfBirth}
-    MARITAL_STATUS_VALUE: {name: MaritalStatus}
-    PARENTAL_STATUS_VALUE: {name: ParentalStatus}
-    EDUCATION_LEVEL_VALUE: {name: EducationLevel}
-    EMPLOYMENT_STATUS_VALUE: {name: EmploymentStatus}
-    CAREER_VALUE: {name: Career}
-    RACE_VALUE: {name: Race}
-    INCOME_VALUE: {name: Income}
-    SPOKEN_LANGUAGE_VALUE: {name: SpokenLanguage}
-    ORGANIZATION_ROLE_VALUE: {name: OrganizationRole}
-    NUMBER_OF_EMPLOYEES_VALUE: {name: NumberOfEmployees}
-    PollfishPosition: {prefix: PollFishPosition}
-    SurveyFormat: {}
+    Career: { }
+    Education: { }
+    Employment: { }
+    Gender: { }
+    Income: { }
+    IndicatorPosition: { }
+    MaritalStatus: { }
+    NumberOfEmployees: { }
+    OrganizationRole: { }
+    Parental: { }
+    Platform: { }
+    Race: { }
+    SpokenLanguage: { }
+    SurveyFormat: { }
 
 classes:
     Pollfish:
-        skip_def_constructor: true
         methods:
-            '+initWithAPIKey:andParams:':
+            '+initWith:delegate:':
+                name: initialize
+    PollfishParams: { }
+    RewardInfo:
+        methods:
+            '-initWithRewardName:rewardConversion:':
                 name: init
-            '+updateLocationWithLatitude:andLongitude:andHorizontalAccuracy:':
-                name: updateLocation
-            '+updateLocationWith:':
-                name: updateLocation
-    PollfishParams:
-        properties:
-            indicatorPosition:
-                type: PollfishPosition
-            surveyFormat:
-                type: SurveyFormat
+    SurveyInfo: { }
+    UserProperties:
         methods:
-            '+initWith:':
-                constructor: true
-                name: create
-    UserAttributesDictionary:
+            '-customAttribute:forKey:':
+                name: getCustomAttribute
+#    Pollfish:
+#        skip_def_constructor: true
+#        methods:
+#            '+initWithAPIKey:andParams:':
+#                name: init
+#            '+updateLocationWithLatitude:andLongitude:andHorizontalAccuracy:':
+#                name: updateLocation
+#            '+updateLocationWith:':
+#                name: updateLocation
+#    PollfishParams:
+#        properties:
+#            indicatorPosition:
+#                type: PollfishPosition
+#            surveyFormat:
+#                type: SurveyFormat
+#        methods:
+#            '+initWith:':
+#                constructor: true
+#                name: create
+#    UserAttributesDictionary:
+#        methods:
+#            '-setCustomAttributeWithKey:andValue:':
+#                name: setCustomAttribute
+#            '-initWithObjects:forKeys:count:':
+#                name: init
+#            # customize method to accept enums directly, corresponding method (to NSString) will be called in marshaller
+#            '-set(Gender|YearOfBirth|MaritalStatus|ParentalStatus|Education|Employment|Career|Race|Income|SpokenLanguage|OrganizationRole|NumberOfEmployees):':
+#                name: 'set#{g[0]}0'
+#                visibility: private
+#                parameters:
+#                    0:
+#                        type: NSString
+#            # excluding bellow as these are part of super
+#            '-objectForKey:':
+#                exclude: true
+#            '-keyEnumerator':
+#                exclude: true
+#            '-setObject:forKey:':
+#                exclude: true
+#            '-removeObjectForKey:':
+#                exclude: true
+#            '-count':
+#                exclude: true
+#            '-dealloc':
+#                exclude: true
+
+protocols:
+    PollfishDelegate:
         methods:
-            '-setCustomAttributeWithKey:andValue:':
-                name: setCustomAttribute
-            '-initWithObjects:forKeys:count:':
-                name: init
-            # customize method to accept enums directly, corresponding method (to NSString) will be called in marshaller
-            '-set(Gender|YearOfBirth|MaritalStatus|ParentalStatus|Education|Employment|Career|Race|Income|SpokenLanguage|OrganizationRole|NumberOfEmployees):':
-                name: 'set#{g[0]}0'
-                visibility: private
-                parameters:
-                    0:
-                        type: NSString
-            # excluding bellow as these are part of super
-            '-objectForKey:':
-                exclude: true
-            '-keyEnumerator':
-                exclude: true
-            '-setObject:forKey:':
-                exclude: true
-            '-removeObjectForKey:':
-                exclude: true
-            '-count':
-                exclude: true
-            '-dealloc':
-                exclude: true
-
-protocols: {}
-
+            '-pollfishSurveyReceivedWithSurveyInfo:':
+                name: pollfishSurveyReceived
+            '-pollfishSurveyCompletedWithSurveyInfo:':
+                name: pollfishSurveyCompleted
 functions:
     # turn into toString()
-    "GENDER":
-        static: true
-        class: Gender
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "YEAR_OF_BIRTH":
-        static: true
-        class: YearOfBirth
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "MARITAL_STATUS":
-        static: true
-        class: MaritalStatus
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "PARENTAL_STATUS":
-        static: true
-        class: ParentalStatus
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "EDUCATION_LEVEL":
-        static: true
-        class: EducationLevel
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "EMPLOYMENT_STATUS":
-        static: true
-        class: EmploymentStatus
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "CAREER":
-        static: true
-        class: Career
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "RACE":
-        static: true
-        class: Race
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "INCOME":
-        static: true
-        class: Income
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "SPOKEN_LANGUAGE":
-        static: true
-        class: SpokenLanguage
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "ORGANIZATION_ROLE":
-        static: true
-        class: OrganizationRole
-        name: asString0
-        visibility: protected
-        return_type: NSString
-    "NUMBER_OF_EMPLOYEES":
-        static: true
-        class: NumberOfEmployees
-        name: asString0
-        visibility: protected
-        return_type: NSString
+#    "GENDER":
+#        static: true
+#        class: Gender
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "YEAR_OF_BIRTH":
+#        static: true
+#        class: YearOfBirth
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "MARITAL_STATUS":
+#        static: true
+#        class: MaritalStatus
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "PARENTAL_STATUS":
+#        static: true
+#        class: ParentalStatus
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "EDUCATION_LEVEL":
+#        static: true
+#        class: EducationLevel
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "EMPLOYMENT_STATUS":
+#        static: true
+#        class: EmploymentStatus
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "CAREER":
+#        static: true
+#        class: Career
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "RACE":
+#        static: true
+#        class: Race
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "INCOME":
+#        static: true
+#        class: Income
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "SPOKEN_LANGUAGE":
+#        static: true
+#        class: SpokenLanguage
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "ORGANIZATION_ROLE":
+#        static: true
+#        class: OrganizationRole
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
+#    "NUMBER_OF_EMPLOYEES":
+#        static: true
+#        class: NumberOfEmployees
+#        name: asString0
+#        visibility: protected
+#        return_type: NSString
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
         class: __FixMe
         name: 'Function_#{g[0]}'
 
 values:
+    PollfishVersionNumber:
+        class: Pollfish
+        readonly: true
+        name: getVersionNumber
+    PollfishVersionString:
+        class: Pollfish
+        name: getVersionString
+
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):
         class: __FixMe
         name: 'Value_#{g[0]}'
 
 constants:
+    SWIFT_TYPEDEFS:
+        exclude: true
+
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):
         class: __FixMe

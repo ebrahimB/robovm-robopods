@@ -72,6 +72,8 @@ import org.robovm.pods.facebook.core.*;
     void rewardedVideoAdServerRewardDidSucceed(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdServerRewardDidFail:")
     void rewardedVideoAdServerRewardDidFail(FBRewardedVideoAd rewardedVideoAd);
+    @Method(selector = "rewardedVideoAdCompanionViewProvider:")
+    void rewardedVideoAdCompanionViewProvider(@Block VoidBlock1<FBAdCompanionView> completion);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

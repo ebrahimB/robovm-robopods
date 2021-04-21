@@ -54,11 +54,6 @@ public enum /*<name>*/FBSDKLikeObjectType/*</name>*/ implements ValuedEnum {
     protected static native @org.robovm.rt.bro.annotation.Marshaler(NSString.AsStringMarshaler.class) String toString(FBSDKLikeObjectType objectType);
     /*</methods>*/
 
-    @Override
-    public String toString() {
-        return toString(this);
-    }
-
     private final long n;
 
     private /*<name>*/FBSDKLikeObjectType/*</name>*/(long n) { this.n = n; }

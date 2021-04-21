@@ -80,6 +80,10 @@ import org.robovm.apple.coreanimation.*;
     public static native boolean isLimitEventAndDataUsage();
     @Property(selector = "setLimitEventAndDataUsage:")
     public static native void setLimitEventAndDataUsage(boolean v);
+    @Property(selector = "shouldUseCachedValuesForExpensiveMetadata")
+    public static native boolean shouldUseCachedValuesForExpensiveMetadata();
+    @Property(selector = "setShouldUseCachedValuesForExpensiveMetadata:")
+    public static native void setShouldUseCachedValuesForExpensiveMetadata(boolean v);
     @Property(selector = "isGraphErrorRecoveryEnabled")
     public static native boolean isGraphErrorRecoveryEnabled();
     @Property(selector = "setGraphErrorRecoveryEnabled:")

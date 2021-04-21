@@ -89,24 +89,6 @@ import org.robovm.apple.coreanimation.*;
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
-    /**
-     * @deprecated This property is deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "parentController")
-    public native UIViewController getParentController();
-    /**
-     * @deprecated This property is deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "setParentController:")
-    public native void setParentController(UIViewController v);
-    /**
-     * @deprecated Checking whether an ad is ready for display has been deprecated and will be removed in a future SDK version. Please use `loadNextAd` or `renderAd:` to display an ad.
-     */
-    @Deprecated
-    @Property(selector = "isReadyForDisplay")
-    public native boolean isReadyForDisplay();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -134,11 +116,5 @@ import org.robovm.apple.coreanimation.*;
      */
     @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
     public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
-    /**
-     * @deprecated Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.
-     */
-    @Deprecated
-    @Method(selector = "render:overPlacement:")
-    public native void render(ALAd ad, String placement);
     /*</methods>*/
 }

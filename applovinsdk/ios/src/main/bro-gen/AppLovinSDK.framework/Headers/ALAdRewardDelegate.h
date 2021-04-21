@@ -58,10 +58,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)rewardValidationRequestForAd:(ALAd *)ad didFailWithError:(NSInteger)responseCode;
 
-@optional
-
-- (void)userDeclinedToViewAd:(ALAd *)ad  __deprecated_msg("Users will no longer be able to receive rewarded video prompts.");
-
 @end
 
 NS_ASSUME_NONNULL_END

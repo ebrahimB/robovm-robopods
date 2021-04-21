@@ -81,6 +81,16 @@ import org.robovm.apple.dispatch.*;
     public native FIRListenerRegistration addSnapshotsInSyncListener(@Block Runnable listener);
     @Method(selector = "terminateWithCompletion:")
     public native void terminate(@Block VoidBlock1<NSError> completion);
+    @Method(selector = "loadBundle:")
+    public native FIRLoadBundleTask loadBundle(NSData bundleData);
+    @Method(selector = "loadBundle:completion:")
+    public native FIRLoadBundleTask loadBundle(NSData bundleData, @Block VoidBlock2<FIRLoadBundleTaskProgress, NSError> completion);
+    @Method(selector = "loadBundleStream:")
+    public native FIRLoadBundleTask loadBundleStream(NSInputStream bundleStream);
+    @Method(selector = "loadBundleStream:completion:")
+    public native FIRLoadBundleTask loadBundleStream(NSInputStream bundleStream, @Block VoidBlock2<FIRLoadBundleTaskProgress, NSError> completion);
+    @Method(selector = "getQueryNamed:completion:")
+    public native void getQuery(String name, @Block VoidBlock1<FIRQuery> completion);
     @Method(selector = "firestore")
     public static native FIRFirestore firestore();
     @Method(selector = "firestoreForApp:")

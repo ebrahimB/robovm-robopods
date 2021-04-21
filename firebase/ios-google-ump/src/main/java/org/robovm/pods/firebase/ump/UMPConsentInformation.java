@@ -52,8 +52,6 @@ import org.robovm.apple.uikit.*;
     public static native UMPConsentInformation getSharedInstance();
     @Property(selector = "consentStatus")
     public native UMPConsentStatus getConsentStatus();
-    @Property(selector = "consentType")
-    public native UMPConsentType getConsentType();
     @Property(selector = "formStatus")
     public native UMPFormStatus getFormStatus();
     /*</properties>*/

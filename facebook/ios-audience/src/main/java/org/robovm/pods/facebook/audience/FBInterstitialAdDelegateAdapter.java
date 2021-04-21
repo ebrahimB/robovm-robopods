@@ -68,5 +68,7 @@ import org.robovm.pods.facebook.core.*;
     public void didFail(FBInterstitialAd interstitialAd, NSError error) {}
     @NotImplemented("interstitialAdWillLogImpression:")
     public void interstitialAdWillLogImpression(FBInterstitialAd interstitialAd) {}
+    @NotImplemented("interstitialAdCompanionViewProvider:")
+    public void interstitialAdCompanionViewProvider(@Block VoidBlock1<FBAdCompanionView> completion) {}
     /*</methods>*/
 }

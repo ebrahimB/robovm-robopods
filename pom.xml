@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.dkimitsa.robovm</groupId>
-    <version>1.15.0-SNAPSHOT</version>
+    <version>1.16.0-SNAPSHOT</version>
     <artifactId>robopods-parent</artifactId>
     <name>RoboPods Parent</name>
     <packaging>pom</packaging>
@@ -34,7 +34,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <robovm.version>2.3.12-SNAPSHOT</robovm.version>
+        <robovm.version>2.3.12</robovm.version>
         <robopods.version>${project.version}</robopods.version>
         <skipTests>true</skipTests>
     </properties>
@@ -78,16 +78,19 @@
             <groupId>com.mobidevelop.robovm</groupId>
             <artifactId>robovm-rt</artifactId>
             <version>${robovm.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.mobidevelop.robovm</groupId>
             <artifactId>robovm-objc</artifactId>
             <version>${robovm.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.mobidevelop.robovm</groupId>
             <artifactId>robovm-cocoatouch</artifactId>
             <version>${robovm.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -206,5 +209,6 @@
         <module>inmobi</module>
         <module>appcenter</module>
         <module>azure</module>
+        <module>kochava</module>
     </modules>
 </project>

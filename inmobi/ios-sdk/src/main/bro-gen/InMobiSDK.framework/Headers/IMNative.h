@@ -18,6 +18,10 @@
  */
 -(UIView*)primaryViewOfWidth:(CGFloat)width;
 /**
+ * The placement ID for this Native Ad..
+ */
+@property (nonatomic, assign) long long placementId;
+/**
  * The content of the native ad.
  */
 @property (nonatomic, strong, readonly) NSString* customAdContent;

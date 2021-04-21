@@ -1,5 +1,25 @@
 ## Version of AltPods to framework version mapping
 
+v1.15.0
+
+| Name                               | 1.15.0 |
+|------------------------------------|--------|
+| [AppLovinSDK](applovinsdk/)        | 6.15.2*|
+| [AppCenter](appcenter/)            | 4.1.0  |
+| [Azure](Azure/)                    | 3.1.3* |
+| [BranchMetrics](branchmetrics/)    | 1.38.0*|
+| [Charts](charts/)                  | 4.0.1* |
+| [Facebook](facebook/)              | 9.0.1* |
+| [Firebase](firebase/)              | 7.8.0* |
+| [Flurry](flurry/)                  | 11.1.0 |
+| [Fyber](fyber/)                    | 7.8.1* |
+| [HelpShift](helpshift/)            | 7.10.0*|
+| [InMobi](inmobi/)                  | 9.1.5* |
+| [Lottie](lottie/)                  | 3.2.1* |
+| [OneSignal](onesignal/)            | 3.2.1* |
+| [Pollfish](pollfish/)              | 5.5.2  |
+| [SAMKeychain](samkeychain/)        | 1.5.3  |
+
 v1.14.0
 
 | Name                               | 1.14.0 |

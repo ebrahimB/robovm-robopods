@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ALSdkSettings.h"
 #import "ALAdService.h"
-#import "ALNativeAdService.h"
-#import "ALPostbackService.h"
 #import "ALEventService.h"
 #import "ALVariableService.h"
 #import "ALUserService.h"
@@ -18,6 +16,7 @@
 #import "ALErrorCodes.h"
 #import "ALMediationProvider.h"
 #import "ALUserSegment.h"
+#import "MAMediatedNetworkInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -62,11 +61,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setPluginVersion:(NSString *)pluginVersion;
 
 /**
- * Set mediation provider using one of the provided strings in ALMediationProvider.h, or your own if not defined.
- */
-@property (nonatomic, copy, nullable) NSString *mediationProvider;
-
-/**
  * Set an identifier for the current user. This identifier will be tied to SDK events and our optional S2S postbacks.
  *
  * If you're using reward validation, you can optionally set an identifier to be included with currency validation postbacks.
@@ -86,13 +80,6 @@ NS_ASSUME_NONNULL_BEGIN
  * This service is used to load and display ads from AppLovin servers.
  */
 @property (nonatomic, strong, readonly) ALAdService *adService;
-
-/**
- * Get an instance of the AppLovin postback service. This service is used to dispatch HTTP GET postbacks to arbitrary URLs.
- *
- * @return Postback service. Guaranteed not to be null.
- */
-@property (nonatomic, strong, readonly) ALPostbackService *postbackService;
 
 /**
  * Get an instance of the AppLovin event service. This service is used to track post-install user events.
@@ -115,6 +102,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) ALVariableService *variableService;
 
+#pragma mark - MAX
+
+/**
+ * Set mediation provider using one of the provided strings in ALMediationProvider.h, or your own if not defined.
+ */
+@property (nonatomic, copy, nullable) NSString *mediationProvider;
+
+/**
+ * Returns the list of available mediation networks as an array of @c MAMediatedNetworkInfo objects.
+ */
+@property (nonatomic, strong, readonly) NSArray<MAMediatedNetworkInfo *> *availableMediatedNetworks;
+
 /**
  * Present the mediation debugger UI.
  * This debugger tool provides the status of your integration for each third-party ad network.
@@ -122,7 +121,6 @@ NS_ASSUME_NONNULL_BEGIN
  * Please call this method after the SDK has initialized, e.g. in the completionHandler of -[ALSdk initializeSdkWithCompletionHandler:].
  */
 - (void)showMediationDebugger;
-
 
 #pragma mark - SDK Initialization
 
@@ -201,10 +199,6 @@ typedef void (^ALSdkInitializationCompletionHandler)(ALSdkConfiguration *configu
 - (instancetype)init __attribute__((unavailable("Use +[ALSdk shared], +[ALSdk sharedWithKey:], or +[ALSdk sharedWithKey:settings:].")));
 + (instancetype)new NS_UNAVAILABLE;
 
-@end
-
-@interface ALSdk(ALDeprecated)
-@property (nonatomic, strong, readonly) ALNativeAdService *nativeAdService __deprecated_msg("Native ads have been deprecated and will be removed in a future SDK version.");
 @end
 
 NS_ASSUME_NONNULL_END

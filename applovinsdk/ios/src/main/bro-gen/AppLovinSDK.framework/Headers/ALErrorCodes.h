@@ -62,11 +62,3 @@
 
 // Indicates that a postback URL you attempted to dispatch was empty or nil.
 #define kALErrorCodeInvalidURL -900
-
-//
-// Deprecated
-//
-
-#define kALErrorCodeUnableToRenderNativeAd -700
-#define kALErrorCodeUnableToPreloadNativeAd -701
-#define kALErrorCodeNativeAdImpressionAlreadyTracked -702

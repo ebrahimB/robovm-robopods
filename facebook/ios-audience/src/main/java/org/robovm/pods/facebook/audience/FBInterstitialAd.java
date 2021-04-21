@@ -67,6 +67,10 @@ import org.robovm.pods.facebook.core.*;
     public native FBAdExtraHint getExtraHint();
     @Property(selector = "setExtraHint:")
     public native void setExtraHint(FBAdExtraHint v);
+    @Property(selector = "shouldShowCompanionView")
+    public native boolean shouldShowCompanionView();
+    @Property(selector = "setShouldShowCompanionView:")
+    public native void setShouldShowCompanionView(boolean v);
     @Property(selector = "isAdValid")
     public native boolean isAdValid();
     /*</properties>*/

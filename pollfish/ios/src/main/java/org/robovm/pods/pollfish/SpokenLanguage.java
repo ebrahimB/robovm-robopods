@@ -35,47 +35,58 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/SpokenLanguage/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    ENGLISH(0L),
-    ARABIC(1L),
-    BULGARIAN(2L),
-    CHINESE(3L),
-    CZECH(4L),
-    DANISH(5L),
-    DUTCH(6L),
-    FILIPINO(7L),
-    THAI(8L),
-    FINNISH(9L),
-    FRENCH(10L),
-    GERMAN(11L),
-    GREEK(12L),
-    HINDI(13L),
-    INDONESIAN(14L),
-    ITALIAN(15L),
-    JAPANESE(16L),
-    POLISH(17L),
-    PORTUGUESE(18L),
-    ROMANIAN(19L),
-    RUSSIAN(20L),
-    SERBIAN(21L),
-    SPANISH(22L),
-    SWEDISH(23L),
-    TURKISH(24L),
-    VIETNAMESE(25L);
+    English(0L),
+    Arabic(1L),
+    Bulgarian(2L),
+    Chinese(3L),
+    Czech(4L),
+    Danish(5L),
+    Dutch(6L),
+    Filipino(7L),
+    Thai(8L),
+    Finnish(9L),
+    French(10L),
+    German(11L),
+    Greek(12L),
+    Hindi(13L),
+    Indonesian(14L),
+    Italian(15L),
+    Japanese(16L),
+    Polish(17L),
+    Portuguese(18L),
+    Romanian(19L),
+    Russian(21L),
+    Serbian(22L),
+    Spanish(23L),
+    Swedish(24L),
+    Turkish(25L),
+    Vietnamese(26L),
+    Korean(27L),
+    Hungarian(28L),
+    ChineseTraditional(29L),
+    Norwegian(30L),
+    Egyptian(31L),
+    Ukrainian(32L),
+    Hebrew(33L),
+    Bengali(34L),
+    Slovak(35L),
+    Persian(36L),
+    Azerbaijani(37L),
+    Georgian(38L),
+    Lithuanian(39L),
+    Punjabi(40L),
+    Pashto(41L),
+    Estonian(42L),
+    Uzbek(43L);
     /*</values>*/
 
-    /*<bind>*/static { Bro.bind(SpokenLanguage.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*/
-    @Bridge(symbol="SPOKEN_LANGUAGE", optional=true)
-    protected static native NSString asString0(SpokenLanguage spoken_language);
-    /*</methods>*/
-
-    public NSString asString() {
-        return asString0(this);
-    }
+    /*<methods>*//*</methods>*/
 
     private final long n;
 

@@ -6,25 +6,26 @@ Firebase gives you functionality like analytics, databases, messaging and crash 
 
 | RoboPod                                  | Description                   | Version |
 |------------------------------------------|-------------------------------|---------|
-| [ios-analytics](ios-analytics/)          | Firebase iOS Analytics        | 7.8.0*  |
-| [ios-auth](ios-auth/)                    | Firebase iOS Authentication   | 7.8.0*  |
-| [ios-core](ios-core/)                    | Firebase iOS Core             | 7.8.0*  |
-| [ios-crashlytics](ios-crashlytics/)      | Firebase iOS Crashlytics      | 7.8.0*  |
-| [ios-database](ios-database/)            | Firebase iOS DataBase         | 7.8.0*  |
-| [ios-dylinks](ios-dylinks/)              | Firebase iOS Dynamic Links    | 7.8.0*  |
-| [ios-firestore](ios-firestore/)          | Firebase iOS Firestore        | 7.8.0*  |
-| [ios-mobile ads](ios-google-mobile-ads/) | Firebase iOS Google Mobile Ads| 8.1.0*  |
+| [ios-analytics](ios-analytics/)          | Firebase iOS Analytics        | 7.11.0  |
+| [ios-auth](ios-auth/)                    | Firebase iOS Authentication   | 7.11.0  |
+| [ios-core](ios-core/)                    | Firebase iOS Core             | 7.11.0  |
+| [ios-crashlytics](ios-crashlytics/)      | Firebase iOS Crashlytics      | 7.11.0  |
+| [ios-database](ios-database/)            | Firebase iOS DataBase         | 7.11.0  |
+| [ios-dylinks](ios-dylinks/)              | Firebase iOS Dynamic Links    | 7.11.0  |
+| [ios-firestore](ios-firestore/)          | Firebase iOS Firestore        | 7.11.0  |
+| [ios-mobile ads](ios-google-mobile-ads/) | Firebase iOS Google Mobile Ads| 8.3.0   |
 | [ios-mobile ads-adapters](ios-google-mobile-ads-adapters/)| Firebase iOS AdMob Adapters|   |
 | [ios-google-sign-in](ios-google-sign-in/)| Firebase iOS Google Sign In   | 5.0.2   |
-| [ios-google-ump](ios-google-ump/)        | Firebase iOS Google UMP       | 1.4.0   |
-| [ios-messaging](ios-messaging/)          | Firebase iOS Messaging        | 7.8.0*  |
-| [ios-remoteconfig](ios-remoteconfig/)    | Firebase iOS Remote Config    | 7.8.0*  |
-| [ios-storage](ios-storage/)              | Firebase iOS Storage          | 7.8.0*  |
+| [ios-google-ump](ios-google-ump/)        | Firebase iOS Google UMP       | 2.0.0   |
+| [ios-messaging](ios-messaging/)          | Firebase iOS Messaging        | 7.11.0  |
+| [ios-remoteconfig](ios-remoteconfig/)    | Firebase iOS Remote Config    | 7.11.0  |
+| [ios-storage](ios-storage/)              | Firebase iOS Storage          | 7.11.0  |
 
 ## Versions
 
 | RoboPods Version  | Firebase Version    |
 |-------------------|---------------------|
+| 1.16.0            | 7.11.0              |
 | 1.15.0            | 7.8.0               |
 | 1.14.0            | 7.3.0               |
 | 1.13.0            | 7.0.0               |
@@ -44,4 +45,3 @@ Firebase gives you functionality like analytics, databases, messaging and crash 
 ## Official website
 
 https://firebase.google.com
-

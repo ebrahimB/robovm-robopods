@@ -35,53 +35,57 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/Career/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    AGRICULTURE_FORESTRY_FISHING_OR_HUNTING(0L),
-    ARTS_ENTERTAINMENT_OR_RECREATION(1L),
-    BROADCASTING(2L),
-    CONSTRUCTION(3L),
-    EDUCATION(4L),
-    FINANCE_AND_INSURANCE(5L),
-    GOVERNMENT_AND_PUBLIC_ADMINISTRATION(6L),
-    HEALTH_CARE_AND_SOCIAL_ASSISTANCE(7L),
-    HOMEMAKER_(8L),
-    HOTEL_AND_FOOD_SERVICES(9L),
-    INFORMATION_OTHER(10L),
-    INFORMATION_SERVICES_AND_DATA(11L),
-    LEGAL_SERVICES(12L),
-    MANUFACTURING_COMPUTER_AND_ELECTRONICS(13L),
-    MANUFACTURING_OTHER(14L),
-    MILITARY_(15L),
-    MINING(16L),
-    PROCESSING(17L),
-    PUBLISHING(18L),
-    REAL_ESTATE_RENTAL_OR_LEASING(19L),
-    RELIGIOUS(20L),
-    RETAIL(21L),
-    RETIRED_(22L),
-    SCIENTIFIC_OR_TECHNICAL_SERVICES(23L),
-    SOFTWARE(24L),
-    STUDENT_(25L),
-    TELECOMMUNICATIONS(26L),
-    TRANSPORTATION_AND_WAREHOUSING(27L),
-    UNEMPLOYED(28L),
-    UTILITIES(29L),
-    WHOLESALE(30L),
-    OTHER_CAREER(31L);
+    AgricultureForesrtyFishingOrHunting(0L),
+    ArtsEntetainmentOrRecreation(1L),
+    Broadcasting(2L),
+    Construction(3L),
+    Education(4L),
+    FinanceAndInsurance(5L),
+    GovernmentAndPublicAdministration(6L),
+    HealthCareAndSocialAssistance(7L),
+    Homemaker(8L),
+    HotelAndFoodServices(9L),
+    InformationOther(10L),
+    InformationServicesAndData(11L),
+    LegalServices(12L),
+    ManufacturingComputerAndElectronics(13L),
+    ManufacturingOther(14L),
+    Military(15L),
+    Mining(16L),
+    Processing(17L),
+    Publishing(18L),
+    RealEstateRentalOrLeasing(19L),
+    Religious(20L),
+    Retail(21L),
+    Retired(22L),
+    ScientificOrTechnicalServices(23L),
+    Software(24L),
+    Student(25L),
+    Telecommunications(26L),
+    TransportAndWarehousing(27L),
+    Unemployed(28L),
+    EnergyUtilitiesOilAndGas(29L),
+    Wholesale(30L),
+    Other(31L),
+    Advertising(32L),
+    Automotive(33L),
+    Consulting(34L),
+    FashionApparel(35L),
+    HumanResources(36L),
+    MarketResearch(37L),
+    MarketingSales(38L),
+    ShippingDistribution(39L),
+    PersonalServices(40L),
+    Security(41L);
     /*</values>*/
 
-    /*<bind>*/static { Bro.bind(Career.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*/
-    @Bridge(symbol="CAREER", optional=true)
-    protected static native NSString asString0(Career career);
-    /*</methods>*/
-
-    public NSString asString() {
-        return asString0(this);
-    }
+    /*<methods>*//*</methods>*/
 
     private final long n;
 

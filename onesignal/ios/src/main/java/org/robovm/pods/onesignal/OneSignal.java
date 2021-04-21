@@ -150,6 +150,10 @@ import org.robovm.apple.uikit.*;
     public static native void addEmailSubscriptionObserver(OSEmailSubscriptionObserver observer);
     @Method(selector = "removeEmailSubscriptionObserver:")
     public static native void removeEmailSubscriptionObserver(OSEmailSubscriptionObserver observer);
+    @Method(selector = "addSMSSubscriptionObserver:")
+    public static native void addSMSSubscriptionObserver(OSSMSSubscriptionObserver observer);
+    @Method(selector = "removeSMSSubscriptionObserver:")
+    public static native void removeSMSSubscriptionObserver(OSSMSSubscriptionObserver observer);
     @Method(selector = "setEmail:withEmailAuthHashToken:")
     public static native void setEmail(String email, String hashToken);
     @Method(selector = "setEmail:withEmailAuthHashToken:withSuccess:withFailure:")
@@ -162,6 +166,18 @@ import org.robovm.apple.uikit.*;
     public static native void logoutEmail();
     @Method(selector = "logoutEmailWithSuccess:withFailure:")
     public static native void logoutEmail(@Block Runnable successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "setSMSNumber:withSMSAuthHashToken:")
+    public static native void setSMSNumber(String smsNumber, String hashToken);
+    @Method(selector = "setSMSNumber:withSMSAuthHashToken:withSuccess:withFailure:")
+    public static native void setSMSNumber(String smsNumber, String hashToken, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "setSMSNumber:")
+    public static native void setSMSNumber(String smsNumber);
+    @Method(selector = "setSMSNumber:withSuccess:withFailure:")
+    public static native void setSMSNumber(String smsNumber, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "logoutSMSNumber")
+    public static native void logoutSMSNumber();
+    @Method(selector = "logoutSMSNumberWithSuccess:withFailure:")
+    public static native void logoutSMSNumber(@Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
     @Method(selector = "setExternalUserId:")
     public static native void setExternalUserId(String externalId);
     @Method(selector = "setExternalUserId:withSuccess:withFailure:")

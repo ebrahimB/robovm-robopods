@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.dkimitsa.robovm</groupId>
-        <version>1.15.0-SNAPSHOT</version>
+        <version>1.16.0-SNAPSHOT</version>
         <artifactId>robopods-branchmetrics-parent</artifactId>
     </parent>
 
     <artifactId>robopods-branchmetrics-ios</artifactId>
-    <name>RoboPods The Branch Metrics iOS bindings (v1.38.0)</name>
+    <name>RoboPods The Branch Metrics iOS v1.39.2</name>
     <packaging>jar</packaging>
 
     <licenses>

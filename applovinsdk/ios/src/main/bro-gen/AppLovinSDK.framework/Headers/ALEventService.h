@@ -75,7 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)trackCheckoutWithTransactionIdentifier:(nullable NSString *)transactionIdentifier parameters:(nullable NSDictionary<NSString *, id> *)parameters;
 
 
-- (instancetype)init __attribute__((unavailable("Access ALEventService through ALSdk's eventService property.")));
+- (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
 @end

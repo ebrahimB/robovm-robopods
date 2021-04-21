@@ -144,6 +144,7 @@ extern NSString* const kASIMCodingExtrasKey;
 extern NSString* const kASIMCodingRefreshEnabledKey;
 extern NSString* const kASIMCodingRefreshIntervalKey;
 extern NSString* const kASIMCodingAnimationTypeKey;
+extern NSString* const kASIMCodingPrimaryFlow;
 
 //preinit request keys
 extern NSString* const kASApplicationKey;

@@ -80,4 +80,40 @@ import org.robovm.apple.foundation.*;
     @Method(selector = "crashlytics")
     public static native FIRCrashlytics crashlytics();
     /*</methods>*/
+
+    /**
+     * Registers a default java uncaught exception handler that forwards exceptions Firebase using FIRExceptionModel
+     * and pre-save java stack traces
+     */
+    public static void registerDefaultJavaUncaughtExceptionHandler() {
+        Thread.setDefaultUncaughtExceptionHandler((thread, ex) -> {
+            FIRExceptionModel model = new FIRExceptionModel(ex.getClass().getName(), ex.getMessage() != null ? ex.getMessage() : "");
+            NSMutableArray<FIRStackFrame> modelFrames = new NSMutableArray<>();
+            StackTraceElement[] stackTraces = ex.getStackTrace();
+            if (stackTraces != null) {
+                for (StackTraceElement st : stackTraces) {
+                    String symbol = st.getClassName() + '.' + st.getMethodName();
+                    String fileName;
+                    int lineNo = st.getLineNumber();
+                    if (lineNo < 0)
+                        lineNo = 0;
+                    if (st.isNativeMethod()) {
+                        fileName = "Native Method";
+                    } else {
+                        fileName = st.getFileName();
+                        if (fileName == null)
+                            fileName = "Unknown Source";
+                    }
+
+                    FIRStackFrame frame = new FIRStackFrame(symbol, fileName, lineNo);
+                    modelFrames.add(frame);
+                }
+            }
+            model.setStackTrace(modelFrames);
+            FIRCrashlytics.crashlytics().recordExceptionModel(model);
+
+            // kill app
+            throw new ThreadDeath();
+        });
+    }
 }

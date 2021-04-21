@@ -35,30 +35,24 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/Race/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    ARAB(0L),
-    ASIAN(1L),
-    BLACK(2L),
-    WHITE(3L),
-    HISPANIC(4L),
-    LATINO(5L),
-    MULTIRACIAL(6L),
-    OTHER_RACE(7L),
-    PREFER_NOT_TO_SAY_RACE(8L);
+    Arab(0L),
+    Asian(1L),
+    Black(2L),
+    White(3L),
+    Hispanic(4L),
+    Latino(5L),
+    Multiracial(6L),
+    Other(7L),
+    PreferNotToSay(8L);
     /*</values>*/
 
-    /*<bind>*/static { Bro.bind(Race.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*/
-    @Bridge(symbol="RACE", optional=true)
-    protected static native NSString asString0(Race race);
-    /*</methods>*/
-
-    public NSString asString() {
-        return asString0(this);
-    }
+    /*<methods>*//*</methods>*/
 
     private final long n;
 

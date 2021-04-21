@@ -94,5 +94,9 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getLogin();
     @GlobalValue(symbol="BranchStandardEventReserve", optional=true)
     public static native String getReserve();
+    @GlobalValue(symbol="BranchStandardEventOptIn", optional=true)
+    public static native String getOptIn();
+    @GlobalValue(symbol="BranchStandardEventOptOut", optional=true)
+    public static native String getOptOut();
     /*</methods>*/
 }

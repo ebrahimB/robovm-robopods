@@ -24,5 +24,7 @@ FOUNDATION_EXPORT double ChartsVersionNumber;
 FOUNDATION_EXPORT const unsigned char ChartsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Charts/PublicHeader.h>
-#import <Charts/Charts-Swift.h>
 
+
+
+#import <Charts/Charts-Swift.h>

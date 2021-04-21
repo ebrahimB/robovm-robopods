@@ -35,7 +35,7 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC8Pollfish14PollfishParams")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/PollfishParams/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -44,52 +44,44 @@ import org.robovm.apple.corelocation.*;
     /*<bind>*/static { ObjCRuntime.bind(PollfishParams.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public PollfishParams() {}
+    protected PollfishParams() {}
     protected PollfishParams(Handle h, long handle) { super(h, handle); }
     protected PollfishParams(SkipInit skipInit) { super(skipInit); }
-    public PollfishParams(@Block VoidBlock1<PollfishParams> block) { super((Handle) null, create(block)); retain(getHandle()); }
+    @Method(selector = "init:")
+    public PollfishParams(String apiKey) { super((SkipInit) null); initObject(init(apiKey)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "indicatorPosition")
-    public native PollfishPosition getIndicatorPosition();
-    @Property(selector = "setIndicatorPosition:")
-    public native void setIndicatorPosition(PollfishPosition v);
-    @Property(selector = "indicatorPadding")
-    public native int getIndicatorPadding();
-    @Property(selector = "setIndicatorPadding:")
-    public native void setIndicatorPadding(int v);
-    @Property(selector = "surveyFormat")
-    public native SurveyFormat getSurveyFormat();
-    @Property(selector = "setSurveyFormat:")
-    public native void setSurveyFormat(SurveyFormat v);
-    @Property(selector = "releaseMode")
-    public native boolean isReleaseMode();
-    @Property(selector = "setReleaseMode:")
-    public native void setReleaseMode(boolean v);
-    @Property(selector = "rewardMode")
-    public native boolean isRewardMode();
-    @Property(selector = "setRewardMode:")
-    public native void setRewardMode(boolean v);
-    @Property(selector = "offerwallMode")
-    public native boolean isOfferwallMode();
-    @Property(selector = "setOfferwallMode:")
-    public native void setOfferwallMode(boolean v);
-    @Property(selector = "requestUUID")
-    public native String getRequestUUID();
-    @Property(selector = "setRequestUUID:")
-    public native void setRequestUUID(String v);
-    @Property(selector = "pollfishViewContainer")
-    public native UIView getPollfishViewContainer();
-    @Property(selector = "setPollfishViewContainer:")
-    public native void setPollfishViewContainer(UIView v);
-    @Property(selector = "userAttributes")
-    public native NSMutableDictionary<?, ?> getUserAttributes();
-    @Property(selector = "setUserAttributes:")
-    public native void setUserAttributes(NSMutableDictionary<?, ?> v);
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWith:")
-    protected static native @Pointer long create(@Block VoidBlock1<PollfishParams> block);
+    @Method(selector = "init:")
+    protected native @Pointer long init(String apiKey);
+    @Method(selector = "rewardMode:")
+    public native PollfishParams rewardMode(boolean rewardMode);
+    @Method(selector = "releaseMode:")
+    public native PollfishParams releaseMode(boolean releaseMode);
+    @Method(selector = "offerwallMode:")
+    public native PollfishParams offerwallMode(boolean offerwallMode);
+    @Method(selector = "requestUUID:")
+    public native PollfishParams requestUUID(String requestUUID);
+    @Method(selector = "surveyFormat:")
+    public native PollfishParams surveyFormat(SurveyFormat surveyFormat);
+    @Method(selector = "userProperties:")
+    public native PollfishParams userProperties(UserProperties userProperties);
+    @Method(selector = "indicatorPosition:")
+    public native PollfishParams indicatorPosition(IndicatorPosition indicatorPosition);
+    @Method(selector = "indicatorPadding:")
+    public native PollfishParams indicatorPadding(@MachineSizedSInt long indicatorPadding);
+    @Method(selector = "viewContainer:")
+    public native PollfishParams viewContainer(UIView viewContainer);
+    @Method(selector = "rewardInfo:")
+    public native PollfishParams rewardInfo(RewardInfo rewardInfo);
+    @Method(selector = "signature:")
+    public native PollfishParams signature(String signature);
+    @Method(selector = "clickId:")
+    public native PollfishParams clickId(String clickId);
+    @Method(selector = "platform:")
+    public native PollfishParams platform(Platform platform);
     /*</methods>*/
 }

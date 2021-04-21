@@ -52,8 +52,8 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("postbackService:didExecutePostback:")
-    public void didExecutePostback(ALPostbackService postbackService, NSURL postbackURL) {}
+    public void didExecutePostback(NSObject postbackService, NSURL postbackURL) {}
     @NotImplemented("postbackService:didFailToExecutePostback:errorCode:")
-    public void didFailToExecutePostback(ALPostbackService postbackService, NSURL postbackURL, @MachineSizedSInt long errorCode) {}
+    public void didFailToExecutePostback(NSObject postbackService, NSURL postbackURL, @MachineSizedSInt long errorCode) {}
     /*</methods>*/
 }

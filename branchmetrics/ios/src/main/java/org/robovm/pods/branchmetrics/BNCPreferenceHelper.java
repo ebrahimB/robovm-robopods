@@ -114,6 +114,18 @@ import org.robovm.apple.uniformtypeid.*;
     public native boolean isCheckedAppleSearchAdAttribution();
     @Property(selector = "setCheckedAppleSearchAdAttribution:")
     public native void setCheckedAppleSearchAdAttribution(boolean v);
+    @Property(selector = "appleAttributionTokenChecked")
+    public native boolean isAppleAttributionTokenChecked();
+    @Property(selector = "setAppleAttributionTokenChecked:")
+    public native void setAppleAttributionTokenChecked(boolean v);
+    @Property(selector = "hasOptedInBefore")
+    public native boolean hasOptedInBefore();
+    @Property(selector = "setHasOptedInBefore:")
+    public native void setHasOptedInBefore(boolean v);
+    @Property(selector = "hasCalledHandleATTAuthorizationStatus")
+    public native boolean hasCalledHandleATTAuthorizationStatus();
+    @Property(selector = "setHasCalledHandleATTAuthorizationStatus:")
+    public native void setHasCalledHandleATTAuthorizationStatus(boolean v);
     @Property(selector = "retryCount")
     public native @MachineSizedSInt long getRetryCount();
     @Property(selector = "setRetryCount:")

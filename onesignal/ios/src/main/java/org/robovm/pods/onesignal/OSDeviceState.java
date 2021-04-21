@@ -67,6 +67,12 @@ import org.robovm.apple.uikit.*;
     public native String getEmailAddress();
     @Property(selector = "isEmailSubscribed")
     public native boolean isEmailSubscribed();
+    @Property(selector = "smsUserId")
+    public native String getSmsUserId();
+    @Property(selector = "smsNumber")
+    public native String getSmsNumber();
+    @Property(selector = "isSMSSubscribed")
+    public native boolean isSMSSubscribed();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

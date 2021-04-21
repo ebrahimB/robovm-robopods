@@ -70,6 +70,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showAdForPlacement:(nullable NSString *)placement;
 
 /**
+ * The ad unit identifier this @c MAInterstitialAd was initialized with and is loading ads for.
+ */
+@property (nonatomic, copy, readonly) NSString *adUnitIdentifier;
+
+/**
  * Check if this ad is ready to be shown.
  */
 @property (nonatomic, assign, readonly, getter=isReady) BOOL ready;

@@ -64,6 +64,6 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "unsubscribe:forTopic:")
     public native void unsubscribe(ALCSubscriber subscriber, String topic);
     @Method(selector = "unsubscribe:forTopics:")
-    public native void unsubscribe(ALCSubscriber subscriber, NSArray<NSString> topic);
+    public native void unsubscribe(ALCSubscriber subscriber, NSArray<NSString> topics);
     /*</methods>*/
 }

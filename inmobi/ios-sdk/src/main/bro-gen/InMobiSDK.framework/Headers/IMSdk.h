@@ -163,6 +163,18 @@ NS_ASSUME_NONNULL_BEGIN
  * @param value Boolean depicting enable or disable the AVAudioSession management by SDK
  */
 +(void)shouldAutoManageAVAudioSession:(BOOL)value;
+/**
+ * Set Unified Id procured from vendors directly.
+ * The ids are to be submitted in the following format.
+ * key would be the vendor and value would be the identifier.
+ * {
+ * "id5" :  "jkfid3ufolkb89hgvhb@$dj!@?#",
+ * "live Ramp":  "$fvjk@kjfsk%$nfkvd9008jkf"
+ * }
+ *
+ * @param ids Represents the unified ids in dictionary format.
+ */
++(void)setPublisherProvidedUnifiedId:(NSDictionary*)ids;
 
 NS_ASSUME_NONNULL_END
 

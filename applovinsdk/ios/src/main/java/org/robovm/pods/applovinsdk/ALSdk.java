@@ -60,10 +60,6 @@ import org.robovm.apple.coreanimation.*;
     public native ALSdkSettings getSettings();
     @Property(selector = "configuration")
     public native ALSdkConfiguration getConfiguration();
-    @Property(selector = "mediationProvider")
-    public native String getMediationProvider();
-    @Property(selector = "setMediationProvider:")
-    public native void setMediationProvider(String v);
     @Property(selector = "userIdentifier")
     public native String getUserIdentifier();
     @Property(selector = "setUserIdentifier:")
@@ -72,20 +68,18 @@ import org.robovm.apple.coreanimation.*;
     public native ALUserSegment getUserSegment();
     @Property(selector = "adService")
     public native ALAdService getAdService();
-    @Property(selector = "postbackService")
-    public native ALPostbackService getPostbackService();
     @Property(selector = "eventService")
     public native ALEventService getEventService();
     @Property(selector = "userService")
     public native ALUserService getUserService();
     @Property(selector = "variableService")
     public native ALVariableService getVariableService();
-    /**
-     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "nativeAdService")
-    public native ALNativeAdService getNativeAdService();
+    @Property(selector = "mediationProvider")
+    public native String getMediationProvider();
+    @Property(selector = "setMediationProvider:")
+    public native void setMediationProvider(String v);
+    @Property(selector = "availableMediatedNetworks")
+    public native NSArray<MAMediatedNetworkInfo> getAvailableMediatedNetworks();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

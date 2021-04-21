@@ -213,6 +213,8 @@ import org.robovm.apple.coreanimation.*;
         public static native NSString RefreshInterval();
         @GlobalValue(symbol="kASIMCodingAnimationTypeKey", optional=true)
         public static native NSString AnimationType();
+        @GlobalValue(symbol="kASIMCodingPrimaryFlow", optional=true)
+        public static native NSString PrimaryFlow();
     }
 
     @Library(Library.INTERNAL)

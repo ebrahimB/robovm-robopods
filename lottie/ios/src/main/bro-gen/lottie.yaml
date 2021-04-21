@@ -124,7 +124,10 @@ classes:
     ShapeRenderLayer: {}
     SolidCompositionLayer: {}
     TextCompositionLayer: {}
-
+    TextLayer:
+        methods:
+            '-initWithCoder:':
+                name: init
 protocols: {}
 
 

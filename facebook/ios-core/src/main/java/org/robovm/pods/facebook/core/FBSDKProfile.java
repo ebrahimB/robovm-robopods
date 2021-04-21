@@ -52,8 +52,22 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKProfile(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:")
     public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate)); }
+    /**
+     * @deprecated This constructor will be removed in the next major release.
+     */
+    @Deprecated
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:")
     public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email)); }
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:isLimited:")
+    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, boolean isLimited) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange, isLimited)); }
+    /**
+     * @deprecated This constructor will be removed in the next major release.
+     */
+    @Deprecated
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:")
+    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs)); }
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:")
+    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange)); }
     @Method(selector = "initWithCoder:")
     public FBSDKProfile(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
@@ -80,6 +94,12 @@ import org.robovm.apple.coreanimation.*;
     public native NSURL getImageURL();
     @Property(selector = "email")
     public native String getEmail();
+    @Property(selector = "friendIDs")
+    public native NSArray<NSString> getFriendIDs();
+    @Property(selector = "birthday")
+    public native NSDate getBirthday();
+    @Property(selector = "ageRange")
+    public native FBSDKUserAgeRange getAgeRange();
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
     /*</properties>*/
@@ -99,8 +119,22 @@ import org.robovm.apple.coreanimation.*;
     
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:")
     protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate);
+    /**
+     * @deprecated This constructor will be removed in the next major release.
+     */
+    @Deprecated
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:")
     protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email);
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:isLimited:")
+    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, boolean isLimited);
+    /**
+     * @deprecated This constructor will be removed in the next major release.
+     */
+    @Deprecated
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:")
+    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs);
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:")
+    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange);
     @Method(selector = "imageURLForPictureMode:size:")
     public native NSURL getImageURL(FBSDKProfilePictureMode mode, @ByVal CGSize size);
     @Method(selector = "isEqualToProfile:")

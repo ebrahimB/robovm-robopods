@@ -35,24 +35,18 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/Gender/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    FEMALE(0L),
-    MALE(1L),
-    OTHER(2L);
+    Female(1L),
+    Male(2L),
+    Other(3L);
     /*</values>*/
 
-    /*<bind>*/static { Bro.bind(Gender.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*/
-    @Bridge(symbol="GENDER", optional=true)
-    protected static native NSString asString0(Gender gender);
-    /*</methods>*/
-
-    public NSString asString() {
-        return asString0(this);
-    }
+    /*<methods>*//*</methods>*/
 
     private final long n;
 

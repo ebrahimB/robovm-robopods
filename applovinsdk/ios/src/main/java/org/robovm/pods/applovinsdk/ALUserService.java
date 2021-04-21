@@ -54,6 +54,10 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This version of the consent flow has been deprecated as of v7.0.0, please refer to our documentation for enabling the new consent flow.
+     */
+    @Deprecated
     @Method(selector = "showConsentDialogWithCompletionHandler:")
     public native void showConsentDialog(@Block Runnable completionHandler);
     /*</methods>*/

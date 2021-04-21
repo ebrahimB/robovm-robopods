@@ -41,7 +41,7 @@ public enum /*<name>*/SurveyFormat/*</name>*/ implements ValuedEnum {
     Basic(0L),
     Playful(1L),
     Random(2L),
-    Mediation(3L);
+    ThirdParty(3L);
     /*</values>*/
 
     /*<bind>*/

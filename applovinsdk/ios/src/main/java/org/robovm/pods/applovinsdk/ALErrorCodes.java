@@ -62,9 +62,6 @@ import org.robovm.apple.coreanimation.*;
     public static final int IncentivizedValidationNetworkTimeout = -500;
     public static final int IncentivizedUserClosedVideo = -600;
     public static final int InvalidURL = -900;
-    public static final int UnableToRenderNativeAd = -700;
-    public static final int UnableToPreloadNativeAd = -701;
-    public static final int NativeAdImpressionAlreadyTracked = -702;
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

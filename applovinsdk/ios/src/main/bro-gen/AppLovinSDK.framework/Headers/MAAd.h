@@ -36,9 +36,32 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly, nullable) NSString *creativeIdentifier;
 
 /**
- * @return The placement to tie the ad's postbacks to.
+ * The ad's revenue amount, or -1 if it does not exist.
+ */
+@property (nonatomic, assign, readonly) double revenue;
+
+/**
+ * The placement to tie the ad's postbacks to.
  */
 @property (atomic, copy, readonly, nullable) NSString *placement;
+
+/**
+ * Get an arbitrary ad value for a given key.
+ * @param key The designated key to retrieve desired value for.
+ *
+ * @return An arbitrary ad value for a given key - or nil if does not exist.
+ */
+- (nullable NSString *)adValueForKey:(NSString *)key;
+
+/**
+ * Get an arbitrary ad value for a given key.
+ *
+ * @param key The designated key to retrieve desired value for.
+ * @param defaultValue The default value to return if the desired value for does not exist or is nil.
+ *
+ * @return An arbitrary ad value for a given key - or the default value if does not exist.
+ */
+- (nullable NSString *)adValueForKey:(NSString *)key defaultValue:(nullable NSString *)defaultValue;
 
 + (instancetype)new NS_UNAVAILABLE;
 

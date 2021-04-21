@@ -56,35 +56,9 @@ import org.robovm.apple.coreanimation.*;
     public static native ALAdType getIncentivized();
     @Property(selector = "autoIncentivized")
     public static native ALAdType getAutoIncentivized();
-    /**
-     * @deprecated Retrieval of underlying string is deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "label")
-    public native String getLabel();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Deprecated
-    @Method(selector = "typeNative")
-    public static native ALAdType typeNative();
-    /**
-     * @deprecated Retrieval of all types is deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Method(selector = "allTypes")
-    public static native NSArray<?> allTypes();
-    /**
-     * @deprecated Class method `typeRegular` is deprecated and will be removed in a future SDK version. Please use ALAdType.regular instead.
-     */
-    @Deprecated
-    @Method(selector = "typeRegular")
-    public static native ALAdType typeRegular();
-    /**
-     * @deprecated Class method `typeIncentivized` is deprecated and will be removed in a future SDK version. Please use ALAdType.incentivized instead.
-     */
-    @Deprecated
-    @Method(selector = "typeIncentivized")
-    public static native ALAdType typeIncentivized();
+    
     /*</methods>*/
 }

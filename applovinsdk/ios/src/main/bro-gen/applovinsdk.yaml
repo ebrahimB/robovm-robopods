@@ -6,7 +6,8 @@ framework: AppLovinSDK
 headers:
     - AppLovinSDK.h
 
-private_typedefs: {}
+private_typedefs:
+    'ALPostbackService *': NSObject
 
 typedefs: {}
 
@@ -15,7 +16,10 @@ enums:
     ALAdViewDisplayErrorCode: {}
     ALAppTrackingTransparencyStatus: {}
 classes:
-    ALAd: {}
+    ALAd:
+        methods:
+            '-adValueForKey:defaultValue:':
+                name: getAdValue
     ALAdService:
         methods:
             '-loadNextAd:andNotify:':
@@ -30,6 +34,8 @@ classes:
                 name: addAdUpdateObserver
             '-removeAdUpdateObserver:ofSize:':
                 name: removeAdUpdateObserver
+            '-adValueForKey:defaultValue:':
+                name: getAdValue
     ALAdSize:
         methods:
             '+sizeWithLabel:orDefault:':
@@ -173,7 +179,10 @@ classes:
                 name: getBool
             '-stringForKey:defaultValue:':
                 name: getString
-    MAAd: {}
+    MAAd:
+        methods:
+            '-adValueForKey:defaultValue:':
+                name: getAdValue
     MAAdFormat: {}
     MAAdView:
         methods:
@@ -233,6 +242,8 @@ classes:
             '-setExtraParameterForKey:value:':
                 name: setExtraParameter
     ALUserSegment: {}
+    ALConsentFlowSettings: { }
+    MAMediatedNetworkInfo: { }
 protocols:
     ALAdDisplayDelegate:
         methods:

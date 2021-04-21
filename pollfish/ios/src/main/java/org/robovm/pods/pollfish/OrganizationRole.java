@@ -35,46 +35,40 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/OrganizationRole/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    OWNER_PARTNER(0L),
-    PRESIDENT_CEO_CHAIRPERSON(1L),
-    C_LEVEL_EXECUTIVE(2L),
-    MIDDLE_MANAGEMENT(3L),
-    CHIEF_FINANCIAL_OFFICER(4L),
-    CHIEF_TECHNICAL_OFFICER(5L),
-    SENIOR_MANAGEMENT(6L),
-    DIRECTOR(7L),
-    HR_MANAGER(8L),
-    PRODUCT_MANAGER(9L),
-    SUPPLY_MANAGER(10L),
-    PROJECT_MANAGEMENT(11L),
-    SALES_MANAGER(12L),
-    BUSINESS_ADMINISTRATOR(13L),
-    SUPERVISOR(14L),
-    ADMINISTRATIVE_CLERICAL(15L),
-    CRAFTSMAN(16L),
-    FOREMAN(17L),
-    TECHNICAL_STAFF(18L),
-    FACULTY_STAFF(19L),
-    SALES_STAFF(20L),
-    BUYER_PURCHASING_AGENT(21L),
-    OTHER_NON_MANAGEMENT(22L),
-    NOT_WORK(23L),
-    PREFER_NOT_TOSAY(24L);
+    OwnerPartner(0L),
+    PresidentCeoChairperson(1L),
+    CLevelExecutive(2L),
+    MiddleMangement(3L),
+    ChiefFinancialOfficer(4L),
+    ChiefTechnicalOfficer(5L),
+    SeniorMangement(6L),
+    Director(7L),
+    HrManagement(8L),
+    ProductManager(9L),
+    SupplyManagement(10L),
+    ProjectManagement(11L),
+    SalesManager(12L),
+    BusinessAdministrator(13L),
+    Supervisor(14L),
+    AdministrativeClerical(15L),
+    Craftsman(16L),
+    Foreman(17L),
+    TechnicalStaff(18L),
+    FacultyStaff(19L),
+    SalesStatff(20L),
+    BuyerPurchasingAgent(21L),
+    OtherNonManagement(22L),
+    NotWork(23L),
+    PreferNotToSay(24L);
     /*</values>*/
 
-    /*<bind>*/static { Bro.bind(OrganizationRole.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*/
-    @Bridge(symbol="ORGANIZATION_ROLE", optional=true)
-    protected static native NSString asString0(OrganizationRole organization_role);
-    /*</methods>*/
-
-    public NSString asString() {
-        return asString0(this);
-    }
+    /*<methods>*//*</methods>*/
 
     private final long n;
 

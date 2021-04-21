@@ -60,6 +60,11 @@
 #define INTERSTITIALINCLUDE_H
 
 @interface IMInterstitial : NSObject
+
+/**
+ * The placement ID for this Interstitial.
+ */
+@property (nonatomic, assign) long long placementId;
 /**
  * The delegate to receive callbacks
  */

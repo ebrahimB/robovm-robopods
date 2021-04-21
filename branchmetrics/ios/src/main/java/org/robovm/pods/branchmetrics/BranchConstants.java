@@ -114,6 +114,10 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getRequestKeyIosVendorId();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_AD_TRACKING_ENABLED", optional=true)
     public static native String getRequestKeyAdTrackingEnabled();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_OPTED_IN_STATUS", optional=true)
+    public static native String getRequestKeyOptedInStatus();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_FIRST_OPT_IN", optional=true)
+    public static native String getRequestKeyFirstOptIn();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_DEBUG", optional=true)
     public static native String getRequestKeyDebug();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_BUNDLE_ID", optional=true)
@@ -310,6 +314,8 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getEntitiesKey();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_SEARCH_AD", optional=true)
     public static native String getRequestKeySearchAd();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_APPLE_ATTRIBUTION_TOKEN", optional=true)
+    public static native String getRequestKeyAppleAttributionToken();
     @GlobalValue(symbol="BRANCH_CRASHLYTICS_SDK_VERSION_KEY", optional=true)
     public static native String getCrashlyticsSdkVersionKey();
     @GlobalValue(symbol="BRANCH_CRASHLYTICS_FINGERPRINT_ID_KEY", optional=true)

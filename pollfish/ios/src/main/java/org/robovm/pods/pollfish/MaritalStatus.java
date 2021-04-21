@@ -35,28 +35,22 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/MaritalStatus/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    SINGLE(0L),
-    MARRIED(1L),
-    DIVORCED(2L),
-    LIVING_WITH_PARTNER(3L),
-    SEPARATED(4L),
-    WIDOWED(5L),
-    PREFER_NOT_TO_SAY(6L);
+    Single(0L),
+    Married(1L),
+    Divorced(2L),
+    LivingWithParent(3L),
+    Separated(4L),
+    Widowed(5L),
+    PreferNotToSay(6L);
     /*</values>*/
 
-    /*<bind>*/static { Bro.bind(MaritalStatus.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*/
-    @Bridge(symbol="MARITAL_STATUS", optional=true)
-    protected static native NSString asString0(MaritalStatus marital_status);
-    /*</methods>*/
-
-    public NSString asString() {
-        return asString0(this);
-    }
+    /*<methods>*//*</methods>*/
 
     private final long n;
 

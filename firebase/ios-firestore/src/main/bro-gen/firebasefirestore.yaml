@@ -4,6 +4,7 @@ framework: FirebaseFirestore
 clang_args: ['-x', 'objective-c']
 headers:
     - FirebaseFirestore.h
+    - FIRLoadBundleTask.h
 
 private_typedefs:
     "FIRApp *": org.robovm.pods.firebase.core.FIRApp
@@ -15,6 +16,7 @@ enums:
     FIRDocumentChangeType: {}
     FIRServerTimestampBehavior: {}
     FIRFirestoreErrorCode: { nserror: true}
+    FIRLoadBundleTaskState: {}
 
 classes:
     FIRCollectionReference:
@@ -85,6 +87,12 @@ classes:
                 name: terminate
             '-useEmulatorWithHost:port:':
                 name: useEmulator
+            '-loadBundle:completion:':
+                name: loadBundle
+            '-loadBundleStream:completion:':
+                name: loadBundleStream
+            '-getQueryNamed:completion:':
+                name: getQuery
     FIRFirestoreSettings: {}
     FIRGeoPoint:
         methods:
@@ -187,6 +195,11 @@ classes:
                 name: updateData
             '-commitWithCompletion:':
                 name: commit
+    FIRLoadBundleTask:
+        methods:
+            '-removeObserverWithHandle:':
+                name: removeObserver
+    FIRLoadBundleTaskProgress: {}
 
 protocols:
     FIRListenerRegistration: {}

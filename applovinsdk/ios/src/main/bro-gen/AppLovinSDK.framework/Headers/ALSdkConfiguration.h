@@ -72,6 +72,11 @@ typedef NS_ENUM(NSInteger, ALAppTrackingTransparencyStatus)
 @property (nonatomic, assign, readonly) ALConsentDialogState consentDialogState;
 
 /**
+ * Get the country code for this user. Returns an empty string if not available.
+ */
+@property (nonatomic, copy, readonly) NSString *countryCode;
+
+/**
  * Whether or not the user authorizes access to app-related data that can be used for tracking the user or the device. Note, end users can revoke permission at any time through the Allow Apps To Request To Track privacy setting on the device.
  */
 @property (nonatomic, assign, readonly) ALAppTrackingTransparencyStatus appTrackingTransparencyStatus;

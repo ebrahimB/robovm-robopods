@@ -65,5 +65,7 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "adValueForKey:")
     public native String adValueForKey(String key);
+    @Method(selector = "adValueForKey:defaultValue:")
+    public native String getAdValue(String key, String defaultValue);
     /*</methods>*/
 }

@@ -8,8 +8,9 @@
 
 ## Versions
 
-| RoboPods Version  | InMobi Version    |
+| RoboPods Version  | InMobi Version      |
 |-------------------|---------------------|
+| 1.16.0            | 9.1.7               |
 | 1.15.0            | 9.1.5               |
 | 1.14.0            | 9.1.1               |
 | 1.12.0            | 9.1.0               |

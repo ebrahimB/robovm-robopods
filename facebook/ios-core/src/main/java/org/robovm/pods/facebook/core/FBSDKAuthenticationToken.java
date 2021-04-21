@@ -69,6 +69,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "claims")
+    public native FBSDKAuthenticationTokenClaims claims();
     @Method(selector = "copy")
     public native NSObject copy();
     @Method(selector = "encodeWithCoder:")

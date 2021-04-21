@@ -37,8 +37,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Get an arbitrary ad value for a given key. The list of keys may be found in AppLovin documentation online.
+ * @param key The designated key to retrieve desired value for.
+ *
+ * @return An arbitrary ad value for a given key - or nil if does not exist.
  */
 - (nullable NSString *)adValueForKey:(NSString *)key;
+
+/**
+ * Get an arbitrary ad value for a given key. The list of keys may be found in AppLovin documentation online.
+ *
+ * @param key The designated key to retrieve desired value for.
+ * @param defaultValue The default value to return if the desired value for does not exist or is nil.
+ *
+ * @return An arbitrary ad value for a given key - or the default value if does not exist.
+ */
+- (nullable NSString *)adValueForKey:(NSString *)key defaultValue:(nullable NSString *)defaultValue;
 
 /**
  * A unique ID which identifies this advertisement.
@@ -51,11 +64,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-@end
-
-@interface ALAd (ALDeprecated)
-@property (strong, readonly, getter=size, nullable) ALAdSize *adSize __deprecated_msg("Use size property instead.");
-@property (strong, readonly, getter=type, nullable) ALAdType *adType __deprecated_msg("Use type property instead.");
 @end
 
 NS_ASSUME_NONNULL_END

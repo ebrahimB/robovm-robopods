@@ -53,11 +53,6 @@ public enum /*<name>*/FBSDKAppGroupPrivacy/*</name>*/ implements ValuedEnum {
     protected static native @org.robovm.rt.bro.annotation.Marshaler(NSString.AsStringMarshaler.class) String toString(FBSDKAppGroupPrivacy privacy);
     /*</methods>*/
 
-    @Override
-    public String toString() {
-        return toString(this);
-    }
-
     private final long n;
 
     private /*<name>*/FBSDKAppGroupPrivacy/*</name>*/(long n) { this.n = n; }

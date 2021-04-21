@@ -50,7 +50,7 @@ import org.robovm.pods.appcenter.core.*;
     /*<properties>*/
     @Property(selector = "crashHandlerSetupDelegate")
     public static native MSACCrashHandlerSetupDelegate getCrashHandlerSetupDelegate();
-    @Property(selector = "setCrashHandlerSetupDelegate:")
+    @Property(selector = "setCrashHandlerSetupDelegate:", strongRef = true)
     public static native void setCrashHandlerSetupDelegate(MSACCrashHandlerSetupDelegate v);
     @Property(selector = "automaticProcessing")
     public static native boolean isAutomaticProcessing();

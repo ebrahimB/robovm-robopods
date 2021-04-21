@@ -56,6 +56,8 @@ import org.robovm.apple.coreanimation.*;
     public static native MAAdFormat getMrec();
     @Property(selector = "leader")
     public static native MAAdFormat getLeader();
+    @Property(selector = "crossPromo")
+    public static native MAAdFormat getCrossPromo();
     @Property(selector = "interstitial")
     public static native MAAdFormat getInterstitial();
     @Property(selector = "rewarded")

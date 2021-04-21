@@ -50,9 +50,9 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "postbackService:didExecutePostback:")
-    void didExecutePostback(ALPostbackService postbackService, NSURL postbackURL);
+    void didExecutePostback(NSObject postbackService, NSURL postbackURL);
     @Method(selector = "postbackService:didFailToExecutePostback:errorCode:")
-    void didFailToExecutePostback(ALPostbackService postbackService, NSURL postbackURL, @MachineSizedSInt long errorCode);
+    void didFailToExecutePostback(NSObject postbackService, NSURL postbackURL, @MachineSizedSInt long errorCode);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

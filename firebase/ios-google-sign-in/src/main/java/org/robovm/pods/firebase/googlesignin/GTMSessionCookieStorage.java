@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.dispatch.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -50,7 +51,8 @@ import org.robovm.apple.dispatch.*;
     protected GTMSessionCookieStorage(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "sharedHTTPCookieStorage")
+    public static native NSHTTPCookieStorage getSharedHTTPCookieStorage();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -58,5 +60,10 @@ import org.robovm.apple.dispatch.*;
     public native void setCookies(NSArray<NSHTTPCookie> cookies);
     @Method(selector = "removeAllCookies")
     public native void removeAllCookies();
+    /**
+     * @since Available in iOS 9.0 and later.
+     */
+    @Method(selector = "sharedCookieStorageForGroupContainerIdentifier:")
+    public static native NSHTTPCookieStorage getSharedCookieStorageForGroupContainer(String identifier);
     /*</methods>*/
 }

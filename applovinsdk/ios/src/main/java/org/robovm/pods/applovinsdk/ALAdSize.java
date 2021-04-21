@@ -48,11 +48,6 @@ import org.robovm.apple.coreanimation.*;
     protected ALAdSize() {}
     protected ALAdSize(Handle h, long handle) { super(h, handle); }
     protected ALAdSize(SkipInit skipInit) { super(skipInit); }
-    /**
-     * @deprecated Custom ad sizes are no longer supported; use an existing singleton size like ALAdSize.banner
-     */
-    @Deprecated
-    public ALAdSize(String label, ALAdSize defaultSize) { super((Handle) null, create(label, defaultSize)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "banner")
@@ -61,6 +56,8 @@ import org.robovm.apple.coreanimation.*;
     public static native ALAdSize getLeader();
     @Property(selector = "interstitial")
     public static native ALAdSize getInterstitial();
+    @Property(selector = "crossPromo")
+    public static native ALAdSize getCrossPromo();
     @Deprecated
     @Property(selector = "width")
     public native @MachineSizedFloat double getWidth();
@@ -68,61 +65,14 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "height")
     public native @MachineSizedFloat double getHeight();
     /**
-     * @deprecated Retrieval of underlying string is deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "label")
-    public native String getLabel();
-    /**
      * @deprecated MRECs have been deprecated and will be removed in a future SDK version.
      */
     @Deprecated
     @Property(selector = "mrec")
     public static native ALAdSize getMrec();
-    /**
-     * @deprecated Native ads have been deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "sizeNative")
-    public static native ALAdSize getSizeNative();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @deprecated Retrieval of all sizes is deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Method(selector = "allSizes")
-    public static native NSArray<?> allSizes();
-    /**
-     * @deprecated Custom ad sizes are no longer supported; use an existing singleton size like ALAdSize.banner
-     */
-    @Deprecated
-    @Method(selector = "sizeWithLabel:orDefault:")
-    protected static native @Pointer long create(String label, ALAdSize defaultSize);
-    /**
-     * @deprecated Class method `sizeBanner` is deprecated and will be removed in a future SDK version. Please use ALAdSize.banner instead.
-     */
-    @Deprecated
-    @Method(selector = "sizeBanner")
-    public static native ALAdSize sizeBanner();
-    /**
-     * @deprecated Class method `sizeMRec` is deprecated and will be removed in a future SDK version. Please use ALAdSize.mrec instead.
-     */
-    @Deprecated
-    @Method(selector = "sizeMRec")
-    public static native ALAdSize sizeMRec();
-    /**
-     * @deprecated Class method `sizeLeader` is deprecated and will be removed in a future SDK version. Please use ALAdSize.leader instead.
-     */
-    @Deprecated
-    @Method(selector = "sizeLeader")
-    public static native ALAdSize sizeLeader();
-    /**
-     * @deprecated Class method `sizeInterstitial` is deprecated and will be removed in a future SDK version. Please use ALAdSize.interstitial instead.
-     */
-    @Deprecated
-    @Method(selector = "sizeInterstitial")
-    public static native ALAdSize sizeInterstitial();
+    
     /*</methods>*/
 }

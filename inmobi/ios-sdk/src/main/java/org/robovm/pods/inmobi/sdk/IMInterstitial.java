@@ -55,6 +55,10 @@ import org.robovm.apple.coreanimation.*;
     public IMInterstitial(long placementId, IMInterstitialDelegate delegate) { super((SkipInit) null); initObject(init(placementId, delegate)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "placementId")
+    public native long getPlacementId();
+    @Property(selector = "setPlacementId:")
+    public native void setPlacementId(long v);
     @Property(selector = "delegate")
     public native IMInterstitialDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)

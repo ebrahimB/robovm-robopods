@@ -58,11 +58,16 @@ import org.robovm.apple.coreanimation.*;
     public native String getNetworkName();
     @Property(selector = "creativeIdentifier")
     public native String getCreativeIdentifier();
+    @Property(selector = "revenue")
+    public native double getRevenue();
     @Property(selector = "placement")
     public native String getPlacement();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "adValueForKey:")
+    public native String adValueForKey(String key);
+    @Method(selector = "adValueForKey:defaultValue:")
+    public native String getAdValue(String key, String defaultValue);
     /*</methods>*/
 }

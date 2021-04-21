@@ -66,10 +66,6 @@ import org.robovm.apple.coregraphics.*;
     public native String getMockResponsePath();
     @Property(selector = "setMockResponsePath:")
     public native void setMockResponsePath(String v);
-    @Property(selector = "VPAIDPlayerURLString")
-    public native String getVPAIDPlayerURLString();
-    @Property(selector = "setVPAIDPlayerURLString:")
-    public native void setVPAIDPlayerURLString(String v);
     @Property(selector = "localJSONResponsePath")
     public native String getLocalJSONResponsePath();
     @Property(selector = "setLocalJSONResponsePath:")

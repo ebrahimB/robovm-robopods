@@ -151,6 +151,8 @@ import org.robovm.apple.uniformtypeid.*;
     public native void ignoreAppleSearchAdsTestData();
     @Method(selector = "setAppClipAppGroup:")
     public native void setAppClipAppGroup(String appGroup);
+    @Method(selector = "handleATTAuthorizationStatus:")
+    public native void handleATTAuthorizationStatus(@MachineSizedUInt long status);
     @Method(selector = "setSKAdNetworkCalloutMaxTimeSinceInstall:")
     public native void setSKAdNetworkCalloutMaxTimeSinceInstall(double maxTimeInterval);
     @Method(selector = "addFacebookPartnerParameterWithName:value:")

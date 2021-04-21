@@ -7,6 +7,7 @@ headers:
 
 private_typedefs:
     OS_dispatch_source: DispatchSource
+    'FBSDKUserIdentifier *': String
 
 enums:
     FBSDKAppEventsFlushBehavior: {}
@@ -146,8 +147,6 @@ classes:
                 name: init
             '-initWithGraphPath:parameters:tokenString:version:HTTPMethod:':
                 name: init
-            '-startWithCompletionHandler:':
-                name: start
     FBSDKGraphRequestConnection:
         methods:
             '-addRequest:completionHandler:':
@@ -166,6 +165,12 @@ classes:
             '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:':
                 name: init
             '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:':
+                name: init
+            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:':
+                name: init
+            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:isLimited:':
+                name: init
+            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:':
                 name: init
             '-imageURLForPictureMode:size:':
                 name: getImageURL
@@ -213,6 +218,8 @@ classes:
     FBSDKWebViewAppLinkResolver: {}
     FBSDKAppLinkResolverRequestBuilder: {}
     FBSDKAuthenticationToken: {}
+    FBSDKAuthenticationTokenClaims: {}
+    FBSDKUserAgeRange: { }
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -232,7 +239,9 @@ protocols:
     FBSDKErrorRecoveryAttempting:
         methods:
             '-attemptRecoveryFromError:optionIndex:delegate:didRecoverSelector:contextInfo:':
-                name: didRecoverSelector
+                name: attemptRecoveryFromError
+            '-attemptRecoveryFromError:optionIndex:completionHandler:':
+                name: attemptRecoveryFromError
     FBSDKGraphErrorRecoveryProcessorDelegate:
         methods:
             '-processorDidAttemptRecovery:didRecover:error:':
@@ -249,7 +258,17 @@ protocols:
         skip_adapter: true
     FBSDKAutoAppLink:
         skip_adapter: true
-
+    FBSDKGraphRequest:
+        skip_adapter: true
+        name:
+            FBSDKGraphRequestProtocol
+        methods:
+            '-startWithCompletionHandler:':
+                name: start
+    FBSDKGraphRequestConnecting:
+        methods:
+            '-addRequest:completionHandler:':
+                name: addRequest
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

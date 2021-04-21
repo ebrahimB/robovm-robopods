@@ -109,6 +109,14 @@ classes:
                 name: setExternalUserId
             '+removeExternalUserId:withFailure:':
                 name: removeExternalUserId
+            '+setSMSNumber:withSMSAuthHashToken:':
+                name: setSMSNumber
+            '+setSMSNumber:withSMSAuthHashToken:withSuccess:withFailure:':
+                name: setSMSNumber
+            '+setSMSNumber:withSuccess:withFailure:':
+                name: setSMSNumber
+            '+logoutSMSNumberWithSuccess:withFailure:':
+                name: logoutSMSNumber
     OSEmailSubscriptionState: {}
     OSEmailSubscriptionStateChanges: {}
     OSInAppMessageAction: {}
@@ -117,6 +125,8 @@ classes:
     OSInAppMessageOutcome: {}
     OSInAppMessageTag: {}
     OSDeviceState: {}
+    OSSMSSubscriptionState: { }
+    OSSMSSubscriptionStateChanges: { }
 protocols:
     OSPermissionObserver: {}
     OSSubscriptionObserver: {}
@@ -127,6 +137,7 @@ protocols:
             '-willPresentInFocusNotificationWithPayload:withCompletion:':
                 name: willPresentInFocusNotification
     OSInAppMessageDelegate: {}
+    OSSMSSubscriptionObserver: {}
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

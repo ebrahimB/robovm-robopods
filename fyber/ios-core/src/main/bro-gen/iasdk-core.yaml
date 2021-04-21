@@ -5,6 +5,9 @@ clang_args: ['-x', 'objective-c']
 headers: 
     - IASDKCore.h
 
+private_typedefs:
+    'CLLocation *': CLLocation
+
 enums:
     IALogLevel: {}
     IAUserGenderType: {}

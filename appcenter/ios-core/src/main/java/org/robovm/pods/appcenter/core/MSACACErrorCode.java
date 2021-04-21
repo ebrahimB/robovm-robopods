@@ -75,7 +75,7 @@ public enum /*<name>*/MSACACErrorCode/*</name>*/ implements NSErrorCode {
         return "com.Microsoft.AppCenter.ErrorDomain";
     }
 
-    // bind wrap to include it in compilation as long as nserror enum is used 
+    // bind wrap to include it in compilation as long as nserror enum is used
     static { Bro.bind(NSErrorWrap.class); }
     @StronglyLinked
     public static class NSErrorWrap extends NSError {

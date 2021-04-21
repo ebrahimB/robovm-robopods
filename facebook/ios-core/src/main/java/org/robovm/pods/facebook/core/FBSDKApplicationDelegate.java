@@ -63,6 +63,10 @@ import org.robovm.apple.coreanimation.*;
     public native boolean openURL(UIApplication application, NSURL url, NSDictionary<NSString, ?> options);
     @Method(selector = "application:didFinishLaunchingWithOptions:")
     public native boolean didFinishLaunching(UIApplication application, NSDictionary<NSString, ?> launchOptions);
+    /**
+     * @deprecated This method is called automatically from `application:didFinishLaunchingWithOptions:`. Please use that method instead. This one will be removed in a future release.
+     */
+    @Deprecated
     @Method(selector = "initializeSDK:")
     public static native void initializeSDK(NSDictionary<NSString, ?> launchOptions);
     /*</methods>*/

@@ -59,11 +59,5 @@ import org.robovm.apple.coreanimation.*;
     public void wasRejected(ALAd ad, NSDictionary<?, ?> response) {}
     @NotImplemented("rewardValidationRequestForAd:didFailWithError:")
     public void didFail(ALAd ad, @MachineSizedSInt long responseCode) {}
-    /**
-     * @deprecated Users will no longer be able to receive rewarded video prompts.
-     */
-    @Deprecated
-    @NotImplemented("userDeclinedToViewAd:")
-    public void userDeclinedToViewAd(ALAd ad) {}
     /*</methods>*/
 }

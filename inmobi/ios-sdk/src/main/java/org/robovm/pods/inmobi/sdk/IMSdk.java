@@ -107,5 +107,7 @@ import org.robovm.apple.coreanimation.*;
     public static native void setPostalCode(String postalcode);
     @Method(selector = "shouldAutoManageAVAudioSession:")
     public static native void shouldAutoManageAVAudioSession(boolean value);
+    @Method(selector = "setPublisherProvidedUnifiedId:")
+    public static native void setPublisherProvidedUnifiedId(NSDictionary<?, ?> ids);
     /*</methods>*/
 }

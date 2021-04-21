@@ -66,5 +66,7 @@ import org.robovm.apple.coreanimation.*;
     public native void tagForUnderAgeOfConsent(boolean underAgeOfConsent);
     @Method(selector = "tagForChildDirectedTreatment:")
     public native void tagForChildDirectedTreatment(boolean childDirectedTreatment);
+    @Method(selector = "setSameAppKeyEnabled:")
+    public native void setSameAppKeyEnabled(boolean enabled);
     /*</methods>*/
 }

@@ -17,6 +17,8 @@ enums:
     FlurryTransactionRecordStatus: {prefix: FlurryTransaction}
     FlurryPaymentTransactionState: {}
     FlurryConversionValueEventType: {}
+private_typedefs:
+    'SKPaymentTransaction *': SKPaymentTransaction
 classes:
     Flurry:
         methods:

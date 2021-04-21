@@ -23,17 +23,12 @@
 #import <AppLovinSDK/ALInterstitialAd.h>
 #import <AppLovinSDK/ALMediationProvider.h>
 #import <AppLovinSDK/ALPostbackDelegate.h>
-#import <AppLovinSDK/ALPostbackService.h>
 #import <AppLovinSDK/ALPrivacySettings.h>
 #import <AppLovinSDK/ALSdk.h>
 #import <AppLovinSDK/ALSdkConfiguration.h>
 #import <AppLovinSDK/ALSdkSettings.h>
 #import <AppLovinSDK/ALUserService.h>
 #import <AppLovinSDK/ALUserSegment.h>
-#import <AppLovinSDK/ALNativeAd.h>
-#import <AppLovinSDK/ALNativeAdLoadDelegate.h>
-#import <AppLovinSDK/ALNativeAdPrecacheDelegate.h>
-#import <AppLovinSDK/ALNativeAdService.h>
 #import <AppLovinSDK/ALVariableService.h>
 #import <AppLovinSDK/MAAdView.h>
 #import <AppLovinSDK/MAInterstitialAd.h>
@@ -44,6 +39,7 @@
 #import <AppLovinSDK/MAAdFormat.h>
 #import <AppLovinSDK/MAAdViewAdDelegate.h>
 #import <AppLovinSDK/MAErrorCodes.h>
+#import <AppLovinSDK/MAMediatedNetworkInfo.h>
 #import <AppLovinSDK/MAReward.h>
 #import <AppLovinSDK/MARewardedAdDelegate.h>
 

@@ -55,6 +55,10 @@ import org.robovm.apple.coreanimation.*;
     public IMNative(long placementId, IMNativeDelegate delegate) { super((SkipInit) null); initObject(init(placementId, delegate)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "placementId")
+    public native long getPlacementId();
+    @Property(selector = "setPlacementId:")
+    public native void setPlacementId(long v);
     @Property(selector = "customAdContent")
     public native String getCustomAdContent();
     @Property(selector = "adTitle")

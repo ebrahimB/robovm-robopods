@@ -35,7 +35,7 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC8Pollfish8Pollfish")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/Pollfish/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -44,6 +44,7 @@ import org.robovm.apple.corelocation.*;
     /*<bind>*/static { ObjCRuntime.bind(Pollfish.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
+    protected Pollfish() {}
     protected Pollfish(Handle h, long handle) { super(h, handle); }
     protected Pollfish(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -52,8 +53,13 @@ import org.robovm.apple.corelocation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithAPIKey:andParams:")
-    public static native void init(String apiKey, PollfishParams pollfishParams);
+    @GlobalValue(symbol="PollfishVersionNumber", optional=true)
+    public static native double getVersionNumber();
+    @GlobalValue(symbol="PollfishVersionString", optional=true)
+    public static native BytePtr getVersionString();
+    
+    @Method(selector = "initWith:delegate:")
+    public static native void initialize(PollfishParams params, PollfishDelegate delegate);
     @Method(selector = "show")
     public static native void show();
     @Method(selector = "hide")
@@ -62,7 +68,5 @@ import org.robovm.apple.corelocation.*;
     public static native boolean isPollfishPresent();
     @Method(selector = "isPollfishPanelOpen")
     public static native boolean isPollfishPanelOpen();
-    @Method(selector = "destroy")
-    public static native void destroy();
     /*</methods>*/
 }

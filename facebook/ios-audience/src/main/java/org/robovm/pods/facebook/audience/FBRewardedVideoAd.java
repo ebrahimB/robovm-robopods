@@ -77,6 +77,10 @@ import org.robovm.pods.facebook.core.*;
     public native FBAdExperienceConfig getAdExperienceConfig();
     @Property(selector = "setAdExperienceConfig:")
     public native void setAdExperienceConfig(FBAdExperienceConfig v);
+    @Property(selector = "shouldShowCompanionView")
+    public native boolean shouldShowCompanionView();
+    @Property(selector = "setShouldShowCompanionView:")
+    public native void setShouldShowCompanionView(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

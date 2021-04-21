@@ -251,6 +251,7 @@ classes:
     FBRewardedVideoAdBridgeContainer: {exclude: true}
 
     FBAdSDKNotificationManager: {}
+    FBAdCompanionView: {}
 protocols:
     FBAdLoggingDelegate:
         methods:
@@ -292,6 +293,7 @@ protocols:
         methods:
             '-onFBAdEvent:eventData:':
                 name: onFBAdEvent
+    FBAdCompanionViewDelegate: {}
 functions:
     # exclude Audience Network Unity SDK bridge
     FB(.*)Bridge.*:

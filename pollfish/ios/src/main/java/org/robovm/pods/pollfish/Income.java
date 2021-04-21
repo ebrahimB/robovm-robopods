@@ -35,29 +35,23 @@ import org.robovm.apple.corelocation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/Income/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    LOWER_I(0L),
-    LOWER_II(1L),
-    MIDDLE_I(2L),
-    MIDDLE_II(3L),
-    HIGH_I(4L),
-    HIGH_II(5L),
-    HIGH_III(6L),
-    PREFER_NOT_TO_SAY_INCOME(7L);
+    LowerI(0L),
+    LowerII(1L),
+    MiddleI(2L),
+    MiddleII(3L),
+    HighI(4L),
+    HighII(5L),
+    HighIII(6L),
+    PreferNotToSay(7L);
     /*</values>*/
 
-    /*<bind>*/static { Bro.bind(Income.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*/
-    @Bridge(symbol="INCOME", optional=true)
-    protected static native NSString asString0(Income income);
-    /*</methods>*/
-
-    public NSString asString() {
-        return asString0(this);
-    }
+    /*<methods>*//*</methods>*/
 
     private final long n;
 

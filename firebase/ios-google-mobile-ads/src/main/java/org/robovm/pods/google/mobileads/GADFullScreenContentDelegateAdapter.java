@@ -58,6 +58,8 @@ import org.robovm.apple.coreanimation.*;
     public void didFailToPresentFullScreenContent(GADFullScreenPresentingAd ad, NSError error) {}
     @NotImplemented("adDidPresentFullScreenContent:")
     public void adDidPresentFullScreenContent(GADFullScreenPresentingAd ad) {}
+    @NotImplemented("adWillDismissFullScreenContent:")
+    public void adWillDismissFullScreenContent(GADFullScreenPresentingAd ad) {}
     @NotImplemented("adDidDismissFullScreenContent:")
     public void adDidDismissFullScreenContent(GADFullScreenPresentingAd ad) {}
     /*</methods>*/

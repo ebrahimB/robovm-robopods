@@ -66,6 +66,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getPlacement();
     @Property(selector = "setPlacement:")
     public native void setPlacement(String v);
+    @Property(selector = "adUnitIdentifier")
+    public native String getAdUnitIdentifier();
+    @Property(selector = "adFormat")
+    public native MAAdFormat getAdFormat();
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();

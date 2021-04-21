@@ -51,8 +51,14 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
+    /**
+     * @deprecated Delegate/selector -based error recovery will be removed in the next major version release.
+     */
+    @Deprecated
     @Method(selector = "attemptRecoveryFromError:optionIndex:delegate:didRecoverSelector:contextInfo:")
-    void didRecoverSelector(NSError error, @MachineSizedUInt long recoveryOptionIndex, NSObject delegate, Selector didRecoverSelector, VoidPtr contextInfo);
+    void attemptRecoveryFromError(NSError error, @MachineSizedUInt long recoveryOptionIndex, NSObject delegate, Selector didRecoverSelector, VoidPtr contextInfo);
+    @Method(selector = "attemptRecoveryFromError:optionIndex:completionHandler:")
+    void attemptRecoveryFromError(NSError error, @MachineSizedUInt long recoveryOptionIndex, @Block VoidBooleanBlock completionHandler);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

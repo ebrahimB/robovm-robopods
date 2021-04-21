@@ -57,6 +57,16 @@ classes:
                 name: setLocation
             '+getTokenWithExtras:andKeywords:':
                 name: getToken
+    IMUnifiedIdService: { }
+    IMUserDataModel:
+        methods:
+            '-initWithPhoneNumber:emailId:extras:':
+                name: init
+    IMUserDataTypes:
+        methods:
+            '-initWithMd5:sha1:sha256:':
+                #trim_after_first_colon: true
+                name: init
 protocols:
     IMBannerDelegate:
         methods:
@@ -100,8 +110,10 @@ protocols:
                 name: didInteract
             '-native:adAudioStateChanged:':
                 name: adAudioStateChanged
-
-
+    IMUnifiedIdDelegate:
+        methods:
+            '-onFetchCompleted:error:':
+                name: onFetchCompleted
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -192,7 +204,7 @@ values:
         static_class: NSCoddingKeys
         type: NSString
         name: '#{g[0]}'
-    kASIMCoding(PreinitBannerRefresh):
+    kASIMCoding(PreinitBannerRefresh|PrimaryFlow):
         class: IMConstants
         static_class: NSCoddingKeys
         type: NSString
