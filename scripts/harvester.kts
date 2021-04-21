@@ -1,4 +1,4 @@
-#!/usr/bin/env kotlinc -jvm-target 9 -cp dist/kotlinc/lib/kotlin-main-kts.jar -script
+#!/usr/bin/env kotlinc -jvm-target 9 -script --
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 import org.w3c.dom.Node
@@ -296,7 +296,7 @@ println("bye-bye")
 
 fun printHelpAndExit(code: Int) {
     println("usage:")
-    println("kotlinc -jvm-target 9 -script scripts/harvester.kts -- [--help] [-v] [-p] [framework1 framework2 ...]")
+    println("scripts/harvester.kts [--help] [-v] [-p] [framework1 framework2 ...]")
     println("   --help, -h : prints this help and exits")
     println("           -v : enables verbose output")
     println("           -p : enables parallel processing")
