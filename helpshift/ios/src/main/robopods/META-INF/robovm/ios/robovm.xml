@@ -3,18 +3,6 @@
         <lib>z</lib>
         <lib>sqlite3</lib>
         <lib>icucore</lib>
-        <!-- swift dependencies, check https://github.com/MobiVM/robovm/pull/474 -->
-        <lib>libswiftCore.dylib</lib>
-        <lib>libswiftCoreFoundation.dylib</lib>
-        <lib>libswiftCoreGraphics.dylib</lib>
-        <lib>libswiftCoreImage.dylib</lib>
-        <lib>libswiftDarwin.dylib</lib>
-        <lib>libswiftDispatch.dylib</lib>
-        <lib>libswiftFoundation.dylib</lib>
-        <lib>libswiftMetal.dylib</lib>
-        <lib>libswiftObjectiveC.dylib</lib>
-        <lib>libswiftQuartzCore.dylib</lib>
-        <lib>libswiftUIKit.dylib</lib>
     </libs>
     <frameworks>
         <framework>CoreGraphics</framework>
