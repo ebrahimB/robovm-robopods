@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-fyber-video-ios</artifactId>
-    <name>RoboPods Fyber VAST/VPAID content iOS v7.8.3</name>
+    <name>RoboPods Fyber VAST/VPAID content iOS v7.8.5</name>
     <packaging>jar</packaging>
 
     <dependencies>
