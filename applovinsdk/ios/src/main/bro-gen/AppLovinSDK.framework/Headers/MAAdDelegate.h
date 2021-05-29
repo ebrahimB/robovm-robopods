@@ -7,6 +7,7 @@
 //
 
 #import "MAAd.h"
+#import "MAError.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,53 +17,83 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MAAdDelegate<NSObject>
 
 /**
- * This method is called when a new ad has been loaded.
+ * The SDK invokes this callback when it successfully loads an ad.
+ *
+ * The SDK invokes this callback on the UI thread.
+ *
+ * @param ad The ad that the SDK finished successfully loaded for.
  */
 - (void)didLoadAd:(MAAd *)ad;
 
 /**
- * This method is called when an ad could not be retrieved.
+ * The SDK invokes this callback when it fails to load an ad.
  *
- * Common error codes:
- * 204 - no ad is available
- * 5xx - internal server error
- * negative number - internal errors
+ * To see the error code, see @code -[MAError code] @endcode. See @code MAErrorCode.h @endcode for a list of error codes.
+ * To see a description of the error, see @code -[MAError message] @endcode.
+ * To see the error code and reasons for each ad network that failed to load, see @code -[MAError adLoadFailureInfo] @endcode.
  *
- * @param adUnitIdentifier  Ad unit identifier for which the ad was requested.
- * @param errorCode         An error code representing the failure reason. Common error codes are defined in `MAErrorCode.h`.
+ * The SDK invokes this callback on the UI thread.
+ *
+ * @param adUnitIdentifier  The ad unit ID that the SDK failed to load an ad for.
+ * @param error                          An object that encapsulates the failure info.
  */
-- (void)didFailToLoadAdForAdUnitIdentifier:(NSString *)adUnitIdentifier withErrorCode:(NSInteger)errorCode;
+- (void)didFailToLoadAdForAdUnitIdentifier:(NSString *)adUnitIdentifier withError:(MAError *)error;
 
 /**
- * This method is invoked when an ad is displayed.
+ * The SDK invokes this callback when it successfully displays a fullscreen ad.
  *
- * This method is invoked on the main UI thread.
+ * The SDK invokes this callback on the UI thread.
+ *
+ * @param ad The ad that the SDK finished successfully displayed for.
  */
 - (void)didDisplayAd:(MAAd *)ad;
 
 /**
- * This method is invoked when an ad is hidden.
+ * The SDK invokes this callback when it finishes displaying the ad.
  *
- * This method is invoked on the main UI thread.
+ * The SDK invokes this callback on the UI thread.
+ *
+ * @param ad The ad that the SDK finished displaying for.
  */
 - (void)didHideAd:(MAAd *)ad;
 
 /**
- * This method is invoked when the ad is clicked.
+ * The SDK invokes this callback when a user clicks the ad.
  *
- * This method is invoked on the main UI thread.
+ * The SDK invokes this callback on the UI thread.
+ *
+ * @param ad The ad that the user clicked for.
  */
 - (void)didClickAd:(MAAd *)ad;
 
 /**
- * This method is invoked when the ad failed to displayed.
+ * The SDK invokes this callback when it fails to successfully display a fullscreen ad.
  *
- * This method is invoked on the main UI thread.
+ * To see the error code, see @code -[MAError code] @endcode. See @code MAErrorCode.h @endcode for a list of error codes.
+ * To see the error reason, see @code -[MAError message] @endcode.
  *
- * @param ad        Ad that was just failed to display.
- * @param errorCode Error that indicates display failure. Common error codes are defined in `MAErrorCode.h`.
+ * The SDK invokes this callback on the UI thread.
+ *
+ * @param ad       The ad that the SDK failed to display for.
+ * @param error An object that encapsulates the failure info.
  */
-- (void)didFailToDisplayAd:(MAAd *)ad withErrorCode:(NSInteger)errorCode;
+- (void)didFailToDisplayAd:(MAAd *)ad withError:(MAError *)error;
+
+@optional
+
+/**
+ * The SDK invokes this callback when it detects a revenue event for an ad.
+ *
+ * The SDK invokes this callback on the UI thread.
+ *
+ * @param ad The ad for which the revenue event was detected.
+ */
+- (void)didPayRevenueForAd:(MAAd *)ad;
+
+- (void)didFailToLoadAdForAdUnitIdentifier:(NSString *)adUnitIdentifier withErrorCode:(NSInteger)errorCode
+__deprecated_msg("This callback has been deprecated and will be removed in a future SDK version. Please use -[MAAdDelegate didFailToLoadAdForAdUnitIdentifier:withError:] instead.");
+- (void)didFailToDisplayAd:(MAAd *)ad withErrorCode:(NSInteger)errorCode
+__deprecated_msg("This callback has been deprecated and will be removed in a future SDK version. Please use -[MAAdDelegate didFailToDisplayAd:withError:] instead.");
 
 @end
 

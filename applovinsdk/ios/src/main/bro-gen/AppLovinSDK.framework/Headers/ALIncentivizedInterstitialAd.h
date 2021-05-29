@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * You must call preloadAndNotify before calling showOver.
  *
- * Using the ALAdRewardDelegate, you will be able to verify with AppLovin servers the the video view is legitimate,
+ * Using the ALAdRewardDelegate, you will be able to verify with AppLovin servers if the video view is legitimate,
  * as we will confirm whether the specific ad was actually served - then we will ping your server with a url for you to update
  * the user's balance. The Reward Validation Delegate will tell you whether we were able to reach our servers or not. If you receive
  * a successful response, you should refresh the user's balance from your server. For more info, see the documentation.
@@ -149,7 +149,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * You must call preloadAndNotify before calling showOver.
  *
- * Using the ALAdRewardDelegate, you will be able to verify with AppLovin servers the the video view is legitimate,
+ * Using the ALAdRewardDelegate, you will be able to verify with AppLovin servers if the video view is legitimate,
  * as we will confirm whether the specific ad was actually served - then we will ping your server with a url for you to update
  * the user's balance. The Reward Validation Delegate will tell you whether we were able to reach our servers or not. If you receive
  * a successful response, you should refresh the user's balance from your server. For more info, see the documentation.

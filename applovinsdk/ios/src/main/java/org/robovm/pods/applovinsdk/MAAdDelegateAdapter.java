@@ -53,14 +53,28 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @NotImplemented("didLoadAd:")
     public void didLoadAd(MAAd ad) {}
-    @NotImplemented("didFailToLoadAdForAdUnitIdentifier:withErrorCode:")
-    public void didFailToLoadAd(String adUnitIdentifier, @MachineSizedSInt long errorCode) {}
+    @NotImplemented("didFailToLoadAdForAdUnitIdentifier:withError:")
+    public void didFailToLoad(String adUnitIdentifier, MAError error) {}
     @NotImplemented("didDisplayAd:")
     public void didDisplayAd(MAAd ad) {}
     @NotImplemented("didHideAd:")
     public void didHideAd(MAAd ad) {}
     @NotImplemented("didClickAd:")
     public void didClickAd(MAAd ad) {}
+    @NotImplemented("didFailToDisplayAd:withError:")
+    public void didFailToDisplayAd(MAAd ad, MAError error) {}
+    @NotImplemented("didPayRevenueForAd:")
+    public void didPayRevenueForAd(MAAd ad) {}
+    /**
+     * @deprecated This callback has been deprecated and will be removed in a future SDK version. Please use -[MAAdDelegate didFailToLoadAdForAdUnitIdentifier:withError:] instead.
+     */
+    @Deprecated
+    @NotImplemented("didFailToLoadAdForAdUnitIdentifier:withErrorCode:")
+    public void didFailToLoadAd(String adUnitIdentifier, @MachineSizedSInt long errorCode) {}
+    /**
+     * @deprecated This callback has been deprecated and will be removed in a future SDK version. Please use -[MAAdDelegate didFailToDisplayAd:withError:] instead.
+     */
+    @Deprecated
     @NotImplemented("didFailToDisplayAd:withErrorCode:")
     public void didFailToDisplayAd(MAAd ad, @MachineSizedSInt long errorCode) {}
     /*</methods>*/
