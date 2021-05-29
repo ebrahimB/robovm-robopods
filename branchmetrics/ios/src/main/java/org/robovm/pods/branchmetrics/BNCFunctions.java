@@ -64,6 +64,8 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String logStringFromLogLevel(BNCLogLevel level);
     @Bridge(symbol="BNCLogLevelFromString", optional=true)
     public static native BNCLogLevel logLevelFromString(String string);
+    @Bridge(symbol="BNCLogSetOutputFunction", optional=true)
+    public static native void logSetOutputFunction(FunctionPtr functionPtr);
     @Bridge(symbol="BNCLogWriteMessage", optional=true)
     public static native void logWriteMessage(BNCLogLevel logLevel, BytePtr sourceFileName, int sourceLineNumber, String message);
     @Bridge(symbol="BNCForceUIViewControllerCategoryToLoad", optional=true)
