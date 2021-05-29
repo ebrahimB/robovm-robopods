@@ -76,5 +76,7 @@ import org.robovm.apple.coreanimation.*;
     public static native void stopGCDTimer(DispatchSource timer);
     @Method(selector = "SHA256Hash:")
     public static native String SHA256Hash(NSObject input);
+    @Method(selector = "getGraphDomainFromToken")
+    public static native String getGraphDomainFromToken();
     /*</methods>*/
 }

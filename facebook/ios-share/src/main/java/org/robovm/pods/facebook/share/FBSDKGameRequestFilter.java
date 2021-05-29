@@ -44,7 +44,8 @@ public enum /*<name>*/FBSDKGameRequestFilter/*</name>*/ implements ValuedEnum {
     /*<values>*/
     None(0L),
     AppUsers(1L),
-    AppNonUsers(2L);
+    AppNonUsers(2L),
+    Everybody(3L);
     /*</values>*/
 
     /*<bind>*/
