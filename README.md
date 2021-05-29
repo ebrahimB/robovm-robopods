@@ -32,7 +32,7 @@ This is the list of currently available AltPods. Click them to get more informat
 
 ## Version of AltPods to framework version mapping
 
-v1.16.0 - in development
+v1.17.0 - in development
 
 | Name                               | 1.16.0 |
 |------------------------------------|--------|
@@ -42,7 +42,7 @@ v1.16.0 - in development
 | [BranchMetrics](branchmetrics/)    | 1.39.2 |
 | [Charts](charts/)                  | 4.0.0  |
 | [Facebook](facebook/)              | 9.2.0  |
-| [Firebase](firebase/)              | 7.11.0 |
+| [Firebase](firebase/)              | 8.0.0  |
 | [Flurry](flurry/)                  | 11.2.1 |
 | [Fyber](fyber/)                    | 7.8.3  |
 | [HelpShift](helpshift/)            | 7.10.0 |

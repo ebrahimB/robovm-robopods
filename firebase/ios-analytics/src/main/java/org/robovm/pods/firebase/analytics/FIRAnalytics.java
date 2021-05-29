@@ -77,12 +77,6 @@ import org.robovm.apple.foundation.*;
     public static native void setUserPropertyString(String value, String name);
     @Method(selector = "setUserID:")
     public static native void setUserID(String userID);
-    /**
-     * @deprecated Use +[FIRAnalytics logEventWithName:kFIREventScreenView parameters:] instead.
-     */
-    @Deprecated
-    @Method(selector = "setScreenName:screenClass:")
-    public static native void setScreenName(String screenName, String screenClassOverride);
     @Method(selector = "setAnalyticsCollectionEnabled:")
     public static native void setAnalyticsCollectionEnabled(boolean analyticsCollectionEnabled);
     @Method(selector = "setSessionTimeoutInterval:")

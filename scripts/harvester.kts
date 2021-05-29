@@ -273,7 +273,7 @@ args.forEach { arg ->
         } else knownGroups[arg]?.let {
             frameworkToProcess.addAll(it)
         } ?: run {
-            println("Error: unknown framework or gropup $arg")
+            println("Error: unknown framework or group $arg")
             printHelpAndExit(-1)
         }
     }
@@ -304,7 +304,7 @@ fun printHelpAndExit(code: Int) {
     println("   frameworkX : list of frameworks to process. if not specified all frameworks will be processed")
     println("Known frameworks:")
     knownFrameworks.keys.sorted().forEach { println("    $it") }
-    println("Known gropus:")
+    println("Known groups:")
     knownGroups.keys.sorted().forEach { group ->
         println("    $group:")
         knownGroups[group]?.forEach { println("        $it") }

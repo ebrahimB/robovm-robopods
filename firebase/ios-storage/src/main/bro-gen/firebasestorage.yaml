@@ -25,6 +25,8 @@ classes:
             '+storageForApp:URL:':
                 constructor: true
                 name: storageForApp
+            '-useEmulatorWithHost:port:':
+                name: useEmulator
     FIRStorageDownloadTask: {}
     FIRStorageListResult: {}
     FIRStorageMetadata:
