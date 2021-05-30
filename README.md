@@ -36,8 +36,8 @@ v1.17.0 - in development
 
 | Name                               | 1.16.0 |
 |------------------------------------|--------|
-| [AppLovinSDK](applovinsdk/)        | 10.3.0 |
 | [AppCenter](appcenter/)            | 4.1.1  |
+| [AppLovinSDK](applovinsdk/)        | 10.3.0 |
 | [Azure](azure/)                    | 3.1.3  |
 | [BranchMetrics](branchmetrics/)    | 1.39.3 |
 | [Charts](charts/)                  | 4.0.0  |
@@ -47,10 +47,10 @@ v1.17.0 - in development
 | [Fyber](fyber/)                    | 7.8.5  |
 | [HelpShift](helpshift/)            | 7.10.0 |
 | [InMobi](inmobi/)                  | 9.1.7  |
+| [Kochava](kochava/)                | 4.6.1  |
 | [Lottie](lottie/)                  | 3.2.1  |
 | [OneSignal](onesignal/)            | 3.4.1  |
 | [Pollfish](pollfish/)              | 6.0.0  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
-| [Kochava](kochava/)                | 4.5.0  |
 
 [Older versions](CHANGELOG.md)
