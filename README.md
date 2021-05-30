@@ -49,7 +49,7 @@ v1.17.0 - in development
 | [InMobi](inmobi/)                  | 9.1.7  |
 | [Kochava](kochava/)                | 4.6.1  |
 | [Lottie](lottie/)                  | 3.2.3  |
-| [OneSignal](onesignal/)            | 3.4.1  |
+| [OneSignal](onesignal/)            | 3.4.4  |
 | [Pollfish](pollfish/)              | 6.0.0  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
 
