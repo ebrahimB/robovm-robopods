@@ -186,7 +186,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             },
             instruction = """
                 0. check latest version number at https://github.com/airbnb/lottie-ios/releases
-                1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Charts:
+                1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Lottie:
                   > echo 'github "airbnb/lottie-ios" "X.Y.Z"' > Cartfile
                   > carthage update --platform ios
                 2. expected location ${downloadFolder.extend("Lottie/Carthage/Build/iOS/")}
