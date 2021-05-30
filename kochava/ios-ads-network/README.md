@@ -21,6 +21,9 @@ The KochavaAdNetwork module is an optional module within the Kochava SDK providi
 Add the following dependency to your `build.gradle`:
 
 ```
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
 dependencies {
    ... other dependencies ...
    compile "io.github.dkimitsa.robovm:robopods-kochava-ads-ios:$altpodsVersion"

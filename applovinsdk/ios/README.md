@@ -24,6 +24,9 @@ This RoboPod requires you to add the native `AppLovinSDK.framework`.
 Add the following dependency to your `build.gradle`:
 
 ```
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
 dependencies {
    ... other dependencies ...
    compile "io.github.dkimitsa.robovm:robopods-applovinsdk-ios:$altpodsVersion"

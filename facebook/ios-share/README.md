@@ -39,6 +39,9 @@ It is available for a download as `FacebookSDK_Dynamic.framework.zip` and allows
 Add the following dependency to your `build.gradle`:
 
 ```
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
 dependencies {
    ... other dependencies ...
    compile "io.github.dkimitsa.robovm:robopods-facebook-share-ios:$altpodsVersion"

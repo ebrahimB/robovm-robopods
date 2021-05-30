@@ -25,6 +25,9 @@ Plus ones required for ios-core module:
 Add the following dependency to your `build.gradle`:
 
 ```
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
 dependencies {
    ... other dependencies ...
    compile "io.github.dkimitsa.robovm:robopods-firebase-auth-ios:$altpodsVersion"
