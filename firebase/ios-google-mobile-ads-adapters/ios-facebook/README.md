@@ -31,3 +31,4 @@ dependencies {
 ## Official website
 
 https://developers.google.com/admob/ios/mediation/facebook
+https://developers.google.com/admob/ios/mediation/facebook#facebook-ios-mediation-adapter-changelog

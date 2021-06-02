@@ -31,3 +31,4 @@ dependencies {
 ## Official website
 
 https://developers.google.com/admob/ios/mediation/applovin
+https://developers.google.com/admob/ios/mediation/applovin#applovin-ios-mediation-adapter-changelog

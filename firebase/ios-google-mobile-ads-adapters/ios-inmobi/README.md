@@ -31,3 +31,4 @@ dependencies {
 ## Official website
 
 https://developers.google.com/admob/ios/mediation/inmobi
+https://developers.google.com/admob/ios/mediation/inmobi#inmobi-ios-mediation-adapter-changelog
