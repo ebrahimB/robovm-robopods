@@ -42,7 +42,7 @@ v1.17.0 - in development
 | [BranchMetrics](branchmetrics/)    | 1.39.3 |
 | [Charts](charts/)                  | 4.0.0  |
 | [Facebook](facebook/)              | 9.3.0  |
-| [Firebase](firebase/)              | 8.0.0  |
+| [Firebase](firebase/)              | 8.1.0  |
 | [Flurry](flurry/)                  | 11.2.1 |
 | [Fyber](fyber/)                    | 7.8.5  |
 | [HelpShift](helpshift/)            | 7.10.0 |

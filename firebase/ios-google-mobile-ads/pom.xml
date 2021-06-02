@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-firebase-google-mobile-ads-ios</artifactId>
-    <name>RoboPods Google Mobile Ads iOS v8.4.1</name>
+    <name>RoboPods Google Mobile Ads iOS v8.5.0</name>
     <packaging>jar</packaging>
 
     <licenses>

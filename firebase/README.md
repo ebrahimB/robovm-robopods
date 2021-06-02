@@ -6,20 +6,20 @@ Firebase gives you functionality like analytics, databases, messaging and crash 
 
 | RoboPod                                  | Description                   | Version |
 |------------------------------------------|-------------------------------|---------|
-| [ios-analytics](ios-analytics/)          | Firebase iOS Analytics        | 8.0.0   |
-| [ios-auth](ios-auth/)                    | Firebase iOS Authentication   | 8.0.0   |
-| [ios-core](ios-core/)                    | Firebase iOS Core             | 8.0.0   |
-| [ios-crashlytics](ios-crashlytics/)      | Firebase iOS Crashlytics      | 8.0.0   |
-| [ios-database](ios-database/)            | Firebase iOS DataBase         | 8.0.0   |
-| [ios-dylinks](ios-dylinks/)              | Firebase iOS Dynamic Links    | 8.0.0   |
-| [ios-firestore](ios-firestore/)          | Firebase iOS Firestore        | 8.0.0   |
-| [ios-mobile ads](ios-google-mobile-ads/) | Firebase iOS Google Mobile Ads| 8.4.1   |
+| [ios-analytics](ios-analytics/)          | Firebase iOS Analytics        | 8.1.0   |
+| [ios-auth](ios-auth/)                    | Firebase iOS Authentication   | 8.1.0   |
+| [ios-core](ios-core/)                    | Firebase iOS Core             | 8.1.0   |
+| [ios-crashlytics](ios-crashlytics/)      | Firebase iOS Crashlytics      | 8.1.0   |
+| [ios-database](ios-database/)            | Firebase iOS DataBase         | 8.1.0   |
+| [ios-dylinks](ios-dylinks/)              | Firebase iOS Dynamic Links    | 8.1.0   |
+| [ios-firestore](ios-firestore/)          | Firebase iOS Firestore        | 8.1.0   |
+| [ios-mobile ads](ios-google-mobile-ads/) | Firebase iOS Google Mobile Ads| 8.5.0   |
 | [ios-mobile ads-adapters](ios-google-mobile-ads-adapters/)| Firebase iOS AdMob Adapters|   |
 | [ios-google-sign-in](ios-google-sign-in/)| Firebase iOS Google Sign In   | 5.0.2   |
 | [ios-google-ump](ios-google-ump/)        | Firebase iOS Google UMP       | 2.0.0   |
-| [ios-messaging](ios-messaging/)          | Firebase iOS Messaging        | 8.0.0   |
-| [ios-remoteconfig](ios-remoteconfig/)    | Firebase iOS Remote Config    | 8.0.0   |
-| [ios-storage](ios-storage/)              | Firebase iOS Storage          | 8.0.0   |
+| [ios-messaging](ios-messaging/)          | Firebase iOS Messaging        | 8.1.0   |
+| [ios-remoteconfig](ios-remoteconfig/)    | Firebase iOS Remote Config    | 8.1.0   |
+| [ios-storage](ios-storage/)              | Firebase iOS Storage          | 8.1.0   |
 
 ## Versions
 

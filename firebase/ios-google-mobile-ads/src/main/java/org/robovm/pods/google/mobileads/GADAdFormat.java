@@ -44,7 +44,8 @@ public enum /*<name>*/GADAdFormat/*</name>*/ implements ValuedEnum {
     Interstitial(1L),
     Rewarded(2L),
     Native(3L),
-    RewardedInterstitial(4L);
+    RewardedInterstitial(4L),
+    Unknown(5L);
     /*</values>*/
 
     /*<bind>*/
