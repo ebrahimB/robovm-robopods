@@ -7,6 +7,6 @@
         <framework>GoogleDataTransport</framework>
         <framework>nanopb</framework>
 
-        <framework>storekit</framework>
+        <framework>StoreKit</framework>
     </frameworks>
 </config>
