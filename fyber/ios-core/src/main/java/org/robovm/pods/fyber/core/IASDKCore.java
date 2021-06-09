@@ -60,6 +60,10 @@ import org.robovm.apple.coregraphics.*;
     public native String getPublisherAppStoreID();
     @Property(selector = "setPublisherAppStoreID:")
     public native void setPublisherAppStoreID(String v);
+    @Property(selector = "isAppFirstTimeInit")
+    public native boolean isAppFirstTimeInit();
+    @Property(selector = "setIsAppFirstTimeInit:")
+    public native void setIsAppFirstTimeInit(boolean v);
     @Property(selector = "globalAdDelegate")
     public native IAGlobalAdDelegate getGlobalAdDelegate();
     @Property(selector = "setGlobalAdDelegate:", strongRef = true)
