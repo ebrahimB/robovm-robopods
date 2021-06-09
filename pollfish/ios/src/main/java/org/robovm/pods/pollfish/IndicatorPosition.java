@@ -39,10 +39,10 @@ import org.robovm.apple.corelocation.*;
 public enum /*<name>*/IndicatorPosition/*</name>*/ implements ValuedEnum {
     /*<values>*/
     TopLeft(0L),
-    MiddleLeft(1L),
-    BottomLeft(2L),
-    TopRight(3L),
-    MiddleRight(4L),
+    TopRight(1L),
+    MiddleLeft(2L),
+    MiddleRight(3L),
+    BottomLeft(4L),
     BottomRight(5L);
     /*</values>*/
 
