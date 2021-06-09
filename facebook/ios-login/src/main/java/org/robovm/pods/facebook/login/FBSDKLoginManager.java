@@ -52,10 +52,6 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKLoginManager(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "authType")
-    public native FBSDKLoginAuthType getAuthType();
-    @Property(selector = "setAuthType:")
-    public native void setAuthType(FBSDKLoginAuthType v);
     @Property(selector = "defaultAudience")
     public native FBSDKDefaultAudience getDefaultAudience();
     @Property(selector = "setDefaultAudience:")

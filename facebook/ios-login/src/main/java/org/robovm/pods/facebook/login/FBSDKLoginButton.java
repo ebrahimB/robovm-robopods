@@ -89,6 +89,14 @@ import org.robovm.apple.coreanimation.*;
     public native String getNonce();
     @Property(selector = "setNonce:")
     public native void setNonce(String v);
+    @Property(selector = "messengerPageId")
+    public native String getMessengerPageId();
+    @Property(selector = "setMessengerPageId:")
+    public native void setMessengerPageId(String v);
+    @Property(selector = "authType")
+    public native FBSDKLoginAuthType getAuthType();
+    @Property(selector = "setAuthType:")
+    public native void setAuthType(FBSDKLoginAuthType v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
