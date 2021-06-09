@@ -110,8 +110,14 @@ import org.robovm.apple.uikit.*;
     public static native void setLocationShared(boolean enable);
     @Method(selector = "isLocationShared")
     public static native boolean isLocationShared();
+    /**
+     * @deprecated Please use didReceiveNotificationExtensionRequest:withMutableNotificationContent:withContentHandler: instead.
+     */
+    @Deprecated
     @Method(selector = "didReceiveNotificationExtensionRequest:withMutableNotificationContent:")
     public static native UNMutableNotificationContent didReceiveNotification(UNNotificationRequest request, UNMutableNotificationContent replacementContent);
+    @Method(selector = "didReceiveNotificationExtensionRequest:withMutableNotificationContent:withContentHandler:")
+    public static native UNMutableNotificationContent didReceiveNotification(UNNotificationRequest request, UNMutableNotificationContent replacementContent, @Block VoidBlock1<UNNotificationContent> contentHandler);
     @Method(selector = "serviceExtensionTimeWillExpireRequest:withMutableNotificationContent:")
     public static native UNMutableNotificationContent serviceExtensionTimeWillExpire(UNNotificationRequest request, UNMutableNotificationContent replacementContent);
     @Method(selector = "sendTag:value:onSuccess:onFailure:")
