@@ -823,7 +823,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
 
     val facebookVersion: String by lazy {
         extractVersionFromHeader("Facebook",
-            downloadFolder.extend("$facebookRoot/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"), "FBSDK_VERSION_STRING")
+            downloadFolder.extend("$facebookRoot/FBSDKCoreKit.framework/Headers/FBSDKCoreKitVersions.h"), "FBSDK_VERSION_STRING")
     }
 
     val facebookInstallInstruction = """

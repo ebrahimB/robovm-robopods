@@ -38,9 +38,9 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAppLinkReturnToRefererControllerDelegateAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKWebDialogDelegateAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKAppLinkReturnToRefererControllerDelegate/*</implements>*/ {
+    /*<implements>*/implements FBSDKWebDialogDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -53,9 +53,11 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("returnToRefererController:willNavigateToAppLink:")
-    public void willNavigateToAppLink(FBSDKAppLinkReturnToRefererController controller, FBSDKAppLink appLink) {}
-    @NotImplemented("returnToRefererController:didNavigateToAppLink:type:")
-    public void didNavigateToAppLink(FBSDKAppLinkReturnToRefererController controller, FBSDKAppLink url, FBSDKAppLinkNavigationType type) {}
+    @NotImplemented("webDialog:didCompleteWithResults:")
+    public void didComplete(FBSDKWebDialog webDialog, NSDictionary<?, ?> results) {}
+    @NotImplemented("webDialog:didFailWithError:")
+    public void didFail(FBSDKWebDialog webDialog, NSError error) {}
+    @NotImplemented("webDialogDidCancel:")
+    public void webDialogDidCancel(FBSDKWebDialog webDialog) {}
     /*</methods>*/
 }

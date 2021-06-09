@@ -36,28 +36,31 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/**
- * @deprecated AppLinkReturnToRefererControllerDelegate is deprecated and will be removed in the next major release
- */
-/*</javadoc>*/
-/*<annotations>*/@Deprecated/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKAppLinkReturnToRefererControllerDelegate/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
+/*</javadoc>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/FBSDKBridgeAPIProtocolType/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Native(0L),
+    Web(1L);
+    /*</values>*/
+
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<methods>*/
-    @Method(selector = "returnToRefererController:willNavigateToAppLink:")
-    void willNavigateToAppLink(FBSDKAppLinkReturnToRefererController controller, FBSDKAppLink appLink);
-    @Method(selector = "returnToRefererController:didNavigateToAppLink:type:")
-    void didNavigateToAppLink(FBSDKAppLinkReturnToRefererController controller, FBSDKAppLink url, FBSDKAppLinkNavigationType type);
-    /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/FBSDKBridgeAPIProtocolType/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/FBSDKBridgeAPIProtocolType/*</name>*/ valueOf(long n) {
+        for (/*<name>*/FBSDKBridgeAPIProtocolType/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/FBSDKBridgeAPIProtocolType/*</name>*/.class.getName());
+    }
 }

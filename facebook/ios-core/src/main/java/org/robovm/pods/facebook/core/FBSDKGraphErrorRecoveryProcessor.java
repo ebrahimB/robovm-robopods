@@ -52,22 +52,11 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKGraphErrorRecoveryProcessor(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    /**
-     * @deprecated FBSDKGraphErrorRecoveryProcessor's delegate will be removed in the next major version release.
-     */
-    @Deprecated
-    @Property(selector = "delegate")
-    public native FBSDKGraphErrorRecoveryProcessorDelegate getDelegate();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "processError:request:delegate:")
     public native boolean processError(NSError error, FBSDKGraphRequest request, FBSDKGraphErrorRecoveryProcessorDelegate delegate);
-    /**
-     * @deprecated didPresentErrorWithRecovery:contextInfo: will be removed in the next major version release.
-     */
-    @Deprecated
-    @Method(selector = "didPresentErrorWithRecovery:contextInfo:")
-    public native void didPresentError(boolean didRecover, VoidPtr contextInfo);
     /*</methods>*/
 }
