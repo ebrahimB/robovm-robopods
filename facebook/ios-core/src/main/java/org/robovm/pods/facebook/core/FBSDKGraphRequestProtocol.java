@@ -60,10 +60,18 @@ import org.robovm.apple.coreanimation.*;
     FBSDKHTTPMethod getHTTPMethod();
     @Property(selector = "version")
     String getVersion();
+    @Property(selector = "flags")
+    FBSDKGraphRequestFlags getFlags();
+    @Property(selector = "isGraphErrorRecoveryDisabled")
+    boolean isGraphErrorRecoveryDisabled();
+    @Property(selector = "setGraphErrorRecoveryDisabled:")
+    void setGraphErrorRecoveryDisabled(boolean v);
+    @Property(selector = "hasAttachments")
+    boolean hasAttachments();
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "startWithCompletionHandler:")
-    FBSDKGraphRequestConnecting start(@Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
+    @Method(selector = "startWithCompletion:")
+    FBSDKGraphRequestConnecting start(@Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
     @Method(selector = "formattedDescription")
     String formattedDescription();
     /*</methods>*/

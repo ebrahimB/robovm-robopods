@@ -40,7 +40,7 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKButton/*</name>*/ 
-    extends /*<extends>*/UIButton/*</extends>*/ 
+    extends /*<extends>*/FBSDKImpressionTrackingButton/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKButtonPtr extends Ptr<FBSDKButton, FBSDKButtonPtr> {}/*</ptr>*/
