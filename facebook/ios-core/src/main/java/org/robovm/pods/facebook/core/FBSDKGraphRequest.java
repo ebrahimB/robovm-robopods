@@ -74,12 +74,6 @@ import org.robovm.apple.coreanimation.*;
     public native FBSDKHTTPMethod getHTTPMethod();
     @Property(selector = "version")
     public native String getVersion();
-    @Property(selector = "flags")
-    public native FBSDKGraphRequestFlags getFlags();
-    @Property(selector = "isGraphErrorRecoveryDisabled")
-    public native boolean isGraphErrorRecoveryDisabled();
-    @Property(selector = "hasAttachments")
-    public native boolean hasAttachments();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -98,8 +92,8 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method);
     @Method(selector = "setGraphErrorRecoveryDisabled:")
     public native void setGraphErrorRecoveryDisabled(boolean disable);
-    @Method(selector = "startWithCompletion:")
-    public native FBSDKGraphRequestConnecting start(@Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
+    @Method(selector = "startWithCompletionHandler:")
+    public native FBSDKGraphRequestConnecting start(@Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
     @Method(selector = "formattedDescription")
     public native String formattedDescription();
     /*</methods>*/

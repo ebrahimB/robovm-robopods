@@ -68,12 +68,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getSub();
     @Property(selector = "name")
     public native String getName();
-    @Property(selector = "givenName")
-    public native String getGivenName();
-    @Property(selector = "middleName")
-    public native String getMiddleName();
-    @Property(selector = "familyName")
-    public native String getFamilyName();
     @Property(selector = "email")
     public native String getEmail();
     @Property(selector = "picture")
@@ -84,14 +78,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getUserBirthday();
     @Property(selector = "userAgeRange")
     public native NSDictionary<NSString, NSNumber> getUserAgeRange();
-    @Property(selector = "userHometown")
-    public native NSDictionary<NSString, NSString> getUserHometown();
-    @Property(selector = "userLocation")
-    public native NSDictionary<NSString, NSString> getUserLocation();
-    @Property(selector = "userGender")
-    public native String getUserGender();
-    @Property(selector = "userLink")
-    public native String getUserLink();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

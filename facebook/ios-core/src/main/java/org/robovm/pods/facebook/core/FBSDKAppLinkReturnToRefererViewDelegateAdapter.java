@@ -38,9 +38,9 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKBridgeAPIRequestProtocolAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAppLinkReturnToRefererViewDelegateAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKBridgeAPIRequestProtocol/*</implements>*/ {
+    /*<implements>*/implements FBSDKAppLinkReturnToRefererViewDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -49,20 +49,13 @@ import org.robovm.apple.coreanimation.*;
     /*<constants>*//*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    @NotImplemented("scheme")
-    public String getScheme() { return null; }
-    @NotImplemented("actionID")
-    public String getActionID() { return null; }
-    @NotImplemented("methodName")
-    public String getMethodName() { return null; }
-    @NotImplemented("protocolType")
-    public FBSDKBridgeAPIProtocolType getProtocolType() { return null; }
-    @NotImplemented("protocol")
-    public FBSDKBridgeAPIProtocol getProtocol() { return null; }
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("requestURL:")
-    public NSURL requestURL(NSError.NSErrorPtr errorRef) { return null; }
+    @NotImplemented("returnToRefererViewDidTapInsideCloseButton:")
+    public void returnToRefererViewDidTapInsideCloseButton(FBSDKAppLinkReturnToRefererView view) {}
+    @NotImplemented("returnToRefererViewDidTapInsideLink:link:")
+    public void didTapInsideLink(FBSDKAppLinkReturnToRefererView view, FBSDKAppLink link) {}
     /*</methods>*/
 }

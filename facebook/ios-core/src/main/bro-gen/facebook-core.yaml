@@ -7,7 +7,6 @@ headers:
 
 private_typedefs:
     OS_dispatch_source: DispatchSource
-    'FBSDKOperatingSystemVersionComparing': NSObject
     'FBSDKUserIdentifier *': String
 
 enums:
@@ -16,10 +15,10 @@ enums:
     FBSDKProductCondition: {}
     FBSDKCoreError: {nserror: true, prefix: FBSDKError}
     FBSDKGraphRequestError: {}
-    FBSDKGraphRequestFlags: {prefix: FBSDKGraphRequestFlag}
     FBSDKAppLinkNavigationType: {}
-    FBSDKBridgeAPIProtocolType: {}
+    FBSDKIncludeStatusBarInSize: {}
     FBSDKProfilePictureMode: {}
+    FBSDKAutoAppLinkPresentationStyle: {}
 
 typed_enums:
     FBSDKAppEventName:
@@ -58,10 +57,6 @@ classes:
                 name: init
             '-initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:graphDomain:':
                 name: init
-            '+refreshCurrentAccessToken:':
-                exclude: true # deprecated
-            '+refreshCurrentAccessTokenWithCompletion:':
-                name: refreshCurrentAccessToken
     FBSDKAppEvents:
         methods:
             '+logEvent:valueToSum:':
@@ -88,12 +83,8 @@ classes:
                 name: setUserData
             '+setUserData:forType:':
                 name: setUserData
-            '+logInternalEvent:parameters:isImplicitlyLogged:':
-                name: logInternalEvent
-            '+logInternalEvent:parameters:isImplicitlyLogged:accessToken:':
-                name: logInternalEvent
-            '+activateApp':
-                exclude: true # deprecated and conflicts with instance method
+            '+updateUserProperties:handler:':
+                name: updateUserProperties
     FBSDKAppLink:
         methods:
             '+appLinkWithSourceURL:targets:webURL:':
@@ -121,7 +112,8 @@ classes:
         methods:
             '-appLinksFromURLs:handler:':
                 name: appLinksFromURLs
-    FBSDKAppLinkResolverRequestBuilder: {}
+    FBSDKAppLinkReturnToRefererController: {}
+    FBSDKAppLinkReturnToRefererView: {}
     FBSDKAppLinkTarget:
         methods:
             '+appLinkTargetWithURL:appStoreId:appName:':
@@ -136,39 +128,13 @@ classes:
                 name: openURL
             '-application:didFinishLaunchingWithOptions:':
                 name: didFinishLaunching
-    FBSDKAuthenticationToken: {}
-    FBSDKAuthenticationTokenClaims: {}
-    FBSDKBridgeAPI:
-        methods:
-            '-initWithProcessInfo:':
-                name: init
-            '-openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:':
-                name: openBridgeAPIRequest
-            '-openURLWithSafariViewController:sender:fromViewController:handler:':
-                name: openURLWithSafariViewController
-            '-openURL:sender:handler:':
-                name: openURL
-    FBSDKBridgeAPIRequest:
-        methods:
-            '+bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:':
-                name: create
-                constructor: true
-    FBSDKBridgeAPIResponse:
-        methods:
-            '+bridgeAPIResponseWithRequest:error:':
-                name: create
-                constructor: true
-            '+bridgeAPIResponseWithRequest:responseURL:sourceApplication:error:':
-                name: create
-                constructor: true
-            '+bridgeAPIResponseCancelledWithRequest:':
-                name: create
-                constructor: true
     FBSDKButton: {}
     FBSDKGraphErrorRecoveryProcessor:
         methods:
             '-processError:request:delegate:':
                 name: processError
+            '-didPresentErrorWithRecovery:contextInfo:':
+                name: didPresentError
     FBSDKGraphRequest:
         methods:
             '-initWithGraphPath:':
@@ -181,43 +147,35 @@ classes:
                 name: init
             '-initWithGraphPath:parameters:tokenString:version:HTTPMethod:':
                 name: init
-            '-startWithCompletionHandler:':
-                exclude: true # as deprecated
-            '-startWithCompletion:':
-                name: start
     FBSDKGraphRequestConnection:
         methods:
             '-addRequest:completionHandler:':
-                exclude: true # deprecated, conflicts
+                name: addRequest
             '-addRequest:batchEntryName:completionHandler:':
-                exclude: true # deprecated, conflicts
+                name: addRequest
             '-addRequest:batchParameters:completionHandler:':
-                exclude: true # deprecated, conflicts
-            '-addRequest:completion:':
-                name: addRequest
-            '-addRequest:name:completion:':
-                name: addRequest
-            '-addRequest:parameters:completion:':
                 name: addRequest
     FBSDKGraphRequestDataAttachment:
         methods:
             '-initWithData:filename:contentType:':
                 name: init
-    FBSDKImpressionTrackingButton: {}
-    FBSDKLocation: {}
     FBSDKMeasurementEvent: {}
     FBSDKProfile:
         methods:
             '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:':
                 name: init
+            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:':
+                name: init
+            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:':
+                name: init
+            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:isLimited:':
+                name: init
+            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:':
+                name: init
             '-imageURLForPictureMode:size:':
                 name: getImageURL
             '+loadCurrentProfileWithCompletion:':
                 name: loadCurrentProfile
-            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:':
-                name: init
-            '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:':
-                name: init
     FBSDKProfilePictureView:
         methods:
             '-initWithFrame:profile:':
@@ -228,6 +186,18 @@ classes:
         methods:
             '+setDataProcessingOptions:country:state:':
                 name: setDataProcessingOptions
+    FBSDKTestUsersManager:
+        methods:
+            '-requestTestAccountTokensWithArraysOfPermissions:createIfNotFound:completionHandler:':
+                name: requestTestAccountTokens
+            '-addTestAccountWithPermissions:completionHandler:':
+                name: addTestAccount
+            '-removeTestAccount:completionHandler:':
+                name: removeTestAccount
+            '-makeFriendsWithFirst:second:callback:':
+                name: makeFriends
+            '+sharedInstanceForAppID:appSecret:':
+                name: sharedInstance
     FBSDKURL:
         methods:
             '+URLWithURL:':
@@ -236,7 +206,6 @@ classes:
             '+URLWithInboundURL:sourceApplication:':
                 name: create
                 constructor: true
-    FBSDKUserAgeRange: {}
     FBSDKUtility:
         methods:
             '+dictionaryWithQueryString:':
@@ -246,39 +215,31 @@ classes:
                 throws: NSErrorException
             '+startGCDTimerWithInterval:block:':
                 name: startGCDTimer
-            '+unversionedFacebookURLWithHostPrefix:path:queryParameters:error:':
-                name: getUnversionedFacebookURL
-    FBSDKWebDialog:
-        methods:
-            '+dialogWithName:delegate:':
-                name: create
-                constructor: true
-            '+showWithName:parameters:delegate:':
-                name: show
     FBSDKWebViewAppLinkResolver: {}
-
+    FBSDKAppLinkResolverRequestBuilder: {}
+    FBSDKAuthenticationToken: {}
+    FBSDKAuthenticationTokenClaims: {}
+    FBSDKUserAgeRange: { }
 protocols:
     FBSDKAppLinkResolving:
         methods:
             '-appLinkFromURL:handler:':
                 name: getAppLink
-    FBSDKApplicationObserving:
+    FBSDKAppLinkReturnToRefererControllerDelegate:
         methods:
-            '-application:didFinishLaunchingWithOptions:':
-                name: didFinishLaunching
-            '-application:openURL:sourceApplication:annotation:':
-                name: openURL
-    FBSDKBridgeAPIProtocol:
+            '-returnToRefererController:willNavigateToAppLink:':
+                name: willNavigateToAppLink
+            '-returnToRefererController:didNavigateToAppLink:type:':
+                name: didNavigateToAppLink
+    FBSDKAppLinkReturnToRefererViewDelegate:
         methods:
-            '-requestURLWithActionID:scheme:methodName:methodVersion:parameters:error:':
-                name: requestURL
-            '-responseParametersForActionID:queryParameters:cancelled:error:':
-                name: responseParameters
-    FBSDKBridgeAPIRequestProtocol: { }
-    FBSDKButtonImpressionTracking: { }
-    FBSDKCopying: { }
+            '-returnToRefererViewDidTapInsideLink:link:':
+                name: didTapInsideLink
+    FBSDKCopying: {}
     FBSDKErrorRecoveryAttempting:
         methods:
+            '-attemptRecoveryFromError:optionIndex:delegate:didRecoverSelector:contextInfo:':
+                name: attemptRecoveryFromError
             '-attemptRecoveryFromError:optionIndex:completionHandler:':
                 name: attemptRecoveryFromError
     FBSDKGraphErrorRecoveryProcessorDelegate:
@@ -287,17 +248,6 @@ protocols:
                 name: didRecover
             '-processorWillProcessError:error:':
                 name: willProcessError
-    FBSDKGraphRequest:
-        skip_adapter: true
-        name:
-            FBSDKGraphRequestProtocol
-        methods:
-            '-startWithCompletion:':
-                name: start
-    FBSDKGraphRequestConnecting:
-        methods:
-            '-addRequest:completion:':
-                name: addRequest
     FBSDKGraphRequestConnectionDelegate:
         methods:
             '-requestConnection:didFailWithError:':
@@ -306,23 +256,20 @@ protocols:
                 name: didSendBodyData
     FBSDKMutableCopying:
         skip_adapter: true
-    FBSDKTokenCaching: { }
-    FBSDKURLOpening:
+    FBSDKAutoAppLink:
+        skip_adapter: true
+    FBSDKGraphRequest:
+        skip_adapter: true
+        name:
+            FBSDKGraphRequestProtocol
         methods:
-            '-application:openURL:sourceApplication:annotation:':
-                name: openURL
-            '-canOpenURL:forApplication:sourceApplication:annotation:':
-                name: canOpenURL
-    FBSDKWebDialogDelegate:
+            '-startWithCompletionHandler:':
+                name: start
+    FBSDKGraphRequestConnecting:
         methods:
-            '-webDialog:didCompleteWithResults:':
-                name: didComplete
-            '-webDialog:didFailWithError:':
-                name: didFail
+            '-addRequest:completionHandler:':
+                name: addRequest
 functions:
-    fb_randomString:
-        exclude: true
-
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
         class: __FixMe
@@ -369,11 +316,6 @@ values:
     FBSDKAppEventsOverrideAppIDBundleKey:
         class: FBSDKAppEvents
         name: getOverrideAppIDBundleKey
-        type: NSString
-    FBSDKBridgeAPI(.*)Key:
-        class: FBSDKBridgeAPI
-        static_class: Keys
-        name: 'Event#{g[0]}'
         type: NSString
     FBSDKMeasurementEvent(.*)Key:
         class: FBSDKMeasurementEvent

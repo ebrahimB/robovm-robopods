@@ -52,14 +52,10 @@ import org.robovm.apple.coreanimation.*;
     double getTimeout();
     @Property(selector = "setTimeout:")
     void setTimeout(double v);
-    @Property(selector = "delegate")
-    FBSDKGraphRequestConnectionDelegate getDelegate();
-    @Property(selector = "setDelegate:", strongRef = true)
-    void setDelegate(FBSDKGraphRequestConnectionDelegate v);
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "addRequest:completion:")
-    void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> handler);
+    @Method(selector = "addRequest:completionHandler:")
+    void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
     @Method(selector = "start")
     void start();
     @Method(selector = "cancel")

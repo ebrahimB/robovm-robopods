@@ -73,12 +73,12 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "addRequest:completion:")
-    public native void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
-    @Method(selector = "addRequest:name:completion:")
-    public native void addRequest(FBSDKGraphRequest request, String name, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
-    @Method(selector = "addRequest:parameters:completion:")
-    public native void addRequest(FBSDKGraphRequest request, NSDictionary<NSString, ?> parameters, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
+    @Method(selector = "addRequest:completionHandler:")
+    public native void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
+    @Method(selector = "addRequest:batchEntryName:completionHandler:")
+    public native void addRequest(FBSDKGraphRequest request, String name, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
+    @Method(selector = "addRequest:batchParameters:completionHandler:")
+    public native void addRequest(FBSDKGraphRequest request, NSDictionary<NSString, ?> batchParameters, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
     @Method(selector = "cancel")
     public native void cancel();
     @Method(selector = "start")

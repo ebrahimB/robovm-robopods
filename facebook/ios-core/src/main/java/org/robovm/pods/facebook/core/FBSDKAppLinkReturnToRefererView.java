@@ -36,47 +36,54 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated FBAppLinkReturnToRefererView is deprecated and will be removed in the next major release
+ */
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKImpressionTrackingButton/*</name>*/ 
-    extends /*<extends>*/UIButton/*</extends>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass @Deprecated/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAppLinkReturnToRefererView/*</name>*/ 
+    extends /*<extends>*/UIView/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FBSDKImpressionTrackingButtonPtr extends Ptr<FBSDKImpressionTrackingButton, FBSDKImpressionTrackingButtonPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FBSDKImpressionTrackingButton.class); }/*</bind>*/
+    /*<ptr>*/public static class FBSDKAppLinkReturnToRefererViewPtr extends Ptr<FBSDKAppLinkReturnToRefererView, FBSDKAppLinkReturnToRefererViewPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FBSDKAppLinkReturnToRefererView.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKImpressionTrackingButton() {}
-    protected FBSDKImpressionTrackingButton(Handle h, long handle) { super(h, handle); }
-    protected FBSDKImpressionTrackingButton(SkipInit skipInit) { super(skipInit); }
+    public FBSDKAppLinkReturnToRefererView() {}
+    protected FBSDKAppLinkReturnToRefererView(Handle h, long handle) { super(h, handle); }
+    protected FBSDKAppLinkReturnToRefererView(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public FBSDKImpressionTrackingButton(@ByVal CGRect frame) { super(frame); }
+    public FBSDKAppLinkReturnToRefererView(@ByVal CGRect frame) { super(frame); }
     @Method(selector = "initWithCoder:")
-    public FBSDKImpressionTrackingButton(NSCoder coder) { super(coder); }
-    /**
-     * @since Available in iOS 14.0 and later.
-     */
-    @Method(selector = "initWithFrame:primaryAction:")
-    public FBSDKImpressionTrackingButton(@ByVal CGRect frame, UIAction primaryAction) { super(frame, primaryAction); }
+    public FBSDKAppLinkReturnToRefererView(NSCoder coder) { super(coder); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "delegate")
+    public native FBSDKAppLinkReturnToRefererViewDelegate getDelegate();
+    @Property(selector = "setDelegate:", strongRef = true)
+    public native void setDelegate(FBSDKAppLinkReturnToRefererViewDelegate v);
+    @Property(selector = "textColor")
+    public native UIColor getTextColor();
+    @Property(selector = "setTextColor:")
+    public native void setTextColor(UIColor v);
+    @Property(selector = "refererAppLink")
+    public native FBSDKAppLink getRefererAppLink();
+    @Property(selector = "setRefererAppLink:")
+    public native void setRefererAppLink(FBSDKAppLink v);
+    @Property(selector = "includeStatusBarInSize")
+    public native FBSDKIncludeStatusBarInSize getIncludeStatusBarInSize();
+    @Property(selector = "setIncludeStatusBarInSize:")
+    public native void setIncludeStatusBarInSize(FBSDKIncludeStatusBarInSize v);
+    @Property(selector = "isClosed")
+    public native boolean isClosed();
+    @Property(selector = "setClosed:")
+    public native void setClosed(boolean v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @since Available in iOS 13.0 and later.
-     */
-    @Method(selector = "systemButtonWithImage:target:action:")
-    public static native FBSDKImpressionTrackingButton getSystemButtonWithImage(UIImage image, NSObject target, Selector action);
-    /**
-     * @since Available in iOS 14.0 and later.
-     */
-    @Method(selector = "systemButtonWithPrimaryAction:")
-    public static native FBSDKImpressionTrackingButton getSystemButtonWithPrimaryAction(UIAction primaryAction);
     /**
      * @since Available in iOS 9.0 and later.
      */

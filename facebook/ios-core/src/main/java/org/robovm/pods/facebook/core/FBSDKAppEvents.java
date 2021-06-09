@@ -52,8 +52,6 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKAppEvents(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "singleton")
-    public static native FBSDKAppEvents getSingleton();
     @Property(selector = "flushBehavior")
     public static native FBSDKAppEventsFlushBehavior getFlushBehavior();
     @Property(selector = "setFlushBehavior:")
@@ -81,8 +79,6 @@ import org.robovm.apple.coreanimation.*;
         public static native NSString LoggingResult();
     }
     
-    @Method(selector = "activateApp")
-    public native void activateApp();
     @Method(selector = "logEvent:")
     public static native void logEvent(NSString eventName);
     @Method(selector = "logEvent:valueToSum:")
@@ -105,6 +101,8 @@ import org.robovm.apple.coreanimation.*;
     public static native void logPushNotificationOpen(NSDictionary<?, ?> payload, String action);
     @Method(selector = "logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:")
     public static native void logProductItemAvailability(String itemID, FBSDKProductAvailability availability, FBSDKProductCondition condition, String description, String imageLink, String link, String title, double priceAmount, String currency, String gtin, String mpn, String brand, NSDictionary<NSString, ?> parameters);
+    @Method(selector = "activateApp")
+    public static native void activateApp();
     @Method(selector = "setPushNotificationsDeviceToken:")
     public static native void setPushNotificationsDeviceToken(NSData deviceToken);
     @Method(selector = "setPushNotificationsDeviceTokenString:")
@@ -125,15 +123,17 @@ import org.robovm.apple.coreanimation.*;
     public static native void setUserData(String data, NSString type);
     @Method(selector = "clearUserDataForType:")
     public static native void clearUserDataForType(NSString type);
+    /**
+     * @deprecated updateUserProperties is deprecated
+     */
+    @Deprecated
+    @Method(selector = "updateUserProperties:handler:")
+    public static native void updateUserProperties(NSDictionary<NSString, ?> properties, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
     @Method(selector = "augmentHybridWKWebView:")
     public static native void augmentHybridWKWebView(WKWebView webView);
     @Method(selector = "setIsUnityInit:")
     public static native void setIsUnityInit(boolean isUnityInit);
     @Method(selector = "sendEventBindingsToUnity")
     public static native void sendEventBindingsToUnity();
-    @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:")
-    public static native void logInternalEvent(NSString eventName, NSDictionary<?, ?> parameters, boolean isImplicitlyLogged);
-    @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:accessToken:")
-    public static native void logInternalEvent(NSString eventName, NSDictionary<?, ?> parameters, boolean isImplicitlyLogged, FBSDKAccessToken accessToken);
     /*</methods>*/
 }

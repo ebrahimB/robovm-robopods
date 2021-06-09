@@ -53,15 +53,11 @@ import org.robovm.apple.coreanimation.*;
     public double getTimeout() { return 0; }
     @NotImplemented("setTimeout:")
     public void setTimeout(double v) {}
-    @NotImplemented("delegate")
-    public FBSDKGraphRequestConnectionDelegate getDelegate() { return null; }
-    @NotImplemented("setDelegate:")
-    public void setDelegate(FBSDKGraphRequestConnectionDelegate v) {}
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("addRequest:completion:")
-    public void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> handler) {}
+    @NotImplemented("addRequest:completionHandler:")
+    public void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler) {}
     @NotImplemented("start")
     public void start() {}
     @NotImplemented("cancel")

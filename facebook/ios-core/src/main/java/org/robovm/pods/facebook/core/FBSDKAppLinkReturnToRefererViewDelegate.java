@@ -36,10 +36,12 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated AppLinkReturnToRefererViewDelegate is deprecated and will be removed in the next major release
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKButtonImpressionTracking/*</name>*/ 
+/*<annotations>*/@Deprecated/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKAppLinkReturnToRefererViewDelegate/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -48,15 +50,13 @@ import org.robovm.apple.coreanimation.*;
     /*</bind>*/
     /*<constants>*//*</constants>*/
     /*<properties>*/
-    @Property(selector = "analyticsParameters")
-    NSDictionary<NSString, ?> getAnalyticsParameters();
-    @Property(selector = "impressionTrackingEventName")
-    String getImpressionTrackingEventName();
-    @Property(selector = "impressionTrackingIdentifier")
-    String getImpressionTrackingIdentifier();
+    
     /*</properties>*/
     /*<methods>*/
-    
+    @Method(selector = "returnToRefererViewDidTapInsideCloseButton:")
+    void returnToRefererViewDidTapInsideCloseButton(FBSDKAppLinkReturnToRefererView view);
+    @Method(selector = "returnToRefererViewDidTapInsideLink:link:")
+    void didTapInsideLink(FBSDKAppLinkReturnToRefererView view, FBSDKAppLink link);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

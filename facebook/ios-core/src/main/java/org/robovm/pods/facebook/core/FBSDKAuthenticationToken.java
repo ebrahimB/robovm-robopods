@@ -64,10 +64,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getNonce();
     @Property(selector = "graphDomain")
     public native String getGraphDomain();
-    @Property(selector = "tokenCache")
-    public static native FBSDKTokenCaching getTokenCache();
-    @Property(selector = "setTokenCache:")
-    public static native void setTokenCache(FBSDKTokenCaching v);
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
     /*</properties>*/
