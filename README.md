@@ -34,7 +34,7 @@ This is the list of currently available AltPods. Click them to get more informat
 
 v1.17.0 - in development
 
-| Name                               | 1.16.0 |
+| Name                               | 1.17.0 |
 |------------------------------------|--------|
 | [AppCenter](appcenter/)            | 4.1.1  |
 | [AppLovinSDK](applovinsdk/)        | 10.3.0 |
