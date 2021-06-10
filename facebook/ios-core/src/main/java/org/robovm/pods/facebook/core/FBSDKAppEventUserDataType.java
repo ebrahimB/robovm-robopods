@@ -70,5 +70,7 @@ import org.robovm.apple.coreanimation.*;
     public static native NSString EventZip();
     @GlobalValue(symbol="FBSDKAppEventCountry", optional=true)
     public static native NSString EventCountry();
+    @GlobalValue(symbol="FBSDKAppEventExternalId", optional=true)
+    public static native NSString EventExternalId();
     /*</methods>*/
 }

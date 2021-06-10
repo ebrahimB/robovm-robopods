@@ -36,28 +36,33 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/**
- * @deprecated AppLinkReturnToRefererViewDelegate is deprecated and will be removed in the next major release
- */
 /*</javadoc>*/
-/*<annotations>*/@Deprecated/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKAppLinkReturnToRefererViewDelegate/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKBridgeAPIRequestProtocolAdapter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements FBSDKBridgeAPIRequestProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    
+    @NotImplemented("scheme")
+    public String getScheme() { return null; }
+    @NotImplemented("actionID")
+    public String getActionID() { return null; }
+    @NotImplemented("methodName")
+    public String getMethodName() { return null; }
+    @NotImplemented("protocolType")
+    public FBSDKBridgeAPIProtocolType getProtocolType() { return null; }
+    @NotImplemented("protocol")
+    public FBSDKBridgeAPIProtocol getProtocol() { return null; }
     /*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "returnToRefererViewDidTapInsideCloseButton:")
-    void returnToRefererViewDidTapInsideCloseButton(FBSDKAppLinkReturnToRefererView view);
-    @Method(selector = "returnToRefererViewDidTapInsideLink:link:")
-    void didTapInsideLink(FBSDKAppLinkReturnToRefererView view, FBSDKAppLink link);
+    @NotImplemented("requestURL:")
+    public NSURL requestURL(NSError.NSErrorPtr errorRef) { return null; }
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

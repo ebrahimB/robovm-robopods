@@ -55,8 +55,6 @@ import org.robovm.apple.foundation.*;
     public static native KVAContext getPersistentStorage();
     @Property(selector = "sdk")
     public static native KVAContext getSdk();
-    @Property(selector = "sdkWrapper")
-    public static native KVAContext getSdkWrapper();
     @Property(selector = "server")
     public static native KVAContext getServer();
     @Property(selector = "serverUnrestricted")

@@ -87,6 +87,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getTitle();
     @Property(selector = "setTitle:")
     public native void setTitle(String v);
+    @Property(selector = "cta")
+    public native String getCta();
+    @Property(selector = "setCta:")
+    public native void setCta(String v);
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
     /*</properties>*/

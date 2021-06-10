@@ -50,8 +50,20 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKLoginConfiguration() {}
     protected FBSDKLoginConfiguration(Handle h, long handle) { super(h, handle); }
     protected FBSDKLoginConfiguration(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithPermissions:tracking:nonce:messengerPageId:")
+    public FBSDKLoginConfiguration(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String nonce, String messengerPageId) { super((SkipInit) null); initObject(init(permissions, tracking, nonce, messengerPageId)); }
+    @Method(selector = "initWithPermissions:tracking:nonce:messengerPageId:authType:")
+    public FBSDKLoginConfiguration(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String nonce, String messengerPageId, FBSDKLoginAuthType authType) { super((SkipInit) null); initObject(init(permissions, tracking, nonce, messengerPageId, authType)); }
     @Method(selector = "initWithPermissions:tracking:nonce:")
     public FBSDKLoginConfiguration(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String nonce) { super((SkipInit) null); initObject(init(permissions, tracking, nonce)); }
+    @Method(selector = "initWithPermissions:tracking:messengerPageId:")
+    public static  FBSDKLoginConfiguration createUsingMessengerPageId(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String messengerPageId) {
+       FBSDKLoginConfiguration res = new FBSDKLoginConfiguration((SkipInit) null);
+       res.initObject(res.initUsingMessengerPageId(permissions, tracking, messengerPageId));
+       return res;
+    }
+    @Method(selector = "initWithPermissions:tracking:messengerPageId:authType:")
+    public FBSDKLoginConfiguration(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String messengerPageId, FBSDKLoginAuthType authType) { super((SkipInit) null); initObject(init(permissions, tracking, messengerPageId, authType)); }
     @Method(selector = "initWithPermissions:tracking:")
     public FBSDKLoginConfiguration(NSArray<NSString> permissions, FBSDKLoginTracking tracking) { super((SkipInit) null); initObject(init(permissions, tracking)); }
     @Method(selector = "initWithTracking:")
@@ -64,14 +76,28 @@ import org.robovm.apple.coreanimation.*;
     public native FBSDKLoginTracking getTracking();
     @Property(selector = "requestedPermissions")
     public native NSSet<NSObject> getRequestedPermissions();
+    @Property(selector = "messengerPageId")
+    public native String getMessengerPageId();
+    @Property(selector = "authType")
+    public native FBSDKLoginAuthType getAuthType();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithPermissions:tracking:nonce:messengerPageId:")
+    protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String nonce, String messengerPageId);
+    @Method(selector = "initWithPermissions:tracking:nonce:messengerPageId:authType:")
+    protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String nonce, String messengerPageId, FBSDKLoginAuthType authType);
     @Method(selector = "initWithPermissions:tracking:nonce:")
     protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String nonce);
+    @Method(selector = "initWithPermissions:tracking:messengerPageId:")
+    protected native @Pointer long initUsingMessengerPageId(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String messengerPageId);
+    @Method(selector = "initWithPermissions:tracking:messengerPageId:authType:")
+    protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String messengerPageId, FBSDKLoginAuthType authType);
     @Method(selector = "initWithPermissions:tracking:")
     protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking);
     @Method(selector = "initWithTracking:")
     protected native @Pointer long init(FBSDKLoginTracking tracking);
+    @Method(selector = "authTypeForString:")
+    public static native FBSDKLoginAuthType authTypeForString(String rawValue);
     /*</methods>*/
 }

@@ -36,31 +36,30 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/FBSDKIncludeStatusBarInSize/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Never(0L),
-    Always(1L);
-    /*</values>*/
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKTokenCachingAdapter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements FBSDKTokenCaching/*</implements>*/ {
 
+    /*<ptr>*/
+    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/FBSDKIncludeStatusBarInSize/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/FBSDKIncludeStatusBarInSize/*</name>*/ valueOf(long n) {
-        for (/*<name>*/FBSDKIncludeStatusBarInSize/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/FBSDKIncludeStatusBarInSize/*</name>*/.class.getName());
-    }
+    /*<constructors>*//*</constructors>*/
+    /*<properties>*/
+    @NotImplemented("accessToken")
+    public FBSDKAccessToken getAccessToken() { return null; }
+    @NotImplemented("setAccessToken:")
+    public void setAccessToken(FBSDKAccessToken v) {}
+    @NotImplemented("authenticationToken")
+    public FBSDKAuthenticationToken getAuthenticationToken() { return null; }
+    @NotImplemented("setAuthenticationToken:")
+    public void setAuthenticationToken(FBSDKAuthenticationToken v) {}
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    
+    /*</methods>*/
 }

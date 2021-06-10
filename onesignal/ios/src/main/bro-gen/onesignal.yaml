@@ -67,6 +67,8 @@ classes:
                 name: postNotification
             '+didReceiveNotificationExtensionRequest:withMutableNotificationContent:':
                 name: didReceiveNotification
+            '+didReceiveNotificationExtensionRequest:withMutableNotificationContent:withContentHandler:':
+                name: didReceiveNotification
             '+serviceExtensionTimeWillExpireRequest:withMutableNotificationContent:':
                 name: serviceExtensionTimeWillExpire
             '+app_id':

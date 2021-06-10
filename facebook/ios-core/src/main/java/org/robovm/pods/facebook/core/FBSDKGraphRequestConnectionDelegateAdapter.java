@@ -54,12 +54,12 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("requestConnectionWillBeginLoading:")
-    public void requestConnectionWillBeginLoading(FBSDKGraphRequestConnection connection) {}
+    public void requestConnectionWillBeginLoading(FBSDKGraphRequestConnecting connection) {}
     @NotImplemented("requestConnectionDidFinishLoading:")
-    public void requestConnectionDidFinishLoading(FBSDKGraphRequestConnection connection) {}
+    public void requestConnectionDidFinishLoading(FBSDKGraphRequestConnecting connection) {}
     @NotImplemented("requestConnection:didFailWithError:")
-    public void didFail(FBSDKGraphRequestConnection connection, NSError error) {}
+    public void didFail(FBSDKGraphRequestConnecting connection, NSError error) {}
     @NotImplemented("requestConnection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:")
-    public void didSendBodyData(FBSDKGraphRequestConnection connection, @MachineSizedSInt long bytesWritten, @MachineSizedSInt long totalBytesWritten, @MachineSizedSInt long totalBytesExpectedToWrite) {}
+    public void didSendBodyData(FBSDKGraphRequestConnecting connection, @MachineSizedSInt long bytesWritten, @MachineSizedSInt long totalBytesWritten, @MachineSizedSInt long totalBytesExpectedToWrite) {}
     /*</methods>*/
 }

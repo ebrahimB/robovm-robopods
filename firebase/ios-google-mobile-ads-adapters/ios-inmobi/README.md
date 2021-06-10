@@ -19,6 +19,9 @@
 Add the following dependency to your `build.gradle`:
 
 ```
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
 dependencies {
    ... other dependencies ...
    compile "io.github.dkimitsa.robovm:robopods-firebase-google-mobile-ads-inmobi-adapter-ios:$altpodsVersion"
@@ -28,3 +31,4 @@ dependencies {
 ## Official website
 
 https://developers.google.com/admob/ios/mediation/inmobi
+https://developers.google.com/admob/ios/mediation/inmobi#inmobi-ios-mediation-adapter-changelog

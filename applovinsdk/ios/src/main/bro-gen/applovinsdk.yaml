@@ -7,7 +7,7 @@ headers:
     - AppLovinSDK.h
 
 private_typedefs:
-    'ALPostbackService *': NSObject
+    ALPostbackService: NSObject
 
 typedefs: {}
 
@@ -15,6 +15,7 @@ enums:
     ALConsentDialogState: {}
     ALAdViewDisplayErrorCode: {}
     ALAppTrackingTransparencyStatus: {}
+    MAErrorCode: {}
 classes:
     ALAd:
         methods:
@@ -244,6 +245,7 @@ classes:
     ALUserSegment: {}
     ALConsentFlowSettings: { }
     MAMediatedNetworkInfo: { }
+    MAError: { }
 protocols:
     ALAdDisplayDelegate:
         methods:
@@ -318,6 +320,10 @@ protocols:
             '-didFailToLoadAdForAdUnitIdentifier:withErrorCode:':
                 name: didFailToLoadAd
             '-didFailToDisplayAd:withErrorCode:':
+                name: didFailToDisplayAd
+            '-didFailToLoadAdForAdUnitIdentifier:withError:':
+                name: didFailToLoad
+            '-didFailToDisplayAd:withError:':
                 name: didFailToDisplayAd
     MAAdViewAdDelegate: {}
     MARewardedAdDelegate:

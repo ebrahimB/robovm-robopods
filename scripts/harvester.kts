@@ -50,7 +50,7 @@ val knownGroups = mutableMapOf<String, MutableList<String>>()
 val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     "AppLovinSDK" to { framework ->
         val artifact = "$framework.framework"
-        val artifactLocation = downloadFolder.extend("applovin-ios-sdk/$artifact")
+        val artifactLocation = downloadFolder.extend("applovin-ios-sdk/AppLovinSDK.xcframework/ios-arm64_armv7/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "applovinsdk/ios",
@@ -186,7 +186,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             },
             instruction = """
                 0. check latest version number at https://github.com/airbnb/lottie-ios/releases
-                1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Charts:
+                1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Lottie:
                   > echo 'github "airbnb/lottie-ios" "X.Y.Z"' > Cartfile
                   > carthage update --platform ios
                 2. expected location ${downloadFolder.extend("Lottie/Carthage/Build/iOS/")}
@@ -247,6 +247,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     registerFlurry(it, knownGroups)
     registerKochava(it, knownGroups)
     registerFyber(it, knownGroups)
+    registerMobileAdsMediationAdapters(it, knownGroups)
 }
 
 
@@ -273,7 +274,7 @@ args.forEach { arg ->
         } else knownGroups[arg]?.let {
             frameworkToProcess.addAll(it)
         } ?: run {
-            println("Error: unknown framework or gropup $arg")
+            println("Error: unknown framework or group $arg")
             printHelpAndExit(-1)
         }
     }
@@ -304,7 +305,7 @@ fun printHelpAndExit(code: Int) {
     println("   frameworkX : list of frameworks to process. if not specified all frameworks will be processed")
     println("Known frameworks:")
     knownFrameworks.keys.sorted().forEach { println("    $it") }
-    println("Known gropus:")
+    println("Known groups:")
     knownGroups.keys.sorted().forEach { group ->
         println("    $group:")
         knownGroups[group]?.forEach { println("        $it") }
@@ -473,7 +474,7 @@ fun updateModuleReadmeFileVersionString(framework: String, moduleReadmeFile: Fil
     synchronized(readmeFile) {
         var original: String? = null
         var replacement: String? = null
-        val readmeModuleName = moduleFolder.substringAfter('/').substringBeforeLast('/')
+        val readmeModuleName = File(moduleFolder).name
         moduleReadmeFile.requiresIsFile { "$framework is missing ${moduleReadmeFile.canonicalPath}" }
         moduleReadmeFile.readLines().map { line ->
             if (replacement == null && line.startsWith("|")) {
@@ -810,6 +811,86 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     }
 }
 
+fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (String) -> Unit>, groupRegistry: MutableMap<String, MutableList<String>>) {
+    val registry = GroupFrameworkRegister("FirebaseAdsAdapters", frameworkRegistry, groupRegistry)
+    val moduleReadmeFile = Path.of("firebase/ios-google-mobile-ads-adapters/README.md").toFile()
+    registry["AppLovinAdapter"] = { framework ->
+        val artifact = "$framework.framework"
+        val artifactLocation =
+            downloadFolder.extend("AppLovinAdapter/AppLovinAdapter.xcframework/ios-arm64_armv7/$artifact")
+        processFramework(
+            artifact = artifact,
+            moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-applovin",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "applovin-adapter.yaml",
+            version = {
+                downloadFolder.extend("AppLovinAdapter/CHANGELOG.md").readLines()
+                    .find { it.contains("Version ") }
+                    ?.let { it.substringAfter("Version ").substringBefore(" ").substringBefore("]") }
+                    ?: error("Failed to find out AppLovinAdapter version!")
+            },
+            instruction = """
+                1. download AppLovinAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/applovin#applovin-ios-mediation-adapter-changelog
+                2. extract and rename folder to AppLovinAdapter 
+                3. expected location ${downloadFolder.extend("AppLovinAdapter/AppLovinAdapter.xcframework/ios-arm64_armv7/")}
+            """.trimIndent(),
+            readmeFileVersionUpdater = { frm, modFolder, version ->
+                updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
+            },
+
+            )
+    }
+    registry["FacebookAdapter"] = { framework ->
+        val artifact = "$framework.framework"
+        val artifactLocation =
+            downloadFolder.extend("FacebookAdapter/FacebookAdapter.xcframework/ios-arm64_armv7/$artifact")
+        processFramework(
+            artifact = artifact,
+            moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-facebook",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "facebook-adapter.yaml",
+            version = {
+                downloadFolder.extend("FacebookAdapter/CHANGELOG.md").readLines()
+                    .find { it.contains("Version ") }
+                    ?.let { it.substringAfter("Version ").substringBefore(" ").substringBefore("]") }
+                    ?: error("Failed to find out FacebookAdapter version!")
+            },
+            instruction = """
+                1. download FacebookAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/facebook#facebook-ios-mediation-adapter-changelog
+                2. extract and rename folder to FacebookAdapter 
+                3. expected location ${downloadFolder.extend("FacebookAdapter/FacebookAdapter.xcframework/ios-arm64_armv7/")}
+            """.trimIndent(),
+            readmeFileVersionUpdater = { frm, modFolder, version ->
+                updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
+            },
+        )
+    }
+    registry["InMobiAdapter"] = { framework ->
+        val artifact = "$framework.framework"
+        val artifactLocation =
+            downloadFolder.extend("InMobiAdapter/InMobiAdapter.xcframework/ios-arm64_armv7/$artifact")
+        processFramework(
+            artifact = artifact,
+            moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-inmobi",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "inmobi-adapter.yaml",
+            version = {
+                downloadFolder.extend("InMobiAdapter/CHANGELOG.md").readLines()
+                    .find { it.contains("Version ") }
+                    ?.let { it.substringAfter("Version ").substringBefore(" ").substringBefore("]") }
+                    ?: error("Failed to find out InMobiAdapter version!")
+            },
+            instruction = """
+                1. download InMobiAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/inmobi#inmobi-ios-mediation-adapter-changelog
+                2. extract and rename folder to InMobiAdapter 
+                3. expected location ${downloadFolder.extend("InMobiAdapter/InMobiAdapter.xcframework/ios-arm64_armv7/")}
+            """.trimIndent(),
+            readmeFileVersionUpdater = { frm, modFolder, version ->
+                updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
+            },
+        )
+    }
+}
 
 fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, groupRegistry: MutableMap<String, MutableList<String>>) {
     val registry = GroupFrameworkRegister("Facebook", frameworkRegistry, groupRegistry)
@@ -823,7 +904,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
 
     val facebookVersion: String by lazy {
         extractVersionFromHeader("Facebook",
-            downloadFolder.extend("$facebookRoot/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"), "FBSDK_VERSION_STRING")
+            downloadFolder.extend("$facebookRoot/FBSDKCoreKit.framework/Headers/FBSDKCoreKitVersions.h"), "FBSDK_VERSION_STRING")
     }
 
     val facebookInstallInstruction = """
@@ -838,7 +919,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     """.trimIndent()
 
     val readmeUpdater = oneTimeReadmeUpdater { facebookVersion }
-    val moduleReadmeFile = Path.of("Facebook/README.md").toFile()
+    val moduleReadmeFile = Path.of("facebook/README.md").toFile()
     fun action(
         framework: String, moduleFolder: String, yaml: String,
         frameworkLocation: String = "$facebookRoot/$framework.framework",

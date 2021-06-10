@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALConsentFlowSettings : NSObject
 
 /**
- * Whether or not the flow should be enabled. You must also provide your privacy policy and terms of service URLs in this object, as well as the the NSUserTrackingUsageDescription string in the Info.plist.
+ * Whether or not the flow should be enabled. You must also provide your privacy policy and terms of service URLs in this object, as well as the NSUserTrackingUsageDescription string in the Info.plist.
  *
  * Defaults to the value entered into your Info.plist via AppLovinConsentFlowInfo->AppLovinConsentFlowEnabled.
  */

@@ -36,26 +36,28 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
+
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAppLinkReturnToRefererControllerDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKAppLinkReturnToRefererControllerDelegate/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKButtonImpressionTracking/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "analyticsParameters")
+    NSDictionary<NSString, ?> getAnalyticsParameters();
+    @Property(selector = "impressionTrackingEventName")
+    String getImpressionTrackingEventName();
+    @Property(selector = "impressionTrackingIdentifier")
+    String getImpressionTrackingIdentifier();
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("returnToRefererController:willNavigateToAppLink:")
-    public void willNavigateToAppLink(FBSDKAppLinkReturnToRefererController controller, FBSDKAppLink appLink) {}
-    @NotImplemented("returnToRefererController:didNavigateToAppLink:type:")
-    public void didNavigateToAppLink(FBSDKAppLinkReturnToRefererController controller, FBSDKAppLink url, FBSDKAppLinkNavigationType type) {}
+    
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

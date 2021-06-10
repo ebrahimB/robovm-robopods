@@ -68,6 +68,10 @@ import org.robovm.apple.coreanimation.*;
     public static native void setCurrentAccessToken(FBSDKAccessToken v);
     @Property(selector = "isCurrentAccessTokenActive")
     public static native boolean isCurrentAccessTokenIsActive();
+    @Property(selector = "tokenCache")
+    public static native FBSDKTokenCaching getTokenCache();
+    @Property(selector = "setTokenCache:")
+    public static native void setTokenCache(FBSDKTokenCaching v);
     @Property(selector = "appID")
     public native String getAppID();
     @Property(selector = "dataAccessExpirationDate")
@@ -135,8 +139,8 @@ import org.robovm.apple.coreanimation.*;
     public native boolean hasGranted(String permission);
     @Method(selector = "isEqualToAccessToken:")
     public native boolean isEqualToAccessToken(FBSDKAccessToken token);
-    @Method(selector = "refreshCurrentAccessToken:")
-    public static native void refreshCurrentAccessToken(@Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> completionHandler);
+    @Method(selector = "refreshCurrentAccessTokenWithCompletion:")
+    public static native void refreshCurrentAccessToken(@Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
     @Method(selector = "copy")
     public native NSObject copy();
     @Method(selector = "encodeWithCoder:")

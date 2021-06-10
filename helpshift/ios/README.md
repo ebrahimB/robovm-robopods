@@ -25,6 +25,9 @@ This RoboPod requires you to add the native `libHelpshift.a` which is part of di
 Add the following dependency to your `build.gradle`:
 
 ```
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
 dependencies {
    ... other dependencies ...
    compile "io.github.dkimitsa.robovm:robopods-helpshift-ios:$altpodsVersion"

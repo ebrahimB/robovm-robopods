@@ -44,7 +44,7 @@ public enum /*<name>*/Platform/*</name>*/ implements ValuedEnum {
     Unity(3L),
     AdMob(4L),
     MoPub(5L),
-    Other(6L);
+    ReactNative(6L);
     /*</values>*/
 
     /*<bind>*/

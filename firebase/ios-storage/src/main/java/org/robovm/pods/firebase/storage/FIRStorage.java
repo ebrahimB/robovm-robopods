@@ -77,6 +77,8 @@ import org.robovm.apple.dispatch.*;
     public native FIRStorageReference referenceForURL(String string);
     @Method(selector = "referenceWithPath:")
     public native FIRStorageReference reference(String string);
+    @Method(selector = "useEmulatorWithHost:port:")
+    public native void useEmulator(String host, @MachineSizedSInt long port);
     @Method(selector = "storage")
     public static native FIRStorage storage();
     @Method(selector = "storageForApp:")

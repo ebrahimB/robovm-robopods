@@ -107,6 +107,10 @@ classes:
                 constructor: true
                 name: create
     FBSDKShareVideoContent: {}
+    FBSDKGameRequestURLProvider:
+        methods:
+            '+createDeepLinkURLWithQueryDictionary:':
+                name: createDeepLinkURL
 
 protocols:
     FBSDKGameRequestDialogDelegate:

@@ -75,6 +75,15 @@ classes:
                 name: init
             '-initWithTracking:':
                 name: init
+            '-initWithPermissions:tracking:nonce:messengerPageId:':
+                name: init
+            '-initWithPermissions:tracking:nonce:messengerPageId:authType:':
+                name: init
+            '-initWithPermissions:tracking:messengerPageId:':
+                static_constructor_name: createUsingMessengerPageId
+                name: initUsingMessengerPageId
+            '-initWithPermissions:tracking:messengerPageId:authType:':
+                name: init
 protocols:
     FBSDKDeviceLoginManagerDelegate:
         methods:

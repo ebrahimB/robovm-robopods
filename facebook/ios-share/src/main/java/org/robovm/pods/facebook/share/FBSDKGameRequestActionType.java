@@ -45,7 +45,8 @@ public enum /*<name>*/FBSDKGameRequestActionType/*</name>*/ implements ValuedEnu
     None(0L),
     Send(1L),
     AskFor(2L),
-    Turn(3L);
+    Turn(3L),
+    Invite(4L);
     /*</values>*/
 
     /*<bind>*/
