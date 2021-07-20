@@ -32,9 +32,9 @@ This is the list of currently available AltPods. Click them to get more informat
 
 ## Version of AltPods to framework version mapping
 
-v1.17.0 - in development
+v1.18.0 - in development
 
-| Name                               | 1.17.0 |
+| Name                               | 1.18.0 |
 |------------------------------------|--------|
 | [AppCenter](appcenter/)            | 4.1.1  |
 | [AppLovinSDK](applovinsdk/)        | 10.3.0 |
