@@ -54,6 +54,8 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @NotImplemented("adDidRecordImpression:")
     public void adDidRecordImpression(GADFullScreenPresentingAd ad) {}
+    @NotImplemented("adDidRecordClick:")
+    public void adDidRecordClick(GADFullScreenPresentingAd ad) {}
     @NotImplemented("ad:didFailToPresentFullScreenContentWithError:")
     public void didFailToPresentFullScreenContent(GADFullScreenPresentingAd ad, NSError error) {}
     @NotImplemented("adDidPresentFullScreenContent:")

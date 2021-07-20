@@ -66,8 +66,6 @@ import org.robovm.apple.coreanimation.*;
     void didReceiveMediatedUnifiedNativeAd(GADMAdNetworkAdapter adapter, GADMediatedUnifiedNativeAd mediatedUnifiedNativeAd);
     @Method(selector = "adapterDidGetAdClick:")
     void didGetAdClick(GADMAdNetworkAdapter adapter);
-    @Method(selector = "adapterWillLeaveApplication:")
-    void willLeaveApplication(GADMAdNetworkAdapter adapter);
     @Method(selector = "adapterWillPresentFullScreenModal:")
     void willPresentFullScreenModal(GADMAdNetworkAdapter adapter);
     @Method(selector = "adapterWillDismissFullScreenModal:")
@@ -98,6 +96,9 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @Method(selector = "adapter:didFailInterstitial:")
     void didFailInterstitial(GADMAdNetworkAdapter adapter, NSError error);
+    @Deprecated
+    @Method(selector = "adapterWillLeaveApplication:")
+    void willLeaveApplication(GADMAdNetworkAdapter adapter);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

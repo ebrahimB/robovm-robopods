@@ -63,14 +63,15 @@ import org.robovm.apple.coreanimation.*;
     void willDismissModal(GADCustomEventBanner customEvent);
     @Method(selector = "customEventBannerDidDismissModal:")
     void widDismissModal(GADCustomEventBanner customEvent);
-    @Method(selector = "customEventBannerWillLeaveApplication:")
-    void willLeaveApplication(GADCustomEventBanner customEvent);
     /**
      * @deprecated Use customEventBannerWasClicked:.
      */
     @Deprecated
     @Method(selector = "customEventBanner:clickDidOccurInAd:")
     void clickDidOccurInAd(GADCustomEventBanner customEvent, UIView view);
+    @Deprecated
+    @Method(selector = "customEventBannerWillLeaveApplication:")
+    void willLeaveApplication(GADCustomEventBanner customEvent);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

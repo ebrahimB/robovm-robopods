@@ -56,6 +56,8 @@ import org.robovm.apple.coreanimation.*;
     void didFailToReceiveAd(GADBannerView bannerView, NSError error);
     @Method(selector = "bannerViewDidRecordImpression:")
     void didRecordImpression(GADBannerView bannerView);
+    @Method(selector = "bannerViewDidRecordClick:")
+    void didRecordClick(GADBannerView bannerView);
     @Method(selector = "bannerViewWillPresentScreen:")
     void willPresentScreen(GADBannerView bannerView);
     @Method(selector = "bannerViewWillDismissScreen:")

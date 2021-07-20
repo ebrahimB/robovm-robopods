@@ -62,9 +62,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setScene:", strongRef = true)
     public native void setScene(UIWindowScene v);
     @Property(selector = "keywords")
-    public native NSArray<?> getKeywords();
+    public native NSArray<NSString> getKeywords();
     @Property(selector = "setKeywords:")
-    public native void setKeywords(NSArray<?> v);
+    public native void setKeywords(NSArray<NSString> v);
     @Property(selector = "contentURL")
     public native String getContentURL();
     @Property(selector = "setContentURL:")

@@ -64,13 +64,14 @@ import org.robovm.apple.coreanimation.*;
     public void willDismiss(GADCustomEventInterstitial customEvent) {}
     @NotImplemented("customEventInterstitialDidDismiss:")
     public void didDismiss(GADCustomEventInterstitial customEvent) {}
-    @NotImplemented("customEventInterstitialWillLeaveApplication:")
-    public void willLeaveApplication(GADCustomEventInterstitial customEvent) {}
     /**
      * @deprecated Use customEventInterstitialDidReceiveAd:.
      */
     @Deprecated
     @NotImplemented("customEventInterstitial:didReceiveAd:")
     public void didReceiveAd(GADCustomEventInterstitial customEvent, NSObject ad) {}
+    @Deprecated
+    @NotImplemented("customEventInterstitialWillLeaveApplication:")
+    public void willLeaveApplication(GADCustomEventInterstitial customEvent) {}
     /*</methods>*/
 }

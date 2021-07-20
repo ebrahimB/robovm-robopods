@@ -58,6 +58,8 @@ import org.robovm.apple.coreanimation.*;
     public void didFailToReceiveAd(GADBannerView bannerView, NSError error) {}
     @NotImplemented("bannerViewDidRecordImpression:")
     public void didRecordImpression(GADBannerView bannerView) {}
+    @NotImplemented("bannerViewDidRecordClick:")
+    public void didRecordClick(GADBannerView bannerView) {}
     @NotImplemented("bannerViewWillPresentScreen:")
     public void willPresentScreen(GADBannerView bannerView) {}
     @NotImplemented("bannerViewWillDismissScreen:")

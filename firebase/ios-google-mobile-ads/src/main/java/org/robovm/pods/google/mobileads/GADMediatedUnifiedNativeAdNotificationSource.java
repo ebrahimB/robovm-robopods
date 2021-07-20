@@ -65,13 +65,14 @@ import org.robovm.apple.coreanimation.*;
     public static native void mediatedNativeAdWillDismissScreen(GADMediatedUnifiedNativeAd mediatedNativeAd);
     @Method(selector = "mediatedNativeAdDidDismissScreen:")
     public static native void mediatedNativeAdDidDismissScreen(GADMediatedUnifiedNativeAd mediatedNativeAd);
-    @Method(selector = "mediatedNativeAdWillLeaveApplication:")
-    public static native void mediatedNativeAdWillLeaveApplication(GADMediatedUnifiedNativeAd mediatedNativeAd);
     @Method(selector = "mediatedNativeAdDidPlayVideo:")
     public static native void mediatedNativeAdDidPlayVideo(GADMediatedUnifiedNativeAd mediatedNativeAd);
     @Method(selector = "mediatedNativeAdDidPauseVideo:")
     public static native void mediatedNativeAdDidPauseVideo(GADMediatedUnifiedNativeAd mediatedNativeAd);
     @Method(selector = "mediatedNativeAdDidEndVideoPlayback:")
     public static native void mediatedNativeAdDidEndVideoPlayback(GADMediatedUnifiedNativeAd mediatedNativeAd);
+    @Deprecated
+    @Method(selector = "mediatedNativeAdWillLeaveApplication:")
+    public static native void mediatedNativeAdWillLeaveApplication(GADMediatedUnifiedNativeAd mediatedNativeAd);
     /*</methods>*/
 }

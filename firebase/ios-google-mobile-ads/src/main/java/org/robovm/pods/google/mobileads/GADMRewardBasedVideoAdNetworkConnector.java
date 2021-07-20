@@ -68,10 +68,11 @@ import org.robovm.apple.coreanimation.*;
     void didCloseRewardBasedVideoAd(GADMRewardBasedVideoAdNetworkAdapter rewardBasedVideoAdAdapter);
     @Method(selector = "adapter:didRewardUserWithReward:")
     void didRewardUser(GADMRewardBasedVideoAdNetworkAdapter rewardBasedVideoAd, GADAdReward reward);
-    @Method(selector = "adapterWillLeaveApplication:")
-    void willLeaveApplication(GADMRewardBasedVideoAdNetworkAdapter rewardBasedVideoAdAdapter);
     @Method(selector = "adapter:didFailToLoadRewardBasedVideoAdwithError:")
     void didFailToLoadRewardBasedVideoAd(GADMRewardBasedVideoAdNetworkAdapter rewardBasedVideoAdAdapter, NSError error);
+    @Deprecated
+    @Method(selector = "adapterWillLeaveApplication:")
+    void willLeaveApplication(GADMRewardBasedVideoAdNetworkAdapter rewardBasedVideoAdAdapter);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/
