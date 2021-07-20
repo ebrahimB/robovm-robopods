@@ -12,6 +12,7 @@
 
 | RoboPods Version  | Facebook Version    |
 |-------------------|---------------------|
+| 1.18.0            | 4.8.0               |
 | 1.16.0            | 4.4.0               |
 
 ## Official website

@@ -61,8 +61,6 @@ import org.robovm.apple.foundation.*;
     public static native KVAContext getServerUnrestricted();
     @Property(selector = "nameString")
     public native String getNameString();
-    @Property(selector = "setNameString:")
-    public native void setNameString(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

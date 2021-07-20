@@ -1016,7 +1016,13 @@ fun registerKochava(frameworkRegistry: MutableMap<String, (String) -> Unit>, gro
             instruction = """
                 1. Download recent version of `Source code (zip)` from https://github.com/Kochava/Apple-XCFramework-$framework/releases
                 2. unpack and rename to ${downloadFolder.extend("Apple-XCFramework-$framework")}
-            """.trimIndent()
+            """.trimIndent(),
+            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
+                copyHeaders(frm, sourceHeadersDir, destinationHeadersDir)
+                // create a wrapper, as objc headers contains less data now that swift one
+                File(destinationHeadersDir,"$framework-wrap.h")
+                    .appendText("\n#include <TargetConditionals.h>\n#import <UIKit/UIKit.h>\n#import <$framework/$framework-Swift.h>")
+            },
         )
     }
     registry["KochavaCore"] = { framework -> action(framework, "kochava/ios-core", "kochava-core.yaml") }

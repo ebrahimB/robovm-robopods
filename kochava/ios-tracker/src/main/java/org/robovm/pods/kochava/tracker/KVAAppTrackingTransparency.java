@@ -48,6 +48,8 @@ import org.robovm.pods.kochava.core.*;
     protected KVAAppTrackingTransparency(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "authorizationStatusString")
+    public native String getAuthorizationStatusString();
     @Property(selector = "authorizationStatusWaitTimeInterval")
     public native double getAuthorizationStatusWaitTimeInterval();
     @Property(selector = "setAuthorizationStatusWaitTimeInterval:")

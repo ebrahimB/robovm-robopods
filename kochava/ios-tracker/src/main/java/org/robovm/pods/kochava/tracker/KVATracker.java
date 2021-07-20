@@ -109,14 +109,16 @@ import org.robovm.pods.kochava.core.*;
     @GlobalValue(symbol="KochavaTrackerVersionString", optional=true)
     public static native @org.robovm.rt.bro.annotation.Marshaler(StringMarshalers.AsAsciiZMarshaler.class) String getVersionString();
     
-    @Method(selector = "invalidate")
-    public native void invalidate();
     @Method(selector = "startWithAppGUIDString:")
     public native void startUsingAppGUID(String appGUIDString);
     @Method(selector = "startWithPartnerNameString:")
     public native void startUsingPartnerName(String partnerNameString);
+    @Method(selector = "invalidate")
+    public native void invalidate();
     @Method(selector = "executeAdvancedInstructionWithIdentifierString:valueObject:")
     public native void executeAdvancedInstruction(String identifierString, NSObject valueObject);
+    @Method(selector = "configureWith:context:")
+    public native void configure(NSObject withObject, KVAContext context);
     @Method(selector = "tracker")
     public static native KVATracker tracker();
     @Method(selector = "trackerWithStorageIdString:")

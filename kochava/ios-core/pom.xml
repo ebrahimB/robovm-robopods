@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-kochava-core-ios</artifactId>
-    <name>RoboPods KochavaCore module iOS v4.6.1</name>
+    <name>RoboPods KochavaCore module iOS v4.8.0</name>
     <packaging>jar</packaging>
 
     <licenses>

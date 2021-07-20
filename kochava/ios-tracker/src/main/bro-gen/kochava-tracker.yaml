@@ -81,6 +81,8 @@ classes:
             '+trackerWithStorageIdString:':
                 constructor: true
                 name: create
+            '-configureWith:context:':
+                name: configure
     KVATrackerProduct: {}
 protocols:
     KVADeeplinksProcessor:

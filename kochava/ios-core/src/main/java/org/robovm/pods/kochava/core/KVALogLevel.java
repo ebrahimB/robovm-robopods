@@ -33,54 +33,54 @@ import org.robovm.apple.foundation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC11KochavaCore11KVALogLevel")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/KVALogLevel/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements KVAAsForContextObjectProtocol, KVAFromObjectProtocol/*</implements>*/ {
+    /*<implements>*/implements KVAFromObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class KVALogLevelPtr extends Ptr<KVALogLevel, KVALogLevelPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(KVALogLevel.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public KVALogLevel() {}
+    protected KVALogLevel() {}
     protected KVALogLevel(Handle h, long handle) { super(h, handle); }
     protected KVALogLevel(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "never")
-    public static native KVALogLevel getNever();
-    @Property(selector = "error")
-    public static native KVALogLevel getError();
-    @Property(selector = "warn")
-    public static native KVALogLevel getWarn();
-    @Property(selector = "info")
-    public static native KVALogLevel getInfo();
-    @Property(selector = "debug")
-    public static native KVALogLevel getDebug();
-    @Property(selector = "trace")
-    public static native KVALogLevel getTrace();
-    @Property(selector = "always")
-    public static native KVALogLevel getAlways();
     @Property(selector = "nameString")
     public native String getNameString();
     @Property(selector = "setNameString:")
     public native void setNameString(String v);
-    @Property(selector = "levelInt")
-    public native @MachineSizedSInt long getLevelInt();
-    @Property(selector = "setLevelInt:")
-    public native void setLevelInt(@MachineSizedSInt long v);
-    @Property(selector = "os_log_type")
-    public native byte getOs_log_type();
-    @Property(selector = "setOs_log_type:")
-    public native void setOs_log_type(byte v);
+    @Property(selector = "osLogType")
+    public native int getOsLogType();
+    @Property(selector = "setOsLogType:")
+    public native void setOsLogType(int v);
+    @Property(selector = "description")
+    public native String getDescription();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "logLevel:visibleBoolWithVisibleMaximumLogLevel:")
-    public static native boolean isVisibleAtMaximumLogLevel(KVALogLevel logLevel, KVALogLevel visibleMaximumLogLevel);
     @Method(selector = "kva_asForContextObjectWithContext:")
-    public native NSObject kvaConvertForContext(KVAContext context);
+    public native NSObject kva_asForContextObjectWithContext(KVAContext context);
+    @Method(selector = "never")
+    public static native KVALogLevel never();
+    @Method(selector = "error")
+    public static native KVALogLevel error();
+    @Method(selector = "warn")
+    public static native KVALogLevel warn();
+    @Method(selector = "info")
+    public static native KVALogLevel info();
+    @Method(selector = "debug")
+    public static native KVALogLevel debug();
+    @Method(selector = "trace")
+    public static native KVALogLevel trace();
+    @Method(selector = "always")
+    public static native KVALogLevel always();
+    @Method(selector = "dictionary")
+    public static native NSDictionary<NSString, KVALogLevel> dictionary();
     @Method(selector = "kva_fromObject:")
     public static native KVALogLevel kva_fromObject(NSObject fromObject);
+    @Method(selector = "logLevel:visibleBoolWithVisibleMaximumLogLevel:")
+    public static native boolean isVisibleAtMaximumLogLevel(KVALogLevel logLevel, KVALogLevel visibleMaximumLogLevel);
     /*</methods>*/
 }

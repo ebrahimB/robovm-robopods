@@ -55,19 +55,11 @@ import org.robovm.apple.foundation.*;
     public native NSNumber getResponseBoolNumber();
     @Property(selector = "responseDate")
     public native NSDate getResponseDate();
-    @Property(selector = "shouldPromptDueToBeingNewBool")
-    public native boolean shouldPromptDueToBeingNewBool();
-    @Property(selector = "setShouldPromptDueToBeingNewBool:")
-    public native void setShouldPromptDueToBeingNewBool(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "didGrantDate")
     public native NSDate didGrantDate();
-    @Method(selector = "didPromptWithDidGrantBoolNumber:date:")
-    public native void didPrompt(NSNumber didGrantBoolNumber, NSDate date);
-    @Method(selector = "isEffectivelyReferringToTheSamePartner:")
-    public native boolean isEffectivelyReferringToTheSamePartner(KVAPartner anotherPartner);
     @Method(selector = "isGrantedBool")
     public native boolean isGrantedBool();
     @Method(selector = "isGrantedBoolNumber")
@@ -76,10 +68,6 @@ import org.robovm.apple.foundation.*;
     public native NSDate isGrantedDate();
     @Method(selector = "shouldBeIncludedInPromptBool")
     public native boolean shouldBeIncludedInPromptBool();
-    @Method(selector = "shouldPromptBool")
-    public native boolean shouldPromptBool();
-    @Method(selector = "willPrompt")
-    public native void willPrompt();
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_configureWith:context:")

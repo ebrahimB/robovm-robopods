@@ -3,7 +3,7 @@ framework: KochavaCore
 include: [foundation]
 clang_args: ['-x', 'objective-c']
 headers: 
-    - KochavaCore.h
+    - KochavaCore-wrap.h
 
 private_typedefs:
 
@@ -64,7 +64,7 @@ protocols:
     KVAEventSenderProvider: {}
     KVAFromObjectProtocol: {}
     KVASharedPropertyProvider: {}
-
+    KVAStartable: {}
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

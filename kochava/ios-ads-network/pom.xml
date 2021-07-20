@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-kochava-ads-ios</artifactId>
-    <name>RoboPods KochavaAdsNetwork module iOS v4.6.1</name>
+    <name>RoboPods KochavaAdsNetwork module iOS v4.8.0</name>
     <packaging>jar</packaging>
 
     <licenses>
