@@ -11,55 +11,62 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * This class represents an ad that has been served by AppLovin's mediation server and should be displayed to the user.
+ * This class represents an ad that has been served by AppLovin’s mediation server and that should be displayed to the user.
  */
 @interface MAAd : NSObject
 
 /**
- * Get format of this ad.
+ * The format of this ad.
  */
 @property (nonatomic, strong, readonly) MAAdFormat *format;
 
 /**
- * The ad unit id for which this ad was loaded.
+ * The ad unit ID for which this ad was loaded.
  */
 @property (nonatomic, copy, readonly) NSString *adUnitIdentifier;
 
 /**
- * The ad network for which this ad was loaded from.
+ * The ad network from which this ad was loaded.
+ *
+ * @see <a href="https://dash.applovin.com/documentation/mediation/ios/testing-networks/creative-debugger#network-name">MAX Integration Guide ⇒ iOS ⇒ Testing Networks ⇒ Creative Debugger ⇒ Network Name</a>
  */
 @property (nonatomic, copy, readonly) NSString *networkName;
 
 /**
- * The creative id tied to the ad, if any. It may not be available for some ad networks until @code -[MAFullscreenAdDelegate didDisplayAd:] @endcode is called.
+ * The creative ID tied to the ad, if any. It may not be available for some ad networks until the SDK calls @code -[MAAdDelegate didDisplayAd:] @endcode.
+ *
+ * @see <a href="https://dash.applovin.com/documentation/mediation/ios/testing-networks/creative-debugger#creative-id">MAX Integration Guide ⇒ iOS ⇒ Testing Networks ⇒ Creative Debugger ⇒ Creative ID</a>
+ *
+ * @since 6.15.0
  */
 @property (nonatomic, copy, readonly, nullable) NSString *creativeIdentifier;
 
 /**
- * The ad's revenue amount, or -1 if it does not exist.
+ * The ad’s revenue amount, or −1 if no revenue amount exists.
  */
 @property (nonatomic, assign, readonly) double revenue;
 
 /**
- * The placement to tie the ad's postbacks to.
+ * The placement name that you assign when you integrate each ad format, for granular reporting in postbacks (e.g. "Rewarded_Store", "Rewarded_LevelEnd").
  */
 @property (atomic, copy, readonly, nullable) NSString *placement;
 
 /**
- * Get an arbitrary ad value for a given key.
- * @param key The designated key to retrieve desired value for.
+ * Gets the ad value for a given key.
  *
- * @return An arbitrary ad value for a given key - or nil if does not exist.
+ * @param key The key for the value you want to retrieve.
+ *
+ * @return The ad value corresponding to @c key, or @c nil if no value for that key exists.
  */
 - (nullable NSString *)adValueForKey:(NSString *)key;
 
 /**
- * Get an arbitrary ad value for a given key.
+ * Gets the ad value for a given key.
  *
- * @param key The designated key to retrieve desired value for.
- * @param defaultValue The default value to return if the desired value for does not exist or is nil.
+ * @param key          The key for the value you want to retrieve.
+ * @param defaultValue The default value to return if the value for @c key does not exist or is @c nil.
  *
- * @return An arbitrary ad value for a given key - or the default value if does not exist.
+ * @return The ad value corresponding to @c key, or the default value if no value for that key exists.
  */
 - (nullable NSString *)adValueForKey:(NSString *)key defaultValue:(nullable NSString *)defaultValue;
 

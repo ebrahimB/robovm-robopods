@@ -58,6 +58,10 @@ import org.robovm.apple.coreanimation.*;
     public native MARewardedAdDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(MARewardedAdDelegate v);
+    @Property(selector = "revenueDelegate")
+    public native MAAdRevenueDelegate getRevenueDelegate();
+    @Property(selector = "setRevenueDelegate:", strongRef = true)
+    public native void setRevenueDelegate(MAAdRevenueDelegate v);
     @Property(selector = "isReady")
     public native boolean isReady();
     /*</properties>*/

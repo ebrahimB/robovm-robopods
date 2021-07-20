@@ -17,12 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALAdSize : NSObject
 
 /**
- * Represents the size of a 320x50 banner advertisement.
+ * Represents the size of a 320×50 banner advertisement.
  */
 @property (class, nonatomic, strong, readonly) ALAdSize *banner;
 
 /**
- * Represents the size of a 728x90 leaderboard advertisement (for tablets).
+ * Represents the size of a 728×90 leaderboard advertisement (for tablets).
  */
 @property (class, nonatomic, strong, readonly) ALAdSize *leader;
 

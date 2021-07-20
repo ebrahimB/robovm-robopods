@@ -38,6 +38,7 @@
 #import <AppLovinSDK/MAAd.h>
 #import <AppLovinSDK/MAAdDelegate.h>
 #import <AppLovinSDK/MAAdFormat.h>
+#import <AppLovinSDK/MAAdRevenueDelegate.h>
 #import <AppLovinSDK/MAAdViewAdDelegate.h>
 #import <AppLovinSDK/MAError.h>
 #import <AppLovinSDK/MAErrorCode.h>

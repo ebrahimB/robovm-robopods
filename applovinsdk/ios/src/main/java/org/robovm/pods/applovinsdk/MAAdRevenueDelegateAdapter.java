@@ -36,9 +36,9 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALPostbackDelegateAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAAdRevenueDelegateAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements ALPostbackDelegate/*</implements>*/ {
+    /*<implements>*/implements MAAdRevenueDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -51,9 +51,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("postbackService:didExecutePostback:")
-    public void didExecutePostback(ALPostbackService postbackService, NSURL postbackURL) {}
-    @NotImplemented("postbackService:didFailToExecutePostback:errorCode:")
-    public void didFailToExecutePostback(ALPostbackService postbackService, NSURL postbackURL, @MachineSizedSInt long errorCode) {}
+    @NotImplemented("didPayRevenueForAd:")
+    public void didPayRevenueForAd(MAAd ad) {}
     /*</methods>*/
 }

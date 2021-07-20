@@ -37,7 +37,7 @@ v1.18.0 - in development
 | Name                               | 1.18.0 |
 |------------------------------------|--------|
 | [AppCenter](appcenter/)            | 4.2.0  |
-| [AppLovinSDK](applovinsdk/)        | 10.3.0 |
+| [AppLovinSDK](applovinsdk/)        | 10.3.3 |
 | [Azure](azure/)                    | 3.1.3  |
 | [BranchMetrics](branchmetrics/)    | 1.39.3 |
 | [Charts](charts/)                  | 4.0.0  |

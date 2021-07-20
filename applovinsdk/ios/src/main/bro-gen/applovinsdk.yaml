@@ -6,9 +6,6 @@ framework: AppLovinSDK
 headers:
     - AppLovinSDK.h
 
-private_typedefs:
-    ALPostbackService: NSObject
-
 typedefs: {}
 
 enums:
@@ -149,10 +146,8 @@ classes:
                 name: loadNativeAdGroupOfCount
             '-loadNativeAdGroupOfCount:forZoneIdentifier:andNotify:':
                 name: loadNativeAdGroupOfCount
-    ALPostbackService:
-        methods:
-            '-dispatchPostbackAsync:andNotify:':
-                name: dispatchPostbackAsync
+    ALPostbackService: # there is no class, just forward declaration
+        extends: NSObject
     ALPrivacySettings: {}
     ALSdk:
         methods:
@@ -333,6 +328,7 @@ protocols:
     ALCEntity: {}
     ALCPublisher: {}
     ALCSubscriber: {}
+    MAAdRevenueDelegate: {}
 functions:
 
     # Make sure we don't miss any functions if new ones are introduced in a later version

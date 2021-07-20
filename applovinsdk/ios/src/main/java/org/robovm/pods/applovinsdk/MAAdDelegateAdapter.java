@@ -63,6 +63,10 @@ import org.robovm.apple.coreanimation.*;
     public void didClickAd(MAAd ad) {}
     @NotImplemented("didFailToDisplayAd:withError:")
     public void didFailToDisplayAd(MAAd ad, MAError error) {}
+    /**
+     * @deprecated This callback has been deprecated and will be removed in a future SDK version. Please use -[MAAdRevenueDelegate didPayRevenueForAd:] instead.
+     */
+    @Deprecated
     @NotImplemented("didPayRevenueForAd:")
     public void didPayRevenueForAd(MAAd ad) {}
     /**

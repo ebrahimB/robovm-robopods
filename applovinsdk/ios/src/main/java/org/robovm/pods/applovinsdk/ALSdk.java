@@ -80,6 +80,8 @@ import org.robovm.apple.coreanimation.*;
     public native void setMediationProvider(String v);
     @Property(selector = "availableMediatedNetworks")
     public native NSArray<MAMediatedNetworkInfo> getAvailableMediatedNetworks();
+    @Property(selector = "isInitialized")
+    public native boolean isInitialized();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -36,24 +36,25 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALPostbackDelegateAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALPostbackService/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements ALPostbackDelegate/*</implements>*/ {
+    /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
+    /*<constructors>*/
+    protected ALPostbackService() {}
+    protected ALPostbackService(Handle h, long handle) { super(h, handle); }
+    protected ALPostbackService(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("postbackService:didExecutePostback:")
-    public void didExecutePostback(ALPostbackService postbackService, NSURL postbackURL) {}
-    @NotImplemented("postbackService:didFailToExecutePostback:errorCode:")
-    public void didFailToExecutePostback(ALPostbackService postbackService, NSURL postbackURL, @MachineSizedSInt long errorCode) {}
+    
     /*</methods>*/
 }

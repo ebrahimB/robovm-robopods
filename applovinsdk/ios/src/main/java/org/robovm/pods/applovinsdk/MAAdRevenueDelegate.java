@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/MAAdDelegate/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/MAAdRevenueDelegate/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -49,36 +49,8 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "didLoadAd:")
-    void didLoadAd(MAAd ad);
-    @Method(selector = "didFailToLoadAdForAdUnitIdentifier:withError:")
-    void didFailToLoad(String adUnitIdentifier, MAError error);
-    @Method(selector = "didDisplayAd:")
-    void didDisplayAd(MAAd ad);
-    @Method(selector = "didHideAd:")
-    void didHideAd(MAAd ad);
-    @Method(selector = "didClickAd:")
-    void didClickAd(MAAd ad);
-    @Method(selector = "didFailToDisplayAd:withError:")
-    void didFailToDisplayAd(MAAd ad, MAError error);
-    /**
-     * @deprecated This callback has been deprecated and will be removed in a future SDK version. Please use -[MAAdRevenueDelegate didPayRevenueForAd:] instead.
-     */
-    @Deprecated
     @Method(selector = "didPayRevenueForAd:")
     void didPayRevenueForAd(MAAd ad);
-    /**
-     * @deprecated This callback has been deprecated and will be removed in a future SDK version. Please use -[MAAdDelegate didFailToLoadAdForAdUnitIdentifier:withError:] instead.
-     */
-    @Deprecated
-    @Method(selector = "didFailToLoadAdForAdUnitIdentifier:withErrorCode:")
-    void didFailToLoadAd(String adUnitIdentifier, @MachineSizedSInt long errorCode);
-    /**
-     * @deprecated This callback has been deprecated and will be removed in a future SDK version. Please use -[MAAdDelegate didFailToDisplayAd:withError:] instead.
-     */
-    @Deprecated
-    @Method(selector = "didFailToDisplayAd:withErrorCode:")
-    void didFailToDisplayAd(MAAd ad, @MachineSizedSInt long errorCode);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/
