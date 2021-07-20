@@ -55,6 +55,10 @@ import org.robovm.apple.foundation.*;
     public static native boolean isEnabled();
     @Property(selector = "setEnabled:")
     public static native void setEnabled(boolean v);
+    @Property(selector = "isNetworkRequestsAllowed")
+    public static native boolean isNetworkRequestsAllowed();
+    @Property(selector = "setNetworkRequestsAllowed:")
+    public static native void setNetworkRequestsAllowed(boolean v);
     @Property(selector = "logLevel")
     public static native MSACLogLevel getLogLevel();
     @Property(selector = "setLogLevel:")
