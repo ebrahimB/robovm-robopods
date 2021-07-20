@@ -50,7 +50,7 @@ v1.18.0 - in development
 | [Kochava](kochava/)                | 4.8.0  |
 | [Lottie](lottie/)                  | 3.2.3  |
 | [OneSignal](onesignal/)            | 3.5.3  |
-| [Pollfish](pollfish/)              | 6.0.1  |
+| [Pollfish](pollfish/)              | 6.1.0  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
 
 [Older versions](CHANGELOG.md)
