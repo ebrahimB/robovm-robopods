@@ -49,7 +49,7 @@ v1.18.0 - in development
 | [InMobi](inmobi/)                  | 9.2.0  |
 | [Kochava](kochava/)                | 4.8.0  |
 | [Lottie](lottie/)                  | 3.2.3  |
-| [OneSignal](onesignal/)            | 3.5.1  |
+| [OneSignal](onesignal/)            | 3.5.3  |
 | [Pollfish](pollfish/)              | 6.0.1  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
 
