@@ -100,6 +100,8 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(long placementId, IMNativeDelegate delegate);
     @Method(selector = "load")
     public native void load();
+    @Method(selector = "load:")
+    public native void load(NSData response);
     @Method(selector = "isReady")
     public native boolean isReady();
     @Method(selector = "reportAdClickAndOpenLandingPage")

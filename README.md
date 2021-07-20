@@ -46,7 +46,7 @@ v1.18.0 - in development
 | [Flurry](flurry/)                  | 11.2.1 |
 | [Fyber](fyber/)                    | 7.8.6  |
 | [HelpShift](helpshift/)            | 7.10.0 |
-| [InMobi](inmobi/)                  | 9.1.7  |
+| [InMobi](inmobi/)                  | 9.2.0  |
 | [Kochava](kochava/)                | 4.6.1  |
 | [Lottie](lottie/)                  | 3.2.3  |
 | [OneSignal](onesignal/)            | 3.5.1  |
