@@ -54,7 +54,8 @@ public enum /*<name>*/FBSDKCoreError/*</name>*/ implements NSErrorCode {
     AccessTokenRequired(10L),
     AppVersionUnsupported(11L),
     BrowserUnavailable(12L),
-    BridgeAPIInterruption(13L);
+    BridgeAPIInterruption(13L),
+    BridgeAPIResponse(14L);
     /*</values>*/
 
     /*<bind>*/static { Bro.bind(FBSDKCoreError.class); }/*</bind>*/

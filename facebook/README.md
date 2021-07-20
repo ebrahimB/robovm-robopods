@@ -4,15 +4,16 @@
 
 | RoboPod                           | Description                      | Version |
 |-----------------------------------|----------------------------------|---------|
-| [ios-core](ios-core/)             | Facebook Core                    | 11.0.0  |
-| [ios-login](ios-login/)           | Facebook iOS Login Kit           | 11.0.0  |
-| [ios-share](ios-share/)           | Facebook iOS Share Kit           | 11.0.0  |
-| [ios-audience](ios-audience/)     | Facebook iOS Audience Ad Network | 6.5.0   |
+| [ios-core](ios-core/)             | Facebook Core                    | 11.0.1  |
+| [ios-login](ios-login/)           | Facebook iOS Login Kit           | 11.0.1  |
+| [ios-share](ios-share/)           | Facebook iOS Share Kit           | 11.0.1  |
+| [ios-audience](ios-audience/)     | Facebook iOS Audience Ad Network | 6.5.1   |
 
 ## Versions
 
 | RoboPods Version  | Facebook Version    |
 |-------------------|---------------------|
+| 1.18.0            | 11.0.1              |
 | 1.17.0            | 11.0.0              |
 | 1.16.0            | 9.2.0               |
 | 1.15.0            | 9.0.1               |

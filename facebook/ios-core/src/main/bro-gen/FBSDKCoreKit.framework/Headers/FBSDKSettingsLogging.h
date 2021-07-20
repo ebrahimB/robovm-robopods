@@ -16,5 +16,17 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#define FBSDK_VERSION_STRING @"11.0.1"
-#define FBSDK_TARGET_PLATFORM_VERSION @"v11.0"
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+NS_SWIFT_NAME(SettingsLogging)
+@protocol FBSDKSettingsLogging
+
+- (void)logWarnings;
+- (void)logIfSDKSettingsChanged;
+- (void)recordInstall;
+
+@end
+
+NS_ASSUME_NONNULL_END

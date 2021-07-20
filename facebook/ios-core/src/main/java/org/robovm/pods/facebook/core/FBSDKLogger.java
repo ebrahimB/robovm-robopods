@@ -38,20 +38,25 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKCore/*</name>*/ 
-    extends /*<extends>*/CocoaUtility/*</extends>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKLogger/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
-    /*<constants>*/
-    public static final String Version = "11.0.1";
-    public static final String PlatformVersion = "v11.0";
-    /*</constants>*/
-    /*<constructors>*//*</constructors>*/
-    /*<properties>*//*</properties>*/
+    /*<constants>*//*</constants>*/
+    /*<constructors>*/
+    protected FBSDKLogger() {}
+    protected FBSDKLogger(Handle h, long handle) { super(h, handle); }
+    protected FBSDKLogger(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
+    /*<properties>*/
+    
+    /*</properties>*/
     /*<members>*//*</members>*/
-    /*<methods>*//*</methods>*/
+    /*<methods>*/
+    
+    /*</methods>*/
 }

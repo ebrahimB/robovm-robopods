@@ -36,22 +36,32 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKCore/*</name>*/ 
-    extends /*<extends>*/CocoaUtility/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
+/*</javadoc>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/FBSDKAdvertisingTrackingStatus/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Allowed(0L),
+    Disallowed(1L),
+    Unspecified(2L);
+    /*</values>*/
+
     /*<bind>*/
     /*</bind>*/
-    /*<constants>*/
-    public static final String Version = "11.0.1";
-    public static final String PlatformVersion = "v11.0";
-    /*</constants>*/
-    /*<constructors>*//*</constructors>*/
-    /*<properties>*//*</properties>*/
-    /*<members>*//*</members>*/
+    /*<constants>*//*</constants>*/
     /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/FBSDKAdvertisingTrackingStatus/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/FBSDKAdvertisingTrackingStatus/*</name>*/ valueOf(long n) {
+        for (/*<name>*/FBSDKAdvertisingTrackingStatus/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/FBSDKAdvertisingTrackingStatus/*</name>*/.class.getName());
+    }
 }

@@ -36,22 +36,28 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
+
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKCore/*</name>*/ 
-    extends /*<extends>*/CocoaUtility/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKSettingsLogging/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
-    /*<constants>*/
-    public static final String Version = "11.0.1";
-    public static final String PlatformVersion = "v11.0";
-    /*</constants>*/
-    /*<constructors>*//*</constructors>*/
-    /*<properties>*//*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*//*</methods>*/
+    /*<constants>*//*</constants>*/
+    /*<properties>*/
+    
+    /*</properties>*/
+    /*<methods>*/
+    @Method(selector = "logWarnings")
+    void logWarnings();
+    @Method(selector = "logIfSDKSettingsChanged")
+    void logIfSDKSettingsChanged();
+    @Method(selector = "recordInstall")
+    void recordInstall();
+    /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

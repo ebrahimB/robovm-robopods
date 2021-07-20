@@ -16,5 +16,34 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#define FBSDK_VERSION_STRING @"11.0.1"
-#define FBSDK_TARGET_PLATFORM_VERSION @"v11.0"
+#import <Foundation/Foundation.h>
+
+@class FBSDKAccessToken;
+@protocol FBSDKTokenCaching;
+
+/**
+ Internal Type exposed to facilitate transition to Swift.
+ API Subject to change or removal without warning. Do not use.
+
+ @warning UNSAFE - DO NOT USE
+ */
+NS_SWIFT_NAME(AccessTokenProviding)
+@protocol FBSDKAccessTokenProviding
+
+@property (class, nonatomic, copy, nullable, readonly) FBSDKAccessToken *currentAccessToken;
+@property (class, nonatomic, copy, nullable) id<FBSDKTokenCaching> tokenCache;
+
+@end
+
+/**
+ Internal Type exposed to facilitate transition to Swift.
+ API Subject to change or removal without warning. Do not use.
+
+ @warning UNSAFE - DO NOT USE
+ */
+NS_SWIFT_NAME(AccessTokenSetting)
+@protocol FBSDKAccessTokenSetting
+
+@property (class, nonatomic, copy, nullable) FBSDKAccessToken *currentAccessToken;
+
+@end

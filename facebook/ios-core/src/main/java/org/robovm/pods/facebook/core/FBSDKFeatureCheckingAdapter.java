@@ -38,20 +38,24 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKCore/*</name>*/ 
-    extends /*<extends>*/CocoaUtility/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKFeatureCheckingAdapter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements FBSDKFeatureChecking/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
-    /*<constants>*/
-    public static final String Version = "11.0.1";
-    public static final String PlatformVersion = "v11.0";
-    /*</constants>*/
+    /*<constants>*//*</constants>*/
     /*<constructors>*//*</constructors>*/
-    /*<properties>*//*</properties>*/
+    /*<properties>*/
+    
+    /*</properties>*/
     /*<members>*//*</members>*/
-    /*<methods>*//*</methods>*/
+    /*<methods>*/
+    @NotImplemented("isEnabled:")
+    public boolean isEnabled(FBSDKFeature feature) { return false; }
+    @NotImplemented("checkFeature:completionBlock:")
+    public void checkFeature(FBSDKFeature feature, @Block VoidBooleanBlock completionBlock) {}
+    /*</methods>*/
 }

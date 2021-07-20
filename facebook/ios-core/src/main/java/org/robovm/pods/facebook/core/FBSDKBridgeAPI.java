@@ -50,8 +50,8 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKBridgeAPI() {}
     protected FBSDKBridgeAPI(Handle h, long handle) { super(h, handle); }
     protected FBSDKBridgeAPI(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithProcessInfo:")
-    public FBSDKBridgeAPI(NSObject processInfo) { super((SkipInit) null); initObject(init(processInfo)); }
+    @Method(selector = "initWithProcessInfo:logger:urlOpener:bridgeAPIResponseFactory:frameworkLoader:appURLSchemeProvider:")
+    public FBSDKBridgeAPI(FBSDKOperatingSystemVersionComparing processInfo, FBSDKLogger logger, FBSDKURLOpener urlOpener, FBSDKBridgeAPIResponseCreating bridgeAPIResponseFactory, FBSDKDynamicFrameworkResolving frameworkLoader, FBSDKAppURLSchemeProviding appURLSchemeProvider) { super((SkipInit) null); initObject(init(processInfo, logger, urlOpener, bridgeAPIResponseFactory, frameworkLoader, appURLSchemeProvider)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "sharedInstance")
@@ -73,8 +73,8 @@ import org.robovm.apple.coreanimation.*;
         public static native NSString EventVersion();
     }
     
-    @Method(selector = "initWithProcessInfo:")
-    protected native @Pointer long init(NSObject processInfo);
+    @Method(selector = "initWithProcessInfo:logger:urlOpener:bridgeAPIResponseFactory:frameworkLoader:appURLSchemeProvider:")
+    protected native @Pointer long init(FBSDKOperatingSystemVersionComparing processInfo, FBSDKLogger logger, FBSDKURLOpener urlOpener, FBSDKBridgeAPIResponseCreating bridgeAPIResponseFactory, FBSDKDynamicFrameworkResolving frameworkLoader, FBSDKAppURLSchemeProviding appURLSchemeProvider);
     @Method(selector = "openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:")
     public native void openBridgeAPIRequest(FBSDKBridgeAPIRequestProtocol request, boolean useSafariViewController, UIViewController fromViewController, @Block VoidBlock1<FBSDKBridgeAPIResponse> completionBlock);
     @Method(selector = "openURLWithSafariViewController:sender:fromViewController:handler:")

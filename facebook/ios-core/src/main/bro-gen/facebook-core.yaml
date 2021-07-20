@@ -7,7 +7,6 @@ headers:
 
 private_typedefs:
     OS_dispatch_source: DispatchSource
-    'FBSDKOperatingSystemVersionComparing': NSObject
     'FBSDKUserIdentifier *': String
 
 enums:
@@ -20,7 +19,8 @@ enums:
     FBSDKAppLinkNavigationType: {}
     FBSDKBridgeAPIProtocolType: {}
     FBSDKProfilePictureMode: {}
-
+    FBSDKAdvertisingTrackingStatus: {prefix: FBSDKAdvertisingTracking}
+    FBSDKFeature: {}
 typed_enums:
     FBSDKAppEventName:
         class: FBSDKAppEventName
@@ -148,6 +148,8 @@ classes:
                 name: openURLWithSafariViewController
             '-openURL:sender:handler:':
                 name: openURL
+            '-initWithProcessInfo:logger:urlOpener:bridgeAPIResponseFactory:frameworkLoader:appURLSchemeProvider:':
+                name: init
     FBSDKBridgeAPIRequest:
         methods:
             '+bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:':
@@ -256,6 +258,8 @@ classes:
             '+showWithName:parameters:delegate:':
                 name: show
     FBSDKWebViewAppLinkResolver: {}
+    FBSDKSettingsLogging: {}
+    FBSDKLogger: { extends: NSObject } # forward declared without implementation
 
 protocols:
     FBSDKAppLinkResolving:
@@ -319,6 +323,19 @@ protocols:
                 name: didComplete
             '-webDialog:didFailWithError:':
                 name: didFail
+    FBSDKAccessTokenProviding: { skip_adapter: true}
+    FBSDKAccessTokenSetting: { skip_adapter: true}
+    FBSDKFeatureChecking:
+        methods:
+            '-checkFeature:completionBlock:':
+                name: checkFeature
+    FBSDKSettings: { name: FBSDKSettingsProtocol}
+    FBSDKSettingsLogging: {}
+    FBSDKAppURLSchemeProviding: { skip_adapter: true}
+    FBSDKBridgeAPIResponseCreating: { skip_adapter: true}
+    FBSDKDynamicFrameworkResolving: { skip_adapter: true}
+    FBSDKOperatingSystemVersionComparing: { skip_adapter: true}
+    FBSDKURLOpener: { skip_adapter: true}
 functions:
     fb_randomString:
         exclude: true

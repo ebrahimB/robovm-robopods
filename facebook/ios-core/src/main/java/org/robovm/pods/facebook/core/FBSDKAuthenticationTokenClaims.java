@@ -61,9 +61,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "nonce")
     public native String getNonce();
     @Property(selector = "exp")
-    public native @MachineSizedSInt long getExp();
+    public native double getExp();
     @Property(selector = "iat")
-    public native @MachineSizedSInt long getIat();
+    public native double getIat();
     @Property(selector = "sub")
     public native String getSub();
     @Property(selector = "name")
