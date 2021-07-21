@@ -38,35 +38,33 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/GIDGoogleUser/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/GIDConfiguration/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
-    /*<ptr>*/public static class GIDGoogleUserPtr extends Ptr<GIDGoogleUser, GIDGoogleUserPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(GIDGoogleUser.class); }/*</bind>*/
+    /*<ptr>*/public static class GIDConfigurationPtr extends Ptr<GIDConfiguration, GIDConfigurationPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(GIDConfiguration.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public GIDGoogleUser() {}
-    protected GIDGoogleUser(Handle h, long handle) { super(h, handle); }
-    protected GIDGoogleUser(SkipInit skipInit) { super(skipInit); }
+    protected GIDConfiguration() {}
+    protected GIDConfiguration(Handle h, long handle) { super(h, handle); }
+    protected GIDConfiguration(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithClientID:")
+    public GIDConfiguration(String clientID) { super((SkipInit) null); initObject(init(clientID)); }
+    @Method(selector = "initWithClientID:serverClientID:")
+    public GIDConfiguration(String clientID, String serverClientID) { super((SkipInit) null); initObject(init(clientID, serverClientID)); }
+    @Method(selector = "initWithClientID:serverClientID:hostedDomain:openIDRealm:")
+    public GIDConfiguration(String clientID, String serverClientID, String hostedDomain, String openIDRealm) { super((SkipInit) null); initObject(init(clientID, serverClientID, hostedDomain, openIDRealm)); }
     @Method(selector = "initWithCoder:")
-    public GIDGoogleUser(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
+    public GIDConfiguration(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "userID")
-    public native String getUserID();
-    @Property(selector = "profile")
-    public native GIDProfileData getProfile();
-    @Property(selector = "authentication")
-    public native GIDAuthentication getAuthentication();
-    @Property(selector = "grantedScopes")
-    public native NSArray<NSString> getGrantedScopes();
-    @Property(selector = "hostedDomain")
-    public native String getHostedDomain();
+    @Property(selector = "clientID")
+    public native String getClientID();
     @Property(selector = "serverClientID")
     public native String getServerClientID();
-    @Property(selector = "serverAuthCode")
-    public native String getServerAuthCode();
+    @Property(selector = "hostedDomain")
+    public native String getHostedDomain();
     @Property(selector = "openIDRealm")
     public native String getOpenIDRealm();
     @Property(selector = "supportsSecureCoding")
@@ -74,6 +72,12 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithClientID:")
+    protected native @Pointer long init(String clientID);
+    @Method(selector = "initWithClientID:serverClientID:")
+    protected native @Pointer long init(String clientID, String serverClientID);
+    @Method(selector = "initWithClientID:serverClientID:hostedDomain:openIDRealm:")
+    protected native @Pointer long init(String clientID, String serverClientID, String hostedDomain, String openIDRealm);
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

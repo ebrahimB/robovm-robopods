@@ -25,12 +25,25 @@ classes:
                 name: refreshTokens
             '-fetcherAuthorizer':
                 exclude: true # for now, as requires GTMSessionFetcher
+            '-doWithFreshTokens:':
+                name: doWithFreshTokens
     GIDGoogleUser: {}
     GIDProfileData:
         methods:
             '-imageURLWithDimension:':
                 name: getImageURL
-    GIDSignIn: {}
+    GIDSignIn:
+        methods:
+            '-restorePreviousSignInWithCallback:':
+                name: restorePreviousSignIn
+            '-signInWithConfiguration:presentingViewController:callback:':
+                name: signIn
+            '-signInWithConfiguration:presentingViewController:hint:callback:':
+                name: signIn
+            '-addScopes:presentingViewController:callback:':
+                name: addScopes
+            '-disconnectWithCallback:':
+                name: disconnect
     GIDSignInButton: {}
 
     # GTMSessionFetcher
@@ -68,7 +81,14 @@ classes:
             '+application:handleEventsForBackgroundURLSession:completionHandler:':
                 name: handleEventsForBackgroundURLSession
     GTMSessionFetcherUserDefaultsFactory: {}
-
+    GIDConfiguration:
+        methods:
+            '-initWithClientID:':
+                name: init
+            '-initWithClientID:serverClientID:':
+                name: init
+            '-initWithClientID:serverClientID:hostedDomain:openIDRealm:':
+                name: init
 protocols:
     GIDSignInDelegate:
         methods:

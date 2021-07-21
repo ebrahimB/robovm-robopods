@@ -802,7 +802,7 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     }
     registry["GoogleSignIn"] = { framework ->
         action(framework, "firebase/ios-google-sign-in", "firebase-google-sign-in.yaml",
-            frameworkLocation = "Firebase/GoogleSignIn/$framework.framework")
+            frameworkLocation = "Firebase/GoogleSignIn/GoogleSignIn.xcframework/ios-arm64_armv7/$framework.framework")
     }
     registry["UserMessagingPlatform"] = { framework ->
         action(framework, "firebase/ios-google-ump", "firebase-ump.yaml",

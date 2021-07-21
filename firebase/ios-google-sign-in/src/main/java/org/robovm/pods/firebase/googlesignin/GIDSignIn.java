@@ -51,48 +51,10 @@ import org.robovm.apple.coreanimation.*;
     protected GIDSignIn(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "sharedInstance")
+    public static native GIDSignIn getSharedInstance();
     @Property(selector = "currentUser")
     public native GIDGoogleUser getCurrentUser();
-    @Property(selector = "delegate")
-    public native GIDSignInDelegate getDelegate();
-    @Property(selector = "setDelegate:", strongRef = true)
-    public native void setDelegate(GIDSignInDelegate v);
-    @Property(selector = "presentingViewController")
-    public native UIViewController getPresentingViewController();
-    @Property(selector = "setPresentingViewController:", strongRef = true)
-    public native void setPresentingViewController(UIViewController v);
-    @Property(selector = "clientID")
-    public native String getClientID();
-    @Property(selector = "setClientID:")
-    public native void setClientID(String v);
-    @Property(selector = "scopes")
-    public native NSArray<?> getScopes();
-    @Property(selector = "setScopes:")
-    public native void setScopes(NSArray<?> v);
-    @Property(selector = "shouldFetchBasicProfile")
-    public native boolean shouldFetchBasicProfile();
-    @Property(selector = "setShouldFetchBasicProfile:")
-    public native void setShouldFetchBasicProfile(boolean v);
-    @Property(selector = "language")
-    public native String getLanguage();
-    @Property(selector = "setLanguage:")
-    public native void setLanguage(String v);
-    @Property(selector = "loginHint")
-    public native String getLoginHint();
-    @Property(selector = "setLoginHint:")
-    public native void setLoginHint(String v);
-    @Property(selector = "serverClientID")
-    public native String getServerClientID();
-    @Property(selector = "setServerClientID:")
-    public native void setServerClientID(String v);
-    @Property(selector = "openIDRealm")
-    public native String getOpenIDRealm();
-    @Property(selector = "setOpenIDRealm:")
-    public native void setOpenIDRealm(String v);
-    @Property(selector = "hostedDomain")
-    public native String getHostedDomain();
-    @Property(selector = "setHostedDomain:")
-    public native void setHostedDomain(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -100,15 +62,17 @@ import org.robovm.apple.coreanimation.*;
     public native boolean handleURL(NSURL url);
     @Method(selector = "hasPreviousSignIn")
     public native boolean hasPreviousSignIn();
-    @Method(selector = "restorePreviousSignIn")
-    public native void restorePreviousSignIn();
-    @Method(selector = "signIn")
-    public native void signIn();
+    @Method(selector = "restorePreviousSignInWithCallback:")
+    public native void restorePreviousSignIn(@Block VoidBlock2<GIDGoogleUser, NSError> callback);
+    @Method(selector = "signInWithConfiguration:presentingViewController:callback:")
+    public native void signIn(GIDConfiguration configuration, UIViewController presentingViewController, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
+    @Method(selector = "signInWithConfiguration:presentingViewController:hint:callback:")
+    public native void signIn(GIDConfiguration configuration, UIViewController presentingViewController, String hint, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
+    @Method(selector = "addScopes:presentingViewController:callback:")
+    public native void addScopes(NSArray<NSString> scopes, UIViewController presentingViewController, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
     @Method(selector = "signOut")
     public native void signOut();
-    @Method(selector = "disconnect")
-    public native void disconnect();
-    @Method(selector = "sharedInstance")
-    public static native GIDSignIn sharedInstance();
+    @Method(selector = "disconnectWithCallback:")
+    public native void disconnect(@Block VoidBlock1<NSError> callback);
     /*</methods>*/
 }

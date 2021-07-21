@@ -1,11 +1,17 @@
 /*
- * GIDAuthentication.h
- * Google Sign-In iOS SDK
+ * Copyright 2021 Google LLC
  *
- * Copyright 2014 Google Inc.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Use of this SDK is subject to the Google APIs Terms of Service:
- * https://developers.google.com/terms/
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 #import <Foundation/Foundation.h>
@@ -13,13 +19,12 @@
 @protocol GTMFetcherAuthorizationProtocol;
 @class GIDAuthentication;
 
-/// The callback block that takes a `GIDAuthentication`, or an error if attempt
-/// to refresh was unsuccessful.
-typedef void (^GIDAuthenticationHandler)(GIDAuthentication *authentication, NSError *error);
+NS_ASSUME_NONNULL_BEGIN
 
-/// The callback block that takes an access token, or an error if attempt to refresh was
-/// unsuccessful.
-typedef void (^GIDAccessTokenHandler)(NSString *accessToken, NSError *error);
+/// A callback block that takes a `GIDAuthentication` or an error if the attempt to refresh tokens
+/// was unsuccessful.
+typedef void (^GIDAuthenticationAction)(GIDAuthentication *_Nullable authentication,
+                                        NSError *_Nullable error);
 
 /// This class represents the OAuth 2.0 entities needed for sign-in.
 @interface GIDAuthentication : NSObject <NSSecureCoding>
@@ -39,10 +44,10 @@ typedef void (^GIDAccessTokenHandler)(NSString *accessToken, NSError *error);
 /// An OpenID Connect ID token that identifies the user. Send this token to your server to
 /// authenticate the user there. For more information on this topic, see
 /// https://developers.google.com/identity/sign-in/ios/backend-auth
-@property(nonatomic, readonly) NSString *idToken;
+@property(nonatomic, readonly, nullable) NSString *idToken;
 
 /// The estimated expiration date of the ID token.
-@property(nonatomic, readonly) NSDate *idTokenExpirationDate;
+@property(nonatomic, readonly, nullable) NSDate *idTokenExpirationDate;
 
 /// Gets a new authorizer for `GTLService`, `GTMSessionFetcher`, or `GTMHTTPFetcher`.
 ///
@@ -52,14 +57,10 @@ typedef void (^GIDAccessTokenHandler)(NSString *accessToken, NSError *error);
 /// Get a valid access token and a valid ID token, refreshing them first if they have expired or are
 /// about to expire.
 ///
-/// @param handler A callback block that takes a `GIDAuthentication`, or an
-///                error if attempt to refresh was unsuccessful.
-- (void)getTokensWithHandler:(GIDAuthenticationHandler)handler;
-
-/// Refreshes the access token and the ID token using the refresh token.
-///
-/// @param handler A callback block that takes a `GIDAuthentication`, or an
-///                error if attempt to refresh was unsuccessful.
-- (void)refreshTokensWithHandler:(GIDAuthenticationHandler)handler;
+/// @param action A callback block that takes a `GIDAuthentication` or an error if the attempt to
+///     refresh tokens was unsuccessful.  The block will be called asynchronously on the main queue.
+- (void)doWithFreshTokens:(GIDAuthenticationAction)action;
 
 @end
+
+NS_ASSUME_NONNULL_END

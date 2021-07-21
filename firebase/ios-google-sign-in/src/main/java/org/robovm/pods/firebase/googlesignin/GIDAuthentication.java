@@ -70,10 +70,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "getTokensWithHandler:")
-    public native void getTokens(@Block VoidBlock2<GIDAuthentication, NSError> handler);
-    @Method(selector = "refreshTokensWithHandler:")
-    public native void refreshTokens(@Block VoidBlock2<GIDAuthentication, NSError> handler);
+    @Method(selector = "doWithFreshTokens:")
+    public native void doWithFreshTokens(@Block VoidBlock2<GIDAuthentication, NSError> action);
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")
