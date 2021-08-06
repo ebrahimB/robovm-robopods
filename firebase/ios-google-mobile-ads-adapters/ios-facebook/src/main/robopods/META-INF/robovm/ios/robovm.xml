@@ -1,5 +1,5 @@
 <config>
     <frameworks>
-        <framework>AppLovinAdapter</framework>
+        <framework>FacebookAdapter</framework>
     </frameworks>
 </config>
