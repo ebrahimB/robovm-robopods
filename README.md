@@ -28,6 +28,7 @@ This is the list of currently available AltPods. Click them to get more informat
 | [OneSignal](onesignal/)            | OneSignal is a free push notification service for mobile apps                          |
 | [Pollfish](pollfish/)              | Simple Surveys                                                                         |
 | [SAMKeychain](samkeychain/)        | SAMKeychain is a simple wrapper for accessing accounts, getting passwords, setting passwords, and deleting passwords using the system Keychain on Mac OS X and iOS|
+| [UnityAds](unitryads/)             | Unity Ads is a comprehensive monetization platform for Unity, iOS, and Android developers|
 
 
 ## Version of AltPods to framework version mapping
@@ -52,5 +53,6 @@ v1.19.0 - in development
 | [OneSignal](onesignal/)            | 3.5.3  |
 | [Pollfish](pollfish/)              | 6.1.0  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
+| [UnityAds](unityads/)              | 3.7.5  |
 
 [Older versions](CHANGELOG.md)

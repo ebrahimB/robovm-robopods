@@ -208,7 +208,8 @@
         <module>inmobi</module>
         <module>appcenter</module>
         <module>azure</module>
-        <module>kochava</module>     
+        <module>kochava</module>
+        <module>unityads</module>
         <!-- Firebase to be kept last, as its Ads adapters depend on facebook/inmobi/applovinsdk -->
         <module>firebase</module>
     </modules>

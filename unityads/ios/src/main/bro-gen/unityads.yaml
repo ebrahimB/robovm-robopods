@@ -1,0 +1,275 @@
+package: org.robovm.pods.unityads
+include: [foundation, uikit, coregraphics, coreanimation]
+clang_args: ['-x', 'objective-c']
+framework: UnityAds
+#exclude_deprecated: true
+headers:
+    - UnityAds.h
+
+typedefs: {}
+
+private_typedefs:
+    UADSBannerAdRefreshView: NSObject
+
+enums:
+    UnityAdsFinishState: { prefix: kUnityAdsFinishState }
+    UnityAdsError: { prefix: kUnityAdsError }
+    UnityAdsInitializationError: { prefix: kUnityInitializationError }
+    UnityServicesError: { prefix: kUnityServicesErrorIn }
+    UnityAdsPlacementState: { prefix: kUnityAdsPlacementState }
+    UnityAdsLoadError: { prefix: kUnityAdsLoadError }
+    UnityAdsShowError: { prefix: kUnityShowError }
+    UnityAdsShowCompletionState: { prefix: kUnityShowCompletionState }
+    UnityAdsBannerPosition: { prefix: kUnityAdsBannerPosition }
+    UADSBannerErrorCode: { }
+    UnityMonetizationPlacementContentState: { prefix: kPlacementContentState }
+    UMONNativePromoShowType: { prefix: kNativePromoShowType }
+    UnityAnalyticsAcquisitionType: { prefix: kUnityAnalyticsAcquisitionType }
+    UPURTransactionError: { prefix: kUPURTransactionError }
+    UPURStore: { prefix: kUPURStore }
+    UnityAdsPurchasingEvent: { prefix: kUnityAdsPurchasingEvent }
+classes:
+    UADSBannerError:
+        skip_def_constructor: true
+        methods:
+            '-initWithCode:userInfo:':
+                name: init
+    UADSBannerView:
+        methods:
+            '-initWithPlacementId:size:':
+                name: init
+    UADSBaseOptions:
+        properties:
+            'dictionary':
+                getter: dictionary
+    UADSInAppPurchaseMetaData: { }
+    UADSLoadOptions: { }
+    UADSMediationMetaData: { }
+    UADSMetaData:
+        methods:
+            '-initWithCategory:':
+                name: init
+            '-setRaw:value:':
+                name: setRaw
+    UADSPlayerMetaData: { }
+    UADSPurchasing:
+        methods:
+            '+dispatchReturnEvent:withPayload:':
+                name: dispatchReturnEvent
+    UADSShowOptions: { }
+    UANAApiAnalytics: { }
+    UMONCustomEvent:
+        methods:
+            '-initWithBuilder:':
+                name: init
+    UMONCustomEventBuilder: { }
+    UMONItem:
+        methods:
+            '-initWithBuilder:':
+                name: init
+    UMONItemBuilder: { }
+    UMONNativePromoAdapter:
+        methods:
+            '-initWithPromo:':
+                name: init
+    UMONPlacementContent:
+        methods:
+            '-initWithPlacementId:withParams:':
+                name: init
+            '-sendCustomEvent:withUserInfo:':
+                name: sendCustomEvent
+            '-sendCustomEventWithType:':
+                name: sendCustomEvent
+    UMONPromoAdPlacementContent: {}
+    UMONPromoMetaData:
+        methods:
+            '-initWithBuilder:':
+                name: init
+    UMONPromoMetaDataBuilder: { }
+    UMONRewardablePlacementContent: { }
+    UMONShowAdPlacementContent:
+        methods:
+            '-show:withDelegate:':
+                name: show
+    UPURProduct: { }
+    UPURProductBuilder: { }
+    UPURTransactionDetails: { }
+    UPURTransactionDetailsBuilder:
+        methods:
+            '-putExtra:value:':
+                name: putExtra
+    UPURTransactionErrorDetails: { }
+    UPURTransactionErrorDetailsBuilder:
+        methods:
+            '-putExtra:value:':
+                name: putExtra
+    USRVJsonStorage:
+        methods:
+            '-set:value:':
+                name: set
+            '-getKeys:recursive:':
+                name: getKeys
+    USRVUnityPurchasing: { }
+    UnityAds:
+        methods:
+            '+initialize:delegate:':
+                name: initialize
+            '+initialize:initializationDelegate:':
+                name: initialize
+            '+initialize:delegate:testMode:':
+                name: initialize
+            '+initialize:testMode:':
+                name: initialize
+            '+initialize:testMode:initializationDelegate:':
+                name: initialize
+            '+initialize:delegate:testMode:enablePerPlacementLoad:':
+                name: initialize
+            '+initialize:testMode:enablePerPlacementLoad:':
+                name: initialize
+            '+initialize:testMode:enablePerPlacementLoad:initializationDelegate:':
+                name: initialize
+            '+load:loadDelegate:':
+                name: load
+            '+load:options:loadDelegate:':
+                name: load
+            '+show:placementId:':
+                name: show
+            '+show:placementId:showDelegate:':
+                name: show
+            '+show:placementId:options:':
+                name: show
+            '+show:placementId:options:showDelegate:':
+                name: show
+    UnityAdsBanner: { }
+    UnityAdsDelegateUtil:
+        methods:
+            '+unityAdsDidError:withMessage:':
+                name: unityAdsDidError
+            '+unityAdsDidFinish:withFinishState:':
+                name: unityAdsDidFinish
+            '+unityAdsPlacementStateChange:oldState:newState:':
+                name: unityAdsPlacementStateChange
+    UnityAnalytics:
+        methods:
+            '+onItemAcquired:itemId:transactionContext:level:itemType:amount:balance:acquisitionType:':
+                name: onItemAcquired
+            '+onItemSpent:itemId:transactionContext:level:itemType:amount:balance:acquisitionType:':
+                name: onItemSpent
+            '+onAdComplete:network:rewarded:':
+                name: onAdComplete
+            '+onIapTransaction:amount:currency:isPromo:receipt:':
+                name: onIapTransaction
+    UnityMonetization:
+        methods:
+            '+initialize:delegate:':
+                name: initialize
+            '+initialize:delegate:testMode:':
+                name: initialize
+    UnityServices:
+        methods:
+            '+initialize:delegate:testMode:usePerPlacementLoad:initializationDelegate:':
+                name: initialize
+            '+createExpectedParametersString:current:received:':
+                name: createExpectedParametersString
+    UnityServicesListener: { }
+
+protocols:
+    UADSBannerAdRefreshViewDelegate:
+        methods:
+            '-unityAdsRefreshBannerDidError:message:':
+                name: unityAdsRefreshBannerDidError
+    UADSBannerViewDelegate:
+        methods:
+            '-bannerViewDidError:error:':
+                name: bannerViewDidError
+    UADSDictionaryConvertible: { }
+    UADSPurchasingDelegate: { }
+    UANAEngineDelegate: { }
+    UMONShowAdDelegate:
+        methods:
+            '-unityAdsDidFinish:withFinishState:':
+                name: unityAdsDidFinish
+    USRVUnityPurchasingDelegate:
+        methods:
+            '-purchaseProduct:completionHandler:errorHandler:userInfo:':
+                name: purchaseProduct
+    UnityAdsBannerDelegate:
+        methods:
+            '-unityAdsBannerDidLoad:view:':
+                name: unityAdsBannerDidLoad
+    UnityAdsDelegate:
+        methods:
+            '-unityAdsDidError:withMessage:':
+                name: unityAdsDidError
+            '-unityAdsDidFinish:withFinishState:':
+                name: unityAdsDidFinish
+    UnityAdsExtendedDelegate:
+        methods:
+            '-unityAdsPlacementStateChanged:oldState:newState:':
+                name: unityAdsPlacementStateChanged
+    UnityAdsInitializationDelegate:
+        methods:
+            '-initializationFailed:withMessage:':
+                name: initializationFailed
+    UnityAdsLoadDelegate:
+        methods:
+            '-unityAdsAdFailedToLoad:withError:withMessage:':
+                name: unityAdsAdFailedToLoad
+    UnityAdsShowDelegate:
+        methods:
+            '-unityAdsShowComplete:withFinishState:':
+                name: unityAdsShowComplete
+            '-unityAdsShowFailed:withError:withMessage:':
+                name: unityAdsShowFailed
+    UnityMonetizationDelegate:
+        methods:
+            '-placementContentReady:placementContent:':
+                name: placementContentReady
+            '-placementContentStateDidChange:placementContent:previousState:newState:':
+                name: placementContentStateDidChange
+    UnityServicesDelegate:
+        methods:
+            '-unityServicesDidError:withMessage:':
+                name: unityServicesDidError
+
+functions:
+    NSStringFromPlacementContentState:
+        class: UnityMonetizationPlacementContentState
+        name: toString
+    PlacementContentStateFromNSString:
+        class: UnityMonetizationPlacementContentState
+        name: fromString
+    NSStringFromUnityAnalyticsAcquisitionType:
+        class: UnityAnalyticsAcquisitionType
+        name: toString
+    NSStringFromUPURTransactionError:
+        class: UPURTransactionError
+        name: toString
+    NSStringFromUPURAppStore:
+        class: UPURStore
+        name: toString
+
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+    UnityAdsModuleVersionNumber:
+        readonly: true
+        name: getVersionNumber
+        class: UnityAds
+    UnityAdsModuleVersionString:
+        name: getVersionString
+        class: UnityAds
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'
