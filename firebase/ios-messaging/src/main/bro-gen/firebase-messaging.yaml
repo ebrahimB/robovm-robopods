@@ -39,6 +39,8 @@ classes:
         methods:
             '-populateNotificationContent:withContentHandler:':
                 name: populateNotificationContent
+            '-exportDeliveryMetricsToBigQueryWithMessageInfo:':
+                name: exportDeliveryMetricsToBigQuery
     FIRMessagingMessageInfo: {}
     FIRMessagingRemoteMessage: {}
     FIRInstanceID:

@@ -54,5 +54,7 @@ import org.robovm.apple.usernotifications.*;
     /*<methods>*/
     @Method(selector = "populateNotificationContent:withContentHandler:")
     public native void populateNotificationContent(UNMutableNotificationContent content, @Block VoidBlock1<UNNotificationContent> contentHandler);
+    @Method(selector = "exportDeliveryMetricsToBigQueryWithMessageInfo:")
+    public native void exportDeliveryMetricsToBigQuery(NSDictionary<?, ?> info);
     /*</methods>*/
 }
