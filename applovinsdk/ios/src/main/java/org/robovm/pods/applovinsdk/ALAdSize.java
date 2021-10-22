@@ -54,6 +54,8 @@ import org.robovm.apple.coreanimation.*;
     public static native ALAdSize getBanner();
     @Property(selector = "leader")
     public static native ALAdSize getLeader();
+    @Property(selector = "mrec")
+    public static native ALAdSize getMrec();
     @Property(selector = "interstitial")
     public static native ALAdSize getInterstitial();
     @Property(selector = "crossPromo")
@@ -64,12 +66,6 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @Property(selector = "height")
     public native @MachineSizedFloat double getHeight();
-    /**
-     * @deprecated MRECs have been deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "mrec")
-    public static native ALAdSize getMrec();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
