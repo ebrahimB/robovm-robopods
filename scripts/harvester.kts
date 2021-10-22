@@ -383,7 +383,7 @@ fun interactiveValidateHeaderFolder(framework: String, sourceHeadersDir: File, i
         println(text)
         if (optional) {
             println("\n\nEnter Y to retry, ENTER to skip")
-            val line = readLine()?.toUpperCase()
+            val line = readLine()?.uppercase()
             if (line != "Y")
                 break
         } else {
