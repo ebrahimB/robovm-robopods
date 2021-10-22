@@ -31,6 +31,8 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
+import org.robovm.apple.linkpresentation.*;
+import org.robovm.apple.coregraphics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -249,26 +251,70 @@ import org.robovm.apple.uniformtypeid.*;
     public native void logout();
     @Method(selector = "logoutWithCallback:")
     public native void logout(@Block VoidBlock2<Boolean, NSError> callback);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "loadRewardsWithCallback:")
     public native void loadRewards(@Block VoidBlock2<Boolean, NSError> callback);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "redeemRewards:")
     public native void redeemRewards(@MachineSizedSInt long count);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "redeemRewards:callback:")
     public native void redeemRewards(@MachineSizedSInt long count, @Block VoidBlock2<Boolean, NSError> callback);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "redeemRewards:forBucket:")
     public native void redeemRewards(@MachineSizedSInt long count, String bucket);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "redeemRewards:forBucket:callback:")
     public native void redeemRewards(@MachineSizedSInt long count, String bucket, @Block VoidBlock2<Boolean, NSError> callback);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "getCredits")
     public native @MachineSizedSInt long getCredits();
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "getCreditsForBucket:")
     public native @MachineSizedSInt long getCreditsForBucket(String bucket);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "getCreditHistoryWithCallback:")
     public native void getCreditHistory(@Block VoidBlock2<NSArray<?>, NSError> callback);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "getCreditHistoryForBucket:andCallback:")
     public native void getCreditHistory(String bucket, @Block VoidBlock2<NSArray<?>, NSError> callback);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "getCreditHistoryAfter:number:order:andCallback:")
     public native void getCreditHistory(String creditTransactionId, @MachineSizedSInt long length, BranchCreditHistoryOrder order, @Block VoidBlock2<NSArray<?>, NSError> callback);
+    /**
+     * @deprecated Referral feature has been deprecated. This is no-op.
+     */
+    @Deprecated
     @Method(selector = "getCreditHistoryForBucket:after:number:order:andCallback:")
     public native void getCreditHistory(String bucket, String creditTransactionId, @MachineSizedSInt long length, BranchCreditHistoryOrder order, @Block VoidBlock2<NSArray<?>, NSError> callback);
     @Method(selector = "userCompletedAction:")
@@ -450,10 +496,6 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String branchKey();
     @Method(selector = "branchKeyIsSet")
     public static native boolean branchKeyIsSet();
-    @Method(selector = "setEnableFingerprintIDInCrashlyticsReports:")
-    public static native void setEnableFingerprintIDInCrashlyticsReports(boolean enabled);
-    @Method(selector = "enableFingerprintIDInCrashlyticsReports")
-    public static native boolean enableFingerprintIDInCrashlyticsReports();
     @Method(selector = "getBranchActivityItemWithParams:")
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params);
     @Method(selector = "getBranchActivityItemWithParams:feature:")

@@ -31,6 +31,8 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
+import org.robovm.apple.linkpresentation.*;
+import org.robovm.apple.coregraphics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -39,7 +41,7 @@ import org.robovm.apple.uniformtypeid.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/BranchShareLink/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements UIActivityItemSource/*</implements>*/ {
 
     /*<ptr>*/public static class BranchShareLinkPtr extends Ptr<BranchShareLink, BranchShareLinkPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(BranchShareLink.class); }/*</bind>*/
@@ -60,6 +62,16 @@ import org.robovm.apple.uniformtypeid.*;
     public native NSURL getPlaceholderURL();
     @Property(selector = "setPlaceholderURL:")
     public native void setPlaceholderURL(NSURL v);
+    /**
+     * @since Available in iOS 13.0 and later.
+     */
+    @Property(selector = "lpMetaData")
+    public native LPLinkMetadata getLpMetaData();
+    /**
+     * @since Available in iOS 13.0 and later.
+     */
+    @Property(selector = "setLpMetaData:")
+    public native void setLpMetaData(LPLinkMetadata v);
     @Property(selector = "shareText")
     public native String getShareText();
     @Property(selector = "setShareText:")
@@ -88,6 +100,14 @@ import org.robovm.apple.uniformtypeid.*;
     public native BranchShareLinkDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(BranchShareLinkDelegate v);
+    @Property(selector = "completion")
+    public native @Block VoidBlock2<NSString, Boolean> getCompletion();
+    @Property(selector = "setCompletion:")
+    public native void setCompletion(@Block VoidBlock2<NSString, Boolean> v);
+    @Property(selector = "completionError")
+    public native @Block VoidBlock3<NSString, Boolean, NSError> getCompletionError();
+    @Property(selector = "setCompletionError:")
+    public native void setCompletionError(@Block VoidBlock3<NSString, Boolean, NSError> v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -97,5 +117,20 @@ import org.robovm.apple.uniformtypeid.*;
     public native NSArray<UIActivityItemProvider> activityItems();
     @Method(selector = "presentActivityViewControllerFromViewController:anchor:")
     public native void presentActivityViewController(UIViewController viewController, NSObject anchorViewOrButtonItem);
+    @Method(selector = "activityViewControllerPlaceholderItem:")
+    public native NSObject getPlaceholderItem(UIActivityViewController activityViewController);
+    @Method(selector = "activityViewController:itemForActivityType:")
+    public native NSObject getItem(UIActivityViewController activityViewController, String activityType);
+    @Method(selector = "activityViewController:subjectForActivityType:")
+    public native String getSubject(UIActivityViewController activityViewController, String activityType);
+    @Method(selector = "activityViewController:dataTypeIdentifierForActivityType:")
+    public native String getDataTypeIdentifier(UIActivityViewController activityViewController, String activityType);
+    @Method(selector = "activityViewController:thumbnailImageForActivityType:suggestedSize:")
+    public native UIImage getThumbnailImage(UIActivityViewController activityViewController, String activityType, @ByVal CGSize size);
+    /**
+     * @since Available in iOS 13.0 and later.
+     */
+    @Method(selector = "activityViewControllerLinkMetadata:")
+    public native LPLinkMetadata activityViewControllerLinkMetadata(UIActivityViewController activityViewController);
     /*</methods>*/
 }

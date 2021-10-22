@@ -31,6 +31,8 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
+import org.robovm.apple.linkpresentation.*;
+import org.robovm.apple.coregraphics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -62,18 +64,18 @@ import org.robovm.apple.uniformtypeid.*;
     public native String getAppVersion();
     @Property(selector = "setAppVersion:")
     public native void setAppVersion(String v);
-    @Property(selector = "deviceFingerprintID")
-    public native String getDeviceFingerprintID();
-    @Property(selector = "setDeviceFingerprintID:")
-    public native void setDeviceFingerprintID(String v);
+    @Property(selector = "randomizedDeviceToken")
+    public native String getRandomizedDeviceToken();
+    @Property(selector = "setRandomizedDeviceToken:")
+    public native void setRandomizedDeviceToken(String v);
+    @Property(selector = "randomizedBundleToken")
+    public native String getRandomizedBundleToken();
+    @Property(selector = "setRandomizedBundleToken:")
+    public native void setRandomizedBundleToken(String v);
     @Property(selector = "sessionID")
     public native String getSessionID();
     @Property(selector = "setSessionID:")
     public native void setSessionID(String v);
-    @Property(selector = "identityID")
-    public native String getIdentityID();
-    @Property(selector = "setIdentityID:")
-    public native void setIdentityID(String v);
     @Property(selector = "linkClickIdentifier")
     public native String getLinkClickIdentifier();
     @Property(selector = "setLinkClickIdentifier:")
@@ -225,24 +227,6 @@ import org.robovm.apple.uniformtypeid.*;
     public native String getAPIURL(String endpoint);
     @Method(selector = "getEndpointFromURL:")
     public native String getEndpointFromURL(String url);
-    @Method(selector = "clearUserCreditsAndCounts")
-    public native void clearUserCreditsAndCounts();
-    @Method(selector = "clearUserCredits")
-    public native void clearUserCredits();
-    @Method(selector = "getBranchUniversalLinkDomains")
-    public native NSObject getBranchUniversalLinkDomains();
-    @Method(selector = "setCreditCount:")
-    public native void setCreditCount(@MachineSizedSInt long count);
-    @Method(selector = "setCreditCount:forBucket:")
-    public native void setCreditCount(@MachineSizedSInt long count, String bucket);
-    @Method(selector = "removeCreditCountForBucket:")
-    public native void removeCreditCountForBucket(String bucket);
-    @Method(selector = "getCreditDictionary")
-    public native NSDictionary<?, ?> getCreditDictionary();
-    @Method(selector = "getCreditCount")
-    public native @MachineSizedSInt long getCreditCount();
-    @Method(selector = "getCreditCountForBucket:")
-    public native @MachineSizedSInt long getCreditCountForBucket(String bucket);
     @Method(selector = "setRequestMetadataKey:value:")
     public native void setRequestMetadata(String key, NSObject value);
     @Method(selector = "requestMetadataDictionary")
@@ -269,8 +253,8 @@ import org.robovm.apple.uniformtypeid.*;
     public native NSMutableString sanitizedMutableBaseURL(String baseUrl);
     @Method(selector = "synchronize")
     public native void synchronize();
-    @Method(selector = "preferenceHelper")
-    public static native BNCPreferenceHelper preferenceHelper();
+    @Method(selector = "sharedInstance")
+    public static native BNCPreferenceHelper sharedInstance();
     @Method(selector = "clearAll")
     public static native void clearAll();
     /*</methods>*/

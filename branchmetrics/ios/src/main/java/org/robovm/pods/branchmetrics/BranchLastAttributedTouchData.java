@@ -31,6 +31,8 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
+import org.robovm.apple.linkpresentation.*;
+import org.robovm.apple.coregraphics.*;
 /*</imports>*/
 
 /*<javadoc>*/

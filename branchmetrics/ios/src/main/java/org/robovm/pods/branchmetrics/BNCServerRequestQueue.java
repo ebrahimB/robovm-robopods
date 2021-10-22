@@ -31,6 +31,8 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
+import org.robovm.apple.linkpresentation.*;
+import org.robovm.apple.coregraphics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -50,10 +52,7 @@ import org.robovm.apple.uniformtypeid.*;
     protected BNCServerRequestQueue(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "queueDepth")
-    public native @MachineSizedSInt long getQueueDepth();
-    @Property(selector = "isDirty")
-    public native boolean isDirty();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -71,12 +70,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native BNCServerRequest removeAt(@MachineSizedUInt long index);
     @Method(selector = "remove:")
     public native void remove(BNCServerRequest request);
-    @Method(selector = "persistEventually")
-    public native void persistEventually();
-    @Method(selector = "persistImmediately")
-    public native void persistImmediately();
     @Method(selector = "clearQueue")
     public native void clearQueue();
+    @Method(selector = "queueDepth")
+    public native @MachineSizedSInt long queueDepth();
     @Method(selector = "containsInstallOrOpen")
     public native boolean containsInstallOrOpen();
     @Method(selector = "removeInstallOrOpen")
@@ -85,6 +82,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native boolean containsClose();
     @Method(selector = "moveInstallOrOpenToFront:")
     public native NSObject moveInstallOrOpenToFront(@MachineSizedSInt long networkCount);
+    @Method(selector = "persistEventually")
+    public native void persistEventually();
+    @Method(selector = "persistImmediately")
+    public native void persistImmediately();
     @Method(selector = "getInstance")
     public static native NSObject getInstance();
     /*</methods>*/

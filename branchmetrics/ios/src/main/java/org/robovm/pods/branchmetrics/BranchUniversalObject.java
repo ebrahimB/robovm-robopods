@@ -31,6 +31,8 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
+import org.robovm.apple.linkpresentation.*;
+import org.robovm.apple.coregraphics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -156,13 +158,13 @@ import org.robovm.apple.uniformtypeid.*;
      */
     @Deprecated
     @Property(selector = "price")
-    public native double getPrice();
+    public native @MachineSizedFloat double getPrice();
     /**
      * @deprecated Use `BranchUniversalObject.contentMetadata.price` instead.
      */
     @Deprecated
     @Property(selector = "setPrice:")
-    public native void setPrice(double v);
+    public native void setPrice(@MachineSizedFloat double v);
     /**
      * @deprecated Use `BranchUniversalObject.contentMetadata.currency` instead.
      */
@@ -216,8 +218,6 @@ import org.robovm.apple.uniformtypeid.*;
     public native void getShortUrl(BranchLinkProperties linkProperties, @Block VoidBlock2<NSString, NSError> callback);
     @Method(selector = "getLongUrlWithChannel:andTags:andFeature:andStage:andAlias:")
     public native String getLongUrl(String channel, NSArray<?> tags, String feature, String stage, String alias);
-    @Method(selector = "getBranchActivityItemWithLinkProperties:")
-    public native UIActivityItemProvider getBranchActivityItem(BranchLinkProperties linkProperties);
     @Method(selector = "showShareSheetWithShareText:completion:")
     public native void showShareSheet(String shareText, @Block VoidBlock2<NSString, Boolean> completion);
     @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:completion:")

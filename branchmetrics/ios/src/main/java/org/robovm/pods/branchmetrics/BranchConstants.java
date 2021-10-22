@@ -31,6 +31,8 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
+import org.robovm.apple.linkpresentation.*;
+import org.robovm.apple.coregraphics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -48,12 +50,12 @@ import org.robovm.apple.uniformtypeid.*;
     /*<properties>*//*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="BRANCH_REQUEST_KEY_BRANCH_IDENTITY", optional=true)
-    public static native String getRequestKeyBranchIdentity();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_DEVELOPER_IDENTITY", optional=true)
     public static native String getRequestKeyDeveloperIdentity();
-    @GlobalValue(symbol="BRANCH_REQUEST_KEY_DEVICE_FINGERPRINT_ID", optional=true)
-    public static native String getRequestKeyDeviceFingerprintId();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_RANDOMIZED_BUNDLE_TOKEN", optional=true)
+    public static native String getRequestKeyRandomizedBundleToken();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_RANDOMIZED_DEVICE_TOKEN", optional=true)
+    public static native String getRequestKeyRandomizedDeviceToken();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_SESSION_ID", optional=true)
     public static native String getRequestKeySessionId();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_ACTION", optional=true)
@@ -184,12 +186,6 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getRequestEndpointLogout();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_USER_COMPLETED_ACTION", optional=true)
     public static native String getRequestEndpointUserCompletedAction();
-    @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_LOAD_REWARDS", optional=true)
-    public static native String getRequestEndpointLoadRewards();
-    @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_REDEEM_REWARDS", optional=true)
-    public static native String getRequestEndpointRedeemRewards();
-    @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_CREDIT_HISTORY", optional=true)
-    public static native String getRequestEndpointCreditHistory();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_GET_SHORT_URL", optional=true)
     public static native String getRequestEndpointGetShortUrl();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_CLOSE", optional=true)
@@ -204,8 +200,8 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getRequestEndpointCpid();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_LATD", optional=true)
     public static native String getRequestEndpointLatd();
-    @GlobalValue(symbol="BRANCH_RESPONSE_KEY_BRANCH_IDENTITY", optional=true)
-    public static native String getResponseKeyBranchIdentity();
+    @GlobalValue(symbol="BRANCH_RESPONSE_KEY_RANDOMIZED_BUNDLE_TOKEN", optional=true)
+    public static native String getResponseKeyRandomizedBundleToken();
     @GlobalValue(symbol="BRANCH_RESPONSE_KEY_SESSION_ID", optional=true)
     public static native String getResponseKeySessionId();
     @GlobalValue(symbol="BRANCH_RESPONSE_KEY_USER_URL", optional=true)
@@ -222,8 +218,8 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getResponseKeySpotlightIdentifier();
     @GlobalValue(symbol="BRANCH_RESPONSE_KEY_DEVELOPER_IDENTITY", optional=true)
     public static native String getResponseKeyDeveloperIdentity();
-    @GlobalValue(symbol="BRANCH_RESPONSE_KEY_DEVICE_FINGERPRINT_ID", optional=true)
-    public static native String getResponseKeyDeviceFingerprintId();
+    @GlobalValue(symbol="BRANCH_RESPONSE_KEY_RANDOMIZED_DEVICE_TOKEN", optional=true)
+    public static native String getResponseKeyRandomizedDeviceToken();
     @GlobalValue(symbol="BRANCH_RESPONSE_KEY_SESSION_DATA", optional=true)
     public static native String getResponseKeySessionData();
     @GlobalValue(symbol="BRANCH_RESPONSE_KEY_CLICKED_BRANCH_LINK", optional=true)
@@ -322,8 +318,6 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getRequestKeyAppleAttributionToken();
     @GlobalValue(symbol="BRANCH_CRASHLYTICS_SDK_VERSION_KEY", optional=true)
     public static native String getCrashlyticsSdkVersionKey();
-    @GlobalValue(symbol="BRANCH_CRASHLYTICS_FINGERPRINT_ID_KEY", optional=true)
-    public static native String getCrashlyticsFingerprintIdKey();
     @GlobalValue(symbol="BRANCH_CRASHLYTICS_LOW_MEMORY_KEY", optional=true)
     public static native String getCrashlyticsLowMemoryKey();
     @GlobalValue(symbol="BRANCH_FEATURE_TAG_SHARE", optional=true)
