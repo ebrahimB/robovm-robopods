@@ -493,6 +493,18 @@ functions:
     GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth:
         class: GADAdSize
         name: getCurrentOrientationAnchoredAdaptiveBannerAdSize
+    GADPortraitInlineAdaptiveBannerAdSizeWithWidth:
+        class: GADAdSize
+        name: getPortraitInlineAdaptiveBannerAdSize
+    GADLandscapeInlineAdaptiveBannerAdSizeWithWidth:
+        class: GADAdSize
+        name: getLandscapeInlineAdaptiveBannerAdSize
+    GADCurrentOrientationInlineAdaptiveBannerAdSizeWithWidth:
+        class: GADAdSize
+        name: getCurrentOrientationInlineAdaptiveBannerAdSize
+    GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight:
+        class: GADAdSize
+        name: getInlineAdaptiveBannerAdSize
     GADAdSizeFromCGSize:
         class: GADAdSize
         constructor: true
