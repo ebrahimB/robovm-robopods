@@ -15,6 +15,7 @@ Firebase gives you functionality like analytics, databases, messaging and crash 
 | [ios-firestore](ios-firestore/)          | Firebase iOS Firestore        | 8.8.0   |
 | [ios-mobile ads](ios-google-mobile-ads/) | Firebase iOS Google Mobile Ads| 8.11.0  |
 | [ios-mobile ads-adapters](ios-google-mobile-ads-adapters/)| Firebase iOS AdMob Adapters|   |
+| [ios-mobile ads-mediation-testsuite](ios-google-mobile-ads-mediation-testsuite/)| Firebase iOS Google AdMob Mediation Test Suite| 2.0.0  |
 | [ios-google-sign-in](ios-google-sign-in/)| Firebase iOS Google Sign In   | 6.0.2   |
 | [ios-google-ump](ios-google-ump/)        | Firebase iOS Google UMP       | 2.0.0   |
 | [ios-messaging](ios-messaging/)          | Firebase iOS Messaging        | 8.8.0   |
