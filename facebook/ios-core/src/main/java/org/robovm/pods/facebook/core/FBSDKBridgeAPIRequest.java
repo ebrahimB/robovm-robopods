@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKBridgeAPIRequest/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSObjectProtocol, FBSDKBridgeAPIRequestProtocol/*</implements>*/ {
+    /*<implements>*/implements FBSDKBridgeAPIRequestProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKBridgeAPIRequestPtr extends Ptr<FBSDKBridgeAPIRequest, FBSDKBridgeAPIRequestPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKBridgeAPIRequest.class); }/*</bind>*/
@@ -50,7 +50,7 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKBridgeAPIRequest() {}
     protected FBSDKBridgeAPIRequest(Handle h, long handle) { super(h, handle); }
     protected FBSDKBridgeAPIRequest(SkipInit skipInit) { super(skipInit); }
-    public FBSDKBridgeAPIRequest(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<?, ?> parameters, NSDictionary<?, ?> userInfo) { super((Handle) null, create(protocolType, scheme, methodName, methodVersion, parameters, userInfo)); retain(getHandle()); }
+    public FBSDKBridgeAPIRequest(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo) { super((Handle) null, create(protocolType, scheme, methodName, methodVersion, parameters, userInfo)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "actionID")
@@ -60,13 +60,13 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "methodVersion")
     public native String getMethodVersion();
     @Property(selector = "parameters")
-    public native NSDictionary<?, ?> getParameters();
+    public native NSDictionary<NSString, ?> getParameters();
     @Property(selector = "protocolType")
     public native FBSDKBridgeAPIProtocolType getProtocolType();
     @Property(selector = "scheme")
     public native String getScheme();
     @Property(selector = "userInfo")
-    public native NSDictionary<?, ?> getUserInfo();
+    public native NSDictionary<NSString, ?> getUserInfo();
     @Property(selector = "protocol")
     public native FBSDKBridgeAPIProtocol getProtocol();
     /*</properties>*/
@@ -75,6 +75,6 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "requestURL:")
     public native NSURL requestURL(NSError.NSErrorPtr errorRef);
     @Method(selector = "bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:")
-    protected static native @Pointer long create(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<?, ?> parameters, NSDictionary<?, ?> userInfo);
+    protected static native @Pointer long create(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo);
     /*</methods>*/
 }

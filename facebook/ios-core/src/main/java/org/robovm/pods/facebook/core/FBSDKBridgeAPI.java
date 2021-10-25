@@ -76,7 +76,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithProcessInfo:logger:urlOpener:bridgeAPIResponseFactory:frameworkLoader:appURLSchemeProvider:")
     protected native @Pointer long init(FBSDKOperatingSystemVersionComparing processInfo, FBSDKLogger logger, NSObject urlOpener, FBSDKBridgeAPIResponseCreating bridgeAPIResponseFactory, FBSDKDynamicFrameworkResolving frameworkLoader, FBSDKAppURLSchemeProviding appURLSchemeProvider);
     @Method(selector = "openURLWithSafariViewController:sender:fromViewController:handler:")
-    public native void openURLWithSafariViewController(NSURL url, FBSDKURLOpening sender, UIViewController fromViewController, @Block VoidBlock2<Boolean, NSError> handler);
+    public native void openURL(NSURL url, FBSDKURLOpening sender, UIViewController fromViewController, @Block VoidBlock2<Boolean, NSError> handler);
     @Method(selector = "openURL:sender:handler:")
     public native void openURL(NSURL url, FBSDKURLOpening sender, @Block VoidBlock2<Boolean, NSError> handler);
     @Method(selector = "sessionCompletionHandler")

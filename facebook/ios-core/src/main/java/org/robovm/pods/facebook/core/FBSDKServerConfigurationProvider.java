@@ -52,11 +52,16 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKServerConfigurationProvider(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "loggingToken")
+    public native String getLoggingToken();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "cachedSmartLoginOptions")
-    public static native @MachineSizedUInt long cachedSmartLoginOptions();
+    public native @MachineSizedUInt long cachedSmartLoginOptions();
+    @Method(selector = "useSafariViewControllerForDialogName:")
+    public native boolean useSafariViewControllerForDialogName(String dialogName);
+    @Method(selector = "loadServerConfigurationWithCompletionBlock:")
+    public native void loadServerConfiguration(@Block VoidBlock2<FBSDKLoginTooltip, NSError> completionBlock);
     /*</methods>*/
 }

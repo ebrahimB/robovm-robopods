@@ -9,10 +9,9 @@ private_typedefs:
     OS_dispatch_source: DispatchSource
     'FBSDKUserIdentifier *': String
     # these are only forward declared
-    FBSDKErrorReporting : NSObject
-    FBSDKInternalURLOpener : NSObject
     FBSDKServerConfigurationProviding : NSObject
-    FBSDKWebViewProviding: NSObject
+    'id<FBSDKInternalURLOpener>' : NSObject
+    'id<FBSDKWebViewProviding>': NSObject
 
 enums:
     FBSDKAppEventsFlushBehavior: {}
@@ -90,15 +89,25 @@ classes:
             '+requestForCustomAudienceThirdPartyIDWithAccessToken:':
                 name: requestForCustomAudienceThirdPartyID
             '+setUserEmail:firstName:lastName:phone:dateOfBirth:gender:city:state:zip:country:':
-                name: setUserData
+                exclude: true # deprecated and conflicts with instance method
             '+setUserData:forType:':
-                name: setUserData
+                exclude: true # deprecated and conflicts with instance method
+            '+getUserData':
+                exclude: true # deprecated and conflicts with instance method
+            '+clearUserData':
+                exclude: true # deprecated and conflicts with instance method
+            '+clearUserDataForType:':
+                exclude: true # deprecated and conflicts with instance method
             '+logInternalEvent:parameters:isImplicitlyLogged:':
                 name: logInternalEvent
             '+logInternalEvent:parameters:isImplicitlyLogged:accessToken:':
                 name: logInternalEvent
             '+activateApp':
                 exclude: true # deprecated and conflicts with instance method
+            '-setUserEmail:firstName:lastName:phone:dateOfBirth:gender:city:state:zip:country:':
+                name: setUserData
+            '-setUserData:forType:':
+                name: setUserData
     FBSDKAppLink:
         methods:
             '+appLinkWithSourceURL:targets:webURL:':
@@ -107,6 +116,9 @@ classes:
     FBSDKAppLinkNavigation:
         methods:
             '+navigationWithAppLink:extras:appLinkData:':
+                name: create
+                constructor: true
+            '+navigationWithAppLink:extras:appLinkData:settings:':
                 name: create
                 constructor: true
             '+callbackAppLinkDataForAppWithName:url:':
@@ -150,7 +162,7 @@ classes:
             '-openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:':
                 name: openBridgeAPIRequest
             '-openURLWithSafariViewController:sender:fromViewController:handler:':
-                name: openURLWithSafariViewController
+                name: openURL
             '-openURL:sender:handler:':
                 name: openURL
             '-initWithProcessInfo:logger:urlOpener:bridgeAPIResponseFactory:frameworkLoader:appURLSchemeProvider:':
@@ -177,6 +189,12 @@ classes:
                 name: configure
             '-configureWithIcon:title:backgroundColor:highlightedColor:selectedTitle:selectedIcon:selectedColor:selectedHighlightedColor:':
                 name: configure
+            '-sizeThatFits:title:':
+                name: getSizeThatFits
+            '-textSizeForText:font:constrainedSize:lineBreakMode:':
+                name: getTextSizeForText
+            '-logTapEventWithEventName:parameters:':
+                name: logTapEvent
     FBSDKGraphErrorRecoveryProcessor:
         methods:
             '+new':
@@ -203,6 +221,8 @@ classes:
                 exclude: true # as deprecated
             '-startWithCompletion:':
                 name: start
+            '-initWithGraphPath:parameters:tokenString:HTTPMethod:flags:':
+                name: init
     FBSDKGraphRequestConnection:
         methods:
             '-addRequest:completionHandler:':
@@ -244,27 +264,53 @@ classes:
                 name: init
     FBSDKSettings:
         properties:
-            '+appID':
-                name: fbSdkAppID
-            '+clientToken':
-                name: fbSdkClientToken
-            '+userAgentSuffix':
-                name: fbSdkUserAgentSuffix
-            '+sdkVersion':
-                name: fbSdkVersion
-            '+loggingBehaviors':
-                name: fbSdkLoggingBehaviors
-            '+autoLogAppEventsEnabled':
-                name: fbSdkIsAutoLogAppEventsEnabled
-            '+graphErrorRecoveryEnabled':
-                name: fbSdkIsGraphErrorRecoveryEnabled
-            '+SKAdNetworkReportEnabled':
-                name: fbSdkIsSKAdNetworkReportEnabled
             '+graphAPIVersion':
                 name: fbSdkGetGraphAPIVersion
+            '+sdkVersion':
+                exclude: true # as deprecated
+            '+defaultGraphAPIVersion':
+                exclude: true # as deprecated
+            '+JPEGCompressionQuality':
+                exclude: true # as deprecated
+            '+autoLogAppEventsEnabled':
+                exclude: true # as deprecated
+            '+codelessDebugLogEnabled':
+                exclude: true # as deprecated
+            '+advertiserIDCollectionEnabled':
+                exclude: true # as deprecated
+            '+SKAdNetworkReportEnabled':
+                exclude: true # as deprecated
+            '+limitEventAndDataUsage':
+                exclude: true # as deprecated
+            '+shouldUseCachedValuesForExpensiveMetadata':
+                exclude: true # as deprecated
+            '+graphErrorRecoveryEnabled':
+                exclude: true # as deprecated
+            '+appID':
+                exclude: true # as deprecated
+            '+appURLSchemeSuffix':
+                exclude: true # as deprecated
+            '+clientToken':
+                exclude: true # as deprecated
+            '+displayName':
+                exclude: true # as deprecated
+            '+facebookDomainPart':
+                exclude: true # as deprecated
+            '+loggingBehaviors':
+                exclude: true # as deprecated
+            'skAdNetworkReportEnabled':
+                name: SKAdNetworkReportEnabled  # to match getter declared in protocol
         methods:
             '+setDataProcessingOptions:country:state:':
                 name: setDataProcessingOptions
+            '+isAdvertiserTrackingEnabled':
+                exclude: true # as deprecated
+            '+setAdvertiserTrackingEnabled:':
+                exclude: true # as deprecated
+            '+enableLoggingBehavior:':
+                exclude: true # as deprecated
+            '+disableLoggingBehavior:':
+                exclude: true # as deprecated
     FBSDKURL:
         methods:
             '+URLWithURL:':
@@ -330,20 +376,39 @@ classes:
                 name: getPath
     FBSDKInternalUtility:
         methods:
-            '-appURLWithHost:path:queryParameters:error:':
-                name: getAppURL
-            '-facebookURLWithHostPrefix:path:queryParameters:error:':
-                name: getFacebookURL
             '-object:isEqualToObject:':
                 name: compareUrls
             '-extractPermissionsFromResponse:grantedPermissions:declinedPermissions:expiredPermissions:':
                 name: extractPermissions
-    FBSDKServerConfigurationProvider: {}
     FBSDKShareDialogConfiguration: {}
     FBSDKWebDialogView:
         methods:
             '+configureWithWebViewProvider:urlOpener:':
                 name: configure
+    FBSDKDynamicFrameworkLoaderProxy: {}
+    FBSDKKeychainStore:
+        methods:
+            '-initWithService:accessGroup:':
+                name: init
+            '-setData:forKey:accessibility:':
+                name: setData
+    FBSDKKeychainStoreFactory: {}
+    FBSDKLoginTooltip:
+        methods:
+            '-initWithText:enabled:':
+                name: init
+    FBSDKTransformer:
+        methods:
+            '-CATransform3DMakeScale:sy:sz:':
+                name: makeScale
+            '-CATransform3DMakeTranslation:ty:tz:':
+                name: makeTranslation
+            '-CATransform3DConcat:b:':
+                name: concat
+    FBSDKServerConfigurationProvider:
+        methods:
+            '-loadServerConfigurationWithCompletionBlock:':
+                name: loadServerConfiguration
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -361,7 +426,6 @@ protocols:
                 name: requestURL
             '-responseParametersForActionID:queryParameters:cancelled:error:':
                 name: responseParameters
-    FBSDKBridgeAPIRequestProtocol: { }
     FBSDKButtonImpressionTracking: { }
     FBSDKCopying: { }
     FBSDKErrorRecoveryAttempting:
@@ -414,6 +478,9 @@ protocols:
                 name: checkFeature
     FBSDKSettings:
         name: FBSDKSettingsProtocol
+        properties:
+            '+loggingBehaviors':
+                exclude: true # as deprecated
     FBSDKSettingsLogging: {}
     FBSDKAppURLSchemeProviding: { skip_adapter: true}
     FBSDKBridgeAPIResponseCreating: { skip_adapter: true}
@@ -424,14 +491,44 @@ protocols:
         methods:
             '-openURL:sender:handler:':
                 name: openURL
+            '-openURLWithSafariViewController:sender:fromViewController:handler:':
+                name: openURL
 
     FBSDKAppAvailabilityChecker: {}
     FBSDKBridgeAPIRequestOpening:
         methods:
             '-openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:':
                 name: openBridgeAPIRequest
-    FBSDKGraphRequestConnectionProviding: {}
-    FBSDKGraphRequestProviding:
+            '-openURLWithSafariViewController:sender:fromViewController:handler:':
+                name: openURL
+            '-openURL:sender:handler:':
+                name: openURL
+    FBSDKInternalUtility:
+        name: FBSDKInternalUtilityProtocol
+        methods:
+            '-URLWithScheme:host:path:queryParameters:error:':
+                name: constructURL
+    FBSDKWebDialogViewDelegate:
+        methods:
+            '-webDialogView:didCompleteWithResults:':
+                name: didComplete
+            '-webDialogView:didFailWithError:':
+                name: didFail
+    FBSDKWindowFinding: {}
+    FBSDKAuthenticationTokenProviding: {} # FIXME: contains static properties in interface that is not completely supported
+    FBSDKAuthenticationTokenSetting: {}
+    FBSDKBridgeAPIRequest:
+        name:
+            FBSDKBridgeAPIRequestProtocol
+    FBSDKBridgeAPIRequestCreating:
+        methods:
+            '-bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:':
+                name: bridgeAPIRequest
+    FBSDKGraphRequestConnectionFactory:
+        name: FBSDKGraphRequestConnectionFactoryProtocol
+    FBSDKGraphRequestFactory:
+        name:
+            FBSDKGraphRequestFactoryProtocol
         methods:
             '-createGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:flags:':
                 name: createGraphRequest
@@ -445,18 +542,40 @@ protocols:
                 name: createGraphRequest
             '-createGraphRequestWithGraphPath:parameters:flags:':
                 name: createGraphRequest
-    FBSDKInternalUtility:
-        name: FBSDKInternalUtilityProtocol
+    FBSDKKeychainStore:
+        name: FBSDKKeychainStoreProtocol
         methods:
-            '-URLWithScheme:host:path:queryParameters:error:':
-                name: constructURL
-    FBSDKWebDialogViewDelegate:
+            '-setString:forKey:accessibility:':
+                name: setString
+            '-setDictionary:forKey:accessibility:':
+                name: setDictionary
+    FBSDKKeychainStoreProviding:
         methods:
-            '-webDialogView:didCompleteWithResults:':
-                name: didComplete
-            '-webDialogView:didFailWithError:':
-                name: didFail
-    FBSDKWindowFinding: {}
+            '-createKeychainStoreWithService:accessGroup:':
+                name: createKeychainStore
+    FBSDKLogging:
+        methods:
+            '-initWithLoggingBehavior:':
+                name: init
+            '+singleShotLogEntry:logEntry:':
+                name: singleShotLogEntry
+    FBSDKProfileProviding: {}
+    FBSDKTokenStringProviding:
+        properties:
+            '+tokenString':
+                name: providedTokenString #@warning UNSAFE - DO NOT USE
+    FBSDKURLHosting:
+        methods:
+            '-appURLWithHost:path:queryParameters:error:':
+                name: appURL
+                parameters:
+                    2:
+                        type: NSDictionary<NSString, ?>
+            '-facebookURLWithHostPrefix:path:queryParameters:error:':
+                name: facebookURL
+                parameters:
+                    2:
+                        type: NSDictionary<NSString, ?>
 functions:
     fb_randomString:
         exclude: true
@@ -545,6 +664,13 @@ values:
         class: FBSDKShareDialogConfiguration
         static_class: DialogNames
         name: '#{g[0]}'
+    FBSDKAppEventParameter(.*):
+        class: FBSDKAppEvents
+        static_class: Parameters
+        name: '#{g[0]}'
+    FBSDKCATransform3DIdentity:
+        class: FBSDKTransformer
+        name: identity
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

@@ -18,15 +18,24 @@
 
 #import <Foundation/Foundation.h>
 
+@class FBSDKAuthenticationToken;
+
+#import <FBSDKCoreKit/FBSDKTokenCaching.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol FBSDKGraphRequestConnecting;
+NS_SWIFT_NAME(AuthenticationTokenProviding)
+@protocol FBSDKAuthenticationTokenProviding
 
-/// Describes anything that can provide instances of `FBSDKGraphRequestConnecting`
-NS_SWIFT_NAME(GraphRequestConnectionProviding)
-@protocol FBSDKGraphRequestConnectionProviding
+@property (class, nonatomic, copy, nullable, readonly) FBSDKAuthenticationToken *currentAuthenticationToken;
+@property (class, nonatomic, copy, nullable) id<FBSDKTokenCaching> tokenCache;
 
-- (id<FBSDKGraphRequestConnecting>)createGraphRequestConnection;
+@end
+
+NS_SWIFT_NAME(AuthenticationTokenSetting)
+@protocol FBSDKAuthenticationTokenSetting
+
+@property (class, nonatomic, copy, nullable) FBSDKAuthenticationToken *currentAuthenticationToken;
 
 @end
 

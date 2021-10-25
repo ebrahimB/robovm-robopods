@@ -16,16 +16,16 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
 #if !TARGET_OS_TV
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIViewController.h>
 
-#import "FBSDKBridgeAPIResponse.h"
+#import <FBSDKCoreKit/FBSDKBridgeAPIResponse.h>
+#import <FBSDKCoreKit/FBSDKConstants.h>
 
-@protocol FBSDKBridgeAPIRequestProtocol;
+@protocol FBSDKBridgeAPIRequest;
+@protocol FBSDKURLOpening;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,11 +38,20 @@ NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(BridgeAPIRequestOpening)
 @protocol FBSDKBridgeAPIRequestOpening <NSObject>
 
-- (void)openBridgeAPIRequest:(NSObject<FBSDKBridgeAPIRequestProtocol> *)request
+- (void)openBridgeAPIRequest:(NSObject<FBSDKBridgeAPIRequest> *)request
      useSafariViewController:(BOOL)useSafariViewController
           fromViewController:(nullable UIViewController *)fromViewController
              completionBlock:(FBSDKBridgeAPIResponseBlock)completionBlock;
 
+- (void)openURLWithSafariViewController:(NSURL *)url
+                                 sender:(id<FBSDKURLOpening>)sender
+                     fromViewController:(UIViewController *)fromViewController
+                                handler:(FBSDKSuccessBlock)handler;
+
+
+- (void)openURL:(NSURL *)url
+         sender:(nullable id<FBSDKURLOpening>)sender
+        handler:(FBSDKSuccessBlock)handler;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -61,8 +61,6 @@ import org.robovm.apple.coreanimation.*;
     public static class DialogNames {
         static { Bro.bind(DialogNames.class); }
 
-        @GlobalValue(symbol="FBSDKDialogConfigurationNameLike", optional=true)
-        public static native String Like();
         @GlobalValue(symbol="FBSDKDialogConfigurationNameMessage", optional=true)
         public static native String Message();
         @GlobalValue(symbol="FBSDKDialogConfigurationNameShare", optional=true)

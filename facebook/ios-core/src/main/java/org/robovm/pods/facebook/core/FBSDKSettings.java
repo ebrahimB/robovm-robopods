@@ -55,119 +55,105 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "sharedSettings")
     public static native FBSDKSettings getSharedSettings();
     @Property(selector = "sdkVersion")
-    public static native String getFbSdkVersion();
+    public native String getSdkVersion();
     @Property(selector = "defaultGraphAPIVersion")
-    public static native String getDefaultGraphAPIVersion();
+    public native String getDefaultGraphAPIVersion();
     @Property(selector = "JPEGCompressionQuality")
-    public static native @MachineSizedFloat double getJPEGCompressionQuality();
+    public native @MachineSizedFloat double getJPEGCompressionQuality();
     @Property(selector = "setJPEGCompressionQuality:")
-    public static native void setJPEGCompressionQuality(@MachineSizedFloat double v);
+    public native void setJPEGCompressionQuality(@MachineSizedFloat double v);
     @Property(selector = "isAutoLogAppEventsEnabled")
-    public static native boolean isFbSdkIsAutoLogAppEventsEnabled();
+    public native boolean isAutoLogAppEventsEnabled();
     @Property(selector = "setAutoLogAppEventsEnabled:")
-    public static native void setFbSdkIsAutoLogAppEventsEnabled(boolean v);
+    public native void setAutoLogAppEventsEnabled(boolean v);
     @Property(selector = "isCodelessDebugLogEnabled")
-    public static native boolean isCodelessDebugLogEnabled();
+    public native boolean isCodelessDebugLogEnabled();
     @Property(selector = "setCodelessDebugLogEnabled:")
-    public static native void setCodelessDebugLogEnabled(boolean v);
+    public native void setCodelessDebugLogEnabled(boolean v);
     @Property(selector = "isAdvertiserIDCollectionEnabled")
-    public static native boolean isAdvertiserIDCollectionEnabled();
+    public native boolean isAdvertiserIDCollectionEnabled();
     @Property(selector = "setAdvertiserIDCollectionEnabled:")
-    public static native void setAdvertiserIDCollectionEnabled(boolean v);
+    public native void setAdvertiserIDCollectionEnabled(boolean v);
     @Property(selector = "isSKAdNetworkReportEnabled")
-    public static native boolean isFbSdkIsSKAdNetworkReportEnabled();
-    @Property(selector = "setSKAdNetworkReportEnabled:")
-    public static native void setFbSdkIsSKAdNetworkReportEnabled(boolean v);
-    @Property(selector = "shouldLimitEventAndDataUsage")
-    public static native boolean isLimitEventAndDataUsage();
-    @Property(selector = "setLimitEventAndDataUsage:")
-    public static native void setLimitEventAndDataUsage(boolean v);
+    public native boolean isSKAdNetworkReportEnabled();
+    @Property(selector = "setSkAdNetworkReportEnabled:")
+    public native void setSKAdNetworkReportEnabled(boolean v);
+    @Property(selector = "isEventDataUsageLimited")
+    public native boolean isEventDataUsageLimited();
+    @Property(selector = "setIsEventDataUsageLimited:")
+    public native void setIsEventDataUsageLimited(boolean v);
     @Property(selector = "shouldUseCachedValuesForExpensiveMetadata")
-    public static native boolean shouldUseCachedValuesForExpensiveMetadata();
+    public native boolean shouldUseCachedValuesForExpensiveMetadata();
     @Property(selector = "setShouldUseCachedValuesForExpensiveMetadata:")
-    public static native void setShouldUseCachedValuesForExpensiveMetadata(boolean v);
+    public native void setShouldUseCachedValuesForExpensiveMetadata(boolean v);
     @Property(selector = "isGraphErrorRecoveryEnabled")
-    public static native boolean isFbSdkIsGraphErrorRecoveryEnabled();
-    @Property(selector = "setGraphErrorRecoveryEnabled:")
-    public static native void setFbSdkIsGraphErrorRecoveryEnabled(boolean v);
+    public native boolean isGraphErrorRecoveryEnabled();
+    @Property(selector = "setIsGraphErrorRecoveryEnabled:")
+    public native void setIsGraphErrorRecoveryEnabled(boolean v);
     @Property(selector = "appID")
-    public static native String getFbSdkAppID();
+    public native String getAppID();
     @Property(selector = "setAppID:")
-    public static native void setFbSdkAppID(String v);
+    public native void setAppID(String v);
     @Property(selector = "appURLSchemeSuffix")
-    public static native String getAppURLSchemeSuffix();
+    public native String getAppURLSchemeSuffix();
     @Property(selector = "setAppURLSchemeSuffix:")
-    public static native void setAppURLSchemeSuffix(String v);
+    public native void setAppURLSchemeSuffix(String v);
     @Property(selector = "clientToken")
-    public static native String getFbSdkClientToken();
+    public native String getClientToken();
     @Property(selector = "setClientToken:")
-    public static native void setFbSdkClientToken(String v);
+    public native void setClientToken(String v);
     @Property(selector = "displayName")
-    public static native String getDisplayName();
+    public native String getDisplayName();
     @Property(selector = "setDisplayName:")
-    public static native void setDisplayName(String v);
+    public native void setDisplayName(String v);
     @Property(selector = "facebookDomainPart")
-    public static native String getFacebookDomainPart();
+    public native String getFacebookDomainPart();
     @Property(selector = "setFacebookDomainPart:")
-    public static native void setFacebookDomainPart(String v);
+    public native void setFacebookDomainPart(String v);
     @Property(selector = "loggingBehaviors")
-    public static native NSSet<NSString> getFbSdkLoggingBehaviors();
+    public native NSSet<NSString> getLoggingBehaviors();
     @Property(selector = "setLoggingBehaviors:")
-    public static native void setFbSdkLoggingBehaviors(NSSet<NSString> v);
+    public native void setLoggingBehaviors(NSSet<NSString> v);
     @Property(selector = "graphAPIVersion")
     public static native String getFbSdkGetGraphAPIVersion();
     @Property(selector = "setGraphAPIVersion:")
     public static native void setFbSdkGetGraphAPIVersion(String v);
     @Property(selector = "userAgentSuffix")
-    public static native String getUserAgentSuffix();
+    public native String getUserAgentSuffix();
     @Property(selector = "setUserAgentSuffix:")
-    public static native void setUserAgentSuffix(String v);
-    @Property(selector = "appID")
-    public native String getAppID();
-    @Property(selector = "setAppID:")
-    public native void setAppID(String v);
+    public native void setUserAgentSuffix(String v);
+    @Property(selector = "isAdvertiserTrackingEnabled")
+    public native boolean isAdvertiserTrackingEnabled();
+    @Property(selector = "setAdvertiserTrackingEnabled:")
+    public native void setAdvertiserTrackingEnabled(boolean v);
     @Property(selector = "isDataProcessingRestricted")
     public native boolean isDataProcessingRestricted();
-    @Property(selector = "isAutoLogAppEventsEnabled")
-    public native boolean isAutoLogAppEventsEnabled();
     @Property(selector = "isSetATETimeExceedsInstallTime")
     public native boolean isSetATETimeExceedsInstallTime();
-    @Property(selector = "isSKAdNetworkReportEnabled")
-    public native boolean isSKAdNetworkReportEnabled();
-    @Property(selector = "loggingBehaviors")
-    public native NSSet<NSString> getLoggingBehaviors();
     @Property(selector = "advertisingTrackingStatus")
     public native FBSDKAdvertisingTrackingStatus getAdvertisingTrackingStatus();
     @Property(selector = "installTimestamp")
     public native NSDate getInstallTimestamp();
     @Property(selector = "advertiserTrackingEnabledTimestamp")
     public native NSDate getAdvertiserTrackingEnabledTimestamp();
-    @Property(selector = "shouldLimitEventAndDataUsage")
-    public native boolean shouldLimitEventAndDataUsage();
     @Property(selector = "shouldUseTokenOptimizations")
     public native boolean shouldUseTokenOptimizations();
     @Property(selector = "setShouldUseTokenOptimizations:")
     public native void setShouldUseTokenOptimizations(boolean v);
     @Property(selector = "graphAPIVersion")
     public native String getGraphAPIVersion();
-    @Property(selector = "isGraphErrorRecoveryEnabled")
-    public native boolean isGraphErrorRecoveryEnabled();
     @Property(selector = "graphAPIDebugParamValue")
     public native String getGraphAPIDebugParamValue();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "isAdvertiserTrackingEnabled")
-    public static native boolean isAdvertiserTrackingEnabled();
-    @Method(selector = "setAdvertiserTrackingEnabled:")
-    public static native boolean setAdvertiserTrackingEnabled(boolean advertiserTrackingEnabled);
+    @Method(selector = "enableLoggingBehavior:")
+    public native void enableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
+    @Method(selector = "disableLoggingBehavior:")
+    public native void disableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
     @Method(selector = "setDataProcessingOptions:")
     public static native void setDataProcessingOptions(NSArray<NSString> options);
     @Method(selector = "setDataProcessingOptions:country:state:")
     public static native void setDataProcessingOptions(NSArray<NSString> options, int country, int state);
-    @Method(selector = "enableLoggingBehavior:")
-    public static native void enableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
-    @Method(selector = "disableLoggingBehavior:")
-    public static native void disableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
     /*</methods>*/
 }

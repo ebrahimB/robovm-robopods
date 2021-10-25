@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAuthenticationToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding, FBSDKAuthenticationTokenProviding, FBSDKAuthenticationTokenSetting/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAuthenticationTokenPtr extends Ptr<FBSDKAuthenticationToken, FBSDKAuthenticationTokenPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAuthenticationToken.class); }/*</bind>*/

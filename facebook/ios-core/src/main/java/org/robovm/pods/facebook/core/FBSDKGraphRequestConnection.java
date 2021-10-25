@@ -74,11 +74,11 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "addRequest:completion:")
-    public native void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
+    public native void addRequest(FBSDKGraphRequestProtocol request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
     @Method(selector = "addRequest:name:completion:")
-    public native void addRequest(FBSDKGraphRequest request, String name, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
+    public native void addRequest(FBSDKGraphRequestProtocol request, String name, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
     @Method(selector = "addRequest:parameters:completion:")
-    public native void addRequest(FBSDKGraphRequest request, NSDictionary<NSString, ?> parameters, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
+    public native void addRequest(FBSDKGraphRequestProtocol request, NSDictionary<NSString, ?> parameters, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
     @Method(selector = "cancel")
     public native void cancel();
     @Method(selector = "start")

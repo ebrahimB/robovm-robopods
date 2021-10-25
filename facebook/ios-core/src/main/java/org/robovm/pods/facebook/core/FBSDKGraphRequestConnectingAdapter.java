@@ -61,7 +61,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("addRequest:completion:")
-    public void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> handler) {}
+    public void addRequest(FBSDKGraphRequestProtocol request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> handler) {}
     @NotImplemented("start")
     public void start() {}
     @NotImplemented("cancel")

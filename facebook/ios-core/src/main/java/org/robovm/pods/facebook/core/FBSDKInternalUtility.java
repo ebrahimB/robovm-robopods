@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKInternalUtility/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKInternalUtilityProtocol, FBSDKAppAvailabilityChecker/*</implements>*/ {
+    /*<implements>*/implements FBSDKInternalUtilityProtocol, FBSDKAppAvailabilityChecker, FBSDKAppURLSchemeProviding, FBSDKURLHosting/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKInternalUtilityPtr extends Ptr<FBSDKInternalUtility, FBSDKInternalUtilityPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKInternalUtility.class); }/*</bind>*/
@@ -64,31 +64,29 @@ import org.robovm.apple.coreanimation.*;
     public native NSBundle getBundleForStrings();
     @Property(selector = "isMessengerAppInstalled")
     public native boolean isMessengerAppInstalled();
-    @Property(selector = "isMSQRDPlayerAppInstalled")
-    public native boolean isMSQRDPlayerAppInstalled();
     @Property(selector = "isFacebookAppInstalled")
     public native boolean isFacebookAppInstalled();
+    @Property(selector = "isMSQRDPlayerAppInstalled")
+    public native boolean isMSQRDPlayerAppInstalled();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "appURLWithHost:path:queryParameters:error:")
-    public native NSURL getAppURL(String host, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef);
+    public native NSURL appURL(String host, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
     @Method(selector = "parametersFromFBURL:")
-    public native NSDictionary<?, ?> parametersFromFBURL(NSURL url);
+    public native NSDictionary<NSString, ?> parametersFromFBURL(NSURL url);
     @Method(selector = "facebookURLWithHostPrefix:path:queryParameters:error:")
-    public native NSURL getFacebookURL(String hostPrefix, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef);
+    public native NSURL facebookURL(String hostPrefix, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
     @Method(selector = "isBrowserURL:")
     public native boolean isBrowserURL(NSURL URL);
     @Method(selector = "object:isEqualToObject:")
     public native boolean compareUrls(NSObject object, NSObject other);
     @Method(selector = "extractPermissionsFromResponse:grantedPermissions:declinedPermissions:expiredPermissions:")
-    public native void extractPermissions(NSDictionary<?, ?> responseObject, NSMutableSet<?> grantedPermissions, NSMutableSet<?> declinedPermissions, NSMutableSet<?> expiredPermissions);
+    public native void extractPermissions(NSDictionary<NSString, ?> responseObject, NSMutableSet<?> grantedPermissions, NSMutableSet<?> declinedPermissions, NSMutableSet<?> expiredPermissions);
     @Method(selector = "validateAppID")
     public native void validateAppID();
     @Method(selector = "validateRequiredClientAccessToken")
     public native String validateRequiredClientAccessToken();
-    @Method(selector = "validateURLSchemes")
-    public native void validateURLSchemes();
     @Method(selector = "viewControllerForView:")
     public native UIViewController viewControllerForView(UIView view);
     @Method(selector = "isRegisteredURLScheme:")
@@ -100,12 +98,16 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "isRegisteredCanOpenURLScheme:")
     public native boolean isRegisteredCanOpenURLScheme(String urlScheme);
     @Method(selector = "URLWithScheme:host:path:queryParameters:error:")
-    public native NSURL constructURL(String scheme, String host, String path, NSDictionary<?, ?> queryParameters, NSError.NSErrorPtr errorRef);
+    public native NSURL constructURL(String scheme, String host, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
     @Method(selector = "registerTransientObject:")
     public native void registerTransientObject(NSObject object);
     @Method(selector = "unregisterTransientObject:")
     public native void unregisterTransientObject(NSObject object);
     @Method(selector = "checkRegisteredCanOpenURLScheme:")
     public native void checkRegisteredCanOpenURLScheme(String urlScheme);
+    @Method(selector = "validateURLSchemes")
+    public native void validateURLSchemes();
+    @Method(selector = "appURLScheme")
+    public native String appURLScheme();
     /*</methods>*/
 }

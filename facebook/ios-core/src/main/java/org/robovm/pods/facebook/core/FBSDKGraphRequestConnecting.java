@@ -59,7 +59,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "addRequest:completion:")
-    void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> handler);
+    void addRequest(FBSDKGraphRequestProtocol request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> handler);
     @Method(selector = "start")
     void start();
     @Method(selector = "cancel")

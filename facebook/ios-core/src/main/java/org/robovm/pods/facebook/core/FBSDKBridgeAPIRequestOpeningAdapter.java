@@ -55,5 +55,9 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @NotImplemented("openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:")
     public void openBridgeAPIRequest(FBSDKBridgeAPIRequestProtocol request, boolean useSafariViewController, UIViewController fromViewController, @Block VoidBlock1<FBSDKBridgeAPIResponse> completionBlock) {}
+    @NotImplemented("openURLWithSafariViewController:sender:fromViewController:handler:")
+    public void openURL(NSURL url, FBSDKURLOpening sender, UIViewController fromViewController, @Block VoidBlock2<Boolean, NSError> handler) {}
+    @NotImplemented("openURL:sender:handler:")
+    public void openURL(NSURL url, FBSDKURLOpening sender, @Block VoidBlock2<Boolean, NSError> handler) {}
     /*</methods>*/
 }

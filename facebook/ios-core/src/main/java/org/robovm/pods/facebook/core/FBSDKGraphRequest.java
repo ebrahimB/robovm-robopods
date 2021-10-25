@@ -62,6 +62,8 @@ import org.robovm.apple.coreanimation.*;
     public FBSDKGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method) { super((SkipInit) null); initObject(init(graphPath, parameters, tokenString, version, method)); }
     @Method(selector = "initWithGraphPath:parameters:flags:")
     public FBSDKGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKGraphRequestFlags requestFlags) { super((SkipInit) null); initObject(init(graphPath, parameters, requestFlags)); }
+    @Method(selector = "initWithGraphPath:parameters:tokenString:HTTPMethod:flags:")
+    public FBSDKGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String HTTPMethod, FBSDKGraphRequestFlags flags) { super((SkipInit) null); initObject(init(graphPath, parameters, tokenString, HTTPMethod, flags)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "parameters")
@@ -100,6 +102,8 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method);
     @Method(selector = "initWithGraphPath:parameters:flags:")
     protected native @Pointer long init(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKGraphRequestFlags requestFlags);
+    @Method(selector = "initWithGraphPath:parameters:tokenString:HTTPMethod:flags:")
+    protected native @Pointer long init(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String HTTPMethod, FBSDKGraphRequestFlags flags);
     @Method(selector = "setGraphErrorRecoveryDisabled:")
     public native void setGraphErrorRecoveryDisabled(boolean disable);
     @Method(selector = "startWithCompletion:")

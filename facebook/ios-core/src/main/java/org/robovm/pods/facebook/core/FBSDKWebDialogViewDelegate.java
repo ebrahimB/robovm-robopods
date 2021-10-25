@@ -52,7 +52,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "webDialogView:didCompleteWithResults:")
-    void didComplete(FBSDKWebDialogView webDialogView, NSDictionary<?, ?> results);
+    void didComplete(FBSDKWebDialogView webDialogView, NSDictionary<NSString, ?> results);
     @Method(selector = "webDialogView:didFailWithError:")
     void didFail(FBSDKWebDialogView webDialogView, NSError error);
     @Method(selector = "webDialogViewDidCancel:")

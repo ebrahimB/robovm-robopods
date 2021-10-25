@@ -16,13 +16,11 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
 #if !TARGET_OS_TV
 
 #import <Foundation/Foundation.h>
 
-#import "FBSDKConstants.h"
+#import <FBSDKCoreKit/FBSDKConstants.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -90,9 +88,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 NS_SWIFT_NAME(GraphErrorRecoveryProcessor)
 @interface FBSDKGraphErrorRecoveryProcessor : NSObject
-
-+ (instancetype)new DEPRECATED_MSG_ATTRIBUTE("Creating instances of FBSDKGraphErrorRecoveryProcessor using `new` is deprecated and will be removed in the next major release");
-- (instancetype)init DEPRECATED_MSG_ATTRIBUTE("Creating instances of FBSDKGraphErrorRecoveryProcessor using `init` is deprecated and will be removed in the next major release");
 
 /**
  Initializes a GraphErrorRecoveryProcessor with an access token string.

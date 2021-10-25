@@ -54,7 +54,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("webDialogView:didCompleteWithResults:")
-    public void didComplete(FBSDKWebDialogView webDialogView, NSDictionary<?, ?> results) {}
+    public void didComplete(FBSDKWebDialogView webDialogView, NSDictionary<NSString, ?> results) {}
     @NotImplemented("webDialogView:didFailWithError:")
     public void didFail(FBSDKWebDialogView webDialogView, NSError error) {}
     @NotImplemented("webDialogViewDidCancel:")

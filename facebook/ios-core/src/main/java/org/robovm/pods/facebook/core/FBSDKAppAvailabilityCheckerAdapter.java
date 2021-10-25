@@ -51,6 +51,8 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @NotImplemented("isMessengerAppInstalled")
     public boolean isMessengerAppInstalled() { return false; }
+    @NotImplemented("isFacebookAppInstalled")
+    public boolean isFacebookAppInstalled() { return false; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

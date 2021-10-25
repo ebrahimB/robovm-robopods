@@ -61,6 +61,6 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithAccessTokenString:")
     protected native @Pointer long init(String accessTokenString);
     @Method(selector = "processError:request:delegate:")
-    public native boolean processError(NSError error, FBSDKGraphRequest request, FBSDKGraphErrorRecoveryProcessorDelegate delegate);
+    public native boolean processError(NSError error, FBSDKGraphRequestProtocol request, FBSDKGraphErrorRecoveryProcessorDelegate delegate);
     /*</methods>*/
 }

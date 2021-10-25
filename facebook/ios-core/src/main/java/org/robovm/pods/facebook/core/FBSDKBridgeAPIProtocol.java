@@ -52,9 +52,9 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "requestURLWithActionID:scheme:methodName:methodVersion:parameters:error:")
-    NSURL requestURL(String actionID, String scheme, String methodName, String methodVersion, NSDictionary<?, ?> parameters, NSError.NSErrorPtr errorRef);
+    NSURL requestURL(String actionID, String scheme, String methodName, String methodVersion, NSDictionary<NSString, ?> parameters, NSError.NSErrorPtr errorRef);
     @Method(selector = "responseParametersForActionID:queryParameters:cancelled:error:")
-    NSDictionary<?, ?> responseParameters(String actionID, NSDictionary<?, ?> queryParameters, BooleanPtr cancelledRef, NSError.NSErrorPtr errorRef);
+    NSDictionary<NSString, ?> responseParameters(String actionID, NSDictionary<NSString, ?> queryParameters, BooleanPtr cancelledRef, NSError.NSErrorPtr errorRef);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

@@ -36,24 +36,32 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKGraphRequestConnectionProvidingAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKGraphRequestConnectionProviding/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+/*</javadoc>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKLoginTooltip/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
+
+    /*<ptr>*/public static class FBSDKLoginTooltipPtr extends Ptr<FBSDKLoginTooltip, FBSDKLoginTooltipPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FBSDKLoginTooltip.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
+    /*<constructors>*/
+    protected FBSDKLoginTooltip() {}
+    protected FBSDKLoginTooltip(Handle h, long handle) { super(h, handle); }
+    protected FBSDKLoginTooltip(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithText:enabled:")
+    public FBSDKLoginTooltip(String text, boolean enabled) { super((SkipInit) null); initObject(init(text, enabled)); }
+    /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "isEnabled")
+    public native boolean isEnabled();
+    @Property(selector = "text")
+    public native String getText();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("createGraphRequestConnection")
-    public FBSDKGraphRequestConnecting createGraphRequestConnection() { return null; }
+    @Method(selector = "initWithText:enabled:")
+    protected native @Pointer long init(String text, boolean enabled);
     /*</methods>*/
 }

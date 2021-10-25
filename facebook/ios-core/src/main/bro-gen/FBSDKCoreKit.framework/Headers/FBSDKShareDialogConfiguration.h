@@ -20,14 +20,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// Constant used to describe the 'Like' dialog
-FOUNDATION_EXPORT NSString *const FBSDKDialogConfigurationNameLike;
 /// Constant used to describe the 'Message' dialog
 FOUNDATION_EXPORT NSString *const FBSDKDialogConfigurationNameMessage;
 /// Constant used to describe the 'Share' dialog
 FOUNDATION_EXPORT NSString *const FBSDKDialogConfigurationNameShare;
 
-@protocol FBSDKServerConfigurationProviding;
 
 /**
  A lightweight interface to expose aspects of FBSDKServerConfiguration that are used by dialogs in ShareKit.

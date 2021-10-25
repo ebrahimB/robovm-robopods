@@ -52,8 +52,8 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKAppEvents(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "singleton")
-    public static native FBSDKAppEvents getSingleton();
+    @Property(selector = "shared")
+    public static native FBSDKAppEvents getShared();
     @Property(selector = "flushBehavior")
     public static native FBSDKAppEventsFlushBehavior getFlushBehavior();
     @Property(selector = "setFlushBehavior:")
@@ -80,9 +80,29 @@ import org.robovm.apple.coreanimation.*;
         @GlobalValue(symbol="FBSDKAppEventsLoggingResultNotification", optional=true)
         public static native NSString LoggingResult();
     }
+
+    @Library(Library.INTERNAL)
+    public static class Parameters {
+        static { Bro.bind(Parameters.class); }
+
+        @GlobalValue(symbol="FBSDKAppEventParameterEventName", optional=true)
+        public static native String EventName();
+        @GlobalValue(symbol="FBSDKAppEventParameterLogTime", optional=true)
+        public static native String LogTime();
+    }
     
     @Method(selector = "activateApp")
     public native void activateApp();
+    @Method(selector = "setUserEmail:firstName:lastName:phone:dateOfBirth:gender:city:state:zip:country:")
+    public native void setUserData(String email, String firstName, String lastName, String phone, String dateOfBirth, String gender, String city, String state, String zip, String country);
+    @Method(selector = "getUserData")
+    public native String getUserData();
+    @Method(selector = "clearUserData")
+    public native void clearUserData();
+    @Method(selector = "setUserData:forType:")
+    public native void setUserData(String data, NSString type);
+    @Method(selector = "clearUserDataForType:")
+    public native void clearUserDataForType(NSString type);
     @Method(selector = "logEvent:")
     public static native void logEvent(NSString eventName);
     @Method(selector = "logEvent:valueToSum:")
@@ -100,9 +120,9 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "logPurchase:currency:parameters:accessToken:")
     public static native void logPurchase(double purchaseAmount, String currency, NSDictionary<NSString, ?> parameters, FBSDKAccessToken accessToken);
     @Method(selector = "logPushNotificationOpen:")
-    public static native void logPushNotificationOpen(NSDictionary<?, ?> payload);
+    public static native void logPushNotificationOpen(NSDictionary<NSString, ?> payload);
     @Method(selector = "logPushNotificationOpen:action:")
-    public static native void logPushNotificationOpen(NSDictionary<?, ?> payload, String action);
+    public static native void logPushNotificationOpen(NSDictionary<NSString, ?> payload, String action);
     @Method(selector = "logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:")
     public static native void logProductItemAvailability(String itemID, FBSDKProductAvailability availability, FBSDKProductCondition condition, String description, String imageLink, String link, String title, double priceAmount, String currency, String gtin, String mpn, String brand, NSDictionary<NSString, ?> parameters);
     @Method(selector = "setPushNotificationsDeviceToken:")
@@ -115,16 +135,6 @@ import org.robovm.apple.coreanimation.*;
     public static native FBSDKGraphRequest requestForCustomAudienceThirdPartyID(FBSDKAccessToken accessToken);
     @Method(selector = "clearUserID")
     public static native void clearUserID();
-    @Method(selector = "setUserEmail:firstName:lastName:phone:dateOfBirth:gender:city:state:zip:country:")
-    public static native void setUserData(String email, String firstName, String lastName, String phone, String dateOfBirth, String gender, String city, String state, String zip, String country);
-    @Method(selector = "getUserData")
-    public static native String getUserData();
-    @Method(selector = "clearUserData")
-    public static native void clearUserData();
-    @Method(selector = "setUserData:forType:")
-    public static native void setUserData(String data, NSString type);
-    @Method(selector = "clearUserDataForType:")
-    public static native void clearUserDataForType(NSString type);
     @Method(selector = "augmentHybridWKWebView:")
     public static native void augmentHybridWKWebView(WKWebView webView);
     @Method(selector = "setIsUnityInit:")
@@ -132,8 +142,8 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "sendEventBindingsToUnity")
     public static native void sendEventBindingsToUnity();
     @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:")
-    public static native void logInternalEvent(NSString eventName, NSDictionary<?, ?> parameters, boolean isImplicitlyLogged);
+    public static native void logInternalEvent(NSString eventName, NSDictionary<NSString, ?> parameters, boolean isImplicitlyLogged);
     @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:accessToken:")
-    public static native void logInternalEvent(NSString eventName, NSDictionary<?, ?> parameters, boolean isImplicitlyLogged, FBSDKAccessToken accessToken);
+    public static native void logInternalEvent(NSString eventName, NSDictionary<NSString, ?> parameters, boolean isImplicitlyLogged, FBSDKAccessToken accessToken);
     /*</methods>*/
 }

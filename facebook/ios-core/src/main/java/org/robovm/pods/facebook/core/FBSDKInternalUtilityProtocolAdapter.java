@@ -51,16 +51,20 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @NotImplemented("isFacebookAppInstalled")
     public boolean isFacebookAppInstalled() { return false; }
+    @NotImplemented("isMSQRDPlayerAppInstalled")
+    public boolean isMSQRDPlayerAppInstalled() { return false; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("URLWithScheme:host:path:queryParameters:error:")
-    public NSURL constructURL(String scheme, String host, String path, NSDictionary<?, ?> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
+    public NSURL constructURL(String scheme, String host, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
     @NotImplemented("registerTransientObject:")
     public void registerTransientObject(NSObject object) {}
     @NotImplemented("unregisterTransientObject:")
     public void unregisterTransientObject(NSObject object) {}
     @NotImplemented("checkRegisteredCanOpenURLScheme:")
     public void checkRegisteredCanOpenURLScheme(String urlScheme) {}
+    @NotImplemented("validateURLSchemes")
+    public void validateURLSchemes() {}
     /*</methods>*/
 }

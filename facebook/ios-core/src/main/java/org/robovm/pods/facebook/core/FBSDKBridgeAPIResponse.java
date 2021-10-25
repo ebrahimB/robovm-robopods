@@ -62,7 +62,7 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "request")
     public native FBSDKBridgeAPIRequestProtocol getRequest();
     @Property(selector = "responseParameters")
-    public native NSDictionary<?, ?> getResponseParameters();
+    public native NSDictionary<NSString, ?> getResponseParameters();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

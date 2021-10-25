@@ -52,24 +52,58 @@ import org.robovm.apple.coreanimation.*;
     String getAppID();
     @Property(selector = "setAppID:")
     void setAppID(String v);
+    @Property(selector = "clientToken")
+    String getClientToken();
+    @Property(selector = "setClientToken:")
+    void setClientToken(String v);
+    @Property(selector = "userAgentSuffix")
+    String getUserAgentSuffix();
+    @Property(selector = "setUserAgentSuffix:")
+    void setUserAgentSuffix(String v);
+    @Property(selector = "sdkVersion")
+    String getSdkVersion();
+    @Property(selector = "displayName")
+    String getDisplayName();
+    @Property(selector = "setDisplayName:")
+    void setDisplayName(String v);
+    @Property(selector = "facebookDomainPart")
+    String getFacebookDomainPart();
+    @Property(selector = "setFacebookDomainPart:")
+    void setFacebookDomainPart(String v);
+    @Property(selector = "loggingBehaviors")
+    NSSet<NSString> getLoggingBehaviors();
+    @Property(selector = "setLoggingBehaviors:")
+    void setLoggingBehaviors(NSSet<NSString> v);
+    @Property(selector = "appURLSchemeSuffix")
+    String getAppURLSchemeSuffix();
+    @Property(selector = "setAppURLSchemeSuffix:")
+    void setAppURLSchemeSuffix(String v);
     @Property(selector = "isDataProcessingRestricted")
     boolean isDataProcessingRestricted();
     @Property(selector = "isAutoLogAppEventsEnabled")
     boolean isAutoLogAppEventsEnabled();
+    @Property(selector = "isCodelessDebugLogEnabled")
+    boolean isCodelessDebugLogEnabled();
+    @Property(selector = "setCodelessDebugLogEnabled:")
+    void setCodelessDebugLogEnabled(boolean v);
+    @Property(selector = "isAdvertiserIDCollectionEnabled")
+    boolean isAdvertiserIDCollectionEnabled();
+    @Property(selector = "setAdvertiserIDCollectionEnabled:")
+    void setAdvertiserIDCollectionEnabled(boolean v);
     @Property(selector = "isSetATETimeExceedsInstallTime")
     boolean isSetATETimeExceedsInstallTime();
     @Property(selector = "isSKAdNetworkReportEnabled")
     boolean isSKAdNetworkReportEnabled();
-    @Property(selector = "loggingBehaviors")
-    NSSet<NSString> getLoggingBehaviors();
     @Property(selector = "advertisingTrackingStatus")
     FBSDKAdvertisingTrackingStatus getAdvertisingTrackingStatus();
     @Property(selector = "installTimestamp")
     NSDate getInstallTimestamp();
     @Property(selector = "advertiserTrackingEnabledTimestamp")
     NSDate getAdvertiserTrackingEnabledTimestamp();
-    @Property(selector = "shouldLimitEventAndDataUsage")
-    boolean shouldLimitEventAndDataUsage();
+    @Property(selector = "isEventDataUsageLimited")
+    boolean isEventDataUsageLimited();
+    @Property(selector = "setIsEventDataUsageLimited:")
+    void setIsEventDataUsageLimited(boolean v);
     @Property(selector = "shouldUseTokenOptimizations")
     boolean shouldUseTokenOptimizations();
     @Property(selector = "setShouldUseTokenOptimizations:")
@@ -78,8 +112,18 @@ import org.robovm.apple.coreanimation.*;
     String getGraphAPIVersion();
     @Property(selector = "isGraphErrorRecoveryEnabled")
     boolean isGraphErrorRecoveryEnabled();
+    @Property(selector = "setIsGraphErrorRecoveryEnabled:")
+    void setIsGraphErrorRecoveryEnabled(boolean v);
     @Property(selector = "graphAPIDebugParamValue")
     String getGraphAPIDebugParamValue();
+    @Property(selector = "isAdvertiserTrackingEnabled")
+    boolean isAdvertiserTrackingEnabled();
+    @Property(selector = "setAdvertiserTrackingEnabled:")
+    void setAdvertiserTrackingEnabled(boolean v);
+    @Property(selector = "shouldUseCachedValuesForExpensiveMetadata")
+    boolean shouldUseCachedValuesForExpensiveMetadata();
+    @Property(selector = "setShouldUseCachedValuesForExpensiveMetadata:")
+    void setShouldUseCachedValuesForExpensiveMetadata(boolean v);
     /*</properties>*/
     /*<methods>*/
     

@@ -38,9 +38,9 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKGraphRequestProvidingAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKTokenStringProvidingAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKGraphRequestProviding/*</implements>*/ {
+    /*<implements>*/implements FBSDKTokenStringProviding/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -53,17 +53,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("createGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:flags:")
-    public FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<?, ?> parameters, String tokenString, FBSDKHTTPMethod method, FBSDKGraphRequestFlags flags) { return null; }
-    @NotImplemented("createGraphRequestWithGraphPath:parameters:")
-    public FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters) { return null; }
-    @NotImplemented("createGraphRequestWithGraphPath:")
-    public FBSDKGraphRequest createGraphRequest(String graphPath) { return null; }
-    @NotImplemented("createGraphRequestWithGraphPath:parameters:HTTPMethod:")
-    public FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKHTTPMethod method) { return null; }
-    @NotImplemented("createGraphRequestWithGraphPath:parameters:tokenString:version:HTTPMethod:")
-    public FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method) { return null; }
-    @NotImplemented("createGraphRequestWithGraphPath:parameters:flags:")
-    public FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<?, ?> parameters, FBSDKGraphRequestFlags flags) { return null; }
+    
     /*</methods>*/
 }

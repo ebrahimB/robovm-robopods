@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKGraphRequestConnectionFactory/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKGraphRequestConnectionProviding/*</implements>*/ {
+    /*<implements>*/implements FBSDKGraphRequestConnectionFactoryProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKGraphRequestConnectionFactoryPtr extends Ptr<FBSDKGraphRequestConnectionFactory, FBSDKGraphRequestConnectionFactoryPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKGraphRequestConnectionFactory.class); }/*</bind>*/

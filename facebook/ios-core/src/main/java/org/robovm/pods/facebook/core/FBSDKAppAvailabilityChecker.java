@@ -50,6 +50,8 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "isMessengerAppInstalled")
     boolean isMessengerAppInstalled();
+    @Property(selector = "isFacebookAppInstalled")
+    boolean isFacebookAppInstalled();
     /*</properties>*/
     /*<methods>*/
     

@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKGraphRequestFactory/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKGraphRequestProviding/*</implements>*/ {
+    /*<implements>*/implements FBSDKGraphRequestFactoryProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKGraphRequestFactoryPtr extends Ptr<FBSDKGraphRequestFactory, FBSDKGraphRequestFactoryPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKGraphRequestFactory.class); }/*</bind>*/
@@ -57,16 +57,16 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:flags:")
-    public native FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<?, ?> parameters, String tokenString, FBSDKHTTPMethod method, FBSDKGraphRequestFlags flags);
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, FBSDKHTTPMethod method, FBSDKGraphRequestFlags flags);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:")
-    public native FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters);
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters);
     @Method(selector = "createGraphRequestWithGraphPath:")
-    public native FBSDKGraphRequest createGraphRequest(String graphPath);
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:HTTPMethod:")
-    public native FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKHTTPMethod method);
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKHTTPMethod method);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:version:HTTPMethod:")
-    public native FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method);
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:flags:")
-    public native FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<?, ?> parameters, FBSDKGraphRequestFlags flags);
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKGraphRequestFlags flags);
     /*</methods>*/
 }

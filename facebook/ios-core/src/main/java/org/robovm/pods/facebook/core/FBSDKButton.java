@@ -77,6 +77,12 @@ import org.robovm.apple.coreanimation.*;
     public native void configure(FBSDKIcon icon, String title, UIColor backgroundColor, UIColor highlightedColor, String selectedTitle, FBSDKIcon selectedIcon, UIColor selectedColor, UIColor selectedHighlightedColor);
     @Method(selector = "defaultBackgroundColor")
     public native UIColor defaultBackgroundColor();
+    @Method(selector = "sizeThatFits:title:")
+    public native @ByVal CGSize getSizeThatFits(@ByVal CGSize size, String title);
+    @Method(selector = "textSizeForText:font:constrainedSize:lineBreakMode:")
+    public native @ByVal CGSize getTextSizeForText(String text, UIFont font, @ByVal CGSize constrainedSize, NSLineBreakMode lineBreakMode);
+    @Method(selector = "logTapEventWithEventName:parameters:")
+    public native void logTapEvent(String eventName, NSDictionary<NSString, ?> parameters);
     /**
      * @since Available in iOS 13.0 and later.
      */

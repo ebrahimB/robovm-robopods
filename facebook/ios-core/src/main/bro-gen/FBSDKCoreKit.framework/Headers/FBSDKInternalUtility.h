@@ -19,7 +19,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "FBSDKInternalUtilityProtocol.h"
+#import <FBSDKCoreKit/FBSDKInternalUtilityProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -63,7 +63,7 @@ NS_SWIFT_NAME(InternalUtility)
  @param url The FB url.
  @return A dictionary with the key/value pairs.
  */
-- (NSDictionary *)parametersFromFBURL:(NSURL *)url;
+- (NSDictionary<NSString *, id> *)parametersFromFBURL:(NSURL *)url;
 
 /**
   Constructs a Facebook URL.
@@ -101,7 +101,7 @@ NS_SWIFT_NAME(InternalUtility)
  @param grantedPermissions the set to add granted permissions to
  @param declinedPermissions the set to add declined permissions to.
  */
-- (void)extractPermissionsFromResponse:(NSDictionary *)responseObject
+- (void)extractPermissionsFromResponse:(NSDictionary<NSString *, id> *)responseObject
                     grantedPermissions:(NSMutableSet *)grantedPermissions
                    declinedPermissions:(NSMutableSet *)declinedPermissions
                     expiredPermissions:(NSMutableSet *)expiredPermissions;
@@ -116,11 +116,6 @@ NS_SWIFT_NAME(InternalUtility)
  Returns the composed client access token.
  */
 - (NSString *)validateRequiredClientAccessToken;
-
-/**
-  validates that the right URL schemes are registered, throws an NSException if not.
- */
-- (void)validateURLSchemes;
 
 /**
   Attempts to find the first UIViewController in the view's responder chain. Returns nil if not found.
@@ -145,7 +140,6 @@ NS_SWIFT_NAME(InternalUtility)
 #pragma mark - FB Apps Installed
 
 @property (nonatomic, assign, readonly) BOOL isMessengerAppInstalled;
-@property (nonatomic, assign, readonly) BOOL isMSQRDPlayerAppInstalled;
 
 - (BOOL)isRegisteredCanOpenURLScheme:(NSString *)urlScheme;
 

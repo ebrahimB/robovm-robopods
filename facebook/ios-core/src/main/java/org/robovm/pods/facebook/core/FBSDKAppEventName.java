@@ -50,32 +50,14 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*//*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="FBSDKAppEventNameAchievedLevel", optional=true)
-    public static native NSString AchievedLevel();
-    @GlobalValue(symbol="FBSDKAppEventNameAddedPaymentInfo", optional=true)
-    public static native NSString AddedPaymentInfo();
-    @GlobalValue(symbol="FBSDKAppEventNameAddedToCart", optional=true)
-    public static native NSString AddedToCart();
-    @GlobalValue(symbol="FBSDKAppEventNameAddedToWishlist", optional=true)
-    public static native NSString AddedToWishlist();
+    @GlobalValue(symbol="FBSDKAppEventNameAdClick", optional=true)
+    public static native NSString AdClick();
+    @GlobalValue(symbol="FBSDKAppEventNameAdImpression", optional=true)
+    public static native NSString AdImpression();
     @GlobalValue(symbol="FBSDKAppEventNameCompletedRegistration", optional=true)
     public static native NSString CompletedRegistration();
     @GlobalValue(symbol="FBSDKAppEventNameCompletedTutorial", optional=true)
     public static native NSString CompletedTutorial();
-    @GlobalValue(symbol="FBSDKAppEventNameInitiatedCheckout", optional=true)
-    public static native NSString InitiatedCheckout();
-    @GlobalValue(symbol="FBSDKAppEventNamePurchased", optional=true)
-    public static native NSString Purchased();
-    @GlobalValue(symbol="FBSDKAppEventNameRated", optional=true)
-    public static native NSString Rated();
-    @GlobalValue(symbol="FBSDKAppEventNameSearched", optional=true)
-    public static native NSString Searched();
-    @GlobalValue(symbol="FBSDKAppEventNameSpentCredits", optional=true)
-    public static native NSString SpentCredits();
-    @GlobalValue(symbol="FBSDKAppEventNameUnlockedAchievement", optional=true)
-    public static native NSString UnlockedAchievement();
-    @GlobalValue(symbol="FBSDKAppEventNameViewedContent", optional=true)
-    public static native NSString ViewedContent();
     @GlobalValue(symbol="FBSDKAppEventNameContact", optional=true)
     public static native NSString Contact();
     @GlobalValue(symbol="FBSDKAppEventNameCustomizeProduct", optional=true)
@@ -84,17 +66,35 @@ import org.robovm.apple.coreanimation.*;
     public static native NSString Donate();
     @GlobalValue(symbol="FBSDKAppEventNameFindLocation", optional=true)
     public static native NSString FindLocation();
+    @GlobalValue(symbol="FBSDKAppEventNameRated", optional=true)
+    public static native NSString Rated();
     @GlobalValue(symbol="FBSDKAppEventNameSchedule", optional=true)
     public static native NSString Schedule();
+    @GlobalValue(symbol="FBSDKAppEventNameSearched", optional=true)
+    public static native NSString Searched();
     @GlobalValue(symbol="FBSDKAppEventNameStartTrial", optional=true)
     public static native NSString StartTrial();
     @GlobalValue(symbol="FBSDKAppEventNameSubmitApplication", optional=true)
     public static native NSString SubmitApplication();
     @GlobalValue(symbol="FBSDKAppEventNameSubscribe", optional=true)
     public static native NSString Subscribe();
-    @GlobalValue(symbol="FBSDKAppEventNameAdImpression", optional=true)
-    public static native NSString AdImpression();
-    @GlobalValue(symbol="FBSDKAppEventNameAdClick", optional=true)
-    public static native NSString AdClick();
+    @GlobalValue(symbol="FBSDKAppEventNameViewedContent", optional=true)
+    public static native NSString ViewedContent();
+    @GlobalValue(symbol="FBSDKAppEventNameAddedPaymentInfo", optional=true)
+    public static native NSString AddedPaymentInfo();
+    @GlobalValue(symbol="FBSDKAppEventNameAddedToCart", optional=true)
+    public static native NSString AddedToCart();
+    @GlobalValue(symbol="FBSDKAppEventNameAddedToWishlist", optional=true)
+    public static native NSString AddedToWishlist();
+    @GlobalValue(symbol="FBSDKAppEventNameInitiatedCheckout", optional=true)
+    public static native NSString InitiatedCheckout();
+    @GlobalValue(symbol="FBSDKAppEventNamePurchased", optional=true)
+    public static native NSString Purchased();
+    @GlobalValue(symbol="FBSDKAppEventNameAchievedLevel", optional=true)
+    public static native NSString AchievedLevel();
+    @GlobalValue(symbol="FBSDKAppEventNameUnlockedAchievement", optional=true)
+    public static native NSString UnlockedAchievement();
+    @GlobalValue(symbol="FBSDKAppEventNameSpentCredits", optional=true)
+    public static native NSString SpentCredits();
     /*</methods>*/
 }

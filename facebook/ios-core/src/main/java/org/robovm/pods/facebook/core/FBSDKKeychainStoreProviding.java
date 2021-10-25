@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKGraphRequestProviding/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKKeychainStoreProviding/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -51,18 +51,8 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:flags:")
-    FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<?, ?> parameters, String tokenString, FBSDKHTTPMethod method, FBSDKGraphRequestFlags flags);
-    @Method(selector = "createGraphRequestWithGraphPath:parameters:")
-    FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters);
-    @Method(selector = "createGraphRequestWithGraphPath:")
-    FBSDKGraphRequest createGraphRequest(String graphPath);
-    @Method(selector = "createGraphRequestWithGraphPath:parameters:HTTPMethod:")
-    FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKHTTPMethod method);
-    @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:version:HTTPMethod:")
-    FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method);
-    @Method(selector = "createGraphRequestWithGraphPath:parameters:flags:")
-    FBSDKGraphRequest createGraphRequest(String graphPath, NSDictionary<?, ?> parameters, FBSDKGraphRequestFlags flags);
+    @Method(selector = "createKeychainStoreWithService:accessGroup:")
+    FBSDKKeychainStoreProtocol createKeychainStore(String service, String accessGroup);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

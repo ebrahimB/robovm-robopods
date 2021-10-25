@@ -16,14 +16,27 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "FBSDKInternalUtility.h"
+#import <FBSDKCoreKit/FBSDKInternalUtility.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_NAME(AppAvailabilityChecker)
 @protocol FBSDKAppAvailabilityChecker
 
+/**
+ Internal Type exposed to facilitate transition to Swift.
+ API Subject to change or removal without warning. Do not use.
+
+ @warning UNSAFE - DO NOT USE
+ */
 @property (nonatomic, assign, readonly) BOOL isMessengerAppInstalled;
+/**
+ Internal Type exposed to facilitate transition to Swift.
+ API Subject to change or removal without warning. Do not use.
+
+ @warning UNSAFE - DO NOT USE
+ */
+@property (nonatomic, assign, readonly) BOOL isFacebookAppInstalled;
 
 @end
 

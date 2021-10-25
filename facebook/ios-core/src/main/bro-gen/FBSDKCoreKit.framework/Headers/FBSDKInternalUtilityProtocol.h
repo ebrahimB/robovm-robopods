@@ -26,6 +26,7 @@ NS_SWIFT_NAME(InternalUtilityProtocol)
 #pragma mark - FB Apps Installed
 
 @property (nonatomic, readonly) BOOL isFacebookAppInstalled;
+@property (nonatomic, readonly) BOOL isMSQRDPlayerAppInstalled;
 
 /**
   Constructs an NSURL.
@@ -39,7 +40,7 @@ NS_SWIFT_NAME(InternalUtilityProtocol)
 - (nullable NSURL *)URLWithScheme:(NSString *)scheme
                              host:(NSString *)host
                              path:(NSString *)path
-                  queryParameters:(NSDictionary *)queryParameters
+                  queryParameters:(NSDictionary<NSString *, id> *)queryParameters
                             error:(NSError *__autoreleasing *)errorRef;
 
 /**
@@ -55,6 +56,11 @@ NS_SWIFT_NAME(InternalUtilityProtocol)
 - (void)unregisterTransientObject:(__weak id)object;
 
 - (void)checkRegisteredCanOpenURLScheme:(NSString *)urlScheme;
+
+/**
+  Validates that the right URL schemes are registered, throws an NSException if not.
+ */
+- (void)validateURLSchemes;
 
 @end
 

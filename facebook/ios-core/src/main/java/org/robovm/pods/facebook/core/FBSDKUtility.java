@@ -79,6 +79,6 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "getGraphDomainFromToken")
     public static native String getGraphDomainFromToken();
     @Method(selector = "unversionedFacebookURLWithHostPrefix:path:queryParameters:error:")
-    public static native NSURL getUnversionedFacebookURL(String hostPrefix, String path, NSDictionary<?, ?> queryParameters, NSError.NSErrorPtr errorRef);
+    public static native NSURL getUnversionedFacebookURL(String hostPrefix, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
     /*</methods>*/
 }

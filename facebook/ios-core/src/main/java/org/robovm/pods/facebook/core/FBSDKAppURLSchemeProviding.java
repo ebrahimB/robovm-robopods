@@ -51,7 +51,10 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    
+    @Method(selector = "appURLScheme")
+    String appURLScheme();
+    @Method(selector = "validateURLSchemes")
+    void validateURLSchemes();
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

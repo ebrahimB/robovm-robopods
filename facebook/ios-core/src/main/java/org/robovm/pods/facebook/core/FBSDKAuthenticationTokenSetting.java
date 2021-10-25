@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKGraphRequestConnectionProviding/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKAuthenticationTokenSetting/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -51,8 +51,7 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "createGraphRequestConnection")
-    FBSDKGraphRequestConnecting createGraphRequestConnection();
+    
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

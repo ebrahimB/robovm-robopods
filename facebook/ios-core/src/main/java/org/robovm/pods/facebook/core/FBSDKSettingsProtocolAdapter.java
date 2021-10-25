@@ -53,24 +53,58 @@ import org.robovm.apple.coreanimation.*;
     public String getAppID() { return null; }
     @NotImplemented("setAppID:")
     public void setAppID(String v) {}
+    @NotImplemented("clientToken")
+    public String getClientToken() { return null; }
+    @NotImplemented("setClientToken:")
+    public void setClientToken(String v) {}
+    @NotImplemented("userAgentSuffix")
+    public String getUserAgentSuffix() { return null; }
+    @NotImplemented("setUserAgentSuffix:")
+    public void setUserAgentSuffix(String v) {}
+    @NotImplemented("sdkVersion")
+    public String getSdkVersion() { return null; }
+    @NotImplemented("displayName")
+    public String getDisplayName() { return null; }
+    @NotImplemented("setDisplayName:")
+    public void setDisplayName(String v) {}
+    @NotImplemented("facebookDomainPart")
+    public String getFacebookDomainPart() { return null; }
+    @NotImplemented("setFacebookDomainPart:")
+    public void setFacebookDomainPart(String v) {}
+    @NotImplemented("loggingBehaviors")
+    public NSSet<NSString> getLoggingBehaviors() { return null; }
+    @NotImplemented("setLoggingBehaviors:")
+    public void setLoggingBehaviors(NSSet<NSString> v) {}
+    @NotImplemented("appURLSchemeSuffix")
+    public String getAppURLSchemeSuffix() { return null; }
+    @NotImplemented("setAppURLSchemeSuffix:")
+    public void setAppURLSchemeSuffix(String v) {}
     @NotImplemented("isDataProcessingRestricted")
     public boolean isDataProcessingRestricted() { return false; }
     @NotImplemented("isAutoLogAppEventsEnabled")
     public boolean isAutoLogAppEventsEnabled() { return false; }
+    @NotImplemented("isCodelessDebugLogEnabled")
+    public boolean isCodelessDebugLogEnabled() { return false; }
+    @NotImplemented("setCodelessDebugLogEnabled:")
+    public void setCodelessDebugLogEnabled(boolean v) {}
+    @NotImplemented("isAdvertiserIDCollectionEnabled")
+    public boolean isAdvertiserIDCollectionEnabled() { return false; }
+    @NotImplemented("setAdvertiserIDCollectionEnabled:")
+    public void setAdvertiserIDCollectionEnabled(boolean v) {}
     @NotImplemented("isSetATETimeExceedsInstallTime")
     public boolean isSetATETimeExceedsInstallTime() { return false; }
     @NotImplemented("isSKAdNetworkReportEnabled")
     public boolean isSKAdNetworkReportEnabled() { return false; }
-    @NotImplemented("loggingBehaviors")
-    public NSSet<NSString> getLoggingBehaviors() { return null; }
     @NotImplemented("advertisingTrackingStatus")
     public FBSDKAdvertisingTrackingStatus getAdvertisingTrackingStatus() { return null; }
     @NotImplemented("installTimestamp")
     public NSDate getInstallTimestamp() { return null; }
     @NotImplemented("advertiserTrackingEnabledTimestamp")
     public NSDate getAdvertiserTrackingEnabledTimestamp() { return null; }
-    @NotImplemented("shouldLimitEventAndDataUsage")
-    public boolean shouldLimitEventAndDataUsage() { return false; }
+    @NotImplemented("isEventDataUsageLimited")
+    public boolean isEventDataUsageLimited() { return false; }
+    @NotImplemented("setIsEventDataUsageLimited:")
+    public void setIsEventDataUsageLimited(boolean v) {}
     @NotImplemented("shouldUseTokenOptimizations")
     public boolean shouldUseTokenOptimizations() { return false; }
     @NotImplemented("setShouldUseTokenOptimizations:")
@@ -79,8 +113,18 @@ import org.robovm.apple.coreanimation.*;
     public String getGraphAPIVersion() { return null; }
     @NotImplemented("isGraphErrorRecoveryEnabled")
     public boolean isGraphErrorRecoveryEnabled() { return false; }
+    @NotImplemented("setIsGraphErrorRecoveryEnabled:")
+    public void setIsGraphErrorRecoveryEnabled(boolean v) {}
     @NotImplemented("graphAPIDebugParamValue")
     public String getGraphAPIDebugParamValue() { return null; }
+    @NotImplemented("isAdvertiserTrackingEnabled")
+    public boolean isAdvertiserTrackingEnabled() { return false; }
+    @NotImplemented("setAdvertiserTrackingEnabled:")
+    public void setAdvertiserTrackingEnabled(boolean v) {}
+    @NotImplemented("shouldUseCachedValuesForExpensiveMetadata")
+    public boolean shouldUseCachedValuesForExpensiveMetadata() { return false; }
+    @NotImplemented("setShouldUseCachedValuesForExpensiveMetadata:")
+    public void setShouldUseCachedValuesForExpensiveMetadata(boolean v) {}
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

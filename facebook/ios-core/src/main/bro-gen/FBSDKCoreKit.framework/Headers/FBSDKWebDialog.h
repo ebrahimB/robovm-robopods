@@ -16,8 +16,6 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
 #if !TARGET_OS_TV
 
 #import <CoreGraphics/CGGeometry.h>
@@ -73,7 +71,7 @@ NS_SWIFT_NAME(WebDialog)
  @warning UNSAFE - DO NOT USE
  */
 + (instancetype)showWithName:(NSString *)name
-                  parameters:(NSDictionary *)parameters
+                  parameters:(NSDictionary<NSString *, id> *)parameters
                     delegate:(id<FBSDKWebDialogDelegate>)delegate;
 
 /**
@@ -83,7 +81,7 @@ NS_SWIFT_NAME(WebDialog)
  @warning UNSAFE - DO NOT USE
  */
 + (instancetype)createAndShow:(NSString *)name
-                   parameters:(NSDictionary *)parameters
+                   parameters:(NSDictionary<NSString *, id> *)parameters
                         frame:(CGRect)frame
                      delegate:(id<FBSDKWebDialogDelegate>)delegate
                  windowFinder:(id<FBSDKWindowFinding>)windowFinder;
@@ -97,7 +95,7 @@ NS_SWIFT_NAME(WebDialog)
  @warning UNSAFE - DO NOT USE
  */
 NS_SWIFT_NAME(WebDialogDelegate)
-@protocol FBSDKWebDialogDelegate <NSObject>
+@protocol FBSDKWebDialogDelegate
 
 /**
  Internal Type exposed to facilitate transition to Swift.
@@ -105,7 +103,7 @@ NS_SWIFT_NAME(WebDialogDelegate)
 
  @warning UNSAFE - DO NOT USE
  */
-- (void)webDialog:(FBSDKWebDialog *)webDialog didCompleteWithResults:(NSDictionary *)results;
+- (void)webDialog:(FBSDKWebDialog *)webDialog didCompleteWithResults:(NSDictionary<NSString *, id> *)results;
 
 /**
  Internal Type exposed to facilitate transition to Swift.
