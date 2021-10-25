@@ -89,6 +89,14 @@ import org.robovm.apple.coreanimation.*;
     @GlobalValue(symbol="kGADAdSizeSmartBannerLandscape", optional=true)
     public static native @ByVal GADAdSize SmartBannerLandscape();
     
+    @Bridge(symbol="GADPortraitInlineAdaptiveBannerAdSizeWithWidth", optional=true)
+    public static native @ByVal GADAdSize getPortraitInlineAdaptiveBannerAdSize(@MachineSizedFloat double width);
+    @Bridge(symbol="GADLandscapeInlineAdaptiveBannerAdSizeWithWidth", optional=true)
+    public static native @ByVal GADAdSize getLandscapeInlineAdaptiveBannerAdSize(@MachineSizedFloat double width);
+    @Bridge(symbol="GADCurrentOrientationInlineAdaptiveBannerAdSizeWithWidth", optional=true)
+    public static native @ByVal GADAdSize getCurrentOrientationInlineAdaptiveBannerAdSize(@MachineSizedFloat double width);
+    @Bridge(symbol="GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight", optional=true)
+    public static native @ByVal GADAdSize getInlineAdaptiveBannerAdSize(@MachineSizedFloat double width, @MachineSizedFloat double maxHeight);
     @Bridge(symbol="GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth", optional=true)
     public static native @ByVal GADAdSize getPortraitAnchoredAdaptiveBannerAdSize(@MachineSizedFloat double width);
     @Bridge(symbol="GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth", optional=true)

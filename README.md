@@ -43,9 +43,9 @@ v1.19.0 - in development
 | [BranchMetrics](branchmetrics/)    | 1.40.1 |
 | [Charts](charts/)                  | 4.0.0  |
 | [Facebook](facebook/)              | 12.0.2 |
-| [Firebase](firebase/)              | 8.7.0  |
+| [Firebase](firebase/)              | 8.8.0  |
 | [Flurry](flurry/)                  | 11.2.1 |
-| [Fyber](fyber/)                    | 7.9.0  |
+| [Fyber](fyber/)                    | 8.0.0  |
 | [HelpShift](helpshift/)            | 7.11.1    |
 | [InMobi](inmobi/)                  | 9.2.0  |
 | [Kochava](kochava/)                | 4.8.0  |

@@ -5,13 +5,12 @@
 | RoboPod                           | Description                               |
 |-----------------------------------|-------------------------------------------|
 | [ios-core](ios-core/)             | Fyber Core                                |
-| [ios-mraid](ios-mraid/)           | Fyber HTML/MRAID content                  |
-| [ios-video](ios-video/)           | Fyber VAST/VPAID content                  |
 
 ## Versions
 
 | RoboPods Version  | Fyber Marketplace Version |
 |-------------------|---------------------------|
+| 1.19.0            | 8.0.0                     |
 | 1.16.0            | 7.8.3                     |
 | 1.15.0            | 7.8.1                     |
 | 1.14.0            | 7.7.3                     |

@@ -34,5 +34,6 @@
         <module>ios-google-ump</module>
         <module>ios-firestore</module>
         <module>ios-storage</module>
+        <module>ios-google-mobile-ads-mediation-testsuite</module>
     </modules>
 </project>

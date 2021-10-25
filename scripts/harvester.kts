@@ -238,6 +238,31 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             """.trimIndent()
         )
     },
+    "GoogleMobileAdsMediationTestSuite" to {framework ->
+        val artifact = "$framework.framework"
+        val artifactLocation = downloadFolder.extend("googlemobileadsmediationtestsuiteios/GoogleMobileAdsMediationTestSuite.xcframework/ios-arm64_armv7/$artifact")
+        processFramework(
+            artifact = artifact,
+            moduleFolder = "firebase/ios-google-mobile-ads-mediation-testsuite",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "gad-mediation-testsuite.yaml",
+            version = {
+                downloadFolder.extend("googlemobileadsmediationtestsuiteios/CHANGELOG.md").readLines()
+                    .find { it.contains("### ") }
+                    ?.let { it.substringAfter("### ") }
+                    ?: error("Failed to extract version from CHANGELOG.md!")
+            },
+            instruction = """
+                1. download iOS sdk from https://developers.google.com/admob/ios/mediation-test-suite
+                2. unpack 
+                3. expected location ${downloadFolder.extend("googlemobileadsmediationtestsuiteios")}
+            """.trimIndent(),
+            readmeFileVersionUpdater = { frm, modFolder, version ->
+                val moduleReadmeFile = Path.of("Firebase/README.md").toFile()
+                updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
+            }
+        )
+    }
 ).also {
     registerAppCenter(it, knownGroups)
     registerFirebase(it, knownGroups)

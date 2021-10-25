@@ -20,8 +20,6 @@
     </licenses>
 
     <modules>
-        <module>ios-core</module>
-        <module>ios-mraid</module>
-        <module>ios-video</module>
+        <module>ios</module>
     </modules>
 </project>
