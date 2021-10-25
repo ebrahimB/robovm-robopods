@@ -16,16 +16,14 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
 #if !TARGET_OS_TV
 
 #import <Foundation/Foundation.h>
 
-#import "FBSDKCoreKitImport.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-#import "FBSDKSharingValidation.h"
-#import "FBSDKGameRequestURLProvider.h"
+#import <FBSDKShareKit/FBSDKSharingValidation.h>
+#import <FBSDKShareKit/FBSDKGameRequestURLProvider.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

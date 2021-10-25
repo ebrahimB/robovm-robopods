@@ -22,9 +22,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FBSDKCoreKitImport.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-#import "FBSDKSharingValidation.h"
+#import <FBSDKShareKit/FBSDKSharingValidation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

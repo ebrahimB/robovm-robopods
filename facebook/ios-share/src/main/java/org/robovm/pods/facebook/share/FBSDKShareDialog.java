@@ -48,10 +48,11 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKShareDialog.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKShareDialog() {}
+    protected FBSDKShareDialog() {}
     protected FBSDKShareDialog(Handle h, long handle) { super(h, handle); }
     protected FBSDKShareDialog(SkipInit skipInit) { super(skipInit); }
-    public FBSDKShareDialog(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate) { super((Handle) null, create(viewController, content, delegate)); retain(getHandle()); }
+    @Method(selector = "initWithViewController:content:delegate:")
+    public FBSDKShareDialog(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate) { super((SkipInit) null); initObject(init(viewController, content, delegate)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "fromViewController")
@@ -79,8 +80,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "dialogWithViewController:withContent:delegate:")
-    protected static native @Pointer long create(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate);
+    @Method(selector = "initWithViewController:content:delegate:")
+    protected native @Pointer long init(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "showFromViewController:withContent:delegate:")
     public static native FBSDKShareDialog show(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "show")

@@ -55,19 +55,19 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "mediaViewDidLoad:")
-    void mediaViewDidLoad(FBMediaView mediaView);
+    void didLoad(FBMediaView mediaView);
     @Method(selector = "mediaViewWillEnterFullscreen:")
-    void mediaViewWillEnterFullscreen(FBMediaView mediaView);
+    void willEnterFullscreen(FBMediaView mediaView);
     @Method(selector = "mediaViewDidExitFullscreen:")
-    void mediaViewDidExitFullscreen(FBMediaView mediaView);
+    void didExitFullscreen(FBMediaView mediaView);
     @Method(selector = "mediaView:videoVolumeDidChange:")
-    void videoVolumeDidChangeß(FBMediaView mediaView, float volume);
+    void videoVolumeDidChange(FBMediaView mediaView, float volume);
     @Method(selector = "mediaViewVideoDidPause:")
-    void mediaViewVideoDidPause(FBMediaView mediaView);
+    void videoDidPause(FBMediaView mediaView);
     @Method(selector = "mediaViewVideoDidPlay:")
-    void mediaViewVideoDidPlay(FBMediaView mediaView);
+    void videoDidPlay(FBMediaView mediaView);
     @Method(selector = "mediaViewVideoDidComplete:")
-    void mediaViewVideoDidComplete(FBMediaView mediaView);
+    void videoDidComplete(FBMediaView mediaView);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

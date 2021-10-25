@@ -57,18 +57,18 @@ import org.robovm.pods.facebook.core.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("mediaViewDidLoad:")
-    public void mediaViewDidLoad(FBMediaView mediaView) {}
+    public void didLoad(FBMediaView mediaView) {}
     @NotImplemented("mediaViewWillEnterFullscreen:")
-    public void mediaViewWillEnterFullscreen(FBMediaView mediaView) {}
+    public void willEnterFullscreen(FBMediaView mediaView) {}
     @NotImplemented("mediaViewDidExitFullscreen:")
-    public void mediaViewDidExitFullscreen(FBMediaView mediaView) {}
+    public void didExitFullscreen(FBMediaView mediaView) {}
     @NotImplemented("mediaView:videoVolumeDidChange:")
-    public void videoVolumeDidChangeß(FBMediaView mediaView, float volume) {}
+    public void videoVolumeDidChange(FBMediaView mediaView, float volume) {}
     @NotImplemented("mediaViewVideoDidPause:")
-    public void mediaViewVideoDidPause(FBMediaView mediaView) {}
+    public void videoDidPause(FBMediaView mediaView) {}
     @NotImplemented("mediaViewVideoDidPlay:")
-    public void mediaViewVideoDidPlay(FBMediaView mediaView) {}
+    public void videoDidPlay(FBMediaView mediaView) {}
     @NotImplemented("mediaViewVideoDidComplete:")
-    public void mediaViewVideoDidComplete(FBMediaView mediaView) {}
+    public void videoDidComplete(FBMediaView mediaView) {}
     /*</methods>*/
 }

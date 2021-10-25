@@ -55,15 +55,17 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "dynamicBannerAdDidClick:")
-    void dynamicBannerAdDidClick(FBDynamicBannerAd dynamicBannerAd);
+    void didClick(FBDynamicBannerAd dynamicBannerAd);
     @Method(selector = "dynamicBannerAdDidLoad:")
-    void dynamicBannerAdDidLoad(FBDynamicBannerAd dynamicBannerAd);
+    void didLoad(FBDynamicBannerAd dynamicBannerAd);
     @Method(selector = "dynamicBannerAd:didFailWithError:")
     void didFail(FBDynamicBannerAd dynamicBannerAd, NSError error);
     @Method(selector = "dynamicBannerAdWillLogImpression:")
-    void dynamicBannerAdWillLogImpression(FBDynamicBannerAd dynamicBannerAd);
+    void willLogImpression(FBDynamicBannerAd dynamicBannerAd);
+    @Method(selector = "dynamicBannerAd:fullscreenDidFailWithError:")
+    void fullscreenDidFail(FBDynamicBannerAd dynamicBannerAd, NSError error);
     @Method(selector = "dynamicBannerAdDidFinishHandlingClick:")
-    void dynamicBannerAdDidFinishHandlingClick(FBDynamicBannerAd dynamicBannerAd);
+    void didFinishHandlingClick(FBDynamicBannerAd dynamicBannerAd);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

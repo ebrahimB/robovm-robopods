@@ -51,7 +51,8 @@ import org.robovm.apple.coreanimation.*;
     public FBSDKMessageDialog() {}
     protected FBSDKMessageDialog(Handle h, long handle) { super(h, handle); }
     protected FBSDKMessageDialog(SkipInit skipInit) { super(skipInit); }
-    public FBSDKMessageDialog(FBSDKSharingContent content, FBSDKSharingDelegate delegate) { super((Handle) null, create(content, delegate)); retain(getHandle()); }
+    @Method(selector = "initWithContent:delegate:")
+    public FBSDKMessageDialog(FBSDKSharingContent content, FBSDKSharingDelegate delegate) { super((SkipInit) null); initObject(init(content, delegate)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "canShow")
@@ -71,8 +72,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "dialogWithContent:delegate:")
-    protected static native @Pointer long create(FBSDKSharingContent content, FBSDKSharingDelegate delegate);
+    @Method(selector = "initWithContent:delegate:")
+    protected native @Pointer long init(FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "showWithContent:delegate:")
     public static native FBSDKMessageDialog show(FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "show")

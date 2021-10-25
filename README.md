@@ -42,7 +42,7 @@ v1.19.0 - in development
 | [Azure](azure/)                    | 3.1.4  |
 | [BranchMetrics](branchmetrics/)    | 1.40.1 |
 | [Charts](charts/)                  | 4.0.0  |
-| [Facebook](facebook/)              | 11.2.1 |
+| [Facebook](facebook/)              | 12.0.2 |
 | [Firebase](firebase/)              | 8.7.0  |
 | [Flurry](flurry/)                  | 11.2.1 |
 | [Fyber](fyber/)                    | 7.9.0  |

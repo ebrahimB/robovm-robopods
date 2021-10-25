@@ -58,7 +58,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "createDeepLinkURLWithQueryDictionary:")
-    public static native NSURL createDeepLinkURL(NSDictionary<?, ?> queryDictionary);
+    public static native NSURL createDeepLinkURL(NSDictionary<NSString, ?> queryDictionary);
     @Method(selector = "filtersNameForFilters:")
     public static native String filtersNameForFilters(FBSDKGameRequestFilter filters);
     @Method(selector = "actionTypeNameForActionType:")

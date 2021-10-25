@@ -55,19 +55,19 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "rewardedInterstitialAdDidClick:")
-    void rewardedInterstitialAdDidClick(FBRewardedInterstitialAd rewardedInterstitialAd);
+    void didClick(FBRewardedInterstitialAd rewardedInterstitialAd);
     @Method(selector = "rewardedInterstitialAdDidLoad:")
-    void rewardedInterstitialAdDidLoad(FBRewardedInterstitialAd rewardedInterstitialAd);
+    void didLoad(FBRewardedInterstitialAd rewardedInterstitialAd);
     @Method(selector = "rewardedInterstitialAdDidClose:")
-    void rewardedInterstitialAdDidClose(FBRewardedInterstitialAd rewardedInterstitialAd);
+    void didClose(FBRewardedInterstitialAd rewardedInterstitialAd);
     @Method(selector = "rewardedInterstitialAdWillClose:")
-    void rewardedInterstitialAdWillClose(FBRewardedInterstitialAd rewardedInterstitialAd);
+    void willClose(FBRewardedInterstitialAd rewardedInterstitialAd);
     @Method(selector = "rewardedInterstitialAd:didFailWithError:")
     void didFail(FBRewardedInterstitialAd rewardedInterstitialAd, NSError error);
     @Method(selector = "rewardedInterstitialAdWillLogImpression:")
-    void rewardedInterstitialAdWillLogImpression(FBRewardedInterstitialAd rewardedInterstitialAd);
+    void willLogImpression(FBRewardedInterstitialAd rewardedInterstitialAd);
     @Method(selector = "rewardedInterstitialAdVideoComplete:")
-    void rewardedInterstitialAdVideoComplete(FBRewardedInterstitialAd rewardedInterstitialAd);
+    void videoComplete(FBRewardedInterstitialAd rewardedInterstitialAd);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

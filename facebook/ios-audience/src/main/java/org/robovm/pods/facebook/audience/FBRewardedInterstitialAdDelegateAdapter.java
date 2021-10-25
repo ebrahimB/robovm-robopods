@@ -57,18 +57,18 @@ import org.robovm.pods.facebook.core.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("rewardedInterstitialAdDidClick:")
-    public void rewardedInterstitialAdDidClick(FBRewardedInterstitialAd rewardedInterstitialAd) {}
+    public void didClick(FBRewardedInterstitialAd rewardedInterstitialAd) {}
     @NotImplemented("rewardedInterstitialAdDidLoad:")
-    public void rewardedInterstitialAdDidLoad(FBRewardedInterstitialAd rewardedInterstitialAd) {}
+    public void didLoad(FBRewardedInterstitialAd rewardedInterstitialAd) {}
     @NotImplemented("rewardedInterstitialAdDidClose:")
-    public void rewardedInterstitialAdDidClose(FBRewardedInterstitialAd rewardedInterstitialAd) {}
+    public void didClose(FBRewardedInterstitialAd rewardedInterstitialAd) {}
     @NotImplemented("rewardedInterstitialAdWillClose:")
-    public void rewardedInterstitialAdWillClose(FBRewardedInterstitialAd rewardedInterstitialAd) {}
+    public void willClose(FBRewardedInterstitialAd rewardedInterstitialAd) {}
     @NotImplemented("rewardedInterstitialAd:didFailWithError:")
     public void didFail(FBRewardedInterstitialAd rewardedInterstitialAd, NSError error) {}
     @NotImplemented("rewardedInterstitialAdWillLogImpression:")
-    public void rewardedInterstitialAdWillLogImpression(FBRewardedInterstitialAd rewardedInterstitialAd) {}
+    public void willLogImpression(FBRewardedInterstitialAd rewardedInterstitialAd) {}
     @NotImplemented("rewardedInterstitialAdVideoComplete:")
-    public void rewardedInterstitialAdVideoComplete(FBRewardedInterstitialAd rewardedInterstitialAd) {}
+    public void videoComplete(FBRewardedInterstitialAd rewardedInterstitialAd) {}
     /*</methods>*/
 }

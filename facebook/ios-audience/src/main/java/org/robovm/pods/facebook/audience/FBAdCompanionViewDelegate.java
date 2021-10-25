@@ -55,9 +55,9 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "companionViewDidLoad:")
-    void companionViewDidLoad(FBAdCompanionView companionView);
+    void didLoad(FBAdCompanionView companionView);
     @Method(selector = "companionViewWillClose:")
-    void companionViewWillClose(FBAdCompanionView companionView);
+    void willClose(FBAdCompanionView companionView);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

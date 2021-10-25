@@ -49,7 +49,7 @@ import org.robovm.pods.facebook.core.*;
     /*<ptr>*/public static class FBAudienceNetworkAdsPtr extends Ptr<FBAudienceNetworkAds, FBAudienceNetworkAdsPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBAudienceNetworkAds.class); }/*</bind>*/
     /*<constants>*/
-    public static final String getVersion = "6.7.0";
+    public static final String getVersion = "6.8.0";
     /*</constants>*/
     /*<constructors>*/
     public FBAudienceNetworkAds() {}

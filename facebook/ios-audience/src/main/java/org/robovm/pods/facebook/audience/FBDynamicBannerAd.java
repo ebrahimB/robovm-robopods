@@ -86,5 +86,7 @@ import org.robovm.pods.facebook.core.*;
     public native void setVisibility(boolean visible);
     @Method(selector = "removeAd")
     public native void removeAd();
+    @Method(selector = "viewDidLayoutSubviews:")
+    public native void viewDidLayoutSubviews(UIViewController rootViewController);
     /*</methods>*/
 }

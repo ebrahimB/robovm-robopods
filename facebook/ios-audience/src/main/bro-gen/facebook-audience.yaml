@@ -280,32 +280,37 @@ protocols:
         methods:
             '-adView:didFailWithError:':
                 name: didFail
-            '-adView:setDynamicHeight:':
-                name: setDynamicHeight
-            '-adView:setDynamicPosition:':
-                name: setDynamicPosition
             '-adView:animateToPosition:withDuration:':
                 name: animate
-    FBInstreamAdViewDelegate:
-        methods:
-            '-adView:didFailWithError:':
-                name: didFail
+            '-adView:fullscreenDidFailWithError:':
+                name: fullscreenDidFail
+            '-adView:(.*):':
+                name: "#{g[0].downcase_first}"
+            '-adView(.*):':
+                name: "#{g[0].downcase_first}"
     FBInterstitialAdDelegate:
         methods:
             '-interstitialAd:didFailWithError:':
                 name: didFail
+            '-interstitialAd(.*):':
+                name: "#{g[0].downcase_first}"
     FBMediaViewDelegate:
         methods:
             '-mediaView:videoVolumeDidChange:':
-                name: videoVolumeDidChangeß
+                name: videoVolumeDidChange
+            '-mediaView(.*):':
+                name: "#{g[0].downcase_first}"
     FBNativeAdDelegate:
         methods:
             '-nativeAd:didFailWithError:':
                 name: didFail
+            '-nativeAd(.*):':
+                name: "#{g[0].downcase_first}"
     FBNativeAdsManagerDelegate:
         methods:
             '-nativeAdsFailedToLoadWithError:':
                 name: nativeAdsFailedToLoad
+
     FBNativeBannerAdDelegate:
         methods:
             '-nativeBannerAd:didFailWithError:':
@@ -314,19 +319,30 @@ protocols:
         methods:
             '-rewardedVideoAd:didFailWithError:':
                 name: didFail
+            '-rewardedVideoAd(.*):':
+                name: "#{g[0].downcase_first}"
     FBAdSDKNotificationListener:
         methods:
             '-onFBAdEvent:eventData:':
                 name: onFBAdEvent
-    FBAdCompanionViewDelegate: {}
+    FBAdCompanionViewDelegate:
+        methods:
+            '-companionView(.*):':
+                name: "#{g[0].downcase_first}"
     FBDynamicBannerAdDelegate:
         methods:
             '-dynamicBannerAd:didFailWithError:':
                 name: didFail
+            '-dynamicBannerAd:fullscreenDidFailWithError:':
+                name: fullscreenDidFail
+            '-dynamicBannerAd(.*):':
+                name: "#{g[0].downcase_first}"
     FBRewardedInterstitialAdDelegate:
         methods:
             '-rewardedInterstitialAd:didFailWithError:':
                 name: didFail
+            '-rewardedInterstitialAd(.*):':
+                name: "#{g[0].downcase_first}"
 functions:
     # exclude Audience Network Unity SDK bridge
     FB(.*)Bridge.*:

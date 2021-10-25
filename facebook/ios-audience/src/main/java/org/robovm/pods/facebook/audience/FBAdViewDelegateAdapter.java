@@ -58,20 +58,22 @@ import org.robovm.pods.facebook.core.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("adViewDidClick:")
-    public void adViewDidClick(FBAdView adView) {}
+    public void didClick(FBAdView adView) {}
     @NotImplemented("adViewDidFinishHandlingClick:")
-    public void adViewDidFinishHandlingClick(FBAdView adView) {}
+    public void didFinishHandlingClick(FBAdView adView) {}
     @NotImplemented("adViewDidLoad:")
-    public void adViewDidLoad(FBAdView adView) {}
+    public void didLoad(FBAdView adView) {}
     @NotImplemented("adView:didFailWithError:")
     public void didFail(FBAdView adView, NSError error) {}
     @NotImplemented("adViewWillLogImpression:")
-    public void adViewWillLogImpression(FBAdView adView) {}
+    public void willLogImpression(FBAdView adView) {}
     @NotImplemented("adView:setDynamicHeight:")
     public void setDynamicHeight(FBAdView adView, double dynamicHeight) {}
     @NotImplemented("adView:setDynamicPosition:")
     public void setDynamicPosition(FBAdView adView, @ByVal CGPoint dynamicPosition) {}
     @NotImplemented("adView:animateToPosition:withDuration:")
     public void animate(FBAdView controller, @ByVal CGPoint position, @MachineSizedFloat double duration) {}
+    @NotImplemented("adView:fullscreenDidFailWithError:")
+    public void fullscreenDidFail(FBAdView adView, NSError error) {}
     /*</methods>*/
 }

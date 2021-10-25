@@ -55,25 +55,25 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "rewardedVideoAdDidClick:")
-    void rewardedVideoAdDidClick(FBRewardedVideoAd rewardedVideoAd);
+    void didClick(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdDidLoad:")
-    void rewardedVideoAdDidLoad(FBRewardedVideoAd rewardedVideoAd);
+    void didLoad(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdDidClose:")
-    void rewardedVideoAdDidClose(FBRewardedVideoAd rewardedVideoAd);
+    void didClose(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdWillClose:")
-    void rewardedVideoAdWillClose(FBRewardedVideoAd rewardedVideoAd);
+    void willClose(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAd:didFailWithError:")
     void didFail(FBRewardedVideoAd rewardedVideoAd, NSError error);
     @Method(selector = "rewardedVideoAdVideoComplete:")
-    void rewardedVideoAdVideoComplete(FBRewardedVideoAd rewardedVideoAd);
+    void videoComplete(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdWillLogImpression:")
-    void rewardedVideoAdWillLogImpression(FBRewardedVideoAd rewardedVideoAd);
+    void willLogImpression(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdServerRewardDidSucceed:")
-    void rewardedVideoAdServerRewardDidSucceed(FBRewardedVideoAd rewardedVideoAd);
+    void serverRewardDidSucceed(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdServerRewardDidFail:")
-    void rewardedVideoAdServerRewardDidFail(FBRewardedVideoAd rewardedVideoAd);
+    void serverRewardDidFail(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdCompanionViewProvider:")
-    void rewardedVideoAdCompanionViewProvider(@Block VoidBlock1<FBAdCompanionView> completion);
+    void companionViewProvider(@Block VoidBlock1<FBAdCompanionView> completion);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

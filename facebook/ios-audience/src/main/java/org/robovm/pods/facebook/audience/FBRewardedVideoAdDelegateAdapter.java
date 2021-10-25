@@ -57,24 +57,24 @@ import org.robovm.pods.facebook.core.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("rewardedVideoAdDidClick:")
-    public void rewardedVideoAdDidClick(FBRewardedVideoAd rewardedVideoAd) {}
+    public void didClick(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdDidLoad:")
-    public void rewardedVideoAdDidLoad(FBRewardedVideoAd rewardedVideoAd) {}
+    public void didLoad(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdDidClose:")
-    public void rewardedVideoAdDidClose(FBRewardedVideoAd rewardedVideoAd) {}
+    public void didClose(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdWillClose:")
-    public void rewardedVideoAdWillClose(FBRewardedVideoAd rewardedVideoAd) {}
+    public void willClose(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAd:didFailWithError:")
     public void didFail(FBRewardedVideoAd rewardedVideoAd, NSError error) {}
     @NotImplemented("rewardedVideoAdVideoComplete:")
-    public void rewardedVideoAdVideoComplete(FBRewardedVideoAd rewardedVideoAd) {}
+    public void videoComplete(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdWillLogImpression:")
-    public void rewardedVideoAdWillLogImpression(FBRewardedVideoAd rewardedVideoAd) {}
+    public void willLogImpression(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdServerRewardDidSucceed:")
-    public void rewardedVideoAdServerRewardDidSucceed(FBRewardedVideoAd rewardedVideoAd) {}
+    public void serverRewardDidSucceed(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdServerRewardDidFail:")
-    public void rewardedVideoAdServerRewardDidFail(FBRewardedVideoAd rewardedVideoAd) {}
+    public void serverRewardDidFail(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdCompanionViewProvider:")
-    public void rewardedVideoAdCompanionViewProvider(@Block VoidBlock1<FBAdCompanionView> completion) {}
+    public void companionViewProvider(@Block VoidBlock1<FBAdCompanionView> completion) {}
     /*</methods>*/
 }

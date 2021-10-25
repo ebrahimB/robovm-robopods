@@ -924,7 +924,7 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
 
 fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, groupRegistry: MutableMap<String, MutableList<String>>) {
     val registry = GroupFrameworkRegister("Facebook", frameworkRegistry, groupRegistry)
-    val facebookRoot = "Facebook/Build/iOS"
+    val facebookRoot = "Facebook"
     fun extractVersionFromHeader(frameworkName: String, header: File, versionTag: String): String {
         return header.readLines()
             .find { it.startsWith("#define $versionTag @\"") && it.endsWith("\"") }
@@ -934,13 +934,14 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
 
     val facebookVersion: String by lazy {
         extractVersionFromHeader("Facebook",
-            downloadFolder.extend("$facebookRoot/FBSDKCoreKit.framework/Headers/FBSDKCoreKitVersions.h"), "FBSDK_VERSION_STRING")
+            downloadFolder.extend("$facebookRoot/FBSDKCoreKit.xcframework/ios-arm64_armv7/FBSDKCoreKit.framework/Headers/FBSDKCoreKitVersions.h"),
+                "FBSDK_VERSION_STRING")
     }
 
     val facebookInstallInstruction = """
-        1. Download latest FacebookSDK_Dynamic.framework.zip from https://github.com/facebook/facebook-ios-sdk/releases
-        2. Unpack it, it will be unpacked to ${downloadFolder.extend("Carthage")}
-        3. Rename ${downloadFolder.extend("Carthage")} to ${downloadFolder.extend("Facebook")}
+        1. Download latest FacebookSDK_Dynamic.xcframework.zip from https://github.com/facebook/facebook-ios-sdk/releases
+        2. Unpack it, it will be unpacked to ${downloadFolder.extend("XCFrameworks")}
+        3. Rename ${downloadFolder.extend("XCFrameworks")} to ${downloadFolder.extend("Facebook")}
     """.trimIndent()
     val facebookAudienceInstallInstruction = """
         1. Download latest FBAudienceNetwork-X.Y.Z.zip from https://developers.facebook.com/docs/audience-network/guides/adding-sdk/ios
@@ -952,7 +953,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     val moduleReadmeFile = Path.of("facebook/README.md").toFile()
     fun action(
         framework: String, moduleFolder: String, yaml: String,
-        frameworkLocation: String = "$facebookRoot/$framework.framework",
+        frameworkLocation: String = "${facebookRoot}/$framework.xcframework/ios-arm64_armv7/$framework.framework",
         readmeFileVersionUpdater: (String, String, String) -> Unit = readmeUpdater,
         instruction: String = facebookInstallInstruction,
         versionProvider: () -> String = { facebookVersion }

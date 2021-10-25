@@ -57,14 +57,16 @@ import org.robovm.pods.facebook.core.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("dynamicBannerAdDidClick:")
-    public void dynamicBannerAdDidClick(FBDynamicBannerAd dynamicBannerAd) {}
+    public void didClick(FBDynamicBannerAd dynamicBannerAd) {}
     @NotImplemented("dynamicBannerAdDidLoad:")
-    public void dynamicBannerAdDidLoad(FBDynamicBannerAd dynamicBannerAd) {}
+    public void didLoad(FBDynamicBannerAd dynamicBannerAd) {}
     @NotImplemented("dynamicBannerAd:didFailWithError:")
     public void didFail(FBDynamicBannerAd dynamicBannerAd, NSError error) {}
     @NotImplemented("dynamicBannerAdWillLogImpression:")
-    public void dynamicBannerAdWillLogImpression(FBDynamicBannerAd dynamicBannerAd) {}
+    public void willLogImpression(FBDynamicBannerAd dynamicBannerAd) {}
+    @NotImplemented("dynamicBannerAd:fullscreenDidFailWithError:")
+    public void fullscreenDidFail(FBDynamicBannerAd dynamicBannerAd, NSError error) {}
     @NotImplemented("dynamicBannerAdDidFinishHandlingClick:")
-    public void dynamicBannerAdDidFinishHandlingClick(FBDynamicBannerAd dynamicBannerAd) {}
+    public void didFinishHandlingClick(FBDynamicBannerAd dynamicBannerAd) {}
     /*</methods>*/
 }

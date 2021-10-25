@@ -57,8 +57,8 @@ import org.robovm.pods.facebook.core.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("companionViewDidLoad:")
-    public void companionViewDidLoad(FBAdCompanionView companionView) {}
+    public void didLoad(FBAdCompanionView companionView) {}
     @NotImplemented("companionViewWillClose:")
-    public void companionViewWillClose(FBAdCompanionView companionView) {}
+    public void willClose(FBAdCompanionView companionView) {}
     /*</methods>*/
 }

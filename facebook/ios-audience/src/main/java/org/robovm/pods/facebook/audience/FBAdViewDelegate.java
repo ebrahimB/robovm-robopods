@@ -56,21 +56,23 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "adViewDidClick:")
-    void adViewDidClick(FBAdView adView);
+    void didClick(FBAdView adView);
     @Method(selector = "adViewDidFinishHandlingClick:")
-    void adViewDidFinishHandlingClick(FBAdView adView);
+    void didFinishHandlingClick(FBAdView adView);
     @Method(selector = "adViewDidLoad:")
-    void adViewDidLoad(FBAdView adView);
+    void didLoad(FBAdView adView);
     @Method(selector = "adView:didFailWithError:")
     void didFail(FBAdView adView, NSError error);
     @Method(selector = "adViewWillLogImpression:")
-    void adViewWillLogImpression(FBAdView adView);
+    void willLogImpression(FBAdView adView);
     @Method(selector = "adView:setDynamicHeight:")
     void setDynamicHeight(FBAdView adView, double dynamicHeight);
     @Method(selector = "adView:setDynamicPosition:")
     void setDynamicPosition(FBAdView adView, @ByVal CGPoint dynamicPosition);
     @Method(selector = "adView:animateToPosition:withDuration:")
     void animate(FBAdView controller, @ByVal CGPoint position, @MachineSizedFloat double duration);
+    @Method(selector = "adView:fullscreenDidFailWithError:")
+    void fullscreenDidFail(FBAdView adView, NSError error);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

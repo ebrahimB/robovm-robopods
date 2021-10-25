@@ -50,9 +50,10 @@ classes:
                 name: create
     FBSDKMessageDialog:
         methods:
+            '-initWithContent:delegate:':
+                name: init
             '+dialogWithContent:delegate:':
-                constructor: true
-                name: create
+                exclude: true
             '+showWithContent:delegate:':
                 name: show
     FBSDKSendButton: {}
@@ -67,9 +68,10 @@ classes:
     FBSDKShareCameraEffectContent: {}
     FBSDKShareDialog:
         methods:
+            '-initWithViewController:content:delegate:':
+                name: init
             '+dialogWithViewController:withContent:delegate:':
-                constructor: true
-                name: create
+                exclude: true
             '+showFromViewController:withContent:delegate:':
                 name: show
     FBSDKShareLinkContent: {}
@@ -111,7 +113,6 @@ classes:
         methods:
             '+createDeepLinkURLWithQueryDictionary:':
                 name: createDeepLinkURL
-
 protocols:
     FBSDKGameRequestDialogDelegate:
         methods:

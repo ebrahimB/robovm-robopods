@@ -55,17 +55,17 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "nativeAdDidLoad:")
-    void nativeAdDidLoad(FBNativeAd nativeAd);
+    void didLoad(FBNativeAd nativeAd);
     @Method(selector = "nativeAdDidDownloadMedia:")
-    void nativeAdDidDownloadMedia(FBNativeAd nativeAd);
+    void didDownloadMedia(FBNativeAd nativeAd);
     @Method(selector = "nativeAdWillLogImpression:")
-    void nativeAdWillLogImpression(FBNativeAd nativeAd);
+    void willLogImpression(FBNativeAd nativeAd);
     @Method(selector = "nativeAd:didFailWithError:")
     void didFail(FBNativeAd nativeAd, NSError error);
     @Method(selector = "nativeAdDidClick:")
-    void nativeAdDidClick(FBNativeAd nativeAd);
+    void didClick(FBNativeAd nativeAd);
     @Method(selector = "nativeAdDidFinishHandlingClick:")
-    void nativeAdDidFinishHandlingClick(FBNativeAd nativeAd);
+    void didFinishHandlingClick(FBNativeAd nativeAd);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

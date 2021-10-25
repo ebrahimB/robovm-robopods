@@ -55,19 +55,19 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "interstitialAdDidClick:")
-    void interstitialAdDidClick(FBInterstitialAd interstitialAd);
+    void didClick(FBInterstitialAd interstitialAd);
     @Method(selector = "interstitialAdDidClose:")
-    void interstitialAdDidClose(FBInterstitialAd interstitialAd);
+    void didClose(FBInterstitialAd interstitialAd);
     @Method(selector = "interstitialAdWillClose:")
-    void interstitialAdWillClose(FBInterstitialAd interstitialAd);
+    void willClose(FBInterstitialAd interstitialAd);
     @Method(selector = "interstitialAdDidLoad:")
-    void interstitialAdDidLoad(FBInterstitialAd interstitialAd);
+    void didLoad(FBInterstitialAd interstitialAd);
     @Method(selector = "interstitialAd:didFailWithError:")
     void didFail(FBInterstitialAd interstitialAd, NSError error);
     @Method(selector = "interstitialAdWillLogImpression:")
-    void interstitialAdWillLogImpression(FBInterstitialAd interstitialAd);
+    void willLogImpression(FBInterstitialAd interstitialAd);
     @Method(selector = "interstitialAdCompanionViewProvider:")
-    void interstitialAdCompanionViewProvider(@Block VoidBlock1<FBAdCompanionView> completion);
+    void companionViewProvider(@Block VoidBlock1<FBAdCompanionView> completion);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/
