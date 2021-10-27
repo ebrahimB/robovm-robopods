@@ -86,6 +86,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native String getUniversalLinkUrl();
     @Property(selector = "setUniversalLinkUrl:")
     public native void setUniversalLinkUrl(String v);
+    @Property(selector = "initialReferrer")
+    public native String getInitialReferrer();
+    @Property(selector = "setInitialReferrer:")
+    public native void setInitialReferrer(String v);
     @Property(selector = "userUrl")
     public native String getUserUrl();
     @Property(selector = "setUserUrl:")

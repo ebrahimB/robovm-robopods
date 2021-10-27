@@ -142,6 +142,10 @@ import org.robovm.apple.uniformtypeid.*;
     public static native String getRequestKeySpotlightIdentifier();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_UNIVERSAL_LINK_URL", optional=true)
     public static native String getRequestKeyUniversalLinkUrl();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_LOCAL_URL", optional=true)
+    public static native String getRequestKeyLocalUrl();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_INITIAL_REFERRER", optional=true)
+    public static native String getRequestKeyInitialReferrer();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_BRAND", optional=true)
     public static native String getRequestKeyBrand();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_MODEL", optional=true)

@@ -149,6 +149,10 @@ import org.robovm.apple.uniformtypeid.*;
     public native void useLongerWaitForAppleSearchAds();
     @Method(selector = "ignoreAppleSearchAdsTestData")
     public native void ignoreAppleSearchAdsTestData();
+    @Method(selector = "checkPasteboardOnInstall")
+    public native void checkPasteboardOnInstall();
+    @Method(selector = "willShowPasteboardToast")
+    public native boolean willShowPasteboardToast();
     @Method(selector = "setAppClipAppGroup:")
     public native void setAppClipAppGroup(String appGroup);
     @Method(selector = "handleATTAuthorizationStatus:")
@@ -464,6 +468,8 @@ import org.robovm.apple.uniformtypeid.*;
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params, String feature, String stage, String campaign, NSArray<?> tags, String alias);
     @Method(selector = "getBranchActivityItemWithParams:feature:stage:tags:alias:delegate:")
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params, String feature, String stage, NSArray<?> tags, String alias, BranchActivityItemProviderDelegate delegate);
+    @Method(selector = "isBranchLink:")
+    public static native boolean isBranchLink(String urlString);
     @Method(selector = "setTrackingDisabled:")
     public static native void setTrackingDisabled(boolean disabled);
     @Method(selector = "trackingDisabled")
