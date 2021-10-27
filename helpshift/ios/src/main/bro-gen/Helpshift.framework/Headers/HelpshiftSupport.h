@@ -1,6 +1,6 @@
 /*
  *    HelpshiftSupport.h
- *    SDK Version 7.10.0-withCampaigns
+ *    SDK Version 7.11.1
  *
  *    Get the documentation at http://www.helpshift.com/docs
  *

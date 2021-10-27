@@ -121,24 +121,22 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     "Helpshift" to { framework ->
         val artifact = "$framework.framework"
         val artifactLocation =
-            downloadFolder.extend("helpshift-sdk-ios-withCampaigns/Helpshift.xcframework/ios-arm64_armv7/$artifact")
+            downloadFolder.extend("helpshift-sdk-ios/Helpshift.xcframework/ios-arm64_armv7/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "helpshift/ios",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "helpshift.yaml",
             version = {
-                downloadFolder.extend("helpshift-sdk-ios-withCampaigns").list()
+                downloadFolder.extend("helpshift-sdk-ios").list()
                     ?.find { it.startsWith("Release") && it.endsWith(".txt") }
-                    ?.let { it.substringAfter('-').substringBeforeLast('-') }
+                    ?.let { it.substringAfter('-').substringBeforeLast('.') }
                     ?: error("Failed to find out Helpshift version!")
             },
             instruction = """
                 1. download iOS SDK from https://developers.helpshift.com
-                2. Warning SDK from 1) doesn't contain -campaigns anymore. to get SDK with campaigns 
-                   check hidden podspec files for binary download link: https://github.com/CocoaPods/Specs/blob/master/Specs/2/a/d/Helpshift/X.Y.Z-withCampaigns/Helpshift.podspec.json
-                3. unpack helpshift-sdk-ios-vX.Y.Z-withCampaigns.zip
-                4. Rename to ${downloadFolder.extend("helpshift-sdk-ios-withCampaigns")} 
+                2. unpack helpshift-sdk-ios-vX.Y.Z.zip
+                3. Rename to ${downloadFolder.extend("helpshift-sdk-ios")} 
             """.trimIndent()
         )
     },

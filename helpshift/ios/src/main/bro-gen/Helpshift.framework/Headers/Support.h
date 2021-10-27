@@ -1,5 +1,5 @@
 //
-// Helpshift.h
+// Support.h
 // Created for Helpshift in 2020
 // Copyright © 2020 Helpshift. All rights reserved.
 //
@@ -15,6 +15,3 @@ FOUNDATION_EXPORT const unsigned char HelpshiftVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import "PublicHeader.h"
 #import "HelpshiftCore.h"
 #import "HelpshiftSupport.h"
-#import "HelpshiftCampaigns.h"
-#import "HelpshiftAll.h"
-#import "HelpshiftInbox.h"

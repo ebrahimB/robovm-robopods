@@ -3,7 +3,7 @@ include: [foundation, uikit]
 clang_args: ['-x', 'objective-c']
 framework: Helpshift
 headers:
-    - Helpshift.h
+    - Support.h
 
 private_typedefs: {}
 
