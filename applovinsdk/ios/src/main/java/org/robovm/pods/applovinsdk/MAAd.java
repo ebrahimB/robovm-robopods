@@ -56,6 +56,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getAdUnitIdentifier();
     @Property(selector = "networkName")
     public native String getNetworkName();
+    @Property(selector = "networkPlacement")
+    public native String getNetworkPlacement();
     @Property(selector = "creativeIdentifier")
     public native String getCreativeIdentifier();
     @Property(selector = "revenue")
