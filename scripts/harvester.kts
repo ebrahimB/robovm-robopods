@@ -608,7 +608,7 @@ fun execAndGetString(command: Array<String>): List<String> {
     return p.inputStream.bufferedReader().readLines().also {
         val code = p.waitFor()
         if (code != 0)
-            error("non zero exit code $code when executing $command")
+            error("non zero exit code $code when executing ${command.joinToString(" ")}\noutput:${it.joinToString("\n")}")
     }
 }
 
@@ -1033,11 +1033,11 @@ fun registerKochava(frameworkRegistry: MutableMap<String, (String) -> Unit>, gro
 fun registerFyber(frameworkRegistry: MutableMap<String, (String) -> Unit>, groupRegistry: MutableMap<String, MutableList<String>>) {
     val registry = GroupFrameworkRegister("Fyber", frameworkRegistry, groupRegistry)
     val fyberVersion: String by lazy {
-        downloadFolder.extend("InneractiveAdSDK-iOS-master/IASDKCore/IASDKResources.bundle/").infoPlist.extractVersion()
+        downloadFolder.extend("InneractiveAdSDK-iOS-master/IASDKCore/IASDKCore.xcframework/IASDKResources.bundle/").infoPlist.extractVersion()
     }
     val readmeUpdater = oneTimeReadmeUpdater { fyberVersion }
     fun action(framework: String, moduleFolder: String, yaml: String) {
-        val artifactLocation = downloadFolder.extend("InneractiveAdSDK-iOS-master/$framework/$framework.framework")
+        val artifactLocation = downloadFolder.extend("InneractiveAdSDK-iOS-master/$framework/$framework.xcframework/ios-arm64_armv7/$framework.framework")
         processFramework(
             artifact = "$framework.framework", moduleFolder = moduleFolder, sourceHeadersDir = artifactLocation.headers,
             yaml = yaml, version = { fyberVersion }, readmeFileVersionUpdater = readmeUpdater,
