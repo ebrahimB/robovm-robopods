@@ -39,7 +39,7 @@ v1.19.0 - in development
 |------------------------------------|--------|
 | [AppCenter](appcenter/)            | 4.3.0  |
 | [AppLovinSDK](applovinsdk/)        | 10.3.3 |
-| [Azure](azure/)                    | 3.1.3  |
+| [Azure](azure/)                    | 3.1.4  |
 | [BranchMetrics](branchmetrics/)    | 1.39.3 |
 | [Charts](charts/)                  | 4.0.0  |
 | [Facebook](facebook/)              | 11.2.1 |
