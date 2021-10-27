@@ -20,6 +20,10 @@ classes:
         methods:
             '+notifyWithUserConfirmation:':
                 name: notify
+            '+trackError:withProperties:attachments:':
+                name: trackError
+            '+trackException:withProperties:attachments:':
+                name: trackException
     MSACErrorAttachmentLog:
         methods:
             '-initWithFilename:attachmentBinary:contentType:':
@@ -43,6 +47,16 @@ classes:
                 name: buildHandledErrorReport
             '+getCrashHandlerSetupDelegate':
                 exclude: true
+    MSACExceptionModel:
+        methods:
+            '-initWithError:':
+                name: init
+            '-initWithType:exceptionMessage:stackTrace:':
+                name: init
+            '-initWithException:':
+                name: init
+    MSACStackFrame: { }
+    MSACWrapperExceptionModel: { }
 protocols:
     MSACCrashHandlerSetupDelegate: {}
     MSACCrashesDelegate:

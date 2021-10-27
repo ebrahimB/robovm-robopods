@@ -65,8 +65,6 @@ import org.robovm.pods.appcenter.core.*;
     public static native boolean sendCrashReportsOrAwaitUserConfirmationForFilteredIds(NSArray<NSString> filteredIds);
     @Method(selector = "sendErrorAttachments:withIncidentIdentifier:")
     public static native void sendErrorAttachments(NSArray<MSACErrorAttachmentLog> errorAttachments, String incidentIdentifier);
-    @Method(selector = "trackModelException:withProperties:withAttachments:")
-    public static native String trackModelException(NSObject exception, NSDictionary<NSString, NSString> properties, NSArray<MSACErrorAttachmentLog> attachments);
     @Method(selector = "buildHandledErrorReportWithErrorID:")
     public static native MSACErrorReport buildHandledErrorReport(String errorID);
     /*</methods>*/

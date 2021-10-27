@@ -85,6 +85,7 @@ protocols:
                 name: setEnabled
     MSACLog: {}
     MSACService: {}
+    MSACSerializableObject: {}
 
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version

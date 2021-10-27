@@ -69,6 +69,10 @@ import org.robovm.pods.appcenter.core.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "trackError:withProperties:attachments:")
+    public static native String trackError(NSError error, NSDictionary<NSString, NSString> properties, NSArray<MSACErrorAttachmentLog> attachments);
+    @Method(selector = "trackException:withProperties:attachments:")
+    public static native String trackException(MSACExceptionModel exception, NSDictionary<NSString, NSString> properties, NSArray<MSACErrorAttachmentLog> attachments);
     @Method(selector = "generateTestCrash")
     public static native void generateTestCrash();
     @Method(selector = "disableMachExceptionHandler")
