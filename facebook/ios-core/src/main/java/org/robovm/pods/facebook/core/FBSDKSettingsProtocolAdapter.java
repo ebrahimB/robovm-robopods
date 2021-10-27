@@ -65,8 +65,6 @@ import org.robovm.apple.coreanimation.*;
     public NSSet<NSString> getLoggingBehaviors() { return null; }
     @NotImplemented("advertisingTrackingStatus")
     public FBSDKAdvertisingTrackingStatus getAdvertisingTrackingStatus() { return null; }
-    @NotImplemented("setAdvertisingTrackingStatus:")
-    public void setAdvertisingTrackingStatus(FBSDKAdvertisingTrackingStatus v) {}
     @NotImplemented("installTimestamp")
     public NSDate getInstallTimestamp() { return null; }
     @NotImplemented("advertiserTrackingEnabledTimestamp")
@@ -79,6 +77,10 @@ import org.robovm.apple.coreanimation.*;
     public void setShouldUseTokenOptimizations(boolean v) {}
     @NotImplemented("graphAPIVersion")
     public String getGraphAPIVersion() { return null; }
+    @NotImplemented("isGraphErrorRecoveryEnabled")
+    public boolean isGraphErrorRecoveryEnabled() { return false; }
+    @NotImplemented("graphAPIDebugParamValue")
+    public String getGraphAPIDebugParamValue() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

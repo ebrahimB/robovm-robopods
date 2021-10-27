@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKUserAgeRange/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKUserAgeRangePtr extends Ptr<FBSDKUserAgeRange, FBSDKUserAgeRangePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKUserAgeRange.class); }/*</bind>*/
@@ -65,8 +65,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "ageRangeFromDictionary:")
     public static native FBSDKUserAgeRange ageRangeFromDictionary(NSDictionary<NSString, NSNumber> dictionary);
-    @Method(selector = "copy")
-    public native NSObject copy();
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

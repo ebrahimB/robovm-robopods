@@ -36,24 +36,24 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
+
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKCopyingAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKBridgeAPIRequestOpening/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("copy")
-    public NSObject copy() { return null; }
+    @Method(selector = "openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:")
+    void openBridgeAPIRequest(FBSDKBridgeAPIRequestProtocol request, boolean useSafariViewController, UIViewController fromViewController, @Block VoidBlock1<FBSDKBridgeAPIResponse> completionBlock);
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

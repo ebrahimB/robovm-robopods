@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger, FBNativeAdsCachePolicy) {
 /**
  The Internal representation of an Ad
  */
-@interface FBNativeAdBase : NSObject
+@interface FBNativeAdBase : NSObject <NSCopying>
 /**
  Typed access to the id of the ad placement.
  */

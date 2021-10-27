@@ -40,7 +40,7 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKSharingContentAdapter/*</name>*/ 
-    extends /*<extends>*/FBSDKCopyingAdapter/*</extends>*/ 
+    extends /*<extends>*/FBSDKSharingValidationAdapter/*</extends>*/ 
     /*<implements>*/implements FBSDKSharingContent/*</implements>*/ {
 
     /*<ptr>*/
@@ -81,8 +81,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @NotImplemented("addParameters:bridgeOptions:")
     public NSDictionary<NSString, ?> addParameters(NSDictionary<NSString, ?> existingParameters, FBSDKShareBridgeOptions bridgeOptions) { return null; }
-    @NotImplemented("validateWithOptions:error:")
-    public boolean validate(FBSDKShareBridgeOptions bridgeOptions, NSError.NSErrorPtr errorRef) { return false; }
     @NotImplemented("encodeWithCoder:")
     public void encode(NSCoder coder) {}
     /*</methods>*/

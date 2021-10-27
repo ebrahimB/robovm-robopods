@@ -42,8 +42,8 @@ v1.19.0 - in development
 | [Azure](azure/)                    | 3.1.3  |
 | [BranchMetrics](branchmetrics/)    | 1.39.3 |
 | [Charts](charts/)                  | 4.0.0  |
-| [Facebook](facebook/)              | 11.0.1 |
-| [Firebase](firebase/)              | 8.5.0  |
+| [Facebook](facebook/)              | 11.2.0 |
+| [Firebase](firebase/)              | 8.7.0  |
 | [Flurry](flurry/)                  | 11.2.1 |
 | [Fyber](fyber/)                    | 7.8.6  |
 | [HelpShift](helpshift/)            | 7.10.0 |

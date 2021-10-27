@@ -8,6 +8,11 @@ headers:
 private_typedefs:
     OS_dispatch_source: DispatchSource
     'FBSDKUserIdentifier *': String
+    # these are only forward declared
+    FBSDKErrorReporting : NSObject
+    FBSDKInternalURLOpener : NSObject
+    FBSDKServerConfigurationProviding : NSObject
+    FBSDKWebViewProviding: NSObject
 
 enums:
     FBSDKAppEventsFlushBehavior: {}
@@ -166,11 +171,20 @@ classes:
             '+bridgeAPIResponseCancelledWithRequest:':
                 name: create
                 constructor: true
-    FBSDKButton: {}
+    FBSDKButton:
+        methods:
+            '-configureWithIcon:title:backgroundColor:highlightedColor:':
+                name: configure
+            '-configureWithIcon:title:backgroundColor:highlightedColor:selectedTitle:selectedIcon:selectedColor:selectedHighlightedColor:':
+                name: configure
     FBSDKGraphErrorRecoveryProcessor:
         methods:
+            '+new':
+                exclude: true
             '-processError:request:delegate:':
                 name: processError
+            '-initWithAccessTokenString:':
+                name: init
     FBSDKGraphRequest:
         methods:
             '-initWithGraphPath:':
@@ -182,6 +196,8 @@ classes:
             '-initWithGraphPath:parameters:HTTPMethod:':
                 name: init
             '-initWithGraphPath:parameters:tokenString:version:HTTPMethod:':
+                name: init
+            '-initWithGraphPath:parameters:flags:':
                 name: init
             '-startWithCompletionHandler:':
                 exclude: true # as deprecated
@@ -227,6 +243,25 @@ classes:
             '-initWithProfile:':
                 name: init
     FBSDKSettings:
+        properties:
+            '+appID':
+                name: fbSdkAppID
+            '+clientToken':
+                name: fbSdkClientToken
+            '+userAgentSuffix':
+                name: fbSdkUserAgentSuffix
+            '+sdkVersion':
+                name: fbSdkVersion
+            '+loggingBehaviors':
+                name: fbSdkLoggingBehaviors
+            '+autoLogAppEventsEnabled':
+                name: fbSdkIsAutoLogAppEventsEnabled
+            '+graphErrorRecoveryEnabled':
+                name: fbSdkIsGraphErrorRecoveryEnabled
+            '+SKAdNetworkReportEnabled':
+                name: fbSdkIsSKAdNetworkReportEnabled
+            '+graphAPIVersion':
+                name: fbSdkGetGraphAPIVersion
         methods:
             '+setDataProcessingOptions:country:state:':
                 name: setDataProcessingOptions
@@ -257,10 +292,58 @@ classes:
                 constructor: true
             '+showWithName:parameters:delegate:':
                 name: show
+            '+createAndShow:parameters:frame:delegate:windowFinder:':
+                name: createAndShow
     FBSDKWebViewAppLinkResolver: {}
     FBSDKSettingsLogging: {}
-    FBSDKLogger: { extends: NSObject } # forward declared without implementation
-
+    FBSDKLogger:
+        methods:
+            '+singleShotLogEntry:logEntry:':
+                name: singleShotLogEntry
+    FBSDKError:
+        methods:
+            '+errorWithCode:message:':
+                name: create
+            '+errorWithDomain:code:message:':
+                name: create
+            '+errorWithCode:message:underlyingError:':
+                name: create
+            '+errorWithDomain:code:message:underlyingError:':
+                name: create
+            '+errorWithDomain:code:userInfo:message:underlyingError:':
+                name: create
+            '+invalidArgumentErrorWithName:value:message:':
+                name: createInvalidArgumentError
+            '+invalidArgumentErrorWithDomain:name:value:message:':
+                name: createInvalidArgumentError
+            '+invalidArgumentErrorWithDomain:name:value:message:underlyingError:':
+                name: createInvalidArgumentError
+            '+requiredArgumentErrorWithDomain:name:message:':
+                name: createInvalidArgumentError
+            '+unknownErrorWithMessage:':
+                name: createUnknownError
+    FBSDKGraphRequestConnectionFactory: {}
+    FBSDKGraphRequestFactory: {}
+    FBSDKIcon:
+        methods:
+            '-pathWithSize:':
+                name: getPath
+    FBSDKInternalUtility:
+        methods:
+            '-appURLWithHost:path:queryParameters:error:':
+                name: getAppURL
+            '-facebookURLWithHostPrefix:path:queryParameters:error:':
+                name: getFacebookURL
+            '-object:isEqualToObject:':
+                name: compareUrls
+            '-extractPermissionsFromResponse:grantedPermissions:declinedPermissions:expiredPermissions:':
+                name: extractPermissions
+    FBSDKServerConfigurationProvider: {}
+    FBSDKShareDialogConfiguration: {}
+    FBSDKWebDialogView:
+        methods:
+            '+configureWithWebViewProvider:urlOpener:':
+                name: configure
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -329,15 +412,55 @@ protocols:
         methods:
             '-checkFeature:completionBlock:':
                 name: checkFeature
-    FBSDKSettings: { name: FBSDKSettingsProtocol}
+    FBSDKSettings:
+        name: FBSDKSettingsProtocol
     FBSDKSettingsLogging: {}
     FBSDKAppURLSchemeProviding: { skip_adapter: true}
     FBSDKBridgeAPIResponseCreating: { skip_adapter: true}
     FBSDKDynamicFrameworkResolving: { skip_adapter: true}
     FBSDKOperatingSystemVersionComparing: { skip_adapter: true}
-    FBSDKURLOpener: { skip_adapter: true}
+    FBSDKURLOpener:
+        skip_adapter: true
+        methods:
+            '-openURL:sender:handler:':
+                name: openURL
+
+    FBSDKAppAvailabilityChecker: {}
+    FBSDKBridgeAPIRequestOpening:
+        methods:
+            '-openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:':
+                name: openBridgeAPIRequest
+    FBSDKGraphRequestConnectionProviding: {}
+    FBSDKGraphRequestProviding:
+        methods:
+            '-createGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:flags:':
+                name: createGraphRequest
+            '-createGraphRequestWithGraphPath:parameters:':
+                name: createGraphRequest
+            '-createGraphRequestWithGraphPath:':
+                name: createGraphRequest
+            '-createGraphRequestWithGraphPath:parameters:HTTPMethod:':
+                name: createGraphRequest
+            '-createGraphRequestWithGraphPath:parameters:tokenString:version:HTTPMethod:':
+                name: createGraphRequest
+            '-createGraphRequestWithGraphPath:parameters:flags:':
+                name: createGraphRequest
+    FBSDKInternalUtility:
+        name: FBSDKInternalUtilityProtocol
+        methods:
+            '-URLWithScheme:host:path:queryParameters:error:':
+                name: constructURL
+    FBSDKWebDialogViewDelegate:
+        methods:
+            '-webDialogView:didCompleteWithResults:':
+                name: didComplete
+            '-webDialogView:didFailWithError:':
+                name: didFail
+    FBSDKWindowFinding: {}
 functions:
     fb_randomString:
+        exclude: true
+    fbsdkdfl_(.*):
         exclude: true
 
     # Make sure we don't miss any functions if new ones are introduced in a later version
@@ -418,6 +541,10 @@ values:
     FBSDKAppLinkVersion:
         class: FBSDKAppLink
         name: getVersion
+    FBSDKDialogConfigurationName(.*):
+        class: FBSDKShareDialogConfiguration
+        static_class: DialogNames
+        name: '#{g[0]}'
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):
@@ -431,6 +558,12 @@ constants:
     FBSDK_TARGET_PLATFORM_VERSION:
         class: FBSDKCore
         name: PlatformVersion
+    FBSDK_DEFAULT_GRAPH_API_VERSION:
+        class: FBSDKCore
+        name: DefaultGraphApiVersion
+    FBSDK_CANOPENURL_(.*):
+        class: FBSDKInternalUtility
+        name: 'canOpen#{g[0]}'
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

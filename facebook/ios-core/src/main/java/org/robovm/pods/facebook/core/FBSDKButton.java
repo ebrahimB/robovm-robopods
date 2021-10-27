@@ -61,12 +61,22 @@ import org.robovm.apple.coreanimation.*;
     public FBSDKButton(@ByVal CGRect frame, UIAction primaryAction) { super(frame, primaryAction); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "isImplicitlyDisabled")
+    public native boolean isImplicitlyDisabled();
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "checkImplicitlyDisabled")
+    public native void checkImplicitlyDisabled();
+    @Method(selector = "configureWithIcon:title:backgroundColor:highlightedColor:")
+    public native void configure(FBSDKIcon icon, String title, UIColor backgroundColor, UIColor highlightedColor);
+    @Method(selector = "configureWithIcon:title:backgroundColor:highlightedColor:selectedTitle:selectedIcon:selectedColor:selectedHighlightedColor:")
+    public native void configure(FBSDKIcon icon, String title, UIColor backgroundColor, UIColor highlightedColor, String selectedTitle, FBSDKIcon selectedIcon, UIColor selectedColor, UIColor selectedHighlightedColor);
+    @Method(selector = "defaultBackgroundColor")
+    public native UIColor defaultBackgroundColor();
     /**
      * @since Available in iOS 13.0 and later.
      */

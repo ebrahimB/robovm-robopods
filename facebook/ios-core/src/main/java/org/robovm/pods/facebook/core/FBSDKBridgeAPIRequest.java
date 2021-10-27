@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKBridgeAPIRequest/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying, FBSDKBridgeAPIRequestProtocol/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, FBSDKBridgeAPIRequestProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKBridgeAPIRequestPtr extends Ptr<FBSDKBridgeAPIRequest, FBSDKBridgeAPIRequestPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKBridgeAPIRequest.class); }/*</bind>*/
@@ -76,7 +76,5 @@ import org.robovm.apple.coreanimation.*;
     public native NSURL requestURL(NSError.NSErrorPtr errorRef);
     @Method(selector = "bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:")
     protected static native @Pointer long create(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<?, ?> parameters, NSDictionary<?, ?> userInfo);
-    @Method(selector = "copy")
-    public native NSObject copy();
     /*</methods>*/
 }

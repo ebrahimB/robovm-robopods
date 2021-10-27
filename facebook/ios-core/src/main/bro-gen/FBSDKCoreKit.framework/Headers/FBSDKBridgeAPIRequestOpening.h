@@ -16,24 +16,35 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#import "TargetConditionals.h"
+
+#if !TARGET_OS_TV
+
 #import <Foundation/Foundation.h>
+#import <UIKit/UIViewController.h>
+
+#import "FBSDKBridgeAPIResponse.h"
+
+@protocol FBSDKBridgeAPIRequestProtocol;
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
-  Extension protocol for NSCopying that adds the copy method, which is implemented on NSObject.
+ Internal Type exposed to facilitate transition to Swift.
+ API Subject to change or removal without warning. Do not use.
 
- NSObject<NSCopying> implicitly conforms to this protocol.
+ @warning UNSAFE - DO NOT USE
  */
-NS_SWIFT_NAME(Copying)
-@protocol FBSDKCopying <NSCopying, NSObject>
+NS_SWIFT_NAME(BridgeAPIRequestOpening)
+@protocol FBSDKBridgeAPIRequestOpening <NSObject>
 
-/**
-  Implemented by NSObject as a convenience to copyWithZone:.
- @return A copy of the receiver.
- */
-- (id)copy;
+- (void)openBridgeAPIRequest:(NSObject<FBSDKBridgeAPIRequestProtocol> *)request
+     useSafariViewController:(BOOL)useSafariViewController
+          fromViewController:(nullable UIViewController *)fromViewController
+             completionBlock:(FBSDKBridgeAPIResponseBlock)completionBlock;
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

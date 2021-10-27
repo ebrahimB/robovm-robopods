@@ -42,7 +42,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKGameRequestContent/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying, FBSDKSharingValidation, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, FBSDKSharingValidation, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKGameRequestContentPtr extends Ptr<FBSDKGameRequestContent, FBSDKGameRequestContentPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKGameRequestContent.class); }/*</bind>*/
@@ -98,8 +98,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "isEqualToGameRequestContent:")
     public native boolean isEqualToGameRequestContent(FBSDKGameRequestContent content);
-    @Method(selector = "copy")
-    public native NSObject copy();
     @Method(selector = "validateWithOptions:error:")
     public native boolean validate(FBSDKShareBridgeOptions bridgeOptions, NSError.NSErrorPtr errorRef);
     @Method(selector = "encodeWithCoder:")

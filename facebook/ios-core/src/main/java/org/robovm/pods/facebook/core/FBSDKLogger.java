@@ -36,19 +36,18 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
+
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKLogger/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class FBSDKLoggerPtr extends Ptr<FBSDKLogger, FBSDKLoggerPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FBSDKLogger.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected FBSDKLogger() {}
+    public FBSDKLogger() {}
     protected FBSDKLogger(Handle h, long handle) { super(h, handle); }
     protected FBSDKLogger(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -57,6 +56,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "singleShotLogEntry:logEntry:")
+    public static native void singleShotLogEntry(FBSDKLoggingBehavior loggingBehavior, String logEntry);
     /*</methods>*/
 }

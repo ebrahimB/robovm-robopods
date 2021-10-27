@@ -65,6 +65,12 @@ import org.robovm.pods.facebook.core.*;
     void didFail(FBAdView adView, NSError error);
     @Method(selector = "adViewWillLogImpression:")
     void adViewWillLogImpression(FBAdView adView);
+    @Method(selector = "adView:setDynamicHeight:")
+    void setDynamicHeight(FBAdView adView, double dynamicHeight);
+    @Method(selector = "adView:setDynamicPosition:")
+    void setDynamicPosition(FBAdView adView, @ByVal CGPoint dynamicPosition);
+    @Method(selector = "adView:animateToPosition:withDuration:")
+    void animate(FBAdView controller, @ByVal CGPoint position, @MachineSizedFloat double duration);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

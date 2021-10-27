@@ -252,6 +252,25 @@ classes:
 
     FBAdSDKNotificationManager: {}
     FBAdCompanionView: {}
+    FBDynamicBannerAd:
+        methods:
+            '-initWithPlacementID:':
+                name: init
+            '-loadAdWithBidPayload:':
+                name: loadAd
+    FBRewardedInterstitialAd:
+        methods:
+            '-initWithPlacementID:':
+                name: init
+            '-initWithPlacementID:withUserID:withCurrency:':
+                name: init
+            '-loadAdWithBidPayload:':
+                name: loadAd
+            '-setRewardDataWithUserID:withCurrency:':
+                name: setRewardData
+            '-showAdFromRootViewController:animated:':
+                name: showAd
+
 protocols:
     FBAdLoggingDelegate:
         methods:
@@ -261,6 +280,12 @@ protocols:
         methods:
             '-adView:didFailWithError:':
                 name: didFail
+            '-adView:setDynamicHeight:':
+                name: setDynamicHeight
+            '-adView:setDynamicPosition:':
+                name: setDynamicPosition
+            '-adView:animateToPosition:withDuration:':
+                name: animate
     FBInstreamAdViewDelegate:
         methods:
             '-adView:didFailWithError:':
@@ -294,6 +319,14 @@ protocols:
             '-onFBAdEvent:eventData:':
                 name: onFBAdEvent
     FBAdCompanionViewDelegate: {}
+    FBDynamicBannerAdDelegate:
+        methods:
+            '-dynamicBannerAd:didFailWithError:':
+                name: didFail
+    FBRewardedInterstitialAdDelegate:
+        methods:
+            '-rewardedInterstitialAd:didFailWithError:':
+                name: didFail
 functions:
     # exclude Audience Network Unity SDK bridge
     FB(.*)Bridge.*:
@@ -318,6 +351,9 @@ values:
     kFBAdSize(.*):
         class: FBAdSize
         name: '#{g[0]}'
+    kFBAdDynamicSizeHeightBanner:
+        class: FBAdSize
+        name: 'dynamicHeightBanner'
     FBAudienceNetworkErrorDomain:
         class: FBAudienceNetworkAds
         name: getErrorDomain

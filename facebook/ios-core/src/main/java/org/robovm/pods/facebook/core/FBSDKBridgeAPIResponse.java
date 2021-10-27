@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKBridgeAPIResponse/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKBridgeAPIResponsePtr extends Ptr<FBSDKBridgeAPIResponse, FBSDKBridgeAPIResponsePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKBridgeAPIResponse.class); }/*</bind>*/
@@ -72,7 +72,5 @@ import org.robovm.apple.coreanimation.*;
     protected static native @Pointer long create(FBSDKBridgeAPIRequestProtocol request, NSURL responseURL, String sourceApplication, NSError.NSErrorPtr errorRef);
     @Method(selector = "bridgeAPIResponseCancelledWithRequest:")
     protected static native @Pointer long create(FBSDKBridgeAPIRequestProtocol request);
-    @Method(selector = "copy")
-    public native NSObject copy();
     /*</methods>*/
 }

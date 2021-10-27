@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAccessToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAccessTokenPtr extends Ptr<FBSDKAccessToken, FBSDKAccessTokenPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAccessToken.class); }/*</bind>*/
@@ -141,8 +141,6 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isEqualToAccessToken(FBSDKAccessToken token);
     @Method(selector = "refreshCurrentAccessTokenWithCompletion:")
     public static native void refreshCurrentAccessToken(@Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
-    @Method(selector = "copy")
-    public native NSObject copy();
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

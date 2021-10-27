@@ -42,7 +42,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKShareVideo/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSSecureCoding, FBSDKCopying, FBSDKShareMedia, FBSDKSharingValidation/*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding, NSObjectProtocol, FBSDKShareMedia, FBSDKSharingValidation/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKShareVideoPtr extends Ptr<FBSDKShareVideo, FBSDKShareVideoPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKShareVideo.class); }/*</bind>*/
@@ -100,8 +100,6 @@ import org.robovm.apple.coreanimation.*;
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
-    @Method(selector = "copy")
-    public native NSObject copy();
     @Method(selector = "validateWithOptions:error:")
     public native boolean validate(FBSDKShareBridgeOptions bridgeOptions, NSError.NSErrorPtr errorRef);
     /*</methods>*/

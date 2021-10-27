@@ -50,12 +50,16 @@ import org.robovm.apple.coreanimation.*;
     public FBSDKGraphErrorRecoveryProcessor() {}
     protected FBSDKGraphErrorRecoveryProcessor(Handle h, long handle) { super(h, handle); }
     protected FBSDKGraphErrorRecoveryProcessor(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithAccessTokenString:")
+    public FBSDKGraphErrorRecoveryProcessor(String accessTokenString) { super((SkipInit) null); initObject(init(accessTokenString)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithAccessTokenString:")
+    protected native @Pointer long init(String accessTokenString);
     @Method(selector = "processError:request:delegate:")
     public native boolean processError(NSError error, FBSDKGraphRequest request, FBSDKGraphErrorRecoveryProcessorDelegate delegate);
     /*</methods>*/

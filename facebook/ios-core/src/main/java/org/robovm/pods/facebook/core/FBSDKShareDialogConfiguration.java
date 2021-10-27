@@ -1,0 +1,77 @@
+/*
+ * Copyright (C) 2013-2015 RoboVM AB
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.robovm.pods.facebook.core;
+
+/*<imports>*/
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+import org.robovm.objc.*;
+import org.robovm.objc.annotation.*;
+import org.robovm.objc.block.*;
+import org.robovm.rt.*;
+import org.robovm.rt.annotation.*;
+import org.robovm.rt.bro.*;
+import org.robovm.rt.bro.annotation.*;
+import org.robovm.rt.bro.ptr.*;
+import org.robovm.apple.foundation.*;
+import org.robovm.apple.dispatch.*;
+import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.uikit.*;
+import org.robovm.apple.webkit.*;
+import org.robovm.apple.coreanimation.*;
+/*</imports>*/
+
+/*<javadoc>*/
+
+/*</javadoc>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKShareDialogConfiguration/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
+
+    /*<ptr>*/public static class FBSDKShareDialogConfigurationPtr extends Ptr<FBSDKShareDialogConfiguration, FBSDKShareDialogConfigurationPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FBSDKShareDialogConfiguration.class); }/*</bind>*/
+    /*<constants>*//*</constants>*/
+    /*<constructors>*/
+    public FBSDKShareDialogConfiguration() {}
+    protected FBSDKShareDialogConfiguration(Handle h, long handle) { super(h, handle); }
+    protected FBSDKShareDialogConfiguration(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
+    /*<properties>*/
+    @Property(selector = "defaultShareMode")
+    public native String getDefaultShareMode();
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    @Library(Library.INTERNAL)
+    public static class DialogNames {
+        static { Bro.bind(DialogNames.class); }
+
+        @GlobalValue(symbol="FBSDKDialogConfigurationNameLike", optional=true)
+        public static native String Like();
+        @GlobalValue(symbol="FBSDKDialogConfigurationNameMessage", optional=true)
+        public static native String Message();
+        @GlobalValue(symbol="FBSDKDialogConfigurationNameShare", optional=true)
+        public static native String Share();
+    }
+    
+    @Method(selector = "shouldUseNativeDialogForDialogName:")
+    public native boolean shouldUseNativeDialogForDialogName(String dialogName);
+    @Method(selector = "shouldUseSafariViewControllerForDialogName:")
+    public native boolean shouldUseSafariViewControllerForDialogName(String dialogName);
+    /*</methods>*/
+}

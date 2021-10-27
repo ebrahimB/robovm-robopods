@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKSharingContent/*</name>*/ 
-    /*<implements>*/extends FBSDKCopying, FBSDKSharingValidation, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/extends NSObjectProtocol, FBSDKSharingValidation, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/

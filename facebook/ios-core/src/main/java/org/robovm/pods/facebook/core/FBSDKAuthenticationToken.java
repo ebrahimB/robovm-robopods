@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAuthenticationToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAuthenticationTokenPtr extends Ptr<FBSDKAuthenticationToken, FBSDKAuthenticationTokenPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAuthenticationToken.class); }/*</bind>*/
@@ -75,8 +75,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "claims")
     public native FBSDKAuthenticationTokenClaims claims();
-    @Method(selector = "copy")
-    public native NSObject copy();
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

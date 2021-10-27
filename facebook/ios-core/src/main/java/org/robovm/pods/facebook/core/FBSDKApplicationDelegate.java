@@ -63,6 +63,8 @@ import org.robovm.apple.coreanimation.*;
     public native boolean openURL(UIApplication application, NSURL url, NSDictionary<NSString, ?> options);
     @Method(selector = "application:didFinishLaunchingWithOptions:")
     public native boolean didFinishLaunching(UIApplication application, NSDictionary<NSString, ?> launchOptions);
+    @Method(selector = "initializeSDK")
+    public native void initializeSDK();
     @Method(selector = "addObserver:")
     public native void addObserver(FBSDKApplicationObserving observer);
     @Method(selector = "removeObserver:")

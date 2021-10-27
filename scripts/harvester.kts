@@ -947,12 +947,12 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     registry["FBSDKShareKit"] = { framework -> action(framework, "facebook/ios-share", "facebook-share.yaml") }
     registry["FBAudienceNetwork"] = { framework ->
         action(framework, "facebook/ios-audience", "facebook-audience.yaml",
-            frameworkLocation = "FBAudienceNetwork/Dynamic/FBAudienceNetwork.framework",
+            frameworkLocation = "FBAudienceNetwork/Dynamic/FBAudienceNetwork.xcframework/ios-arm64_armv7/FBAudienceNetwork.framework",
             instruction = facebookAudienceInstallInstruction,
             readmeFileVersionUpdater = { _, _, _ -> },
             versionProvider = {
                 extractVersionFromHeader("FBAudienceNetwork",
-                    downloadFolder.extend("FBAudienceNetwork/Dynamic/FBAudienceNetwork.framework/Headers/FBAudienceNetwork.h"),
+                    downloadFolder.extend("FBAudienceNetwork/Dynamic/FBAudienceNetwork.xcframework/ios-arm64_armv7/FBAudienceNetwork.framework/Headers/FBAudienceNetwork.h"),
                     "FB_AD_SDK_VERSION")
             })
     }

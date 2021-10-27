@@ -67,6 +67,8 @@ import org.robovm.pods.facebook.core.*;
     public static native @ByVal FBAdSize Height50Banner();
     @GlobalValue(symbol="kFBAdSizeHeight90Banner", optional=true)
     public static native @ByVal FBAdSize Height90Banner();
+    @GlobalValue(symbol="kFBAdDynamicSizeHeightBanner", optional=true)
+    public static native @ByVal FBAdSize dynamicHeightBanner();
     @GlobalValue(symbol="kFBAdSizeInterstitial", optional=true)
     public static native @ByVal FBAdSize Interstitial();
     @GlobalValue(symbol="kFBAdSizeHeight250Rectangle", optional=true)

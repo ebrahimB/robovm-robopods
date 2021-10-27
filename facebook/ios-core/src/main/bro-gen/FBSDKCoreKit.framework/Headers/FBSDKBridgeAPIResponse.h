@@ -22,8 +22,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FBSDKCopying.h"
 #import "FBSDKBridgeAPIRequest.h"
+
+@class FBSDKBridgeAPIResponse;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,8 +34,17 @@ NS_ASSUME_NONNULL_BEGIN
 
  @warning UNSAFE - DO NOT USE
  */
+typedef void (^FBSDKBridgeAPIResponseBlock)(FBSDKBridgeAPIResponse *response)
+NS_SWIFT_NAME(BridgeAPIResponseBlock);
+
+/**
+ Internal Type exposed to facilitate transition to Swift.
+ API Subject to change or removal without warning. Do not use.
+
+ @warning UNSAFE - DO NOT USE
+ */
 NS_SWIFT_NAME(BridgeAPIResponse)
-@interface FBSDKBridgeAPIResponse : NSObject <FBSDKCopying>
+@interface FBSDKBridgeAPIResponse : NSObject <NSCopying, NSObject>
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

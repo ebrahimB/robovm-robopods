@@ -67,6 +67,8 @@ import org.robovm.pods.facebook.core.*;
     public native String getPlacementID();
     @Property(selector = "rootViewController")
     public native UIViewController getRootViewController();
+    @Property(selector = "setRootViewController:", strongRef = true)
+    public native void setRootViewController(UIViewController v);
     @Property(selector = "isAdValid")
     public native boolean isAdValid();
     @Property(selector = "delegate")

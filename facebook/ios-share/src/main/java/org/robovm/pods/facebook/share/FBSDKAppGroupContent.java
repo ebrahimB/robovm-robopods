@@ -42,7 +42,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAppGroupContent/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAppGroupContentPtr extends Ptr<FBSDKAppGroupContent, FBSDKAppGroupContentPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAppGroupContent.class); }/*</bind>*/
@@ -74,8 +74,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "isEqualToAppGroupContent:")
     public native boolean isEqualToAppGroupContent(FBSDKAppGroupContent content);
-    @Method(selector = "copy")
-    public native NSObject copy();
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

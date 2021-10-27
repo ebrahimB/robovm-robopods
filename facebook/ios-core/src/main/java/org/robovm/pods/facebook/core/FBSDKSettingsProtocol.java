@@ -64,8 +64,6 @@ import org.robovm.apple.coreanimation.*;
     NSSet<NSString> getLoggingBehaviors();
     @Property(selector = "advertisingTrackingStatus")
     FBSDKAdvertisingTrackingStatus getAdvertisingTrackingStatus();
-    @Property(selector = "setAdvertisingTrackingStatus:")
-    void setAdvertisingTrackingStatus(FBSDKAdvertisingTrackingStatus v);
     @Property(selector = "installTimestamp")
     NSDate getInstallTimestamp();
     @Property(selector = "advertiserTrackingEnabledTimestamp")
@@ -78,6 +76,10 @@ import org.robovm.apple.coreanimation.*;
     void setShouldUseTokenOptimizations(boolean v);
     @Property(selector = "graphAPIVersion")
     String getGraphAPIVersion();
+    @Property(selector = "isGraphErrorRecoveryEnabled")
+    boolean isGraphErrorRecoveryEnabled();
+    @Property(selector = "graphAPIDebugParamValue")
+    String getGraphAPIDebugParamValue();
     /*</properties>*/
     /*<methods>*/
     

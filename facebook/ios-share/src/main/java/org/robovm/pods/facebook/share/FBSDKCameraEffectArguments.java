@@ -42,7 +42,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKCameraEffectArguments/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKCopying, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKCameraEffectArgumentsPtr extends Ptr<FBSDKCameraEffectArguments, FBSDKCameraEffectArgumentsPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKCameraEffectArguments.class); }/*</bind>*/
@@ -68,8 +68,6 @@ import org.robovm.apple.coreanimation.*;
     public native void setArray(NSArray<NSString> array, String key);
     @Method(selector = "arrayForKey:")
     public native NSArray<NSString> arrayForKey(String key);
-    @Method(selector = "copy")
-    public native NSObject copy();
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

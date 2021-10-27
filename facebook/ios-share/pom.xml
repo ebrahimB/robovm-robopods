@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-facebook-share-ios</artifactId>
-    <name>RoboPods Facebook ShareKit iOS v11.0.1</name>
+    <name>RoboPods Facebook ShareKit iOS v11.2.0</name>
     <packaging>jar</packaging>
 
     <licenses>

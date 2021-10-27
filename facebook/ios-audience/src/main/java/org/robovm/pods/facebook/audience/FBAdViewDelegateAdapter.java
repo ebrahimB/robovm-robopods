@@ -67,5 +67,11 @@ import org.robovm.pods.facebook.core.*;
     public void didFail(FBAdView adView, NSError error) {}
     @NotImplemented("adViewWillLogImpression:")
     public void adViewWillLogImpression(FBAdView adView) {}
+    @NotImplemented("adView:setDynamicHeight:")
+    public void setDynamicHeight(FBAdView adView, double dynamicHeight) {}
+    @NotImplemented("adView:setDynamicPosition:")
+    public void setDynamicPosition(FBAdView adView, @ByVal CGPoint dynamicPosition) {}
+    @NotImplemented("adView:animateToPosition:withDuration:")
+    public void animate(FBAdView controller, @ByVal CGPoint position, @MachineSizedFloat double duration) {}
     /*</methods>*/
 }

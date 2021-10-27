@@ -51,7 +51,8 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    
+    @Method(selector = "openURL:sender:handler:")
+    void openURL(NSURL url, FBSDKURLOpening sender, @Block VoidBlock2<Boolean, NSError> handler);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

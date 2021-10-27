@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKBridgeAPI/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements FBSDKBridgeAPIRequestOpening, FBSDKURLOpener/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKBridgeAPIPtr extends Ptr<FBSDKBridgeAPI, FBSDKBridgeAPIPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKBridgeAPI.class); }/*</bind>*/
@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKBridgeAPI(Handle h, long handle) { super(h, handle); }
     protected FBSDKBridgeAPI(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithProcessInfo:logger:urlOpener:bridgeAPIResponseFactory:frameworkLoader:appURLSchemeProvider:")
-    public FBSDKBridgeAPI(FBSDKOperatingSystemVersionComparing processInfo, FBSDKLogger logger, FBSDKURLOpener urlOpener, FBSDKBridgeAPIResponseCreating bridgeAPIResponseFactory, FBSDKDynamicFrameworkResolving frameworkLoader, FBSDKAppURLSchemeProviding appURLSchemeProvider) { super((SkipInit) null); initObject(init(processInfo, logger, urlOpener, bridgeAPIResponseFactory, frameworkLoader, appURLSchemeProvider)); }
+    public FBSDKBridgeAPI(FBSDKOperatingSystemVersionComparing processInfo, FBSDKLogger logger, NSObject urlOpener, FBSDKBridgeAPIResponseCreating bridgeAPIResponseFactory, FBSDKDynamicFrameworkResolving frameworkLoader, FBSDKAppURLSchemeProviding appURLSchemeProvider) { super((SkipInit) null); initObject(init(processInfo, logger, urlOpener, bridgeAPIResponseFactory, frameworkLoader, appURLSchemeProvider)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "sharedInstance")
@@ -74,14 +74,14 @@ import org.robovm.apple.coreanimation.*;
     }
     
     @Method(selector = "initWithProcessInfo:logger:urlOpener:bridgeAPIResponseFactory:frameworkLoader:appURLSchemeProvider:")
-    protected native @Pointer long init(FBSDKOperatingSystemVersionComparing processInfo, FBSDKLogger logger, FBSDKURLOpener urlOpener, FBSDKBridgeAPIResponseCreating bridgeAPIResponseFactory, FBSDKDynamicFrameworkResolving frameworkLoader, FBSDKAppURLSchemeProviding appURLSchemeProvider);
-    @Method(selector = "openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:")
-    public native void openBridgeAPIRequest(FBSDKBridgeAPIRequestProtocol request, boolean useSafariViewController, UIViewController fromViewController, @Block VoidBlock1<FBSDKBridgeAPIResponse> completionBlock);
+    protected native @Pointer long init(FBSDKOperatingSystemVersionComparing processInfo, FBSDKLogger logger, NSObject urlOpener, FBSDKBridgeAPIResponseCreating bridgeAPIResponseFactory, FBSDKDynamicFrameworkResolving frameworkLoader, FBSDKAppURLSchemeProviding appURLSchemeProvider);
     @Method(selector = "openURLWithSafariViewController:sender:fromViewController:handler:")
     public native void openURLWithSafariViewController(NSURL url, FBSDKURLOpening sender, UIViewController fromViewController, @Block VoidBlock2<Boolean, NSError> handler);
     @Method(selector = "openURL:sender:handler:")
     public native void openURL(NSURL url, FBSDKURLOpening sender, @Block VoidBlock2<Boolean, NSError> handler);
     @Method(selector = "sessionCompletionHandler")
     public native @Block VoidBlock2<NSURL, NSError> sessionCompletionHandler();
+    @Method(selector = "openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:")
+    public native void openBridgeAPIRequest(FBSDKBridgeAPIRequestProtocol request, boolean useSafariViewController, UIViewController fromViewController, @Block VoidBlock1<FBSDKBridgeAPIResponse> completionBlock);
     /*</methods>*/
 }

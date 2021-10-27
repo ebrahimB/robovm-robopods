@@ -56,7 +56,8 @@ public enum /*<name>*/FBAdTestAdType/*</name>*/ implements ValuedEnum {
     Carousel_Img_Square_App_Install(9L),
     Carousel_Img_Square_Link(10L),
     Carousel_Vid_Square_Link(11L),
-    Playable(12L);
+    Playable(12L),
+    FBRV(13L);
     /*</values>*/
 
     /*<bind>*/

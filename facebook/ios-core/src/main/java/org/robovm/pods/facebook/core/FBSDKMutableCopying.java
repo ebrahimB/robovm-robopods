@@ -40,7 +40,7 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKMutableCopying/*</name>*/ 
-    /*<implements>*/extends FBSDKCopying/*</implements>*/ {
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
