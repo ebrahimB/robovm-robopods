@@ -94,9 +94,24 @@ import org.robovm.apple.coreanimation.*;
     public static final GADAdLoaderAdType CustomNative = new GADAdLoaderAdType("CustomNative");
     public static final GADAdLoaderAdType GAMBanner = new GADAdLoaderAdType("GAMBanner");
     public static final GADAdLoaderAdType Native = new GADAdLoaderAdType("Native");
+    /**
+     * @deprecated Use GADAdLoaderAdTypeCustomNative instead
+     */
+    @Deprecated
+    public static final GADAdLoaderAdType kGADAdLoaderAdTypeCustomNative = new GADAdLoaderAdType("kGADAdLoaderAdTypeCustomNative");
+    /**
+     * @deprecated Use GADAdLoaderAdTypeGAMBanner instead
+     */
+    @Deprecated
+    public static final GADAdLoaderAdType kGADAdLoaderAdTypeGAMBanner = new GADAdLoaderAdType("kGADAdLoaderAdTypeGAMBanner");
+    /**
+     * @deprecated Use GADAdLoaderAdTypeNative instead
+     */
+    @Deprecated
+    public static final GADAdLoaderAdType kGADAdLoaderAdTypeNative = new GADAdLoaderAdType("kGADAdLoaderAdTypeNative");
     /*</constants>*/
     
-    private static /*<name>*/GADAdLoaderAdType/*</name>*/[] values = new /*<name>*/GADAdLoaderAdType/*</name>*/[] {/*<value_list>*/CustomNative, GAMBanner, Native/*</value_list>*/};
+    private static /*<name>*/GADAdLoaderAdType/*</name>*/[] values = new /*<name>*/GADAdLoaderAdType/*</name>*/[] {/*<value_list>*/CustomNative, GAMBanner, Native, kGADAdLoaderAdTypeCustomNative, kGADAdLoaderAdTypeGAMBanner, kGADAdLoaderAdTypeNative/*</value_list>*/};
     
     /*<name>*/GADAdLoaderAdType/*</name>*/ (String getterName) {
         super(Values.class, getterName);
@@ -119,12 +134,30 @@ import org.robovm.apple.coreanimation.*;
     	static { Bro.bind(Values.class); }
 
         /*<values>*/
-        @GlobalValue(symbol="kGADAdLoaderAdTypeCustomNative", optional=true)
+        @GlobalValue(symbol="GADAdLoaderAdTypeCustomNative", optional=true)
         public static native NSString CustomNative();
-        @GlobalValue(symbol="kGADAdLoaderAdTypeGAMBanner", optional=true)
+        @GlobalValue(symbol="GADAdLoaderAdTypeGAMBanner", optional=true)
         public static native NSString GAMBanner();
-        @GlobalValue(symbol="kGADAdLoaderAdTypeNative", optional=true)
+        @GlobalValue(symbol="GADAdLoaderAdTypeNative", optional=true)
         public static native NSString Native();
+        /**
+         * @deprecated Use GADAdLoaderAdTypeCustomNative instead
+         */
+        @Deprecated
+        @GlobalValue(symbol="kGADAdLoaderAdTypeCustomNative", optional=true)
+        public static native NSString kGADAdLoaderAdTypeCustomNative();
+        /**
+         * @deprecated Use GADAdLoaderAdTypeGAMBanner instead
+         */
+        @Deprecated
+        @GlobalValue(symbol="kGADAdLoaderAdTypeGAMBanner", optional=true)
+        public static native NSString kGADAdLoaderAdTypeGAMBanner();
+        /**
+         * @deprecated Use GADAdLoaderAdTypeNative instead
+         */
+        @Deprecated
+        @GlobalValue(symbol="kGADAdLoaderAdTypeNative", optional=true)
+        public static native NSString kGADAdLoaderAdTypeNative();
         /*</values>*/
     }
 }

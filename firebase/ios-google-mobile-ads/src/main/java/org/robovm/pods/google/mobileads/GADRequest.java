@@ -80,7 +80,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="kGADSimulatorID", optional=true)
+    @GlobalValue(symbol="GADSimulatorID", optional=true)
     public static native NSString GADSimulatorID();
     
     @Method(selector = "registerAdNetworkExtras:")

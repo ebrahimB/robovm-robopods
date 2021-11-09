@@ -19,13 +19,13 @@ enums:
     GADPresentationErrorCode: {}
     GADNativeAdImageAdLoaderOptionsOrientation: {}
     GADAdChoicesPosition: {}
-    GADMBannerAnimationType: {prefix: kGADMBannerAnimationType}
+    GADMBannerAnimationType: {prefix: GADMBannerAnimationType}
     GADMediationErrorCode: {exclude: true} # deprecated Use GADErrorCode
 typed_enums:
     GADAdLoaderAdType:
         enum: GADAdLoaderAdType
         type: NSString
-        prefix: kGADAdLoaderAdType
+        prefix: GADAdLoaderAdType
     GADNativeAssetIdentifier:
         enum: GADNativeAssetIdentifier
         type: NSString
@@ -557,9 +557,11 @@ values:
         name: getMediaViewKey
         type: NSString
 
-    kGADAdSize(.*):
+    GADAdSize(.*):
         class: GADAdSize
         name: '#{g[0]}'
+    kGADAdSize(.*):
+        exclude: true # deprecated
 
     GAD(.*)ClassName:
         class: GADResponseInfo
@@ -569,10 +571,12 @@ values:
         readonly: true
         name: getErrorUserInfoKey
 
-    kGADSimulatorID:
+    GADSimulatorID:
         class: GADRequest
         name: GADSimulatorID
         type: NSString
+    kGADSimulatorID:
+        exclude: true
     kGAMSimulatorID:
         class: GAMRequest
         name: GAMSimulatorID
@@ -598,6 +602,8 @@ values:
 
 constants:
     kGADMAdapterClassNamePrefix:
+        exclude: true
+    GADMAdapterClassNamePrefix:
         exclude: true
 
     # Make sure we don't miss any constants if new ones are introduced in a later version

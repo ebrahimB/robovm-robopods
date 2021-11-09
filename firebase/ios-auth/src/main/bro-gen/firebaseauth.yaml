@@ -8,6 +8,8 @@ headers:
 private_typedefs:
     "FIRApp *": org.robovm.pods.firebase.core.FIRApp
     "UIViewController *": UIViewController
+    FIRIDTokenDidChangeListenerHandle: NSObject
+    FIRAuthStateDidChangeListenerHandle: NSObject
 
 typedefs: {}
 

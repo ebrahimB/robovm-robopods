@@ -60,34 +60,22 @@ import org.robovm.apple.coreanimation.*;
     @StructMember(1) public native GADAdSize setFlags(@MachineSizedUInt long flags);
     /*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="kGADAdSizeBanner", optional=true)
+    @GlobalValue(symbol="GADAdSizeBanner", optional=true)
     public static native @ByVal GADAdSize Banner();
-    @GlobalValue(symbol="kGADAdSizeLargeBanner", optional=true)
+    @GlobalValue(symbol="GADAdSizeLargeBanner", optional=true)
     public static native @ByVal GADAdSize LargeBanner();
-    @GlobalValue(symbol="kGADAdSizeMediumRectangle", optional=true)
+    @GlobalValue(symbol="GADAdSizeMediumRectangle", optional=true)
     public static native @ByVal GADAdSize MediumRectangle();
-    @GlobalValue(symbol="kGADAdSizeFullBanner", optional=true)
+    @GlobalValue(symbol="GADAdSizeFullBanner", optional=true)
     public static native @ByVal GADAdSize FullBanner();
-    @GlobalValue(symbol="kGADAdSizeLeaderboard", optional=true)
+    @GlobalValue(symbol="GADAdSizeLeaderboard", optional=true)
     public static native @ByVal GADAdSize Leaderboard();
-    @GlobalValue(symbol="kGADAdSizeSkyscraper", optional=true)
+    @GlobalValue(symbol="GADAdSizeSkyscraper", optional=true)
     public static native @ByVal GADAdSize Skyscraper();
-    @GlobalValue(symbol="kGADAdSizeFluid", optional=true)
+    @GlobalValue(symbol="GADAdSizeFluid", optional=true)
     public static native @ByVal GADAdSize Fluid();
-    @GlobalValue(symbol="kGADAdSizeInvalid", optional=true)
+    @GlobalValue(symbol="GADAdSizeInvalid", optional=true)
     public static native @ByVal GADAdSize Invalid();
-    /**
-     * @deprecated Use GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth.
-     */
-    @Deprecated
-    @GlobalValue(symbol="kGADAdSizeSmartBannerPortrait", optional=true)
-    public static native @ByVal GADAdSize SmartBannerPortrait();
-    /**
-     * @deprecated Use GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth
-     */
-    @Deprecated
-    @GlobalValue(symbol="kGADAdSizeSmartBannerLandscape", optional=true)
-    public static native @ByVal GADAdSize SmartBannerLandscape();
     
     @Bridge(symbol="GADPortraitInlineAdaptiveBannerAdSizeWithWidth", optional=true)
     public static native @ByVal GADAdSize getPortraitInlineAdaptiveBannerAdSize(@MachineSizedFloat double width);
