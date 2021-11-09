@@ -80,16 +80,6 @@ import org.robovm.apple.coreanimation.*;
         @GlobalValue(symbol="FBSDKAppEventsLoggingResultNotification", optional=true)
         public static native NSString LoggingResult();
     }
-
-    @Library(Library.INTERNAL)
-    public static class Parameters {
-        static { Bro.bind(Parameters.class); }
-
-        @GlobalValue(symbol="FBSDKAppEventParameterEventName", optional=true)
-        public static native String EventName();
-        @GlobalValue(symbol="FBSDKAppEventParameterLogTime", optional=true)
-        public static native String LogTime();
-    }
     
     @Method(selector = "activateApp")
     public native void activateApp();

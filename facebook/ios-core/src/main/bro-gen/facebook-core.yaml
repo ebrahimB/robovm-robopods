@@ -54,6 +54,10 @@ typed_enums:
         enum: FBSDKHTTPMethod
         type: NSString
         prefix: FBSDKHTTPMethod
+    FBSDKURLScheme:
+        class: FBSDKURLScheme
+        type: String
+        prefix: FBSDKURLScheme
 
 classes:
     FBSDKAccessToken:
@@ -223,6 +227,8 @@ classes:
                 name: start
             '-initWithGraphPath:parameters:tokenString:HTTPMethod:flags:':
                 name: init
+            '+configureWithSettings:currentAccessTokenStringProvider:graphRequestConnectionFactory:':
+                name: configure
     FBSDKGraphRequestConnection:
         methods:
             '-addRequest:completionHandler:':
@@ -301,8 +307,12 @@ classes:
             'skAdNetworkReportEnabled':
                 name: SKAdNetworkReportEnabled  # to match getter declared in protocol
         methods:
-            '+setDataProcessingOptions:country:state:':
+            '-setDataProcessingOptions:country:state:':
                 name: setDataProcessingOptions
+            '+setDataProcessingOptions:country:state:':
+                exclude: true # as deprecated
+            '+setDataProcessingOptions:':
+                exclude: true # as deprecated
             '+isAdvertiserTrackingEnabled':
                 exclude: true # as deprecated
             '+setAdvertiserTrackingEnabled:':
@@ -346,6 +356,8 @@ classes:
         methods:
             '+singleShotLogEntry:logEntry:':
                 name: singleShotLogEntry
+            '+new':
+                exclude: true
     FBSDKError:
         methods:
             '+errorWithCode:message:':
@@ -576,6 +588,11 @@ protocols:
                 parameters:
                     2:
                         type: NSDictionary<NSString, ?>
+    FBSDKAppLinkTarget:
+        name: FBSDKAppLinkTargetProtocol
+        methods:
+            '+appLinkTargetWithURL:appStoreId:appName:':
+                name: create
 functions:
     fb_randomString:
         exclude: true
@@ -671,6 +688,9 @@ values:
     FBSDKCATransform3DIdentity:
         class: FBSDKTransformer
         name: identity
+    FBSDK_CANOPENURL_(.*):
+        class: FBSDKInternalUtility
+        name: 'canOpen#{g[0]}'
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):
@@ -687,9 +707,6 @@ constants:
     FBSDK_DEFAULT_GRAPH_API_VERSION:
         class: FBSDKCore
         name: DefaultGraphApiVersion
-    FBSDK_CANOPENURL_(.*):
-        class: FBSDKInternalUtility
-        name: 'canOpen#{g[0]}'
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

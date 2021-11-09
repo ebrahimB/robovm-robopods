@@ -45,13 +45,7 @@ import org.robovm.apple.coreanimation.*;
 
     /*<ptr>*/public static class FBSDKInternalUtilityPtr extends Ptr<FBSDKInternalUtility, FBSDKInternalUtilityPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKInternalUtility.class); }/*</bind>*/
-    /*<constants>*/
-    public static final String canOpenFACEBOOK = "fbauth2";
-    public static final String canOpenFBAPI = "fbapi";
-    public static final String canOpenMESSENGER = "fb-messenger-share-api";
-    public static final String canOpenMSQRD_PLAYER = "msqrdplayer";
-    public static final String canOpenSHARE_EXTENSION = "fbshareextension";
-    /*</constants>*/
+    /*<constants>*//*</constants>*/
     /*<constructors>*/
     protected FBSDKInternalUtility() {}
     protected FBSDKInternalUtility(Handle h, long handle) { super(h, handle); }
@@ -71,6 +65,37 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated `FBSDK_CANOPENURL_FACEBOOK` is deprecated and will be removed in the next major release; please use `URLScheme.facebookApp` instead
+     */
+    @Deprecated
+    @GlobalValue(symbol="FBSDK_CANOPENURL_FACEBOOK", optional=true)
+    public static native String canOpenFACEBOOK();
+    /**
+     * @deprecated `FBSDK_CANOPENURL_FBAPI` is deprecated and will be removed in the next major release; please use `URLScheme.facebookAPI` instead
+     */
+    @Deprecated
+    @GlobalValue(symbol="FBSDK_CANOPENURL_FBAPI", optional=true)
+    public static native String canOpenFBAPI();
+    /**
+     * @deprecated `FBSDK_CANOPENURL_MESSENGER` is deprecated and will be removed in the next major release; please use `URLScheme.messengerApp` instead
+     */
+    @Deprecated
+    @GlobalValue(symbol="FBSDK_CANOPENURL_MESSENGER", optional=true)
+    public static native String canOpenMESSENGER();
+    /**
+     * @deprecated `FBSDK_CANOPENURL_MSQRD_PLAYER` is deprecated and will be removed in the next major release; please use `URLScheme.masqueradePlayer` instead
+     */
+    @Deprecated
+    @GlobalValue(symbol="FBSDK_CANOPENURL_MSQRD_PLAYER", optional=true)
+    public static native String canOpenMSQRD_PLAYER();
+    /**
+     * @deprecated `FBSDK_CANOPENURL_SHARE_EXTENSION` is deprecated and will be removed in the next major release; please use `URLScheme.facebookShareExtension` instead
+     */
+    @Deprecated
+    @GlobalValue(symbol="FBSDK_CANOPENURL_SHARE_EXTENSION", optional=true)
+    public static native String canOpenSHARE_EXTENSION();
+    
     @Method(selector = "appURLWithHost:path:queryParameters:error:")
     public native NSURL appURL(String host, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
     @Method(selector = "parametersFromFBURL:")
@@ -82,7 +107,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "object:isEqualToObject:")
     public native boolean compareUrls(NSObject object, NSObject other);
     @Method(selector = "extractPermissionsFromResponse:grantedPermissions:declinedPermissions:expiredPermissions:")
-    public native void extractPermissions(NSDictionary<NSString, ?> responseObject, NSMutableSet<?> grantedPermissions, NSMutableSet<?> declinedPermissions, NSMutableSet<?> expiredPermissions);
+    public native void extractPermissions(NSDictionary<NSString, ?> responseObject, NSMutableSet<NSString> grantedPermissions, NSMutableSet<NSString> declinedPermissions, NSMutableSet<NSString> expiredPermissions);
     @Method(selector = "validateAppID")
     public native void validateAppID();
     @Method(selector = "validateRequiredClientAccessToken")

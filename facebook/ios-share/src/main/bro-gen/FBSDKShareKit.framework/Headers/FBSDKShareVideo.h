@@ -1,20 +1,10 @@
-// Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
-//
-// You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
-// copy, modify, and distribute this software in source code or binary form for use
-// in connection with the web services and APIs provided by Facebook.
-//
-// As with any software that integrates with the Facebook platform, your use of
-// this software is subject to the Facebook Developer Principles and Policies
-// [http://developers.facebook.com/policy/]. This copyright notice shall be
-// included in all copies or substantial portions of the software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-// FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-// COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-// IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+/*
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ * All rights reserved.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 #import <Photos/Photos.h>
 #import <UIKit/UIKit.h>
@@ -76,25 +66,25 @@ NS_SWIFT_NAME(ShareVideo)
  The raw video data.
  - Returns: The video data.
  */
-@property (nonatomic, strong, nullable) NSData *data;
+@property (nullable, nonatomic, strong) NSData *data;
 
 /**
  The representation of the video in the Photos library.
  @return PHAsset that represents the video in the Photos library.
  */
-@property (nonatomic, copy, nullable) PHAsset *videoAsset;
+@property (nullable, nonatomic, copy) PHAsset *videoAsset;
 
 /**
   The file URL to the video.
  @return URL that points to the location of the video on disk
  */
-@property (nonatomic, copy, nullable) NSURL *videoURL;
+@property (nullable, nonatomic, copy) NSURL *videoURL;
 
 /**
   The photo that represents the video.
  @return The photo
  */
-@property (nonatomic, copy, nullable) FBSDKSharePhoto *previewPhoto;
+@property (nullable, nonatomic, copy) FBSDKSharePhoto *previewPhoto;
 
 /**
   Compares the receiver to another video.
@@ -107,7 +97,7 @@ NS_SWIFT_NAME(ShareVideo)
 
 @interface PHAsset (FBSDKShareVideo)
 
-@property (nonatomic, copy, readonly) NSURL *videoURL;
+@property (nonatomic, readonly, copy) NSURL *videoURL;
 
 @end
 

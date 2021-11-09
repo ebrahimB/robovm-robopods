@@ -78,5 +78,9 @@ import org.robovm.apple.coreanimation.*;
     public static native NSString AdType();
     @GlobalValue(symbol="FBSDKAppEventParameterNameOrderID", optional=true)
     public static native NSString OrderID();
+    @GlobalValue(symbol="FBSDKAppEventParameterNameEventName", optional=true)
+    public static native NSString EventName();
+    @GlobalValue(symbol="FBSDKAppEventParameterNameLogTime", optional=true)
+    public static native NSString LogTime();
     /*</methods>*/
 }

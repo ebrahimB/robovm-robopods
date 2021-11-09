@@ -10,21 +10,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import <FBSDKCoreKit/FBSDKAppLinkTargetProtocol.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- Represents a target defined in App Link metadata, consisting of at least
- a URL, and optionally an App Store ID and name.
- */
-NS_SWIFT_NAME(AppLinkTarget)
-@interface FBSDKAppLinkTarget : NSObject <FBSDKAppLinkTarget>
+/// A protocol to describe an AppLinkTarget
+NS_SWIFT_NAME(AppLinkTargetProtocol)
+@protocol FBSDKAppLinkTarget
 
-- (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
-
-/** Creates a FBSDKAppLinkTarget with the given app site and target URL. */
 // UNCRUSTIFY_FORMAT_OFF
 + (instancetype)appLinkTargetWithURL:(nullable NSURL *)url
                           appStoreId:(nullable NSString *)appStoreId
@@ -33,7 +24,7 @@ NS_SWIFT_NAME(init(url:appStoreId:appName:));
 // UNCRUSTIFY_FORMAT_ON
 
 /** The URL prefix for this app link target */
-@property (nullable, nonatomic, readonly, strong) NSURL *URL;
+@property (nullable, nonatomic, readonly) NSURL *URL;
 
 /** The app ID for the app store */
 @property (nullable, nonatomic, readonly, copy) NSString *appStoreId;

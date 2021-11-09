@@ -114,10 +114,22 @@ import org.robovm.apple.coreanimation.*;
     public native NSSet<NSString> getLoggingBehaviors();
     @Property(selector = "setLoggingBehaviors:")
     public native void setLoggingBehaviors(NSSet<NSString> v);
+    /**
+     * @deprecated `Settings.graphAPIVersion` is deprecated and will be removed in the next major release, please use the `Settings.shared.graphAPIVersion` property instead
+     */
+    @Deprecated
     @Property(selector = "graphAPIVersion")
     public static native String getFbSdkGetGraphAPIVersion();
+    /**
+     * @deprecated `Settings.graphAPIVersion` is deprecated and will be removed in the next major release, please use the `Settings.shared.graphAPIVersion` property instead
+     */
+    @Deprecated
     @Property(selector = "setGraphAPIVersion:")
     public static native void setFbSdkGetGraphAPIVersion(String v);
+    @Property(selector = "graphAPIVersion")
+    public native String getGraphAPIVersion();
+    @Property(selector = "setGraphAPIVersion:")
+    public native void setGraphAPIVersion(String v);
     @Property(selector = "userAgentSuffix")
     public native String getUserAgentSuffix();
     @Property(selector = "setUserAgentSuffix:")
@@ -140,20 +152,18 @@ import org.robovm.apple.coreanimation.*;
     public native boolean shouldUseTokenOptimizations();
     @Property(selector = "setShouldUseTokenOptimizations:")
     public native void setShouldUseTokenOptimizations(boolean v);
-    @Property(selector = "graphAPIVersion")
-    public native String getGraphAPIVersion();
     @Property(selector = "graphAPIDebugParamValue")
     public native String getGraphAPIDebugParamValue();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "setDataProcessingOptions:")
+    public native void setDataProcessingOptions(NSArray<NSString> options);
+    @Method(selector = "setDataProcessingOptions:country:state:")
+    public native void setDataProcessingOptions(NSArray<NSString> options, int country, int state);
     @Method(selector = "enableLoggingBehavior:")
     public native void enableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
     @Method(selector = "disableLoggingBehavior:")
     public native void disableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
-    @Method(selector = "setDataProcessingOptions:")
-    public static native void setDataProcessingOptions(NSArray<NSString> options);
-    @Method(selector = "setDataProcessingOptions:country:state:")
-    public static native void setDataProcessingOptions(NSArray<NSString> options, int country, int state);
     /*</methods>*/
 }

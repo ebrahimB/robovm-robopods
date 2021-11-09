@@ -36,23 +36,35 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKDynamicFrameworkResolving/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKURLScheme/*</name>*/ 
+    extends /*<extends>*/CocoaUtility/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+    /*<bind>*/static { Bro.bind(FBSDKURLScheme.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<properties>*/
-    
-    /*</properties>*/
+    /*<constructors>*//*</constructors>*/
+    /*<properties>*//*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @GlobalValue(symbol="FBSDKURLSchemeFacebookApp", optional=true)
+    public static native String FacebookApp();
+    @GlobalValue(symbol="FBSDKURLSchemeFacebookAPI", optional=true)
+    public static native String FacebookAPI();
+    @GlobalValue(symbol="FBSDKURLSchemeFacebookShareExtension", optional=true)
+    public static native String FacebookShareExtension();
+    @GlobalValue(symbol="FBSDKURLSchemeMessengerApp", optional=true)
+    public static native String MessengerApp();
+    @GlobalValue(symbol="FBSDKURLSchemeMasqueradePlayer", optional=true)
+    public static native String MasqueradePlayer();
+    @GlobalValue(symbol="FBSDKURLSchemeHTTPS", optional=true)
+    public static native String HTTPS();
+    @GlobalValue(symbol="FBSDKURLSchemeHTTP", optional=true)
+    public static native String HTTP();
+    @GlobalValue(symbol="FBSDKURLSchemeWeb", optional=true)
+    public static native String Web();
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

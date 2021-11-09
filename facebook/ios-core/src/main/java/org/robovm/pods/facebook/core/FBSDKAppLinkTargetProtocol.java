@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKOperatingSystemVersionComparing/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKAppLinkTargetProtocol/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -48,7 +48,12 @@ import org.robovm.apple.coreanimation.*;
     /*</bind>*/
     /*<constants>*//*</constants>*/
     /*<properties>*/
-    
+    @Property(selector = "URL")
+    NSURL getURL();
+    @Property(selector = "appStoreId")
+    String getAppStoreId();
+    @Property(selector = "appName")
+    String getAppName();
     /*</properties>*/
     /*<methods>*/
     

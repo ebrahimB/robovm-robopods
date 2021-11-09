@@ -110,6 +110,8 @@ import org.robovm.apple.coreanimation.*;
     void setShouldUseTokenOptimizations(boolean v);
     @Property(selector = "graphAPIVersion")
     String getGraphAPIVersion();
+    @Property(selector = "setGraphAPIVersion:")
+    void setGraphAPIVersion(String v);
     @Property(selector = "isGraphErrorRecoveryEnabled")
     boolean isGraphErrorRecoveryEnabled();
     @Property(selector = "setIsGraphErrorRecoveryEnabled:")

@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAppLinkTarget/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements FBSDKAppLinkTargetProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAppLinkTargetPtr extends Ptr<FBSDKAppLinkTarget, FBSDKAppLinkTargetPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAppLinkTarget.class); }/*</bind>*/
