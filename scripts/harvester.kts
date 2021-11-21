@@ -252,6 +252,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
 // parse arguments
 var parallelBuild = false
 var interactive = false
+var downloadInstructions = false
 val frameworkToProcess = mutableListOf<String>()
 args.forEach { arg ->
     if (arg.startsWith("-")) {
@@ -259,6 +260,7 @@ args.forEach { arg ->
             "-v" -> log.verbose = true
             "-p" -> parallelBuild = true
             "-i" -> interactive = true
+            "-d" -> {downloadInstructions = true; interactive = true}
             "-h" -> printHelpAndExit(0)
             "--help" -> printHelpAndExit(0)
             else -> {
@@ -279,8 +281,12 @@ args.forEach { arg ->
 }
 
 if (frameworkToProcess.isEmpty()) {
-    println("Error: not specified framework to process !")
-    printHelpAndExit(-1)
+    if (downloadInstructions) {
+        frameworkToProcess.addAll(knownFrameworks.keys)
+    } else {
+        println("Error: not specified framework to process !")
+        printHelpAndExit(-1)
+    }
 }
 
 if (interactive && parallelBuild) {
@@ -300,6 +306,7 @@ fun printHelpAndExit(code: Int) {
     println("           -v : enables verbose output")
     println("           -p : enables parallel processing")
     println("           -i : interactive mode, will check for existing folder and wait for it")
+    println("           -d : interactive mode, will print download instructions and wait for frameworks")
     println("   frameworkX : list of frameworks to process. if not specified all frameworks will be processed")
     println("Known frameworks:")
     knownFrameworks.keys.sorted().forEach { println("    $it") }
@@ -322,7 +329,7 @@ fun processInternal(
     yamlFile: File,
     pomFile: File,
     instruction: String?,
-    interactiveValidateHeaderFolder: (framework: String, sourceHeadersDir: File, instruction: String?) -> Unit,
+    interactiveValidateHeaderFolder: (framework: String, sourceHeadersDir: File, instruction: String?, optional: Boolean) -> Unit,
     headerFolderCleaner: (framework: String, destinationHeadersDir: File) -> Unit,
     headersCopier: (framework: String, sourceHeadersDir: File, destinationHeadersDir: File) -> Unit,
     javaFolderCleaner: (framework: String, destinationJavaDir: File) -> Unit,
@@ -330,8 +337,16 @@ fun processInternal(
     pomVersionStringUpdater: (framework: String, pomFile: File, version: String) -> Unit,
     readmeFileVersionUpdater: (framework: String, moduleFolder: String, version: String) -> Unit
 ) {
-    if (interactive)
-        interactiveValidateHeaderFolder(framework, sourceHeadersDir, instruction)
+    if (interactive) {
+        if (downloadInstructions) {
+            // extract version from the pom file
+            val version = getPomVersionString(framework, pomFile)
+            println("$framework: current version $version")
+        }
+        interactiveValidateHeaderFolder(framework, sourceHeadersDir, instruction, downloadInstructions)
+        if (downloadInstructions)
+            return
+    }
 
     val version = versionProvider()
     log.d("$framework: version $version")
@@ -360,14 +375,21 @@ fun cleanUpJava(framework: String, destinationJavaDir: File) {
     }
 }
 
-fun interactiveValidateHeaderFolder(framework: String, sourceHeadersDir: File, instruction: String?) {
+fun interactiveValidateHeaderFolder(framework: String, sourceHeadersDir: File, instruction: String?, optional: Boolean = true) {
     val text = instruction ?: "There is no instruction configured for $framework.\nPlease provide missing framework at path specified."
     while (!sourceHeadersDir.isDirectory) {
         println("\n\nMissing source header for $framework at location:\n${sourceHeadersDir.canonicalPath}")
         println("")
         println(text)
-        println("\n\nPress ENTER key once solved")
-        System.`in`.read()
+        if (optional) {
+            println("\n\nEnter Y to retry, ENTER to skip")
+            val line = readLine()?.toUpperCase()
+            if (line != "Y")
+                break
+        } else {
+            println("\n\nPress ENTER key once solved")
+            readLine()
+        }
     }
 }
 
@@ -418,6 +440,16 @@ fun execBroGen(framework: String, javaFolder: File, yamlFile: File) {
     val broGenCmd = "${broGenScript.canonicalPath} ${javaFolder.canonicalPath} ${yamlFile.canonicalPath}"
     log.i("$framework:  Invoking bro-gen with command: $broGenCmd")
     exec("$framework:    ", broGenCmd)
+}
+
+fun getPomVersionString(framework: String, pomFile: File) : String? {
+    pomFile.requiresIsFile { "$framework is missing pom.xml ${pomFile.canonicalPath}" }
+    val artifactTitleWithVersion = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(pomFile)
+        .getElementByTagName("name")?.getTextValue()
+        ?: error("Failed to get <name> from ${pomFile.canonicalPath}")
+    return artifactTitleWithVersion.indexOf("iOS v").takeIf { it > 0 }
+            ?.let { artifactTitleWithVersion.substring(it + 5).trim() }
+            ?: error("'iOS v' is missing in artifact <name> in ${pomFile.canonicalPath}")
 }
 
 fun updatePomVersionString(framework: String, pomFile: File, version: String) {
@@ -503,7 +535,7 @@ fun processFramework(
     yaml: String,
     version: () -> String,
     instruction: String? = null,
-    interactiveValidateHeaderFolder: (framework: String, sourceHeadersDir: File, instruction: String?) -> Unit = ::interactiveValidateHeaderFolder,
+    interactiveValidateHeaderFolder: (framework: String, sourceHeadersDir: File, instruction: String?, optional: Boolean) -> Unit = ::interactiveValidateHeaderFolder,
     headerFolderCleaner: (framework: String, destinationHeadersDir: File) -> Unit = ::cleanUpHeaders,
     headersCopier: (framework: String, sourceHeadersDir: File, destinationHeadersDir: File) -> Unit = ::copyHeaders,
     broGenExecutor: (framework: String, javaFolder: File, yamlFile: File) -> Unit = ::execBroGen,
