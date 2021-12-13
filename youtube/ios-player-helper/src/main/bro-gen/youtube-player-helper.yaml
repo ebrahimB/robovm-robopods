@@ -1,0 +1,92 @@
+package: org.robovm.pods.youtube.playerhelper
+include: [foundation, uikit, coregraphics, coreanimation, webkit]
+clang_args: ['-x', 'objective-c']
+framework: YouTubeiOSPlayerHelper
+headers:
+    - YouTubeiOSPlayerHelper.h
+
+typedefs:
+
+private_typedefs:
+
+enums:
+    YTPlayerState: {prefix: kYTPlayerState}
+    YTPlaybackQuality: {prefix: kYTPlaybackQuality}
+    YTPlayerError: {prefix: kYTPlayerError}
+
+classes:
+    YTPlayerView:
+        methods:
+            '-loadWithVideoId:':
+                name: loadVideoById
+            '-loadWithPlaylistId:':
+                name: loadPlaylistByPlaylist
+            '-loadWithVideoId:playerVars:':
+                name: loadVideoById
+            '-loadWithPlaylistId:playerVars:':
+                name: loadPlaylistByPlaylist
+            '-loadWithPlayerParams:':
+                name: load
+            '-seekToSeconds:allowSeekAhead:':
+                name: seek
+            '-cueVideoById:startSeconds:':
+                name: cueVideoById
+            '-cueVideoById:startSeconds:endSeconds:':
+                name: cueVideoById
+            '-loadVideoById:startSeconds:':
+                name: loadVideoById
+            '-loadVideoById:startSeconds:endSeconds:':
+                name: loadVideoById
+            '-cueVideoByURL:startSeconds:':
+                name: cueVideoByURL
+            '-cueVideoByURL:startSeconds:endSeconds:':
+                name: cueVideoByURL
+            '-loadVideoByURL:startSeconds:':
+                name: loadVideoByURL
+            '-loadVideoByURL:startSeconds:endSeconds:':
+                name: loadVideoByURL
+            '-cuePlaylistByPlaylistId:index:startSeconds:':
+                name: cuePlaylistByPlaylistId
+            '-cuePlaylistByVideos:index:startSeconds:':
+                name: cuePlaylistByVideos
+            '-loadPlaylistByPlaylistId:index:startSeconds:':
+                name: loadPlaylistByPlaylistId
+            '-loadPlaylistByVideos:index:startSeconds:':
+                name: loadPlaylistByVideos
+protocols:
+    YTPlayerViewDelegate:
+        methods:
+            '-playerView:didChangeToState:':
+                name: didChangeToState
+            '-playerView:didChangeToQuality:':
+                name: didChangeToQuality
+            '-playerView:receivedError:':
+                name: receivedError
+            '-playerView:didPlayTime:':
+                name: didPlayTime
+functions:
+
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+    youtube_ios_player_helperVersionNumber:
+        class: YTPlayerView
+        readonly: true
+        name: helperVersionNumber
+    youtube_ios_player_helperVersionString:
+        class: YTPlayerView
+        name: helperVersionString
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'
