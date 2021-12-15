@@ -19,7 +19,7 @@ enums:
     GADPresentationErrorCode: {}
     GADNativeAdImageAdLoaderOptionsOrientation: {}
     GADAdChoicesPosition: {}
-    GADMBannerAnimationType: {prefix: GADMBannerAnimationType}
+    GADMBannerAnimationType: {prefix: GADMBannerAnimationType, ignore: "kGADMBannerAnimationType.*"}
     GADMediationErrorCode: {exclude: true} # deprecated Use GADErrorCode
 typed_enums:
     GADAdLoaderAdType:

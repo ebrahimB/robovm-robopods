@@ -66,6 +66,10 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated Use GADRequestConfiguration/GADSimulatorID instead.
+     */
+    @Deprecated
     @GlobalValue(symbol="kGAMSimulatorID", optional=true)
     public static native NSString GAMSimulatorID();
     

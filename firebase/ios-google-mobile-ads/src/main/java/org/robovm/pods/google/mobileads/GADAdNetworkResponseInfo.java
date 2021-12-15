@@ -53,14 +53,20 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "adNetworkClassName")
     public native String getAdNetworkClassName();
-    @Property(selector = "credentials")
-    public native NSDictionary<NSString, ?> getCredentials();
+    @Property(selector = "adUnitMapping")
+    public native NSDictionary<NSString, ?> getAdUnitMapping();
     @Property(selector = "error")
     public native NSError getError();
     @Property(selector = "latency")
     public native double getLatency();
     @Property(selector = "dictionaryRepresentation")
     public native NSDictionary<NSString, ?> getDictionaryRepresentation();
+    /**
+     * @deprecated Use adUnitMapping instead
+     */
+    @Deprecated
+    @Property(selector = "credentials")
+    public native NSDictionary<NSString, ?> getCredentials();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
