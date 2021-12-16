@@ -7,6 +7,7 @@
 //
 
 #import "ALSdk.h"
+#import "MAAdRevenueDelegate.h"
 #import "MARewardedAdDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN

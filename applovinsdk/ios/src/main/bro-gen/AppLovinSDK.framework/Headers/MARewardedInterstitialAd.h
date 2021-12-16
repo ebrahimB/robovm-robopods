@@ -5,7 +5,7 @@
 //  Created by Thomas So on 6/3/20.
 //
 
-#import <Foundation/Foundation.h>
+#import "MAAdRevenueDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

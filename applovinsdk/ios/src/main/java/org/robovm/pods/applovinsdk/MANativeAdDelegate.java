@@ -36,35 +36,26 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAError/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/MANativeAdDelegate/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
-    /*<ptr>*/public static class MAErrorPtr extends Ptr<MAError, MAErrorPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(MAError.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected MAError() {}
-    protected MAError(Handle h, long handle) { super(h, handle); }
-    protected MAError(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "code")
-    public native MAErrorCode getCode();
-    @Property(selector = "message")
-    public native String getMessage();
-    @Property(selector = "waterfall")
-    public native MAAdWaterfallInfo getWaterfall();
-    /**
-     * @deprecated The ad load failure info string is deprecated and removed in a future SDK version. Please use `-[MAError waterfall]` instead.
-     */
-    @Deprecated
-    @Property(selector = "adLoadFailureInfo")
-    public native String getAdLoadFailureInfo();
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
     
+    /*</properties>*/
+    /*<methods>*/
+    @Method(selector = "didLoadNativeAd:forAd:")
+    void didLoadNativeAd(UIView nativeAdView, MAAd ad);
+    @Method(selector = "didFailToLoadNativeAdForAdUnitIdentifier:withError:")
+    void didFailToLoadNativeAd(String adUnitIdentifier, MAError error);
+    @Method(selector = "didClickNativeAd:")
+    void didClickNativeAd(MAAd ad);
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

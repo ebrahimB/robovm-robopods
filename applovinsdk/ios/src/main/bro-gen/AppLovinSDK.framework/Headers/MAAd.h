@@ -7,11 +7,13 @@
 //
 
 #import "MAAdFormat.h"
+#import "MAMediatedNetworkInfo.h"
+#import "MAAdWaterfallInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * This class represents an ad that has been served by AppLovin’s mediation server and that should be displayed to the user.
+ * This class represents an ad that has been served by AppLovin MAX.
  */
 @interface MAAd : NSObject
 
@@ -57,6 +59,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (atomic, copy, readonly, nullable) NSString *placement;
 
 /**
+ * The underlying waterfall of ad responses.
+ */
+@property (nonatomic, strong, readonly) MAAdWaterfallInfo *waterfall;
+
+/**
  * Gets the ad value for a given key.
  *
  * @param key The key for the value you want to retrieve.
@@ -68,13 +75,14 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Gets the ad value for a given key.
  *
- * @param key          The key for the value you want to retrieve.
+ * @param key                     The key for the value you want to retrieve.
  * @param defaultValue The default value to return if the value for @c key does not exist or is @c nil.
  *
  * @return The ad value corresponding to @c key, or the default value if no value for that key exists.
  */
 - (nullable NSString *)adValueForKey:(NSString *)key defaultValue:(nullable NSString *)defaultValue;
 
+- (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
 @end

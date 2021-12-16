@@ -12,6 +12,7 @@ enums:
     ALConsentDialogState: {}
     ALAdViewDisplayErrorCode: {}
     ALAppTrackingTransparencyStatus: {}
+    MAAdLoadState: {}
     MAErrorCode: {}
 classes:
     ALAd:
@@ -241,6 +242,14 @@ classes:
     ALConsentFlowSettings: { }
     MAMediatedNetworkInfo: { }
     MAError: { }
+    MAAdWaterfallInfo: {}
+    MANativeAdLoader:
+        methods:
+            '-initWithAdUnitIdentifier:':
+                name: init
+            '-initWithAdUnitIdentifier:sdk:':
+                name: init
+    MANetworkResponseInfo: {}
 protocols:
     ALAdDisplayDelegate:
         methods:
@@ -329,6 +338,12 @@ protocols:
     ALCPublisher: {}
     ALCSubscriber: {}
     MAAdRevenueDelegate: {}
+    MANativeAdDelegate:
+        methods:
+            '-didLoadNativeAd:forAd:':
+                name: didLoadNativeAd
+            '-didFailToLoadNativeAdForAdUnitIdentifier:withError:':
+                name: didFailToLoadNativeAd
 functions:
 
     # Make sure we don't miss any functions if new ones are introduced in a later version

@@ -45,7 +45,7 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(MAAd.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public MAAd() {}
+    protected MAAd() {}
     protected MAAd(Handle h, long handle) { super(h, handle); }
     protected MAAd(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -64,6 +64,8 @@ import org.robovm.apple.coreanimation.*;
     public native double getRevenue();
     @Property(selector = "placement")
     public native String getPlacement();
+    @Property(selector = "waterfall")
+    public native MAAdWaterfallInfo getWaterfall();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

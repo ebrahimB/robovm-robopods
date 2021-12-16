@@ -31,21 +31,25 @@
 #import <AppLovinSDK/ALUserSegment.h>
 #import <AppLovinSDK/ALVariableService.h>
 
-#import <AppLovinSDK/MAAdView.h>
-#import <AppLovinSDK/MAInterstitialAd.h>
-#import <AppLovinSDK/MARewardedAd.h>
-#import <AppLovinSDK/MARewardedInterstitialAd.h>
 #import <AppLovinSDK/MAAd.h>
 #import <AppLovinSDK/MAAdDelegate.h>
 #import <AppLovinSDK/MAAdFormat.h>
 #import <AppLovinSDK/MAAdRevenueDelegate.h>
+#import <AppLovinSDK/MAAdView.h>
 #import <AppLovinSDK/MAAdViewAdDelegate.h>
+#import <AppLovinSDK/MAAdWaterfallInfo.h>
+#import <AppLovinSDK/MAInterstitialAd.h>
+#import <AppLovinSDK/MANetworkResponseInfo.h>
+#import <AppLovinSDK/MANativeAdDelegate.h>
+#import <AppLovinSDK/MANativeAdLoader.h>
 #import <AppLovinSDK/MAError.h>
 #import <AppLovinSDK/MAErrorCode.h>
 #import <AppLovinSDK/MAErrorCodes.h>
 #import <AppLovinSDK/MAMediatedNetworkInfo.h>
 #import <AppLovinSDK/MAReward.h>
+#import <AppLovinSDK/MARewardedAd.h>
 #import <AppLovinSDK/MARewardedAdDelegate.h>
+#import <AppLovinSDK/MARewardedInterstitialAd.h>
 
 #import <AppLovinSDK/ALCCommunicator.h>
 #import <AppLovinSDK/ALCEntity.h>

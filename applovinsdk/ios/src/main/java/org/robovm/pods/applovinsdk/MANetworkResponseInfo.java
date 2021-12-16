@@ -37,35 +37,32 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALCCommunicator/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/MANetworkResponseInfo/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class ALCCommunicatorPtr extends Ptr<ALCCommunicator, ALCCommunicatorPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(ALCCommunicator.class); }/*</bind>*/
+    /*<ptr>*/public static class MANetworkResponseInfoPtr extends Ptr<MANetworkResponseInfo, MANetworkResponseInfoPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(MANetworkResponseInfo.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected ALCCommunicator() {}
-    protected ALCCommunicator(Handle h, long handle) { super(h, handle); }
-    protected ALCCommunicator(SkipInit skipInit) { super(skipInit); }
+    protected MANetworkResponseInfo() {}
+    protected MANetworkResponseInfo(Handle h, long handle) { super(h, handle); }
+    protected MANetworkResponseInfo(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "messagingService")
-    public native ALCMessagingService getMessagingService();
-    @Property(selector = "defaultCommunicator")
-    public static native ALCCommunicator getDefaultCommunicator();
+    @Property(selector = "adLoadState")
+    public native MAAdLoadState getAdLoadState();
+    @Property(selector = "mediatedNetwork")
+    public native MAMediatedNetworkInfo getMediatedNetwork();
+    @Property(selector = "credentials")
+    public native NSDictionary<NSString, ?> getCredentials();
+    @Property(selector = "latency")
+    public native double getLatency();
+    @Property(selector = "error")
+    public native MAError getError();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "subscribe:forTopic:")
-    public native void subscribe(ALCSubscriber subscriber, String topic);
-    @Method(selector = "subscribe:forTopics:")
-    public native void subscribe(ALCSubscriber subscriber, NSArray<NSString> topics);
-    @Method(selector = "unsubscribe:forTopic:")
-    public native void unsubscribe(ALCSubscriber subscriber, String topic);
-    @Method(selector = "unsubscribe:forTopics:")
-    public native void unsubscribe(ALCSubscriber subscriber, NSArray<NSString> topics);
-    @Method(selector = "respondsToTopic:")
-    public native boolean respondsToTopic(String topic);
+    
     /*</methods>*/
 }

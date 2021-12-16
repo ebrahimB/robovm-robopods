@@ -34,37 +34,28 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAError/*</name>*/ 
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/MANativeAdDelegateAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements MANativeAdDelegate/*</implements>*/ {
 
-    /*<ptr>*/public static class MAErrorPtr extends Ptr<MAError, MAErrorPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(MAError.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected MAError() {}
-    protected MAError(Handle h, long handle) { super(h, handle); }
-    protected MAError(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    @Property(selector = "code")
-    public native MAErrorCode getCode();
-    @Property(selector = "message")
-    public native String getMessage();
-    @Property(selector = "waterfall")
-    public native MAAdWaterfallInfo getWaterfall();
-    /**
-     * @deprecated The ad load failure info string is deprecated and removed in a future SDK version. Please use `-[MAError waterfall]` instead.
-     */
-    @Deprecated
-    @Property(selector = "adLoadFailureInfo")
-    public native String getAdLoadFailureInfo();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @NotImplemented("didLoadNativeAd:forAd:")
+    public void didLoadNativeAd(UIView nativeAdView, MAAd ad) {}
+    @NotImplemented("didFailToLoadNativeAdForAdUnitIdentifier:withError:")
+    public void didFailToLoadNativeAd(String adUnitIdentifier, MAError error) {}
+    @NotImplemented("didClickNativeAd:")
+    public void didClickNativeAd(MAAd ad) {}
     /*</methods>*/
 }
