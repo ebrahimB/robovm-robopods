@@ -51,8 +51,6 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @NotImplemented("isFacebookAppInstalled")
     public boolean isFacebookAppInstalled() { return false; }
-    @NotImplemented("isMSQRDPlayerAppInstalled")
-    public boolean isMSQRDPlayerAppInstalled() { return false; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

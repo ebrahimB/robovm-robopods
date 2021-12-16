@@ -50,15 +50,13 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKBridgeAPIRequest() {}
     protected FBSDKBridgeAPIRequest(Handle h, long handle) { super(h, handle); }
     protected FBSDKBridgeAPIRequest(SkipInit skipInit) { super(skipInit); }
-    public FBSDKBridgeAPIRequest(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo) { super((Handle) null, create(protocolType, scheme, methodName, methodVersion, parameters, userInfo)); retain(getHandle()); }
+    public FBSDKBridgeAPIRequest(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo) { super((Handle) null, create(protocolType, scheme, methodName, parameters, userInfo)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "actionID")
     public native String getActionID();
     @Property(selector = "methodName")
     public native String getMethodName();
-    @Property(selector = "methodVersion")
-    public native String getMethodVersion();
     @Property(selector = "parameters")
     public native NSDictionary<NSString, ?> getParameters();
     @Property(selector = "protocolType")
@@ -74,7 +72,7 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "requestURL:")
     public native NSURL requestURL(NSError.NSErrorPtr errorRef);
-    @Method(selector = "bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:")
-    protected static native @Pointer long create(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo);
+    @Method(selector = "bridgeAPIRequestWithProtocolType:scheme:methodName:parameters:userInfo:")
+    protected static native @Pointer long create(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo);
     /*</methods>*/
 }

@@ -66,9 +66,7 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "dialogWithName:delegate:")
     protected static native @Pointer long create(String name, FBSDKWebDialogDelegate delegate);
-    @Method(selector = "showWithName:parameters:delegate:")
-    public static native FBSDKWebDialog show(String name, NSDictionary<NSString, ?> parameters, FBSDKWebDialogDelegate delegate);
-    @Method(selector = "createAndShow:parameters:frame:delegate:windowFinder:")
+    @Method(selector = "createAndShowWithName:parameters:frame:delegate:windowFinder:")
     public static native FBSDKWebDialog createAndShow(String name, NSDictionary<NSString, ?> parameters, @ByVal CGRect frame, FBSDKWebDialogDelegate delegate, FBSDKWindowFinding windowFinder);
     /*</methods>*/
 }

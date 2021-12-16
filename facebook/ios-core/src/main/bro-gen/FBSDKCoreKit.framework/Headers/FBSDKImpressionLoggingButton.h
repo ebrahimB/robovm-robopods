@@ -6,9 +6,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#if !TARGET_OS_TV
+#import <UIKit/UIKit.h>
 
-#import <Foundation/Foundation.h>
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  Internal Type exposed to facilitate transition to Swift.
@@ -16,9 +16,8 @@
 
  @warning INTERNAL - DO NOT USE
  */
-typedef NS_ENUM(NSUInteger, FBSDKBridgeAPIProtocolType) {
-  FBSDKBridgeAPIProtocolTypeNative,
-  FBSDKBridgeAPIProtocolTypeWeb,
-};
+NS_SWIFT_NAME(ImpressionLoggingButton)
+@interface FBSDKImpressionLoggingButton : UIButton
+@end
 
-#endif
+NS_ASSUME_NONNULL_END

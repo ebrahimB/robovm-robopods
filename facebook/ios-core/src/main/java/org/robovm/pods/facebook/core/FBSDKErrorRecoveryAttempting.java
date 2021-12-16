@@ -51,8 +51,8 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "attemptRecoveryFromError:optionIndex:completionHandler:")
-    void attemptRecoveryFromError(NSError error, @MachineSizedUInt long recoveryOptionIndex, @Block VoidBooleanBlock completionHandler);
+    @Method(selector = "attemptRecoveryFromError:completionHandler:")
+    void attemptRecoveryFromError(NSError error, @Block VoidBooleanBlock completionHandler);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

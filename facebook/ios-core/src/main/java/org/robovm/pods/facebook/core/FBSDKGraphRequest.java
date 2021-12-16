@@ -109,7 +109,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "startWithCompletion:")
     public native FBSDKGraphRequestConnecting start(@Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
     @Method(selector = "configureWithSettings:currentAccessTokenStringProvider:graphRequestConnectionFactory:")
-    public static native void configure(FBSDKSettingsProtocol settings, Class<?> provider, FBSDKGraphRequestConnectionFactoryProtocol _graphRequestConnectionFactory);
+    public static native void configure(FBSDKSettingsProtocol settings, Class<?> accessTokenProvider, FBSDKGraphRequestConnectionFactoryProtocol _graphRequestConnectionFactory);
     @Method(selector = "formattedDescription")
     public native String formattedDescription();
     /*</methods>*/

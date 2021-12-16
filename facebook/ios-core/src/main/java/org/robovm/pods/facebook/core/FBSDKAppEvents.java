@@ -55,19 +55,19 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "shared")
     public static native FBSDKAppEvents getShared();
     @Property(selector = "flushBehavior")
-    public static native FBSDKAppEventsFlushBehavior getFlushBehavior();
+    public native FBSDKAppEventsFlushBehavior getFlushBehavior();
     @Property(selector = "setFlushBehavior:")
-    public static native void setFlushBehavior(FBSDKAppEventsFlushBehavior v);
+    public native void setFlushBehavior(FBSDKAppEventsFlushBehavior v);
     @Property(selector = "loggingOverrideAppID")
-    public static native String getLoggingOverrideAppID();
+    public native String getLoggingOverrideAppID();
     @Property(selector = "setLoggingOverrideAppID:")
-    public static native void setLoggingOverrideAppID(String v);
+    public native void setLoggingOverrideAppID(String v);
     @Property(selector = "userID")
-    public static native String getUserID();
+    public native String getUserID();
     @Property(selector = "setUserID:")
-    public static native void setUserID(String v);
+    public native void setUserID(String v);
     @Property(selector = "anonymousID")
-    public static native String getAnonymousID();
+    public native String getAnonymousID();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -81,8 +81,38 @@ import org.robovm.apple.coreanimation.*;
         public static native NSString LoggingResult();
     }
     
+    @Method(selector = "logEvent:")
+    public native void logEvent(NSString eventName);
+    @Method(selector = "logEvent:valueToSum:")
+    public native void logEvent(NSString eventName, double valueToSum);
+    @Method(selector = "logEvent:parameters:")
+    public native void logEvent(NSString eventName, NSDictionary<NSString, ?> parameters);
+    @Method(selector = "logEvent:valueToSum:parameters:")
+    public native void logEvent(NSString eventName, double valueToSum, NSDictionary<NSString, ?> parameters);
+    @Method(selector = "logEvent:valueToSum:parameters:accessToken:")
+    public native void logEvent(NSString eventName, NSNumber valueToSum, NSDictionary<NSString, ?> parameters, FBSDKAccessToken accessToken);
+    @Method(selector = "logPurchase:currency:")
+    public native void logPurchase(double purchaseAmount, String currency);
+    @Method(selector = "logPurchase:currency:parameters:")
+    public native void logPurchase(double purchaseAmount, String currency, NSDictionary<NSString, ?> parameters);
+    @Method(selector = "logPurchase:currency:parameters:accessToken:")
+    public native void logPurchase(double purchaseAmount, String currency, NSDictionary<NSString, ?> parameters, FBSDKAccessToken accessToken);
+    @Method(selector = "logPushNotificationOpen:")
+    public native void logPushNotificationOpen(NSDictionary<NSString, ?> payload);
+    @Method(selector = "logPushNotificationOpen:action:")
+    public native void logPushNotificationOpen(NSDictionary<NSString, ?> payload, String action);
+    @Method(selector = "logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:")
+    public native void logProductItem(String itemID, FBSDKProductAvailability availability, FBSDKProductCondition condition, String description, String imageLink, String link, String title, double priceAmount, String currency, String gtin, String mpn, String brand, NSDictionary<NSString, ?> parameters);
     @Method(selector = "activateApp")
     public native void activateApp();
+    @Method(selector = "setPushNotificationsDeviceToken:")
+    public native void setPushNotificationsDeviceToken(NSData deviceToken);
+    @Method(selector = "setPushNotificationsDeviceTokenString:")
+    public native void setPushNotificationsDeviceTokenString(String deviceTokenString);
+    @Method(selector = "flush")
+    public native void flush();
+    @Method(selector = "requestForCustomAudienceThirdPartyIDWithAccessToken:")
+    public native FBSDKGraphRequest requestForCustomAudienceThirdPartyID(FBSDKAccessToken accessToken);
     @Method(selector = "setUserEmail:firstName:lastName:phone:dateOfBirth:gender:city:state:zip:country:")
     public native void setUserData(String email, String firstName, String lastName, String phone, String dateOfBirth, String gender, String city, String state, String zip, String country);
     @Method(selector = "getUserData")
@@ -93,47 +123,21 @@ import org.robovm.apple.coreanimation.*;
     public native void setUserData(String data, NSString type);
     @Method(selector = "clearUserDataForType:")
     public native void clearUserDataForType(NSString type);
-    @Method(selector = "logEvent:")
-    public static native void logEvent(NSString eventName);
-    @Method(selector = "logEvent:valueToSum:")
-    public static native void logEvent(NSString eventName, double valueToSum);
-    @Method(selector = "logEvent:parameters:")
-    public static native void logEvent(NSString eventName, NSDictionary<NSString, ?> parameters);
-    @Method(selector = "logEvent:valueToSum:parameters:")
-    public static native void logEvent(NSString eventName, double valueToSum, NSDictionary<NSString, ?> parameters);
-    @Method(selector = "logEvent:valueToSum:parameters:accessToken:")
-    public static native void logEvent(NSString eventName, NSNumber valueToSum, NSDictionary<NSString, ?> parameters, FBSDKAccessToken accessToken);
-    @Method(selector = "logPurchase:currency:")
-    public static native void logPurchase(double purchaseAmount, String currency);
-    @Method(selector = "logPurchase:currency:parameters:")
-    public static native void logPurchase(double purchaseAmount, String currency, NSDictionary<NSString, ?> parameters);
-    @Method(selector = "logPurchase:currency:parameters:accessToken:")
-    public static native void logPurchase(double purchaseAmount, String currency, NSDictionary<NSString, ?> parameters, FBSDKAccessToken accessToken);
-    @Method(selector = "logPushNotificationOpen:")
-    public static native void logPushNotificationOpen(NSDictionary<NSString, ?> payload);
-    @Method(selector = "logPushNotificationOpen:action:")
-    public static native void logPushNotificationOpen(NSDictionary<NSString, ?> payload, String action);
-    @Method(selector = "logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:")
-    public static native void logProductItemAvailability(String itemID, FBSDKProductAvailability availability, FBSDKProductCondition condition, String description, String imageLink, String link, String title, double priceAmount, String currency, String gtin, String mpn, String brand, NSDictionary<NSString, ?> parameters);
-    @Method(selector = "setPushNotificationsDeviceToken:")
-    public static native void setPushNotificationsDeviceToken(NSData deviceToken);
-    @Method(selector = "setPushNotificationsDeviceTokenString:")
-    public static native void setPushNotificationsDeviceTokenString(String deviceTokenString);
-    @Method(selector = "flush")
-    public static native void flush();
-    @Method(selector = "requestForCustomAudienceThirdPartyIDWithAccessToken:")
-    public static native FBSDKGraphRequest requestForCustomAudienceThirdPartyID(FBSDKAccessToken accessToken);
+    @Method(selector = "augmentHybridWebView:")
+    public native void augmentHybridWebView(WKWebView webView);
+    @Method(selector = "setIsUnityInitialized:")
+    public native void setIsUnityInitialized(boolean isUnityInitialized);
+    @Method(selector = "sendEventBindingsToUnity")
+    public native void sendEventBindingsToUnity();
+    @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:")
+    public native void logInternalEvent(NSString eventName, NSDictionary<NSString, ?> parameters, boolean isImplicitlyLogged);
+    @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:accessToken:")
+    public native void logInternalEvent(NSString eventName, NSDictionary<NSString, ?> parameters, boolean isImplicitlyLogged, FBSDKAccessToken accessToken);
+    /**
+     * @deprecated `AppEvents.clearUserID` is deprecated and will be removed in the next major release, please set `AppEvents.shared.userID` to `nil` instead
+     */
+    @Deprecated
     @Method(selector = "clearUserID")
     public static native void clearUserID();
-    @Method(selector = "augmentHybridWKWebView:")
-    public static native void augmentHybridWKWebView(WKWebView webView);
-    @Method(selector = "setIsUnityInit:")
-    public static native void setIsUnityInit(boolean isUnityInit);
-    @Method(selector = "sendEventBindingsToUnity")
-    public static native void sendEventBindingsToUnity();
-    @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:")
-    public static native void logInternalEvent(NSString eventName, NSDictionary<NSString, ?> parameters, boolean isImplicitlyLogged);
-    @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:accessToken:")
-    public static native void logInternalEvent(NSString eventName, NSDictionary<NSString, ?> parameters, boolean isImplicitlyLogged, FBSDKAccessToken accessToken);
     /*</methods>*/
 }

@@ -39,26 +39,26 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKImpressionTrackingButton/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKImpressionLoggingButton/*</name>*/ 
     extends /*<extends>*/UIButton/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FBSDKImpressionTrackingButtonPtr extends Ptr<FBSDKImpressionTrackingButton, FBSDKImpressionTrackingButtonPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FBSDKImpressionTrackingButton.class); }/*</bind>*/
+    /*<ptr>*/public static class FBSDKImpressionLoggingButtonPtr extends Ptr<FBSDKImpressionLoggingButton, FBSDKImpressionLoggingButtonPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FBSDKImpressionLoggingButton.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKImpressionTrackingButton() {}
-    protected FBSDKImpressionTrackingButton(Handle h, long handle) { super(h, handle); }
-    protected FBSDKImpressionTrackingButton(SkipInit skipInit) { super(skipInit); }
+    public FBSDKImpressionLoggingButton() {}
+    protected FBSDKImpressionLoggingButton(Handle h, long handle) { super(h, handle); }
+    protected FBSDKImpressionLoggingButton(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public FBSDKImpressionTrackingButton(@ByVal CGRect frame) { super(frame); }
+    public FBSDKImpressionLoggingButton(@ByVal CGRect frame) { super(frame); }
     @Method(selector = "initWithCoder:")
-    public FBSDKImpressionTrackingButton(NSCoder coder) { super(coder); }
+    public FBSDKImpressionLoggingButton(NSCoder coder) { super(coder); }
     /**
      * @since Available in iOS 14.0 and later.
      */
     @Method(selector = "initWithFrame:primaryAction:")
-    public FBSDKImpressionTrackingButton(@ByVal CGRect frame, UIAction primaryAction) { super(frame, primaryAction); }
+    public FBSDKImpressionLoggingButton(@ByVal CGRect frame, UIAction primaryAction) { super(frame, primaryAction); }
     /*</constructors>*/
     /*<properties>*/
     @WeaklyLinked
@@ -71,12 +71,12 @@ import org.robovm.apple.coreanimation.*;
      * @since Available in iOS 13.0 and later.
      */
     @Method(selector = "systemButtonWithImage:target:action:")
-    public static native FBSDKImpressionTrackingButton getSystemButtonWithImage(UIImage image, NSObject target, Selector action);
+    public static native FBSDKImpressionLoggingButton getSystemButtonWithImage(UIImage image, NSObject target, Selector action);
     /**
      * @since Available in iOS 14.0 and later.
      */
     @Method(selector = "systemButtonWithPrimaryAction:")
-    public static native FBSDKImpressionTrackingButton getSystemButtonWithPrimaryAction(UIAction primaryAction);
+    public static native FBSDKImpressionLoggingButton getSystemButtonWithPrimaryAction(UIAction primaryAction);
     /**
      * @since Available in iOS 9.0 and later.
      */

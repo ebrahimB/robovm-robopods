@@ -64,19 +64,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @GlobalValue(symbol="FBSDKAppLinkVersion", optional=true)
     public static native String getVersion();
-    @Library(Library.INTERNAL)
-    public static class EventName {
-        static { Bro.bind(EventName.class); }
-
-        @GlobalValue(symbol="FBSDKAppLinkParseEventName", optional=true)
-        public static native NSString Parse();
-        @GlobalValue(symbol="FBSDKAppLinkNavigateInEventName", optional=true)
-        public static native NSString NavigateIn();
-        @GlobalValue(symbol="FBSDKAppLinkNavigateOutEventName", optional=true)
-        public static native NSString NavigateOut();
-        @GlobalValue(symbol="FBSDKAppLinkNavigateBackToReferrerEventName", optional=true)
-        public static native NSString NavigateBackToReferrer();
-    }
     
     @Method(selector = "appLinkWithSourceURL:targets:webURL:")
     protected static native @Pointer long create(NSURL sourceURL, NSArray<FBSDKAppLinkTarget> targets, NSURL webURL);

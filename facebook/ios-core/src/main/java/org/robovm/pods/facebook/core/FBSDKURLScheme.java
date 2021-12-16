@@ -50,14 +50,26 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*//*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated `URLScheme.facebookApp` is deprecated and will be removed in the next major release; please use `URLScheme.facebookAPI` instead
+     */
+    @Deprecated
     @GlobalValue(symbol="FBSDKURLSchemeFacebookApp", optional=true)
     public static native String FacebookApp();
     @GlobalValue(symbol="FBSDKURLSchemeFacebookAPI", optional=true)
     public static native String FacebookAPI();
+    /**
+     * @deprecated `URLScheme.facebookShareExtension` is deprecated and will be removed in the next major release; please use `URLScheme.facebookAPI` instead
+     */
+    @Deprecated
     @GlobalValue(symbol="FBSDKURLSchemeFacebookShareExtension", optional=true)
     public static native String FacebookShareExtension();
     @GlobalValue(symbol="FBSDKURLSchemeMessengerApp", optional=true)
     public static native String MessengerApp();
+    /**
+     * @deprecated `URLScheme.masqueradePlayer` is deprecated and will be removed in the next major release
+     */
+    @Deprecated
     @GlobalValue(symbol="FBSDKURLSchemeMasqueradePlayer", optional=true)
     public static native String MasqueradePlayer();
     @GlobalValue(symbol="FBSDKURLSchemeHTTPS", optional=true)

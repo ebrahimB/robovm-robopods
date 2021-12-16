@@ -56,6 +56,7 @@ public enum /*<name>*/FBSDKFeature/*</name>*/ implements ValuedEnum {
     SKAdNetworkConversionValue(16844289L),
     ATELogging(16844544L),
     AEM(16844800L),
+    AEMCatalogReport(16844801L),
     Instrument(16908288L),
     CrashReport(16908544L),
     CrashShield(16908545L),

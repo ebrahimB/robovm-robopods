@@ -53,7 +53,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:")
-    public FBSDKBridgeAPIRequestProtocol bridgeAPIRequest(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo) { return null; }
+    @NotImplemented("bridgeAPIRequestWithProtocolType:scheme:methodName:parameters:userInfo:")
+    public FBSDKBridgeAPIRequestProtocol bridgeAPIRequest(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo) { return null; }
     /*</methods>*/
 }

@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKButtonImpressionTracking/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKButtonImpressionLogging/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "analyticsParameters")
     NSDictionary<NSString, ?> getAnalyticsParameters();
     @Property(selector = "impressionTrackingEventName")
-    String getImpressionTrackingEventName();
+    NSString getImpressionTrackingEventName();
     @Property(selector = "impressionTrackingIdentifier")
     String getImpressionTrackingIdentifier();
     /*</properties>*/

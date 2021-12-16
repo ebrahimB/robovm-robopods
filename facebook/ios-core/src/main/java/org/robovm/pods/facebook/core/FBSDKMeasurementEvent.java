@@ -56,18 +56,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="FBSDKMeasurementEventNotification", optional=true)
-    public static native NSString eventNotificationName();
-    @Library(Library.INTERNAL)
-    public static class Keys {
-        static { Bro.bind(Keys.class); }
-
-        @GlobalValue(symbol="FBSDKMeasurementEventNameKey", optional=true)
-        public static native NSString EventName();
-        @GlobalValue(symbol="FBSDKMeasurementEventArgsKey", optional=true)
-        public static native NSString EventArgs();
-    }
-    
     
     /*</methods>*/
 }

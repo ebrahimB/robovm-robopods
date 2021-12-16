@@ -6,7 +6,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import <FBSDKCoreKit/FBSDKLogging.h>
+#import <FBSDKCoreKit/FBSDKLoggingBehavior.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,10 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
  Internal Type exposed to facilitate transition to Swift.
  API Subject to change or removal without warning. Do not use.
 
- @warning UNSAFE - DO NOT USE
+ @warning INTERNAL - DO NOT USE
  */
-NS_SWIFT_NAME(ImpressionTrackingButton)
-@interface FBSDKImpressionTrackingButton : UIButton
+NS_SWIFT_NAME(LoggerCreating)
+@protocol __FBSDKLoggerCreating
+
+- (id<FBSDKLogging>)createLoggerWithLoggingBehavior:(FBSDKLoggingBehavior)loggingBehavior;
+
 @end
 
 NS_ASSUME_NONNULL_END

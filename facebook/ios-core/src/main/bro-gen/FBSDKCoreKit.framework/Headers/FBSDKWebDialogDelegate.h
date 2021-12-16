@@ -6,12 +6,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+#if !TARGET_OS_TV
+
 #import <Foundation/Foundation.h>
+
+#import <FBSDKCoreKit/FBSDKWebDialog.h>
+
+@class FBSDKWebDialog;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class FBSDKAccessToken;
-@class FBSDKAuthenticationToken;
+/**
+ Internal Type exposed to facilitate transition to Swift.
+ API Subject to change or removal without warning. Do not use.
+
+ @warning INTERNAL - DO NOT USE
+ */
+NS_SWIFT_NAME(WebDialogDelegate)
+@protocol FBSDKWebDialogDelegate
 
 /**
  Internal Type exposed to facilitate transition to Swift.
@@ -19,8 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @warning INTERNAL - DO NOT USE
  */
-NS_SWIFT_NAME(TokenCaching)
-@protocol FBSDKTokenCaching <NSObject>
+- (void)webDialog:(FBSDKWebDialog *)webDialog didCompleteWithResults:(NSDictionary<NSString *, id> *)results;
 
 /**
  Internal Type exposed to facilitate transition to Swift.
@@ -28,7 +39,7 @@ NS_SWIFT_NAME(TokenCaching)
 
  @warning INTERNAL - DO NOT USE
  */
-@property (nullable, nonatomic, copy) FBSDKAccessToken *accessToken;
+- (void)webDialog:(FBSDKWebDialog *)webDialog didFailWithError:(NSError *)error;
 
 /**
  Internal Type exposed to facilitate transition to Swift.
@@ -36,8 +47,10 @@ NS_SWIFT_NAME(TokenCaching)
 
  @warning INTERNAL - DO NOT USE
  */
-@property (nullable, nonatomic, copy) FBSDKAuthenticationToken *authenticationToken;
+- (void)webDialogDidCancel:(FBSDKWebDialog *)webDialog;
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

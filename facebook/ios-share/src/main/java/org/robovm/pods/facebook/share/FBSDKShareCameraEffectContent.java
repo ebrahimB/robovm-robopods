@@ -108,6 +108,10 @@ import org.robovm.apple.coreanimation.*;
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
+    /**
+     * @deprecated `SharingScheme` is deprecated and will be removed in the next major release
+     */
+    @Deprecated
     @Method(selector = "schemeForMode:")
     public native String schemeForMode(FBSDKShareDialogMode mode);
     /*</methods>*/

@@ -54,6 +54,10 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated `SharingScheme` is deprecated and will be removed in the next major release
+     */
+    @Deprecated
     @NotImplemented("schemeForMode:")
     public String schemeForMode(FBSDKShareDialogMode mode) { return null; }
     /*</methods>*/

@@ -50,8 +50,6 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "isFacebookAppInstalled")
     boolean isFacebookAppInstalled();
-    @Property(selector = "isMSQRDPlayerAppInstalled")
-    boolean isMSQRDPlayerAppInstalled();
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "URLWithScheme:host:path:queryParameters:error:")

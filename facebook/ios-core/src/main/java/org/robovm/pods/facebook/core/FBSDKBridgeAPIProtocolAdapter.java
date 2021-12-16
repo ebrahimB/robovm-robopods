@@ -53,8 +53,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("requestURLWithActionID:scheme:methodName:methodVersion:parameters:error:")
-    public NSURL requestURL(String actionID, String scheme, String methodName, String methodVersion, NSDictionary<NSString, ?> parameters, NSError.NSErrorPtr errorRef) { return null; }
+    @NotImplemented("requestURLWithActionID:scheme:methodName:parameters:error:")
+    public NSURL requestURL(String actionID, String scheme, String methodName, NSDictionary<NSString, ?> parameters, NSError.NSErrorPtr errorRef) { return null; }
     @NotImplemented("responseParametersForActionID:queryParameters:cancelled:error:")
     public NSDictionary<NSString, ?> responseParameters(String actionID, NSDictionary<NSString, ?> queryParameters, BooleanPtr cancelledRef, NSError.NSErrorPtr errorRef) { return null; }
     /*</methods>*/

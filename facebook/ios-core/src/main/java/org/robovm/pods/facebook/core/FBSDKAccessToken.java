@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAccessToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSObjectProtocol, NSSecureCoding, FBSDKTokenStringProviding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAccessTokenPtr extends Ptr<FBSDKAccessToken, FBSDKAccessTokenPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAccessToken.class); }/*</bind>*/
@@ -90,8 +90,6 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isDataAccessExpired();
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-    @Property(selector = "tokenString")
-    public static native String getProvidedTokenString();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

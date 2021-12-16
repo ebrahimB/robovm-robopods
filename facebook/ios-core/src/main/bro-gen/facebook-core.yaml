@@ -71,27 +71,52 @@ classes:
             '+refreshCurrentAccessTokenWithCompletion:':
                 name: refreshCurrentAccessToken
     FBSDKAppEvents:
+        properties:
+            '+flushBehavior':
+                exclude: true
+            '+loggingOverrideAppID':
+                exclude: true
+            '+userID':
+                exclude: true
+            '+anonymousID':
+                exclude: true
         methods:
+            '+flush':
+                exclude: true # is deprecated and will be removed in the next major release
+            '+sendEventBindingsToUnity':
+                exclude: true # is deprecated and will be removed in the next major release
+            '+setIsUnityInit:':
+                exclude: true # is deprecated and will be removed in the next major release
+            '+augmentHybridWKWebView:':
+                exclude: true # is deprecated and will be removed in the next major release
+            '+setPushNotificationsDeviceTokenString:':
+                exclude: true # is deprecated and will be removed in the next major release
+            '+setPushNotificationsDeviceToken:':
+                exclude: true # is deprecated and will be removed in the next major release
+            '+logPushNotificationOpen:':
+                exclude: true # is deprecated and will be removed in the next major release
+            '+logEvent:':
+                exclude: true # is deprecated and will be removed in the next major release
             '+logEvent:valueToSum:':
-                name: logEvent
+                exclude: true # is deprecated and will be removed in the next major release
             '+logEvent:parameters:':
-                name: logEvent
+                exclude: true # is deprecated and will be removed in the next major release
             '+logEvent:valueToSum:parameters:':
-                name: logEvent
+                exclude: true # is deprecated and will be removed in the next major release
             '+logEvent:valueToSum:parameters:accessToken:':
-                name: logEvent
+                exclude: true # is deprecated and will be removed in the next major release
             '+logPurchase:currency:':
-                name: logPurchase
+                exclude: true # is deprecated and will be removed in the next major release
             '+logPurchase:currency:parameters:':
-                name: logPurchase
+                exclude: true # is deprecated and will be removed in the next major release
             '+logPurchase:currency:parameters:accessToken:':
-                name: logPurchase
+                exclude: true # is deprecated and will be removed in the next major release
             '+logPushNotificationOpen:action:':
-                name: logPushNotificationOpen
+                exclude: true # is deprecated and will be removed in the next major release
             '+logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:':
-                name: logProductItemAvailability
+                exclude: true # is deprecated and will be removed in the next major release
             '+requestForCustomAudienceThirdPartyIDWithAccessToken:':
-                name: requestForCustomAudienceThirdPartyID
+                exclude: true # is deprecated and will be removed in the next major release
             '+setUserEmail:firstName:lastName:phone:dateOfBirth:gender:city:state:zip:country:':
                 exclude: true # deprecated and conflicts with instance method
             '+setUserData:forType:':
@@ -112,6 +137,30 @@ classes:
                 name: setUserData
             '-setUserData:forType:':
                 name: setUserData
+            '-logEvent:valueToSum:':
+                name: logEvent
+            '-logEvent:parameters:':
+                name: logEvent
+            '-logEvent:valueToSum:parameters:':
+                name: logEvent
+            '-logEvent:valueToSum:parameters:accessToken:':
+                name: logEvent
+            '-logPurchase:currency:':
+                name: logPurchase
+            '-logPurchase:currency:parameters:':
+                name: logPurchase
+            '-logPurchase:currency:parameters:accessToken:':
+                name: logPurchase
+            '-logPushNotificationOpen:action:':
+                name: logPushNotificationOpen
+            '-logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:':
+                name: logProductItem
+            '-requestForCustomAudienceThirdPartyIDWithAccessToken:':
+                name: requestForCustomAudienceThirdPartyID
+            '-logInternalEvent:parameters:isImplicitlyLogged:':
+                name: logInternalEvent
+            '-logInternalEvent:parameters:isImplicitlyLogged:accessToken:':
+                name: logInternalEvent
     FBSDKAppLink:
         methods:
             '+appLinkWithSourceURL:targets:webURL:':
@@ -176,6 +225,9 @@ classes:
             '+bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:':
                 name: create
                 constructor: true
+            '+bridgeAPIRequestWithProtocolType:scheme:methodName:parameters:userInfo:':
+                constructor: true
+                name: create
     FBSDKBridgeAPIResponse:
         methods:
             '+bridgeAPIResponseWithRequest:error:':
@@ -350,6 +402,8 @@ classes:
                 name: show
             '+createAndShow:parameters:frame:delegate:windowFinder:':
                 name: createAndShow
+            '+createAndShowWithName:parameters:frame:delegate:windowFinder:':
+                name: createAndShow
     FBSDKWebViewAppLinkResolver: {}
     FBSDKSettingsLogging: {}
     FBSDKLogger:
@@ -421,6 +475,7 @@ classes:
         methods:
             '-loadServerConfigurationWithCompletionBlock:':
                 name: loadServerConfiguration
+    FBSDKImpressionLoggingButton: {}
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -438,11 +493,15 @@ protocols:
                 name: requestURL
             '-responseParametersForActionID:queryParameters:cancelled:error:':
                 name: responseParameters
+            '-requestURLWithActionID:scheme:methodName:parameters:error:':
+                name: requestURL
     FBSDKButtonImpressionTracking: { }
     FBSDKCopying: { }
     FBSDKErrorRecoveryAttempting:
         methods:
             '-attemptRecoveryFromError:optionIndex:completionHandler:':
+                name: attemptRecoveryFromError
+            '-attemptRecoveryFromError:completionHandler:':
                 name: attemptRecoveryFromError
     FBSDKGraphErrorRecoveryProcessorDelegate:
         methods:
@@ -536,6 +595,8 @@ protocols:
         methods:
             '-bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:':
                 name: bridgeAPIRequest
+            '-bridgeAPIRequestWithProtocolType:scheme:methodName:parameters:userInfo:':
+                name: bridgeAPIRequest
     FBSDKGraphRequestConnectionFactory:
         name: FBSDKGraphRequestConnectionFactoryProtocol
     FBSDKGraphRequestFactory:
@@ -593,6 +654,9 @@ protocols:
         methods:
             '+appLinkTargetWithURL:appStoreId:appName:':
                 name: create
+    FBSDKButtonImpressionLogging: {}
+    __FBSDKLoggerCreating:
+        exclude: true
 functions:
     fb_randomString:
         exclude: true
@@ -651,11 +715,6 @@ values:
         static_class: Keys
         name: 'Event#{g[0]}'
         type: NSString
-    FBSDKMeasurementEvent(.*)Key:
-        class: FBSDKMeasurementEvent
-        static_class: Keys
-        name: 'Event#{g[0]}'
-        type: NSString
     FBSDKMeasurementEventNotification:
         class: FBSDKMeasurementEvent
         name: 'eventNotificationName'
@@ -668,11 +727,6 @@ values:
         class: FBSDKProfile
         static_class: Keys
         name: 'Change#{g[0]}'
-        type: NSString
-    FBSDKAppLink(.*)EventName:
-        class: FBSDKAppLink
-        static_class: EventName
-        name: '#{g[0]}'
         type: NSString
     FBSDKAppLinkVersion:
         class: FBSDKAppLink

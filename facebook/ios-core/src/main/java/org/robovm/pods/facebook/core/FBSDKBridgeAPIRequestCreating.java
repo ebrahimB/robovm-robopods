@@ -51,8 +51,8 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:")
-    FBSDKBridgeAPIRequestProtocol bridgeAPIRequest(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, String methodVersion, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo);
+    @Method(selector = "bridgeAPIRequestWithProtocolType:scheme:methodName:parameters:userInfo:")
+    FBSDKBridgeAPIRequestProtocol bridgeAPIRequest(FBSDKBridgeAPIProtocolType protocolType, String scheme, String methodName, NSDictionary<NSString, ?> parameters, NSDictionary<NSString, ?> userInfo);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/
