@@ -58,7 +58,5 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initWithName:bundle:")
     protected native @Pointer long init(String name, NSBundle bundle);
-    @Method(selector = "named:")
-    public static native CompatibleAnimation named(String name);
     /*</methods>*/
 }

@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-lottie-ios</artifactId>
-    <name>RoboPods Lottie iOS v3.2.3</name>
+    <name>RoboPods Lottie iOS v3.3.0</name>
     <packaging>jar</packaging>
 
     <licenses>

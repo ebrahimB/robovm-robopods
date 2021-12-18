@@ -50,7 +50,7 @@ v1.19.0 - in development
 | [HelpShift](helpshift/)            | 7.11.1    |
 | [InMobi](inmobi/)                  | 9.2.0  |
 | [Kochava](kochava/)                | 4.8.0  |
-| [Lottie](lottie/)                  | 3.2.3  |
+| [Lottie](lottie/)                  | 3.3.0  |
 | [OneSignal](onesignal/)            | 3.5.3  |
 | [Pollfish](pollfish/)              | 6.1.0  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |

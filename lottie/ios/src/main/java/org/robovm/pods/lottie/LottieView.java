@@ -68,10 +68,6 @@ import org.robovm.apple.coreanimation.*;
     public native void didMoveToWindow();
     @Method(selector = "layoutSubviews")
     public native void layoutSubviews();
-    @Method(selector = "animationWillMoveToBackground")
-    public native void animationWillMoveToBackground();
-    @Method(selector = "animationWillEnterForeground")
-    public native void animationWillEnterForeground();
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")

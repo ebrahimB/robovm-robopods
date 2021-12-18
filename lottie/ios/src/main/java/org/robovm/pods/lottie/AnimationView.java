@@ -49,15 +49,11 @@ import org.robovm.apple.coreanimation.*;
     protected AnimationView(Handle h, long handle) { super(h, handle); }
     protected AnimationView(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public AnimationView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
+    public AnimationView(@ByVal CGRect _) { super((SkipInit) null); initObject(init(_)); }
     @Method(selector = "initWithCoder:")
     public AnimationView(NSCoder aDecoder) { super((SkipInit) null); initObject(init(aDecoder)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "animationName")
-    public native String getAnimationName();
-    @Property(selector = "setAnimationName:")
-    public native void setAnimationName(String v);
     @Property(selector = "intrinsicContentSize")
     public native @ByVal CGSize getIntrinsicContentSize();
     @WeaklyLinked
@@ -67,13 +63,9 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithFrame:")
-    protected native @Pointer long init(@ByVal CGRect frame);
+    protected native @Pointer long init(@ByVal CGRect _);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder aDecoder);
-    @Method(selector = "animationWillMoveToBackground")
-    public native void animationWillMoveToBackground();
-    @Method(selector = "animationWillEnterForeground")
-    public native void animationWillEnterForeground();
     /**
      * @since Available in iOS 9.0 and later.
      */
