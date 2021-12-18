@@ -73,6 +73,10 @@ import org.robovm.pods.appcenter.core.*;
     public static native void pause();
     @Method(selector = "resume")
     public static native void resume();
+    @Method(selector = "startSession")
+    public static native void startSession();
+    @Method(selector = "enableManualSessionTracker")
+    public static native void enableManualSessionTracker();
     @Method(selector = "transmissionTargetForToken:")
     public static native MSACAnalyticsTransmissionTarget transmissionTargetForToken(String token);
     /*</methods>*/

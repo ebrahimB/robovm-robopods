@@ -62,6 +62,16 @@ import org.robovm.pods.appcenter.core.*;
     public native NSDate getAppStartTime();
     @Property(selector = "appErrorTime")
     public native NSDate getAppErrorTime();
+    @Property(selector = "archName")
+    public native String getArchName();
+    @Property(selector = "codeType")
+    public native String getCodeType();
+    @Property(selector = "applicationPath")
+    public native String getApplicationPath();
+    @Property(selector = "threads")
+    public native NSArray<NSObject> getThreads();
+    @Property(selector = "binaries")
+    public native NSArray<NSObject> getBinaries();
     @Property(selector = "device")
     public native MSACDevice getDevice();
     @Property(selector = "appProcessIdentifier")

@@ -8,6 +8,8 @@ headers:
 private_typedefs:
     # FIXME: bellow are missing or private items
     MSACException: NSObject
+    MSACThread: NSObject
+    MSACBinary: NSObject
     'MSACDevice *': MSACDevice
 enums:
     MSACErrorLogSetting: {}

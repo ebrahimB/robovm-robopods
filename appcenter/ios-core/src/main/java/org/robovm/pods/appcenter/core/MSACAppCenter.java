@@ -108,8 +108,6 @@ import org.robovm.apple.foundation.*;
     public static native void startService(Class<?> service);
     @Method(selector = "startFromLibraryWithServices:")
     public static native void startFromLibrary(NSArray<?> services);
-    @Method(selector = "setCustomProperties:")
-    public static native void setCustomProperties(MSACCustomProperties customProperties);
     @Method(selector = "setMaxStorageSize:completionHandler:")
     public static native void setMaxStorageSize(@MachineSizedSInt long sizeInBytes, @Block VoidBooleanBlock completionHandler);
     /*</methods>*/

@@ -54,13 +54,13 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "addChannelUnitWithConfiguration:")
-    NSObject addChannelUnit(NSObject configuration);
+    NSObjectProtocol addChannelUnit(NSObject configuration);
     @Method(selector = "addChannelUnitWithConfiguration:withIngestion:")
-    NSObject addChannelUnit(NSObject configuration, NSObject ingestion);
+    NSObjectProtocol addChannelUnit(NSObject configuration, NSObjectProtocol ingestion);
     @Method(selector = "setMaxStorageSize:completionHandler:")
     void setMaxStorageSize(@MachineSizedSInt long sizeInBytes, @Block VoidBooleanBlock completionHandler);
     @Method(selector = "channelUnitForGroupId:")
-    NSObject channelUnitForGroupId(String groupId);
+    NSObjectProtocol channelUnitForGroupId(String groupId);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/
