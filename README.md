@@ -46,7 +46,7 @@ v1.19.0 - in development
 | [Facebook](facebook/)              | 12.2.1 |
 | [Firebase](firebase/)              | 8.10.0 |
 | [Flurry](flurry/)                  | 11.2.1 |
-| [Fyber](fyber/)                    | 8.0.0  |
+| [Fyber](fyber/)                    | 8.1.1  |
 | [HelpShift](helpshift/)            | 7.11.1    |
 | [InMobi](inmobi/)                  | 9.2.0  |
 | [Kochava](kochava/)                | 4.8.0  |

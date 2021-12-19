@@ -262,6 +262,23 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
             }
         )
+    },
+    "IASDKCore" to { framework ->
+        val fyberVersion: String by lazy {
+            downloadFolder.extend("InneractiveAdSDK-iOS-master/IASDKCore/IASDKCore.xcframework/IASDKResources.bundle/").infoPlist.extractVersion()
+        }
+        val artifactLocation = downloadFolder.extend("InneractiveAdSDK-iOS-master/$framework/$framework.xcframework/ios-arm64_armv7/$framework.framework")
+        processFramework(
+            artifact = "$framework.framework",
+            moduleFolder = "fyber/ios",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "iasdk-core.yaml",
+            version = { fyberVersion },
+            instruction = """
+                1. download and unpack https://github.com/inner-active/InneractiveAdSDK-iOS/archive/refs/heads/master.zip
+                2. unpack, expected location ${downloadFolder.extend("InneractiveAdSDK-iOS-master")}
+            """.trimIndent()
+        )
     }
 ).also {
     registerAppCenter(it, knownGroups)
@@ -269,7 +286,6 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     registerFacebook(it, knownGroups)
     registerFlurry(it, knownGroups)
     registerKochava(it, knownGroups)
-    registerFyber(it, knownGroups)
     registerMobileAdsMediationAdapters(it, knownGroups)
 }
 
@@ -1084,26 +1100,4 @@ fun registerKochava(frameworkRegistry: MutableMap<String, (String) -> Unit>, gro
     registry["KochavaCore"] = { framework -> action(framework, "kochava/ios-core", "kochava-core.yaml") }
     registry["KochavaTracker"] = { framework -> action(framework, "kochava/ios-tracker", "kochava-tracker.yaml") }
     registry["KochavaAdNetwork"] = { framework -> action(framework, "kochava/ios-ads-network", "kochava-ads.yaml") }
-}
-
-fun registerFyber(frameworkRegistry: MutableMap<String, (String) -> Unit>, groupRegistry: MutableMap<String, MutableList<String>>) {
-    val registry = GroupFrameworkRegister("Fyber", frameworkRegistry, groupRegistry)
-    val fyberVersion: String by lazy {
-        downloadFolder.extend("InneractiveAdSDK-iOS-master/IASDKCore/IASDKCore.xcframework/IASDKResources.bundle/").infoPlist.extractVersion()
-    }
-    val readmeUpdater = oneTimeReadmeUpdater { fyberVersion }
-    fun action(framework: String, moduleFolder: String, yaml: String) {
-        val artifactLocation = downloadFolder.extend("InneractiveAdSDK-iOS-master/$framework/$framework.xcframework/ios-arm64_armv7/$framework.framework")
-        processFramework(
-            artifact = "$framework.framework", moduleFolder = moduleFolder, sourceHeadersDir = artifactLocation.headers,
-            yaml = yaml, version = { fyberVersion }, readmeFileVersionUpdater = readmeUpdater,
-            instruction = """
-                1. download and unpack https://github.com/inner-active/InneractiveAdSDK-iOS/archive/refs/heads/master.zip
-                2. unpack, expected location ${downloadFolder.extend("InneractiveAdSDK-iOS-master")}
-            """.trimIndent()
-        )
-    }
-    registry["IASDKCore"] = { framework -> action(framework, "fyber/ios-core", "iasdk-core.yaml") }
-    registry["IASDKMRAID"] = { framework -> action(framework, "fyber/ios-mraid", "iasdk-mrad.yaml") }
-    registry["IASDKVideo"] = { framework -> action(framework, "fyber/ios-video", "iasdk-video.yaml") }
 }
