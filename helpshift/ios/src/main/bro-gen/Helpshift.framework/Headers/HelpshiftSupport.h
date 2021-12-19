@@ -1,6 +1,6 @@
 /*
  *    HelpshiftSupport.h
- *    SDK Version 7.11.1
+ *    SDK Version 7.11.2
  *
  *    Get the documentation at http://www.helpshift.com/docs
  *
