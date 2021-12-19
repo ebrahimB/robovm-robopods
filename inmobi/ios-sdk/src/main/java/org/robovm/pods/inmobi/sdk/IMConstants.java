@@ -48,6 +48,8 @@ import org.robovm.apple.coreanimation.*;
     public static final String IM_GDPR_CONSENT_AVAILABLE = "gdpr_consent_available";
     public static final String IM_GDPR_CONSENT_IAB = "gdpr_consent";
     public static final String IM_SUBJECT_TO_GDPR = "gdpr";
+    public static final String IM_PARTNER_GDPR_CONSENT_AVAILABLE = "partner_gdpr_consent_available";
+    public static final String IM_PARTNER_GDPR_APPLIES = "partner_gdpr_applies";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

@@ -75,6 +75,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getCreativeId();
     @Property(selector = "preloadManager")
     public native IMInterstitialPreloadManager getPreloadManager();
+    @Property(selector = "contentUrl")
+    public native String getContentUrl();
+    @Property(selector = "setContentUrl:")
+    public native void setContentUrl(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

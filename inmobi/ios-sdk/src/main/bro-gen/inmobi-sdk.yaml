@@ -250,6 +250,10 @@ constants:
         class: IMConstants
     IM_SUBJECT_TO_GDPR:
         class: IMConstants
+    IM_PARTNER_GDPR_CONSENT_AVAILABLE:
+        class: IMConstants
+    IM_PARTNER_GDPR_APPLIES:
+        class: IMConstants
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

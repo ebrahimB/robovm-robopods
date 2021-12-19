@@ -87,6 +87,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getCreativeId();
     @Property(selector = "preloadManager")
     public native IMBannerPreloadManager getPreloadManager();
+    @Property(selector = "contentUrl")
+    public native String getContentUrl();
+    @Property(selector = "setContentUrl:")
+    public native void setContentUrl(String v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();

@@ -73,6 +73,8 @@ import org.robovm.apple.coreanimation.*;
     public static native void init(String accountID, NSDictionary<?, ?> consentDictionary);
     @Method(selector = "updateGDPRConsent:")
     public static native void updateGDPRConsent(NSDictionary<?, ?> consentDictionary);
+    @Method(selector = "setPartnerGDPRConsent:")
+    public static native void setPartnerGDPRConsent(NSDictionary<?, ?> consentDictionary);
     @Method(selector = "getVersion")
     public static native String getVersion();
     @Method(selector = "setLogLevel:")

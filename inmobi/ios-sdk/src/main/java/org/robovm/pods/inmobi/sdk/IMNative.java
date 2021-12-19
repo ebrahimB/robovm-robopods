@@ -89,6 +89,10 @@ import org.robovm.apple.coreanimation.*;
     public native void setExtras(NSDictionary<?, ?> v);
     @Property(selector = "creativeId")
     public native String getCreativeId();
+    @Property(selector = "contentUrl")
+    public native String getContentUrl();
+    @Property(selector = "setContentUrl:")
+    public native void setContentUrl(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
