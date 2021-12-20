@@ -52,7 +52,7 @@ v1.19.0 - in development
 | [Kochava](kochava/)                | 5.1.0  |
 | [Lottie](lottie/)                  | 3.3.0  |
 | [OneSignal](onesignal/)            | 3.10.0 |
-| [Pollfish](pollfish/)              | 6.1.0  |
+| [Pollfish](pollfish/)              | 6.2.3  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
 | [UnityAds](unityads/)              | 3.7.5  |
 
