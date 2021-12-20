@@ -51,7 +51,7 @@ v1.19.0 - in development
 | [InMobi](inmobi/)                  | 10.0.1 |
 | [Kochava](kochava/)                | 5.1.0  |
 | [Lottie](lottie/)                  | 3.3.0  |
-| [OneSignal](onesignal/)            | 3.5.3  |
+| [OneSignal](onesignal/)            | 3.10.0 |
 | [Pollfish](pollfish/)              | 6.1.0  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
 | [UnityAds](unityads/)              | 3.7.5  |

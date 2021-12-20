@@ -85,6 +85,12 @@ import org.robovm.apple.uikit.*;
     public native NSDictionary<?, ?> getRawPayload();
     @Property(selector = "threadId")
     public native String getThreadId();
+    @Property(selector = "relevanceScore")
+    public native NSNumber getRelevanceScore();
+    @Property(selector = "interruptionLevel")
+    public native String getInterruptionLevel();
+    @Property(selector = "collapseId")
+    public native String getCollapseId();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

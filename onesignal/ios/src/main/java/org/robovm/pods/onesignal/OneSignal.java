@@ -98,6 +98,8 @@ import org.robovm.apple.uikit.*;
     public static native void setNotificationOpenedHandler(@Block VoidBlock1<OSNotificationOpenedResult> block);
     @Method(selector = "setInAppMessageClickHandler:")
     public static native void setInAppMessageClickHandler(@Block VoidBlock1<OSInAppMessageAction> block);
+    @Method(selector = "setInAppMessageLifecycleHandler:")
+    public static native void setInAppMessageLifecycleHandler(OSInAppMessageLifecycleHandler delegate);
     @Method(selector = "postNotification:")
     public static native void postNotification(NSDictionary<?, ?> jsonData);
     @Method(selector = "postNotification:onSuccess:onFailure:")
@@ -184,6 +186,10 @@ import org.robovm.apple.uikit.*;
     public static native void logoutSMSNumber();
     @Method(selector = "logoutSMSNumberWithSuccess:withFailure:")
     public static native void logoutSMSNumber(@Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "setLanguage:")
+    public static native void setLanguage(String language);
+    @Method(selector = "setLanguage:withSuccess:withFailure:")
+    public static native void setLanguage(String language, @Block Runnable successBlock, @Block VoidBlock1<NSError> failureBlock);
     @Method(selector = "setExternalUserId:")
     public static native void setExternalUserId(String externalId);
     @Method(selector = "setExternalUserId:withSuccess:withFailure:")

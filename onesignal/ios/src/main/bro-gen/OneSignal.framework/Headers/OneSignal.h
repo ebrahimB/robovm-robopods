@@ -130,6 +130,14 @@ typedef NS_ENUM(NSUInteger, OSNotificationActionType)  {
 /* iOS 10+ : Groups notifications into threads */
 @property(readonly, nullable)NSString *threadId;
 
+/* iOS 15+ : Relevance Score for notification summary */
+@property(readonly, nullable)NSNumber *relevanceScore;
+
+/* iOS 15+ : Interruption Level */
+@property(readonly)NSString *interruptionLevel;
+
+@property(readonly, nullable)NSString *collapseId;
+
 /* Parses an APNS push payload into a OSNotification object.
    Useful to call from your NotificationServiceExtension when the
       didReceiveNotificationRequest:withContentHandler: method fires. */
@@ -155,6 +163,15 @@ typedef NS_ENUM(NSUInteger, OSNotificationActionType)  {
 - (NSDictionary *_Nonnull)jsonRepresentation;
 
 @end;
+
+@interface OSInAppMessage : NSObject
+
+@property (strong, nonatomic, nonnull) NSString *messageId;
+
+// Convert the object into a NSDictionary
+- (NSDictionary *_Nonnull)jsonRepresentation;
+
+@end
 
 @interface OSInAppMessageOutcome : NSObject
 
@@ -208,6 +225,14 @@ typedef NS_ENUM(NSUInteger, OSNotificationActionType)  {
 @protocol OSInAppMessageDelegate <NSObject>
 @optional
 - (void)handleMessageAction:(OSInAppMessageAction * _Nonnull)action NS_SWIFT_NAME(handleMessageAction(action:));
+@end
+
+@protocol OSInAppMessageLifecycleHandler <NSObject>
+@optional
+- (void)onWillDisplayInAppMessage:(OSInAppMessage *)message;
+- (void)onDidDisplayInAppMessage:(OSInAppMessage *)message;
+- (void)onWillDismissInAppMessage:(OSInAppMessage *)message;
+- (void)onDidDismissInAppMessage:(OSInAppMessage *)message;
 @end
 
 // Pass in nil means a notification will not display
@@ -472,6 +497,7 @@ typedef void (^OSInAppMessageClickBlock)(OSInAppMessageAction * _Nonnull action)
 + (void)setNotificationWillShowInForegroundHandler:(OSNotificationWillShowInForegroundBlock _Nullable)block;
 + (void)setNotificationOpenedHandler:(OSNotificationOpenedBlock _Nullable)block;
 + (void)setInAppMessageClickHandler:(OSInAppMessageClickBlock _Nullable)block;
++ (void)setInAppMessageLifecycleHandler:(NSObject<OSInAppMessageLifecycleHandler> *_Nullable)delegate;
 
 #pragma mark Post Notification
 + (void)postNotification:(NSDictionary* _Nonnull)jsonData;
@@ -562,6 +588,15 @@ typedef void (^OSSMSSuccessBlock)(NSDictionary *results);
 // Logs the device out of the current sms number.
 + (void)logoutSMSNumber;
 + (void)logoutSMSNumberWithSuccess:(OSSMSSuccessBlock _Nullable)successBlock withFailure:(OSSMSFailureBlock _Nullable)failureBlock;
+
+#pragma mark Language
+// Typedefs defining completion blocks for updating language
+typedef void (^OSUpdateLanguageFailureBlock)(NSError *error);
+typedef void (^OSUpdateLanguageSuccessBlock)();
+
+// Language input ISO 639-1 code representation for user input language
++ (void)setLanguage:(NSString * _Nonnull)language;
++ (void)setLanguage:(NSString * _Nonnull)language withSuccess:(OSUpdateLanguageSuccessBlock _Nullable)successBlock withFailure:(OSUpdateLanguageFailureBlock)failureBlock;
 
 #pragma mark External User Id
 // Typedefs defining completion blocks for updating the external user id

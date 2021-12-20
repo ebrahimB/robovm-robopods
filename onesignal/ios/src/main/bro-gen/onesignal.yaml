@@ -119,6 +119,8 @@ classes:
                 name: setSMSNumber
             '+logoutSMSNumberWithSuccess:withFailure:':
                 name: logoutSMSNumber
+            '+setLanguage:withSuccess:withFailure:':
+                name: setLanguage
     OSEmailSubscriptionState: {}
     OSEmailSubscriptionStateChanges: {}
     OSInAppMessageAction: {}
@@ -129,6 +131,7 @@ classes:
     OSDeviceState: {}
     OSSMSSubscriptionState: { }
     OSSMSSubscriptionStateChanges: { }
+    OSInAppMessage: { }
 protocols:
     OSPermissionObserver: {}
     OSSubscriptionObserver: {}
@@ -140,6 +143,7 @@ protocols:
                 name: willPresentInFocusNotification
     OSInAppMessageDelegate: {}
     OSSMSSubscriptionObserver: {}
+    OSInAppMessageLifecycleHandler: {}
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
