@@ -47,7 +47,7 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "kva_configureWith:context:")
-    void kvaConfigure(NSObject withObject, KVAContext context);
+    void kvaConfigure(NSObject object, KVAContext context);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

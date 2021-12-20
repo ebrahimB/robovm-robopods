@@ -49,6 +49,6 @@ import org.robovm.apple.foundation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("kva_configureWith:context:")
-    public void kvaConfigure(NSObject withObject, KVAContext context) {}
+    public void kvaConfigure(NSObject object, KVAContext context) {}
     /*</methods>*/
 }

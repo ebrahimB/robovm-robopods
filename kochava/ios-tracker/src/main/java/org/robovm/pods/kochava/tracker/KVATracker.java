@@ -37,7 +37,7 @@ import org.robovm.pods.kochava.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/KVATracker/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements KVAAsForContextObjectProtocol, KVAConfigureWithObjectProtocol, KVAFromObjectProtocol, KVASharedPropertyProvider, KVADeeplinksProcessorProvider, KVAEventSenderProvider, KVAPrivacyProfileRegistrarProvider, KVAPushNotificationsTokenAdderRemoverProvider/*</implements>*/ {
+    /*<implements>*/implements KVAAsForContextObjectProtocol, KVAConfigureWithObjectProtocol, KVAFromObjectProtocol, KVASharedPropertyProvider, KVADeeplinksProcessorProvider, KVAEventSenderProvider, KVAPrivacyProfileRegistrarProvider, KVAPushNotificationsTokenRegistrarProvider/*</implements>*/ {
 
     /*<ptr>*/public static class KVATrackerPtr extends Ptr<KVATracker, KVATrackerPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(KVATracker.class); }/*</bind>*/
@@ -58,7 +58,7 @@ import org.robovm.pods.kochava.core.*;
     @Property(selector = "startedBool")
     public native boolean isStartedBool();
     @Property(selector = "adNetwork")
-    public native NSObject getAdNetwork();
+    public native NSObjectProtocol getAdNetwork();
     @Property(selector = "appLimitAdTrackingBool")
     public native boolean isAppLimitAdTrackingBool();
     @Property(selector = "setAppLimitAdTrackingBool:")
@@ -80,11 +80,11 @@ import org.robovm.pods.kochava.core.*;
     @Property(selector = "identityLink")
     public native KVAIdentityLink getIdentityLink();
     @Property(selector = "locationServices")
-    public native NSObject getLocationServices();
+    public native NSObjectProtocol getLocationServices();
     @Property(selector = "privacy")
     public native KVAPrivacyProfileRegistrar getPrivacyProfileRegistrar();
     @Property(selector = "pushNotifications")
-    public native KVAPushNotifications getPushNotifications();
+    public native KVAPushNotificationsTokenRegistrar getPushNotificationsTokenRegistrar();
     @Property(selector = "sleepBool")
     public native boolean isSleepBool();
     @Property(selector = "setSleepBool:")
@@ -99,6 +99,10 @@ import org.robovm.pods.kochava.core.*;
     public KVAPrivacy getPrivacy() {
         // simulating KVAPrivacy<KVAPrivacyProfileRegistrar>;
         return (KVAPrivacy)getPrivacyProfileRegistrar();
+    }
+    public KVAPushNotifications getPushNotifications() {
+        // simulating KVAPushNotifications<KVAPushNotificationsTokenRegistrar>
+        return (KVAPushNotifications)getPushNotificationsTokenRegistrar();
     }
     // dkimitsa: end of manually added code
 
@@ -123,13 +127,11 @@ import org.robovm.pods.kochava.core.*;
     public static native KVATracker tracker();
     @Method(selector = "trackerWithStorageIdString:")
     protected static native @Pointer long create(String storageIdString);
-    @Method(selector = "sdkVersionString")
-    public native String sdkVersionString();
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_configureWith:context:")
-    public native void kvaConfigure(NSObject withObject, KVAContext context);
+    public native void kvaConfigure(NSObject object, KVAContext context);
     @Method(selector = "kva_fromObject:")
-    public static native KVATracker kva_fromObject(NSObject fromObject);
+    public static native KVATracker createFromObject(NSObject object);
     /*</methods>*/
 }

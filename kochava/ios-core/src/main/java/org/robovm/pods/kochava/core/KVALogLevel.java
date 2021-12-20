@@ -33,7 +33,7 @@ import org.robovm.apple.foundation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC11KochavaCore11KVALogLevel")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/KVALogLevel/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*/implements KVAFromObjectProtocol/*</implements>*/ {
@@ -45,8 +45,14 @@ import org.robovm.apple.foundation.*;
     protected KVALogLevel() {}
     protected KVALogLevel(Handle h, long handle) { super(h, handle); }
     protected KVALogLevel(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithNameString:levelInt:osLogType:")
+    public KVALogLevel(String nameString, @MachineSizedSInt long levelInt, NSObject osLogType) { super((SkipInit) null); initObject(init(nameString, levelInt, osLogType)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "levelInt")
+    public native @MachineSizedSInt long getLevelInt();
+    @Property(selector = "setLevelInt:")
+    public native void setLevelInt(@MachineSizedSInt long v);
     @Property(selector = "nameString")
     public native String getNameString();
     @Property(selector = "setNameString:")
@@ -60,8 +66,10 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithNameString:levelInt:osLogType:")
+    protected native @Pointer long init(String nameString, @MachineSizedSInt long levelInt, NSObject osLogType);
     @Method(selector = "kva_asForContextObjectWithContext:")
-    public native NSObject kva_asForContextObjectWithContext(KVAContext context);
+    public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "never")
     public static native KVALogLevel never();
     @Method(selector = "error")
@@ -79,7 +87,7 @@ import org.robovm.apple.foundation.*;
     @Method(selector = "dictionary")
     public static native NSDictionary<NSString, KVALogLevel> dictionary();
     @Method(selector = "kva_fromObject:")
-    public static native KVALogLevel kva_fromObject(NSObject fromObject);
+    public static native KVALogLevel createFromObject(NSObject object);
     @Method(selector = "logLevel:visibleBoolWithVisibleMaximumLogLevel:")
     public static native boolean isVisibleAtMaximumLogLevel(KVALogLevel logLevel, KVALogLevel visibleMaximumLogLevel);
     /*</methods>*/

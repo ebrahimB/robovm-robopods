@@ -34,9 +34,9 @@ import org.robovm.pods.kochava.core.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/KVAPushNotificationsTokenRemoverAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/KVAPushNotificationsTokenRegistrarAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements KVAPushNotificationsTokenRemover/*</implements>*/ {
+    /*<implements>*/implements KVAPushNotificationsTokenRegistrar/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -49,7 +49,7 @@ import org.robovm.pods.kochava.core.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("removeToken:")
-    public void removeToken(KVAPushNotificationsToken token) {}
+    @NotImplemented("registerToken:")
+    public void registerToken(KVAPushNotificationsToken token) {}
     /*</methods>*/
 }

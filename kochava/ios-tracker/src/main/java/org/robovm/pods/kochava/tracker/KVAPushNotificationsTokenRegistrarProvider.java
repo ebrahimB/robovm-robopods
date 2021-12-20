@@ -35,7 +35,7 @@ import org.robovm.pods.kochava.core.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/KVAPushNotificationsTokenAdderRemoverProvider/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/KVAPushNotificationsTokenRegistrarProvider/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -45,19 +45,11 @@ import org.robovm.pods.kochava.core.*;
     /*<constants>*//*</constants>*/
     /*<properties>*/
     @Property(selector = "pushNotifications")
-    NSObject getPushNotifications();
+    KVAPushNotificationsTokenRegistrar getPushNotificationsTokenRegistrar();
     /*</properties>*/
     /*<methods>*/
     
     /*</methods>*/
-    // dkimitsa: manually added methods
-    default KVAPushNotificationsTokenAdder getPushNotificationAdder() {
-        return (KVAPushNotificationsTokenAdder) getPushNotifications();
-    }
-
-    default KVAPushNotificationsTokenAdder getPushNotificationRemover() {
-        return (KVAPushNotificationsTokenAdder) getPushNotifications();
-    }
     /*<adapter>*/
     /*</adapter>*/
 }

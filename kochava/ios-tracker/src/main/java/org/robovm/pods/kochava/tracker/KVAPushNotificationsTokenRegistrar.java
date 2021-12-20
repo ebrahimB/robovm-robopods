@@ -32,24 +32,24 @@ import org.robovm.pods.kochava.core.*;
 /*</imports>*/
 
 /*<javadoc>*/
+
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/KVAPushNotificationsTokenAdderAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements KVAPushNotificationsTokenAdder/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/KVAPushNotificationsTokenRegistrar/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("addToken:")
-    public void addToken(KVAPushNotificationsToken token) {}
+    @Method(selector = "registerToken:")
+    void registerToken(KVAPushNotificationsToken token);
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

@@ -89,13 +89,17 @@ import org.robovm.apple.foundation.*;
     public native void register();
     @Method(selector = "resetWithDeleteLocalDataBool:")
     public native void reset(boolean deleteLocalDataBool);
+    @Method(selector = "resetWithDeleteLocalDataBool:completionClosure:")
+    public native void reset(boolean deleteLocalDataBool, @Block Runnable completionClosure);
     @Method(selector = "shutdownWithDeleteLocalDataBool:")
     public native void shutdown(boolean deleteLocalDataBool);
+    @Method(selector = "shutdownWithDeleteLocalDataBool:completionClosure:")
+    public native void shutdown(boolean deleteLocalDataBool, @Block Runnable completionClosure);
     @Method(selector = "productWithAPIVersionString:buildDateString:bundleIdentifierString:bundleTypeString:compilerFlagNameStringArray:compilerFlagPredicateSubstitutionVariablesDictionary:moduleNameString:nameString:organizationNameString:reverseDomainNameString:versionString:")
     protected static native @Pointer long create(String apiVersionString, String buildDateString, String bundleIdentifierString, String bundleTypeString, NSArray<NSString> compilerFlagNameStringArray, NSDictionary<?, ?> compilerFlagPredicateSubstitutionVariablesDictionary, String moduleNameString, String nameString, String organizationNameString, String reverseDomainNameString, String versionString);
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_fromObject:")
-    public static native KVAProduct kva_fromObject(NSObject fromObject);
+    public static native KVAProduct createFromObject(NSObject object);
     /*</methods>*/
 }

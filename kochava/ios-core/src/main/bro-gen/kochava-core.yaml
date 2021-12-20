@@ -32,6 +32,10 @@ classes:
         methods:
             '+logLevel:visibleBoolWithVisibleMaximumLogLevel:':
                 name: isVisibleAtMaximumLogLevel
+            '-initWithNameString:levelInt:osLogType:':
+                name: init
+            '-kva_asForContextObjectWithContext:':
+                name: kvaConvertForContext
     KVAPartner:
         methods:
             '-didPromptWithDidGrantBoolNumber:date:':
@@ -45,6 +49,10 @@ classes:
             '+productWithAPIVersionString:buildDateString:bundleIdentifierString:bundleTypeString:compilerFlagNameStringArray:compilerFlagPredicateSubstitutionVariablesDictionary:moduleNameString:nameString:organizationNameString:reverseDomainNameString:versionString:':
                 constructor: true
                 name: create
+            '-resetWithDeleteLocalDataBool:completionClosure:':
+                name: reset
+            '-shutdownWithDeleteLocalDataBool:completionClosure:':
+                name: shutdown
     KVASystem:
         methods:
             '-stateActiveDidBecomeWithSourceString:':
@@ -62,7 +70,10 @@ protocols:
                 name: kvaConfigure
     KVAEventSender: {}
     KVAEventSenderProvider: {}
-    KVAFromObjectProtocol: {}
+    KVAFromObjectProtocol:
+        methods:
+            '+kva_fromObject:':
+                name: createFromObject
     KVASharedPropertyProvider: {}
     KVAStartable: {}
 functions:
@@ -88,6 +99,8 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
+    SWIFT_TYPEDEFS:
+        exclude: true
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

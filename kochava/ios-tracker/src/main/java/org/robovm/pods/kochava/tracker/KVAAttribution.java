@@ -62,6 +62,6 @@ import org.robovm.pods.kochava.core.*;
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_fromObject:")
-    public static native KVAAttribution kva_fromObject(NSObject fromObject);
+    public static native KVAAttribution createFromObject(NSObject object);
     /*</methods>*/
 }

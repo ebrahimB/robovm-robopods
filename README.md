@@ -49,7 +49,7 @@ v1.19.0 - in development
 | [Fyber](fyber/)                    | 8.1.1  |
 | [HelpShift](helpshift/)            | 7.11.2 |
 | [InMobi](inmobi/)                  | 10.0.1 |
-| [Kochava](kochava/)                | 4.8.0  |
+| [Kochava](kochava/)                | 5.1.0  |
 | [Lottie](lottie/)                  | 3.3.0  |
 | [OneSignal](onesignal/)            | 3.5.3  |
 | [Pollfish](pollfish/)              | 6.1.0  |

@@ -293,8 +293,6 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "eventNameString")
-    public native String eventNameString();
     @Method(selector = "send")
     public native void send();
     @Method(selector = "sendWithSenderArray:")
@@ -304,6 +302,6 @@ import org.robovm.apple.foundation.*;
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_fromObject:")
-    public static native KVAEvent kva_fromObject(NSObject fromObject);
+    public static native KVAEvent createFromObject(NSObject object);
     /*</methods>*/
 }

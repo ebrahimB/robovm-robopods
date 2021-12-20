@@ -67,6 +67,6 @@ import org.robovm.apple.foundation.*;
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_fromObject:")
-    public static native KVAContext kva_fromObject(NSObject fromObject);
+    public static native KVAContext createFromObject(NSObject object);
     /*</methods>*/
 }

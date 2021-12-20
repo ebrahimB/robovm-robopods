@@ -48,15 +48,18 @@ import org.robovm.pods.kochava.core.*;
     protected KVAPushNotifications(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "enabledBool")
+    public native boolean isEnabledBool();
+    @Property(selector = "setEnabledBool:")
+    public native void setEnabledBool(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_configureWith:context:")
-    public native void kvaConfigure(NSObject withObject, KVAContext context);
+    public native void kvaConfigure(NSObject object, KVAContext context);
     @Method(selector = "kva_fromObject:")
-    public static native KVAPushNotifications kva_fromObject(NSObject fromObject);
+    public static native KVAPushNotifications createFromObject(NSObject object);
     /*</methods>*/
 }

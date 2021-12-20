@@ -46,7 +46,6 @@ import org.robovm.pods.kochava.core.*;
     public KVAPushNotificationsToken() {}
     protected KVAPushNotificationsToken(Handle h, long handle) { super(h, handle); }
     protected KVAPushNotificationsToken(SkipInit skipInit) { super(skipInit); }
-    public KVAPushNotificationsToken(NSData data, NSDate providedDate) { super((Handle) null, create(data, providedDate)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "data")
@@ -56,21 +55,17 @@ import org.robovm.pods.kochava.core.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "addWithData:")
-    public static native void add(NSData tokenData);
-    @Method(selector = "addWithData:adderArray:")
-    public static native void add(NSData tokenData, NSArray<?> adderArray);
-    @Method(selector = "remove")
-    public static native void remove();
-    @Method(selector = "removeWithData:")
-    public static native void remove(NSData tokenData);
-    @Method(selector = "removeWithData:removerArray:")
-    public static native void remove(NSData tokenData, NSArray<?> removerArray);
-    @Method(selector = "pushNotificationsTokenWithData:providedDate:")
-    protected static native @Pointer long create(NSData data, NSDate providedDate);
+    @Method(selector = "registerWithData:")
+    public static native void register(NSData deviceTokenData);
+    @Method(selector = "registerWithDataHexString:")
+    public static native void register(String deviceTokenDataHexString);
+    @Method(selector = "registerWithData:registrarArray:")
+    public static native void register(NSData tokenData, NSArray<?> registrarArray);
+    @Method(selector = "registerWithDataHexString:registrarArray:")
+    public static native void register(String deviceTokenDataHexString, NSArray<?> registrarArray);
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_fromObject:")
-    public static native KVAPushNotificationsToken kva_fromObject(NSObject fromObject);
+    public static native KVAPushNotificationsToken createFromObject(NSObject object);
     /*</methods>*/
 }

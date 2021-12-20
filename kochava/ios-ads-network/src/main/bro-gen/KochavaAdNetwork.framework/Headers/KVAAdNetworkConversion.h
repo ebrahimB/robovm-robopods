@@ -44,11 +44,15 @@
 /*!
  @typedef KVAAdNetworkConversionDidUpdateValueBlock
  
- @brief A block which is called when the SKAdNetwork updateConversionValue API has been called.
+ @brief A closure which is called when the SKAdNetwork updateConversionValue API has been called.
 
  @discussion Your code should assume that if some action needs to be performed on the main queue that it should first dispatch asynchronously to it.
  */
-typedef void (^ KVAAdNetworkConversionDidUpdateValueBlock) (KVAAdNetworkConversion * _Nonnull conversion, KVAAdNetworkConversionResult * _Nonnull result);
+typedef void (^ KVAAdNetworkConversionDidUpdateValueBlock)
+(
+    KVAAdNetworkConversion * _Nonnull conversion,
+    KVAAdNetworkConversionResult * _Nonnull result
+);
 
 
 
@@ -67,7 +71,7 @@ typedef void (^ KVAAdNetworkConversionDidUpdateValueBlock) (KVAAdNetworkConversi
 /*!
  @property didUpdateValueBlock
  
- @brief A block which is called when the SKAdNetwork updateConversionValue API has been called.
+ @brief A closure which is called when the SKAdNetwork updateConversionValue API has been called.
  
  @discussion Your code should assume that if some action needs to be performed on the main queue that it should first dispatch asynchronously to it.
  */

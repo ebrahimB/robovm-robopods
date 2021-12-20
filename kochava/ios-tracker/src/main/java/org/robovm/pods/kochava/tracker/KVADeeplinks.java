@@ -37,7 +37,7 @@ import org.robovm.pods.kochava.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/KVADeeplinks/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements KVAAsForContextObjectProtocol, KVAConfigureWithObjectProtocol, KVAFromObjectProtocol/*</implements>*/ {
+    /*<implements>*/implements KVAAsForContextObjectProtocol, KVAConfigureWithObjectProtocol, KVADeeplinksProcessor, KVAFromObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class KVADeeplinksPtr extends Ptr<KVADeeplinks, KVADeeplinksPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(KVADeeplinks.class); }/*</bind>*/
@@ -55,8 +55,10 @@ import org.robovm.pods.kochava.core.*;
     @Method(selector = "kva_asForContextObjectWithContext:")
     public native NSObject kvaConvertForContext(KVAContext context);
     @Method(selector = "kva_configureWith:context:")
-    public native void kvaConfigure(NSObject withObject, KVAContext context);
+    public native void kvaConfigure(NSObject object, KVAContext context);
+    @Method(selector = "processDeeplink:timeoutTimeInterval:completionHandler:")
+    public native void processDeeplink(KVADeeplink deeplink, double timeoutTimeInterval, @Block VoidBlock1<KVADeeplink> completionHandler);
     @Method(selector = "kva_fromObject:")
-    public static native KVADeeplinks kva_fromObject(NSObject fromObject);
+    public static native KVADeeplinks createFromObject(NSObject object);
     /*</methods>*/
 }

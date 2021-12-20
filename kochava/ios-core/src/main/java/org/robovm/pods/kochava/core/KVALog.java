@@ -53,6 +53,10 @@ import org.robovm.apple.foundation.*;
     public native KVALogLevel getLevel();
     @Property(selector = "setLevel:")
     public native void setLevel(KVALogLevel v);
+    @Property(selector = "osLogEnabledBool")
+    public native boolean isOsLogEnabledBool();
+    @Property(selector = "setOsLogEnabledBool:")
+    public native void setOsLogEnabledBool(boolean v);
     @Property(selector = "prettyPrintBool")
     public native boolean isPrettyPrintBool();
     @Property(selector = "setPrettyPrintBool:")
