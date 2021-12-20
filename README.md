@@ -54,6 +54,6 @@ v1.19.0 - in development
 | [OneSignal](onesignal/)            | 3.10.0 |
 | [Pollfish](pollfish/)              | 6.2.3  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
-| [UnityAds](unityads/)              | 3.7.5  |
+| [UnityAds](unityads/)              | 4.0.0  |
 
 [Older versions](CHANGELOG.md)

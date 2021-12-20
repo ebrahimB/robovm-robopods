@@ -42,7 +42,6 @@ classes:
         properties:
             'dictionary':
                 getter: dictionary
-    UADSInAppPurchaseMetaData: { }
     UADSLoadOptions: { }
     UADSMediationMetaData: { }
     UADSMetaData:
@@ -52,57 +51,8 @@ classes:
             '-setRaw:value:':
                 name: setRaw
     UADSPlayerMetaData: { }
-    UADSPurchasing:
-        methods:
-            '+dispatchReturnEvent:withPayload:':
-                name: dispatchReturnEvent
     UADSShowOptions: { }
     UANAApiAnalytics: { }
-    UMONCustomEvent:
-        methods:
-            '-initWithBuilder:':
-                name: init
-    UMONCustomEventBuilder: { }
-    UMONItem:
-        methods:
-            '-initWithBuilder:':
-                name: init
-    UMONItemBuilder: { }
-    UMONNativePromoAdapter:
-        methods:
-            '-initWithPromo:':
-                name: init
-    UMONPlacementContent:
-        methods:
-            '-initWithPlacementId:withParams:':
-                name: init
-            '-sendCustomEvent:withUserInfo:':
-                name: sendCustomEvent
-            '-sendCustomEventWithType:':
-                name: sendCustomEvent
-    UMONPromoAdPlacementContent: {}
-    UMONPromoMetaData:
-        methods:
-            '-initWithBuilder:':
-                name: init
-    UMONPromoMetaDataBuilder: { }
-    UMONRewardablePlacementContent: { }
-    UMONShowAdPlacementContent:
-        methods:
-            '-show:withDelegate:':
-                name: show
-    UPURProduct: { }
-    UPURProductBuilder: { }
-    UPURTransactionDetails: { }
-    UPURTransactionDetailsBuilder:
-        methods:
-            '-putExtra:value:':
-                name: putExtra
-    UPURTransactionErrorDetails: { }
-    UPURTransactionErrorDetailsBuilder:
-        methods:
-            '-putExtra:value:':
-                name: putExtra
     USRVJsonStorage:
         methods:
             '-set:value:':
@@ -169,10 +119,11 @@ classes:
         methods:
             '+initialize:delegate:testMode:usePerPlacementLoad:initializationDelegate:':
                 name: initialize
+            '+initialize:testMode:initializationDelegate:':
+                name: initialize
             '+createExpectedParametersString:current:received:':
                 name: createExpectedParametersString
     UnityServicesListener: { }
-
 protocols:
     UADSBannerAdRefreshViewDelegate:
         methods:
@@ -183,30 +134,11 @@ protocols:
             '-bannerViewDidError:error:':
                 name: bannerViewDidError
     UADSDictionaryConvertible: { }
-    UADSPurchasingDelegate: { }
     UANAEngineDelegate: { }
-    UMONShowAdDelegate:
-        methods:
-            '-unityAdsDidFinish:withFinishState:':
-                name: unityAdsDidFinish
-    USRVUnityPurchasingDelegate:
-        methods:
-            '-purchaseProduct:completionHandler:errorHandler:userInfo:':
-                name: purchaseProduct
     UnityAdsBannerDelegate:
         methods:
             '-unityAdsBannerDidLoad:view:':
                 name: unityAdsBannerDidLoad
-    UnityAdsDelegate:
-        methods:
-            '-unityAdsDidError:withMessage:':
-                name: unityAdsDidError
-            '-unityAdsDidFinish:withFinishState:':
-                name: unityAdsDidFinish
-    UnityAdsExtendedDelegate:
-        methods:
-            '-unityAdsPlacementStateChanged:oldState:newState:':
-                name: unityAdsPlacementStateChanged
     UnityAdsInitializationDelegate:
         methods:
             '-initializationFailed:withMessage:':
@@ -221,17 +153,6 @@ protocols:
                 name: unityAdsShowComplete
             '-unityAdsShowFailed:withError:withMessage:':
                 name: unityAdsShowFailed
-    UnityMonetizationDelegate:
-        methods:
-            '-placementContentReady:placementContent:':
-                name: placementContentReady
-            '-placementContentStateDidChange:placementContent:previousState:newState:':
-                name: placementContentStateDidChange
-    UnityServicesDelegate:
-        methods:
-            '-unityServicesDidError:withMessage:':
-                name: unityServicesDidError
-
 functions:
     NSStringFromPlacementContentState:
         class: UnityMonetizationPlacementContentState

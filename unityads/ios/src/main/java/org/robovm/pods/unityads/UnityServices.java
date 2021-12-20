@@ -54,8 +54,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initialize:delegate:testMode:usePerPlacementLoad:initializationDelegate:")
-    public static native void initialize(String gameId, UnityServicesDelegate delegate, boolean testMode, boolean usePerPlacementLoad, UnityAdsInitializationDelegate initializationDelegate);
+    @Method(selector = "initialize:testMode:initializationDelegate:")
+    public static native void initialize(String gameId, boolean testMode, UnityAdsInitializationDelegate initializationDelegate);
     @Method(selector = "getDebugMode")
     public static native boolean getDebugMode();
     @Method(selector = "setDebugMode:")

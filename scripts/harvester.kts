@@ -279,7 +279,26 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                 2. unpack, expected location ${downloadFolder.extend("InneractiveAdSDK-iOS-master")}
             """.trimIndent()
         )
+    },
+    "UnityAds" to { framework ->
+        val unityVersion: String by lazy {
+            downloadFolder.extend("UnityAds/version/").readText()
+        }
+        val artifactLocation = downloadFolder.extend("UnityAds/$framework.xcframework/ios-arm64_armv7/$framework.framework")
+        processFramework(
+            artifact = "$framework.framework",
+            moduleFolder = "unityads/ios",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "unityads.yaml",
+            version = { unityVersion },
+            instruction = """
+                1. download and unpack UnityAds.zip from https://github.com/Unity-Technologies/unity-ads-ios/releases
+                2. unpack, expected location ${downloadFolder.extend("UnityAds")}
+                3. create a file ${downloadFolder.extend("UnityAds/version")} and put verions there, e.g. 4.0.0 
+            """.trimIndent()
+        )
     }
+
 ).also {
     registerAppCenter(it, knownGroups)
     registerFirebase(it, knownGroups)

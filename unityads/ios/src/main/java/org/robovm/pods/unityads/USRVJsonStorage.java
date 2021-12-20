@@ -71,5 +71,9 @@ import org.robovm.apple.coreanimation.*;
     public native boolean initData();
     @Method(selector = "hasData")
     public native boolean hasData();
+    @Method(selector = "setContents:")
+    public native void setContents(NSDictionary<?, ?> contents);
+    @Method(selector = "getContents")
+    public native NSDictionary<?, ?> getContents();
     /*</methods>*/
 }

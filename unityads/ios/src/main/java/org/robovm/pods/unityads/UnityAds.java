@@ -59,102 +59,30 @@ import org.robovm.apple.coreanimation.*;
     @GlobalValue(symbol="UnityAdsModuleVersionString", optional=true)
     public static native BytePtr getVersionString();
     
-    /**
-     * @deprecated Please migrate to using initialize without a delegate and add the delegate with the addDelegate method
-     */
-    @Deprecated
-    @Method(selector = "initialize:delegate:")
-    public static native void initialize(String gameId, UnityAdsDelegate delegate);
     @Method(selector = "initialize:")
     public static native void initialize(String gameId);
     @Method(selector = "initialize:initializationDelegate:")
     public static native void initialize(String gameId, UnityAdsInitializationDelegate initializationDelegate);
-    /**
-     * @deprecated Please migrate to using initialize without a delegate and add the delegate with the addDelegate method
-     */
-    @Deprecated
-    @Method(selector = "initialize:delegate:testMode:")
-    public static native void initialize(String gameId, UnityAdsDelegate delegate, boolean testMode);
     @Method(selector = "initialize:testMode:")
     public static native void initialize(String gameId, boolean testMode);
     @Method(selector = "initialize:testMode:initializationDelegate:")
     public static native void initialize(String gameId, boolean testMode, UnityAdsInitializationDelegate initializationDelegate);
-    /**
-     * @deprecated Please migrate to using initialize without a delegate and add the delegate with the addDelegate method
-     */
-    @Deprecated
-    @Method(selector = "initialize:delegate:testMode:enablePerPlacementLoad:")
-    public static native void initialize(String gameId, UnityAdsDelegate delegate, boolean testMode, boolean enablePerPlacementLoad);
-    @Method(selector = "initialize:testMode:enablePerPlacementLoad:")
-    public static native void initialize(String gameId, boolean testMode, boolean enablePerPlacementLoad);
-    @Method(selector = "initialize:testMode:enablePerPlacementLoad:initializationDelegate:")
-    public static native void initialize(String gameId, boolean testMode, boolean enablePerPlacementLoad, UnityAdsInitializationDelegate initializationDelegate);
     @Method(selector = "load:")
     public static native void load(String placementId);
     @Method(selector = "load:loadDelegate:")
     public static native void load(String placementId, UnityAdsLoadDelegate loadDelegate);
     @Method(selector = "load:options:loadDelegate:")
     public static native void load(String placementId, UADSLoadOptions options, UnityAdsLoadDelegate loadDelegate);
-    /**
-     * @deprecated Please migrate to using show call with placementId and showDelegate instead
-     */
-    @Deprecated
-    @Method(selector = "show:")
-    public static native void show(UIViewController viewController);
-    /**
-     * @deprecated Please migrate to using show call with showDelegate instead
-     */
-    @Deprecated
-    @Method(selector = "show:placementId:")
-    public static native void show(UIViewController viewController, String placementId);
     @Method(selector = "show:placementId:showDelegate:")
     public static native void show(UIViewController viewController, String placementId, UnityAdsShowDelegate showDelegate);
-    /**
-     * @deprecated Please migrate to using show call with showDelegate instead
-     */
-    @Deprecated
-    @Method(selector = "show:placementId:options:")
-    public static native void show(UIViewController viewController, String placementId, UADSShowOptions options);
     @Method(selector = "show:placementId:options:showDelegate:")
     public static native void show(UIViewController viewController, String placementId, UADSShowOptions options, UnityAdsShowDelegate showDelegate);
-    /**
-     * @deprecated Please migrate to using addDelegate and removeDelegate
-     */
-    @Deprecated
-    @Method(selector = "getDelegate")
-    public static native UnityAdsDelegate getDelegate();
-    /**
-     * @deprecated Please migrate to using addDelegate and removeDelegate
-     */
-    @Deprecated
-    @Method(selector = "setDelegate:")
-    public static native void setDelegate(UnityAdsDelegate delegate);
-    @Method(selector = "addDelegate:")
-    public static native void addDelegate(UnityAdsDelegate delegate);
-    @Method(selector = "removeDelegate:")
-    public static native void removeDelegate(UnityAdsDelegate delegate);
     @Method(selector = "getDebugMode")
     public static native boolean getDebugMode();
     @Method(selector = "setDebugMode:")
     public static native void setDebugMode(boolean enableDebugMode);
     @Method(selector = "isSupported")
     public static native boolean isSupported();
-    /**
-     * @deprecated Please migrate to using load call with UnityAdsLoadDelegate
-     */
-    @Deprecated
-    @Method(selector = "isReady")
-    public static native boolean isReady();
-    /**
-     * @deprecated Please migrate to using load call with UnityAdsLoadDelegate
-     */
-    @Deprecated
-    @Method(selector = "isReady:")
-    public static native boolean isReady(String placementId);
-    @Method(selector = "getPlacementState")
-    public static native UnityAdsPlacementState getPlacementState();
-    @Method(selector = "getPlacementState:")
-    public static native UnityAdsPlacementState getPlacementState(String placementId);
     @Method(selector = "getVersion")
     public static native String getVersion();
     @Method(selector = "isInitialized")

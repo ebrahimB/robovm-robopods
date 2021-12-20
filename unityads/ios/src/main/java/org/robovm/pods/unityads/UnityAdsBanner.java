@@ -55,9 +55,6 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Deprecated
-    @Method(selector = "loadBanner")
-    public static native void loadBanner();
-    @Deprecated
     @Method(selector = "loadBanner:")
     public static native void loadBanner(String placementId);
     @Deprecated
