@@ -297,6 +297,27 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                 3. create a file ${downloadFolder.extend("UnityAds/version")} and put verions there, e.g. 4.0.0 
             """.trimIndent()
         )
+    },
+    "YouTubeiOSPlayerHelper" to { framework ->
+        val artifactLocation = downloadFolder.extend("$framework/Carthage/Build/$framework.xcframework/ios-arm64_armv7/$framework.framework")
+        processFramework(
+            artifact = "$framework.framework",
+            moduleFolder = "youtube/ios-player-helper",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "youtube-player-helper.yaml",
+            version = {
+                downloadFolder.extend("$framework/Cartfile").readLines()
+                    .find { it.startsWith("github") }
+                    ?.let { it.substringAfterLast("==").trim() }
+                    ?: error("Failed to find out version!")
+            },
+            instruction = """
+                0. check latest version number at https://github.com/youtube/youtube-ios-player-helper
+                1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/YouTubeiOSPlayerHelper
+                  > echo 'github "youtube/youtube-ios-player-helper" == X.Y.Z' > Cartfile
+                  > carthage update --platform ios --use-xcframeworks
+            """.trimIndent()
+        )
     }
 
 ).also {

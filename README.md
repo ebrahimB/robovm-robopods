@@ -55,5 +55,6 @@ v1.19.0 - in development
 | [Pollfish](pollfish/)              | 6.2.3  |
 | [SAMKeychain](samkeychain/)        | 1.5.3  |
 | [UnityAds](unityads/)              | 4.0.0  |
+| [YouTubePlayer](youtube/)          | 1.0.4                            |
 
 [Older versions](CHANGELOG.md)
