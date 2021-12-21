@@ -1,4 +1,5 @@
 # Google AdMob Mediation Test Suite
+https://developers.google.com/admob/ios/mediation-test-suite#objective-c
 
 ### Frameworks required for this pod:
 * GoogleMobileAdsMediationTestSuite.framework
