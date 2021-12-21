@@ -38,7 +38,7 @@ v1.19.0 - in development
 
 | Name                               | 1.19.0 |
 |------------------------------------|--------|
-| [AppCenter](appcenter/)            | 4.4.0  |
+| [AppCenter](appcenter/)            | 4.4.1  |
 | [AppLovinSDK](applovinsdk/)        | 10.3.7 |
 | [Azure](azure/)                    | 3.1.4  |
 | [BranchMetrics](branchmetrics/)    | 1.40.2 |
