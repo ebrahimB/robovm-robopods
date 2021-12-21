@@ -2,8 +2,9 @@
 
 ## Available RoboPods
 
-| RoboPods Version  | Charts Version |
+| RoboPods Version  | Lottie Version |
 |-------------------|----------------|
+| 1.19.0            | 3.3.0          |
 | 1.17.0            | 3.2.3          |
 | 1.15.0            | 3.2.1          |
 | 1.14.0            | 3.1.9          |

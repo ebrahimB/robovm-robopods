@@ -28,3 +28,9 @@ dependencies {
    compile "io.github.dkimitsa.robovm:robopods-google-mobile-ads-mediation-testsuite:$altpodsVersion"
 }
 ```
+
+## Versions
+
+| RoboPods Version  | TestSuite Version   |
+|-------------------|---------------------|
+| 1.19.0            | 2.0.0               |
