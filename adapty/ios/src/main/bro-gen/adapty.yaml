@@ -1,0 +1,117 @@
+package: org.robovm.pods.adapty
+include: [foundation, uikit, storekit, iad, apptrackingtransparency, adsupport, webkit]
+clang_args: ['-x', 'objective-c']
+framework: Adapty
+headers:
+    - Adapty.h
+
+typedefs:
+
+private_typedefs:
+
+enums:
+    AdaptyErrorCode: {}
+    AdaptyLogLevel: {}
+    AttributionNetwork: {}
+    DataState: {}
+    Gender: {}
+    PaymentMode: {}
+    PeriodUnit: {}
+
+classes:
+    AccessLevelInfoModel: {}
+    Adapty:
+        methods:
+            '+activate:observerMode:':
+                name: activate
+            '+activate:customerUserId:':
+                name: activate
+            '+activate:observerMode:customerUserId:':
+                name: activate
+            '+identify:completion:':
+                name: identify
+            '+updateProfileWithParams:completion:':
+                name: updateProfile
+            '+updateAttribution:source:networkUserId:completion:':
+                name: updateAttribution
+            '+getPaywallsWithForceUpdate::':
+                name: getPaywalls
+            '+makePurchaseWithProduct:offerId:completion:':
+                name: makePurchase
+            '+restorePurchasesWithCompletion:':
+                name: restorePurchases
+            '+getPurchaserInfoWithForceUpdate::':
+                name: getPurchaserInfo
+            '+handlePushNotification:completion:':
+                name: handlePushNotification
+            '+showVisualPaywallFor:from:delegate:':
+                name: showVisualPaywall
+            '+getVisualPaywallFor:delegate:':
+                name: getVisualPaywall
+            '+setFallbackPaywalls:completion:':
+                name: setFallbackPaywalls
+            '+logShowPaywall:completion:':
+                name: logShowPaywall
+            '+setExternalAnalyticsEnabled:completion:':
+                name: setExternalAnalyticsEnabled
+            '+setVariationId:forTransactionId:completion:':
+                name: setVariationId
+    AdaptyError:
+        skip_def_constructor: true
+    NonSubscriptionInfoModel: {}
+    PaywallModel: {}
+    PaywallViewController:
+        methods:
+            '-initWithNibName:bundle:':
+                name: init
+            '-initWithCoder:':
+                name: init
+            '-webView:decidePolicyForNavigationAction:decisionHandler:':
+                name: decidePolicyForNavigationAction
+    ProductDiscountModel: {}
+    ProductModel: {}
+    ProductSubscriptionPeriodModel: {}
+    ProfileParameterBuilder: {}
+    PromoModel: {}
+    PurchaserInfoModel: {}
+    SubscriptionInfoModel: {}
+protocols:
+    AdaptyDelegate:
+        methods:
+            '-paymentQueueWithShouldAddStorePaymentFor:defermentCompletion:':
+                name: paymentQueueWithShouldAddStorePaymentForProduct
+            '-didReceivePaywallsForConfigWithPaywalls:':
+                name: didReceivePaywallsForConfigWithPaywalls
+    AdaptyVisualPaywallDelegate:
+        methods:
+            '-didPurchaseWithProduct:purchaserInfo:receipt:appleValidationResult:paywall:':
+                name: didPurchase
+            '-didFailPurchaseWithProduct:error:paywall:':
+                name: didFailPurchase
+            '-didCancelWithPaywall:':
+                name: didCancel
+            '-didRestoreWithPurchaserInfo:receipt:appleValidationResult:error:paywall:':
+                name: didRestore
+functions:
+
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    SWIFT_.*:
+        exclude: true
+
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'
