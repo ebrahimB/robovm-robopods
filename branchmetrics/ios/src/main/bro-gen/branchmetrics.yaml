@@ -423,6 +423,7 @@ classes:
                 name: continueUserActivity
             '-scene:openURLContexts:':
                 name: openURLContexts
+    BranchPluginSupport: {}
 protocols:
     BNCNetworkOperationProtocol: {}
     BNCNetworkServiceProtocol:
