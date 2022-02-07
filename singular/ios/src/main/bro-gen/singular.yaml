@@ -1,0 +1,117 @@
+package: org.robovm.pods.singular
+framework: Singular
+include: [foundation, webkit, uikit]
+clang_args: ['-x', 'objective-c']
+headers: 
+    - Singular.h
+    - SingularAdData.h
+    - SingularConfig.h
+    - SingularLinkParams.h
+enums:
+
+private_typedefs:
+
+classes:
+    Singular:
+        methods:
+            '+startSession:withKey:':
+                name: startSession
+            '+startSession:withKey:andLaunchOptions:withSingularLinkHandler:':
+                name: startSession
+            '+startSession:withKey:andLaunchOptions:withSingularLinkHandler:andShortLinkResolveTimeout:':
+                name: startSession
+            '+startSession:withKey:andLaunchOptions:withSingularLinkHandler:andSupportedDomains:':
+                name: startSession
+            '+startSession:withKey:andLaunchOptions:withSingularLinkHandler:andShortLinkResolveTimeout:andSupportedDomains:':
+                name: startSession
+            '+startSession:withKey:andUserActivity:withSingularLinkHandler:':
+                name: startSession
+            '+startSession:withKey:andUserActivity:withSingularLinkHandler:andShortLinkResolveTimeout:':
+                name: startSession
+            '+startSession:withKey:andUserActivity:withSingularLinkHandler:andSupportedDomains:':
+                name: startSession
+            '+startSession:withKey:andUserActivity:withSingularLinkHandler:andShortLinkResolveTimeout:andSupportedDomains:':
+                name: startSession
+            '+startSession:withKey:andLaunchOptions:':
+                name: startSession
+            '+startSession:withKey:andLaunchURL:':
+                name: startSession
+            '+reStartSession:withKey:':
+                name: reStartSession
+            '+event:withArgs:':
+                name: event
+            '+eventWithArgs:':
+                name: event
+            '+processJSRequestWK:withURL:':
+                name: processJSRequestWK
+            '+iapComplete:withName:':
+                name: iapComplete
+            '+iapComplete:withAttributes:':
+                name: iapComplete
+            '+iapComplete:withName:withAttributes:':
+                name: iapComplete
+            '+revenue:withAttributes:':
+                name: revenue
+            '+revenue:amount:':
+                name: revenue
+            '+revenue:amount:withAttributes:':
+                name: revenue
+            '+revenue:amount:productSKU:productName:productCategory:productQuantity:productPrice:':
+                name: revenue
+            '+customRevenue:transaction:':
+                name: customRevenue
+            '+customRevenue:transaction:withAttributes:':
+                name: customRevenue
+            '+customRevenue:currency:amount:':
+                name: customRevenue
+            '+customRevenue:currency:amount:withAttributes:':
+                name: customRevenue
+            '+customRevenue:currency:amount:productSKU:productName:productCategory:productQuantity:productPrice:':
+                name: customRevenue
+            '+setWrapperName:andVersion:':
+                name: setWrapperName
+            '+setGlobalProperty:andValue:overrideExisting:':
+                name: setGlobalProperty
+            '+setAllowAutoIAPComplete:':
+                parameters:
+                    0: { name: v }
+            '+setBatchesEvents:':
+                parameters:
+                    0: { name: v }
+            '+setMinSessionDuration:':
+                name: setMinimalSessionDuration
+    SingularAdData:
+        methods:
+            '-initWithAdPlatfrom:withCurrency:withRevenue:':
+                name: init
+    SingularConfig:
+        methods:
+            '-initWithApiKey:andSecret:':
+                name: init
+            '-setGlobalProperty:withValue:overrideExisting:':
+                name: setGlobalProperty
+    SingularLinkParams:
+        methods:
+            '-initWithDeepLink:andPassthrough:isDeferred:':
+                name: init
+
+protocols:
+
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'
