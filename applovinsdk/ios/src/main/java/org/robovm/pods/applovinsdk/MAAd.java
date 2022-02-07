@@ -62,6 +62,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getCreativeIdentifier();
     @Property(selector = "revenue")
     public native double getRevenue();
+    @Property(selector = "revenuePrecision")
+    public native String getRevenuePrecision();
     @Property(selector = "placement")
     public native String getPlacement();
     @Property(selector = "waterfall")

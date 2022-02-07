@@ -34,31 +34,26 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALUserService/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAInterstitialAdapterAdapter/*</name>*/ 
+    extends /*<extends>*/MAAdapterAdapter/*</extends>*/ 
+    /*<implements>*/implements MAInterstitialAdapter/*</implements>*/ {
 
-    /*<ptr>*/public static class ALUserServicePtr extends Ptr<ALUserService, ALUserServicePtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(ALUserService.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected ALUserService() {}
-    protected ALUserService(Handle h, long handle) { super(h, handle); }
-    protected ALUserService(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @deprecated This version of the consent flow has been deprecated as of v7.0.0, please refer to our documentation for enabling the new consent flow.
-     */
-    @Deprecated
-    @Method(selector = "showConsentDialogWithCompletionHandler:")
-    public native void showConsentDialog(@Block Runnable completionHandler);
+    @NotImplemented("loadInterstitialAdForParameters:andNotify:")
+    public void loadInterstitialAd(MAAdapterResponseParameters parameters, MAInterstitialAdapterDelegate delegate) {}
+    @NotImplemented("showInterstitialAdForParameters:andNotify:")
+    public void showInterstitialAd(MAAdapterResponseParameters parameters, MAInterstitialAdapterDelegate delegate) {}
     /*</methods>*/
 }

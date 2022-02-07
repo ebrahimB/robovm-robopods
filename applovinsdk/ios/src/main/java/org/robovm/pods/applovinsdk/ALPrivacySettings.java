@@ -58,13 +58,19 @@ import org.robovm.apple.coreanimation.*;
     public static native void setHasUserConsent(boolean hasUserConsent);
     @Method(selector = "hasUserConsent")
     public static native boolean hasUserConsent();
+    @Method(selector = "isUserConsentSet")
+    public static native boolean isUserConsentSet();
     @Method(selector = "setIsAgeRestrictedUser:")
     public static native void setIsAgeRestrictedUser(boolean isAgeRestrictedUser);
     @Method(selector = "isAgeRestrictedUser")
     public static native boolean isAgeRestrictedUser();
+    @Method(selector = "isAgeRestrictedUserSet")
+    public static native boolean isAgeRestrictedUserSet();
     @Method(selector = "setDoNotSell:")
     public static native void setDoNotSell(boolean doNotSell);
     @Method(selector = "isDoNotSell")
     public static native boolean isDoNotSell();
+    @Method(selector = "isDoNotSellSet")
+    public static native boolean isDoNotSellSet();
     /*</methods>*/
 }

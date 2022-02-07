@@ -68,18 +68,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getZoneIdentifier();
     @Property(selector = "isReadyForDisplay")
     public native boolean isReadyForDisplay();
-    /**
-     * @deprecated Please use -[ALSdk userIdentifier] instead to properly identify your users in our system. This property is now deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "userIdentifier")
-    public static native String getUserIdentifier();
-    /**
-     * @deprecated Please use -[ALSdk userIdentifier] instead to properly identify your users in our system. This property is now deprecated and will be removed in a future SDK version.
-     */
-    @Deprecated
-    @Property(selector = "setUserIdentifier:")
-    public static native void setUserIdentifier(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -107,47 +95,5 @@ import org.robovm.apple.coreanimation.*;
     public static native void Show();
     @Method(selector = "showAndNotify:")
     public static native void Show(ALAdRewardDelegate adRewardDelegate);
-    /**
-     * @deprecated Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.
-     */
-    @Deprecated
-    @Method(selector = "showOver:placement:andNotify:")
-    public native void showOver(UIWindow window, String placement, ALAdRewardDelegate adRewardDelegate);
-    /**
-     * @deprecated Explicitly passing in an UIWindow to show an ad is deprecated as all cases show over the application's key window. Use showAndNotify: instead.
-     */
-    @Deprecated
-    @Method(selector = "showOver:andNotify:")
-    public native void showOver(UIWindow window, ALAdRewardDelegate adRewardDelegate);
-    /**
-     * @deprecated Explicitly passing in an UIWindow to show an ad is deprecated as all cases show over the application's key window. Use showAd:andNotify: instead.
-     */
-    @Deprecated
-    @Method(selector = "showOver:renderAd:andNotify:")
-    public native void showOver(UIWindow window, ALAd ad, ALAdRewardDelegate adRewardDelegate);
-    /**
-     * @deprecated Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.
-     */
-    @Deprecated
-    @Method(selector = "showOverPlacement:")
-    public static native void showOverPlacement(String placement);
-    /**
-     * @deprecated Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.
-     */
-    @Deprecated
-    @Method(selector = "showOverPlacement:andNotify:")
-    public static native void ShowOverPlacement(String placement, ALAdRewardDelegate adRewardDelegate);
-    /**
-     * @deprecated Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.
-     */
-    @Deprecated
-    @Method(selector = "showOver:placement:andNotify:")
-    public static native void ShowOver(UIWindow window, String placement, ALAdRewardDelegate adRewardDelegate);
-    /**
-     * @deprecated Explicitly passing in an UIWindow to show an ad is deprecated as all cases show over the application's key window. Use showAndNotify: instead.
-     */
-    @Deprecated
-    @Method(selector = "showOver:andNotify:")
-    public static native void ShowOver(UIWindow window, ALAdRewardDelegate adRewardDelegate);
     /*</methods>*/
 }

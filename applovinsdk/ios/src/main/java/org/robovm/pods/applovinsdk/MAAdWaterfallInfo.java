@@ -52,6 +52,10 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "loadedAd")
     public native MAAd getLoadedAd();
+    @Property(selector = "name")
+    public native String getName();
+    @Property(selector = "testName")
+    public native String getTestName();
     @Property(selector = "networkResponses")
     public native NSArray<MANetworkResponseInfo> getNetworkResponses();
     @Property(selector = "latency")

@@ -76,9 +76,18 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isExceptionHandlerEnabled();
     @Property(selector = "setExceptionHandlerEnabled:")
     public native void setExceptionHandlerEnabled(boolean v);
+    @Property(selector = "isLocationCollectionEnabled")
+    public native boolean isLocationCollectionEnabled();
+    @Property(selector = "setLocationCollectionEnabled:")
+    public native void setLocationCollectionEnabled(boolean v);
+    @Property(selector = "extraParameters")
+    public native NSDictionary<NSString, NSString> getExtraParameters();
+    @Property(selector = "setExtraParameters:")
+    public native void setExtraParameters(NSDictionary<NSString, NSString> v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "setExtraParameterForKey:value:")
+    public native void setExtraParameter(String key, String value);
     /*</methods>*/
 }

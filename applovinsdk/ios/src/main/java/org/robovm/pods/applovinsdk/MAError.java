@@ -57,6 +57,18 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "waterfall")
     public native MAAdWaterfallInfo getWaterfall();
     /**
+     * @deprecated This property is deprecated and removed in a future SDK version. Please use `-[MAError code]` instead.
+     */
+    @Deprecated
+    @Property(selector = "errorCode")
+    public native @MachineSizedSInt long getErrorCode();
+    /**
+     * @deprecated This property is deprecated and removed in a future SDK version. Please use `-[MAError message]` instead.
+     */
+    @Deprecated
+    @Property(selector = "errorMessage")
+    public native String getErrorMessage();
+    /**
      * @deprecated The ad load failure info string is deprecated and removed in a future SDK version. Please use `-[MAError waterfall]` instead.
      */
     @Deprecated

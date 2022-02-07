@@ -66,12 +66,12 @@ import org.robovm.apple.coreanimation.*;
     public native void setUserIdentifier(String v);
     @Property(selector = "userSegment")
     public native ALUserSegment getUserSegment();
+    @Property(selector = "targetingData")
+    public native ALTargetingData getTargetingData();
     @Property(selector = "adService")
     public native ALAdService getAdService();
     @Property(selector = "eventService")
     public native ALEventService getEventService();
-    @Property(selector = "userService")
-    public native ALUserService getUserService();
     @Property(selector = "variableService")
     public native ALVariableService getVariableService();
     @Property(selector = "mediationProvider")

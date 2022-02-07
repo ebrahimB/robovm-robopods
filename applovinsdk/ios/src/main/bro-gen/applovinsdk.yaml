@@ -14,6 +14,9 @@ enums:
     ALAppTrackingTransparencyStatus: {}
     MAAdLoadState: {}
     MAErrorCode: {}
+    ALAdContentRating: { }
+    ALGender: { }
+    MAAdapterInitializationStatus: { }
 classes:
     ALAd:
         methods:
@@ -165,7 +168,10 @@ classes:
             '+sharedWithSettings:':
                 name: getShared
     ALSdkConfiguration: {}
-    ALSdkSettings: {}
+    ALSdkSettings:
+        methods:
+            '-setExtraParameterForKey:value:':
+                name: setExtraParameter
     ALUserService:
         methods:
             '-showConsentDialogWithCompletionHandler:':
@@ -193,6 +199,8 @@ classes:
                 name: init
             '-setExtraParameterForKey:value:':
                 name: setExtraParameter
+            '-setLocalExtraParameterForKey:value:':
+                name: setLocalExtraParameter
     MAInterstitialAd:
         methods:
             '-initWithAdUnitIdentifier:':
@@ -201,6 +209,8 @@ classes:
                 name: init
             '-setExtraParameterForKey:value:':
                 name: setExtraParameter
+            '-setLocalExtraParameterForKey:value:':
+                name: setLocalExtraParameter
     MAReward:
         methods:
             '+rewardWithAmount:label:':
@@ -214,6 +224,8 @@ classes:
                 name: getShared
             '+sharedWithAdUnitIdentifier:sdk:':
                 name: getShared
+            '-setLocalExtraParameterForKey:value:':
+                name: setLocalExtraParameter
     ALCCommunicator:
         methods:
             '-subscribe:forTopic:':
@@ -238,6 +250,8 @@ classes:
                 name: init
             '-setExtraParameterForKey:value:':
                 name: setExtraParameter
+            '-setLocalExtraParameterForKey:value:':
+                name: setLocalExtraParameter
     ALUserSegment: {}
     ALConsentFlowSettings: { }
     MAMediatedNetworkInfo: { }
@@ -249,7 +263,100 @@ classes:
                 name: init
             '-initWithAdUnitIdentifier:sdk:':
                 name: init
+            '-setExtraParameterForKey:value:':
+                name: setExtraParameter
+            '-setLocalExtraParameterForKey:value:':
+                name: setLocalExtraParameter
     MANetworkResponseInfo: {}
+    ALAtomicBoolean:
+        methods:
+            '-compareAndSet:update:':
+                name: compareAndSet
+            '-initWithValue:':
+                name: init
+    ALMediationAdapter:
+        properties:
+            'mediationTag':
+                exclude: true # Left here for backwards-compatibility purposes - to be removed when enough time passes
+        methods:
+            '-initWithSdk:':
+                name: init
+            '-e:becauseOf:':
+                name: e
+            '-userError:becauseOf:':
+                name: userError
+    ALMediationAdapterRouter:
+        methods:
+            '-addInterstitialAdapter:delegate:forPlacementIdentifier:':
+                name: addInterstitialAdapter
+            '-addRewardedAdapter:delegate:forPlacementIdentifier:':
+                name: addRewardedAdapter
+            '-addAdViewAdapter:delegate:forPlacementIdentifier:adView:':
+                name: addAdViewAdapter
+            '-updateAdView:forPlacementIdentifier:':
+                name: updateAdView
+            '-removeAdapter:forPlacementIdentifier:':
+                name: removeAdapter
+            '-didLoadAdForPlacementIdentifier:withExtraInfo:':
+                name: didLoadAdForPlacementIdentifier
+            '-didFailToLoadAdForPlacementIdentifier:error:':
+                name: didFailToLoadAdForPlacementIdentifier
+            '-didDisplayAdForPlacementIdentifier:withExtraInfo:':
+                name: didDisplayAdForPlacementIdentifier
+            '-didFailToDisplayAdForPlacementIdentifier:error:':
+                name: didFailToDisplayAdForPlacementIdentifier
+            '-didRewardUserForPlacementIdentifier:withReward:':
+                name: didRewardUserForPlacementIdentifier
+            '-log:becauseOf:':
+                name: log
+    ALTargetingData: {}
+    ALUtils: {}
+    MAAdapterError:
+        methods:
+            '+errorWithCode:':
+                name: create
+                constructor: true
+            '+errorWithCode:adapterErrorCode:':
+                name: create
+                constructor: true
+            '+errorWithCode:errorString:':
+                name: create
+                constructor: true
+            '+errorWithNSError:':
+                name: create
+                constructor: true
+            '+errorWithAdapterError:thirdPartySdkErrorCode:thirdPartySdkErrorMessage:':
+                name: create
+                constructor: true
+            '+errorWithCode:errorString:thirdPartySdkErrorCode:thirdPartySdkErrorMessage:':
+                name: create
+                constructor: true
+    MANativeAd:
+        methods:
+            '-initWithFormat:builderBlock:':
+                name: init
+    MANativeAdBuilder: {}
+    MANativeAdImage:
+        methods:
+            '-initWithImage:':
+                name: init
+            '-initWithURL:':
+                name: init
+    MANativeAdView:
+        methods:
+            '-bindViewsWithAdViewBinder:':
+                name: bindViews
+            '+nativeAdViewFromAd:':
+                name: create
+                constructor: true
+            '+nativeAdViewFromAd:withTemplate:':
+                name: create
+                constructor: true
+    MANativeAdViewBinder:
+        methods:
+            '-initWithBuilderBlock:':
+                name: init
+    MANativeAdViewBinderBuilder: {}
 protocols:
     ALAdDisplayDelegate:
         methods:
@@ -344,6 +451,103 @@ protocols:
                 name: didLoadNativeAd
             '-didFailToLoadNativeAdForAdUnitIdentifier:withError:':
                 name: didFailToLoadNativeAd
+    MAAdViewAdapter:
+        methods:
+            '-loadAdViewAdForParameters:adFormat:andNotify:':
+                name: loadAdViewAd
+    MAAdViewAdapterDelegate:
+        methods:
+            '-didLoadAdForAdView:withExtraInfo:':
+                name: didLoadAd
+            '-didFailToLoadAdViewAdWithError:':
+                name: didFailToLoadAd
+            '-didDisplayAdViewAdWithExtraInfo:':
+                name: didDisplayAdViewAd
+            '-didFailToDisplayAdViewAdWithError:':
+                name: didFailToDisplayAdViewAd
+    MAAdapter:
+        methods:
+            '-initializeWithParameters:withCompletionHandler:':
+                name: initialize
+            '-initializeWithParameters:completionHandler:':
+                name: initialize
+    MAAdapterDelegate: { }
+    MAAdapterInitializationParameters: { }
+    MAAdapterParameters: { }
+    MAAdapterResponseParameters: { }
+    MAInterstitialAdapter:
+        methods:
+            '-loadInterstitialAdForParameters:andNotify:':
+                name: loadInterstitialAd
+            '-showInterstitialAdForParameters:andNotify:':
+                name: showInterstitialAd
+    MAInterstitialAdapterDelegate:
+        methods:
+            '-didLoadInterstitialAdWithExtraInfo:':
+                name: didLoadInterstitialAd
+            '-didFailToLoadInterstitialAdWithError:':
+                name: didFailToLoadInterstitialAd
+            '-didDisplayInterstitialAdWithExtraInfo:':
+                name: didDisplayInterstitialAd
+            '-didFailToDisplayInterstitialAdWithError:':
+                name: didFailToDisplayInterstitialAd
+    MANativeAdAdapter:
+        methods:
+            '-loadNativeAdForParameters:andNotify:':
+                name: loadNativeAd
+    MANativeAdAdapterDelegate:
+        methods:
+            '-didLoadAdForNativeAd:withExtraInfo:':
+                name: didLoadAdForNativeAd
+            '-didFailToLoadNativeAdWithError:':
+                name: didFailToLoadNativeAd
+            '-didDisplayNativeAdWithExtraInfo:':
+                name: didDisplayNativeAd
+    MARewardedAdapter:
+        methods:
+            '-loadRewardedAdForParameters:andNotify:':
+                name: loadRewardedAd
+            '-showRewardedAdForParameters:andNotify:':
+                name: showRewardedAd
+    MARewardedAdapterDelegate:
+        methods:
+            '-didLoadRewardedAdWithExtraInfo:':
+                name: didLoadRewardedAd
+            '-didFailToLoadRewardedAdWithError:':
+                name: didFailToLoadRewardedAd
+            '-didDisplayRewardedAdWithExtraInfo:':
+                name: didDisplayRewardedAd
+            '-didFailToDisplayRewardedAdWithError:':
+                name: didFailToDisplayRewardedAd
+            '-didRewardUserWithReward:':
+                name: didRewardUser
+    MARewardedInterstitialAdapter:
+        methods:
+            '-loadRewardedInterstitialAdForParameters:andNotify:':
+                name: loadRewardedInterstitialAd
+            '-showRewardedInterstitialAdForParameters:andNotify:':
+                name: showRewardedInterstitialAd
+    MARewardedInterstitialAdapterDelegate:
+        methods:
+            '-didLoadRewardedInterstitialAdWithExtraInfo:':
+                name: didLoadRewardedInterstitialAd
+            '-didFailToLoadRewardedInterstitialAdWithError:':
+                name: didFailToLoadRewardedInterstitialAd
+            '-didDisplayRewardedInterstitialAdWithExtraInfo:':
+                name: didDisplayRewardedInterstitialAd
+            '-didFailToDisplayRewardedInterstitialAdWithError:':
+                name: didFailToDisplayRewardedInterstitialAd
+            '-didRewardUserWithReward:':
+                name: didRewardUser
+    MASignalCollectionDelegate:
+        methods:
+            '-didFailToCollectSignalWithErrorMessage:':
+                name: didFailToCollectSignal
+    MASignalCollectionParameters: { }
+    MASignalProvider:
+        methods:
+            '-collectSignalWithParameters:andNotify:':
+                name: collectSignal
 functions:
 
     # Make sure we don't miss any functions if new ones are introduced in a later version
@@ -352,6 +556,9 @@ functions:
         name: 'Function_#{g[0]}'
 
 values:
+    kMAConfigKeyMuted:
+        exclude: true # Adapters no longer support mute APIs
+
     kALEventType(.*):
         class: ALEventTypes
         name: '#{g[0]}'

@@ -52,7 +52,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("didLoadNativeAd:forAd:")
-    public void didLoadNativeAd(UIView nativeAdView, MAAd ad) {}
+    public void didLoadNativeAd(MANativeAdView nativeAdView, MAAd ad) {}
     @NotImplemented("didFailToLoadNativeAdForAdUnitIdentifier:withError:")
     public void didFailToLoadNativeAd(String adUnitIdentifier, MAError error) {}
     @NotImplemented("didClickNativeAd:")

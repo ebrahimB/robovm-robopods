@@ -60,12 +60,8 @@ import org.robovm.apple.coreanimation.*;
     public static native ALAdSize getInterstitial();
     @Property(selector = "crossPromo")
     public static native ALAdSize getCrossPromo();
-    @Deprecated
-    @Property(selector = "width")
-    public native @MachineSizedFloat double getWidth();
-    @Deprecated
-    @Property(selector = "height")
-    public native @MachineSizedFloat double getHeight();
+    @Property(selector = "native")
+    public static native ALAdSize getNative();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

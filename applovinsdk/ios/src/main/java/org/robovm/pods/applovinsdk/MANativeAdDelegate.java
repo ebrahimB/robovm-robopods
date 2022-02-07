@@ -50,7 +50,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "didLoadNativeAd:forAd:")
-    void didLoadNativeAd(UIView nativeAdView, MAAd ad);
+    void didLoadNativeAd(MANativeAdView nativeAdView, MAAd ad);
     @Method(selector = "didFailToLoadNativeAdForAdUnitIdentifier:withError:")
     void didFailToLoadNativeAd(String adUnitIdentifier, MAError error);
     @Method(selector = "didClickNativeAd:")

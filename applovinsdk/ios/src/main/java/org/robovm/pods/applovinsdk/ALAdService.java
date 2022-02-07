@@ -63,29 +63,5 @@ import org.robovm.apple.coreanimation.*;
     public native void loadNextAdForAdToken(String adToken, ALAdLoadDelegate delegate);
     @Method(selector = "loadNextAdForZoneIdentifiers:andNotify:")
     public native void loadNextAdForZoneIdentifiers(NSArray<NSString> zoneIdentifiers, ALAdLoadDelegate delegate);
-    /**
-     * @deprecated Manually preloading ads in the background has been deprecated and will be removed in a future SDK version. Please use [ALAdService loadNextAd:andNotify:] to load ads to display.
-     */
-    @Deprecated
-    @Method(selector = "preloadAdOfSize:")
-    public native void preloadAdOfSize(ALAdSize adSize);
-    /**
-     * @deprecated Manually preloading ads in the background has been deprecated and will be removed in a future SDK version. Please use [ALAdService loadNextAdForZoneIdentifier:andNotify:] to load ads to display.
-     */
-    @Deprecated
-    @Method(selector = "preloadAdForZoneIdentifier:")
-    public native void preloadAdForZoneIdentifier(String zoneIdentifier);
-    /**
-     * @deprecated Manually preloading ads in the background has been deprecated and will be removed in a future SDK version. Please use [ALAdService loadNextAd:andNotify:] to load ads to display.
-     */
-    @Deprecated
-    @Method(selector = "hasPreloadedAdOfSize:")
-    public native boolean hasPreloadedAdOfSize(ALAdSize adSize);
-    /**
-     * @deprecated Manually preloading ads in the background has been deprecated and will be removed in a future SDK version. Please use [ALAdService loadNextAdForZoneIdentifier:andNotify:] to load ads to display.
-     */
-    @Deprecated
-    @Method(selector = "hasPreloadedAdForZoneIdentifier:")
-    public native boolean hasPreloadedAdForZoneIdentifier(String zoneIdentifier);
     /*</methods>*/
 }

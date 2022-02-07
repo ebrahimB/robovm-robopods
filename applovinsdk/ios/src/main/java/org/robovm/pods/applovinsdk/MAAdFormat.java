@@ -66,6 +66,8 @@ import org.robovm.apple.coreanimation.*;
     public static native MAAdFormat getRewardedInterstitial();
     @Property(selector = "native")
     public static native MAAdFormat getNative();
+    @Property(selector = "label")
+    public native String getLabel();
     @Property(selector = "size")
     public native @ByVal CGSize getSize();
     @Property(selector = "adaptiveSize")

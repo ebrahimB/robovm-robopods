@@ -74,6 +74,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getAdUnitIdentifier();
     @Property(selector = "adFormat")
     public native MAAdFormat getAdFormat();
+    @Property(selector = "customPostbackData")
+    public native String getCustomPostbackData();
+    @Property(selector = "setCustomPostbackData:")
+    public native void setCustomPostbackData(String v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
@@ -88,14 +92,16 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(String adUnitIdentifier, MAAdFormat adFormat);
     @Method(selector = "initWithAdUnitIdentifier:adFormat:sdk:")
     protected native @Pointer long init(String adUnitIdentifier, MAAdFormat adFormat, ALSdk sdk);
-    @Method(selector = "setExtraParameterForKey:value:")
-    public native void setExtraParameter(String key, String value);
     @Method(selector = "loadAd")
     public native void loadAd();
     @Method(selector = "startAutoRefresh")
     public native void startAutoRefresh();
     @Method(selector = "stopAutoRefresh")
     public native void stopAutoRefresh();
+    @Method(selector = "setExtraParameterForKey:value:")
+    public native void setExtraParameter(String key, String value);
+    @Method(selector = "setLocalExtraParameterForKey:value:")
+    public native void setLocalExtraParameter(String key, NSObject value);
     /**
      * @since Available in iOS 9.0 and later.
      */
