@@ -3,9 +3,9 @@ Lightweight helper library that allows iOS developers to add inline playback of 
 
 ## Available RoboPods
 
-| RoboPods Version  | AppLovinSDK Version  |
-|-------------------|-------------------|
-| 1.19.0            | 1.0.4             |
+| RoboPods Version | AppLovinSDK Version |
+|------------------|---------------------|
+| 1.19.0           | 1.0.4               |
 
 ## Official website
 https://github.com/youtube/youtube-ios-player-helper

@@ -50,7 +50,7 @@ v1.20.0 - in development
 | [Flurry](flurry/)               | 11.2.1 |
 | [Fyber](fyber/)                 | 8.1.2  |
 | [HelpShift](helpshift/)         | 7.11.2 |
-| [InMobi](inmobi/)               | 10.0.1 |
+| [InMobi](inmobi/)               | 10.0.2 |
 | [Kochava](kochava/)             | 5.1.0  |
 | [Lottie](lottie/)               | 3.3.0  |
 | [OneSignal](onesignal/)         | 3.10.0 |
