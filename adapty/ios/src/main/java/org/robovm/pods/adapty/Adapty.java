@@ -124,4 +124,17 @@ import org.robovm.apple.webkit.*;
     @Method(selector = "logout:")
     public static native void logout(@Block VoidBlock1<AdaptyError> completion);
     /*</methods>*/
+
+    // FIXME: DIRTY HACK: manually added code
+    static {
+        // preload native classes so RoboVM will know their addresses
+        // otherwise it will fail to marshal them into proper Java class (will result NSObject) due
+        // these have different runtime name than specified for static linkage
+        // (e.g. `Adapty.ProductModel` instead of `_TtC6Adapty12ProductModel`)
+        NativeClass anno;
+        if ((anno = ProductModel.class.getAnnotation(NativeClass.class)) != null)
+            ObjCClass.getByName(anno.value());
+        if ((anno = PaywallModel.class.getAnnotation(NativeClass.class)) != null)
+            ObjCClass.getByName(anno.value());
+    }
 }
