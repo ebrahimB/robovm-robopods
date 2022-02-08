@@ -16,6 +16,7 @@ enums:
     IAVideoLayoutControlType: {}
     IAVideoClickActionType: {}
     IAVideoType: {}
+    FMPLogLevel: {}
 
 typed_enums:
 
@@ -69,6 +70,7 @@ classes:
             '-setTopLeftControlType:topRightControlType:bottomLeftControlType:bottomRightControlType:':
                 name: setTopLeftControlType
     IAVideoView: {}
+    FMPLogger: {}
 protocols:
     IAAdRequestBuilder: {}
     IAAdSpotBuilder: {}
