@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
  * All rights reserved.
  *
  * This source code is licensed under the license found in the
@@ -52,6 +52,7 @@ typedef NS_ENUM(NSUInteger, FBSDKShareDialogMode) {
   Converts an FBSDKShareDialogMode to an NSString.
  */
 FOUNDATION_EXPORT NSString *NSStringFromFBSDKShareDialogMode(FBSDKShareDialogMode dialogMode)
+DEPRECATED_MSG_ATTRIBUTE("`NSStringFromFBSDKShareDialogMode` is deprecated and will be removed in the next major release; please use `ShareDialog.Mode.description` instead")
 NS_REFINED_FOR_SWIFT;
 
 NS_ASSUME_NONNULL_END

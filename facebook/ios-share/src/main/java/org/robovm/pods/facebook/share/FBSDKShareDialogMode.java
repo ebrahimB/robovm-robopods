@@ -54,6 +54,10 @@ public enum /*<name>*/FBSDKShareDialogMode/*</name>*/ implements ValuedEnum {
     /*<bind>*/static { Bro.bind(FBSDKShareDialogMode.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<methods>*/
+    /**
+     * @deprecated `NSStringFromFBSDKShareDialogMode` is deprecated and will be removed in the next major release; please use `ShareDialog.Mode.description` instead
+     */
+    @Deprecated
     @Bridge(symbol="NSStringFromFBSDKShareDialogMode", optional=true)
     protected static native @org.robovm.rt.bro.annotation.Marshaler(NSString.AsStringMarshaler.class) String toString(FBSDKShareDialogMode dialogMode);
     /*</methods>*/

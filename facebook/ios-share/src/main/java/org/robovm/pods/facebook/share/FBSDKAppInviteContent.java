@@ -51,6 +51,8 @@ import org.robovm.apple.coreanimation.*;
     public FBSDKAppInviteContent() {}
     protected FBSDKAppInviteContent(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppInviteContent(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithAppLinkURL:")
+    public FBSDKAppInviteContent(NSURL appLinkURL) { super((SkipInit) null); initObject(initWithAppLinkURL(appLinkURL)); }
     @Method(selector = "initWithCoder:")
     public FBSDKAppInviteContent(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
@@ -80,6 +82,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithAppLinkURL:")
+    protected native @Pointer long initWithAppLinkURL(NSURL appLinkURL);
     @Method(selector = "isEqualToAppInviteContent:")
     public native boolean isEqualToAppInviteContent(FBSDKAppInviteContent content);
     @Method(selector = "validateWithOptions:error:")

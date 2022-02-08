@@ -54,8 +54,8 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("appURLWithHost:path:queryParameters:error:")
-    public NSURL appURL(String host, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
+    public NSURL appURL(String host, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
     @NotImplemented("facebookURLWithHostPrefix:path:queryParameters:error:")
-    public NSURL facebookURL(String hostPrefix, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
+    public NSURL facebookURL(String hostPrefix, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
     /*</methods>*/
 }

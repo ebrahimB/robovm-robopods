@@ -50,10 +50,16 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "isFacebookAppInstalled")
     boolean isFacebookAppInstalled();
+    @Property(selector = "isUnity")
+    boolean isUnity();
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "URLWithScheme:host:path:queryParameters:error:")
-    NSURL constructURL(String scheme, String host, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
+    NSURL constructURL(String scheme, String host, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef);
+    @Method(selector = "appURLWithHost:path:queryParameters:error:")
+    NSURL appURL(String host, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef);
+    @Method(selector = "facebookURLWithHostPrefix:path:queryParameters:error:")
+    NSURL facebookURL(String hostPrefix, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef);
     @Method(selector = "registerTransientObject:")
     void registerTransientObject(NSObject object);
     @Method(selector = "unregisterTransientObject:")
@@ -62,6 +68,20 @@ import org.robovm.apple.coreanimation.*;
     void checkRegisteredCanOpenURLScheme(String urlScheme);
     @Method(selector = "validateURLSchemes")
     void validateURLSchemes();
+    @Method(selector = "extendDictionaryWithDataProcessingOptions:")
+    void extendDictionary(NSMutableDictionary<NSString, NSString> parameters);
+    @Method(selector = "hexadecimalStringFromData:")
+    String hexadecimalStringFromData(NSData data);
+    @Method(selector = "validateAppID")
+    void validateAppID();
+    @Method(selector = "validateRequiredClientAccessToken")
+    String validateRequiredClientAccessToken();
+    @Method(selector = "extractPermissionsFromResponse:grantedPermissions:declinedPermissions:expiredPermissions:")
+    void extractPermissions(NSDictionary<NSString, ?> responseObject, NSMutableSet<NSString> grantedPermissions, NSMutableSet<NSString> declinedPermissions, NSMutableSet<NSString> expiredPermissions);
+    @Method(selector = "validateFacebookReservedURLSchemes")
+    void validateFacebookReservedURLSchemes();
+    @Method(selector = "parametersFromFBURL:")
+    NSDictionary<NSString, ?> parametersFromFBURL(NSURL url);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

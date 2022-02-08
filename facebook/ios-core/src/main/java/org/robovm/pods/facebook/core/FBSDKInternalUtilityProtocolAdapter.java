@@ -51,11 +51,17 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @NotImplemented("isFacebookAppInstalled")
     public boolean isFacebookAppInstalled() { return false; }
+    @NotImplemented("isUnity")
+    public boolean isUnity() { return false; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("URLWithScheme:host:path:queryParameters:error:")
-    public NSURL constructURL(String scheme, String host, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
+    public NSURL constructURL(String scheme, String host, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
+    @NotImplemented("appURLWithHost:path:queryParameters:error:")
+    public NSURL appURL(String host, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
+    @NotImplemented("facebookURLWithHostPrefix:path:queryParameters:error:")
+    public NSURL facebookURL(String hostPrefix, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
     @NotImplemented("registerTransientObject:")
     public void registerTransientObject(NSObject object) {}
     @NotImplemented("unregisterTransientObject:")
@@ -64,5 +70,19 @@ import org.robovm.apple.coreanimation.*;
     public void checkRegisteredCanOpenURLScheme(String urlScheme) {}
     @NotImplemented("validateURLSchemes")
     public void validateURLSchemes() {}
+    @NotImplemented("extendDictionaryWithDataProcessingOptions:")
+    public void extendDictionary(NSMutableDictionary<NSString, NSString> parameters) {}
+    @NotImplemented("hexadecimalStringFromData:")
+    public String hexadecimalStringFromData(NSData data) { return null; }
+    @NotImplemented("validateAppID")
+    public void validateAppID() {}
+    @NotImplemented("validateRequiredClientAccessToken")
+    public String validateRequiredClientAccessToken() { return null; }
+    @NotImplemented("extractPermissionsFromResponse:grantedPermissions:declinedPermissions:expiredPermissions:")
+    public void extractPermissions(NSDictionary<NSString, ?> responseObject, NSMutableSet<NSString> grantedPermissions, NSMutableSet<NSString> declinedPermissions, NSMutableSet<NSString> expiredPermissions) {}
+    @NotImplemented("validateFacebookReservedURLSchemes")
+    public void validateFacebookReservedURLSchemes() {}
+    @NotImplemented("parametersFromFBURL:")
+    public NSDictionary<NSString, ?> parametersFromFBURL(NSURL url) { return null; }
     /*</methods>*/
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
  * All rights reserved.
  *
  * This source code is licensed under the license found in the
@@ -33,6 +33,11 @@ typedef NS_ENUM(NSUInteger, FBSDKAppInviteDestination) {
  */
 NS_SWIFT_NAME(AppInviteContent)
 @interface FBSDKAppInviteContent : NSObject <NSCopying, NSObject, FBSDKSharingValidation, NSSecureCoding>
+
+- (instancetype)init DEPRECATED_MSG_ATTRIBUTE("`AppInviteContent.init` is deprecated and will be removed in the next major release. Please use `AppInviteContent(appLinkURL:) instead");
++ (instancetype)new DEPRECATED_MSG_ATTRIBUTE("`AppInviteContent.new` is deprecated and will be removed in the next major release. Please use `AppInviteContent(appLinkURL:) instead");
+
+- (instancetype)initWithAppLinkURL:(NSURL *)appLinkURL;
 
 /**
   A URL to a preview image that will be displayed with the app invite

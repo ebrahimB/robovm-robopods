@@ -22,7 +22,12 @@ categories:
 
 classes:
     FBSDKAppGroupContent: {}
-    FBSDKAppInviteContent: {}
+    FBSDKAppInviteContent:
+        methods:
+            '-initWithAppLinkURL:':
+                name: initWithAppLinkURL
+            '+new':
+                exclude: true
     FBSDKCameraEffectArguments:
         methods:
             '-setString:forKey:':

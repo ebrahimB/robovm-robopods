@@ -52,9 +52,9 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "appURLWithHost:path:queryParameters:error:")
-    NSURL appURL(String host, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
+    NSURL appURL(String host, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef);
     @Method(selector = "facebookURLWithHostPrefix:path:queryParameters:error:")
-    NSURL facebookURL(String hostPrefix, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
+    NSURL facebookURL(String hostPrefix, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

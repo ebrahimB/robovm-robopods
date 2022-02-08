@@ -70,8 +70,6 @@ import org.robovm.apple.coreanimation.*;
     public native void loadURL(NSURL URL);
     @Method(selector = "stopLoading")
     public native void stopLoading();
-    @Method(selector = "configureWithWebViewProvider:urlOpener:")
-    public static native void configure(NSObject provider, NSObject urlOpener);
     /**
      * @since Available in iOS 9.0 and later.
      */

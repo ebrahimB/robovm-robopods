@@ -126,9 +126,14 @@ import org.robovm.apple.coreanimation.*;
     boolean shouldUseCachedValuesForExpensiveMetadata();
     @Property(selector = "setShouldUseCachedValuesForExpensiveMetadata:")
     void setShouldUseCachedValuesForExpensiveMetadata(boolean v);
+    @Property(selector = "persistableDataProcessingOptions")
+    NSDictionary<NSString, ?> getPersistableDataProcessingOptions();
     /*</properties>*/
     /*<methods>*/
-    
+    @Method(selector = "setDataProcessingOptions:")
+    void setDataProcessingOptions(NSArray<NSString> options);
+    @Method(selector = "setDataProcessingOptions:country:state:")
+    void setDataProcessingOptions(NSArray<NSString> options, int country, int state);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

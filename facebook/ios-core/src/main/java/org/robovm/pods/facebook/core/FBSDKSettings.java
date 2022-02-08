@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKSettings/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKSettingsProtocol/*</implements>*/ {
+    /*<implements>*/implements FBSDKSettingsProtocol, FBSDKSettingsLogging/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKSettingsPtr extends Ptr<FBSDKSettings, FBSDKSettingsPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKSettings.class); }/*</bind>*/
@@ -154,6 +154,8 @@ import org.robovm.apple.coreanimation.*;
     public native void setShouldUseTokenOptimizations(boolean v);
     @Property(selector = "graphAPIDebugParamValue")
     public native String getGraphAPIDebugParamValue();
+    @Property(selector = "persistableDataProcessingOptions")
+    public native NSDictionary<NSString, ?> getPersistableDataProcessingOptions();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -165,5 +167,11 @@ import org.robovm.apple.coreanimation.*;
     public native void enableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
     @Method(selector = "disableLoggingBehavior:")
     public native void disableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
+    @Method(selector = "logWarnings")
+    public native void logWarnings();
+    @Method(selector = "logIfSDKSettingsChanged")
+    public native void logIfSDKSettingsChanged();
+    @Method(selector = "recordInstall")
+    public native void recordInstall();
     /*</methods>*/
 }

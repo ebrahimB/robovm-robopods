@@ -476,6 +476,8 @@ classes:
             '-loadServerConfigurationWithCompletionBlock:':
                 name: loadServerConfiguration
     FBSDKImpressionLoggingButton: {}
+    FBSDKErrorFactory: {}
+    FBSDKNetworkErrorChecker: {}
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -552,6 +554,9 @@ protocols:
         properties:
             '+loggingBehaviors':
                 exclude: true # as deprecated
+        methods:
+            '-setDataProcessingOptions:country:state:':
+                name: setDataProcessingOptions
     FBSDKSettingsLogging: {}
     FBSDKAppURLSchemeProviding: { skip_adapter: true}
     FBSDKBridgeAPIResponseCreating: { skip_adapter: true}
@@ -579,6 +584,14 @@ protocols:
         methods:
             '-URLWithScheme:host:path:queryParameters:error:':
                 name: constructURL
+            '-appURLWithHost:path:queryParameters:error:':
+                name: appURL
+            '-facebookURLWithHostPrefix:path:queryParameters:error:':
+                name: facebookURL
+            '-extendDictionaryWithDataProcessingOptions:':
+                name: extendDictionary
+            '-extractPermissionsFromResponse:grantedPermissions:declinedPermissions:expiredPermissions:':
+                name: extractPermissions
     FBSDKWebDialogViewDelegate:
         methods:
             '-webDialogView:didCompleteWithResults:':
@@ -641,14 +654,8 @@ protocols:
         methods:
             '-appURLWithHost:path:queryParameters:error:':
                 name: appURL
-                parameters:
-                    2:
-                        type: NSDictionary<NSString, ?>
             '-facebookURLWithHostPrefix:path:queryParameters:error:':
                 name: facebookURL
-                parameters:
-                    2:
-                        type: NSDictionary<NSString, ?>
     FBSDKAppLinkTarget:
         name: FBSDKAppLinkTargetProtocol
         methods:
@@ -657,6 +664,23 @@ protocols:
     FBSDKButtonImpressionLogging: {}
     __FBSDKLoggerCreating:
         exclude: true
+    FBSDKErrorCreating:
+        methods:
+            '-errorWithCode:userInfo:message:underlyingError:':
+                name: error
+            '-errorWithDomain:code:userInfo:message:underlyingError:':
+                name: error
+            '-invalidArgumentErrorWithName:value:message:underlyingError:':
+                name: invalidArgumentError
+            '-invalidArgumentErrorWithDomain:name:value:message:underlyingError:':
+                name: invalidArgumentError
+            '-requiredArgumentErrorWithName:message:underlyingError:':
+                name: requiredArgumentError
+            '-requiredArgumentErrorWithDomain:name:message:underlyingError:':
+                name: requiredArgumentError
+            '-unknownErrorWithMessage:userInfo:':
+                name: unknownError
+    FBSDKNetworkErrorChecking: { }
 functions:
     fb_randomString:
         exclude: true

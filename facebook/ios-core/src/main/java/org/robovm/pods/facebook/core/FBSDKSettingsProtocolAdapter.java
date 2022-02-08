@@ -127,9 +127,14 @@ import org.robovm.apple.coreanimation.*;
     public boolean shouldUseCachedValuesForExpensiveMetadata() { return false; }
     @NotImplemented("setShouldUseCachedValuesForExpensiveMetadata:")
     public void setShouldUseCachedValuesForExpensiveMetadata(boolean v) {}
+    @NotImplemented("persistableDataProcessingOptions")
+    public NSDictionary<NSString, ?> getPersistableDataProcessingOptions() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @NotImplemented("setDataProcessingOptions:")
+    public void setDataProcessingOptions(NSArray<NSString> options) {}
+    @NotImplemented("setDataProcessingOptions:country:state:")
+    public void setDataProcessingOptions(NSArray<NSString> options, int country, int state) {}
     /*</methods>*/
 }
