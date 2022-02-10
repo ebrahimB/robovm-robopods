@@ -51,22 +51,42 @@ import org.robovm.apple.coreanimation.*;
     protected GADCustomEventRequest(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "userHasLocation")
-    public native boolean isUserHasLocation();
-    @Property(selector = "userLatitude")
-    public native @MachineSizedFloat double getUserLatitude();
-    @Property(selector = "userLongitude")
-    public native @MachineSizedFloat double getUserLongitude();
-    @Property(selector = "userLocationAccuracyInMeters")
-    public native @MachineSizedFloat double getUserLocationAccuracyInMeters();
-    @Property(selector = "userLocationDescription")
-    public native String getUserLocationDescription();
     @Property(selector = "userKeywords")
     public native NSArray<?> getUserKeywords();
     @Property(selector = "additionalParameters")
     public native NSDictionary<?, ?> getAdditionalParameters();
     @Property(selector = "isTesting")
     public native boolean isTesting();
+    /**
+     * @deprecated Deprecated and unsupported. Always NO.
+     */
+    @Deprecated
+    @Property(selector = "userHasLocation")
+    public native boolean isUserHasLocation();
+    /**
+     * @deprecated Deprecated and unsupported. Always 0.
+     */
+    @Deprecated
+    @Property(selector = "userLatitude")
+    public native @MachineSizedFloat double getUserLatitude();
+    /**
+     * @deprecated Deprecated and unsupported. Always 0.
+     */
+    @Deprecated
+    @Property(selector = "userLongitude")
+    public native @MachineSizedFloat double getUserLongitude();
+    /**
+     * @deprecated Deprecated and unsupported. Always 0.
+     */
+    @Deprecated
+    @Property(selector = "userLocationAccuracyInMeters")
+    public native @MachineSizedFloat double getUserLocationAccuracyInMeters();
+    /**
+     * @deprecated Deprecated and unsupported. Always nil.
+     */
+    @Deprecated
+    @Property(selector = "userLocationDescription")
+    public native String getUserLocationDescription();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

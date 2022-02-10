@@ -72,6 +72,9 @@ import org.robovm.apple.coreanimation.*;
     public void didRewardUser(GADMRewardBasedVideoAdNetworkAdapter rewardBasedVideoAd, GADAdReward reward) {}
     @NotImplemented("adapter:didFailToLoadRewardBasedVideoAdwithError:")
     public void didFailToLoadRewardBasedVideoAd(GADMRewardBasedVideoAdNetworkAdapter rewardBasedVideoAdAdapter, NSError error) {}
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @NotImplemented("adapterWillLeaveApplication:")
     public void willLeaveApplication(GADMRewardBasedVideoAdNetworkAdapter rewardBasedVideoAdAdapter) {}

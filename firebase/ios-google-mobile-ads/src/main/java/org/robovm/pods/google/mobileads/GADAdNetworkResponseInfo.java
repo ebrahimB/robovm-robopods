@@ -61,12 +61,6 @@ import org.robovm.apple.coreanimation.*;
     public native double getLatency();
     @Property(selector = "dictionaryRepresentation")
     public native NSDictionary<NSString, ?> getDictionaryRepresentation();
-    /**
-     * @deprecated Use adUnitMapping instead
-     */
-    @Deprecated
-    @Property(selector = "credentials")
-    public native NSDictionary<NSString, ?> getCredentials();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

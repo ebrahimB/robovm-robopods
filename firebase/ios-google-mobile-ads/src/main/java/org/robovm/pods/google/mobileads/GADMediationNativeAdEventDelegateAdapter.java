@@ -62,6 +62,9 @@ import org.robovm.apple.coreanimation.*;
     public void didMuteVideo() {}
     @NotImplemented("didUnmuteVideo")
     public void didUnmuteVideo() {}
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @NotImplemented("willBackgroundApplication")
     public void willBackgroundApplication() {}

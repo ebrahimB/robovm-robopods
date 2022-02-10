@@ -42,10 +42,11 @@ import org.robovm.apple.foundation.*;
     /*<bind>*/
     /*</bind>*/
     /*<constants>*/
+    public static final String AdImpression = "ad_impression";
     public static final String AddPaymentInfo = "add_payment_info";
+    public static final String AddShippingInfo = "add_shipping_info";
     public static final String AddToCart = "add_to_cart";
     public static final String AddToWishlist = "add_to_wishlist";
-    public static final String AdImpression = "ad_impression";
     public static final String AppOpen = "app_open";
     public static final String BeginCheckout = "begin_checkout";
     public static final String CampaignDetails = "campaign_details";
@@ -60,11 +61,15 @@ import org.robovm.apple.foundation.*;
     public static final String Login = "login";
     public static final String PostScore = "post_score";
     public static final String PresentOffer = "present_offer";
+    public static final String Purchase = "purchase";
     public static final String PurchaseRefund = "purchase_refund";
+    public static final String Refund = "refund";
     public static final String RemoveFromCart = "remove_from_cart";
     public static final String ScreenView = "screen_view";
     public static final String Search = "search";
     public static final String SelectContent = "select_content";
+    public static final String SelectItem = "select_item";
+    public static final String SelectPromotion = "select_promotion";
     public static final String SetCheckoutOption = "set_checkout_option";
     public static final String Share = "share";
     public static final String SignUp = "sign_up";
@@ -72,16 +77,11 @@ import org.robovm.apple.foundation.*;
     public static final String TutorialBegin = "tutorial_begin";
     public static final String TutorialComplete = "tutorial_complete";
     public static final String UnlockAchievement = "unlock_achievement";
+    public static final String ViewCart = "view_cart";
     public static final String ViewItem = "view_item";
     public static final String ViewItemList = "view_item_list";
-    public static final String ViewSearchResults = "view_search_results";
-    public static final String AddShippingInfo = "add_shipping_info";
-    public static final String Purchase = "purchase";
-    public static final String Refund = "refund";
-    public static final String SelectItem = "select_item";
-    public static final String SelectPromotion = "select_promotion";
-    public static final String ViewCart = "view_cart";
     public static final String ViewPromotion = "view_promotion";
+    public static final String ViewSearchResults = "view_search_results";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

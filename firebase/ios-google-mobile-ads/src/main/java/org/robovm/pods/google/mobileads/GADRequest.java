@@ -89,8 +89,6 @@ import org.robovm.apple.coreanimation.*;
     public native GADAdNetworkExtras adNetworkExtrasFor(Class<?> aClass);
     @Method(selector = "removeAdNetworkExtrasFor:")
     public native void removeAdNetworkExtrasFor(Class<?> aClass);
-    @Method(selector = "setLocationWithLatitude:longitude:accuracy:")
-    public native void setLocation(@MachineSizedFloat double latitude, @MachineSizedFloat double longitude, @MachineSizedFloat double accuracyInMeters);
     @Method(selector = "request")
     public static native GADRequest request();
     /*</methods>*/

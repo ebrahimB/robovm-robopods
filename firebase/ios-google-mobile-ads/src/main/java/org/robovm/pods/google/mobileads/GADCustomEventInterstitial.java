@@ -35,9 +35,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated Use GADMediationInterstitialAd and GADMediationAdapter instead.
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/GADCustomEventInterstitial/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 

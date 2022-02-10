@@ -71,6 +71,9 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @NotImplemented("customEventBanner:clickDidOccurInAd:")
     public void clickDidOccurInAd(GADCustomEventBanner customEvent, UIView view) {}
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @NotImplemented("customEventBannerWillLeaveApplication:")
     public void willLeaveApplication(GADCustomEventBanner customEvent) {}

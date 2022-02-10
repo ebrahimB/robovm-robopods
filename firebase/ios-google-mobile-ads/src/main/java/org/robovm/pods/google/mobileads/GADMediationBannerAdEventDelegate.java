@@ -50,6 +50,9 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @Method(selector = "willBackgroundApplication")
     void willBackgroundApplication();

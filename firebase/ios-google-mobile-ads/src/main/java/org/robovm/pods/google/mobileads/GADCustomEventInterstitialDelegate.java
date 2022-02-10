@@ -35,9 +35,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated Use GADMediationInterstitialAdEventDelegate instead.
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/GADCustomEventInterstitialDelegate/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
@@ -68,6 +70,9 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @Method(selector = "customEventInterstitial:didReceiveAd:")
     void didReceiveAd(GADCustomEventInterstitial customEvent, NSObject ad);
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @Method(selector = "customEventInterstitialWillLeaveApplication:")
     void willLeaveApplication(GADCustomEventInterstitial customEvent);

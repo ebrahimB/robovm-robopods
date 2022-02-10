@@ -35,9 +35,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated Use GADMediationBannerAdEventDelegate instead.
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/GADCustomEventBannerDelegate/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
@@ -69,6 +71,9 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @Method(selector = "customEventBanner:clickDidOccurInAd:")
     void clickDidOccurInAd(GADCustomEventBanner customEvent, UIView view);
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @Method(selector = "customEventBannerWillLeaveApplication:")
     void willLeaveApplication(GADCustomEventBanner customEvent);

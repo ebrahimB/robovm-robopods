@@ -85,12 +85,6 @@ import org.robovm.apple.coreanimation.*;
     public native void disableMediationInitialization();
     @Method(selector = "presentAdInspectorFromViewController:completionHandler:")
     public native void presentAdInspector(UIViewController viewController, @Block VoidBlock1<NSError> completionHandler);
-    @Deprecated
-    @Method(selector = "disableAutomatedInAppPurchaseReporting")
-    public native void disableAutomatedInAppPurchaseReporting();
-    @Deprecated
-    @Method(selector = "enableAutomatedInAppPurchaseReporting")
-    public native void enableAutomatedInAppPurchaseReporting();
     @Method(selector = "sharedInstance")
     public static native GADMobileAds sharedInstance();
     /*</methods>*/

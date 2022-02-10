@@ -96,6 +96,9 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @Method(selector = "adapter:didFailInterstitial:")
     void didFailInterstitial(GADMAdNetworkAdapter adapter, NSError error);
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @Method(selector = "adapterWillLeaveApplication:")
     void willLeaveApplication(GADMAdNetworkAdapter adapter);

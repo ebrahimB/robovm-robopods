@@ -60,6 +60,9 @@ import org.robovm.apple.coreanimation.*;
     void didMuteVideo();
     @Method(selector = "didUnmuteVideo")
     void didUnmuteVideo();
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @Method(selector = "willBackgroundApplication")
     void willBackgroundApplication();

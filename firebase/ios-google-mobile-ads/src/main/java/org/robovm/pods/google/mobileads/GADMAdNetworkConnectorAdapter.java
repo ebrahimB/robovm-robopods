@@ -98,6 +98,9 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @NotImplemented("adapter:didFailInterstitial:")
     public void didFailInterstitial(GADMAdNetworkAdapter adapter, NSError error) {}
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @NotImplemented("adapterWillLeaveApplication:")
     public void willLeaveApplication(GADMAdNetworkAdapter adapter) {}

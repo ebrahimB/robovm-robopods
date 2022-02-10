@@ -70,6 +70,9 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @NotImplemented("customEventInterstitial:didReceiveAd:")
     public void didReceiveAd(GADCustomEventInterstitial customEvent, NSObject ad) {}
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @NotImplemented("customEventInterstitialWillLeaveApplication:")
     public void willLeaveApplication(GADCustomEventInterstitial customEvent) {}

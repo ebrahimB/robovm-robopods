@@ -64,24 +64,50 @@ import org.robovm.apple.coreanimation.*;
     GADMaxAdContentRating maxAdContentRating();
     @Method(selector = "underAgeOfConsent")
     NSNumber underAgeOfConsent();
-    @Method(selector = "userHasLocation")
-    boolean userHasLocation();
-    @Method(selector = "userLatitude")
-    @MachineSizedFloat double userLatitude();
-    @Method(selector = "userLongitude")
-    @MachineSizedFloat double userLongitude();
-    @Method(selector = "userLocationAccuracyInMeters")
-    @MachineSizedFloat double userLocationAccuracyInMeters();
-    @Method(selector = "userLocationDescription")
-    String userLocationDescription();
     @Method(selector = "userKeywords")
     NSArray<?> userKeywords();
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @Method(selector = "userGender")
     GADGender userGender();
+    /**
+     * @deprecated Deprecated. No replacement.
+     */
     @Deprecated
     @Method(selector = "userBirthday")
     NSDate userBirthday();
+    /**
+     * @deprecated Deprecated and unsupported. Always returns NO.
+     */
+    @Deprecated
+    @Method(selector = "userHasLocation")
+    boolean userHasLocation();
+    /**
+     * @deprecated Deprecated and unsupported. Always returns 0.
+     */
+    @Deprecated
+    @Method(selector = "userLatitude")
+    @MachineSizedFloat double userLatitude();
+    /**
+     * @deprecated Deprecated and unsupported. Always returns 0.
+     */
+    @Deprecated
+    @Method(selector = "userLongitude")
+    @MachineSizedFloat double userLongitude();
+    /**
+     * @deprecated Deprecated and unsupported. Always returns 0.
+     */
+    @Deprecated
+    @Method(selector = "userLocationAccuracyInMeters")
+    @MachineSizedFloat double userLocationAccuracyInMeters();
+    /**
+     * @deprecated Deprecated and unsupported. Always returns nil.
+     */
+    @Deprecated
+    @Method(selector = "userLocationDescription")
+    String userLocationDescription();
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

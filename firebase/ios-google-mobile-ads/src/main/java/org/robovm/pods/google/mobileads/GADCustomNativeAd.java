@@ -73,12 +73,6 @@ import org.robovm.apple.coreanimation.*;
     public native void setRootViewController(UIViewController v);
     @Property(selector = "responseInfo")
     public native GADResponseInfo getResponseInfo();
-    /**
-     * @deprecated Use the mediaContent property to set the media content on your own GADMediaView.
-     */
-    @Deprecated
-    @Property(selector = "mediaView")
-    public native GADMediaView getMediaView();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
