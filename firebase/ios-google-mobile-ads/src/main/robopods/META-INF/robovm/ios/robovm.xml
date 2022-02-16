@@ -7,10 +7,4 @@
         <framework>PromisesObjC</framework>
         <framework>JavaScriptCore</framework>
     </frameworks>
-    <exportedSymbols>
-        <!-- workaround: these will keep symbols from being stripped -->
-        <symbol>*GAD*</symbol>
-        <symbol>*DFP*</symbol>
-    </exportedSymbols>
-
 </config>
