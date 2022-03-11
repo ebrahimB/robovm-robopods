@@ -24,7 +24,6 @@
         <module>ios-analytics</module>
         <module>ios-database</module>
         <module>ios-google-mobile-ads</module>
-        <module>ios-google-mobile-ads-adapters</module>
         <module>ios-crashlytics</module>
         <module>ios-auth</module>
         <module>ios-dylinks</module>
@@ -35,5 +34,6 @@
         <module>ios-firestore</module>
         <module>ios-storage</module>
         <module>ios-google-mobile-ads-mediation-testsuite</module>
+        <module>ios-google-mobile-ads-adapters</module>
     </modules>
 </project>
