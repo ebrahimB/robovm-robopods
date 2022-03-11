@@ -36,7 +36,7 @@ This is the list of currently available AltPods. Click them to get more informat
 
 ## Version of AltPods to framework version mapping
 
-v1.20.0 - in development
+v1.21.0 - in development
 | Name                            | 1.20.0 |
 |---------------------------------|--------|
 | [AdaptySDK](adapty/)            | 1.16.9 |
@@ -54,7 +54,7 @@ v1.20.0 - in development
 | [Kochava](kochava/)             | 5.1.1  |
 | [Lottie](lottie/)               | 3.3.0  |
 | [OneSignal](onesignal/)         | 3.10.1 |
-| [Pollfish](pollfish/)           | 6.2.3  |
+| [Pollfish](pollfish/)           | 6.2.4  |
 | [SAMKeychain](samkeychain/)     | 1.5.3  |
 | [Singular](singular/)           | 11.0.3 |
 | [UnityAds](unityads/)           | 4.0.1  |

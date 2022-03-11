@@ -150,7 +150,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             yaml = "inmobi-sdk.yaml",
             version = { artifactLocation.infoPlist.extractVersion() },
             instruction = """
-                1. Download iOS sdk (for manual integration) from https://support.inmobi.com/monetize/download-sdk
+                1. Download iOS sdk (for manual integration) from https://www.inmobi.com/sdk
                 2. Unpack
                 3. expected location ${downloadFolder.extend("InMobi-iOS-SDK/")}
             """.trimIndent()
