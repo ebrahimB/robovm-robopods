@@ -53,7 +53,7 @@ v1.20.0 - in development
 | [InMobi](inmobi/)               | 10.0.2 |
 | [Kochava](kochava/)             | 5.1.0  |
 | [Lottie](lottie/)               | 3.3.0  |
-| [OneSignal](onesignal/)         | 3.10.0 |
+| [OneSignal](onesignal/)         | 3.10.1 |
 | [Pollfish](pollfish/)           | 6.2.3  |
 | [SAMKeychain](samkeychain/)     | 1.5.3  |
 | [Singular](singular/)           | 11.0.3 |
