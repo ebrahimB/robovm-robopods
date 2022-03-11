@@ -47,8 +47,8 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/
     /*</bind>*/
     /*<constants>*/
-    public static final String Version = "12.3.2";
-    public static final String DefaultGraphApiVersion = "v12.0";
+    public static final String Version = "13.0.0";
+    public static final String DefaultGraphApiVersion = "v13.0";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

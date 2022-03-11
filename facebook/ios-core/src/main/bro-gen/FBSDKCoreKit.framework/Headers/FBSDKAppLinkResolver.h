@@ -24,7 +24,6 @@ typedef void (^ FBSDKAppLinksBlock)(NSDictionary<NSURL *, FBSDKAppLink *> *appLi
 NS_SWIFT_NAME(AppLinksBlock);
 
 /**
-
  Provides an implementation of the FBSDKAppLinkResolving protocol that uses the Facebook App Link
  Index API to resolve App Links given a URL. It also provides an additional helper method that can resolve
  multiple App Links in a single call.
@@ -47,9 +46,7 @@ NS_SWIFT_NAME(AppLinkResolver)
 - (void)appLinksFromURLs:(NSArray<NSURL *> *)urls handler:(FBSDKAppLinksBlock)handler
     NS_EXTENSION_UNAVAILABLE_IOS("Not available in app extension");
 
-/**
-  Allocates and initializes a new instance of FBSDKAppLinkResolver.
- */
+/// Allocates and initializes a new instance of FBSDKAppLinkResolver.
 + (instancetype)resolver
   NS_SWIFT_NAME(init());
 

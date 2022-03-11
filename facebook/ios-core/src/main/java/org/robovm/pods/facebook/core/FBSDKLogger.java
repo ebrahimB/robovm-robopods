@@ -47,7 +47,7 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKLogger.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKLogger() {}
+    protected FBSDKLogger() {}
     protected FBSDKLogger(Handle h, long handle) { super(h, handle); }
     protected FBSDKLogger(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/

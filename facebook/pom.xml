@@ -23,6 +23,7 @@
         <module>ios-core</module>
         <module>ios-login</module>
         <module>ios-share</module>
+        <module>ios-aem</module>
         <module>ios-audience</module>
     </modules>
 </project>

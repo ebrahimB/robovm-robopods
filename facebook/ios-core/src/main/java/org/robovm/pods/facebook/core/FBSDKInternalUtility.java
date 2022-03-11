@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKInternalUtility/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKAppAvailabilityChecker, FBSDKAppURLSchemeProviding, FBSDKInternalUtilityProtocol, FBSDKURLHosting/*</implements>*/ {
+    /*<implements>*/implements FBSDKAppAvailabilityChecker, FBSDKAppURLSchemeProviding, FBSDKInternalUtilityProtocol, FBSDKURLHosting, _FBSDKWindowFinding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKInternalUtilityPtr extends Ptr<FBSDKInternalUtility, FBSDKInternalUtilityPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKInternalUtility.class); }/*</bind>*/
@@ -67,37 +67,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @deprecated `FBSDK_CANOPENURL_FACEBOOK` is deprecated and will be removed in the next major release; please use `URLScheme.facebookAPI` instead
-     */
-    @Deprecated
-    @GlobalValue(symbol="FBSDK_CANOPENURL_FACEBOOK", optional=true)
-    public static native String canOpenFACEBOOK();
-    /**
-     * @deprecated `FBSDK_CANOPENURL_FBAPI` is deprecated and will be removed in the next major release; please use `URLScheme.facebookAPI` instead
-     */
-    @Deprecated
-    @GlobalValue(symbol="FBSDK_CANOPENURL_FBAPI", optional=true)
-    public static native String canOpenFBAPI();
-    /**
-     * @deprecated `FBSDK_CANOPENURL_MESSENGER` is deprecated and will be removed in the next major release; please use `URLScheme.messengerApp` instead
-     */
-    @Deprecated
-    @GlobalValue(symbol="FBSDK_CANOPENURL_MESSENGER", optional=true)
-    public static native String canOpenMESSENGER();
-    /**
-     * @deprecated `FBSDK_CANOPENURL_MSQRD_PLAYER` is deprecated and will be removed in the next major release
-     */
-    @Deprecated
-    @GlobalValue(symbol="FBSDK_CANOPENURL_MSQRD_PLAYER", optional=true)
-    public static native String canOpenMSQRD_PLAYER();
-    /**
-     * @deprecated `FBSDK_CANOPENURL_SHARE_EXTENSION` is deprecated and will be removed in the next major release; please use `URLScheme.facebookAPI`
-     */
-    @Deprecated
-    @GlobalValue(symbol="FBSDK_CANOPENURL_SHARE_EXTENSION", optional=true)
-    public static native String canOpenSHARE_EXTENSION();
-    
     @Method(selector = "isBrowserURL:")
     public native boolean isBrowserURL(NSURL URL);
     @Method(selector = "object:isEqualToObject:")

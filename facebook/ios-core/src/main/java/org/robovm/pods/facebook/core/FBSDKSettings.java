@@ -114,18 +114,6 @@ import org.robovm.apple.coreanimation.*;
     public native NSSet<NSString> getLoggingBehaviors();
     @Property(selector = "setLoggingBehaviors:")
     public native void setLoggingBehaviors(NSSet<NSString> v);
-    /**
-     * @deprecated `Settings.graphAPIVersion` is deprecated and will be removed in the next major release, please use the `Settings.shared.graphAPIVersion` property instead
-     */
-    @Deprecated
-    @Property(selector = "graphAPIVersion")
-    public static native String getFbSdkGetGraphAPIVersion();
-    /**
-     * @deprecated `Settings.graphAPIVersion` is deprecated and will be removed in the next major release, please use the `Settings.shared.graphAPIVersion` property instead
-     */
-    @Deprecated
-    @Property(selector = "setGraphAPIVersion:")
-    public static native void setFbSdkGetGraphAPIVersion(String v);
     @Property(selector = "graphAPIVersion")
     public native String getGraphAPIVersion();
     @Property(selector = "setGraphAPIVersion:")

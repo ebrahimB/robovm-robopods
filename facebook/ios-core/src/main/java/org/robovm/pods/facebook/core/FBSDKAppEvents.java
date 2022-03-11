@@ -133,11 +133,5 @@ import org.robovm.apple.coreanimation.*;
     public native void logInternalEvent(NSString eventName, NSDictionary<NSString, ?> parameters, boolean isImplicitlyLogged);
     @Method(selector = "logInternalEvent:parameters:isImplicitlyLogged:accessToken:")
     public native void logInternalEvent(NSString eventName, NSDictionary<NSString, ?> parameters, boolean isImplicitlyLogged, FBSDKAccessToken accessToken);
-    /**
-     * @deprecated `AppEvents.clearUserID` is deprecated and will be removed in the next major release, please set `AppEvents.shared.userID` to `nil` instead
-     */
-    @Deprecated
-    @Method(selector = "clearUserID")
-    public static native void clearUserID();
     /*</methods>*/
 }

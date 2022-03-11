@@ -97,6 +97,10 @@ import org.robovm.apple.coreanimation.*;
     public native FBSDKLoginAuthType getAuthType();
     @Property(selector = "setAuthType:")
     public native void setAuthType(FBSDKLoginAuthType v);
+    @Property(selector = "codeVerifier")
+    public native FBSDKCodeVerifier getCodeVerifier();
+    @Property(selector = "setCodeVerifier:")
+    public native void setCodeVerifier(FBSDKCodeVerifier v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();

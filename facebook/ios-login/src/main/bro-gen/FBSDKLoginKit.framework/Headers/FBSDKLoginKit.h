@@ -17,6 +17,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #if !TARGET_OS_TV
+ #import <FBSDKLoginKit/FBSDKCodeVerifier.h>
  #import <FBSDKLoginKit/FBSDKLoginButton.h>
  #import <FBSDKLoginKit/FBSDKLoginButtonDelegate.h>
  #import <FBSDKLoginKit/FBSDKLoginConfiguration.h>
@@ -24,6 +25,4 @@
  #import <FBSDKLoginKit/FBSDKLoginManagerLoginResult.h>
  #import <FBSDKLoginKit/FBSDKLoginTooltipView.h>
  #import <FBSDKLoginKit/FBSDKLoginTooltipViewDelegate.h>
- #import <FBSDKLoginKit/FBSDKReferralManager.h>
- #import <FBSDKLoginKit/FBSDKReferralManagerResult.h>
 #endif

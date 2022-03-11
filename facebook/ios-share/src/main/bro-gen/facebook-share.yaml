@@ -150,11 +150,6 @@ protocols:
             '-validateWithOptions:error:':
                 name: validate
 functions:
-    # Make sure we don't miss any functions if new ones are introduced in a later version
-    (.*):
-        class: __FixMe
-        name: 'Function_#{g[0]}'
-
     NSStringFromFBSDKAppGroupPrivacy:
         class: FBSDKAppGroupPrivacy
         static: true
@@ -173,6 +168,11 @@ functions:
         visibility: protected
         return_marshaler: NSString.AsStringMarshaler
         name: toString
+
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
 
 values:
     FBSDKShareErrorDomain:

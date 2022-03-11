@@ -58,15 +58,15 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setShouldDeferVisibility:")
     public native void setShouldDeferVisibility(boolean v);
     @Property(selector = "windowFinder")
-    public native FBSDKWindowFinding getWindowFinder();
+    public native _FBSDKWindowFinding getWindowFinder();
     @Property(selector = "setWindowFinder:")
-    public native void setWindowFinder(FBSDKWindowFinding v);
+    public native void setWindowFinder(_FBSDKWindowFinding v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "dialogWithName:delegate:")
     protected static native @Pointer long create(String name, FBSDKWebDialogDelegate delegate);
     @Method(selector = "createAndShowWithName:parameters:frame:delegate:windowFinder:")
-    public static native FBSDKWebDialog createAndShow(String name, NSDictionary<NSString, ?> parameters, @ByVal CGRect frame, FBSDKWebDialogDelegate delegate, FBSDKWindowFinding windowFinder);
+    public static native FBSDKWebDialog createAndShow(String name, NSDictionary<NSString, ?> parameters, @ByVal CGRect frame, FBSDKWebDialogDelegate delegate, _FBSDKWindowFinding windowFinder);
     /*</methods>*/
 }

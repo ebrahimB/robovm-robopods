@@ -37,35 +37,21 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class) @Library(Library.INTERNAL)/*</annotations>*/
-public enum /*<name>*/FBSDKShareError/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Reserved(200L),
-    OpenGraph(201L),
-    DialogNotAvailable(202L),
-    Unknown(203L);
-    /*</values>*/
+/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKShareError/*</name>*/ 
+    extends /*<extends>*/CocoaUtility/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
+    /*<ptr>*/
+    /*</ptr>*/
     /*<bind>*/static { Bro.bind(FBSDKShareError.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*//*</constructors>*/
+    /*<properties>*//*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
     @GlobalValue(symbol="FBSDKShareErrorDomain", optional=true)
     public static native String getClassDomain();
     /*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/FBSDKShareError/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/FBSDKShareError/*</name>*/ valueOf(long n) {
-        for (/*<name>*/FBSDKShareError/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/FBSDKShareError/*</name>*/.class.getName());
-    }
 }

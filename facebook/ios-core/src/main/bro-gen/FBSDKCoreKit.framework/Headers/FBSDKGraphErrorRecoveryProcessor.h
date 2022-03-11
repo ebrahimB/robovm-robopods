@@ -17,14 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @class FBSDKGraphErrorRecoveryProcessor;
 @protocol FBSDKGraphRequest;
 
-/**
-  Defines a delegate for `FBSDKGraphErrorRecoveryProcessor`.
- */
+/// Defines a delegate for `FBSDKGraphErrorRecoveryProcessor`.
 NS_SWIFT_NAME(GraphErrorRecoveryProcessorDelegate)
 @protocol FBSDKGraphErrorRecoveryProcessorDelegate <NSObject>
 
 /**
-  Indicates the error recovery has been attempted.
+ Indicates the error recovery has been attempted.
  @param processor the processor instance.
  @param didRecover YES if the recovery was successful.
  @param error the error that that was attempted to be recovered from.
@@ -35,7 +33,7 @@ NS_SWIFT_NAME(GraphErrorRecoveryProcessorDelegate)
 
 @optional
 /**
-  Indicates the processor is about to process the error.
+ Indicates the processor is about to process the error.
  @param processor the processor instance.
  @param error the error is about to be processed.
 
@@ -53,7 +51,7 @@ NS_ASSUME_NONNULL_END
 NS_ASSUME_NONNULL_BEGIN
 
 /**
-  Defines a type that can process Facebook NSErrors with best practices.
+ Defines a type that can process Facebook NSErrors with best practices.
 
  Facebook NSErrors can contain FBSDKErrorRecoveryAttempting instances to recover from errors, or
  localized messages to present to the user. This class will process the instances as follows:
@@ -79,13 +77,11 @@ NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(GraphErrorRecoveryProcessor)
 @interface FBSDKGraphErrorRecoveryProcessor : NSObject
 
-/**
- Initializes a GraphErrorRecoveryProcessor with an access token string.
- */
+/// Initializes a GraphErrorRecoveryProcessor with an access token string.
 - (instancetype)initWithAccessTokenString:(NSString *)accessTokenString;
 
 /**
-  Attempts to process the error, return YES if the error can be processed.
+ Attempts to process the error, return YES if the error can be processed.
  @param error the error to process.
  @param request the related request that may be reissued.
  @param delegate the delegate that will be retained until recovery is complete.

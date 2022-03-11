@@ -84,6 +84,12 @@ classes:
                 name: initUsingMessengerPageId
             '-initWithPermissions:tracking:messengerPageId:authType:':
                 name: init
+            '-initWithPermissions:tracking:nonce:messengerPageId:authType:codeVerifier:':
+                name: init
+    FBSDKCodeVerifier:
+        methods:
+            '-initWithString:':
+                name: init
 protocols:
     FBSDKDeviceLoginManagerDelegate:
         methods:

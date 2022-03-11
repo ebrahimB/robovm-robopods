@@ -64,6 +64,8 @@ import org.robovm.apple.coreanimation.*;
     }
     @Method(selector = "initWithPermissions:tracking:messengerPageId:authType:")
     public FBSDKLoginConfiguration(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String messengerPageId, FBSDKLoginAuthType authType) { super((SkipInit) null); initObject(init(permissions, tracking, messengerPageId, authType)); }
+    @Method(selector = "initWithPermissions:tracking:nonce:messengerPageId:authType:codeVerifier:")
+    public FBSDKLoginConfiguration(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String nonce, String messengerPageId, FBSDKLoginAuthType authType, FBSDKCodeVerifier codeVerifier) { super((SkipInit) null); initObject(init(permissions, tracking, nonce, messengerPageId, authType, codeVerifier)); }
     @Method(selector = "initWithPermissions:tracking:")
     public FBSDKLoginConfiguration(NSArray<NSString> permissions, FBSDKLoginTracking tracking) { super((SkipInit) null); initObject(init(permissions, tracking)); }
     @Method(selector = "initWithTracking:")
@@ -80,6 +82,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getMessengerPageId();
     @Property(selector = "authType")
     public native FBSDKLoginAuthType getAuthType();
+    @Property(selector = "codeVerifier")
+    public native FBSDKCodeVerifier getCodeVerifier();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -93,6 +97,8 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long initUsingMessengerPageId(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String messengerPageId);
     @Method(selector = "initWithPermissions:tracking:messengerPageId:authType:")
     protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String messengerPageId, FBSDKLoginAuthType authType);
+    @Method(selector = "initWithPermissions:tracking:nonce:messengerPageId:authType:codeVerifier:")
+    protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking, String nonce, String messengerPageId, FBSDKLoginAuthType authType, FBSDKCodeVerifier codeVerifier);
     @Method(selector = "initWithPermissions:tracking:")
     protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking);
     @Method(selector = "initWithTracking:")

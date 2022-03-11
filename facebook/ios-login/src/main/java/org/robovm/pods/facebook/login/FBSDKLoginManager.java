@@ -63,12 +63,6 @@ import org.robovm.apple.coreanimation.*;
     public native void logIn(NSArray<NSString> permissions, UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
     @Method(selector = "logInFromViewController:configuration:completion:")
     public native void logIn(UIViewController viewController, FBSDKLoginConfiguration configuration, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> completion);
-    /**
-     * @deprecated `logInWithURL:handler:` is deprecated and will be removed in the next major release
-     */
-    @Deprecated
-    @Method(selector = "logInWithURL:handler:")
-    public native void logIn(NSURL url, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
     @Method(selector = "reauthorizeDataAccess:handler:")
     public native void reauthorizeDataAccess(UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
     @Method(selector = "logOut")

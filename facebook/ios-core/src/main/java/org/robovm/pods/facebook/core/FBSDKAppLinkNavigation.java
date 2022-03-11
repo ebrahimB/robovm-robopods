@@ -50,11 +50,6 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKAppLinkNavigation() {}
     protected FBSDKAppLinkNavigation(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLinkNavigation(SkipInit skipInit) { super(skipInit); }
-    /**
-     * @deprecated `init(appLink:extras:appLinkData:)` is deprecated and will be removed in the next major release, please use `init(appLink:extras:appLinkData:settings:)` instead
-     */
-    @Deprecated
-    public FBSDKAppLinkNavigation(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData) { super((Handle) null, create(appLink, extras, appLinkData)); retain(getHandle()); }
     public FBSDKAppLinkNavigation(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData, FBSDKSettingsProtocol settings) { super((Handle) null, create(appLink, extras, appLinkData, settings)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
@@ -75,12 +70,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "navigate:")
     public native FBSDKAppLinkNavigationType navigate(NSError.NSErrorPtr error);
-    /**
-     * @deprecated `init(appLink:extras:appLinkData:)` is deprecated and will be removed in the next major release, please use `init(appLink:extras:appLinkData:settings:)` instead
-     */
-    @Deprecated
-    @Method(selector = "navigationWithAppLink:extras:appLinkData:")
-    protected static native @Pointer long create(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData);
     @Method(selector = "navigationWithAppLink:extras:appLinkData:settings:")
     protected static native @Pointer long create(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData, FBSDKSettingsProtocol settings);
     @Method(selector = "callbackAppLinkDataForAppWithName:url:")

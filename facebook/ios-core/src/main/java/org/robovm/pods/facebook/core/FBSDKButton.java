@@ -82,7 +82,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "textSizeForText:font:constrainedSize:lineBreakMode:")
     public native @ByVal CGSize getTextSizeForText(String text, UIFont font, @ByVal CGSize constrainedSize, NSLineBreakMode lineBreakMode);
     @Method(selector = "logTapEventWithEventName:parameters:")
-    public native void logTapEvent(String eventName, NSDictionary<NSString, ?> parameters);
+    public native void logTapEvent(NSString eventName, NSDictionary<NSString, ?> parameters);
     /**
      * @since Available in iOS 13.0 and later.
      */

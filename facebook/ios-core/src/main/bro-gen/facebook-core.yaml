@@ -680,7 +680,8 @@ protocols:
                 name: requiredArgumentError
             '-unknownErrorWithMessage:userInfo:':
                 name: unknownError
-    FBSDKNetworkErrorChecking: { }
+    FBSDKNetworkErrorChecking: {}
+    _FBSDKWindowFinding: {}
 functions:
     fb_randomString:
         exclude: true

@@ -17,15 +17,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- The result of calling navigate on a FBSDKAppLinkNavigation
- */
+/// The result of calling navigate on a FBSDKAppLinkNavigation
 typedef NS_ENUM(NSInteger, FBSDKAppLinkNavigationType) {
-  /** Indicates that the navigation failed and no app was opened */
+  /// Indicates that the navigation failed and no app was opened
   FBSDKAppLinkNavigationTypeFailure,
-  /** Indicates that the navigation succeeded by opening the URL in the browser */
+  /// Indicates that the navigation succeeded by opening the URL in the browser
   FBSDKAppLinkNavigationTypeBrowser,
-  /** Indicates that the navigation succeeded by opening the URL in an app on the device */
+  /// Indicates that the navigation succeeded by opening the URL in an app on the device
   FBSDKAppLinkNavigationTypeApp,
 } NS_SWIFT_NAME(AppLinkNavigation.Type);
 
@@ -33,7 +31,6 @@ typedef NS_ENUM(NSInteger, FBSDKAppLinkNavigationType) {
  Describes the callback for appLinkFromURLInBackground.
  @param navType the FBSDKAppLink representing the deferred App Link
  @param error the error during the request, if any
-
  */
 typedef void (^ FBSDKAppLinkNavigationBlock)(FBSDKAppLinkNavigationType navType, NSError *_Nullable error)
 NS_SWIFT_NAME(AppLinkNavigationBlock);
@@ -72,7 +69,7 @@ NS_SWIFT_NAME(default);
  */
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> *appLinkData;
 
-/** The AppLink to navigate to */
+/// The AppLink to navigate to
 @property (nonatomic, readonly, strong) FBSDKAppLink *appLink;
 
 /**
@@ -81,15 +78,8 @@ NS_SWIFT_NAME(default);
  */
 @property (nonatomic, readonly) FBSDKAppLinkNavigationType navigationType;
 
-/** Creates an AppLinkNavigation with the given link, extras, and App Link data */
 // UNCRUSTIFY_FORMAT_OFF
-+ (instancetype)navigationWithAppLink:(FBSDKAppLink *)appLink
-                               extras:(NSDictionary<NSString *, id> *)extras
-                          appLinkData:(NSDictionary<NSString *, id> *)appLinkData
-NS_SWIFT_NAME(init(appLink:extras:appLinkData:))
-DEPRECATED_MSG_ATTRIBUTE("`init(appLink:extras:appLinkData:)` is deprecated and will be removed in the next major release, please use `init(appLink:extras:appLinkData:settings:)` instead");
-
-/** Creates an AppLinkNavigation with the given link, extras, and App Link data */
+/// Creates an AppLinkNavigation with the given link, extras, and App Link data
 + (instancetype)navigationWithAppLink:(FBSDKAppLink *)appLink
                                extras:(NSDictionary<NSString *, id> *)extras
                           appLinkData:(NSDictionary<NSString *, id> *)appLinkData
@@ -105,19 +95,19 @@ NS_SWIFT_NAME(init(appLink:extras:appLinkData:settings:));
 NS_SWIFT_NAME(callbackAppLinkData(forApp:url:));
 // UNCRUSTIFY_FORMAT_ON
 
-/** Performs the navigation */
+/// Performs the navigation
 - (FBSDKAppLinkNavigationType)navigate:(NSError **)error
   __attribute__((swift_error(nonnull_error)));
 
-/** Returns a FBSDKAppLink for the given URL */
+/// Returns a FBSDKAppLink for the given URL
 + (void)resolveAppLink:(NSURL *)destination handler:(FBSDKAppLinkBlock)handler;
 
-/** Returns a FBSDKAppLink for the given URL using the given App Link resolution strategy */
+/// Returns a FBSDKAppLink for the given URL using the given App Link resolution strategy
 + (void)resolveAppLink:(NSURL *)destination
               resolver:(id<FBSDKAppLinkResolving>)resolver
                handler:(FBSDKAppLinkBlock)handler;
 
-/** Navigates to a FBSDKAppLink and returns whether it opened in-app or in-browser */
+/// Navigates to a FBSDKAppLink and returns whether it opened in-app or in-browser
 + (FBSDKAppLinkNavigationType)navigateToAppLink:(FBSDKAppLink *)link error:(NSError **)error
   __attribute__((swift_error(nonnull_error)));
 
@@ -129,7 +119,7 @@ NS_SWIFT_NAME(callbackAppLinkData(forApp:url:));
  */
 + (FBSDKAppLinkNavigationType)navigationTypeForLink:(FBSDKAppLink *)link;
 
-/** Navigates to a URL (an asynchronous action) and returns a FBSDKNavigationType */
+/// Navigates to a URL (an asynchronous action) and returns a FBSDKNavigationType
 + (void)navigateToURL:(NSURL *)destination handler:(FBSDKAppLinkNavigationBlock)handler;
 
 /**

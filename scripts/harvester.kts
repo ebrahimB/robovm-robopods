@@ -1015,7 +1015,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
 
     val facebookVersion: String by lazy {
         extractVersionFromHeader("Facebook",
-            downloadFolder.extend("$facebookRoot/FBSDKCoreKit.xcframework/ios-arm64_armv7/FBSDKCoreKit.framework/Headers/FBSDKCoreKitVersions.h"),
+            downloadFolder.extend("$facebookRoot/FBSDKCoreKit.xcframework/ios-arm64/FBSDKCoreKit.framework/Headers/FBSDKCoreKitVersions.h"),
                 "FBSDK_VERSION_STRING")
     }
 
@@ -1034,7 +1034,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     val moduleReadmeFile = Path.of("facebook/README.md").toFile()
     fun action(
         framework: String, moduleFolder: String, yaml: String,
-        frameworkLocation: String = "${facebookRoot}/$framework.xcframework/ios-arm64_armv7/$framework.framework",
+        frameworkLocation: String = "${facebookRoot}/$framework.xcframework/ios-arm64/$framework.framework",
         readmeFileVersionUpdater: (String, String, String) -> Unit = readmeUpdater,
         instruction: String = facebookInstallInstruction,
         versionProvider: () -> String = { facebookVersion }
@@ -1057,6 +1057,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     registry["FBSDKCoreKit"] = { framework -> action(framework, "facebook/ios-core", "facebook-core.yaml") }
     registry["FBSDKLoginKit"] = { framework -> action(framework, "facebook/ios-login", "facebook-login.yaml") }
     registry["FBSDKShareKit"] = { framework -> action(framework, "facebook/ios-share", "facebook-share.yaml") }
+    registry["FBAEMKit"] = { framework -> action(framework, "facebook/ios-aem", "facebook-aemkit.yaml") }
     registry["FBAudienceNetwork"] = { framework ->
         action(framework, "facebook/ios-audience", "facebook-audience.yaml",
             frameworkLocation = "FBAudienceNetwork/Dynamic/FBAudienceNetwork.xcframework/ios-arm64_armv7/FBAudienceNetwork.framework",

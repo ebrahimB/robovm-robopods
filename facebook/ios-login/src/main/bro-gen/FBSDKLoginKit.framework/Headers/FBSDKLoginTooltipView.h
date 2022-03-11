@@ -29,12 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
  By default, the `FBSDKLoginTooltipView` is not added to the superview until it is
  determined the app has migrated to the new login experience. You can override this
  (e.g., to test the UI layout) by implementing the delegate or setting `forceDisplay` to YES.
-
  */
 NS_SWIFT_NAME(FBLoginTooltipView)
 @interface FBSDKLoginTooltipView : FBSDKTooltipView
 
-/**  the delegate */
+/// the delegate
 @property (nonatomic, weak) id<FBSDKLoginTooltipViewDelegate> delegate;
 
 /**  if set to YES, the view will always be displayed and the delegate's

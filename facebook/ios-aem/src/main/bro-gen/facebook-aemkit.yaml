@@ -1,0 +1,69 @@
+package: org.robovm.pods.facebook.aem
+framework: FBAEMKit
+include: [foundation]
+clang_args: ['-x', 'objective-c', "-DBUCK"]
+headers: 
+    - FBAEMKit.h
+
+enums:
+
+typed_enums:
+
+categories:
+
+classes:
+    FBAEMReporter:
+        methods:
+            '+configureWithNetworker:appID:':
+                name: configure
+            '+configureWithNetworker:appID:reporter:':
+                name: configure
+            '+recordAndUpdateEvent:currency:value:parameters:':
+                name: recordAndUpdateEvent
+protocols:
+    FBAEMNetworking:
+        methods:
+            '-startGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:completion:':
+                name: startGraphRequest
+    FBSKAdNetworkReporting: {}
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+    NSStringFromFBSDKAppGroupPrivacy:
+        class: FBSDKAppGroupPrivacy
+        static: true
+        visibility: protected
+        return_marshaler: NSString.AsStringMarshaler
+        name: toString
+    NSStringFromFBSDKLikeObjectType:
+        class: FBSDKLikeObjectType
+        static: true
+        visibility: protected
+        return_marshaler: NSString.AsStringMarshaler
+        name: toString
+    NSStringFromFBSDKShareDialogMode:
+        class: FBSDKShareDialogMode
+        static: true
+        visibility: protected
+        return_marshaler: NSString.AsStringMarshaler
+        name: toString
+
+values:
+    FBSDKShareErrorDomain:
+        class: FBSDKShareError
+        name: getClassDomain
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'
