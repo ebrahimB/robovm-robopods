@@ -61,6 +61,14 @@ import org.robovm.apple.foundation.*;
     public native boolean isPrettyPrintBool();
     @Property(selector = "setPrettyPrintBool:")
     public native void setPrettyPrintBool(boolean v);
+    @Property(selector = "printLinesIndividuallyBool")
+    public native boolean isPrintLinesIndividuallyBool();
+    @Property(selector = "setPrintLinesIndividuallyBool:")
+    public native void setPrintLinesIndividuallyBool(boolean v);
+    @Property(selector = "printPrefixString")
+    public native String getPrintPrefixString();
+    @Property(selector = "setPrintPrefixString:")
+    public native void setPrintPrefixString(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

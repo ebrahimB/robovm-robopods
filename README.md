@@ -51,7 +51,7 @@ v1.20.0 - in development
 | [Fyber](fyber/)                 | 8.1.4  |
 | [HelpShift](helpshift/)         | 7.11.2 |
 | [InMobi](inmobi/)               | 10.0.2 |
-| [Kochava](kochava/)             | 5.1.0  |
+| [Kochava](kochava/)             | 5.1.1  |
 | [Lottie](lottie/)               | 3.3.0  |
 | [OneSignal](onesignal/)         | 3.10.1 |
 | [Pollfish](pollfish/)           | 6.2.3  |
