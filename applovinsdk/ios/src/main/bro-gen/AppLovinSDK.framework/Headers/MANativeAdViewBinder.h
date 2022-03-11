@@ -63,7 +63,7 @@ typedef void (^MANativeAdViewBinderBuilderBlock) (MANativeAdViewBinderBuilder *b
 @property (nonatomic, assign, readonly) NSInteger callToActionButtonTag;
 
 /**
- * Instantiates a @c MANativeAdViewBinder
+ * Instantiates a @c MANativeAdViewBinder from a builder.
  */
 - (instancetype)initWithBuilderBlock:(MANativeAdViewBinderBuilderBlock)builder;
 - (instancetype)init NS_UNAVAILABLE;

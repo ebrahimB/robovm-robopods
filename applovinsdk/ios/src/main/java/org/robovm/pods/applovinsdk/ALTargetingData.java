@@ -70,6 +70,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getPhoneNumber();
     @Property(selector = "setPhoneNumber:")
     public native void setPhoneNumber(String v);
+    @Property(selector = "zipCode")
+    public native String getZipCode();
+    @Property(selector = "setZipCode:")
+    public native void setZipCode(String v);
     @Property(selector = "keywords")
     public native NSArray<NSString> getKeywords();
     @Property(selector = "setKeywords:")

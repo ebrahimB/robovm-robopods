@@ -53,6 +53,8 @@ import org.robovm.apple.coreanimation.*;
     public NSDictionary<NSString, ?> getLocalExtraParameters() { return null; }
     @NotImplemented("serverParameters")
     public NSDictionary<NSString, ?> getServerParameters() { return null; }
+    @NotImplemented("customParameters")
+    public NSDictionary<NSString, ?> getCustomParameters() { return null; }
     @NotImplemented("hasUserConsent")
     public NSNumber getUserConsent() { return null; }
     @NotImplemented("isAgeRestrictedUser")
@@ -61,6 +63,8 @@ import org.robovm.apple.coreanimation.*;
     public NSNumber getDoNotSell() { return null; }
     @NotImplemented("isTesting")
     public boolean isTesting() { return false; }
+    @NotImplemented("presentingViewController")
+    public UIViewController getPresentingViewController() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

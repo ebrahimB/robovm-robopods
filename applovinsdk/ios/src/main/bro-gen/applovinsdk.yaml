@@ -211,6 +211,10 @@ classes:
                 name: setExtraParameter
             '-setLocalExtraParameterForKey:value:':
                 name: setLocalExtraParameter
+            '-showAdForPlacement:customData:':
+                name: showAdForPlacement
+            '-showAdForPlacement:customData:viewController:':
+                name: showAdForPlacement
     MAReward:
         methods:
             '+rewardWithAmount:label:':
@@ -226,6 +230,10 @@ classes:
                 name: getShared
             '-setLocalExtraParameterForKey:value:':
                 name: setLocalExtraParameter
+            '-showAdForPlacement:customData:':
+                name: showAdForPlacement
+            '-showAdForPlacement:customData:viewController:':
+                name: showAdForPlacement
     ALCCommunicator:
         methods:
             '-subscribe:forTopic:':
@@ -252,6 +260,10 @@ classes:
                 name: setExtraParameter
             '-setLocalExtraParameterForKey:value:':
                 name: setLocalExtraParameter
+            '-showAdForPlacement:customData:':
+                name: showAdForPlacement
+            '-showAdForPlacement:customData:viewController:':
+                name: showAdForPlacement
     ALUserSegment: {}
     ALConsentFlowSettings: { }
     MAMediatedNetworkInfo: { }
@@ -267,6 +279,8 @@ classes:
                 name: setExtraParameter
             '-setLocalExtraParameterForKey:value:':
                 name: setLocalExtraParameter
+            '-renderNativeAdView:withAd:':
+                name: renderNativeAdView
     MANetworkResponseInfo: {}
     ALAtomicBoolean:
         methods:

@@ -9,6 +9,7 @@
 #import "MAAdFormat.h"
 #import "MAMediatedNetworkInfo.h"
 #import "MAAdWaterfallInfo.h"
+#import "MANativeAd.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
  * The format of this ad.
  */
 @property (nonatomic, strong, readonly) MAAdFormat *format;
+
+/**
+ * The size of the AdView format ad, or @c CGSizeZero otherwise.
+ */
+@property (nonatomic, assign, readonly) CGSize size;
 
 /**
  * The ad unit ID for which this ad was loaded.
@@ -60,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
  * - "publisher_defined" - If the revenue is the price assigned to the line item by the publisher.
  * - "exact" - If the revenue is the resulting price of a real-time auction.
  * - "estimated" - If the revenue is the price obtained by auto-CPM.
- * - "undisclosed" - If we do not have permission from the ad network to share impression-level data.
+ * - "undefined" - If we do not have permission from the ad network to share impression-level data.
  */
 @property (nonatomic, copy, readonly) NSString *revenuePrecision;
 
@@ -73,6 +79,11 @@ NS_ASSUME_NONNULL_BEGIN
  * The underlying waterfall of ad responses.
  */
 @property (nonatomic, strong, readonly) MAAdWaterfallInfo *waterfall;
+
+/**
+ * For Native ads only. Get an instance of the @c MANativeAd containing the assets used to render the native ad view.
+ */
+@property (nonatomic, strong, readonly, nullable) MANativeAd *nativeAd;
 
 /**
  * Gets the ad value for a given key.

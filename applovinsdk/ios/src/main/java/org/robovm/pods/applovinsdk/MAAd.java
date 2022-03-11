@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "format")
     public native MAAdFormat getFormat();
+    @Property(selector = "size")
+    public native @ByVal CGSize getSize();
     @Property(selector = "adUnitIdentifier")
     public native String getAdUnitIdentifier();
     @Property(selector = "networkName")
@@ -68,6 +70,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getPlacement();
     @Property(selector = "waterfall")
     public native MAAdWaterfallInfo getWaterfall();
+    @Property(selector = "nativeAd")
+    public native MANativeAd getNativeAd();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -124,9 +124,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setLocalExtraParameterForKey:(NSString *)key value:(nullable id)value;
 
 /**
- * Set custom data to be set in the ILRD postbacks via the @c {CUSTOM_DATA}  macro.
+ * The custom data to tie the showing ad to, for ILRD and rewarded postbacks via the @c {CUSTOM_DATA}  macro. Maximum size is 8KB.
  */
-@property (nonatomic, copy, nullable) NSString *customPostbackData;
+@property (nonatomic, copy, nullable) NSString *customData;
 
 @end
 

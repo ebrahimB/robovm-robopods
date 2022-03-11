@@ -70,18 +70,46 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showAd;
 
 /**
- * Show the loaded rewarded ad for a given placement name that you have assigned.
+ * Show the loaded rewarded ad for a given placement to tie ad events to.
  * <ul>
  * <li>Use @code [MARewardedAd delegate] @endcode to assign a delegate that should be notified about display events.</li>
  * <li>Use @code [MARewardedAd ready] @endcode to check if an ad was successfully loaded.</li>
  * </ul>
  *
- * @param placement The placement to tie the showing ad’s events to.
+ * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/advanced-settings#ad-placements">MAX Integration Guide ⇒ iOS ⇒ Advanced Settings ⇒ Ad Placements</a>
- * @see <a href="https://dash.applovin.com/documentation/mediation/s2s-rewarded-callback-api#setting-an-ad-placement-name">MAX Integration Guide ⇒ MAX S2S Rewarded Callback API ⇒ Setting an Ad Placement Name</a>
+ * @param placement The placement to tie the showing ad’s events to.
  */
 - (void)showAdForPlacement:(nullable NSString *)placement;
+
+/**
+ * Show the loaded rewarded ad for a given placement and custom data to tie ad events to.
+ * <ul>
+ * <li>Use @code [MARewardedAd delegate] @endcode to assign a delegate that should be notified about display events.</li>
+ * <li>Use @code [MARewardedAd ready] @endcode to check if an ad was successfully loaded.</li>
+ * </ul>
+ *
+ * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
+ *
+ * @param placement The placement to tie the showing ad’s events to.
+ * @param customData The custom data to tie the showing ad’s events to. Maximum size is 8KB.
+ */
+- (void)showAdForPlacement:(nullable NSString *)placement customData:(nullable NSString *)customData;
+
+/**
+ * Show the loaded rewarded ad for a given placement and custom data to tie ad events to, and a view controller to present the ad from.
+ * <ul>
+ * <li>Use @code [MARewardedAd delegate] @endcode to assign a delegate that should be notified about display events.</li>
+ * <li>Use @code [MARewardedAd ready] @endcode to check if an ad was successfully loaded.</li>
+ * </ul>
+ *
+ * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
+ *
+ * @param placement The placement to tie the showing ad’s events to.
+ * @param customData The custom data to tie the showing ad’s events to. Maximum size is 8KB.
+ * @param viewController The view controller to display the ad from. If @c nil, will be inferred from the key window's root view controller.
+ */
+- (void)showAdForPlacement:(nullable NSString *)placement customData:(nullable NSString *)customData viewController:(nullable UIViewController *)viewController;
 
 /**
  * The ad unit identifier this @c MARewardedAd was initialized with and is loading ads for.
@@ -108,11 +136,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @param value Parameter value. May be null.
  */
 - (void)setLocalExtraParameterForKey:(NSString *)key value:(nullable id)value;
-
-/**
- * Set custom data to be set in the ILRD postbacks via the @c {CUSTOM_DATA}  macro.
- */
-@property (nonatomic, copy, nullable) NSString *customPostbackData;
 
 @end
 

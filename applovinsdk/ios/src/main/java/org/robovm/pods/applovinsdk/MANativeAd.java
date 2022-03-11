@@ -73,6 +73,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "performClick")
+    public native void performClick();
     @Method(selector = "prepareViewForInteraction:")
     public native void prepareViewForInteraction(MANativeAdView nativeAdView);
     @Method(selector = "initWithFormat:builderBlock:")

@@ -94,6 +94,11 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
 @property (nonatomic, strong, readonly, nullable) UIView *mediaView;
 
 /**
+ * For internal use only.
+ */
+- (void)performClick;
+
+/**
  * This method is called before the ad view is returned to the publisher.
  * The adapters should override this method to register the rendered native ad view and make sure that the view is interactable.
  *

@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     NSDictionary<NSString, ?> getLocalExtraParameters();
     @Property(selector = "serverParameters")
     NSDictionary<NSString, ?> getServerParameters();
+    @Property(selector = "customParameters")
+    NSDictionary<NSString, ?> getCustomParameters();
     @Property(selector = "hasUserConsent")
     NSNumber getUserConsent();
     @Property(selector = "isAgeRestrictedUser")
@@ -60,6 +62,8 @@ import org.robovm.apple.coreanimation.*;
     NSNumber getDoNotSell();
     @Property(selector = "isTesting")
     boolean isTesting();
+    @Property(selector = "presentingViewController")
+    UIViewController getPresentingViewController();
     /*</properties>*/
     /*<methods>*/
     

@@ -62,10 +62,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getAdUnitIdentifier();
     @Property(selector = "isReady")
     public native boolean isReady();
-    @Property(selector = "customPostbackData")
-    public native String getCustomPostbackData();
-    @Property(selector = "setCustomPostbackData:")
-    public native void setCustomPostbackData(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -75,6 +71,10 @@ import org.robovm.apple.coreanimation.*;
     public native void showAd();
     @Method(selector = "showAdForPlacement:")
     public native void showAdForPlacement(String placement);
+    @Method(selector = "showAdForPlacement:customData:")
+    public native void showAdForPlacement(String placement, String customData);
+    @Method(selector = "showAdForPlacement:customData:viewController:")
+    public native void showAdForPlacement(String placement, String customData, UIViewController viewController);
     @Method(selector = "setExtraParameterForKey:value:")
     public native void setExtraParameter(String key, String value);
     @Method(selector = "setLocalExtraParameterForKey:value:")

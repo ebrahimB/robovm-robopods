@@ -74,10 +74,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getAdUnitIdentifier();
     @Property(selector = "adFormat")
     public native MAAdFormat getAdFormat();
-    @Property(selector = "customPostbackData")
-    public native String getCustomPostbackData();
-    @Property(selector = "setCustomPostbackData:")
-    public native void setCustomPostbackData(String v);
+    @Property(selector = "customData")
+    public native String getCustomData();
+    @Property(selector = "setCustomData:")
+    public native void setCustomData(String v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();

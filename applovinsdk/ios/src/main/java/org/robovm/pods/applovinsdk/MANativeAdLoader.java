@@ -68,10 +68,10 @@ import org.robovm.apple.coreanimation.*;
     public native void setPlacement(String v);
     @Property(selector = "adUnitIdentifier")
     public native String getAdUnitIdentifier();
-    @Property(selector = "customPostbackData")
-    public native String getCustomPostbackData();
-    @Property(selector = "setCustomPostbackData:")
-    public native void setCustomPostbackData(String v);
+    @Property(selector = "customData")
+    public native String getCustomData();
+    @Property(selector = "setCustomData:")
+    public native void setCustomData(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -83,6 +83,8 @@ import org.robovm.apple.coreanimation.*;
     public native void loadAd();
     @Method(selector = "loadAdIntoAdView:")
     public native void loadAdIntoAdView(MANativeAdView adView);
+    @Method(selector = "renderNativeAdView:withAd:")
+    public native boolean renderNativeAdView(MANativeAdView adView, MAAd ad);
     @Method(selector = "destroyAd:")
     public native void destroyAd(MAAd nativeAd);
     @Method(selector = "setExtraParameterForKey:value:")
