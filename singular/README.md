@@ -1,10 +1,11 @@
-# RoboPods for Adapty SDK iOS
+# RoboPods for Singular SDK iOS
 
 ## Available RoboPods
 
-| RoboPods Version | AdaptySDK Version |
-|------------------|-------------------|
-| 1.20.0           | 11.0.3            |
+| RoboPods Version | Singular Version |
+|------------------|------------------|
+| 1.21.0           | 11.0.4           |
+| 1.20.0           | 11.0.3           |
 
 ## Official website
 https://www.singular.net

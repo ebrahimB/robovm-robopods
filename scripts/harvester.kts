@@ -238,7 +238,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             """.trimIndent()
         )
     },
-    "GoogleMobileAdsMediationTestSuite" to {framework ->
+    "GoogleMobileAdsMediationTestSuite" to { framework ->
         val artifact = "$framework.framework"
         val artifactLocation = downloadFolder.extend("googlemobileadsmediationtestsuiteios/GoogleMobileAdsMediationTestSuite.xcframework/ios-arm64_armv7/$artifact")
         processFramework(
@@ -318,6 +318,29 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                   > carthage update --platform ios --use-xcframeworks
             """.trimIndent()
         )
+    },
+    "Singular" to { lib ->
+        val singularVersion: String by lazy {
+            downloadFolder.extend("Singular-iOS-sdk/version/").readText()
+        }
+        val artifactLocation = downloadFolder.extend("Singular-iOS-sdk")
+        processFramework(
+            artifact = "$lib.lib",
+            moduleFolder = "singular/ios",
+            sourceHeadersDir = artifactLocation,
+            yaml = "singular.yaml",
+            version = { singularVersion },
+            instruction = """
+                0. download latest version from https://support.singular.net/hc/en-us/articles/360037950591-iOS-SDK-Basic-Integration
+                1. unpack and rename to ${downloadFolder.extend("Singular-iOS-sdk")}
+                3. create a file ${downloadFolder.extend("Singular-iOS-sdk/version")} and put verions there, e.g. 11.0.4 
+                """.trimIndent(),
+            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
+                copyHeadersFiltered(frm, sourceHeadersDir, destinationHeadersDir, flatten = true) {
+                    it.fileName.toString().endsWith(".h")
+                }
+            }
+        )
     }
 
 ).also {
@@ -341,7 +364,9 @@ args.forEach { arg ->
             "-v" -> log.verbose = true
             "-p" -> parallelBuild = true
             "-i" -> interactive = true
-            "-d" -> {downloadInstructions = true; interactive = true}
+            "-d" -> {
+                downloadInstructions = true; interactive = true
+            }
             "-h" -> printHelpAndExit(0)
             "--help" -> printHelpAndExit(0)
             else -> {
@@ -457,7 +482,8 @@ fun cleanUpJava(framework: String, destinationJavaDir: File) {
 }
 
 fun interactiveValidateHeaderFolder(framework: String, sourceHeadersDir: File, instruction: String?, optional: Boolean = true) {
-    val text = instruction ?: "There is no instruction configured for $framework.\nPlease provide missing framework at path specified."
+    val text = instruction
+        ?: "There is no instruction configured for $framework.\nPlease provide missing framework at path specified."
     while (!sourceHeadersDir.isDirectory) {
         println("\n\nMissing source header for $framework at location:\n${sourceHeadersDir.canonicalPath}")
         println("")
@@ -523,14 +549,14 @@ fun execBroGen(framework: String, javaFolder: File, yamlFile: File) {
     exec("$framework:    ", broGenCmd)
 }
 
-fun getPomVersionString(framework: String, pomFile: File) : String? {
+fun getPomVersionString(framework: String, pomFile: File): String? {
     pomFile.requiresIsFile { "$framework is missing pom.xml ${pomFile.canonicalPath}" }
     val artifactTitleWithVersion = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(pomFile)
         .getElementByTagName("name")?.getTextValue()
         ?: error("Failed to get <name> from ${pomFile.canonicalPath}")
     return artifactTitleWithVersion.indexOf("iOS v").takeIf { it > 0 }
-            ?.let { artifactTitleWithVersion.substring(it + 5).trim() }
-            ?: error("'iOS v' is missing in artifact <name> in ${pomFile.canonicalPath}")
+        ?.let { artifactTitleWithVersion.substring(it + 5).trim() }
+        ?: error("'iOS v' is missing in artifact <name> in ${pomFile.canonicalPath}")
 }
 
 fun updatePomVersionString(framework: String, pomFile: File, version: String) {
@@ -885,7 +911,7 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
             sourceHeadersDir = artifactLocation.headers,
             yaml = yaml,
             version = { versionProvider[versionKey] },
-            readmeFileVersionUpdater = {frm, modFolder, version ->
+            readmeFileVersionUpdater = { frm, modFolder, version ->
                 readmeUpdater(frm, modFolder, version)
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
             },
@@ -1016,7 +1042,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     val facebookVersion: String by lazy {
         extractVersionFromHeader("Facebook",
             downloadFolder.extend("$facebookRoot/FBSDKCoreKit.xcframework/ios-arm64/FBSDKCoreKit.framework/Headers/FBSDKCoreKitVersions.h"),
-                "FBSDK_VERSION_STRING")
+            "FBSDK_VERSION_STRING")
     }
 
     val facebookInstallInstruction = """
@@ -1046,7 +1072,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
             sourceHeadersDir = artifactLocation.headers,
             yaml = yaml,
             version = versionProvider,
-            readmeFileVersionUpdater = {frm, modFolder, version ->
+            readmeFileVersionUpdater = { frm, modFolder, version ->
                 readmeFileVersionUpdater(frm, modFolder, version)
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
             },
@@ -1133,7 +1159,7 @@ fun registerKochava(frameworkRegistry: MutableMap<String, (String) -> Unit>, gro
             headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
                 copyHeaders(frm, sourceHeadersDir, destinationHeadersDir)
                 // create a wrapper, as objc headers contains less data now that swift one
-                File(destinationHeadersDir,"$framework-wrap.h")
+                File(destinationHeadersDir, "$framework-wrap.h")
                     .appendText("\n#include <TargetConditionals.h>\n#import <UIKit/UIKit.h>\n#import <$framework/$framework-Swift.h>")
             },
         )
