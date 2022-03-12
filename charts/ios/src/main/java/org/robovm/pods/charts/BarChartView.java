@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:")
     public BarChartView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public BarChartView(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
+    public BarChartView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "drawValueAboveBarEnabled")
@@ -95,7 +95,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
-    protected native @Pointer long init(NSCoder decoder);
+    protected native @Pointer long init(NSCoder coder);
     /**
      * @since Available in iOS 9.0 and later.
      */

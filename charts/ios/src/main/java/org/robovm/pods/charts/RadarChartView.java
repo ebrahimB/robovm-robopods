@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:")
     public RadarChartView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public RadarChartView(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
+    public RadarChartView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "webLineWidth")
@@ -105,7 +105,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
-    protected native @Pointer long init(NSCoder decoder);
+    protected native @Pointer long init(NSCoder coder);
     @Method(selector = "notifyDataSetChanged")
     public native void notifyDataSetChanged();
     @Method(selector = "drawRect:")

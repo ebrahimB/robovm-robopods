@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:")
     public ChartViewBase(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public ChartViewBase(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
+    public ChartViewBase(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "data")
@@ -103,9 +103,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setRenderer:")
     public native void setRenderer(ChartDataRenderer v);
     @Property(selector = "highlighter")
-    public native ChartHighlighter getHighlighter();
+    public native ChartHighlighterProtocol getHighlighter();
     @Property(selector = "setHighlighter:")
-    public native void setHighlighter(ChartHighlighter v);
+    public native void setHighlighter(ChartHighlighterProtocol v);
     @Property(selector = "viewPortHandler")
     public native ChartViewPortHandler getViewPortHandler();
     @Property(selector = "setViewPortHandler:")
@@ -193,7 +193,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
-    protected native @Pointer long init(NSCoder decoder);
+    protected native @Pointer long init(NSCoder coder);
     @Method(selector = "clear")
     public native void clear();
     @Method(selector = "clearValues")

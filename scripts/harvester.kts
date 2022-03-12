@@ -104,7 +104,12 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             moduleFolder = "charts/ios",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "charts.yaml",
-            version = { artifactLocation.infoPlist.extractVersion() },
+            version = {
+                downloadFolder.extend("Charts/Cartfile").readLines()
+                    .find { it.startsWith("github") }
+                    ?.let { it.substringAfterLast(" \"").substringBeforeLast("\"") }
+                    ?: error("Failed to find out Charts version!")
+            },
             headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
                 copyHeaders(frm, sourceHeadersDir, destinationHeadersDir)
                 // after copied include Charts/Charts-Swift.h to Charts.h
@@ -113,7 +118,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             instruction = """
                 0. check latest version number at https://github.com/danielgindi/Charts/releases
                 1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Charts:
-                  > echo 'github "danielgindi/Charts" == X.Y.Z' > Cartfile
+                  > echo 'github "danielgindi/Charts" == "X.Y.Z"' > Cartfile
                   > carthage update --platform ios
             """.trimIndent()
         )
