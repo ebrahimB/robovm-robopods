@@ -334,12 +334,32 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                 0. download latest version from https://support.singular.net/hc/en-us/articles/360037950591-iOS-SDK-Basic-Integration
                 1. unpack and rename to ${downloadFolder.extend("Singular-iOS-sdk")}
                 3. create a file ${downloadFolder.extend("Singular-iOS-sdk/version")} and put verions there, e.g. 11.0.4 
-                """.trimIndent(),
+            """.trimIndent(),
             headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
                 copyHeadersFiltered(frm, sourceHeadersDir, destinationHeadersDir, flatten = true) {
                     it.fileName.toString().endsWith(".h")
                 }
             }
+        )
+    },
+    "IronSource" to { framework ->
+        val artifactLocation = downloadFolder.extend("IronSource/$framework.framework")
+        processFramework(
+            artifact = "$framework.framework",
+            moduleFolder = "ironsource/ios",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "ironsource.yaml",
+            version = {
+                artifactLocation.headers.extend("IronSource.h").readLines()
+                .find{ it.contains("MEDIATION_SDK_VERSION") }
+                ?.substringAfterLast("@\"")?.substringBefore("\"")
+                ?: error("Filed to evaluate $framework version")
+            },
+            instruction = """
+                0. download latest version from https://developers.is.com/ironsource-mobile/ios/ios-sdk/#step-1
+                1. unpack
+                2. expected location ${artifactLocation}
+            """.trimIndent(),
         )
     }
 

@@ -1,0 +1,258 @@
+package: org.robovm.pods.ironsource
+framework: IronSource
+include: [foundation, uikit, coregraphics, coreanimation]
+clang_args: ['-x', 'objective-c']
+headers: 
+    - IronSource.h
+
+enums:
+    LogLevelValues: {prefix: IS_LOG_}
+    LogTagValue: {prefix: TAG_}
+    ISGender: {prefix: IRONSOURCE_USER_}
+    DebugLevel: {}
+    ISAdapterErrorType: {}
+    ISLoadWhileShowSupportState: {prefix: LOAD_WHILE_SHOW_}
+    ISAdapterErrors: {prefix: ISAdapterError}
+
+private_typedefs:
+
+classes:
+    ISAdData:
+        methods:
+            '-initWithData:configuration:':
+                name: init
+    ISAdUnit:
+        methods:
+            '-initWithValue:':
+                name: init
+    ISAdapterConfig:
+        methods:
+            '-initWithProviderName:':
+                name: init
+    ISBannerSize:
+        methods:
+            '-initWithWidth:andHeight:':
+                name: init
+            '-initWithDescription:width:height:':
+                name: init
+    ISBannerView: {}
+    ISBaseAdAdapter:
+        methods:
+            '-initWithAdUnit:adapterConfig:':
+                name: init
+    ISBaseAdInteractionAdapter: {}
+    ISBaseInterstitial:
+        methods:
+            '-loadAdWithAdData:delegate:':
+                name: loadAd
+            '-showAdWithViewController:adData:delegate:':
+                name: showAd
+    ISBaseNetworkAdapter: {}
+    ISBaseRewardedVideo:
+        methods:
+            '-loadAdWithAdData:delegate:':
+                name: loadAd
+            '-showAdWithViewController:adData:delegate:':
+                name: showAd
+    ISConfigurations: {}
+    ISDataKeys: {}
+    ISEventsReporting: {}
+    ISImpressionData:
+        methods:
+            '-initWithDictionary:':
+                name: init
+            '-replacePlacementMacro:value:':
+                name: replacePlacementMacro
+    ISIntegrationHelper: {}
+    ISPlacementInfo:
+        methods:
+            '-initWithPlacement:reward:rewardAmount:':
+                name: init
+    ISSegment:
+        methods:
+            '-setCustomValue:forKey:':
+                name: setCustomValue
+    ISSupersonicAdsConfiguration: {}
+    IronSource:
+        methods:
+            '+setMetaDataWithKey:value:':
+                name: setMetaData
+            '+setMetaDataWithKey:values:':
+                name: setMetaData
+            '+setNetworkDataWithNetworkKey:andNetworkData:':
+                name: setNetworkData
+            '+initWithAppKey:':
+                name: init
+            '+initWithAppKey:delegate:':
+                name: init
+            '+initWithAppKey:adUnits:':
+                name: init
+            '+initWithAppKey:adUnits:delegate:':
+                name: init
+            '+initISDemandOnly:adUnits:':
+                name: initISDemandOnly
+            '+showRewardedVideoWithViewController:':
+                name: showRewardedVideo
+            '+showRewardedVideoWithViewController:placement:':
+                name: showRewardedVideo
+            '+loadISDemandOnlyRewardedVideoWithAdm:adm:':
+                name: loadISDemandOnlyRewardedVideo
+            '+showISDemandOnlyRewardedVideo:instanceId:':
+                name: showISDemandOnlyRewardedVideo
+            '+showInterstitialWithViewController:':
+                name: showInterstitial
+            '+showInterstitialWithViewController:placement:':
+                name: showInterstitial
+            '+loadISDemandOnlyInterstitialWithAdm:adm:':
+                name: loadISDemandOnlyInterstitial
+            '+showISDemandOnlyInterstitial:instanceId:':
+                name: showISDemandOnlyInterstitial
+            '+showOfferwallWithViewController:':
+                name: showOfferwallWithViewController$
+            '+showOfferwallWithViewController:placement:':
+                name: showOfferwall
+            '+loadBannerWithViewController:size:':
+                name: loadBanner
+            '+loadBannerWithViewController:size:placement:':
+                name: loadBanner
+            '+loadISDemandOnlyBannerWithInstanceId:adm:viewController:size:':
+                name: loadISDemandOnlyBanner
+            '+setAdRevenueDataWithDataSource:impressionData:':
+                name: setAdRevenueData
+            '+setConsentViewWithDelegate:':
+                name: setConsentView
+            '+loadConsentViewWithType:':
+                name: loadConsentView
+            '+showConsentViewWithViewController:andType:':
+                name: showConsentView
+protocols:
+    ISAdapterAdDelegate:
+        methods:
+            '-adDidFailToLoadWithErrorType:errorCode:errorMessage:':
+                name: adDidFailToLoad
+    ISAdapterAdInteractionDelegate:
+        methods:
+            '-adDidFailToShowWithErrorCode:errorMessage:':
+                name: adDidFailToShow
+    ISAdapterAdRewardedDelegate: {}
+    ISAdapterBaseProtocol:
+        methods:
+            '-init:delegate:':
+                exclude: true
+    ISAdapterConsentProtocol: {}
+    ISAdapterDebugProtocol: {}
+    ISAdapterMetaDataProtocol:
+        methods:
+            '-setMetaDataWithKey:andValues:':
+                name: setMetaData
+    ISAdapterSettingsProtocol:
+        methods:
+            '-getLoadWhileShowSupportedStateWithAdapterConfig:':
+                name: getLoadWhileShowSupportedState
+    ISBannerDelegate:
+        methods:
+            '-bannerDidFailToLoadWithError:':
+                name: bannerDidFailToLoad
+    ISBaseAdAdapterProtocol:
+        methods:
+            '-loadAdWithAdData:delegate:':
+                name: loadAd
+    ISBaseAdInteractionAdapterProtocol:
+        methods:
+            '-showAdWithViewController:adData:delegate:':
+                name: showAd
+            '-isAdAvailableWithAdData:':
+                name: isAdAvailable
+    ISConsentViewDelegate:
+        methods:
+            '-consentViewDidFailToLoadWithError:consentViewType:':
+                name: consentViewDidFailToLoad
+            '-consentViewDidFailToShowWithError:consentViewType:':
+                name: consentViewDidFailToShow
+    ISDemandOnlyBannerDelegate:
+        methods:
+            '-bannerDidLoad:instanceId:':
+                name: bannerDidLoad
+            '-bannerDidFailToLoadWithError:instanceId:':
+                name: bannerDidFailToLoad
+    ISDemandOnlyInterstitialDelegate:
+        methods:
+            '-interstitialDidFailToLoadWithError:instanceId:':
+                name: interstitialDidFailToLoad
+            '-interstitialDidFailToShowWithError:instanceId:':
+                name: interstitialDidFailToShow
+    ISDemandOnlyRewardedVideoDelegate:
+        methods:
+            '-rewardedVideoDidFailToLoadWithError:instanceId:':
+                name: rewardedVideoDidFailToLoad
+            '-rewardedVideoDidFailToShowWithError:instanceId:':
+                name: rewardedVideoDidFailToShow
+    ISImpressionDataDelegate: {}
+    ISInitializationDelegate: {}
+    ISInterstitialAdDelegate: {}
+    ISInterstitialDelegate:
+        methods:
+            '-interstitialDidFailToLoadWithError:':
+                name: interstitialDidFailToLoad
+            '-interstitialDidFailToShowWithError:':
+                name: interstitialDidFailToShow
+    ISLogDelegate:
+        methods:
+            '-sendLog:level:tag:':
+                name: sendLog
+    ISNetworkInitializationDelegate:
+        methods:
+            '-onInitDidFailWithErrorCode:errorMessage:':
+                name: onInitDidFail
+    ISOfferwallDelegate:
+        methods:
+            '-offerwallDidFailToShowWithError:':
+                name: offerwallDidFailToShow
+            '-didFailToReceiveOfferwallCreditsWithError:':
+                name: didFailToReceiveOfferwallCredits
+    ISRewardedVideoAdDelegate: {}
+    ISRewardedVideoDelegate:
+        methods:
+            '-rewardedVideoDidFailToShowWithError:':
+                name: rewardedVideoDidFailToShow
+    ISRewardedVideoManualDelegate:
+        methods:
+            '-rewardedVideoDidFailToLoadWithError:':
+                name: rewardedVideoDidFailToLoad
+    ISSegmentDelegate: {}
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    DEFAULT_CAPPING_(.*):
+        class: ISAdapterConfig
+        name: 'DEFAULT_CAPPING_#{g[0]}'
+    (IS_REWARDED_VIDEO|IS_INTERSTITIAL|IS_OFFERWALL|IS_BANNER):
+        class: IronSource
+        name: '#{g[0]}'
+    MEDIATION_SDK_VERSION:
+        class: IronSource
+        name: 'getSdkVersion'
+    DataSource_MOPUB:
+        class: IronSource
+    kBannerWillMoveToSuperView:
+        class: ISBannerView
+    kSize(.*):
+        class: ISBannerSize
+    GitHash:
+        exclude: true
+
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'

@@ -30,6 +30,6 @@ dependencies {
 }
 ```
 
-## Adapty home page
+## Singular home page
 
-https://github.com/adaptyteam/AdaptySDK-iOS
+https://www.singular.net

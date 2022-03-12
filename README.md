@@ -24,6 +24,7 @@ This is the list of currently available AltPods. Click them to get more informat
 | [Fyber](fyber/)                 | Fyber Markertplace                                                                                                                                                 |
 | [HelpShift](helpshift/)         | Deliver a superior customer service experience at a lower cost with Helpshift’s AI-powered messaging platform.                                                     |
 | [InMobi](inmobi/)               | Monetization SDK for iOS                                                                                                                                           |
+| [IronSource](ironsource/)       | The Leading Mobile Advertising Technology Platform                                                                                                                 |
 | [Lottie](lottie/)               | An iOS library to natively render After Effects vector animations                                                                                                  |
 | [Kochava](kochava/)             | Kochava SDK for the Apple platform                                                                                                                                 |
 | [OneSignal](onesignal/)         | OneSignal is a free push notification service for mobile apps                                                                                                      |
@@ -51,6 +52,7 @@ v1.21.0 - in development
 | [Fyber](fyber/)                 | 8.1.4  |
 | [HelpShift](helpshift/)         | 7.11.2 |
 | [InMobi](inmobi/)               | 10.0.2 |
+| [IronSource](ironsource/)       | 7.2.1  |
 | [Kochava](kochava/)             | 5.1.1  |
 | [Lottie](lottie/)               | 3.3.0  |
 | [OneSignal](onesignal/)         | 3.10.1 |
