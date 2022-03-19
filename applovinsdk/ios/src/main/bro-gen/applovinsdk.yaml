@@ -479,6 +479,10 @@ protocols:
                 name: didDisplayAdViewAd
             '-didFailToDisplayAdViewAdWithError:':
                 name: didFailToDisplayAdViewAd
+            '-didClickAdViewAdWithExtraInfo:':
+                name: didClickAdViewAd
+            '-didHideAdViewAdWithExtraInfo:':
+                name: didHideAdViewAd
     MAAdapter:
         methods:
             '-initializeWithParameters:withCompletionHandler:':
@@ -505,6 +509,10 @@ protocols:
                 name: didDisplayInterstitialAd
             '-didFailToDisplayInterstitialAdWithError:':
                 name: didFailToDisplayInterstitialAd
+            '-didClickInterstitialAdWithExtraInfo:':
+                name: didClickInterstitialAd
+            '-didHideInterstitialAdWithExtraInfo:':
+                name: didHideInterstitialAd
     MANativeAdAdapter:
         methods:
             '-loadNativeAdForParameters:andNotify:':
@@ -535,6 +543,10 @@ protocols:
                 name: didFailToDisplayRewardedAd
             '-didRewardUserWithReward:':
                 name: didRewardUser
+            '-didClickRewardedAdWithExtraInfo:':
+                name: didClickRewardedAd
+            '-didHideRewardedAdWithExtraInfo:':
+                name: didHideRewardedAd
     MARewardedInterstitialAdapter:
         methods:
             '-loadRewardedInterstitialAdForParameters:andNotify:':
@@ -553,6 +565,10 @@ protocols:
                 name: didFailToDisplayRewardedInterstitialAd
             '-didRewardUserWithReward:':
                 name: didRewardUser
+            '-didClickRewardedInterstitialAdWithExtraInfo:':
+                name: didClickRewardedInterstitialAd
+            '-didHideRewardedInterstitialAdWithExtraInfo:':
+                name: didHideRewardedInterstitialAd
     MASignalCollectionDelegate:
         methods:
             '-didFailToCollectSignalWithErrorMessage:':

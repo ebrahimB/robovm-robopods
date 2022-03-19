@@ -61,9 +61,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didClickRewardedAd;
 
 /**
+ * This method should be called when the user has clicked adapter's ad.
+ */
+- (void)didClickRewardedAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
+
+/**
  * This method should be called when adapter's ad has been dismissed.
  */
 - (void)didHideRewardedAd;
+
+/**
+ * This method should be called when adapter's ad has been dismissed.
+ */
+- (void)didHideRewardedAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
 
 /**
  * This method should be invoked when rewarded video has started video playback.

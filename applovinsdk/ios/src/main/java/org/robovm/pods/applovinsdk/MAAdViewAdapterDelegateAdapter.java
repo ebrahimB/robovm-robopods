@@ -65,8 +65,12 @@ import org.robovm.apple.coreanimation.*;
     public void didFailToDisplayAdViewAd(MAAdapterError adapterError) {}
     @NotImplemented("didClickAdViewAd")
     public void didClickAdViewAd() {}
+    @NotImplemented("didClickAdViewAdWithExtraInfo:")
+    public void didClickAdViewAd(NSDictionary<NSString, ?> extraInfo) {}
     @NotImplemented("didHideAdViewAd")
     public void didHideAdViewAd() {}
+    @NotImplemented("didHideAdViewAdWithExtraInfo:")
+    public void didHideAdViewAd(NSDictionary<NSString, ?> extraInfo) {}
     @NotImplemented("didExpandAdViewAd")
     public void didExpandAdViewAd() {}
     @NotImplemented("didCollapseAdViewAd")

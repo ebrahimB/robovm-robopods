@@ -128,6 +128,10 @@ import org.robovm.apple.coreanimation.*;
     public static native @MachineSizedSInt long getErrorCodeMissingRequiredNativeAdAssets();
     @Property(selector = "missingRequiredNativeAdAssets")
     public static native MAAdapterError getMissingRequiredNativeAdAssets();
+    @Property(selector = "errorCodeAdDsiplayFailedError")
+    public static native @MachineSizedSInt long getErrorCodeAdDsiplayFailedError();
+    @Property(selector = "adDisplayFailederror")
+    public static native MAAdapterError getAdDisplayFailederror();
     @Property(selector = "thirdPartySdkErrorCode")
     public native @MachineSizedSInt long getThirdPartySdkErrorCode();
     @Property(selector = "thirdPartySdkErrorMessage")

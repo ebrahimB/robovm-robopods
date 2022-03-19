@@ -63,8 +63,12 @@ import org.robovm.apple.coreanimation.*;
     void didFailToDisplayRewardedAd(MAAdapterError adapterError);
     @Method(selector = "didClickRewardedAd")
     void didClickRewardedAd();
+    @Method(selector = "didClickRewardedAdWithExtraInfo:")
+    void didClickRewardedAd(NSDictionary<NSString, ?> extraInfo);
     @Method(selector = "didHideRewardedAd")
     void didHideRewardedAd();
+    @Method(selector = "didHideRewardedAdWithExtraInfo:")
+    void didHideRewardedAd(NSDictionary<NSString, ?> extraInfo);
     @Method(selector = "didStartRewardedAdVideo")
     void didStartRewardedAdVideo();
     @Method(selector = "didCompleteRewardedAdVideo")

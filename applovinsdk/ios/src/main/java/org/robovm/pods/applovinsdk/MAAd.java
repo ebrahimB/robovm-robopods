@@ -62,6 +62,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getNetworkPlacement();
     @Property(selector = "creativeIdentifier")
     public native String getCreativeIdentifier();
+    @Property(selector = "adReviewCreativeIdentifier")
+    public native String getAdReviewCreativeIdentifier();
     @Property(selector = "revenue")
     public native double getRevenue();
     @Property(selector = "revenuePrecision")

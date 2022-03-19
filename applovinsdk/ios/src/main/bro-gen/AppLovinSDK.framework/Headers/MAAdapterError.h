@@ -122,6 +122,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, class, readonly) NSInteger errorCodeMissingRequiredNativeAdAssets;
 @property (nonatomic, class, readonly) MAAdapterError *missingRequiredNativeAdAssets;
 
+/*
+ * The mediation adapter failed to display the ad.
+ */
+@property (nonatomic, class, readonly) NSInteger errorCodeAdDsiplayFailedError;
+@property (nonatomic, class, readonly) MAAdapterError *adDisplayFailederror;
+
 /**
  * The error code provided by the third party SDK.
  */

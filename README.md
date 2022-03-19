@@ -38,11 +38,11 @@ This is the list of currently available AltPods. Click them to get more informat
 ## Version of AltPods to framework version mapping
 
 v1.21.0 - in development
-| Name                            | 1.20.0 |
+| Name                            | 1.21.0 |
 |---------------------------------|--------|
 | [AdaptySDK](adapty/)            | 1.16.9 |
 | [AppCenter](appcenter/)         | 4.4.1  |
-| [AppLovinSDK](applovinsdk/)     | 11.2.1 |
+| [AppLovinSDK](applovinsdk/)     | 11.3.1 |
 | [Azure](azure/)                 | 3.1.4  |
 | [BranchMetrics](branchmetrics/) | 1.41.0 |
 | [Charts](charts/)               | 4.0.2             |

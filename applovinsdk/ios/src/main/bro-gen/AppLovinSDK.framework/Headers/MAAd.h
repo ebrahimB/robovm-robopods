@@ -46,13 +46,24 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *networkPlacement;
 
 /**
- * The creative ID tied to the ad, if any. It may not be available for some ad networks until the SDK calls @code -[MAAdDelegate didDisplayAd:] @endcode.
+ * The creative id tied to the ad, if any. You can report creative issues to the corresponding ad network using this id.
+ *
+ * It may not be available until @c -[MAAdDelegate didDisplayAd:] is called.
  *
  * @see <a href="https://dash.applovin.com/documentation/mediation/ios/testing-networks/creative-debugger#creative-id">MAX Integration Guide ⇒ iOS ⇒ Testing Networks ⇒ Creative Debugger ⇒ Creative ID</a>
  *
  * @since 6.15.0
  */
 @property (nonatomic, copy, readonly, nullable) NSString *creativeIdentifier;
+
+/**
+ * The Ad Review creative id tied to the ad, if any. You can report creative issues to our Ad review team using this id.
+ *
+ * It may not be available until @c -[MAAdDelegate didDisplayAd:] is called.
+ *
+ * @since 11.3.0
+ */
+@property (nonatomic, copy, readonly, nullable) NSString *adReviewCreativeIdentifier;
 
 /**
  * The ad’s revenue amount, or 0 if no revenue amount exists.

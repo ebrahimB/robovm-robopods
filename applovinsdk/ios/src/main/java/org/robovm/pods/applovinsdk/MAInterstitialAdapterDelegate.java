@@ -61,8 +61,12 @@ import org.robovm.apple.coreanimation.*;
     void didDisplayInterstitialAd(NSDictionary<NSString, ?> extraInfo);
     @Method(selector = "didClickInterstitialAd")
     void didClickInterstitialAd();
+    @Method(selector = "didClickInterstitialAdWithExtraInfo:")
+    void didClickInterstitialAd(NSDictionary<NSString, ?> extraInfo);
     @Method(selector = "didHideInterstitialAd")
     void didHideInterstitialAd();
+    @Method(selector = "didHideInterstitialAdWithExtraInfo:")
+    void didHideInterstitialAd(NSDictionary<NSString, ?> extraInfo);
     @Method(selector = "didFailToDisplayInterstitialAdWithError:")
     void didFailToDisplayInterstitialAd(MAAdapterError adapterError);
     /*</methods>*/

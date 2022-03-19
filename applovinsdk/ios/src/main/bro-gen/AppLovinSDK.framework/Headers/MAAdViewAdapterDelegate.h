@@ -63,9 +63,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didClickAdViewAd;
 
 /**
+ * This method should be called when the user has clicked adapter's ad.
+ */
+- (void)didClickAdViewAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
+
+/**
  * This method should be called when adapter's ad has been dismissed.
  */
 - (void)didHideAdViewAd;
+
+/**
+ * This method should be called when adapter's ad has been dismissed.
+ */
+- (void)didHideAdViewAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
 
 /**
  * This method should be called when the ad view has expanded full screen.
