@@ -69,12 +69,6 @@ typedef NS_ENUM(NSInteger, ALGender)
 @property (nonatomic, copy, nullable) NSString *phoneNumber;
 
 /**
- * The zip or postal code of the user.
- * Set this property to @c nil to clear this value.
- */
-@property (nonatomic, copy, nullable) NSString *zipCode;
-
-/**
  * The keywords describing the application.
  * Set this property to @c nil to clear this value.
  */

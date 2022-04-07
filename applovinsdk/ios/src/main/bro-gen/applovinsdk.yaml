@@ -371,6 +371,37 @@ classes:
             '-initWithBuilderBlock:':
                 name: init
     MANativeAdViewBinderBuilder: {}
+    MAAdPlacer:
+        methods:
+            '-renderAdAtIndexPath:inView:':
+                name: renderAd
+            '-adjustedNumberOfItems:inSection:':
+                name: adjustedNumberOfItems
+            '-moveItemAtIndexPath:toIndexPath:':
+                name: moveItem
+            '-moveSection:toSection:':
+                name: moveSection
+            '-initWithSettings:':
+                name: init
+    MAAdPlacerSettings:
+        methods:
+            '+settingsWithAdUnitIdentifier:':
+                constructor: true
+                name: create
+    MACollectionViewAdPlacer:
+        methods:
+            '+placerWithCollectionView:settings:':
+                constructor: true
+                name: create
+    MACollectionViewAdPlacerCell: {}
+    MACustomAdPlacer: {}
+    MATableViewAdPlacer:
+        methods:
+            '+placerWithTableView:settings:':
+                constructor: true
+                name: create
+    MATableViewAdPlacerCell: {}
+
 protocols:
     ALAdDisplayDelegate:
         methods:
@@ -578,6 +609,7 @@ protocols:
         methods:
             '-collectSignalWithParameters:andNotify:':
                 name: collectSignal
+    MAAdPlacerDelegate: {}
 functions:
 
     # Make sure we don't miss any functions if new ones are introduced in a later version
