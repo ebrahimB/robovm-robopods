@@ -366,7 +366,35 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                 2. expected location ${artifactLocation}
             """.trimIndent(),
         )
+    },
+    "Adapty" to { framework ->
+        val artifactLocation = Path.of("adapty/cocoapods/Adapty.framework").toFile()
+        processFramework(
+            artifact = "$framework.framework",
+            moduleFolder = "adapty/ios",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "adapty.yaml",
+            version = { artifactLocation.infoPlist.extractVersion() },
+            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
+                copyHeaders(frm, sourceHeadersDir, destinationHeadersDir)
+                File(destinationHeadersDir, "Adapty.h").appendText(
+                    """
+                    #import <Foundation/Foundation.h>
+                    #include <TargetConditionals.h>
+                    #import <UIKit/UIKit.h>
+                    #import <AppTrackingTransparency/AppTrackingTransparency.h>
+                    #import <WebKit/WebKit.h>
+                    #import <Adapty/Adapty-Swift.h>
+                """.trimIndent()
+                )
+            },
+            instruction = """
+                0. run adapty/cocoatouch/fetch.sh to fetch and build from cocotouch 
+                1. expected location ${artifactLocation}
+            """.trimIndent(),
+        )
     }
+
 
 ).also {
     registerAppCenter(it, knownGroups)

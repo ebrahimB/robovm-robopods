@@ -1,0 +1,7 @@
+Podfile.lock
+build/
+podsAdapty.xcworkspace/
+podsAdapty.xcodeproj/xcuserdata
+podsAdapty.xcodeproj/project.xcworkspace/
+Pods/
+Adapty.*

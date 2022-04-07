@@ -99,6 +99,8 @@ import org.robovm.apple.webkit.*;
     public static native void setApnsTokenString(String value);
     @Method(selector = "customerUserId")
     public static native String customerUserId();
+    @Method(selector = "syncTransactionsHistoryWithCompletion:")
+    public static native void syncTransactionsHistory(@Block VoidBlock4<NSDictionary<NSString, ?>, NSArray<PaywallModel>, NSArray<ProductModel>, AdaptyError> completion);
     @Method(selector = "getPurchaserInfoWithForceUpdate::")
     public static native void getPurchaserInfo(boolean forceUpdate, @Block VoidBlock2<PurchaserInfoModel, AdaptyError> completion);
     @Method(selector = "getPromo:")
