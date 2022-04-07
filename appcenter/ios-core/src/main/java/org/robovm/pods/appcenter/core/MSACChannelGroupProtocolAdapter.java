@@ -56,12 +56,12 @@ import org.robovm.apple.foundation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("addChannelUnitWithConfiguration:")
-    public NSObjectProtocol addChannelUnit(NSObject configuration) { return null; }
+    public NSObject addChannelUnit(NSObject configuration) { return null; }
     @NotImplemented("addChannelUnitWithConfiguration:withIngestion:")
-    public NSObjectProtocol addChannelUnit(NSObject configuration, NSObjectProtocol ingestion) { return null; }
+    public NSObject addChannelUnit(NSObject configuration, NSObject ingestion) { return null; }
     @NotImplemented("setMaxStorageSize:completionHandler:")
     public void setMaxStorageSize(@MachineSizedSInt long sizeInBytes, @Block VoidBooleanBlock completionHandler) {}
     @NotImplemented("channelUnitForGroupId:")
-    public NSObjectProtocol channelUnitForGroupId(String groupId) { return null; }
+    public NSObject channelUnitForGroupId(String groupId) { return null; }
     /*</methods>*/
 }

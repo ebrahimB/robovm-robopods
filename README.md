@@ -41,11 +41,11 @@ v1.22.0 - in development
 | Name                            | 1.22.0 |
 |---------------------------------|--------|
 | [AdaptySDK](adapty/)            | 1.16.9 |
-| [AppCenter](appcenter/)         | 4.4.1  |
+| [AppCenter](appcenter/)         | 4.4.2  |
 | [AppLovinSDK](applovinsdk/)     | 11.3.2 |
 | [Azure](azure/)                 | 3.1.4  |
 | [BranchMetrics](branchmetrics/) | 1.41.0 |
-| [Charts](charts/)               | 4.0.2             |
+| [Charts](charts/)               | 4.0.2  |
 | [Facebook](facebook/)           | 13.1.0 |
 | [Firebase](firebase/)           | 8.14.0 |
 | [Flurry](flurry/)               | 11.2.1 |

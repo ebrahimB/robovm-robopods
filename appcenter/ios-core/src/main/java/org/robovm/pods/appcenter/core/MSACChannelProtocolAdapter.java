@@ -49,12 +49,12 @@ import org.robovm.apple.foundation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("addDelegate:")
-    public void addDelegate(NSObjectProtocol delegate) {}
+    public void addDelegate(NSObject delegate) {}
     @NotImplemented("removeDelegate:")
-    public void removeDelegate(NSObjectProtocol delegate) {}
+    public void removeDelegate(NSObject delegate) {}
     @NotImplemented("pauseWithIdentifyingObject:")
-    public void pause(NSObjectProtocol identifyingObject) {}
+    public void pause(NSObject identifyingObject) {}
     @NotImplemented("resumeWithIdentifyingObject:")
-    public void resume(NSObjectProtocol identifyingObject) {}
+    public void resume(NSObject identifyingObject) {}
     /*</methods>*/
 }

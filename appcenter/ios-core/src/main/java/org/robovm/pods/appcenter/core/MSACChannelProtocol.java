@@ -47,13 +47,13 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "addDelegate:")
-    void addDelegate(NSObjectProtocol delegate);
+    void addDelegate(NSObject delegate);
     @Method(selector = "removeDelegate:")
-    void removeDelegate(NSObjectProtocol delegate);
+    void removeDelegate(NSObject delegate);
     @Method(selector = "pauseWithIdentifyingObject:")
-    void pause(NSObjectProtocol identifyingObject);
+    void pause(NSObject identifyingObject);
     @Method(selector = "resumeWithIdentifyingObject:")
-    void resume(NSObjectProtocol identifyingObject);
+    void resume(NSObject identifyingObject);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

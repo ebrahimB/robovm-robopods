@@ -15,13 +15,14 @@ As an alternative to App Center Push, we recommend you migrate to [Azure Notific
 
 ## Versions
 
-| RoboPods Version  | Facebook Version    |
-|-------------------|---------------------|
-| 1.19.0            | 4.4.1               |
-| 1.18.0            | 4.2.0               |
-| 1.16.0            | 4.1.1               |
-| 1.14.0            | 4.1.0               |
-| 1.13.0            | 3.3.4               |
+| RoboPods Version | Facebook Version |
+|------------------|------------------|
+| 1.22.0           | 4.4.2            |
+| 1.19.0           | 4.4.1            |
+| 1.18.0           | 4.2.0            |
+| 1.16.0           | 4.1.1            |
+| 1.14.0           | 4.1.0            |
+| 1.13.0           | 3.3.4            |
 
 ## Official website
 
