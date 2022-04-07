@@ -57,6 +57,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "application:continueUserActivity:")
+    public native boolean continueUserActivity(UIApplication application, NSUserActivity userActivity);
     @Method(selector = "application:openURL:sourceApplication:annotation:")
     public native boolean openURL(UIApplication application, NSURL url, String sourceApplication, NSObject annotation);
     @Method(selector = "application:openURL:options:")

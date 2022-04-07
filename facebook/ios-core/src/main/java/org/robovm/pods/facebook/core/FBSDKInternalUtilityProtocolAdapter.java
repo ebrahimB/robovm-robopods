@@ -53,6 +53,8 @@ import org.robovm.apple.coreanimation.*;
     public boolean isFacebookAppInstalled() { return false; }
     @NotImplemented("isUnity")
     public boolean isUnity() { return false; }
+    @NotImplemented("bundleForStrings")
+    public NSBundle getBundleForStrings() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

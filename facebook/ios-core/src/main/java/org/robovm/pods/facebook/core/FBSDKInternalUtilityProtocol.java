@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     boolean isFacebookAppInstalled();
     @Property(selector = "isUnity")
     boolean isUnity();
+    @Property(selector = "bundleForStrings")
+    NSBundle getBundleForStrings();
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "URLWithScheme:host:path:queryParameters:error:")

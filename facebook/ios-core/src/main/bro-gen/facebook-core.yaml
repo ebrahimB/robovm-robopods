@@ -206,6 +206,8 @@ classes:
                 name: openURL
             '-application:didFinishLaunchingWithOptions:':
                 name: didFinishLaunching
+            '-application:continueUserActivity:':
+                name: continueUserActivity
     FBSDKAuthenticationToken: {}
     FBSDKAuthenticationTokenClaims: {}
     FBSDKBridgeAPI:
