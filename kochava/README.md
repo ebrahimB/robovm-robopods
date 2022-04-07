@@ -18,4 +18,4 @@
 
 ## Official website
 
-[Kochava Apple SDK Integration](https://support.kochava.com/sdk-integration/sdk-kochavatracker-ios)
+[Kochava Apple SDK Integration](https://support.kochava.com/sdk-integration/ios-sdk-integration/)
