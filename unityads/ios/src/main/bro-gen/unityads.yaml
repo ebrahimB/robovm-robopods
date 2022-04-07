@@ -153,6 +153,8 @@ protocols:
                 name: unityAdsShowComplete
             '-unityAdsShowFailed:withError:withMessage:':
                 name: unityAdsShowFailed
+    UADSJsonStorageContentsReader: {}
+    UADSJsonStorageReader: {}
 functions:
     NSStringFromPlacementContentState:
         class: UnityMonetizationPlacementContentState

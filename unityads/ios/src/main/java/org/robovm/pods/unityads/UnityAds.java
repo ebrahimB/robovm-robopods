@@ -89,5 +89,7 @@ import org.robovm.apple.coreanimation.*;
     public static native boolean isInitialized();
     @Method(selector = "getToken")
     public static native String getToken();
+    @Method(selector = "getToken:")
+    public static native void getToken(@Block VoidBlock1<NSString> completion);
     /*</methods>*/
 }
