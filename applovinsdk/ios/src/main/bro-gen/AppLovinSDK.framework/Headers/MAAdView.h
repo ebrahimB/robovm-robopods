@@ -10,6 +10,7 @@
 #import "ALSdk.h"
 #import "MAAdViewAdDelegate.h"
 #import "MAAdRevenueDelegate.h"
+#import "MAAdReviewDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -67,6 +68,11 @@ NS_ASSUME_NONNULL_BEGIN
  * A delegate that will be notified about ad revenue events.
  */
 @property (nonatomic, weak, nullable) IBOutlet id<MAAdRevenueDelegate> revenueDelegate;
+
+/**
+ * A delegate that will be notified about Ad Review events.
+ */
+@property (nonatomic, weak, nullable) IBOutlet id<MAAdReviewDelegate> adReviewDelegate;
 
 /**
  * Loads the ad for the current ad view. Set @code [MAAdView delegate] @endcode to assign a delegate that should be notified about ad load state.

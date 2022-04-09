@@ -36,33 +36,22 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/MAAdapterInitializationStatus/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    AdapterNotInitialized(-4L),
-    DoesNotApply(-3L),
-    Initializing(-2L),
-    InitializedUnknown(-1L),
-    InitializedFailure(0L),
-    InitializedSuccess(1L);
-    /*</values>*/
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/MAAdReviewDelegate/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
+    /*<ptr>*/
+    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/MAAdapterInitializationStatus/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/MAAdapterInitializationStatus/*</name>*/ valueOf(long n) {
-        for (/*<name>*/MAAdapterInitializationStatus/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/MAAdapterInitializationStatus/*</name>*/.class.getName());
-    }
+    /*<properties>*/
+    
+    /*</properties>*/
+    /*<methods>*/
+    @Method(selector = "didGenerateCreativeIdentifier:forAd:")
+    void didGenerateCreativeIdentifier(String creativeIdentifier, MAAd ad);
+    /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

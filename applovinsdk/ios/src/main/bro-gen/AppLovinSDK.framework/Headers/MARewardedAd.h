@@ -9,6 +9,7 @@
 #import "ALSdk.h"
 #import "MAAdRevenueDelegate.h"
 #import "MARewardedAdDelegate.h"
+#import "MAAdReviewDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -50,6 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
  * A delegate that will be notified about ad revenue events.
  */
 @property (nonatomic, weak, nullable) id<MAAdRevenueDelegate> revenueDelegate;
+
+/**
+ * A delegate that will be notified about Ad Review events.
+ */
+@property (nonatomic, weak, nullable) id<MAAdReviewDelegate> adReviewDelegate;
 
 /**
  * Load the current rewarded ad. Use @code [MARewardedAd delegate] @endcode to assign a delegate that should be notified about ad load state.

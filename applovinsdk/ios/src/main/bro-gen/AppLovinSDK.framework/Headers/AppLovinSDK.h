@@ -60,6 +60,7 @@
 #import <AppLovinSDK/MAAdDelegate.h>
 #import <AppLovinSDK/MAAdFormat.h>
 #import <AppLovinSDK/MAAdRevenueDelegate.h>
+#import <AppLovinSDK/MAAdReviewDelegate.h>
 #import <AppLovinSDK/MAAdView.h>
 #import <AppLovinSDK/MAAdViewAdDelegate.h>
 #import <AppLovinSDK/MAAdWaterfallInfo.h>

@@ -9,6 +9,7 @@
 #import "ALSdk.h"
 #import "MAAdDelegate.h"
 #import "MAAdRevenueDelegate.h"
+#import "MAAdReviewDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -46,6 +47,11 @@ NS_ASSUME_NONNULL_BEGIN
  * A delegate that will be notified about ad revenue events.
  */
 @property (nonatomic, weak, nullable) id<MAAdRevenueDelegate> revenueDelegate;
+
+/**
+ * A delegate that will be notified about Ad Review events.
+ */
+@property (nonatomic, weak, nullable) id<MAAdReviewDelegate> adReviewDelegate;
 
 /**
  * Load the ad for the current interstitial. Set @code [MAInterstitialAd delegate] @endcode to assign a delegate that should be notified about ad load state.
