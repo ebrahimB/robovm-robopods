@@ -46,7 +46,9 @@ import org.robovm.apple.coregraphics.*;
     /*<ptr>*/public static class IADebuggerPtr extends Ptr<IADebugger, IADebuggerPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(IADebugger.class); }/*</bind>*/
     /*<constants>*/
-    public static final String DidChangeRequestSettingsNotification = "kIADebuggerDidChangeRequestSettingsNotification";
+    public static class Notifications {
+        public static final String DidChangeRequestSettingsNotification = "kIADebuggerDidChangeRequestSettingsNotification";
+    }
     /*</constants>*/
     /*<constructors>*/
     public IADebugger() {}

@@ -55,6 +55,10 @@ public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements NSErrorCode {
     /*<constants>*//*</constants>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated The variable will be unavailable from Objective C in a future release, but the string will not change.
+     */
+    @Deprecated
     @GlobalValue(symbol="FIRStorageErrorDomain", optional=true)
     public static native String getClassDomain();
     /*</methods>*/

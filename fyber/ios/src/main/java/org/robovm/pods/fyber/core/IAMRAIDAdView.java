@@ -46,12 +46,14 @@ import org.robovm.apple.coregraphics.*;
     /*<ptr>*/public static class IAMRAIDAdViewPtr extends Ptr<IAMRAIDAdView, IAMRAIDAdViewPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(IAMRAIDAdView.class); }/*</bind>*/
     /*<constants>*/
-    public static final int IPhoneBannerWidth = 320;
-    public static final int IPhoneBannerHeight = 50;
-    public static final int IPadBannerWidth = 728;
-    public static final int IPadBannerHeight = 90;
-    public static final int RectWidth = 300;
-    public static final int RectHeight = 250;
+    public static class Defaults {
+        public static final int IPhoneBannerWidth = 320;
+        public static final int IPhoneBannerHeight = 50;
+        public static final int IPadBannerWidth = 728;
+        public static final int IPadBannerHeight = 90;
+        public static final int RectWidth = 300;
+        public static final int RectHeight = 250;
+    }
     /*</constants>*/
     /*<constructors>*/
     public IAMRAIDAdView() {}
