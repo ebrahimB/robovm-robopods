@@ -103,6 +103,10 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking);
     @Method(selector = "initWithTracking:")
     protected native @Pointer long init(FBSDKLoginTracking tracking);
+    /**
+     * @deprecated This method is deprecated and will be removed in the next major release.
+     */
+    @Deprecated
     @Method(selector = "authTypeForString:")
     public static native FBSDKLoginAuthType authTypeForString(String rawValue);
     /*</methods>*/

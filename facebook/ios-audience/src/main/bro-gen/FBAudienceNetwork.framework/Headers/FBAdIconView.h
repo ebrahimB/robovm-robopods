@@ -1,4 +1,4 @@
-// (c) Facebook, Inc. and its affiliates. Confidential and proprietary.
+// (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary.
 
 #import <UIKit/UIKit.h>
 
@@ -13,7 +13,7 @@ FB_DEPRECATED_WITH_MESSAGE("This class will be removed in a future release. Use 
 @interface FBAdIconView : FBMediaView
 
 /**
- The tag for the icon view. It always returns FBNativeAdViewTagIcon.
+ The tag for the icon view. Value of this property is always equal to FBNativeAdViewTagIcon.
  */
 @property (nonatomic, assign, readonly) FBNativeAdViewTag nativeAdViewTag;
 

@@ -89,6 +89,10 @@ import org.robovm.pods.facebook.core.*;
     protected native @Pointer long init(String placementID, @ByVal FBAdSize adSize, UIViewController rootViewController);
     @Method(selector = "initWithPlacementID:bidPayload:rootViewController:error:")
     protected native @Pointer long init(String placementID, String bidPayload, UIViewController rootViewController, NSError.NSErrorPtr error);
+    /**
+     * @deprecated This method will be removed in future version. Use -loadAdWithBidPayload instead.See https://www.facebook.com/audiencenetwork/resources/blog/bidding-moves-from-priority-to-imperative-for-app-monetizationfor more details.
+     */
+    @Deprecated
     @Method(selector = "loadAd")
     public native void loadAd();
     @Method(selector = "loadAdWithBidPayload:")

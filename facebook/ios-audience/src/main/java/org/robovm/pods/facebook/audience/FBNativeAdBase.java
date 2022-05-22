@@ -105,8 +105,16 @@ import org.robovm.pods.facebook.core.*;
     /*<methods>*/
     @Method(selector = "unregisterView")
     public native void unregisterView();
+    /**
+     * @deprecated This method will be removed in future version. Use -loadAdWithBidPayload instead.See https://www.facebook.com/audiencenetwork/resources/blog/bidding-moves-from-priority-to-imperative-for-app-monetizationfor more details.
+     */
+    @Deprecated
     @Method(selector = "loadAd")
     public native void loadAd();
+    /**
+     * @deprecated This method will be removed in future version. Use -loadAdWithBidPayload:mediaCachePolicy: instead.See https://www.facebook.com/audiencenetwork/resources/blog/bidding-moves-from-priority-to-imperative-for-app-monetizationfor more details.
+     */
+    @Deprecated
     @Method(selector = "loadAdWithMediaCachePolicy:")
     public native void loadAdW(FBNativeAdsCachePolicy mediaCachePolicy);
     @Method(selector = "loadAdWithBidPayload:")

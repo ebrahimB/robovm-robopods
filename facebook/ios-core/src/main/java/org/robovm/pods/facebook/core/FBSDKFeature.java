@@ -58,6 +58,7 @@ public enum /*<name>*/FBSDKFeature/*</name>*/ implements ValuedEnum {
     AEM(16844800L),
     AEMConversionFiltering(16844801L),
     AEMCatalogMatching(16844802L),
+    AppEventsCloudbridge(16845056L),
     Instrument(16908288L),
     CrashReport(16908544L),
     CrashShield(16908545L),

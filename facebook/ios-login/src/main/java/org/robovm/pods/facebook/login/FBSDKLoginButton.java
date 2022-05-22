@@ -51,9 +51,7 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKLoginButton(Handle h, long handle) { super(h, handle); }
     protected FBSDKLoginButton(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public FBSDKLoginButton(@ByVal CGRect frame) { super(frame); }
-    @Method(selector = "initWithCoder:")
-    public FBSDKLoginButton(NSCoder coder) { super(coder); }
+    public FBSDKLoginButton(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     /**
      * @since Available in iOS 14.0 and later.
      */
@@ -107,6 +105,18 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithFrame:")
+    protected native @Pointer long init(@ByVal CGRect frame);
+    @Method(selector = "didMoveToWindow")
+    public native void didMoveToWindow();
+    @Method(selector = "imageRectForContentRect:")
+    public native @ByVal CGRect getImageRect(@ByVal CGRect contentRect);
+    @Method(selector = "titleRectForContentRect:")
+    public native @ByVal CGRect getTitleRect(@ByVal CGRect contentRect);
+    @Method(selector = "layoutSubviews")
+    public native void layoutSubviews();
+    @Method(selector = "sizeThatFits:")
+    public native @ByVal CGSize getSizeThatFits(@ByVal CGSize size);
     /**
      * @since Available in iOS 13.0 and later.
      */

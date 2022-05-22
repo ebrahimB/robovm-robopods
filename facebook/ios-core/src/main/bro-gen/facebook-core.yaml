@@ -4,6 +4,7 @@ include: [foundation, dispatch, coregraphics, uikit, webkit, coreanimation]
 clang_args: ['-x', 'objective-c']
 headers: 
     - FBSDKCoreKit.h
+    - FBSDKCoreKit-Swift.h
 
 private_typedefs:
     OS_dispatch_source: DispatchSource
@@ -480,6 +481,16 @@ classes:
     FBSDKImpressionLoggingButton: {}
     FBSDKErrorFactory: {}
     FBSDKNetworkErrorChecker: {}
+    FBSDKAppEventsCAPIManager:
+        methods:
+            '-configureWithFactory:settings:':
+                name: configure
+    FBSDKTransformerGraphRequestFactory:
+        methods:
+            '-configureWithDatasetID:url:accessKey:':
+                name: configure
+            '-callCapiGatewayAPIWith:':
+                name: callCapiGatewayAPI
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -684,6 +695,10 @@ protocols:
                 name: unknownError
     FBSDKNetworkErrorChecking: {}
     _FBSDKWindowFinding: {}
+    FBSDKCAPIReporter:
+        methods:
+            '-configureWithFactory:settings:':
+                name: configure
 functions:
     fb_randomString:
         exclude: true
@@ -788,6 +803,8 @@ constants:
     FBSDK_DEFAULT_GRAPH_API_VERSION:
         class: FBSDKCore
         name: DefaultGraphApiVersion
+    SWIFT_.*:
+        exclude: true
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

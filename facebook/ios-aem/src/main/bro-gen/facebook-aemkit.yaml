@@ -4,8 +4,10 @@ include: [foundation]
 clang_args: ['-x', 'objective-c', "-DBUCK"]
 headers: 
     - FBAEMKit.h
+    - FBAEMKit-Swift.h
 
 enums:
+    FBAEMAdvertiserRuleOperator: {}
 
 typed_enums:
 
@@ -18,14 +20,79 @@ classes:
                 name: configure
             '+configureWithNetworker:appID:reporter:':
                 name: configure
+            '+configureWithNetworker:appID:reporter:analyticsAppID:':
+                name: configure
             '+recordAndUpdateEvent:currency:value:parameters:':
                 name: recordAndUpdateEvent
+    FBAEMAdvertiserRuleFactory: {}
+    FBAEMAdvertiserSingleEntryRule:
+        methods:
+            '-initWithOperator:paramKey:linguisticCondition:numericalCondition:arrayCondition:':
+                name: init
+    FBAEMInvocation:
+        methods:
+            '-attributeEvent:currency:value:parameters:configs:shouldUpdateCache:':
+                name: attributeEvent
+            '-updateConversionValueWithConfigs:event:shouldBoostPriority:':
+                name: updateConversionValue
+            '-isOptimizedEvent:configs:':
+                name: isOptimizedEvent
+            '-isOutOfWindowWithConfigs:':
+                name: isOutOfWindow
+            '+invocationWithAppLinkData:':
+                constructor: true
+                name: create
+    FBAEMNetworker: {}
+    FBAEMRequestBody:
+        methods:
+            '-appendWithKey:formValue:':
+                name: append
+    FBAEMRule:
+        methods:
+            '-initWithJSON:':
+                name: init
+            '-isMatchedWithRecordedEvents:recordedValues:':
+                name: isMatched
+    FBAEMUtility:
+        methods:
+            '-getInSegmentValue:matchingRule:':
+                name: getInSegmentValue
+    FBAEMAdvertiserMultiEntryRule:
+        methods:
+            '-initWithOperator:rules:':
+                name: init
+            '-copyWithZone:':
+                exclude: true
+    FBAEMConfiguration:
+        methods:
+            '-initWithJSON:':
+                name: init
+            '-isSameValidFrom:businessID:':
+                name: isSame
+            '-copyWithZone:':
+                exclude: true
+            '+configureWithRuleProvider:':
+                name: configureWithRuleProvider$
+    FBAEMEvent:
+        methods:
+            '-initWithJSON:':
+                name: init
+            '-copyWithZone:':
+                exclude: true
+    FBAEMSettings: {}
 protocols:
     FBAEMNetworking:
         methods:
             '-startGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:completion:':
                 name: startGraphRequest
     FBSKAdNetworkReporting: {}
+    FBAEMAdvertiserRuleMatching: {}
+    FBAEMAdvertiserRuleProviding:
+        methods:
+            '-createRuleWithJson:':
+                name: createRule
+            '-createRuleWithDict:':
+                name: createRule
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -62,6 +129,12 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
+    FBAEMKit_VERSION_STRING:
+        exclude: true
+    FBSDK_DEFAULT_GRAPH_API_VERSION:
+        exclude: true
+    SWIFT_.*:
+        exclude: true
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

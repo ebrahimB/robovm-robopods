@@ -2,8 +2,11 @@ package: org.robovm.pods.facebook.share
 framework: FBSDKShareKit
 include: [foundation, dispatch, coregraphics, uikit, photos, ../../../../ios-core/src/main/bro-gen/facebook-core.yaml, coreanimation]
 clang_args: ['-x', 'objective-c', "-DBUCK"]
-headers: 
+headers:
+    - "#include <FBSDKCoreKit/FBSDKCoreKit.h>"
+    - "#include <FBSDKCoreKit/FBSDKCoreKit-Swift.h>"
     - FBSDKShareKit.h
+    - FBSDKShareKit-Swift.h
 
 enums:
     FBSDKShareBridgeOptions: {}
@@ -50,9 +53,10 @@ classes:
                 name: show
     FBSDKHashtag:
         methods:
+            '-initWithString:':
+                name: init
             '+hashtagWithString:':
-                constructor: true
-                name: create
+                exclude: true
     FBSDKMessageDialog:
         methods:
             '-initWithContent:delegate:':
@@ -83,36 +87,42 @@ classes:
     FBSDKShareMediaContent: {}
     FBSDKSharePhoto:
         methods:
+            '-initWithImage:isUserGenerated:':
+                name: init
+            '-initWithImageURL:isUserGenerated:':
+                name: init
+            '-initWithPhotoAsset:isUserGenerated:':
+                name: init
             '+photoWithImage:userGenerated:':
-                constructor: true
-                name: create
+                exclude: true
             '+photoWithImageURL:userGenerated:':
-                constructor: true
-                name: create
+                exclude: true
             '+photoWithPhotoAsset:userGenerated:':
-                constructor: true
-                name: create
+                exclude: true
     FBSDKSharePhotoContent: {}
     FBSDKShareVideo:
         methods:
+            '-initWithData:previewPhoto:':
+                name: init
+            '-initWithVideoAsset:previewPhoto:':
+                name: init
+            '-initWithVideoURL:previewPhoto:':
+                name: init
             '+videoWithData:':
                 constructor: true
                 name: create
             '+videoWithData:previewPhoto:':
-                constructor: true
-                name: create
+                exclude: true
             '+videoWithVideoAsset:':
                 constructor: true
                 name: create
             '+videoWithVideoAsset:previewPhoto:':
-                constructor: true
-                name: create
+                exclude: true
             '+videoWithVideoURL:':
                 constructor: true
                 name: create
             '+videoWithVideoURL:previewPhoto:':
-                constructor: true
-                name: create
+                exclude: true
     FBSDKShareVideoContent: {}
     FBSDKGameRequestURLProvider:
         methods:
@@ -185,6 +195,8 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
+    SWIFT_.*:
+        exclude: true
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

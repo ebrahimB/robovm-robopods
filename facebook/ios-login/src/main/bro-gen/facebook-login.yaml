@@ -2,8 +2,9 @@ package: org.robovm.pods.facebook.login
 framework: FBSDKLoginKit
 include: [foundation, dispatch, coregraphics, uikit, ../../../../ios-core/src/main/bro-gen/facebook-core.yaml, coreanimation]
 clang_args: ['-x', 'objective-c', "-DBUCK"]
-headers: 
+headers:
     - FBSDKLoginKit.h
+    - FBSDKLoginKit-Swift.h
 
 enums:
     FBSDKLoginError: {nserror: true}
@@ -31,11 +32,7 @@ classes:
     FBSDKLoginButton: {}
     FBSDKLoginManager:
         methods:
-            '-logInWithPermissions:fromViewController:handler:':
-                name: logIn
             '-logInWithURL:handler:':
-                name: logIn
-            '-logInFromViewController:configuration:completion:':
                 name: logIn
             '-reauthorizeDataAccess:handler:':
                 name: reauthorizeDataAccess
@@ -90,6 +87,11 @@ classes:
         methods:
             '-initWithString:':
                 name: init
+    FBSDKLoginUtility: {}
+    FBSDKPermission:
+        methods:
+            '-initWithString:':
+                name: initWithString$
 protocols:
     FBSDKDeviceLoginManagerDelegate:
         methods:
@@ -105,6 +107,22 @@ protocols:
         methods:
             '-loginTooltipView:shouldAppear:':
                 name: shouldAppear
+    FBSDKLoginProviding:
+        methods:
+            '-logInFromViewController:configuration:completion:':
+                name: logIn
+            '-logInWithPermissions:fromViewController:handler:':
+                name: logIn
+    _FBSDKLoginEventLogging:
+        methods:
+            '-logInternalEvent:parameters:isImplicitlyLogged:':
+                name: logInternalEvent
+    _FBSDKServerConfigurationProviding:
+        methods:
+            '-loadServerConfigurationWithCompletionBlock:':
+                name: loadServerConfiguration
+    _FBSDKUserInterfaceElementProviding: {}
+    _FBSDKUserInterfaceStringProviding: {}
 
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
@@ -124,6 +142,8 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
+    SWIFT_.*:
+        exclude: true
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):
