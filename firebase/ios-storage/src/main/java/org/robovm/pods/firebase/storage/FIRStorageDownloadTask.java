@@ -43,7 +43,7 @@ import org.robovm.apple.dispatch.*;
     /*<bind>*/static { ObjCRuntime.bind(FIRStorageDownloadTask.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FIRStorageDownloadTask() {}
+    protected FIRStorageDownloadTask() {}
     protected FIRStorageDownloadTask(Handle h, long handle) { super(h, handle); }
     protected FIRStorageDownloadTask(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/

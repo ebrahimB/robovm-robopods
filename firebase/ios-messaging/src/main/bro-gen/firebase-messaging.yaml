@@ -9,7 +9,7 @@ headers:
     - FirebaseInstanceID.framework/headers/FirebaseInstanceID.h
 
 enums:
-    FIRMessagingError: {}
+    FIRMessagingError: { nserror: true}
     FIRMessagingMessageStatus: {}
     FIRMessagingAPNSTokenType: {}
     FIRInstanceIDError: {}
@@ -78,6 +78,9 @@ values:
     kFIRInstanceID(.*):
         class: FIRInstanceID
         name: '#{g[0]}'
+    FIRMessagingErrorDomain:
+        class: FIRMessagingError
+        name: getClassDomain
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

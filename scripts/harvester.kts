@@ -953,9 +953,15 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     """.trimIndent()
     val moduleReadmeFile = Path.of("Firebase/README.md").toFile()
     val readmeUpdater = oneTimeReadmeUpdater { versionProvider["Firebase"] }
+    // some ios-arm64_armv7 other ios-arm64
+    fun pickLocation(framework: String) : String {
+        val candidate = "Firebase/$framework/$framework.xcframework/ios-arm64/$framework.framework"
+        return if (downloadFolder.extend(candidate).exists()) candidate
+            else "Firebase/$framework/$framework.xcframework/ios-arm64_armv7/$framework.framework"
+    }
     fun action(
         framework: String, moduleFolder: String, yaml: String, versionKey: String = framework,
-        frameworkLocation: String = "Firebase/$framework/$framework.xcframework/ios-arm64_armv7/$framework.framework"
+        frameworkLocation: String = pickLocation(framework)
     ) {
         val artifactLocation = downloadFolder.extend(frameworkLocation)
         processFramework(
@@ -974,7 +980,7 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
 
     registry["FirebaseCore"] = { framework ->
         action(framework, "firebase/ios-core", "firebase-core.yaml",
-            frameworkLocation = "Firebase/FirebaseAnalytics/$framework.xcframework/ios-arm64_armv7/$framework.framework")
+            frameworkLocation = "Firebase/FirebaseAnalytics/$framework.xcframework/ios-arm64/$framework.framework")
     }
     registry["FirebaseAnalytics"] = { framework -> action(framework, "firebase/ios-analytics", "firebase-analytics.yaml") }
     registry["FirebaseAuth"] = { framework -> action(framework, "firebase/ios-auth", "firebaseauth.yaml") }
@@ -992,7 +998,7 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     }
     registry["GoogleSignIn"] = { framework ->
         action(framework, "firebase/ios-google-sign-in", "firebase-google-sign-in.yaml",
-            frameworkLocation = "Firebase/GoogleSignIn/GoogleSignIn.xcframework/ios-arm64_armv7/$framework.framework")
+            frameworkLocation = "Firebase/GoogleSignIn/GoogleSignIn.xcframework/ios-arm64/$framework.framework")
     }
     registry["UserMessagingPlatform"] = { framework ->
         action(framework, "firebase/ios-google-ump", "firebase-ump.yaml",

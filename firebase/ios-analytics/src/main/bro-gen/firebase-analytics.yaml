@@ -18,6 +18,8 @@ classes:
                 name: setScreenName
             '+handleEventsForBackgroundURLSession:completionHandler:':
                 name: handleEventsForBackgroundURLSession
+            '+initiateOnDeviceConversionMeasurementWithEmailAddress:':
+                name: initiateOnDeviceConversionMeasurement
 protocols: {}
 
 functions:

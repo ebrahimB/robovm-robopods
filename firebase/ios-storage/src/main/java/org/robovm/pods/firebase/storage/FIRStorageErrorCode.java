@@ -34,8 +34,8 @@ import org.robovm.apple.dispatch.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class) @Library(Library.INTERNAL)/*</annotations>*/
-public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements NSErrorCode {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements ValuedEnum {
     /*<values>*/
     Unknown(-13000L),
     ObjectNotFound(-13010L),
@@ -51,17 +51,10 @@ public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements NSErrorCode {
     InvalidArgument(-13050L);
     /*</values>*/
 
-    /*<bind>*/static { Bro.bind(FIRStorageErrorCode.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    /**
-     * @deprecated The variable will be unavailable from Objective C in a future release, but the string will not change.
-     */
-    @Deprecated
-    @GlobalValue(symbol="FIRStorageErrorDomain", optional=true)
-    public static native String getClassDomain();
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
 
     private final long n;
 
@@ -73,27 +66,7 @@ public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements NSErrorCode {
                 return v;
             }
         }
-        throw new IllegalArgumentException("No constant with value " + n + " found in "
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
             + /*<name>*/FIRStorageErrorCode/*</name>*/.class.getName());
-    }
-
-    // bind wrap to include it in compilation as long as nserror enum is used 
-    static { Bro.bind(NSErrorWrap.class); }
-    @StronglyLinked
-    public static class NSErrorWrap extends NSError {
-        protected NSErrorWrap(SkipInit skipInit) {super(skipInit);}
-
-        @Override public NSErrorCode getErrorCode() {
-             try {
-                 return  /*<name>*/FIRStorageErrorCode/*</name>*/.valueOf(getCode());
-             } catch (IllegalArgumentException e) {
-                 return null;
-             }
-         }
-
-        public static String getClassDomain() {
-            /** must be inserted in value section */
-            return /*<name>*/FIRStorageErrorCode/*</name>*/.getClassDomain();
-        }
     }
 }

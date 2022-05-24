@@ -43,7 +43,7 @@ import org.robovm.apple.dispatch.*;
     /*<bind>*/static { ObjCRuntime.bind(FIRStorageReference.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FIRStorageReference() {}
+    protected FIRStorageReference() {}
     protected FIRStorageReference(Handle h, long handle) { super(h, handle); }
     protected FIRStorageReference(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -56,6 +56,10 @@ import org.robovm.apple.dispatch.*;
     public native String getFullPath();
     @Property(selector = "name")
     public native String getName();
+    @Property(selector = "hash")
+    public native @MachineSizedUInt long getHash();
+    @Property(selector = "description")
+    public native String getDescription();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -65,20 +69,20 @@ import org.robovm.apple.dispatch.*;
     public native FIRStorageReference parent();
     @Method(selector = "child:")
     public native FIRStorageReference child(String path);
-    @Method(selector = "putData:")
-    public native FIRStorageUploadTask putData(NSData uploadData);
     @Method(selector = "putData:metadata:")
     public native FIRStorageUploadTask putData(NSData uploadData, FIRStorageMetadata metadata);
+    @Method(selector = "putData:")
+    public native FIRStorageUploadTask putData(NSData uploadData);
     @Method(selector = "putData:metadata:completion:")
     public native FIRStorageUploadTask putData(NSData uploadData, FIRStorageMetadata metadata, @Block VoidBlock2<FIRStorageMetadata, NSError> completion);
-    @Method(selector = "putFile:")
-    public native FIRStorageUploadTask putFile(NSURL fileURL);
     @Method(selector = "putFile:metadata:")
     public native FIRStorageUploadTask putFile(NSURL fileURL, FIRStorageMetadata metadata);
+    @Method(selector = "putFile:")
+    public native FIRStorageUploadTask putFile(NSURL fileURL);
     @Method(selector = "putFile:metadata:completion:")
     public native FIRStorageUploadTask putFile(NSURL fileURL, FIRStorageMetadata metadata, @Block VoidBlock2<FIRStorageMetadata, NSError> completion);
     @Method(selector = "dataWithMaxSize:completion:")
-    public native FIRStorageDownloadTask data(long size, @Block VoidBlock2<NSData, NSError> completion);
+    public native FIRStorageDownloadTask data(long maxSize, @Block VoidBlock2<NSData, NSError> completion);
     @Method(selector = "downloadURLWithCompletion:")
     public native void downloadURL(@Block VoidBlock2<NSURL, NSError> completion);
     @Method(selector = "writeToFile:")
@@ -97,5 +101,9 @@ import org.robovm.apple.dispatch.*;
     public native void updateMetadata(FIRStorageMetadata metadata, @Block VoidBlock2<FIRStorageMetadata, NSError> completion);
     @Method(selector = "deleteWithCompletion:")
     public native void deleteWithCompletion$(@Block VoidBlock1<NSError> completion);
+    @Method(selector = "copy:")
+    public native FIRStorageReference copy(NSZone zone);
+    @Method(selector = "isEqual:")
+    public native boolean isEqual(NSObject object);
     /*</methods>*/
 }

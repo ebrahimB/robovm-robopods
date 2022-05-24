@@ -95,5 +95,7 @@ import org.robovm.apple.foundation.*;
     public static native void handleUserActivity(NSObject userActivity);
     @Method(selector = "setConsent:")
     public static native void setConsent(NSDictionary<NSString, NSString> consentSettings);
+    @Method(selector = "initiateOnDeviceConversionMeasurementWithEmailAddress:")
+    public static native void initiateOnDeviceConversionMeasurement(String emailAddress);
     /*</methods>*/
 }

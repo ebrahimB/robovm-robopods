@@ -3,7 +3,8 @@ include: [foundation, dispatch]
 framework: FirebaseStorage
 clang_args: ['-x', 'objective-c']
 headers:
-    - FirebaseStorage.h
+    - FirebaseStorage-umbrella.h
+    - FirebaseStorage-Swift.h
 
 private_typedefs:
     "FIRApp *": org.robovm.pods.firebase.core.FIRApp
@@ -12,7 +13,7 @@ typedefs: {}
 
 enums:
     FIRStorageTaskStatus: {}
-    FIRStorageErrorCode: {nserror: true}
+    FIRStorageErrorCode: {}
 
 classes:
     FIRStorage:
@@ -84,15 +85,22 @@ values:
     FIRStorageErrorDomain:
         class: FIRStorageErrorCode
         name: getClassDomain
-    FIRStorageVersionString:
+    FirebaseStorageVersionString:
         class: FIRStorage
         name: VersionString
+    FirebaseStorageVersionNumber:
+        readonly: true
+        class: FIRStorage
+        name: versionNumber
+        marshaler: StringMarshalers.AsAsciiZMarshaler
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):
         class: __FixMe
         name: 'Value_#{g[0]}'
 
 constants:
+    SWIFT_.*:
+        exclude: true
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):
         class: __FixMe

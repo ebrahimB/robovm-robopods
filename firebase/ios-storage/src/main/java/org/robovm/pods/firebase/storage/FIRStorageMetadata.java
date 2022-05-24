@@ -98,12 +98,20 @@ import org.robovm.apple.dispatch.*;
     public native boolean isFile();
     @Property(selector = "isFolder")
     public native boolean isFolder();
+    @Property(selector = "hash")
+    public native @MachineSizedUInt long getHash();
+    @Property(selector = "description")
+    public native String getDescription();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithDictionary:")
-    protected native @Pointer long init(NSDictionary<NSString, ?> dictionary);
     @Method(selector = "dictionaryRepresentation")
     public native NSDictionary<NSString, ?> dictionaryRepresentation();
+    @Method(selector = "initWithDictionary:")
+    protected native @Pointer long init(NSDictionary<NSString, ?> dictionary);
+    @Method(selector = "copy")
+    public native NSObject copy();
+    @Method(selector = "isEqual:")
+    public native boolean isEqual(NSObject object);
     /*</methods>*/
 }

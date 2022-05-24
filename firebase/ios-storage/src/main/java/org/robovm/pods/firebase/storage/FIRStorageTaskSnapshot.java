@@ -43,7 +43,7 @@ import org.robovm.apple.dispatch.*;
     /*<bind>*/static { ObjCRuntime.bind(FIRStorageTaskSnapshot.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FIRStorageTaskSnapshot() {}
+    protected FIRStorageTaskSnapshot() {}
     protected FIRStorageTaskSnapshot(Handle h, long handle) { super(h, handle); }
     protected FIRStorageTaskSnapshot(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -60,6 +60,8 @@ import org.robovm.apple.dispatch.*;
     public native NSError getError();
     @Property(selector = "status")
     public native FIRStorageTaskStatus getStatus();
+    @Property(selector = "description")
+    public native String getDescription();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -57,6 +57,7 @@ import org.robovm.apple.dispatch.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "copy")
+    public native NSObject copy();
     /*</methods>*/
 }

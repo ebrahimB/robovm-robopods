@@ -68,9 +68,18 @@ import org.robovm.apple.dispatch.*;
     public native DispatchQueue getCallbackQueue();
     @Property(selector = "setCallbackQueue:")
     public native void setCallbackQueue(DispatchQueue v);
+    @Property(selector = "hash")
+    public native @MachineSizedUInt long getHash();
+    @Property(selector = "description")
+    public native String getDescription();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @GlobalValue(symbol="FirebaseStorageVersionNumber", optional=true)
+    public static native @org.robovm.rt.bro.annotation.Marshaler(StringMarshalers.AsAsciiZMarshaler.class) double versionNumber();
+    @GlobalValue(symbol="FirebaseStorageVersionString", optional=true)
+    public static native BytePtr VersionString();
+    
     @Method(selector = "reference")
     public native FIRStorageReference reference();
     @Method(selector = "referenceForURL:")
@@ -79,12 +88,16 @@ import org.robovm.apple.dispatch.*;
     public native FIRStorageReference reference(String string);
     @Method(selector = "useEmulatorWithHost:port:")
     public native void useEmulator(String host, @MachineSizedSInt long port);
+    @Method(selector = "copy")
+    public native NSObject copy();
+    @Method(selector = "isEqual:")
+    public native boolean isEqual(NSObject object);
     @Method(selector = "storage")
     public static native FIRStorage storage();
-    @Method(selector = "storageForApp:")
-    public static native FIRStorage storageForApp(org.robovm.pods.firebase.core.FIRApp app);
     @Method(selector = "storageWithURL:")
     protected static native @Pointer long storage(String url);
+    @Method(selector = "storageForApp:")
+    public static native FIRStorage storageForApp(org.robovm.pods.firebase.core.FIRApp app);
     @Method(selector = "storageForApp:URL:")
     protected static native @Pointer long storageForApp(org.robovm.pods.firebase.core.FIRApp app, String url);
     /*</methods>*/
