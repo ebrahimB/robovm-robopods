@@ -45,7 +45,8 @@ public enum /*<name>*/Platform/*</name>*/ implements ValuedEnum {
     AdMob(4L),
     MoPub(5L),
     ReactNative(6L),
-    Max(7L);
+    Max(7L),
+    IronSource(8L);
     /*</values>*/
 
     /*<bind>*/
