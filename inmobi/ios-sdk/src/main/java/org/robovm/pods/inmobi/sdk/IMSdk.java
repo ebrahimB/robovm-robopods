@@ -111,5 +111,7 @@ import org.robovm.apple.coreanimation.*;
     public static native void shouldAutoManageAVAudioSession(boolean value);
     @Method(selector = "setPublisherProvidedUnifiedId:")
     public static native void setPublisherProvidedUnifiedId(NSDictionary<?, ?> ids);
+    @Method(selector = "setIsAgeRestricted:")
+    public static native void setIsAgeRestricted(boolean isRestricted);
     /*</methods>*/
 }

@@ -69,10 +69,6 @@ import org.robovm.apple.coreanimation.*;
     public static class AdMarkupTypes {
         static { Bro.bind(AdMarkupTypes.class); }
 
-        @GlobalValue(symbol="kASIMAdMarkupTypeInMobiJSON", optional=true)
-        public static native NSString InMobiJSON();
-        @GlobalValue(symbol="kASIMAdMarkupTypeHTML", optional=true)
-        public static native NSString HTML();
         @GlobalValue(symbol="kASIMAdMarkupTypeMediationJSON", optional=true)
         public static native NSString MediationJSON();
     }
