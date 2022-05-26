@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
+- (instancetype)initWithImpressionData:(ISImpressionData *)impressionData;
+
 - (void) replacePlacementMacro:(NSString *) macro
                          value:(NSString *) value;
 

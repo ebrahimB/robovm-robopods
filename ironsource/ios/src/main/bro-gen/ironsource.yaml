@@ -61,6 +61,8 @@ classes:
         methods:
             '-initWithDictionary:':
                 name: init
+            '-initWithImpressionData:':
+                name: init
             '-replacePlacementMacro:value:':
                 name: replacePlacementMacro
     ISIntegrationHelper: {}

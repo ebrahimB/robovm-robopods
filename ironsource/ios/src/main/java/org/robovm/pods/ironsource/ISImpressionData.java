@@ -50,6 +50,8 @@ import org.robovm.apple.coreanimation.*;
     protected ISImpressionData(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithDictionary:")
     public ISImpressionData(NSDictionary<?, ?> dictionary) { super((SkipInit) null); initObject(init(dictionary)); }
+    @Method(selector = "initWithImpressionData:")
+    public ISImpressionData(ISImpressionData impressionData) { super((SkipInit) null); initObject(init(impressionData)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "auction_id")
@@ -87,6 +89,8 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initWithDictionary:")
     protected native @Pointer long init(NSDictionary<?, ?> dictionary);
+    @Method(selector = "initWithImpressionData:")
+    protected native @Pointer long init(ISImpressionData impressionData);
     @Method(selector = "replacePlacementMacro:value:")
     public native void replacePlacementMacro(String macro, String value);
     /*</methods>*/

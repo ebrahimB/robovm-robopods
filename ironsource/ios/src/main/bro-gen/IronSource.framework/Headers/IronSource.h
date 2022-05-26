@@ -45,14 +45,13 @@ NS_ASSUME_NONNULL_BEGIN
 #define IS_OFFERWALL @"offerwall"
 #define IS_BANNER @"banner"
 
-static NSString * const MEDIATION_SDK_VERSION     = @"7.2.1";
-static NSString * GitHash = @"de28ecc25";
+static NSString * const MEDIATION_SDK_VERSION     = @"7.2.2";
+static NSString * GitHash = @"1dbce3d36";
 
 /*
     This constant is for sending an external impression data from mopub
 */
 static NSString * const DataSource_MOPUB     = @"MoPub";
-
 
 @interface IronSource : NSObject
 
@@ -483,7 +482,6 @@ static NSString * const DataSource_MOPUB     = @"MoPub";
  @param delegate The 'ISBannerDelegate' for IronSource to send callbacks to.
  */
 + (void)setBannerDelegate:(id<ISBannerDelegate>)delegate;
-
 
 /**
  @abstract Loads a banner using the default placement.
