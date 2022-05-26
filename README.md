@@ -45,7 +45,7 @@ v1.23.0 - in development
 | [AppLovinSDK](applovinsdk/)     | 11.4.1 |
 | [Azure](azure/)                 | 3.1.4  |
 | [BranchMetrics](branchmetrics/) | 1.41.0 |
-| [Charts](charts/)               | 4.0.2  |
+| [Charts](charts/)               | 4.0.3             |
 | [Facebook](facebook/)           | 13.2.0 |
 | [Firebase](firebase/)           | 9.1.0  |
 | [Flurry](flurry/)               | 11.2.1 |

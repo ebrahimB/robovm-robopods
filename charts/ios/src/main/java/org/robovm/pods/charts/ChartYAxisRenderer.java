@@ -54,6 +54,10 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "viewPortHandler")
     public native ChartViewPortHandler getViewPortHandler();
+    @Property(selector = "axis")
+    public native ChartYAxis getAxis();
+    @Property(selector = "transformer")
+    public native ChartTransformer getTransformer();
     @Property(selector = "gridClippingRect")
     public native @ByVal CGRect getGridClippingRect();
     /*</properties>*/

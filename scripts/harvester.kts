@@ -107,7 +107,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             version = {
                 downloadFolder.extend("Charts/Cartfile").readLines()
                     .find { it.startsWith("github") }
-                    ?.let { it.substringAfterLast(" \"").substringBeforeLast("\"") }
+                    ?.let { it.substringAfterLast("==").trim() }
                     ?: error("Failed to find out Charts version!")
             },
             headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
