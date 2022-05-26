@@ -38,7 +38,7 @@ import org.robovm.apple.uikit.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OSOutcomeEvent/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements OSJSONEncodable/*</implements>*/ {
 
     /*<ptr>*/public static class OSOutcomeEventPtr extends Ptr<OSOutcomeEvent, OSOutcomeEventPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(OSOutcomeEvent.class); }/*</bind>*/
@@ -47,6 +47,10 @@ import org.robovm.apple.uikit.*;
     public OSOutcomeEvent() {}
     protected OSOutcomeEvent(Handle h, long handle) { super(h, handle); }
     protected OSOutcomeEvent(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithSession:notificationIds:name:timestamp:weight:")
+    public OSOutcomeEvent(OSInfluenceType session, NSArray<?> notificationIds, String name, NSNumber timestamp, NSNumber value) { super((SkipInit) null); initObject(init(session, notificationIds, name, timestamp, value)); }
+    @Method(selector = "initFromOutcomeEventParams:")
+    public OSOutcomeEvent(OSOutcomeEventParams eventParams) { super((SkipInit) null); initObject(initFromOutcomeEventParams(eventParams)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "session")
@@ -74,5 +78,9 @@ import org.robovm.apple.uikit.*;
     /*<methods>*/
     @Method(selector = "jsonRepresentation")
     public native NSDictionary<?, ?> jsonRepresentation();
+    @Method(selector = "initWithSession:notificationIds:name:timestamp:weight:")
+    protected native @Pointer long init(OSInfluenceType session, NSArray<?> notificationIds, String name, NSNumber timestamp, NSNumber value);
+    @Method(selector = "initFromOutcomeEventParams:")
+    protected native @Pointer long initFromOutcomeEventParams(OSOutcomeEventParams eventParams);
     /*</methods>*/
 }

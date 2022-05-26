@@ -55,7 +55,7 @@ v1.23.0 - in development
 | [IronSource](ironsource/)       | 7.2.1  |
 | [Kochava](kochava/)             | 5.1.1  |
 | [Lottie](lottie/)               | 3.3.0  |
-| [OneSignal](onesignal/)         | 3.10.3 |
+| [OneSignal](onesignal/)         | 3.11.1 |
 | [Pollfish](pollfish/)           | 6.2.4  |
 | [SAMKeychain](samkeychain/)     | 1.5.3  |
 | [Singular](singular/)           | 11.0.6 |

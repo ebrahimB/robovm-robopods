@@ -7,11 +7,13 @@
 ## Install Instructions
 
 ### 3rd party native framework
-This RoboPod requires you to add the native `OneSignal.framework`. Easiest way is to use [Carthage](https://github.com/Carthage/Carthage#installing-carthage):  
-```
-echo 'github "OneSignal/OneSignal-iOS-SDK"' > Cartfile
-carthage update
-```
+This RoboPod requires you to add the following native frameworks:
+- `OneSignal.framework`
+- `OneSignalCore.framework`
+- `OneSignalOutcomes.framework`
+
+These can be downloaded from github release page.
+
 ### to use this pod configure your `robovm.xml`
 
 ```

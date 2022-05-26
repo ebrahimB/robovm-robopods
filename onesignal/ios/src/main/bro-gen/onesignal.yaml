@@ -1,6 +1,7 @@
 package: org.robovm.pods.onesignal
 include: [foundation, usernotifications, uikit]
 framework: OneSignal
+internal_frameworks: [OneSignalCore, OneSignalOutcomes]
 clang_args: ['-x', 'objective-c']
 headers:
     - OneSignal.h
@@ -17,6 +18,11 @@ enums:
     Session: {name: OSSession}
     OSInfluenceChannel: {}
     OSInfluenceType: {}
+    PromptActionResult: { }
+    AppEntryAction: { }
+    FocusEventType: { }
+    FocusAttributionState: { }
+    HTTPMethod: { }
 classes:
     OSNotification:
         methods:
@@ -124,7 +130,6 @@ classes:
     OSEmailSubscriptionState: {}
     OSEmailSubscriptionStateChanges: {}
     OSInAppMessageAction: {}
-    OSOutcomeEvent: {}
     OSDevice: {}
     OSInAppMessageOutcome: {}
     OSInAppMessageTag: {}
@@ -132,6 +137,240 @@ classes:
     OSSMSSubscriptionState: { }
     OSSMSSubscriptionStateChanges: { }
     OSInAppMessage: { }
+    OSCachedUniqueOutcome:
+        methods:
+            '-initWithParamsName:uniqueId:channel:':
+                name: init
+            '-initWithParamsName:uniqueId:timestamp:channel:':
+                name: init
+    OSChannelTracker:
+        methods:
+            '-initWithRepository:':
+                name: init
+    OSIndirectInfluence:
+        methods:
+            '-initWithParamsInfluenceId:forChannel:timestamp:':
+                name: init
+    OSInfluence:
+        methods:
+            '-initWithBuilder:':
+                name: init
+    OSInfluenceBuilder: {}
+    OSInfluenceDataRepository: {}
+    OSOutcomeEventParams:
+        methods:
+            '-initWithOutcomeId:outcomeSource:weight:timestamp:':
+                name: init
+    OSOutcomeEventsCache: {}
+    OSOutcomeEventsFactory:
+        methods:
+            '-initWithCache:':
+                name: init
+    OSOutcomeEventsRepository:
+        methods:
+            '-initWithCache:':
+                name: init
+            '-requestMeasureOutcomeEventWithAppId:deviceType:event:onSuccess:onFailure:':
+                name: requestMeasureOutcomeEvent
+            '-getNotCachedUniqueInfluencesForOutcome:influences:':
+                name: getNotCachedUniqueInfluences
+    OSOutcomeSource:
+        methods:
+            '-initWithDirectBody:indirectBody:':
+                name: init
+    OSOutcomeSourceBody:
+        methods:
+            '-initWithNotificationIds:inAppMessagesIds:':
+                name: init
+    OSPrivacyConsentController:
+        methods:
+            '+shouldLogMissingPrivacyConsentErrorWithMethodName:':
+                name: shouldLogMissingPrivacyConsentError
+    OSRequestBadgeCount:
+        methods:
+            '+withUserId:appId:badgeCount:emailAuthToken:externalIdAuthToken:':
+                name: createWithEmailAuth
+            '+withUserId:appId:badgeCount:smsAuthToken:externalIdAuthToken:':
+                name: createWithSmsAuth
+    OSRequestCreateDevice:
+        methods:
+            '+withAppId:withDeviceType:withEmail:withPlayerId:withEmailAuthHash:withExternalUserId:withExternalIdAuthToken:':
+                name: createWithEmail
+            '+withAppId:withDeviceType:withSMSNumber:withPlayerId:withSMSAuthHash:withExternalUserId:withExternalIdAuthToken:':
+                name: createWithSMSNumber
+    OSRequestGetIosParams:
+        methods:
+            '+withUserId:appId:':
+                name: create
+                constructor: true
+    OSRequestGetTags:
+        methods:
+            '+withUserId:appId:':
+                name: create
+                constructor: true
+    OSRequestLogoutEmail:
+        methods:
+            '+withAppId:emailPlayerId:devicePlayerId:emailAuthHash:':
+                name: create
+                constructor: true
+    OSRequestLogoutSMS:
+        methods:
+            '+withAppId:smsPlayerId:smsAuthHash:devicePlayerId:':
+                name: create
+                constructor: true
+    OSRequestPostNotification:
+        methods:
+            '+withAppId:withJson:':
+                name: create
+                constructor: true
+    OSRequestRegisterUser:
+        methods:
+            '+withData:userId:':
+                name: create
+                constructor: true
+    OSRequestSendPurchases:
+        methods:
+            '+withUserId:externalIdAuthToken:appId:withPurchases:':
+                name: createWithExternalIdAuthToken
+            '+withUserId:emailAuthToken:appId:withPurchases:':
+                name: createWithEmailAuthToken
+    OSRequestSendTagsToServer:
+        methods:
+            '+withUserId:appId:tags:networkType:withEmailAuthHashToken:withExternalIdAuthHashToken:':
+                name: createWithEmailAuthHashToken
+            '+withUserId:appId:tags:networkType:withSMSAuthHashToken:withExternalIdAuthHashToken:':
+                name: createWithSMSAuthHashToken
+    OSRequestSubmitNotificationOpened:
+        methods:
+            '+withUserId:appId:wasOpened:messageId:withDeviceType:':
+                name: create
+                constructor: true
+    OSRequestSyncHashedEmail:
+        methods:
+            '+withUserId:appId:email:networkType:':
+                name: create
+                constructor: true
+    OSRequestTrackV1:
+        methods:
+            '+trackUsageData:appId:':
+                name: create
+                constructor: true
+    OSRequestUpdateDeviceToken:
+        methods:
+            '+withUserId:appId:deviceToken:notificationTypes:externalIdAuthToken:':
+                name: create
+                constructor: true
+            '+withUserId:appId:deviceToken:withParentId:emailAuthToken:email:externalIdAuthToken:':
+                name: create
+                constructor: true
+            '+withUserId:appId:deviceToken:smsAuthToken:externalIdAuthToken:':
+                name: create
+                constructor: true
+    OSRequestUpdateExternalUserId:
+        methods:
+            '+withUserId:withUserIdHashToken:withOneSignalUserId:appId:':
+                name: create
+                constructor: true
+            '+withUserId:withUserIdHashToken:withOneSignalUserId:withEmailHashToken:appId:':
+                name: createWithEmailHashToken
+            '+withUserId:withUserIdHashToken:withOneSignalUserId:withSMSHashToken:appId:':
+                name: createWithSMSHashToken
+    OSRequestUpdateLanguage:
+        methods:
+            '+withUserId:appId:language:emailAuthToken:externalIdAuthToken:':
+                name: createWithEmailAuthToken
+            '+withUserId:appId:language:smsAuthToken:externalIdAuthToken:':
+                name: createWithSMSAuthToken
+    OSRequestUpdateNotificationTypes:
+        methods:
+            '+withUserId:appId:notificationTypes:':
+                name: create
+                constructor: true
+    OSSessionManager:
+        methods:
+            '-init:withTrackerFactory:':
+                name: init
+            '-onDirectInfluenceFromNotificationOpen:withNotificationId:':
+                name: onDirectInfluenceFromNotificationOpen
+    OSTrackerFactory:
+        methods:
+            '-initWithRepository:':
+                name: init
+    OneSignalClient:
+        methods:
+            '-executeRequest:onSuccess:onFailure:':
+                name: executeRequest
+            '-executeSynchronousRequest:onSuccess:onFailure:':
+                name: executeSynchronousRequest
+            '-executeDataRequest:onSuccess:onFailure:':
+                name: executeDataRequest
+            '-executeSimultaneousRequests:withSuccess:onFailure:':
+                name: executeSimultaneousRequests
+            '-executeSimultaneousRequests:withCompletion:':
+                name: executeSimultaneousRequests
+    OneSignalCore: {}
+    OneSignalCoreHelper:
+        exclude: true
+    OneSignalLog:
+        methods:
+            '+onesignalLog:message:':
+                name: log
+    OneSignalOutcomeEventsController:
+        methods:
+            '-initWithSessionManager:outcomeEventsFactory:':
+                name: init
+            '-sendClickActionOutcomes:appId:deviceType:':
+                name: sendClickActionOutcomes
+            '-sendOutcomeEvent:appId:deviceType:successBlock:':
+                name: sendOutcomeEvent
+            '-sendUniqueOutcomeEvent:appId:deviceType:successBlock:':
+                name: sendUniqueOutcomeEvent
+            '-sendOutcomeEventWithValue:value:appId:deviceType:successBlock:':
+                name: sendOutcomeEvent
+    OneSignalOutcomes: {}
+    OneSignalRequest: {}
+    OneSignalTrackFirebaseAnalytics:
+        methods:
+            '+init':
+                name: initialize
+    OneSignalUserDefaults:
+        methods:
+            '-getSavedBoolForKey:defaultValue:':
+                name: getSavedBool
+            '-saveBoolForKey:withValue:':
+                name: saveBool
+            '-getSavedStringForKey:defaultValue:':
+                name: getSavedString
+            '-saveStringForKey:withValue:':
+                name: saveString
+            '-getSavedIntegerForKey:defaultValue:':
+                name: getSavedInteger
+            '-saveIntegerForKey:withValue:':
+                name: saveInteger
+            '-getSavedDoubleForKey:defaultValue:':
+                name: getSavedDouble
+            '-saveDoubleForKey:withValue:':
+                name: saveDouble
+            '-getSavedSetForKey:defaultValue:':
+                name: getSavedSet
+            '-saveSetForKey:withValue:':
+                name: saveSet
+            '-getSavedDictionaryForKey:defaultValue:':
+                name: getSavedDictionary
+            '-saveDictionaryForKey:withValue:':
+                name: saveDictionary
+            '-getSavedObjectForKey:defaultValue:':
+                name: getSavedObject
+            '-saveObjectForKey:withValue:':
+                name: saveObject
+            '-getSavedCodeableDataForKey:defaultValue:':
+                name: getSavedCodeableData
+            '-saveCodeableDataForKey:withValue:':
+                name: saveCodeableData
+    OSOutcomeEvent:
+        methods:
+            '-initWithSession:notificationIds:name:timestamp:weight:':
+                name: init
 protocols:
     OSPermissionObserver: {}
     OSSubscriptionObserver: {}
@@ -144,6 +383,14 @@ protocols:
     OSInAppMessageDelegate: {}
     OSSMSSubscriptionObserver: {}
     OSInAppMessageLifecycleHandler: {}
+    OSJSONDecodable:
+        methods:
+            '+instanceWithData:':
+                name: create
+            '+instanceWithJson:':
+                name: create
+    OSJSONEncodable: { }
+    SessionStatusDelegate: { }
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -170,7 +417,10 @@ constants:
     XC8_AVAILABLE:
         exclude: true
 
-    # Make sure we don't miss any constants if new ones are introduced in a later version
+    OS_API_ACCEPT_HEADER:
+        exclude: true # can't be captured automatically as its being evaluated
+
+    # TODO: Its bad idea to get everything into one file, but there is too much of constant to deal with
     (.*):
-        class: __FixMe
-        name: 'Constant__#{g[0]}'
+        class: OneSignalConstants
+        name: '#{g[0]}'

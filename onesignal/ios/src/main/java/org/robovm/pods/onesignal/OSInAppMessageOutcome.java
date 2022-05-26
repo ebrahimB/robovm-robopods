@@ -38,7 +38,7 @@ import org.robovm.apple.uikit.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OSInAppMessageOutcome/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements OSJSONDecodable/*</implements>*/ {
 
     /*<ptr>*/public static class OSInAppMessageOutcomePtr extends Ptr<OSInAppMessageOutcome, OSInAppMessageOutcomePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(OSInAppMessageOutcome.class); }/*</bind>*/
@@ -66,5 +66,11 @@ import org.robovm.apple.uikit.*;
     /*<methods>*/
     @Method(selector = "jsonRepresentation")
     public native NSDictionary<?, ?> jsonRepresentation();
+    @Method(selector = "instanceWithData:")
+    public static native OSInAppMessageOutcome create(NSData data);
+    @Method(selector = "instanceWithJson:")
+    public static native OSInAppMessageOutcome create(NSDictionary<?, ?> json);
+    @Method(selector = "instancePreviewFromNotification:")
+    public static native OSInAppMessageOutcome instancePreviewFromNotification(OSNotification notification);
     /*</methods>*/
 }
