@@ -59,6 +59,10 @@ import org.robovm.apple.uikit.*;
     public native String getSecret();
     @Property(selector = "setSecret:")
     public native void setSecret(String v);
+    @Property(selector = "clipboardAttribution")
+    public native boolean isClipboardAttribution();
+    @Property(selector = "setClipboardAttribution:")
+    public native void setClipboardAttribution(boolean v);
     @Property(selector = "launchOptions")
     public native NSDictionary<?, ?> getLaunchOptions();
     @Property(selector = "setLaunchOptions:")
