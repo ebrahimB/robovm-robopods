@@ -315,6 +315,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nu
 
 
 
+
+
 SWIFT_PROTOCOL("_TtP6Adapty14AdaptyDelegate_")
 @protocol AdaptyDelegate
 - (void)didReceiveUpdatedPurchaserInfo:(PurchaserInfoModel * _Nonnull)purchaserInfo;
@@ -512,6 +514,7 @@ SWIFT_CLASS("_TtC6Adapty12ProductModel")
 @property (nonatomic) BOOL introductoryOfferEligibility;
 @property (nonatomic) BOOL promotionalOfferEligibility;
 @property (nonatomic, copy) NSString * _Nullable promotionalOfferId;
+@property (nonatomic, copy) NSString * _Nullable variationId;
 @property (nonatomic, copy) NSString * _Nullable paywallABTestName;
 @property (nonatomic, copy) NSString * _Nullable paywallName;
 @property (nonatomic, copy) NSString * _Nonnull localizedDescription;
@@ -976,6 +979,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nu
 
 
 
+
+
 SWIFT_PROTOCOL("_TtP6Adapty14AdaptyDelegate_")
 @protocol AdaptyDelegate
 - (void)didReceiveUpdatedPurchaserInfo:(PurchaserInfoModel * _Nonnull)purchaserInfo;
@@ -1173,6 +1178,7 @@ SWIFT_CLASS("_TtC6Adapty12ProductModel")
 @property (nonatomic) BOOL introductoryOfferEligibility;
 @property (nonatomic) BOOL promotionalOfferEligibility;
 @property (nonatomic, copy) NSString * _Nullable promotionalOfferId;
+@property (nonatomic, copy) NSString * _Nullable variationId;
 @property (nonatomic, copy) NSString * _Nullable paywallABTestName;
 @property (nonatomic, copy) NSString * _Nullable paywallName;
 @property (nonatomic, copy) NSString * _Nonnull localizedDescription;

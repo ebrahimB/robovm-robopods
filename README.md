@@ -40,7 +40,7 @@ This is the list of currently available AltPods. Click them to get more informat
 v1.23.0 - in development
 | Name                            | 1.23.0 |
 |---------------------------------|--------|
-| [AdaptySDK](adapty/)            | 1.16.10|
+| [AdaptySDK](adapty/)            | 1.17.1 |
 | [AppCenter](appcenter/)         | 4.4.2  |
 | [AppLovinSDK](applovinsdk/)     | 11.4.1 |
 | [Azure](azure/)                 | 3.1.4  |

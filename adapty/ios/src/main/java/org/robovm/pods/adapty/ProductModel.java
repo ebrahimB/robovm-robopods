@@ -69,6 +69,10 @@ import org.robovm.apple.webkit.*;
     public native String getPromotionalOfferId();
     @Property(selector = "setPromotionalOfferId:")
     public native void setPromotionalOfferId(String v);
+    @Property(selector = "variationId")
+    public native String getVariationId();
+    @Property(selector = "setVariationId:")
+    public native void setVariationId(String v);
     @Property(selector = "paywallABTestName")
     public native String getPaywallABTestName();
     @Property(selector = "setPaywallABTestName:")
