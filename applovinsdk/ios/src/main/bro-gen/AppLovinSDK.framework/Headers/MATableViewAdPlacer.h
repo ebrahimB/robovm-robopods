@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "MACustomAdPlacer.h"
+#import <AppLovinSDK/MACustomAdPlacer.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

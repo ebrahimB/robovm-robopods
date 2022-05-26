@@ -5,9 +5,9 @@
 //  Created by Andrew Tian on 7/14/21.
 //
 
-#import "MAAd.h"
-#import "MANativeAdView.h"
-#import "MAError.h"
+#import <AppLovinSDK/MAAd.h>
+#import <AppLovinSDK/MANativeAdView.h>
+#import <AppLovinSDK/MAError.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

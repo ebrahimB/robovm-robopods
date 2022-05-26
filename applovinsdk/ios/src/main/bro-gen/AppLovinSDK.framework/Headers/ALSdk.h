@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ALSdkSettings.h"
-#import "ALAdService.h"
-#import "ALEventService.h"
-#import "ALVariableService.h"
-#import "ALSdkConfiguration.h"
-#import "ALErrorCodes.h"
-#import "ALMediationProvider.h"
-#import "ALUserSegment.h"
-#import "ALTargetingData.h"
-#import "MAMediatedNetworkInfo.h"
-#import "MAAdFormat.h"
+#import <AppLovinSDK/ALSdkSettings.h>
+#import <AppLovinSDK/ALAdService.h>
+#import <AppLovinSDK/ALEventService.h>
+#import <AppLovinSDK/ALVariableService.h>
+#import <AppLovinSDK/ALSdkConfiguration.h>
+#import <AppLovinSDK/ALErrorCodes.h>
+#import <AppLovinSDK/ALMediationProvider.h>
+#import <AppLovinSDK/ALUserSegment.h>
+#import <AppLovinSDK/ALTargetingData.h>
+#import <AppLovinSDK/MAMediatedNetworkInfo.h>
+#import <AppLovinSDK/MAAdFormat.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

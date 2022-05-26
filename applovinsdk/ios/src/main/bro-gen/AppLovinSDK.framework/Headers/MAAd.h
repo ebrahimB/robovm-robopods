@@ -6,10 +6,10 @@
 //  Copyright © 2020 AppLovin Corporation. All rights reserved.
 //
 
-#import "MAAdFormat.h"
-#import "MAMediatedNetworkInfo.h"
-#import "MAAdWaterfallInfo.h"
-#import "MANativeAd.h"
+#import <AppLovinSDK/MAAdFormat.h>
+#import <AppLovinSDK/MAMediatedNetworkInfo.h>
+#import <AppLovinSDK/MAAdWaterfallInfo.h>
+#import <AppLovinSDK/MANativeAd.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -95,6 +95,16 @@ NS_ASSUME_NONNULL_BEGIN
  * For Native ads only. Get an instance of the @c MANativeAd containing the assets used to render the native ad view.
  */
 @property (nonatomic, strong, readonly, nullable) MANativeAd *nativeAd;
+
+/**
+ * The DSP network that provided the loaded ad when the ad is served through AppLovin Exchange.
+ */
+@property (nonatomic, copy, readonly, nullable) NSString *DSPName;
+
+/**
+ * The DSP id network that provided the loaded ad when the ad is served through AppLovin Exchange.
+ */
+@property (nonatomic, copy, readonly, nullable) NSString *DSPIdentifier;
 
 /**
  * Gets the ad value for a given key.

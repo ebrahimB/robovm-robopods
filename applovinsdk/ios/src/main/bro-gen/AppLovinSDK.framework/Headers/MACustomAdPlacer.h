@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MAAdPlacer.h"
+#import <AppLovinSDK/MAAdPlacer.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

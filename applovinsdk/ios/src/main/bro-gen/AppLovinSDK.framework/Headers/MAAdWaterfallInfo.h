@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MANetworkResponseInfo.h"
+#import <AppLovinSDK/MANetworkResponseInfo.h>
 
 @class MAAd;
 

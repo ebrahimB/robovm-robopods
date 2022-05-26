@@ -5,7 +5,7 @@
 //  Created by Nana Amoah on 3/29/22.
 //
 
-#import "MAAd.h"
+#import <AppLovinSDK/MAAd.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

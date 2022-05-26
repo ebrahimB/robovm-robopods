@@ -56,6 +56,10 @@ import org.robovm.apple.coreanimation.*;
     public native MAAdPlacerDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(MAAdPlacerDelegate v);
+    @Property(selector = "adSize")
+    public native @ByVal CGSize getAdSize();
+    @Property(selector = "setAdSize:")
+    public native void setAdSize(@ByVal CGSize v);
     @Property(selector = "nativeAdViewNib")
     public native UINib getNativeAdViewNib();
     @Property(selector = "setNativeAdViewNib:")
@@ -69,12 +73,16 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "loadAds")
     public native void loadAds();
+    @Method(selector = "clearAds")
+    public native void clearAds();
+    @Method(selector = "clearAdsInSections:")
+    public native void clearAdsInSections(NSIndexSet sections);
     @Method(selector = "isAdIndexPath:")
     public native boolean isAdIndexPath(NSIndexPath indexPath);
     @Method(selector = "isFilledIndexPath:")
     public native boolean isFilledIndexPath(NSIndexPath indexPath);
-    @Method(selector = "sizeForAdAtIndexPath:")
-    public native @ByVal CGSize sizeForAdAtIndexPath(NSIndexPath indexPath);
+    @Method(selector = "sizeForAdAtIndexPath:withMaximumWidth:")
+    public native @ByVal CGSize getSizeForAd(NSIndexPath indexPath, @MachineSizedFloat double maximumWidth);
     @Method(selector = "renderAdAtIndexPath:inView:")
     public native void renderAd(NSIndexPath indexPath, UIView view);
     @Method(selector = "updateFillableIndexPaths:")

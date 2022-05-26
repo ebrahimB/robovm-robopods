@@ -5,7 +5,7 @@
 //  Created by Andrew Tian on 6/3/21.
 //
 
-#import "MAAd.h"
+#import <AppLovinSDK/MAAd.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

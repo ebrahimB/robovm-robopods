@@ -5,7 +5,7 @@
 //  Created by Thomas So on 11/13/18.
 //
 
-#import "MAError.h"
+#import <AppLovinSDK/MAError.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -122,11 +122,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, class, readonly) NSInteger errorCodeMissingRequiredNativeAdAssets;
 @property (nonatomic, class, readonly) MAAdapterError *missingRequiredNativeAdAssets;
 
+/**
+ * The mediation ad failed to load because an Activity context was required, but missing.
+ */
+@property (nonatomic, class, readonly) NSInteger errorCodeMissingViewController;
+@property (nonatomic, class, readonly) MAAdapterError *missingViewController;
+
 /*
  * The mediation adapter failed to display the ad.
  */
-@property (nonatomic, class, readonly) NSInteger errorCodeAdDsiplayFailedError;
-@property (nonatomic, class, readonly) MAAdapterError *adDisplayFailederror;
+@property (nonatomic, class, readonly) NSInteger errorCodeAdDisplayFailedError;
+@property (nonatomic, class, readonly) MAAdapterError *adDisplayFailedError;
 
 /**
  * The error code provided by the third party SDK.

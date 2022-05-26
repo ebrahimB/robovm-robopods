@@ -4,6 +4,7 @@
 
 | RoboPods Version | AppLovinSDK Version |
 |------------------|---------------------|
+| 1.23.0           | 11.4.1              |
 | 1.22.0           | 11.3.3              |
 | 1.21.0           | 11.3.1              |
 | 1.18.0           | 10.3.3              |
@@ -25,3 +26,4 @@
 
 ## Official website
 https://dash.applovin.com/docs/integration
+https://github.com/AppLovin/AppLovin-MAX-SDK-iOS

@@ -82,6 +82,10 @@ import org.robovm.apple.coreanimation.*;
     public native UIView getMediaView();
     @Property(selector = "setMediaView:")
     public native void setMediaView(UIView v);
+    @Property(selector = "mediaContentAspectRatio")
+    public native @MachineSizedFloat double getMediaContentAspectRatio();
+    @Property(selector = "setMediaContentAspectRatio:")
+    public native void setMediaContentAspectRatio(@MachineSizedFloat double v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

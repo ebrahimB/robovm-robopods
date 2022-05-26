@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ALCPublisher.h"
+#import <AppLovinSDK/ALCPublisher.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

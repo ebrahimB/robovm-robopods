@@ -5,9 +5,9 @@
 //  Created by Andrew Tian on 7/14/21.
 //
 
-#import "ALSdk.h"
-#import "MAAdRevenueDelegate.h"
-#import "MANativeAdDelegate.h"
+#import <AppLovinSDK/ALSdk.h>
+#import <AppLovinSDK/MAAdRevenueDelegate.h>
+#import <AppLovinSDK/MANativeAdDelegate.h>
 #import <UIKit/UIKit.h>
 
 @class MANativeAdView;

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ALSdk.h"
-#import "MAAdViewAdDelegate.h"
-#import "MAAdRevenueDelegate.h"
-#import "MAAdReviewDelegate.h"
+#import <AppLovinSDK/ALSdk.h>
+#import <AppLovinSDK/MAAdViewAdDelegate.h>
+#import <AppLovinSDK/MAAdRevenueDelegate.h>
+#import <AppLovinSDK/MAAdReviewDelegate.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -74,6 +74,10 @@ import org.robovm.apple.coreanimation.*;
     public native MAAdWaterfallInfo getWaterfall();
     @Property(selector = "nativeAd")
     public native MANativeAd getNativeAd();
+    @Property(selector = "DSPName")
+    public native String getDSPName();
+    @Property(selector = "DSPIdentifier")
+    public native String getDSPIdentifier();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -6,8 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MAErrorCode.h"
-#import "MAAdWaterfallInfo.h"
+#import <AppLovinSDK/MAErrorCode.h>
+#import <AppLovinSDK/MAAdWaterfallInfo.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

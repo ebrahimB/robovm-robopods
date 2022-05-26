@@ -383,6 +383,8 @@ classes:
                 name: moveSection
             '-initWithSettings:':
                 name: init
+            '-sizeForAdAtIndexPath:withMaximumWidth:':
+                name: getSizeForAd
     MAAdPlacerSettings:
         methods:
             '+settingsWithAdUnitIdentifier:':
@@ -401,7 +403,6 @@ classes:
                 constructor: true
                 name: create
     MATableViewAdPlacerCell: {}
-
 protocols:
     ALAdDisplayDelegate:
         methods:

@@ -27,10 +27,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id<MAAdPlacerDelegate> delegate;
 
-/// Set native ad view nib if using manual template ads.
+#pragma mark - Ad Rendering Properties
+
+/**
+ * The desired size for the ad view.
+ *
+ * If you're using default templates and this value is not set, ad views automatically size to 360x120 for "Small" and 360x300 for "Medium".
+ */
+@property (nonatomic, assign) CGSize adSize;
+
+/**
+ * The native ad view nib to use for rendering manual template ads.
+ */
 @property (nonatomic, strong, nullable) UINib *nativeAdViewNib;
 
-/// Set native ad view binder if using manual template ads.
+/**
+ * The native ad view binder to use for rendering manual template ads.
+ */
 @property (nonatomic, strong, nullable) MANativeAdViewBinder *nativeAdViewBinder;
 
 #pragma mark - Ads
@@ -39,6 +52,16 @@ NS_ASSUME_NONNULL_BEGIN
  * Load MAX native ads for stream. Set @code [MAAdPlacer delegate] @endcode to assign a delegate that should be notified about ad load state.
  */
 - (void)loadAds;
+
+/**
+ * Clears all ads placed in the stream, as well as any ads queued up for placement.
+ */
+- (void)clearAds;
+
+/**
+ * Clears ads placed in specified sections.
+ */
+- (void)clearAdsInSections:(NSIndexSet *)sections;
 
 /**
  * Whether an index path represents an ad position.
@@ -52,8 +75,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Returns the size for an ad at a given index path. If an ad is not ready for that index path, returns @c CGSizeZero.
+ *
+ * If you're using default templates and @c adSize is not set, ad views automatically size to 360x120 for "Small" and 360x300 for "Medium". If the desired width is larger than the @c maximumWidth, the @c maximumWidth will be used while preserving the height for "Small" templates and the aspect ratio for "Medium". The size for manual templates will not be resized to fit.
  */
-- (CGSize)sizeForAdAtIndexPath:(NSIndexPath *)indexPath;
+- (CGSize)sizeForAdAtIndexPath:(NSIndexPath *)indexPath withMaximumWidth:(CGFloat)maximumWidth;
 
 /**
  * Renders an ad into the provided container view if an ad is loaded for that index path.
