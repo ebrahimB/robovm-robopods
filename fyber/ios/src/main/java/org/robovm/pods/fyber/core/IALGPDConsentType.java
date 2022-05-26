@@ -38,24 +38,30 @@ import org.robovm.apple.coregraphics.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/IAMediationMopub/*</name>*/ 
-    extends /*<extends>*/IAMediation/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/IALGPDConsentType/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Unknown(-1L),
+    Denied(0L),
+    Given(1L);
+    /*</values>*/
 
-    /*<ptr>*/public static class IAMediationMopubPtr extends Ptr<IAMediationMopub, IAMediationMopubPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(IAMediationMopub.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    public IAMediationMopub() {}
-    protected IAMediationMopub(Handle h, long handle) { super(h, handle); }
-    protected IAMediationMopub(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/IALGPDConsentType/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/IALGPDConsentType/*</name>*/ valueOf(long n) {
+        for (/*<name>*/IALGPDConsentType/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/IALGPDConsentType/*</name>*/.class.getName());
+    }
 }

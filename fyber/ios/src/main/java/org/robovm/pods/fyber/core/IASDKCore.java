@@ -76,6 +76,10 @@ import org.robovm.apple.coregraphics.*;
     public native String getCCPAString();
     @Property(selector = "setCCPAString:")
     public native void setCCPAString(String v);
+    @Property(selector = "LGPDConsent")
+    public native IALGPDConsentType getLGPDConsent();
+    @Property(selector = "setLGPDConsent:")
+    public native void setLGPDConsent(IALGPDConsentType v);
     @Property(selector = "userID")
     public native String getUserID();
     @Property(selector = "setUserID:")
@@ -115,6 +119,8 @@ import org.robovm.apple.coregraphics.*;
     public native String version();
     @Method(selector = "clearGDPRConsentData")
     public native void clearGDPRConsentData();
+    @Method(selector = "clearLGPDConsentData")
+    public native void clearLGPDConsentData();
     @Method(selector = "sharedInstance")
     public static native IASDKCore sharedInstance();
     /*</methods>*/

@@ -49,7 +49,7 @@ v1.23.0 - in development
 | [Facebook](facebook/)           | 13.2.0 |
 | [Firebase](firebase/)           | 9.0.0  |
 | [Flurry](flurry/)               | 11.2.1 |
-| [Fyber](fyber/)                 | 8.1.4  |
+| [Fyber](fyber/)                 | 8.1.5  |
 | [HelpShift](helpshift/)         | 7.11.2 |
 | [InMobi](inmobi/)               | 10.0.2 |
 | [IronSource](ironsource/)       | 7.2.1  |

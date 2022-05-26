@@ -17,6 +17,7 @@ enums:
     IAVideoClickActionType: {}
     IAVideoType: {}
     FMPLogLevel: {}
+    IALGPDConsentType: {}
 
 typed_enums:
 
