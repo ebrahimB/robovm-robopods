@@ -83,9 +83,9 @@ import org.robovm.apple.dispatch.*;
     @Method(selector = "reference")
     public native FIRStorageReference reference();
     @Method(selector = "referenceForURL:")
-    public native FIRStorageReference referenceForURL(String string);
+    public native FIRStorageReference referenceForURL(String url);
     @Method(selector = "referenceWithPath:")
-    public native FIRStorageReference reference(String string);
+    public native FIRStorageReference reference(String path);
     @Method(selector = "useEmulatorWithHost:port:")
     public native void useEmulator(String host, @MachineSizedSInt long port);
     @Method(selector = "copy")
