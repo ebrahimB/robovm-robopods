@@ -178,6 +178,10 @@ import org.robovm.apple.coregraphics.*;
     public static native String getRequestKeyAppClipRandomizedBundleToken();
     @GlobalValue(symbol="BRANCH_REQUEST_KEY_PARTNER_PARAMETERS", optional=true)
     public static native String getRequestKeyPartnerParameters();
+    @GlobalValue(symbol="BRANCH_REQUEST_METADATA_KEY_SCANTIME_WINDOW", optional=true)
+    public static native String getRequestMetadataKeyScantimeWindow();
+    @GlobalValue(symbol="BRANCH_REQUEST_KEY_REFERRER_GBRAID", optional=true)
+    public static native String getRequestKeyReferrerGbraid();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_SET_IDENTITY", optional=true)
     public static native String getRequestEndpointSetIdentity();
     @GlobalValue(symbol="BRANCH_REQUEST_ENDPOINT_APP_LINK_SETTINGS", optional=true)
@@ -320,6 +324,8 @@ import org.robovm.apple.coregraphics.*;
     public static native String getCrashlyticsSdkVersionKey();
     @GlobalValue(symbol="BRANCH_CRASHLYTICS_LOW_MEMORY_KEY", optional=true)
     public static native String getCrashlyticsLowMemoryKey();
+    @GlobalValue(symbol="BRANCH_URL_QUERY_PARAM_GBRAID", optional=true)
+    public static native String getUrlQueryParamGbraid();
     @GlobalValue(symbol="BRANCH_FEATURE_TAG_SHARE", optional=true)
     public static native String getFeatureTagShare();
     @GlobalValue(symbol="BRANCH_FEATURE_TAG_REFERRAL", optional=true)

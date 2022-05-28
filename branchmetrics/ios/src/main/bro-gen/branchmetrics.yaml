@@ -288,6 +288,8 @@ classes:
                 name: openURL
             '-addFacebookPartnerParameterWithName:value:':
                 name: addFacebookPartnerParameter
+            '-getLongAppLinkURLWithParams:andChannel:andTags:andFeature:andStage:andAlias:':
+                name: getLongAppLinkURL
     BranchActivityItemProvider:
         methods:
             '-initWithParams:andTags:andFeature:andStage:andAlias:':
@@ -349,6 +351,8 @@ classes:
                 name: init
             '-presentActivityViewControllerFromViewController:anchor:':
                 name: presentActivityViewController
+            '-addLPLinkMetadata:icon:':
+                name: addLPLinkMetadata
     BranchUniversalObject:
         methods:
             '-initWithCanonicalIdentifier:':

@@ -379,6 +379,8 @@ import org.robovm.apple.coregraphics.*;
     public native String getLongURL(NSDictionary<?, ?> params, String feature, String stage, String alias);
     @Method(selector = "getLongURLWithParams:andChannel:andTags:andFeature:andStage:andAlias:")
     public native String getLongURL(NSDictionary<?, ?> params, String channel, NSArray<?> tags, String feature, String stage, String alias);
+    @Method(selector = "getLongAppLinkURLWithParams:andChannel:andTags:andFeature:andStage:andAlias:")
+    public native String getLongAppLinkURL(NSDictionary<?, ?> params, String channel, NSArray<?> tags, String feature, String stage, String alias);
     @Method(selector = "getShortURLWithCallback:")
     public native void getShortURL(@Block VoidBlock2<NSString, NSError> callback);
     @Method(selector = "getShortURLWithParams:andCallback:")
@@ -516,5 +518,7 @@ import org.robovm.apple.coregraphics.*;
     public static native void setTrackingDisabled(boolean disabled);
     @Method(selector = "trackingDisabled")
     public static native boolean trackingDisabled();
+    @Method(selector = "setReferrerGbraidValidityWindow:")
+    public static native void setReferrerGbraidValidityWindow(double validityWindow);
     /*</methods>*/
 }

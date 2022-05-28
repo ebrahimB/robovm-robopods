@@ -216,6 +216,18 @@ import org.robovm.apple.coregraphics.*;
     public native boolean isTrackingDisabled();
     @Property(selector = "setTrackingDisabled:")
     public native void setTrackingDisabled(boolean v);
+    @Property(selector = "referrerGBRAID")
+    public native String getReferrerGBRAID();
+    @Property(selector = "setReferrerGBRAID:")
+    public native void setReferrerGBRAID(String v);
+    @Property(selector = "referrerGBRAIDValidityWindow")
+    public native double getReferrerGBRAIDValidityWindow();
+    @Property(selector = "setReferrerGBRAIDValidityWindow:")
+    public native void setReferrerGBRAIDValidityWindow(double v);
+    @Property(selector = "referrerGBRAIDInitDate")
+    public native NSDate getReferrerGBRAIDInitDate();
+    @Property(selector = "setReferrerGBRAIDInitDate:")
+    public native void setReferrerGBRAIDInitDate(NSDate v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -117,6 +117,11 @@ import org.robovm.apple.coregraphics.*;
     public native NSArray<UIActivityItemProvider> activityItems();
     @Method(selector = "presentActivityViewControllerFromViewController:anchor:")
     public native void presentActivityViewController(UIViewController viewController, NSObject anchorViewOrButtonItem);
+    /**
+     * @since Available in iOS 13.0 and later.
+     */
+    @Method(selector = "addLPLinkMetadata:icon:")
+    public native void addLPLinkMetadata(String title, UIImage icon);
     @Method(selector = "activityViewControllerPlaceholderItem:")
     public native NSObject getPlaceholderItem(UIActivityViewController activityViewController);
     @Method(selector = "activityViewController:itemForActivityType:")
