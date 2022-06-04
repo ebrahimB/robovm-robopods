@@ -1,6 +1,7 @@
 <config>
     <frameworks>
         <framework>FirebaseCore</framework>
+        <framework>FirebaseCoreInternal</framework>
         <framework>GoogleUtilities</framework>
         <framework>PromisesObjC</framework>
     </frameworks>

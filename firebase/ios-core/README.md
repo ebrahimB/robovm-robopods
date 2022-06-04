@@ -2,6 +2,7 @@
 
 ### Frameworks required for this pod: 
 * FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
 * GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
 * PromisesObjC.framework (from Firebase.zip/FirebaseAnalytics/PromisesObjC.xcframework)
 
@@ -13,8 +14,11 @@
     <frameworkPaths>
         <path>libs</path>  <!-- path where FirebaseCore.framework is located -->
     </frameworkPaths>
+     <swiftSupport/>
 </config>
 ```
+
+`<swiftSupport/>` *IS IMPORTANT* as firebase is swift based framework now.  
 
 ### Gradle
 

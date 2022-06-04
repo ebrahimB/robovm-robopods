@@ -22,7 +22,7 @@ val frameworkPaths = firebaseRoot
     .walkTopDown()
     .filter {
         val cp = it.canonicalPath
-        it.isDirectory && cp.endsWith(".framework") && (!cp.contains(".xcframework") || cp.contains("ios-arm64_armv7"))
+        it.isDirectory && cp.endsWith(".framework") && (!cp.contains(".xcframework") || cp.contains("ios-arm64_armv7") || cp.contains("ios-arm64"))
     }.toList()
 
 val symbolToFramework = mutableMapOf<String, String>()
