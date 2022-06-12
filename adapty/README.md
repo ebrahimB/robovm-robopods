@@ -5,7 +5,7 @@ Adapty SDK is an open-source framework that makes implementing in-app subscripti
 
 | RoboPods Version | AdaptySDK Version |
 |------------------|-------------------|
-| 1.23.0           | 1.17.1            |
+| 1.23.0           | 1.17.3            |
 | 1.22.0           | 1.16.10           |
 | 1.20.0           | 1.16.9            |
 
