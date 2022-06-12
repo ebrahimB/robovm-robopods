@@ -22,6 +22,7 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
 @property (nonatomic, copy,   nullable) NSString *body;
 @property (nonatomic, copy,   nullable) NSString *callToAction;
 @property (nonatomic, strong, nullable) MANativeAdImage *icon;
+@property (nonatomic, strong, nullable) MANativeAdImage *mainImage;
 @property (nonatomic, strong, nullable) UIView *iconView;
 @property (nonatomic, strong, nullable) UIView *optionsView;
 @property (nonatomic, strong, nullable) UIView *mediaView;
@@ -94,6 +95,13 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
  * The native ad media view.
  */
 @property (nonatomic, strong, readonly, nullable) UIView *mediaView;
+
+/**
+ * The native ad main image (cover image). May or may not be a locally cached file:// resource file.
+ *
+ * Please make sure you continue to render your native ad using @c MANativeAdLoader so impression tracking is not affected.
+ */
+@property (nonatomic, strong, readonly, nullable) MANativeAdImage *mainImage;
 
 /**
  * The aspect ratio for the media view if provided by the network. Otherwise returns 0.0f.

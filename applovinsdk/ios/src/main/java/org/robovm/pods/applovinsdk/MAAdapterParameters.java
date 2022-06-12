@@ -60,6 +60,8 @@ import org.robovm.apple.coreanimation.*;
     NSNumber getAgeRestrictedUser();
     @Property(selector = "isDoNotSell")
     NSNumber getDoNotSell();
+    @Property(selector = "consentString")
+    String getConsentString();
     @Property(selector = "isTesting")
     boolean isTesting();
     @Property(selector = "presentingViewController")

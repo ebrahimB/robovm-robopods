@@ -49,11 +49,10 @@ import org.robovm.apple.coreanimation.*;
     protected MAAdapterError(Handle h, long handle) { super(h, handle); }
     protected MAAdapterError(SkipInit skipInit) { super(skipInit); }
     public MAAdapterError(@MachineSizedSInt long code) { super((Handle) null, create(code)); retain(getHandle()); }
-    public MAAdapterError(@MachineSizedSInt long code, @MachineSizedSInt long adapterErrorCode) { super((Handle) null, create(code, adapterErrorCode)); retain(getHandle()); }
     public MAAdapterError(@MachineSizedSInt long code, String errorString) { super((Handle) null, create(code, errorString)); retain(getHandle()); }
     public MAAdapterError(NSError error) { super((Handle) null, create(error)); retain(getHandle()); }
-    public MAAdapterError(MAAdapterError error, @MachineSizedSInt long thirdPartySdkErrorCode, String thirdPartySdkErrorMessage) { super((Handle) null, create(error, thirdPartySdkErrorCode, thirdPartySdkErrorMessage)); retain(getHandle()); }
-    public MAAdapterError(@MachineSizedSInt long code, String errorString, @MachineSizedSInt long thirdPartySdkErrorCode, String thirdPartySdkErrorMessage) { super((Handle) null, create(code, errorString, thirdPartySdkErrorCode, thirdPartySdkErrorMessage)); retain(getHandle()); }
+    public MAAdapterError(MAAdapterError error, @MachineSizedSInt long mediatedNetworkErrorCode, String mediatedNetworkErrorMessage) { super((Handle) null, create(error, mediatedNetworkErrorCode, mediatedNetworkErrorMessage)); retain(getHandle()); }
+    public MAAdapterError(@MachineSizedSInt long code, String errorString, @MachineSizedSInt long mediatedNetworkErrorCode, String mediatedNetworkErrorMessage) { super((Handle) null, create(code, errorString, mediatedNetworkErrorCode, mediatedNetworkErrorMessage)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "errorCodeNoFill")
@@ -136,24 +135,18 @@ import org.robovm.apple.coreanimation.*;
     public static native @MachineSizedSInt long getErrorCodeAdDisplayFailedError();
     @Property(selector = "adDisplayFailedError")
     public static native MAAdapterError getAdDisplayFailedError();
-    @Property(selector = "thirdPartySdkErrorCode")
-    public native @MachineSizedSInt long getThirdPartySdkErrorCode();
-    @Property(selector = "thirdPartySdkErrorMessage")
-    public native String getThirdPartySdkErrorMessage();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "errorWithCode:")
     protected static native @Pointer long create(@MachineSizedSInt long code);
-    @Method(selector = "errorWithCode:adapterErrorCode:")
-    protected static native @Pointer long create(@MachineSizedSInt long code, @MachineSizedSInt long adapterErrorCode);
     @Method(selector = "errorWithCode:errorString:")
     protected static native @Pointer long create(@MachineSizedSInt long code, String errorString);
     @Method(selector = "errorWithNSError:")
     protected static native @Pointer long create(NSError error);
-    @Method(selector = "errorWithAdapterError:thirdPartySdkErrorCode:thirdPartySdkErrorMessage:")
-    protected static native @Pointer long create(MAAdapterError error, @MachineSizedSInt long thirdPartySdkErrorCode, String thirdPartySdkErrorMessage);
-    @Method(selector = "errorWithCode:errorString:thirdPartySdkErrorCode:thirdPartySdkErrorMessage:")
-    protected static native @Pointer long create(@MachineSizedSInt long code, String errorString, @MachineSizedSInt long thirdPartySdkErrorCode, String thirdPartySdkErrorMessage);
+    @Method(selector = "errorWithAdapterError:mediatedNetworkErrorCode:mediatedNetworkErrorMessage:")
+    protected static native @Pointer long create(MAAdapterError error, @MachineSizedSInt long mediatedNetworkErrorCode, String mediatedNetworkErrorMessage);
+    @Method(selector = "errorWithCode:errorString:mediatedNetworkErrorCode:mediatedNetworkErrorMessage:")
+    protected static native @Pointer long create(@MachineSizedSInt long code, String errorString, @MachineSizedSInt long mediatedNetworkErrorCode, String mediatedNetworkErrorMessage);
     /*</methods>*/
 }

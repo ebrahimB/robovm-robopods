@@ -70,6 +70,10 @@ import org.robovm.apple.coreanimation.*;
     public native MANativeAdImage getIcon();
     @Property(selector = "setIcon:")
     public native void setIcon(MANativeAdImage v);
+    @Property(selector = "mainImage")
+    public native MANativeAdImage getMainImage();
+    @Property(selector = "setMainImage:")
+    public native void setMainImage(MANativeAdImage v);
     @Property(selector = "iconView")
     public native UIView getIconView();
     @Property(selector = "setIconView:")

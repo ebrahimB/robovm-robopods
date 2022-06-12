@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) ALUserSegment *userSegment;
 
 /**
- * Targeting Data allows you to provide user or app data that will improve how we target ads.
+ * A class which allows you to send any demographic or interest-based targeting data.
  */
 @property (nonatomic, strong, readonly) ALTargetingData *targetingData;
 

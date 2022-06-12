@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  * AVAILABLE IN v11.1.1+
  * *********************
  * <p>
- * Get custom parameters passed from AppLovin server to the current adapter.
+ * Get custom parameters passed from AppLovin server to the current custom network SDK adapter.
  *
  * @return Custom parameters. Guaranteed not to be @c nil.
  */
@@ -72,6 +72,15 @@ NS_ASSUME_NONNULL_BEGIN
  * @return @c 1 if the user has opted out of the sale of their personal information. @c nil if not set.
  */
 @property (nonatomic, strong, readonly, nullable, getter=isDoNotSell) NSNumber *doNotSell;
+
+/**
+ * *********************
+ * AVAILABLE IN v11.4.2+
+ * *********************
+ * <p>
+ * The consent string to pass to networks that do not support a binary consent API (i.e. networks that use TCF-only) and do not automatically ingest the string from User Defaults.
+ */
+@property (nonatomic, copy, readonly, nullable) NSString *consentString;
 
 /**
  * Check if this request is made for testing.

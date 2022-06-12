@@ -61,6 +61,8 @@ import org.robovm.apple.coreanimation.*;
     public NSNumber getAgeRestrictedUser() { return null; }
     @NotImplemented("isDoNotSell")
     public NSNumber getDoNotSell() { return null; }
+    @NotImplemented("consentString")
+    public String getConsentString() { return null; }
     @NotImplemented("isTesting")
     public boolean isTesting() { return false; }
     @NotImplemented("presentingViewController")

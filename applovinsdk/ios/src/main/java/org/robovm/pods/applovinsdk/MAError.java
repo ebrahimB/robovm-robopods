@@ -54,6 +54,10 @@ import org.robovm.apple.coreanimation.*;
     public native MAErrorCode getCode();
     @Property(selector = "message")
     public native String getMessage();
+    @Property(selector = "mediatedNetworkErrorCode")
+    public native @MachineSizedSInt long getMediatedNetworkErrorCode();
+    @Property(selector = "mediatedNetworkErrorMessage")
+    public native String getMediatedNetworkErrorMessage();
     @Property(selector = "waterfall")
     public native MAAdWaterfallInfo getWaterfall();
     /**

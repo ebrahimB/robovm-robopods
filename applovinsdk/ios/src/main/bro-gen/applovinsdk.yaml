@@ -340,9 +340,13 @@ classes:
                 name: create
                 constructor: true
             '+errorWithAdapterError:thirdPartySdkErrorCode:thirdPartySdkErrorMessage:':
+                exclude: true # deprecated and conflicts with mediatedNetworkErrorCode
+            '+errorWithCode:errorString:thirdPartySdkErrorCode:thirdPartySdkErrorMessage:':
+                exclude: true # deprecated and conflicts with mediatedNetworkErrorCode
+            '+errorWithAdapterError:mediatedNetworkErrorCode:mediatedNetworkErrorMessage:':
                 name: create
                 constructor: true
-            '+errorWithCode:errorString:thirdPartySdkErrorCode:thirdPartySdkErrorMessage:':
+            '+errorWithCode:errorString:mediatedNetworkErrorCode:mediatedNetworkErrorMessage:':
                 name: create
                 constructor: true
     MANativeAd:
