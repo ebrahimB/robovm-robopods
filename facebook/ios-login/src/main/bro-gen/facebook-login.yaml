@@ -1,7 +1,14 @@
 package: org.robovm.pods.facebook.login
 framework: FBSDKLoginKit
-include: [foundation, dispatch, coregraphics, uikit, ../../../../ios-core/src/main/bro-gen/facebook-core.yaml, coreanimation]
-clang_args: ['-x', 'objective-c', "-DBUCK"]
+include:
+    - foundation
+    - dispatch
+    - coregraphics
+    - uikit
+    - coreanimation
+    - ../../../../ios-core/src/main/bro-gen/facebook-core.yaml
+    - ../../../../ios-core-basics/src/main/bro-gen/facebook-core-basics.yaml
+clang_args: ['-x', 'objective-c', '-fobjc-arc']
 headers:
     - FBSDKLoginKit.h
     - FBSDKLoginKit-Swift.h
@@ -15,6 +22,7 @@ enums:
     FBSDKTooltipColorStyle: {}
     FBSDKLoginButtonTooltipBehavior: {}
     FBSDKLoginTracking: {}
+    FBSDKLoginManagerState: {}
 typed_enums:
     FBSDKLoginAuthType:
         enum: FBSDKLoginAuthType
@@ -23,13 +31,22 @@ typed_enums:
 private_typedefs:
     FBSDKPermission: NSObject
 classes:
-    FBSDKDeviceLoginCodeInfo: {}
+    FBSDKDeviceLoginCodeInfo:
+        methods:
+            '-initWithIdentifier:loginCode:verificationURL:expirationDate:pollingInterval:':
+                name: init
     FBSDKDeviceLoginManager:
         methods:
             '-initWithPermissions:enableSmartLogin:':
                 name: init
-    FBSDKDeviceLoginManagerResult: {}
-    FBSDKLoginButton: {}
+    FBSDKDeviceLoginManagerResult:
+        methods:
+            '-initWithToken:isCancelled:':
+                name: init
+    FBSDKLoginButton:
+        methods:
+            '-initWithFrame:':
+                name: init
     FBSDKLoginManager:
         methods:
             '-logInWithURL:handler:':
@@ -42,6 +59,8 @@ classes:
                 name: init
             '-initWithToken:authenticationToken:isCancelled:grantedPermissions:declinedPermissions:':
                 name: init
+            '-addLoggingExtra:forKey:':
+                name: addLogging
     FBSDKLoginTooltipView: {}
     FBSDKTooltipView:
         methods:
@@ -91,7 +110,44 @@ classes:
     FBSDKPermission:
         methods:
             '-initWithString:':
-                name: initWithString$
+                name: init
+    FBSDKAuthenticationTokenFactory:
+        methods:
+            '-createTokenFromTokenString:nonce:graphDomain:completion:':
+                name: createToken
+    FBSDKAuthenticationTokenHeader: {}
+    FBSDKDevicePoller:
+        methods:
+            '-scheduleBlock:interval:':
+                name: schedule
+    FBSDKDeviceRequestsHelper:
+        methods:
+            '+startAdvertisementServiceWithLoginCode:delegate:':
+                name: startAdvertisementService
+            '+isDelegate:forAdvertisementService:':
+                name: isDelegate
+    FBSDKLoginCompleterFactory: {}
+    FBSDKLoginCompletionParameters: {}
+    FBSDKLoginManagerLogger:
+        methods:
+            '-initWithParameters:tracking:':
+                name: init
+            '-initWithLoggingToken:tracking:':
+                name: init
+            '-endLoginWithResult:error:':
+                name: endLogin
+            '-willAttemptAppSwitchingBehaviorWithUrlScheme:':
+                name: willAttemptAppSwitchingBehavior
+            '+clientStateForAuthMethod:andExistingState:logger:':
+                name: getClientState
+    FBSDKLoginRecoveryAttempter:
+        methods:
+            '-attemptRecoveryFromError:completionHandler:':
+                name: attemptRecovery
+    FBSDKProfileFactory:
+        methods:
+            '-createProfileWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:':
+                name: createProfile
 protocols:
     FBSDKDeviceLoginManagerDelegate:
         methods:
@@ -123,7 +179,29 @@ protocols:
                 name: loadServerConfiguration
     _FBSDKUserInterfaceElementProviding: {}
     _FBSDKUserInterfaceStringProviding: {}
-
+    FBSDKAuthenticationTokenCreating:
+        methods:
+            '-createTokenFromTokenString:nonce:graphDomain:completion:':
+                name: createToken
+    FBSDKDevicePolling:
+        methods:
+            '-scheduleBlock:interval:':
+                name: schedule
+    FBSDKLoginCompleterFactory:
+        name: FBSDKLoginCompleterFactoryProtocol
+        methods:
+            '-createLoginCompleterWithURLParameters:appID:authenticationTokenCreator:graphRequestFactory:internalUtility:':
+                name: createLoginCompleter
+    FBSDKLoginCompleting:
+        methods:
+            '-completeLoginWithHandler:':
+                name: completeLogin
+            '-completeLoginWithHandler:nonce:codeVerifier:':
+                name: completeLogin
+    FBSDKProfileCreating:
+        methods:
+            '-createProfileWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:':
+                name: createProfile
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

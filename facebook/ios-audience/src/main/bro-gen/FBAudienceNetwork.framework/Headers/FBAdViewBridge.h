@@ -11,6 +11,7 @@
  ***/
 
 #import <FBAudienceNetwork/FBAdBridgeCommon.h>
+#import <Foundation/Foundation.h>
 
 FB_EXTERN_C_BEGIN
 

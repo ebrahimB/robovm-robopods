@@ -31,8 +31,9 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.pods.facebook.core.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -51,27 +52,31 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKLoginTooltipView(Handle h, long handle) { super(h, handle); }
     protected FBSDKLoginTooltipView(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithTagline:message:colorStyle:")
-    public FBSDKLoginTooltipView(String tagline, String message, FBSDKTooltipColorStyle colorStyle) { super(tagline, message, colorStyle); }
-    @Method(selector = "initWithFrame:")
-    public FBSDKLoginTooltipView(@ByVal CGRect frame) { super(frame); }
-    @Method(selector = "initWithCoder:")
-    public FBSDKLoginTooltipView(NSCoder coder) { super(coder); }
+    public FBSDKLoginTooltipView(String tagline, String message, FBSDKTooltipColorStyle colorStyle) { super((SkipInit) null); initObject(init(tagline, message, colorStyle)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "delegate")
     public native FBSDKLoginTooltipViewDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(FBSDKLoginTooltipViewDelegate v);
-    @Property(selector = "shouldForceDisplay")
+    @Property(selector = "forceDisplay")
     public native boolean isForceDisplay();
     @Property(selector = "setForceDisplay:")
     public native void setForceDisplay(boolean v);
+    @Property(selector = "shouldForceDisplay")
+    public native boolean shouldForceDisplay();
+    @Property(selector = "setShouldForceDisplay:")
+    public native void setShouldForceDisplay(boolean v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithTagline:message:colorStyle:")
+    protected native @Pointer long init(String tagline, String message, FBSDKTooltipColorStyle colorStyle);
+    @Method(selector = "presentInView:withArrowPosition:direction:")
+    public native void presentInView(UIView view, @ByVal CGPoint arrowPosition, FBSDKTooltipViewArrowDirection direction);
     /**
      * @since Available in iOS 9.0 and later.
      */

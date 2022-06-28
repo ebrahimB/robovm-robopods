@@ -1,7 +1,7 @@
 package: org.robovm.pods.facebook.core
 framework: FBSDKCoreKit
 include: [foundation, dispatch, coregraphics, uikit, webkit, coreanimation]
-clang_args: ['-x', 'objective-c']
+clang_args: ['-x', 'objective-c', '-fobjc-arc']
 headers: 
     - FBSDKCoreKit.h
     - FBSDKCoreKit-Swift.h
@@ -209,8 +209,15 @@ classes:
                 name: didFinishLaunching
             '-application:continueUserActivity:':
                 name: continueUserActivity
-    FBSDKAuthenticationToken: {}
-    FBSDKAuthenticationTokenClaims: {}
+    FBSDKAuthenticationToken:
+        methods:
+            '-initWithTokenString:nonce:graphDomain:':
+                name: init
+    FBSDKAuthenticationTokenClaims:
+        methods:
+            '+claimsFromEncodedString:nonce:':
+                constructor: true
+                name: create
     FBSDKBridgeAPI:
         methods:
             '-initWithProcessInfo:':
@@ -515,9 +522,9 @@ protocols:
     FBSDKErrorRecoveryAttempting:
         methods:
             '-attemptRecoveryFromError:optionIndex:completionHandler:':
-                name: attemptRecoveryFromError
+                name: attemptRecovery
             '-attemptRecoveryFromError:completionHandler:':
-                name: attemptRecoveryFromError
+                name: attemptRecovery
     FBSDKGraphErrorRecoveryProcessorDelegate:
         methods:
             '-processorDidAttemptRecovery:didRecover:error:':

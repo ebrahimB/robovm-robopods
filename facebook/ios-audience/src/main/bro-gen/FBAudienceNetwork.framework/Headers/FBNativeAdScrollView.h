@@ -5,6 +5,7 @@
 #import <FBAudienceNetwork/FBAdDefines.h>
 #import <FBAudienceNetwork/FBNativeAdView.h>
 #import <FBAudienceNetwork/FBNativeAdsManager.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

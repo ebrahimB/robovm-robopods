@@ -31,8 +31,9 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.pods.facebook.core.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -47,15 +48,11 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKTooltipView.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKTooltipView() {}
+    protected FBSDKTooltipView() {}
     protected FBSDKTooltipView(Handle h, long handle) { super(h, handle); }
     protected FBSDKTooltipView(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithTagline:message:colorStyle:")
     public FBSDKTooltipView(String tagline, String message, FBSDKTooltipColorStyle colorStyle) { super((SkipInit) null); initObject(init(tagline, message, colorStyle)); }
-    @Method(selector = "initWithFrame:")
-    public FBSDKTooltipView(@ByVal CGRect frame) { super(frame); }
-    @Method(selector = "initWithCoder:")
-    public FBSDKTooltipView(NSCoder coder) { super(coder); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "displayDuration")
@@ -85,9 +82,13 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "presentFromView:")
     public native void presentFromView(UIView anchorView);
     @Method(selector = "presentInView:withArrowPosition:direction:")
-    public native void presentInView(UIView view, @ByVal CGPoint arrowPosition, FBSDKTooltipViewArrowDirection arrowDirection);
+    public native void presentInView(UIView view, @ByVal CGPoint arrowPosition, FBSDKTooltipViewArrowDirection direction);
     @Method(selector = "dismiss")
     public native void dismiss();
+    @Method(selector = "drawRect:")
+    public native void draw(@ByVal CGRect rect);
+    @Method(selector = "layoutSubviews")
+    public native void layoutSubviews();
     /**
      * @since Available in iOS 9.0 and later.
      */

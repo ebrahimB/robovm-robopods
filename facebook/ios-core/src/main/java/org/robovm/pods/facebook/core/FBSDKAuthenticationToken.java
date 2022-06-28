@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAuthenticationToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding, FBSDKAuthenticationTokenProviding, FBSDKAuthenticationTokenSetting/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAuthenticationTokenPtr extends Ptr<FBSDKAuthenticationToken, FBSDKAuthenticationTokenPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAuthenticationToken.class); }/*</bind>*/
@@ -50,6 +50,8 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKAuthenticationToken() {}
     protected FBSDKAuthenticationToken(Handle h, long handle) { super(h, handle); }
     protected FBSDKAuthenticationToken(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithTokenString:nonce:graphDomain:")
+    public FBSDKAuthenticationToken(String tokenString, String nonce, String graphDomain) { super((SkipInit) null); initObject(init(tokenString, nonce, graphDomain)); }
     @Method(selector = "initWithCoder:")
     public FBSDKAuthenticationToken(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
@@ -73,6 +75,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithTokenString:nonce:graphDomain:")
+    protected native @Pointer long init(String tokenString, String nonce, String graphDomain);
     @Method(selector = "claims")
     public native FBSDKAuthenticationTokenClaims claims();
     @Method(selector = "encodeWithCoder:")

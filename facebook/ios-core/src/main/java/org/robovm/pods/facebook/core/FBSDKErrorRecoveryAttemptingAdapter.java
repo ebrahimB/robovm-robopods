@@ -54,6 +54,6 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("attemptRecoveryFromError:completionHandler:")
-    public void attemptRecoveryFromError(NSError error, @Block VoidBooleanBlock completionHandler) {}
+    public void attemptRecovery(NSError error, @Block VoidBooleanBlock completionHandler) {}
     /*</methods>*/
 }

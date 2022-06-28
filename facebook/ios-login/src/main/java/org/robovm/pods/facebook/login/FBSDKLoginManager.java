@@ -31,8 +31,9 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.pods.facebook.core.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -52,6 +53,8 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKLoginManager(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "requestedPermissions")
+    public native NSSet<NSObject> getRequestedPermissions();
     @Property(selector = "defaultAudience")
     public native FBSDKDefaultAudience getDefaultAudience();
     @Property(selector = "setDefaultAudience:")

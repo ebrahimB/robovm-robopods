@@ -1,6 +1,8 @@
 // (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary.
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 @class FBDisplayAdController;
 
 @protocol FBAdCompanionViewDelegate;

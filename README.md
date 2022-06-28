@@ -46,7 +46,7 @@ v1.24.0 - in development
 | [Azure](azure/)                 | 3.1.4  |
 | [BranchMetrics](branchmetrics/) | 1.42.0 |
 | [Charts](charts/)               | 4.0.3             |
-| [Facebook](facebook/)           | 13.2.0 |
+| [Facebook](facebook/)           | 14.0.0 |
 | [Firebase](firebase/)           | 9.1.0  |
 | [Flurry](flurry/)               | 11.2.1 |
 | [Fyber](fyber/)                 | 8.1.5  |

@@ -31,8 +31,9 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.pods.facebook.core.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -50,6 +51,8 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKDeviceLoginCodeInfo() {}
     protected FBSDKDeviceLoginCodeInfo(Handle h, long handle) { super(h, handle); }
     protected FBSDKDeviceLoginCodeInfo(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithIdentifier:loginCode:verificationURL:expirationDate:pollingInterval:")
+    public FBSDKDeviceLoginCodeInfo(String identifier, String loginCode, NSURL verificationURL, NSDate expirationDate, @MachineSizedUInt long pollingInterval) { super((SkipInit) null); initObject(init(identifier, loginCode, verificationURL, expirationDate, pollingInterval)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "identifier")
@@ -65,6 +68,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "initWithIdentifier:loginCode:verificationURL:expirationDate:pollingInterval:")
+    protected native @Pointer long init(String identifier, String loginCode, NSURL verificationURL, NSDate expirationDate, @MachineSizedUInt long pollingInterval);
     /*</methods>*/
 }

@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKProfile/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding, FBSDKProfileProviding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKProfilePtr extends Ptr<FBSDKProfile, FBSDKProfilePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKProfile.class); }/*</bind>*/
@@ -129,5 +129,7 @@ import org.robovm.apple.coreanimation.*;
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
+    @Method(selector = "fetchCachedProfile")
+    public static native FBSDKProfile fetchCachedProfile();
     /*</methods>*/
 }

@@ -2,11 +2,13 @@
 
 #import <CoreMedia/CoreMedia.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import <FBAudienceNetwork/FBAdCompanionView.h>
 #import <FBAudienceNetwork/FBAdDefines.h>
 #import <FBAudienceNetwork/FBAdExperienceConfig.h>
 #import <FBAudienceNetwork/FBAdExtraHint.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

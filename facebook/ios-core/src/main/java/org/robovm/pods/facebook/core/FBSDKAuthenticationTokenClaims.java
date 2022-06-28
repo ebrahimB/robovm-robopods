@@ -50,6 +50,7 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKAuthenticationTokenClaims() {}
     protected FBSDKAuthenticationTokenClaims(Handle h, long handle) { super(h, handle); }
     protected FBSDKAuthenticationTokenClaims(SkipInit skipInit) { super(skipInit); }
+    public FBSDKAuthenticationTokenClaims(String encodedClaims, String expectedNonce) { super((Handle) null, create(encodedClaims, expectedNonce)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "jti")
@@ -95,6 +96,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "claimsFromEncodedString:nonce:")
+    protected static native @Pointer long create(String encodedClaims, String expectedNonce);
     /*</methods>*/
 }

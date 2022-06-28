@@ -42,13 +42,12 @@ import org.robovm.apple.foundation.*;
     /*<bind>*/static { ObjCRuntime.bind(FBAEMUtility.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected FBAEMUtility() {}
+    public FBAEMUtility() {}
     protected FBAEMUtility(Handle h, long handle) { super(h, handle); }
     protected FBAEMUtility(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "sharedUtility")
-    public static native FBAEMUtility getSharedUtility();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -56,5 +55,7 @@ import org.robovm.apple.foundation.*;
     public native NSNumber getInSegmentValue(NSDictionary<NSString, ?> parameters, FBAEMAdvertiserRuleMatching matchingRule);
     @Method(selector = "getContentID:")
     public native String getContentID(NSDictionary<NSString, ?> parameters);
+    @Method(selector = "sharedUtility")
+    public static native FBAEMUtility sharedUtility();
     /*</methods>*/
 }

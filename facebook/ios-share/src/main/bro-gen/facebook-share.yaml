@@ -1,7 +1,14 @@
 package: org.robovm.pods.facebook.share
 framework: FBSDKShareKit
-include: [foundation, dispatch, coregraphics, uikit, photos, ../../../../ios-core/src/main/bro-gen/facebook-core.yaml, coreanimation]
-clang_args: ['-x', 'objective-c', "-DBUCK"]
+include:
+    - foundation
+    - dispatch
+    - coregraphics
+    - uikit
+    - photos
+    - coreanimation
+    - ../../../../ios-core/src/main/bro-gen/facebook-core.yaml
+clang_args: ['-x', 'objective-c', '-fobjc-arc']
 headers:
     - "#include <FBSDKCoreKit/FBSDKCoreKit.h>"
     - "#include <FBSDKCoreKit/FBSDKCoreKit-Swift.h>"
@@ -159,6 +166,11 @@ protocols:
         methods:
             '-validateWithOptions:error:':
                 name: validate
+    FBSDKSharingValidatable:
+        methods:
+            '-validateWithOptions:error:':
+                name: validate
+                throws: NSErrorException
 functions:
     NSStringFromFBSDKAppGroupPrivacy:
         class: FBSDKAppGroupPrivacy

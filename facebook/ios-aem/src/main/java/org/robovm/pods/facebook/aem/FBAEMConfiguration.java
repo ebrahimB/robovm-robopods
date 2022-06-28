@@ -57,8 +57,8 @@ import org.robovm.apple.foundation.*;
     public native @MachineSizedSInt long getValidFrom();
     @Property(selector = "defaultCurrency")
     public native String getDefaultCurrency();
-    @Property(selector = "configMode")
-    public native String getConfigMode();
+    @Property(selector = "mode")
+    public native String getMode();
     @Property(selector = "businessID")
     public native String getBusinessID();
     @Property(selector = "matchingRule")

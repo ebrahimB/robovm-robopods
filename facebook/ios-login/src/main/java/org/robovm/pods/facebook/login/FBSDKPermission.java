@@ -31,8 +31,9 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.pods.facebook.core.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -51,7 +52,7 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKPermission(Handle h, long handle) { super(h, handle); }
     protected FBSDKPermission(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithString:")
-    public FBSDKPermission(String string) { super((SkipInit) null); initObject(initWithString$(string)); }
+    public FBSDKPermission(String string) { super((SkipInit) null); initObject(init(string)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "description")
@@ -62,7 +63,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithString:")
-    protected native @Pointer long initWithString$(String string);
+    protected native @Pointer long init(String string);
     @Method(selector = "isEqual:")
     public native boolean isEqual(NSObject object);
     @Method(selector = "permissionsFromRawPermissions:")

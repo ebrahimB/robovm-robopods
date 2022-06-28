@@ -1,7 +1,7 @@
 package: org.robovm.pods.facebook.aem
 framework: FBAEMKit
 include: [foundation]
-clang_args: ['-x', 'objective-c', "-DBUCK"]
+clang_args: ['-x', 'objective-c']
 headers: 
     - FBAEMKit.h
     - FBAEMKit-Swift.h
@@ -29,6 +29,8 @@ classes:
         methods:
             '-initWithOperator:paramKey:linguisticCondition:numericalCondition:arrayCondition:':
                 name: init
+            '-copyWithZone:':
+                exclude: true
     FBAEMInvocation:
         methods:
             '-attributeEvent:currency:value:parameters:configs:shouldUpdateCache:':
@@ -39,9 +41,20 @@ classes:
                 name: isOptimizedEvent
             '-isOutOfWindowWithConfigs:':
                 name: isOutOfWindow
+            '-initWithAppLinkData:':
+                name: init
             '+invocationWithAppLinkData:':
-                constructor: true
-                name: create
+                exclude: true
+            '-attributeEvent:currency:value:parameters:configurations:shouldUpdateCache:':
+                name: attributeEvent
+            '-updateConversionValueWithConfigurations:event:shouldBoostPriority:':
+                name: updateConversionValue
+            '-isOptimizedEvent:configurations:':
+                name: isOptimizedEvent
+            '-isOutOfWindowWithConfigurations:':
+                name: isOutOfWindow
+            '-getHMACWithDelay:':
+                name: getHMAC
     FBAEMNetworker: {}
     FBAEMRequestBody:
         methods:
@@ -53,6 +66,8 @@ classes:
                 name: init
             '-isMatchedWithRecordedEvents:recordedValues:':
                 name: isMatched
+            '-copyWithZone:':
+                exclude: true
     FBAEMUtility:
         methods:
             '-getInSegmentValue:matchingRule:':

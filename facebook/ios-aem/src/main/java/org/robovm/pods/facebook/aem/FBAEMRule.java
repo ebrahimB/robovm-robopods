@@ -53,18 +53,10 @@ import org.robovm.apple.foundation.*;
     /*<properties>*/
     @Property(selector = "conversionValue")
     public native @MachineSizedSInt long getConversionValue();
-    @Property(selector = "setConversionValue:")
-    public native void setConversionValue(@MachineSizedSInt long v);
     @Property(selector = "priority")
     public native @MachineSizedSInt long getPriority();
-    @Property(selector = "setPriority:")
-    public native void setPriority(@MachineSizedSInt long v);
     @Property(selector = "events")
     public native NSArray<FBAEMEvent> getEvents();
-    @Property(selector = "setEvents:")
-    public native void setEvents(NSArray<FBAEMEvent> v);
-    @Property(selector = "supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -74,9 +66,13 @@ import org.robovm.apple.foundation.*;
     public native boolean containsEvent(String event);
     @Method(selector = "isMatchedWithRecordedEvents:recordedValues:")
     public native boolean isMatched(NSSet<NSString> recordedEvents, NSDictionary<?, ?> recordedValues);
-    @Method(selector = "encodeWithCoder:")
-    public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
+    @Method(selector = "encodeWithCoder:")
+    public native void encode(NSCoder coder);
+    @Method(selector = "isEqual:")
+    public native boolean isEqual(NSObject object);
+    @Method(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</methods>*/
 }

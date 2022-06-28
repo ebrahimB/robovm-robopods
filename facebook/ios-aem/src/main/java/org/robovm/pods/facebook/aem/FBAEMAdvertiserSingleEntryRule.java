@@ -46,33 +46,35 @@ import org.robovm.apple.foundation.*;
     protected FBAEMAdvertiserSingleEntryRule(Handle h, long handle) { super(h, handle); }
     protected FBAEMAdvertiserSingleEntryRule(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithOperator:paramKey:linguisticCondition:numericalCondition:arrayCondition:")
-    public FBAEMAdvertiserSingleEntryRule(FBAEMAdvertiserRuleOperator op, String paramKey, String linguisticCondition, NSNumber numericalCondition, NSArray<NSString> arrayCondition) { super((SkipInit) null); initObject(init(op, paramKey, linguisticCondition, numericalCondition, arrayCondition)); }
+    public FBAEMAdvertiserSingleEntryRule(FBAEMAdvertiserRuleOperator operator_, String paramKey, String linguisticCondition, NSNumber numericalCondition, NSArray<NSString> arrayCondition) { super((SkipInit) null); initObject(init(operator_, paramKey, linguisticCondition, numericalCondition, arrayCondition)); }
     @Method(selector = "initWithCoder:")
     public FBAEMAdvertiserSingleEntryRule(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "operator")
-    public native FBAEMAdvertiserRuleOperator getOperator();
+    public native FBAEMAdvertiserRuleOperator getOperator_();
     @Property(selector = "paramKey")
     public native String getParamKey();
     @Property(selector = "linguisticCondition")
     public native String getLinguisticCondition();
-    @Property(selector = "numericalCondition")
-    public native NSNumber getNumericalCondition();
     @Property(selector = "arrayCondition")
     public native NSArray<NSString> getArrayCondition();
-    @Property(selector = "supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithOperator:paramKey:linguisticCondition:numericalCondition:arrayCondition:")
-    protected native @Pointer long init(FBAEMAdvertiserRuleOperator op, String paramKey, String linguisticCondition, NSNumber numericalCondition, NSArray<NSString> arrayCondition);
+    protected native @Pointer long init(FBAEMAdvertiserRuleOperator operator_, String paramKey, String linguisticCondition, NSNumber numericalCondition, NSArray<NSString> arrayCondition);
     @Method(selector = "isMatchedEventParameters:")
     public native boolean isMatchedEventParameters(NSDictionary<NSString, ?> eventParams);
-    @Method(selector = "encodeWithCoder:")
-    public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
+    @Method(selector = "encodeWithCoder:")
+    public native void encode(NSCoder coder);
+    @Method(selector = "isEqual:")
+    public native boolean isEqual(NSObject object);
+    @Method(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+    @Method(selector = "setSupportsSecureCoding:")
+    public static native void setSupportsSecureCoding(boolean value);
     /*</methods>*/
 }

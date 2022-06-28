@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-facebook-login-ios</artifactId>
-    <name>RoboPods Facebook Login iOS v13.2.0</name>
+    <name>RoboPods Facebook Login iOS v14.0.0</name>
     <packaging>jar</packaging>
 
     <licenses>
@@ -22,6 +22,11 @@
         <dependency>
             <groupId>io.github.dkimitsa.robovm</groupId>
             <artifactId>robopods-facebook-core-ios</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.dkimitsa.robovm</groupId>
+            <artifactId>robopods-facebook-core-basics-ios</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

@@ -49,7 +49,7 @@ import org.robovm.apple.foundation.*;
     @Method(selector = "createRuleWithJson:")
     FBAEMAdvertiserRuleMatching createRule(String json);
     @Method(selector = "createRuleWithDict:")
-    FBAEMAdvertiserRuleMatching createRule(NSDictionary<NSString, ?> dict);
+    FBAEMAdvertiserRuleMatching createRule(NSDictionary<NSString, ?> dictionary);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

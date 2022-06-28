@@ -51,12 +51,6 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @deprecated use configureWithNetworker:appID:reporter: instead.
-     */
-    @Deprecated
-    @Method(selector = "configureWithNetworker:appID:")
-    public static native void configure(FBAEMNetworking networker, String appID);
     @Method(selector = "configureWithNetworker:appID:reporter:")
     public static native void configure(FBAEMNetworking networker, String appID, FBSKAdNetworkReporting reporter);
     @Method(selector = "configureWithNetworker:appID:reporter:analyticsAppID:")

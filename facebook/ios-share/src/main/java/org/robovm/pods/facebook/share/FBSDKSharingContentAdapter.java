@@ -32,15 +32,15 @@ import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.photos.*;
-import org.robovm.pods.facebook.core.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
 /*</imports>*/
 
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKSharingContentAdapter/*</name>*/ 
-    extends /*<extends>*/FBSDKSharingValidationAdapter/*</extends>*/ 
+    extends /*<extends>*/FBSDKSharingValidatableAdapter/*</extends>*/ 
     /*<implements>*/implements FBSDKSharingContent/*</implements>*/ {
 
     /*<ptr>*/

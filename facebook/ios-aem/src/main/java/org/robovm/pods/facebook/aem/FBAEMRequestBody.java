@@ -52,9 +52,9 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "appendWithKey:formValue:")
-    public native void append(String key, String value);
     @Method(selector = "compressedData")
     public native NSData compressedData();
+    @Method(selector = "appendWithKey:formValue:")
+    public native void append(String key, String value);
     /*</methods>*/
 }

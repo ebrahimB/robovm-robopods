@@ -45,69 +45,60 @@ import org.robovm.apple.foundation.*;
     protected FBAEMInvocation() {}
     protected FBAEMInvocation(Handle h, long handle) { super(h, handle); }
     protected FBAEMInvocation(SkipInit skipInit) { super(skipInit); }
-    public FBAEMInvocation(NSDictionary<?, ?> applinkData) { super((Handle) null, create(applinkData)); retain(getHandle()); }
+    @Method(selector = "initWithAppLinkData:")
+    public FBAEMInvocation(NSDictionary<?, ?> appLinkData) { super((SkipInit) null); initObject(init(appLinkData)); }
     @Method(selector = "initWithCoder:")
     public FBAEMInvocation(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "campaignID")
     public native String getCampaignID();
-    @Property(selector = "ACSToken")
-    public native String getACSToken();
-    @Property(selector = "ACSSharedSecret")
-    public native String getACSSharedSecret();
-    @Property(selector = "ACSConfigID")
-    public native String getACSConfigID();
+    @Property(selector = "acsToken")
+    public native String getAcsToken();
+    @Property(selector = "acsConfigurationID")
+    public native String getAcsConfigurationID();
     @Property(selector = "businessID")
     public native String getBusinessID();
     @Property(selector = "catalogID")
     public native String getCatalogID();
     @Property(selector = "isTestMode")
     public native boolean isTestMode();
-    @Property(selector = "hasSKAN")
-    public native boolean hasSKAN();
+    @Property(selector = "hasStoreKitAdNetwork")
+    public native boolean hasStoreKitAdNetwork();
+    @Property(selector = "setHasStoreKitAdNetwork:")
+    public native void setHasStoreKitAdNetwork(boolean v);
     @Property(selector = "isConversionFilteringEligible")
     public native boolean isConversionFilteringEligible();
-    @Property(selector = "timestamp")
-    public native NSDate getTimestamp();
-    @Property(selector = "configMode")
-    public native String getConfigMode();
-    @Property(selector = "configID")
-    public native @MachineSizedSInt long getConfigID();
-    @Property(selector = "recordedEvents")
-    public native NSMutableSet<NSString> getRecordedEvents();
-    @Property(selector = "recordedValues")
-    public native NSMutableDictionary<?, ?> getRecordedValues();
+    @Property(selector = "setIsConversionFilteringEligible:")
+    public native void setIsConversionFilteringEligible(boolean v);
+    @Property(selector = "configurationID")
+    public native @MachineSizedSInt long getConfigurationID();
     @Property(selector = "conversionValue")
     public native @MachineSizedSInt long getConversionValue();
-    @Property(selector = "priority")
-    public native @MachineSizedSInt long getPriority();
-    @Property(selector = "conversionTimestamp")
-    public native NSDate getConversionTimestamp();
     @Property(selector = "isAggregated")
     public native boolean isAggregated();
     @Property(selector = "setIsAggregated:")
     public native void setIsAggregated(boolean v);
-    @Property(selector = "supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "attributeEvent:currency:value:parameters:configs:shouldUpdateCache:")
-    public native boolean attributeEvent(String event, String currency, NSNumber value, NSDictionary<NSString, ?> parameters, NSDictionary<?, ?> configs, boolean shouldUpdateCache);
-    @Method(selector = "updateConversionValueWithConfigs:event:shouldBoostPriority:")
-    public native boolean updateConversionValue(NSDictionary<?, ?> configs, String event, boolean shouldBoostPriority);
-    @Method(selector = "isOptimizedEvent:configs:")
-    public native boolean isOptimizedEvent(String event, NSDictionary<?, ?> configs);
-    @Method(selector = "isOutOfWindowWithConfigs:")
-    public native boolean isOutOfWindow(NSDictionary<?, ?> configs);
-    @Method(selector = "getHMAC:")
+    @Method(selector = "initWithAppLinkData:")
+    protected native @Pointer long init(NSDictionary<?, ?> appLinkData);
+    @Method(selector = "attributeEvent:currency:value:parameters:configurations:shouldUpdateCache:")
+    public native boolean attributeEvent(String event, String potentialValueCurrency, NSNumber potentialValue, NSDictionary<NSString, ?> parameters, NSDictionary<?, ?> configurations, boolean shouldUpdateCache);
+    @Method(selector = "updateConversionValueWithConfigurations:event:shouldBoostPriority:")
+    public native boolean updateConversionValue(NSDictionary<?, ?> configurations, String event, boolean shouldBoostPriority);
+    @Method(selector = "isOptimizedEvent:configurations:")
+    public native boolean isOptimizedEvent(String event, NSDictionary<?, ?> configurations);
+    @Method(selector = "isOutOfWindowWithConfigurations:")
+    public native boolean isOutOfWindow(NSDictionary<?, ?> configurations);
+    @Method(selector = "getHMACWithDelay:")
     public native String getHMAC(@MachineSizedSInt long delay);
-    @Method(selector = "invocationWithAppLinkData:")
-    protected static native @Pointer long create(NSDictionary<?, ?> applinkData);
-    @Method(selector = "encodeWithCoder:")
-    public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
+    @Method(selector = "encodeWithCoder:")
+    public native void encode(NSCoder coder);
+    @Method(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</methods>*/
 }

@@ -51,6 +51,6 @@ import org.robovm.apple.foundation.*;
     @NotImplemented("createRuleWithJson:")
     public FBAEMAdvertiserRuleMatching createRule(String json) { return null; }
     @NotImplemented("createRuleWithDict:")
-    public FBAEMAdvertiserRuleMatching createRule(NSDictionary<NSString, ?> dict) { return null; }
+    public FBAEMAdvertiserRuleMatching createRule(NSDictionary<NSString, ?> dictionary) { return null; }
     /*</methods>*/
 }

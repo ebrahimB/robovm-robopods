@@ -41,7 +41,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAccessToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding, FBSDKAccessTokenProviding, FBSDKAccessTokenSetting/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAccessTokenPtr extends Ptr<FBSDKAccessToken, FBSDKAccessTokenPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAccessToken.class); }/*</bind>*/

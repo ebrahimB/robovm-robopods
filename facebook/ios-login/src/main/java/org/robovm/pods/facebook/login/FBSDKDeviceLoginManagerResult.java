@@ -31,8 +31,9 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.pods.facebook.core.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -50,6 +51,8 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKDeviceLoginManagerResult() {}
     protected FBSDKDeviceLoginManagerResult(Handle h, long handle) { super(h, handle); }
     protected FBSDKDeviceLoginManagerResult(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithToken:isCancelled:")
+    public FBSDKDeviceLoginManagerResult(FBSDKAccessToken token, boolean cancelled) { super((SkipInit) null); initObject(init(token, cancelled)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "accessToken")
@@ -59,6 +62,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "initWithToken:isCancelled:")
+    protected native @Pointer long init(FBSDKAccessToken token, boolean cancelled);
     /*</methods>*/
 }

@@ -31,8 +31,9 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.pods.facebook.core.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -103,11 +104,5 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(NSArray<NSString> permissions, FBSDKLoginTracking tracking);
     @Method(selector = "initWithTracking:")
     protected native @Pointer long init(FBSDKLoginTracking tracking);
-    /**
-     * @deprecated This method is deprecated and will be removed in the next major release.
-     */
-    @Deprecated
-    @Method(selector = "authTypeForString:")
-    public static native FBSDKLoginAuthType authTypeForString(String rawValue);
     /*</methods>*/
 }

@@ -1,0 +1,138 @@
+package: org.robovm.pods.facebook.corebasics
+framework: FBSDKCoreKit_Basics
+include: [foundation, dispatch, coregraphics, uikit, webkit, coreanimation]
+clang_args: ['-x', 'objective-c']
+headers: 
+    - FBSDKCoreKit_Basics.h
+
+private_typedefs:
+
+enums:
+
+typed_enums:
+
+classes:
+    FBSDKBase64: {}
+    FBSDKBasicUtility:
+        methods:
+            '+JSONStringForObject:error:invalidObjectHandler:':
+                name: getJSONStringForObject
+            '+dictionary:setJSONStringForObject:forKey:error:':
+                name: setJSONStringForObject
+                throws: NSErrorException
+            '+objectForJSONString:error:':
+                name: objectForJSONString
+                throws: NSErrorException
+            '+queryStringWithDictionary:error:invalidObjectHandler:':
+                name: queryString
+            '+dictionaryWithQueryString:':
+                name: dictionaryFromQueryString
+    FBSDKCrashHandler:
+        methods:
+            '+disable':
+                name: sharedDisable
+            '+addObserver:':
+                name: sharedAddObserver
+            '+removeObserver:':
+                name: sharedRemoveObserver
+            '+clearCrashReportFiles':
+                name: sharedClearCrashReportFiles
+    FBSDKLibAnalyzer:
+        methods:
+            '+getMethodsTable:frameworks:':
+                name: getMethodsTable
+            '+symbolicateCallstack:methodMapping:':
+                name: symbolicateCallstack
+    FBSDKTypeUtility:
+        methods:
+            '+array:objectAtIndex:':
+                name: getObject
+            '+array:addObject:':
+                name: addObject
+            '+dictionary:objectForKey:ofType:':
+                name: getObject
+            '+dictionary:setObject:forKey:':
+                name: setObject
+            '+dictionary:enumerateKeysAndObjectsUsingBlock:':
+                name: enumerateKeysAndObjects
+            '+dataWithJSONObject:options:error:':
+                name: getDataFromJSONObject
+                throws: NSErrorException
+            '+JSONObjectWithData:options:error:':
+                name: getJSONObjectFromData
+                throws: NSErrorException
+    FBSDKURLSession:
+        methods:
+            '-initWithDelegate:delegateQueue:':
+                name: init
+            '-executeURLRequest:completionHandler:':
+                name: executeURLRequest
+            '-updateSessionWithBlock:':
+                name: updateSession
+    FBSDKURLSessionTask:
+        methods:
+            '-initWithRequest:fromSession:completionHandler:':
+                name: init
+
+protocols:
+    FBSDKCrashHandler:
+        name: FBSDKCrashHandlerProtocol
+    FBSDKCrashObserving: {}
+    FBSDKDataPersisting:
+        methods:
+            '-setInteger:forKey:':
+                name: setInteger
+            '-setObject:forKey:':
+                name: setObject
+    FBSDKFileDataExtracting:
+        methods:
+            '+dataWithContentsOfFile:options:error:':
+                constructor: true
+                name: create
+    FBSDKFileManaging:
+        methods:
+            '-URLForDirectory:inDomain:appropriateForURL:create:error:':
+                name: getURL
+                throws: NSErrorException
+            '-createDirectoryAtPath:withIntermediateDirectories:attributes:error:':
+                name: createDirectory
+                throws: NSErrorException
+            '-removeItemAtPath:error:':
+                name: removeItem
+                throws: NSErrorException
+            '-contentsOfDirectoryAtPath:error:':
+                name: getContentsOfDirectory
+                throws: NSErrorException
+    FBSDKInfoDictionaryProviding: {}
+    FBSDKSessionDataTask: {}
+    FBSDKSessionProviding:
+        methods:
+            '-dataTaskWithRequest:completionHandler:':
+                name: getDataTask
+
+functions:
+    fb_dispatch_on_main_thread:
+        class: FBSDKBasicUtility
+        name: dispatchOnMainThread
+
+    fb_dispatch_on_default_thread:
+        class: FBSDKBasicUtility
+        name: dispatchOnDefaultThread
+
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'
