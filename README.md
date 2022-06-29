@@ -44,7 +44,7 @@ v1.24.0 - in development
 | [AppCenter](appcenter/)         | 4.4.2  |
 | [AppLovinSDK](applovinsdk/)     | 11.4.2 |
 | [Azure](azure/)                 | 3.1.4  |
-| [BranchMetrics](branchmetrics/) | 1.42.0 |
+| [BranchMetrics](branchmetrics/) | 1.43.1 |
 | [Charts](charts/)               | 4.0.3             |
 | [Facebook](facebook/)           | 14.0.0 |
 | [Firebase](firebase/)           | 9.2.0  |

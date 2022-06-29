@@ -18,6 +18,7 @@ enums:
     BranchContentIndexMode: {}
     BranchCreditHistoryOrder: {prefix: Branch}
     BranchEventAdType: {}
+    BranchQRCodeImageFormat: {}
 
 categories:
     UIViewController:
@@ -428,6 +429,14 @@ classes:
             '-scene:openURLContexts:':
                 name: openURLContexts
     BranchPluginSupport: {}
+    BranchQRCode:
+        methods:
+            '-getQRCodeAsData:linkProperties:completion:':
+                name: getQRCodeAsData
+            '-getQRCodeAsImage:linkProperties:completion:':
+                name: getQRCodeAsImage
+            '-showShareSheetWithQRCodeFromViewController:anchor:universalObject:linkProperties:completion:':
+                name: showShareSheet
 protocols:
     BNCNetworkOperationProtocol: {}
     BNCNetworkServiceProtocol:
