@@ -61,6 +61,8 @@ import org.robovm.apple.foundation.*;
     public native void setUserID(String userID);
     @Method(selector = "recordError:")
     public native void recordError(NSError error);
+    @Method(selector = "recordError:userInfo:")
+    public native void recordError(NSError error, NSDictionary<NSString, ?> userInfo);
     @Method(selector = "recordExceptionModel:")
     public native void recordExceptionModel(FIRExceptionModel exceptionModel);
     @Method(selector = "didCrashDuringPreviousExecution")

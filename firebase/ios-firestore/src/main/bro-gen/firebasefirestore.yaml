@@ -93,6 +93,8 @@ classes:
                 name: loadBundleStream
             '-getQueryNamed:completion:':
                 name: getQuery
+            '-runTransactionWithOptions:block:completion:':
+                name: runTransaction
     FIRFirestoreSettings: {}
     FIRGeoPoint:
         methods:
@@ -200,6 +202,7 @@ classes:
             '-removeObserverWithHandle:':
                 name: removeObserver
     FIRLoadBundleTaskProgress: {}
+    FIRTransactionOptions: {}
 
 protocols:
     FIRListenerRegistration: {}

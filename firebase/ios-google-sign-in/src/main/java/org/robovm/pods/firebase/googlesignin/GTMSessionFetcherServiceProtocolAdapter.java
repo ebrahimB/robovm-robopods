@@ -58,6 +58,8 @@ import org.robovm.apple.coreanimation.*;
     public void setReuseSession(boolean v) {}
     @NotImplemented("delegateQueue")
     public NSOperationQueue getDelegateQueue() { return null; }
+    @NotImplemented("decorators")
+    public NSArray<?> getDecorators() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

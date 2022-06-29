@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.firebase.messaging;
+package org.robovm.pods.firebase.googlesignin;
 
 /*<imports>*/
 import java.io.*;
@@ -28,35 +28,33 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
-import org.robovm.apple.usernotifications.*;
+import org.robovm.apple.uikit.*;
+import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.dispatch.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/**
- * @deprecated FIRInstanceIDResult is deprecated, please use FIRInstallations for app instance identifier handling and use FIRMessaging for FCM registration token handling.
- */
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass @Deprecated/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRInstanceIDResult/*</name>*/ 
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/GTMFetcherDecoratorProtocolAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements GTMFetcherDecoratorProtocol/*</implements>*/ {
 
-    /*<ptr>*/public static class FIRInstanceIDResultPtr extends Ptr<FIRInstanceIDResult, FIRInstanceIDResultPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FIRInstanceIDResult.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    public FIRInstanceIDResult() {}
-    protected FIRInstanceIDResult(Handle h, long handle) { super(h, handle); }
-    protected FIRInstanceIDResult(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    @Property(selector = "instanceID")
-    public native String getInstanceID();
-    @Property(selector = "token")
-    public native String getToken();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @NotImplemented("fetcherWillStart:completionHandler:")
+    public void fetcherWillStart(GTMSessionFetcher fetcher, @Block VoidBlock2<NSURLRequest, NSError> handler) {}
+    @NotImplemented("fetcherDidFinish:withData:error:completionHandler:")
+    public void fetcherDidFinish(GTMSessionFetcher fetcher, NSData data, NSError error, @Block Runnable handler) {}
     /*</methods>*/
 }

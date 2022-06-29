@@ -4,9 +4,9 @@ internal_frameworks: [GTMSessionFetcher]
 header_root: '.'
 include: [foundation, uikit, coregraphics, dispatch, coreanimation]
 clang_args: ['-x', 'objective-c']
-headers: 
-    - GoogleSignIn.framework/headers/GoogleSignIn.h
-    - GTMSessionFetcher.framework/headers/GTMSessionFetcher.h
+headers:
+    - "#include <GTMSessionFetcher/GTMSessionFetcher.h>"
+    - "#include <GoogleSignIn/GoogleSignIn.h>"
 
 enums:
     GIDSignInErrorCode: {nserror: true, prefix: kGIDSignInErrorCode}
@@ -39,6 +39,8 @@ classes:
             '-signInWithConfiguration:presentingViewController:callback:':
                 name: signIn
             '-signInWithConfiguration:presentingViewController:hint:callback:':
+                name: signIn
+            '-signInWithConfiguration:presentingViewController:hint:additionalScopes:callback:':
                 name: signIn
             '-addScopes:presentingViewController:callback:':
                 name: addScopes
@@ -112,6 +114,12 @@ protocols:
         methods:
             '-beginBackgroundTaskWithName:expirationHandler:':
                 name: beginBackgroundTask
+    GTMFetcherDecoratorProtocol:
+        methods:
+            '-fetcherWillStart:completionHandler:':
+                name: fetcherWillStart
+            '-fetcherDidFinish:withData:error:completionHandler:':
+                name: fetcherDidFinish
 functions:
 
 
@@ -178,6 +186,8 @@ constants:
     GTMSESSION_RECONNECT_BACKGROUND_SESSIONS_ON_LAUNCH:
         exclude: true
     GTM_FETCHER_AUTHORIZATION_PROTOCOL:
+        exclude: true
+    GTMSESSION_LOG_DEBUG_VERBOSE:
         exclude: true
 
     # Make sure we don't miss any constants if new ones are introduced in a later version

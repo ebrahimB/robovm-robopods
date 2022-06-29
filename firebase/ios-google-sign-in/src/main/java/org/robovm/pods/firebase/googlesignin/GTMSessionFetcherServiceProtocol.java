@@ -57,6 +57,8 @@ import org.robovm.apple.coreanimation.*;
     void setReuseSession(boolean v);
     @Property(selector = "delegateQueue")
     NSOperationQueue getDelegateQueue();
+    @Property(selector = "decorators")
+    NSArray<?> getDecorators();
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "fetcherShouldBeginFetching:")

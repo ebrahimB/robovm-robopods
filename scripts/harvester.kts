@@ -808,6 +808,7 @@ fun File.extractVersion(): String {
 }
 
 fun File.extend(path: String): File = File(this, path)
+fun String.extend(path: String): File = File(this, path)
 
 fun exec(prefix: String, command: String) {
     val p = Runtime.getRuntime().exec(command)
@@ -980,19 +981,24 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     val moduleReadmeFile = Path.of("Firebase/README.md").toFile()
     val readmeUpdater = oneTimeReadmeUpdater { versionProvider["Firebase"] }
     // some ios-arm64_armv7 other ios-arm64
-    fun pickLocation(framework: String) : String {
-        val candidate = "Firebase/$framework/$framework.xcframework/ios-arm64/$framework.framework"
-        return if (downloadFolder.extend(candidate).exists()) candidate
-            else "Firebase/$framework/$framework.xcframework/ios-arm64_armv7/$framework.framework"
+    fun pickLocation(framework: String, prefix: String = framework) : File {
+        val candidate = downloadFolder.extend("Firebase/$prefix/$framework.xcframework/ios-arm64/$framework.framework")
+        return if (candidate.exists()) candidate
+        else downloadFolder.extend("Firebase/$prefix/$framework.xcframework/ios-arm64_armv7/$framework.framework")
     }
     fun action(
         framework: String, moduleFolder: String, yaml: String, versionKey: String = framework,
-        frameworkLocation: String = pickLocation(framework)
+        frameworkLocation: File = pickLocation(framework),
+        destinationHeadersDir: File? = null,
+        interactiveValidateHeaderFolder: (framework: String, sourceHeadersDir: File, instruction: String?, optional: Boolean) -> Unit = ::interactiveValidateHeaderFolder,
+        headerFolderCleaner: (framework: String, destinationHeadersDir: File) -> Unit = ::cleanUpHeaders,
+        headersCopier: (framework: String, sourceHeadersDir: File, destinationHeadersDir: File) -> Unit = ::copyHeaders
     ) {
-        val artifactLocation = downloadFolder.extend(frameworkLocation)
+        val artifactLocation = frameworkLocation
         processFramework(
             artifact = "$framework.framework",
             moduleFolder = moduleFolder,
+            destinationHeadersDir = destinationHeadersDir,
             sourceHeadersDir = artifactLocation.headers,
             yaml = yaml,
             version = { versionProvider[versionKey] },
@@ -1000,13 +1006,16 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
                 readmeUpdater(frm, modFolder, version)
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
             },
-            instruction = firebaseInstallInstruction
+            instruction = firebaseInstallInstruction,
+            interactiveValidateHeaderFolder = interactiveValidateHeaderFolder,
+            headerFolderCleaner = headerFolderCleaner,
+            headersCopier = headersCopier
         )
     }
 
     registry["FirebaseCore"] = { framework ->
         action(framework, "firebase/ios-core", "firebase-core.yaml",
-            frameworkLocation = "Firebase/FirebaseAnalytics/$framework.xcframework/ios-arm64/$framework.framework")
+            frameworkLocation = pickLocation("FirebaseCore", "FirebaseAnalytics"))
     }
     registry["FirebaseAnalytics"] = { framework -> action(framework, "firebase/ios-analytics", "firebase-analytics.yaml") }
     registry["FirebaseAuth"] = { framework -> action(framework, "firebase/ios-auth", "firebaseauth.yaml") }
@@ -1020,16 +1029,37 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     registry["GoogleMobileAds"] = { framework ->
         action(framework, "firebase/ios-google-mobile-ads", "gad.yaml",
             versionKey = "Google-Mobile-Ads-SDK",
-            frameworkLocation = "Firebase/Google-Mobile-Ads-SDK/GoogleMobileAds.xcframework/ios-arm64_armv7/$framework.framework")
+            frameworkLocation = pickLocation("GoogleMobileAds", "Google-Mobile-Ads-SDK"))
     }
     registry["GoogleSignIn"] = { framework ->
-        action(framework, "firebase/ios-google-sign-in", "firebase-google-sign-in.yaml",
-            frameworkLocation = "Firebase/GoogleSignIn/GoogleSignIn.xcframework/ios-arm64/$framework.framework")
+        action(framework,
+            moduleFolder = "firebase/ios-google-sign-in", "firebase-google-sign-in.yaml",
+            frameworkLocation =  pickLocation("GoogleSignIn"),
+            destinationHeadersDir = Path.of("firebase", "ios-google-sign-in", "src", "main", "bro-gen").toFile(),
+            headerFolderCleaner = { _, dst ->
+                cleanUpHeaders("GoogleSignIn", dst.extend("GoogleSignIn.framework"))
+                cleanUpHeaders("GTMSessionFetcher", dst.extend("GTMSessionFetcher.framework"))
+            },
+            headersCopier = { _, _, dst ->
+                copyHeaders("GoogleSignIn.framework",
+                    pickLocation("GoogleSignIn").extend("Headers"),
+                    dst.extend("GoogleSignIn.framework/Headers"))
+                copyHeaders("GTMSessionFetcher.framework",
+                    pickLocation("GTMSessionFetcher", "GoogleSignIn").extend("Headers"),
+                    dst.extend("GTMSessionFetcher.framework/Headers"))
+            } ,
+            interactiveValidateHeaderFolder = { _, _, instruction, optional ->
+                interactiveValidateHeaderFolder("GoogleSignIn.framework",
+                    pickLocation("GoogleSignIn").extend("Headers"), instruction, optional)
+                interactiveValidateHeaderFolder("GTMSessionFetcher.framework",
+                    pickLocation("GTMSessionFetcher", "GoogleSignIn").extend("Headers"), instruction, optional)
+            },
+        )
     }
     registry["UserMessagingPlatform"] = { framework ->
         action(framework, "firebase/ios-google-ump", "firebase-ump.yaml",
             versionKey = "GoogleUserMessagingPlatform",
-            frameworkLocation = "Firebase/Google-Mobile-Ads-SDK/UserMessagingPlatform.xcframework/ios-arm64_armv7/$framework.framework")
+            frameworkLocation = pickLocation("UserMessagingPlatform", "Google-Mobile-Ads-SDK"))
     }
 }
 

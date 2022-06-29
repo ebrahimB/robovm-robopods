@@ -81,6 +81,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getSessionIdentifier();
     @Property(selector = "wasCreatedFromBackgroundSession")
     public native boolean isWasCreatedFromBackgroundSession();
+    @Property(selector = "clientWillReconnectBackgroundSession")
+    public native boolean isClientWillReconnectBackgroundSession();
+    @Property(selector = "setClientWillReconnectBackgroundSession:")
+    public native void setClientWillReconnectBackgroundSession(boolean v);
     @Property(selector = "sessionUserInfo")
     public native NSDictionary<NSString, NSString> getSessionUserInfo();
     @Property(selector = "setSessionUserInfo:")
@@ -355,6 +359,10 @@ import org.robovm.apple.coreanimation.*;
     public native NSObject propertyForKey(String key);
     @Method(selector = "addPropertiesFromDictionary:")
     public native void addPropertiesFromDictionary(NSDictionary<NSString, ?> dict);
+    /**
+     * @deprecated Use XCTestExpectation instead
+     */
+    @Deprecated
     @Method(selector = "waitForCompletionWithTimeout:")
     public native boolean waitForCompletion(double timeoutInSeconds);
     @Method(selector = "fetcherWithRequest:")
@@ -385,6 +393,10 @@ import org.robovm.apple.coreanimation.*;
     public static native void setLoggingEnabled(boolean flag);
     @Method(selector = "isLoggingEnabled")
     public static native boolean isLoggingEnabled();
+    /**
+     * @deprecated Create an NSHTTPCookieStorage and set .cookieStorage directly.
+     */
+    @Deprecated
     @Method(selector = "setCookieStorageMethod:")
     public native void setCookieStorageMethod(@MachineSizedSInt long method);
     @Method(selector = "URLSession:didBecomeInvalidWithError:")

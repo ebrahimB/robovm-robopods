@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.firebase.messaging;
+package org.robovm.pods.firebase.googlesignin;
 
 /*<imports>*/
 import java.io.*;
@@ -28,40 +28,33 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
-import org.robovm.apple.usernotifications.*;
+import org.robovm.apple.uikit.*;
+import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.dispatch.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/FIRInstanceIDError/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Unknown(0L),
-    Authentication(1L),
-    NoAccess(2L),
-    Timeout(3L),
-    Network(4L),
-    OperationInProgress(5L),
-    InvalidRequest(7L);
-    /*</values>*/
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/GTMFetcherDecoratorProtocol/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
+    /*<ptr>*/
+    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/FIRInstanceIDError/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/FIRInstanceIDError/*</name>*/ valueOf(long n) {
-        for (/*<name>*/FIRInstanceIDError/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/FIRInstanceIDError/*</name>*/.class.getName());
-    }
+    /*<properties>*/
+    
+    /*</properties>*/
+    /*<methods>*/
+    @Method(selector = "fetcherWillStart:completionHandler:")
+    void fetcherWillStart(GTMSessionFetcher fetcher, @Block VoidBlock2<NSURLRequest, NSError> handler);
+    @Method(selector = "fetcherDidFinish:withData:error:completionHandler:")
+    void fetcherDidFinish(GTMSessionFetcher fetcher, NSData data, NSError error, @Block Runnable handler);
+    /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

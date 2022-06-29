@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.google.mobileads;
+package org.robovm.pods.firebase.firestore;
 
 /*<imports>*/
 import java.io.*;
@@ -28,36 +28,30 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
-import org.robovm.apple.coregraphics.*;
-import org.robovm.apple.storekit.*;
-import org.robovm.apple.uikit.*;
-import org.robovm.apple.coreanimation.*;
-import org.robovm.apple.webkit.*;
+import org.robovm.apple.dispatch.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/GADAdValue/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRTransactionOptions/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class GADAdValuePtr extends Ptr<GADAdValue, GADAdValuePtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(GADAdValue.class); }/*</bind>*/
+    /*<ptr>*/public static class FIRTransactionOptionsPtr extends Ptr<FIRTransactionOptions, FIRTransactionOptionsPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FIRTransactionOptions.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public GADAdValue() {}
-    protected GADAdValue(Handle h, long handle) { super(h, handle); }
-    protected GADAdValue(SkipInit skipInit) { super(skipInit); }
+    public FIRTransactionOptions() {}
+    protected FIRTransactionOptions(Handle h, long handle) { super(h, handle); }
+    protected FIRTransactionOptions(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "precision")
-    public native GADAdValuePrecision getPrecision();
-    @Property(selector = "value")
-    public native NSDecimalNumber getValue();
-    @Property(selector = "currencyCode")
-    public native String getCurrencyCode();
+    @Property(selector = "maxAttempts")
+    public native @MachineSizedSInt long getMaxAttempts();
+    @Property(selector = "setMaxAttempts:")
+    public native void setMaxAttempts(@MachineSizedSInt long v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

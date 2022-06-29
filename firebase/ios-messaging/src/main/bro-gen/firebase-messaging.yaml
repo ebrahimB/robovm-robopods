@@ -1,12 +1,10 @@
 package: org.robovm.pods.firebase.messaging
 framework: FirebaseMessaging
-internal_frameworks: [FirebaseInstanceID]
 include: [foundation, usernotifications]
 header_root: '.'
 clang_args: ['-x', 'objective-c']
 headers: 
-    - FirebaseMessaging.framework/headers/FirebaseMessaging.h
-    - FirebaseInstanceID.framework/headers/FirebaseInstanceID.h
+    - "#include <FirebaseMessaging/FirebaseMessaging.h>"
 
 enums:
     FIRMessagingError: { nserror: true}
@@ -43,19 +41,6 @@ classes:
                 name: exportDeliveryMetricsToBigQuery
     FIRMessagingMessageInfo: {}
     FIRMessagingRemoteMessage: {}
-    FIRInstanceID:
-        methods:
-            '-instanceIDWithHandler:':
-                name: instanceID
-            '-tokenWithAuthorizedEntity:scope:options:handler:':
-                name: token
-            '-deleteTokenWithAuthorizedEntity:scope:handler:':
-                name: deleteToken
-            '-getIDWithHandler:':
-                name: getID
-            '-deleteIDWithHandler:':
-                name: deleteID
-    FIRInstanceIDResult: {}
 protocols:
     FIRMessagingDelegate:
         methods:
@@ -75,9 +60,6 @@ values:
         static_class: Notifications
         name: '#{g[0]}'
         type: NSString
-    kFIRInstanceID(.*):
-        class: FIRInstanceID
-        name: '#{g[0]}'
     FIRMessagingErrorDomain:
         class: FIRMessagingError
         name: getClassDomain

@@ -21,7 +21,9 @@ classes:
             '-checkForUnsentReportsWithCompletion:':
                 name: checkForUnsentReports
             '-checkAndUpdateUnsentReportsWithCompletion:':
-              name: checkAndUpdateUnsentReports
+                name: checkAndUpdateUnsentReports
+            '-recordError:userInfo:':
+                name: recordError
     FIRExceptionModel:
         methods:
             '-initWithName:reason:':

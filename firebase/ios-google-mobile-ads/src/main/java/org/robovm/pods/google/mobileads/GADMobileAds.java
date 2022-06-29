@@ -32,6 +32,7 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.webkit.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -85,6 +86,8 @@ import org.robovm.apple.coreanimation.*;
     public native void disableMediationInitialization();
     @Method(selector = "presentAdInspectorFromViewController:completionHandler:")
     public native void presentAdInspector(UIViewController viewController, @Block VoidBlock1<NSError> completionHandler);
+    @Method(selector = "registerWebView:")
+    public native void registerWebView(WKWebView webView);
     @Method(selector = "sharedInstance")
     public static native GADMobileAds sharedInstance();
     /*</methods>*/

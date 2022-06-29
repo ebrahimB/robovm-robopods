@@ -65,6 +65,8 @@ import org.robovm.apple.dispatch.*;
     public native FIRQuery getCollectionGroup(String collectionID);
     @Method(selector = "runTransactionWithBlock:completion:")
     public native void runTransaction(@Block Block2<FIRTransaction, NSError.NSErrorPtr, NSObject> updateBlock, @Block VoidBlock2<NSObject, NSError> completion);
+    @Method(selector = "runTransactionWithOptions:block:completion:")
+    public native void runTransaction(FIRTransactionOptions options, @Block Block2<FIRTransaction, NSError.NSErrorPtr, NSObject> updateBlock, @Block VoidBlock2<NSObject, NSError> completion);
     @Method(selector = "batch")
     public native FIRWriteBatch batch();
     @Method(selector = "useEmulatorWithHost:port:")
