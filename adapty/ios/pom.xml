@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-adapty-ios</artifactId>
-    <name>RoboPods Adapty SDK iOS v1.17.3</name>
+    <name>RoboPods Adapty SDK iOS v1.17.6</name>
     <packaging>jar</packaging>
 
     <licenses>
