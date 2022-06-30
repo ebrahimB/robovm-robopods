@@ -68,6 +68,8 @@ import org.robovm.apple.coreanimation.*;
     public native void signIn(GIDConfiguration configuration, UIViewController presentingViewController, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
     @Method(selector = "signInWithConfiguration:presentingViewController:hint:callback:")
     public native void signIn(GIDConfiguration configuration, UIViewController presentingViewController, String hint, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
+    @Method(selector = "signInWithConfiguration:presentingViewController:hint:additionalScopes:callback:")
+    public native void signIn(GIDConfiguration configuration, UIViewController presentingViewController, String hint, NSArray<NSString> additionalScopes, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
     @Method(selector = "addScopes:presentingViewController:callback:")
     public native void addScopes(NSArray<NSString> scopes, UIViewController presentingViewController, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
     @Method(selector = "signOut")
